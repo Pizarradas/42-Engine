@@ -1,0 +1,41 @@
+<!-- Markup canónico de .ft-helper-display* — subgrupo "Markup" del storybook -->
+
+<template data-story="Block centrado horizontalmente">
+    <div class="ft-helper-display--block ft-helper-display--block--center" style="background:#f5f5f5;padding:10px;">
+        <span style="display:inline-block;background:#0050b3;color:#fff;padding:6px 10px;border-radius:3px;">contenido centrado</span>
+    </div>
+</template>
+
+<template data-story="Flex centrado en ambos ejes">
+    <div class="ft-helper-display-flex ft-helper-display-flex--middle ft-helper-display-flex--center"
+         style="gap:10px;background:#f5f5f5;height:120px;border:1px dashed #999;">
+        <span style="background:#0050b3;color:#fff;padding:8px 12px;border-radius:3px;">A</span>
+        <span style="background:#0050b3;color:#fff;padding:8px 12px;border-radius:3px;">B</span>
+    </div>
+</template>
+
+<template data-story="Flex column">
+    <div class="ft-helper-display-flex ft-helper-display-flex--column"
+         style="gap:8px;background:#f5f5f5;padding:14px;border:1px dashed #999;">
+        <span style="background:#0050b3;color:#fff;padding:8px 12px;border-radius:3px;">Fila 1</span>
+        <span style="background:#0050b3;color:#fff;padding:8px 12px;border-radius:3px;">Fila 2</span>
+        <span style="background:#0050b3;color:#fff;padding:8px 12px;border-radius:3px;">Fila 3</span>
+    </div>
+</template>
+
+<template data-story="Flex space-between (toolbar pattern)">
+    <div class="ft-helper-display-flex ft-helper-display-flex--middle ft-helper-display-flex--spacebetween"
+         style="gap:10px;background:#f5f5f5;padding:10px 14px;">
+        <strong>Sección activa</strong>
+        <button class="ft-btn ft-btn--secondary">Acción</button>
+    </div>
+</template>
+
+<template data-story="Flex column · middle + end (footer card)">
+    <div class="ft-helper-display-flex ft-helper-display-flex--column ft-helper-display-flex--middle"
+         style="gap:8px;background:#f5f5f5;height:160px;padding:14px;border:1px dashed #999;">
+        <strong>Tarjeta vertical</strong>
+        <p style="margin:0;text-align:center;color:#444;">Centrada en ambos ejes con dirección column.</p>
+        <span style="background:#0050b3;color:#fff;padding:6px 10px;border-radius:3px;font:600 11px/1.2 sans-serif;">CTA</span>
+    </div>
+</template>

@@ -1,0 +1,42 @@
+<!-- Markup canónico de .ft-helper-fontWeight-* — subgrupo "Markup" del storybook -->
+
+<template data-story="Light (300)">
+    <p class="ft-helper-fontWeight-300 ft-helper-fontSize-body-L">
+        Peso ligero. Útil en citas largas o subtítulos sutiles.
+    </p>
+</template>
+
+<template data-story="Regular (400) — default">
+    <p class="ft-helper-fontWeight-400 ft-helper-fontSize-body-M">
+        Peso por defecto del cuerpo. No suele necesitar la clase explícita.
+    </p>
+</template>
+
+<template data-story="Semibold (600)">
+    <h3 class="ft-helper-fontWeight-600 ft-helper-fontSize-heading-S">
+        Sub-titular con peso intermedio
+    </h3>
+</template>
+
+<template data-story="Bold (700)">
+    <h2 class="ft-helper-fontWeight-700 ft-helper-fontSize-heading-L">
+        Apertura en negrita
+    </h2>
+</template>
+
+<template data-story="Black (800) en display">
+    <h1 class="ft-helper-fontWeight-800 ft-helper-fontSize-display-M">
+        Hero a tope
+    </h1>
+</template>
+
+<template data-story="Combinaciones — composición común">
+    <article>
+        <h2 class="ft-helper-fontSize-heading-L ft-helper-fontWeight-700">Titular bold</h2>
+        <p class="ft-helper-fontSize-body-M ft-helper-fontWeight-400">
+            Cuerpo regular con
+            <strong class="ft-helper-fontWeight-600">énfasis semibold</strong>
+            y <em class="ft-helper-fontWeight-300">aclaración light</em>.
+        </p>
+    </article>
+</template>

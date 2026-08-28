@@ -1,0 +1,61 @@
+<!-- Markup canónico de .ft-helper-bg* — subgrupo "Markup" del storybook -->
+
+<template data-story="Brand primary con padding interno">
+    <section class="ft-helper-bgColor-primary ft-helper-spacer-inner-md">
+        <h2 class="ft-helper-fontSize-heading-M ft-helper-fontColor-white">
+            Sección destacada en color primario
+        </h2>
+        <p class="ft-helper-fontSize-body-M ft-helper-fontColor-white">
+            Las clases brand fuerzan internamente <code>color: white</code> para el texto. No necesitas <code>fontColor-white</code> explícito, pero documentarlo ayuda.
+        </p>
+    </section>
+</template>
+
+<template data-story="Neutrales · bg-black con padding">
+    <section class="ft-helper-bgColor-black ft-helper-spacer-inner-md">
+        <p class="ft-helper-fontSize-body-L">
+            Wrapper con fondo negro. Cualquier descendiente <code>.ft-helper-fontColor-*</code> brand/grey conmuta a blanco por el behavior <code>bg-black</code>.
+        </p>
+    </section>
+</template>
+
+<template data-story="Background grey suave (set-brand)">
+    <section class="ft-helper-bgColor-background-lightGrey ft-helper-spacer-inner-md">
+        <p class="ft-helper-fontSize-body-M ft-helper-fontColor-black">
+            Sección con fondo gris claro de marca. Útil para alternar densidades en listados.
+        </p>
+    </section>
+</template>
+
+<template data-story="Alert success">
+    <div class="ft-helper-bgColor-alert-success ft-helper-spacer-inner-sm" style="border-radius:4px;">
+        <p class="ft-helper-fontSize-body-S ft-helper-fontColor-white">
+            ✓ Cambios guardados correctamente.
+        </p>
+    </div>
+</template>
+
+<template data-story="Gradient overlay sobre imagen">
+    <figure style="position:relative;display:inline-block;">
+        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='320' height='180' preserveAspectRatio='none'><rect width='320' height='180' fill='%2399aabb'/></svg>"
+             alt="Placeholder" style="display:block;width:320px;height:180px;">
+        <div class="ft-helper-bgGradient-black-bottom" style="position:absolute;inset:0;display:flex;align-items:flex-end;padding:12px;">
+            <h3 class="ft-helper-fontColor-white ft-helper-fontWeight-700">Titular sobre foto</h3>
+        </div>
+    </figure>
+</template>
+
+<template data-story="Opacity overlay">
+    <div style="position:relative;width:240px;height:120px;background:#0050b3;border-radius:4px;overflow:hidden;">
+        <div class="ft-helper-bgOpacityBlack-500" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
+            <p class="ft-helper-fontColor-white ft-helper-fontWeight-700">50% black overlay</p>
+        </div>
+    </div>
+</template>
+
+<template data-story="Social · WhatsApp button">
+    <a href="#" class="ft-helper-bgGreenWhatsapp-500 ft-helper-spacer-inner-xxs ft-helper-fontColor-white"
+       style="display:inline-block;border-radius:4px;text-decoration:none;font-weight:700;">
+        Compartir por WhatsApp
+    </a>
+</template>

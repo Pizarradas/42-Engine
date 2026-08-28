@@ -1,0 +1,27 @@
+<!-- Markup canonico de .ft-helper-position-* -->
+
+<template data-story="Relative como contexto de hijos absolute">
+    <div class="ft-helper-position-relative" style="background:#f5f5f5;padding:18px;min-height:80px;">
+        <span style="position:absolute;top:8px;right:8px;background:#0050b3;color:#fff;padding:4px 8px;border-radius:3px;">badge</span>
+        Contenedor con un badge anclado a la esquina.
+    </div>
+</template>
+
+<template data-story="Sticky - cabecera de seccion">
+    <div style="height:240px;overflow:auto;background:#fff;border:1px solid #ddd;">
+        <h3 class="ft-helper-position-sticky ft-helper-bgColor-primary ft-helper-fontColor-white"
+            style="margin:0;padding:10px 14px;">
+            Seccion sticky
+        </h3>
+        <div style="padding:14px;font:14px/1.6 sans-serif;color:#444;height:600px;">
+            Contenido largo... (scroll para ver el efecto sticky).
+        </div>
+    </div>
+</template>
+
+<template data-story="Fixed (en produccion se ve siempre)">
+    <div class="ft-helper-position-fixed ft-helper-bgColor-primary ft-helper-fontColor-white"
+         style="bottom:16px;right:16px;padding:10px 14px;border-radius:4px;">
+        Fixed bottom-right
+    </div>
+</template>

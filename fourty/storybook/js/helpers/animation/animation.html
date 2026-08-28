@@ -1,0 +1,35 @@
+<!-- Markup canónico de .ft-helper-animation-* — subgrupo "Markup" del storybook -->
+
+<template data-story="FadeIn en heading">
+    <h1 class="ft-helper-animation-fadeIn ft-helper-fontSize-heading-XXL">
+        Titular que aparece con fadeIn
+    </h1>
+</template>
+
+<template data-story="FadeInTop en bloque destacado">
+    <div class="ft-helper-animation-fadeInTop ft-helper-bgColor-primary"
+         style="padding:20px;border-radius:6px;color:#fff;">
+        <h2 class="ft-helper-fontSize-heading-M ft-helper-fontColor-white">Aparece desde arriba</h2>
+        <p>Útil para CTAs o secciones de bienvenida.</p>
+    </div>
+</template>
+
+<template data-story="ScaleIn en avatar (más sutil)">
+    <div class="ft-helper-animation-scaleIn"
+         style="width:80px;height:80px;border-radius:50%;background:#0050b3;display:flex;align-items:center;justify-content:center;color:#fff;font:700 24px/1 sans-serif;">
+        JS
+    </div>
+</template>
+
+<template data-story="FadeInLft + fadeInRgt en par hero">
+    <div style="display:flex;gap:16px;">
+        <div class="ft-helper-animation-fadeInLft ft-helper-bgColor-background-lightGrey"
+             style="flex:1;padding:18px;border-radius:4px;">
+            Texto izquierdo
+        </div>
+        <div class="ft-helper-animation-fadeInRgt ft-helper-bgColor-background-lightGrey"
+             style="flex:1;padding:18px;border-radius:4px;">
+            Texto derecho
+        </div>
+    </div>
+</template>

@@ -1,0 +1,41 @@
+<!-- Markup canónico de .ft-helper-scroll* — subgrupo "Markup" del storybook -->
+
+<template data-story="Carrusel horizontal básico">
+    <div class="ft-helper-scroll" style="gap:10px;padding:8px 0;">
+        <article style="flex:0 0 220px;background:#f5f5f5;padding:14px;border-radius:4px;">Card 1</article>
+        <article style="flex:0 0 220px;background:#f5f5f5;padding:14px;border-radius:4px;">Card 2</article>
+        <article style="flex:0 0 220px;background:#f5f5f5;padding:14px;border-radius:4px;">Card 3</article>
+        <article style="flex:0 0 220px;background:#f5f5f5;padding:14px;border-radius:4px;">Card 4</article>
+        <article style="flex:0 0 220px;background:#f5f5f5;padding:14px;border-radius:4px;">Card 5</article>
+    </div>
+</template>
+
+<template data-story="Snap full-screen en móvil (-100-mobileonly)">
+    <div class="ft-helper-scroll ft-helper-scroll--100-mobileonly" style="gap:10px;">
+        <article style="flex:0 0 auto;background:#0050b3;color:#fff;padding:28px;border-radius:4px;">Slide A</article>
+        <article style="flex:0 0 auto;background:#1664b0;color:#fff;padding:28px;border-radius:4px;">Slide B</article>
+        <article style="flex:0 0 auto;background:#2c75c4;color:#fff;padding:28px;border-radius:4px;">Slide C</article>
+    </div>
+</template>
+
+<template data-story="Scrollbar fino (-small)">
+    <div class="ft-helper-scroll ft-helper-scroll--small" style="gap:8px;padding:6px 0;">
+        <span style="flex:0 0 auto;background:#f5f5f5;padding:10px 16px;border-radius:999px;">#tag1</span>
+        <span style="flex:0 0 auto;background:#f5f5f5;padding:10px 16px;border-radius:999px;">#tag2</span>
+        <span style="flex:0 0 auto;background:#f5f5f5;padding:10px 16px;border-radius:999px;">#tag3</span>
+        <span style="flex:0 0 auto;background:#f5f5f5;padding:10px 16px;border-radius:999px;">#tag4</span>
+        <span style="flex:0 0 auto;background:#f5f5f5;padding:10px 16px;border-radius:999px;">#tag5</span>
+        <span style="flex:0 0 auto;background:#f5f5f5;padding:10px 16px;border-radius:999px;">#tag6</span>
+    </div>
+</template>
+
+<template data-story="Carrusel bajo fondo negro (theme automático)">
+    <div class="ft-helper-bgColor-black" style="padding:14px;">
+        <div class="ft-helper-scroll" style="gap:10px;">
+            <article style="flex:0 0 200px;background:#222;color:#fff;padding:14px;border-radius:4px;">Card oscura 1</article>
+            <article style="flex:0 0 200px;background:#222;color:#fff;padding:14px;border-radius:4px;">Card oscura 2</article>
+            <article style="flex:0 0 200px;background:#222;color:#fff;padding:14px;border-radius:4px;">Card oscura 3</article>
+            <article style="flex:0 0 200px;background:#222;color:#fff;padding:14px;border-radius:4px;">Card oscura 4</article>
+        </div>
+    </div>
+</template>

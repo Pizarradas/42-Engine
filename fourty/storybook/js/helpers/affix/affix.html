@@ -1,0 +1,60 @@
+<!-- Markup canonico de .ft-helper-affix y .ft-helper-sticky-stack -->
+
+<template data-story="CTA flotante bottom-right">
+    <a href="#" class="ft-helper-affix ft-helper-bgColor-primary ft-helper-fontColor-white"
+       style="bottom:16px;right:16px;padding:10px 14px;border-radius:4px;text-decoration:none;font-weight:700;">
+        Volver arriba
+    </a>
+</template>
+
+<template data-story="Breadcrumb persistente top">
+    <nav class="ft-helper-affix ft-helper-bgColor-background-lightGrey"
+         style="top:0;left:0;right:0;padding:10px 16px;border-bottom:1px solid #ddd;">
+        <a href="#" style="color:#0050b3;text-decoration:none;">Inicio</a> >
+        <a href="#" style="color:#0050b3;text-decoration:none;">Seccion</a> >
+        <span style="color:#666;">Pagina actual</span>
+    </nav>
+</template>
+
+<template data-story="Sticky stack basico con compensacion">
+    <div class="ft-helper-sticky-stack ft-mol-btnGroup ft-mol-btnGroup--cnt ft-mol-btnGroup--is-scrollable"
+         data-sticky-stack-source="actions"
+         data-sticky-stack-trigger
+         data-sticky-stack-overflow="x"
+         data-sticky-stack-top-mode="default"
+         data-sticky-stack-top-base-min-1024="38">
+        <button type="button" class="ft-btn ft-btn--tertiary ft-btn--md">
+            Anadir mas localidades
+        </button>
+    </div>
+
+    <div data-sticky-stack-offset-target>
+        <!-- contenido afectado por el sticky -->
+    </div>
+
+    <script defer src="/cds-statics/js/sticky-stack/fourty-js-sticky-stack.js"></script>
+</template>
+
+<template data-story="Sticky stack con boundary superior">
+    <header data-sticky-stack-boundary>
+        <div data-sticky-stack-boundary-target>
+            Cabecera visible
+        </div>
+    </header>
+
+    <div class="ft-helper-sticky-stack ft-mol-btnGroup ft-mol-btnGroup--cnt"
+         data-sticky-stack-source="filters"
+         data-sticky-stack-trigger
+         data-sticky-stack-top-mode="boundary"
+         data-sticky-stack-top-base="0">
+        <button type="button" class="ft-btn ft-btn--secondary ft-btn--md">
+            Filtro activo
+        </button>
+    </div>
+
+    <div data-sticky-stack-offset-target>
+        <!-- contenido -->
+    </div>
+
+    <script defer src="/cds-statics/js/sticky-stack/fourty-js-sticky-stack.js"></script>
+</template>

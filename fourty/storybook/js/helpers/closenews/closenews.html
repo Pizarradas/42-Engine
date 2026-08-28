@@ -1,0 +1,23 @@
+<!-- Markup canónico de .ft-helper-closenews — subgrupo "Markup" del storybook -->
+
+<template data-story="Preview de noticia con CTA leer más">
+    <article class="ft-helper-closenews">
+        <h2>Titular de la noticia</h2>
+        <p>Sumario en dos o tres líneas que adelantan el contenido principal de la pieza.</p>
+        <p>Primer párrafo del cuerpo. Cuando el bloque alcanza ~215px se recorta con fade-out blanco.</p>
+        <p>Segundo párrafo que ya queda parcialmente cubierto por el degradado.</p>
+        <p>Tercer párrafo invisible — sirve solo para asegurar que hay contenido más allá del recorte.</p>
+    </article>
+    <p style="margin-top:12px;">
+        <a href="#" class="ft-btn ft-btn--primary">Leer más</a>
+    </p>
+</template>
+
+<template data-story="Sin recorte (referencia)">
+    <article>
+        <h2>Titular de la noticia</h2>
+        <p>Sin <code>.ft-helper-closenews</code> el bloque crece libremente.</p>
+        <p>Segundo párrafo siempre visible.</p>
+        <p>Tercer párrafo siempre visible.</p>
+    </article>
+</template>

@@ -1,0 +1,31 @@
+<!-- Markup canónico de .ft-helper-fontType--* — subgrupo "Markup" del storybook -->
+
+<template data-story="Italic en cita">
+    <blockquote class="ft-helper-fontType--italic ft-helper-fontSize-body-L ft-helper-fontColor-darkGrey">
+        Cita en cursiva con estilo editorial.
+    </blockquote>
+</template>
+
+<template data-story="Balance en titular multilinea">
+    <h2 class="ft-helper-fontType--balance ft-helper-fontSize-heading-L" style="max-width:560px;">
+        Este titular tiene varias palabras y se equilibra para que cada línea ocupe un ancho similar
+    </h2>
+</template>
+
+<template data-story="Underline en término clave">
+    <p class="ft-helper-fontSize-body-M">
+        El término <span class="ft-helper-fontType--underline ft-helper-fontWeight-700">42 Design System</span> aparece subrayado pero no es un enlace.
+    </p>
+</template>
+
+<template data-story="Uppercase en etiqueta">
+    <p class="ft-helper-fontType--uppercase ft-helper-fontSize-body-S ft-helper-fontWeight-700 ft-helper-fontColor-primary">
+        Es noticia
+    </p>
+</template>
+
+<template data-story="Apilando varios modificadores">
+    <p class="ft-helper-fontType--italic ft-helper-fontType--underline ft-helper-fontSize-body-M">
+        Italic + underline en la misma frase.
+    </p>
+</template>

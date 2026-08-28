@@ -1,0 +1,43 @@
+<!-- Markup canónico de .ft-helper-grid-* — subgrupo "Markup" del storybook -->
+
+<template data-story="Layout 8/4 (desde Lg)">
+    <div class="ft-layout-grid-flex">
+        <div class="ft-layout-grid-flex__row">
+            <div class="ft-layout-grid-flex__colXs-12 ft-helper-grid-width-8" style="background:#0050b3;color:#fff;padding:12px;">
+                12/12 en Xs · 8/12 desde Lg
+            </div>
+            <div class="ft-layout-grid-flex__colXs-12 ft-helper-grid-width-4" style="background:#e0e0e0;padding:12px;">
+                12/12 en Xs · 4/12 desde Lg
+            </div>
+        </div>
+    </div>
+</template>
+
+<template data-story="Layout 3-cols simétrico (desde Lg)">
+    <div class="ft-layout-grid-flex">
+        <div class="ft-layout-grid-flex__row">
+            <div class="ft-layout-grid-flex__colXs-12 ft-helper-grid-width-4" style="background:#0050b3;color:#fff;padding:12px;">A</div>
+            <div class="ft-layout-grid-flex__colXs-12 ft-helper-grid-width-4" style="background:#1664b0;color:#fff;padding:12px;">B</div>
+            <div class="ft-layout-grid-flex__colXs-12 ft-helper-grid-width-4" style="background:#2c75c4;color:#fff;padding:12px;">C</div>
+        </div>
+    </div>
+</template>
+
+<template data-story="grid-out-mo · sangrado al borde en móvil">
+    <div style="background:#fff;padding:0 16px;">
+        <p>Contenido normal con paddings del contenedor.</p>
+        <figure class="ft-helper-grid-out-mo">
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='180'><rect width='600' height='180' fill='%2399aabb'/></svg>"
+                 alt="Placeholder" style="width:100%;display:block;">
+            <figcaption style="padding:8px 0 0;font:13px/1.4 sans-serif;color:#666;">Esta imagen sangra al borde en móvil.</figcaption>
+        </figure>
+        <p>Contenido normal posterior.</p>
+    </div>
+</template>
+
+<template data-story="grid-width + spacer-inner (paddings forzados)">
+    <div class="ft-layout-grid-flex__colXs-12 ft-helper-grid-width-6 ft-helper-spacer-inner-md"
+         style="background:#f5f5f5;border:1px dashed #999;">
+        Bloque con grid-width-6 + spacer-inner-md. Los paddings vienen del override (3rem móvil · 6rem ≥768px), no del spacer base.
+    </div>
+</template>

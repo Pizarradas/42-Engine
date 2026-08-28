@@ -1,0 +1,38 @@
+<!-- Markup canónico de .ft-helper-branded — subgrupo "Markup" del storybook -->
+
+<template data-story="Titular branded">
+    <h1 class="ft-helper-branded ft-helper-fontSize-heading-XXL">
+        Apertura editorial con tipografía branded
+    </h1>
+</template>
+
+<template data-story="Capitular branded en párrafo">
+    <p class="ft-helper-fontSize-body-L">
+        <span class="ft-helper-branded ft-helper-fontSize-display-S" style="float:left;line-height:.85;padding:6px 8px 0 0;">L</span>
+        a tipografía branded firma el editorial. Solo el primer carácter usa la
+        fuente firma; el resto del párrafo mantiene la fuente del cuerpo.
+    </p>
+</template>
+
+<template data-story="Cita editorial branded">
+    <blockquote class="ft-helper-branded ft-helper-fontType--italic ft-helper-fontSize-heading-M ft-helper-fontColor-primary">
+        "El diseño consistente no es decoración: es una promesa de comportamiento."
+    </blockquote>
+</template>
+
+<template data-story="Sección completa branded (propagación a hijos)">
+    <article class="ft-helper-branded">
+        <h2 class="ft-helper-fontSize-heading-L">Bloque branded</h2>
+        <p class="ft-helper-fontSize-body-M">
+            Todo lo que vive dentro —incluso <strong>strong</strong>, <em>em</em> y
+            <a href="#">enlaces</a>— hereda la fuente branded por la regla
+            <code>* { @include Branded }</code> del SCSS.
+        </p>
+    </article>
+</template>
+
+<template data-story="Composición con fontColor">
+    <h2 class="ft-helper-branded ft-helper-fontSize-heading-L ft-helper-fontColor-primary">
+        Titular branded en color primario
+    </h2>
+</template>

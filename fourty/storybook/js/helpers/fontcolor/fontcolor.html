@@ -1,0 +1,41 @@
+<!-- Markup canónico de .ft-helper-fontColor-* — subgrupo "Markup" del storybook -->
+
+<template data-story="Primary sobre fondo claro">
+    <p class="ft-helper-fontColor-primary ft-helper-fontSize-body-L">
+        Texto en color primario de la marca activa.
+    </p>
+</template>
+
+<template data-story="Black (default)">
+    <p class="ft-helper-fontColor-black ft-helper-fontSize-body-L">
+        Negro absoluto.
+    </p>
+</template>
+
+<template data-story="DarkGrey para metadatos">
+    <p class="ft-helper-fontColor-darkGrey ft-helper-fontSize-body-S">
+        Texto secundario · pies de foto · timestamps.
+    </p>
+</template>
+
+<template data-story="Behavior: bg-black → blanco automático">
+    <!-- Cuando el texto vive dentro de un wrapper con `.ft-helper-bgColor-black`,
+         las clases brand y grey conmutan a blanco SIN tener que reescribirlas. -->
+    <div class="ft-helper-bgColor-background-darkGrey" style="padding:16px;background:#1a1a1a;">
+        <h3 class="ft-helper-fontColor-primary ft-helper-fontSize-heading-S">
+            primary → blanco por behavior bg-black
+        </h3>
+        <p class="ft-helper-fontColor-darkGrey ft-helper-fontSize-body-M">
+            darkGrey → blanco por behavior bg-black
+        </p>
+        <p class="ft-helper-fontColor-white ft-helper-fontSize-body-S">
+            white permanece blanco (no necesita behavior)
+        </p>
+    </div>
+</template>
+
+<template data-story="Composición fontSize + fontWeight + fontColor">
+    <h2 class="ft-helper-fontSize-heading-L ft-helper-fontWeight-700 ft-helper-fontColor-primary">
+        Titular bold en color primario
+    </h2>
+</template>

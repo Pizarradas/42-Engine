@@ -1,0 +1,37 @@
+<!-- Markup canónico de .ft-helper-img-* — subgrupo "Markup" del storybook -->
+
+<template data-story="Imagen responsive básica">
+    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='200'><rect width='800' height='200' fill='%2399aabb'/></svg>"
+         alt="Placeholder" class="ft-helper-img-rd">
+</template>
+
+<template data-story="Icono inline en párrafo">
+    <p style="font-size:16px;line-height:1.6;">
+        Compartir en
+        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32'><rect width='32' height='32' rx='6' fill='%2325d366'/></svg>"
+             alt="WhatsApp" class="ft-helper-img-intext">
+        o en
+        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32'><rect width='32' height='32' rx='6' fill='%231877f2'/></svg>"
+             alt="Facebook" class="ft-helper-img-intext">.
+    </p>
+</template>
+
+<template data-story="Badge en esquina superior derecha">
+    <div style="position:relative;width:200px;height:140px;background:#f5f5f5;border:1px solid #ddd;border-radius:4px;padding:14px;">
+        <p style="margin:0;">Card con badge anclado.</p>
+        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><circle cx='20' cy='20' r='18' fill='%23ef4444'/><text x='20' y='25' text-anchor='middle' font-family='sans-serif' font-size='14' fill='%23fff' font-weight='700'>3</text></svg>"
+             alt="3 notificaciones"
+             class="ft-helper-img-positioned ft-helper-img-positioned--top ft-helper-img-positioned--rgt"
+             style="width:40px;height:40px;margin:-12px -12px 0 0;">
+    </div>
+</template>
+
+<template data-story="Decoración inferior centrada">
+    <div style="position:relative;width:320px;padding:18px;background:#0050b3;color:#fff;border-radius:4px;overflow:hidden;">
+        <p style="margin:0 0 28px;">Bloque hero con elemento decorativo abajo-centro.</p>
+        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='6'><rect width='80' height='6' fill='%23ffffff'/></svg>"
+             alt="" aria-hidden="true"
+             class="ft-helper-img-positioned ft-helper-img-positioned--cnt ft-helper-img-positioned--bttm"
+             style="width:80px;height:6px;">
+    </div>
+</template>

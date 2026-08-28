@@ -1,0 +1,25 @@
+<!-- Markup canónico de .ft-helper-collapse — subgrupo "Markup" del storybook -->
+
+<template data-story="Oculto por defecto">
+    <div class="ft-helper-collapse" style="background:#f5f5f5;padding:14px;">
+        No me ves: sin <code>--show</code> el bloque es <code>display: none</code>.
+    </div>
+    <p style="margin:8px 0 0;color:#666;">↑ Arriba hay un bloque colapsado (no visible).</p>
+</template>
+
+<template data-story="Visible (con --show)">
+    <div class="ft-helper-collapse ft-helper-collapse--show" style="background:#f5f5f5;padding:14px;">
+        Visible: con el modificador <code>--show</code> el bloque es <code>display: block</code>.
+    </div>
+</template>
+
+<template data-story="Patrón A11y: trigger + target">
+    <!-- Trigger con aria-controls/aria-expanded; el toggle de --show lo hace el JS del consumidor. -->
+    <button type="button" data-collapse-trigger aria-controls="collapse-demo" aria-expanded="false"
+            style="padding:8px 12px;background:#0050b3;color:#fff;border:0;border-radius:3px;cursor:pointer;">
+        Mostrar detalle
+    </button>
+    <div id="collapse-demo" class="ft-helper-collapse" style="margin-top:10px;background:#f5f5f5;padding:14px;border-radius:3px;">
+        Detalle que aparece al pulsar el botón.
+    </div>
+</template>

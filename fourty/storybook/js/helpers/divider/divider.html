@@ -1,0 +1,36 @@
+<!-- Markup canónico de .ft-helper-divider* — subgrupo "Markup" del storybook -->
+
+<template data-story="Línea fina primary entre secciones">
+    <article>
+        <p>Texto antes.</p>
+        <hr class="ft-helper-divider-line ft-helper-divider-line--thin ft-helper-divider-line--primary">
+        <p>Texto después.</p>
+    </article>
+</template>
+
+<template data-story="Línea decorativa skew (asset SVG)">
+    <hr class="ft-helper-divider-line ft-helper-divider-line--skew">
+</template>
+
+<template data-story="Spacer editorial xlg + ocultar en desktop">
+    <div class="ft-helper-divider-spacer-xlg__hideDesktop" style="background:#f5f5f5;border-top:1px dashed #999;">
+        Padding vertical solo en mobile.
+    </div>
+</template>
+
+<template data-story="Img integrada · centrada y limitada en ancho">
+    <div class="ft-helper-divider-img--md ft-helper-divider-img--align-c">
+        <figure class="ft-img">
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='180'><rect width='400' height='180' fill='%2399aabb'/></svg>"
+                 alt="Placeholder" style="display:block;max-width:100%;height:auto;">
+        </figure>
+    </div>
+</template>
+
+<template data-story="Modificador --radius-tr-bl en bloque destacado">
+    <div class="ft-helper-divider--radius-tr-bl ft-helper-bgColor-primary ft-helper-spacer-inner-md">
+        <p class="ft-helper-fontColor-white ft-helper-fontSize-heading-S">
+            Bloque destacado con esquinas TR/BL redondeadas.
+        </p>
+    </div>
+</template>

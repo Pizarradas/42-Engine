@@ -1,0 +1,23 @@
+<!-- Markup canónico de .ft-helper-anchor-spacer — subgrupo "Markup" del storybook -->
+
+<template data-story="TOC + secciones con amortiguador">
+    <nav style="margin-bottom:12px;">
+        <strong>Índice:</strong>
+        <a href="#sec1" style="margin-left:8px;color:#0050b3;">Sección 1</a>
+        <a href="#sec2" style="margin-left:8px;color:#0050b3;">Sección 2</a>
+    </nav>
+    <section>
+        <h2 id="sec1" class="ft-helper-anchor-spacer">Sección 1</h2>
+        <p>Texto…</p>
+    </section>
+    <section>
+        <h2 id="sec2" class="ft-helper-anchor-spacer">Sección 2</h2>
+        <p>Texto…</p>
+    </section>
+</template>
+
+<template data-story="Sin amortiguador (referencia)">
+    <a href="#sin">Saltar a sección sin amortiguador</a>
+    <p style="height:400px;background:repeating-linear-gradient(45deg,rgba(0,0,0,.04) 0 6px,transparent 6px 12px);">Filler…</p>
+    <h2 id="sin">Sección sin amortiguador (queda tapada si hay header fijo)</h2>
+</template>

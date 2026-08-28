@@ -1,0 +1,26 @@
+<!-- Markup canónico de .ft-helper-overlay-modal — subgrupo "Markup" del storybook -->
+
+<template data-story="Backdrop simple">
+    <!-- En producción cubre el viewport entero (position: fixed) y atenúa lo que hay detrás. -->
+    <div class="ft-helper-overlay-modal ft-helper-overlay-modal--visible"></div>
+</template>
+
+<template data-story="Backdrop + modal · patrón canónico">
+    <!-- Combina el backdrop con un diálogo accesible por encima (z-index ≥ 101). -->
+    <div class="ft-helper-overlay-modal ft-helper-overlay-modal--visible"></div>
+    <div role="dialog" aria-modal="true" aria-labelledby="dlg-title"
+         style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;padding:18px;border-radius:6px;min-width:280px;z-index:101;box-shadow:0 8px 24px rgba(0,0,0,.25);">
+        <h3 id="dlg-title" style="margin:0 0 8px;">Diálogo</h3>
+        <p style="margin:0 0 14px;">Contenido del modal centrado encima del overlay.</p>
+        <div style="display:flex;gap:8px;justify-content:flex-end;">
+            <button type="button" class="ft-btn ft-btn--secondary">Cancelar</button>
+            <button type="button" class="ft-btn ft-btn--primary">Aceptar</button>
+        </div>
+    </div>
+</template>
+
+<template data-story="Backdrop oculto (estado default)">
+    <!-- Sin el modificador --visible el backdrop no se renderiza. -->
+    <div class="ft-helper-overlay-modal"></div>
+    <p style="margin:0;color:#666;">↑ Hay un overlay en el DOM pero está oculto (sin <code>--visible</code>).</p>
+</template>

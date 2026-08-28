@@ -1,0 +1,45 @@
+<!-- Markup canónico de .ft-helper-hide* — subgrupo "Markup" del storybook -->
+
+<template data-story="Ocultar en móvil (hide-mo)">
+    <div style="background:#f5f5f5;padding:14px;">
+        <p>Texto visible siempre.</p>
+        <p class="ft-helper-hide-mo">Este párrafo solo se ve a partir de 767px (oculto en móvil).</p>
+    </div>
+</template>
+
+<template data-story="Ocultar en desktop (hide-md)">
+    <div style="background:#f5f5f5;padding:14px;">
+        <p>Texto visible siempre.</p>
+        <p class="ft-helper-hide-md">Este párrafo solo se ve por debajo de 768px (oculto en tablet+).</p>
+    </div>
+</template>
+
+<template data-story="A11y · texto solo para screen readers">
+    <button type="button" class="ft-helper-display-flex ft-helper-display-flex--middle"
+            style="gap:6px;padding:8px 12px;background:#0050b3;color:#fff;border:0;border-radius:3px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+        </svg>
+        <span class="ft-helper-hide-screenReader">Cerrar diálogo</span>
+    </button>
+</template>
+
+<template data-story="hideTxt · imagen sustituyendo a texto">
+    <a href="#" class="ft-helper-hideTxt"
+       style="display:inline-block;width:120px;height:32px;background:url(data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='32'><text x='6' y='22' font-family='sans-serif' font-size='18' font-weight='700' fill='%230050b3'>42DS</text></svg>) no-repeat;">
+        42DS · Design System
+    </a>
+</template>
+
+<template data-story="Combinando hide-md + hide-mo (alternar layout móvil/desktop)">
+    <div style="background:#f5f5f5;padding:14px;">
+        <button type="button" class="ft-helper-hide-md" style="padding:8px 12px;background:#0050b3;color:#fff;border:0;border-radius:3px;">
+            ☰ Menú móvil
+        </button>
+        <nav class="ft-helper-hide-mo" style="display:flex;gap:10px;">
+            <a href="#" style="color:#0050b3;">Inicio</a>
+            <a href="#" style="color:#0050b3;">Sección</a>
+            <a href="#" style="color:#0050b3;">Contacto</a>
+        </nav>
+    </div>
+</template>

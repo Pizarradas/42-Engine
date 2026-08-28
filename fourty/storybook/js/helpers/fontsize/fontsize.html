@@ -1,0 +1,36 @@
+<!-- Markup canónico de .ft-helper-fontSize-* — subgrupo "Markup" del storybook -->
+
+<template data-story="Display L">
+    <h1 class="ft-helper-fontSize-display-L">Hero a pantalla completa</h1>
+</template>
+
+<template data-story="Heading XXL">
+    <h1 class="ft-helper-fontSize-heading-XXL">Titular destacado de portada</h1>
+</template>
+
+<template data-story="Heading L (default editorial)">
+    <h1 class="ft-helper-fontSize-heading-L">Apertura de noticia</h1>
+</template>
+
+<template data-story="Body M (default texto)">
+    <p class="ft-helper-fontSize-body-M">
+        Texto corrido por defecto del DS. Composable con
+        <code class="ft-helper-fontSize-body-M ft-helper-fontWeight-700">fontWeight</code>,
+        <code class="ft-helper-fontSize-body-M ft-helper-fontColor-primary">fontColor</code>
+        y <code class="ft-helper-fontSize-body-M ft-helper-fontType--italic">fontType</code>.
+    </p>
+</template>
+
+<template data-story="Body S small (densidad alta)">
+    <ul class="ft-helper-fontSize-body-S--small">
+        <li>Item denso en lista</li>
+        <li>Útil en dropdowns, captions, UI compacta</li>
+        <li>Line-height ajustado respecto a body-S regular</li>
+    </ul>
+</template>
+
+<template data-story="Fluid heading M (escala con viewport)">
+    <h2 class="ft-helper-fontSize-fluid-heading-M">
+        Este titular escala con clamp() sin breakpoints fijos.
+    </h2>
+</template>
