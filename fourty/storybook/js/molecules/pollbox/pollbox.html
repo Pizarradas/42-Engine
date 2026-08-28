@@ -1,0 +1,141 @@
+<!--
+  pollbox.html — códigos HTML originales de Poll Box (.ft-mol-pollbox)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS.
+  Markup tomado de fourty/molecules/molecule-pollbox.html (variantes Radio y
+  Checkbox). Verbatim. Porcentajes/anchura/votos los rellena el JS consumidor.
+  ─────────────────────────────────────────────────────────────────────────
+-->
+<template data-story="Radio (voto único)">
+  <div class="ft-helper-spacer-gap-y-md ft-mol-pollbox">
+    <form action="">
+      <h3 class="ft-mol-pollbox__title">
+        <span class="ft-helper-fontSize-body-XL ft-helper-fontWeight-700">¿Lorem ipsum dolor sit amet, consectetur adipiscing elit?</span>
+      </h3>
+      <ul class="ft-mol-pollbox__list">
+        <li class="ft-mol-pollbox__answer">
+          <div class="ft-radio">
+            <input id="radio-pollbox-1" type="radio" name="radio-pollbox" class="ft-radio__input" checked>
+            <label for="radio-pollbox-1" class="ft-radio__label ft-helper-fontWeight-500">Respuesta número 1</label>
+          </div>
+          <div class="ft-mol-pollbox__meter">
+            <span class="ft-mol-pollbox__bar"></span>
+            <span class="ft-mol-pollbox__percentage ft-helper-fontSize-body-S--small" data-percentage="Respuesta 1">XX%</span>
+          </div>
+          <span class="ft-helper-display-flex ft-helper-display-flex--end ft-helper-fontSize-body-S--small ft-helper-fontWeight-700 ft-mol-pollbox__totalvotes" data-votes="Respuesta 1">XX votos</span>
+        </li>
+        <li class="ft-mol-pollbox__answer ft-mol-pollbox__answer--is-voted">
+          <div class="ft-radio">
+            <input id="radio-pollbox-2" type="radio" name="radio-pollbox" class="ft-radio__input" disabled checked>
+            <label for="radio-pollbox-2" class="ft-radio__label ft-helper-fontWeight-500">Respuesta número 2</label>
+          </div>
+          <div class="ft-mol-pollbox__meter">
+            <span class="ft-mol-pollbox__bar"></span>
+            <span class="ft-mol-pollbox__percentage ft-helper-fontSize-body-S--small" data-percentage="Respuesta 2">XX%</span>
+          </div>
+          <span class="ft-helper-display-flex ft-helper-display-flex--end ft-helper-fontSize-body-S--small ft-helper-fontWeight-700 ft-mol-pollbox__totalvotes" data-votes="Respuesta 2">XX votos</span>
+        </li>
+        <li class="ft-mol-pollbox__answer">
+          <div class="ft-radio">
+            <input id="radio-pollbox-3" type="radio" name="radio-pollbox" class="ft-radio__input">
+            <label for="radio-pollbox-3" class="ft-radio__label ft-helper-fontWeight-500">Respuesta número 3</label>
+          </div>
+          <div class="ft-mol-pollbox__meter">
+            <span class="ft-mol-pollbox__bar"></span>
+            <span class="ft-mol-pollbox__percentage ft-helper-fontSize-body-S--small" data-percentage="Respuesta 3">XX%</span>
+          </div>
+          <span class="ft-helper-display-flex ft-helper-display-flex--end ft-helper-fontSize-body-S--small ft-helper-fontWeight-700 ft-mol-pollbox__totalvotes" data-votes="Respuesta 3">XX votos</span>
+        </li>
+        <li class="ft-mol-pollbox__answer">
+          <div class="ft-radio">
+            <input id="radio-pollbox-4" type="radio" name="radio-pollbox" class="ft-radio__input">
+            <label for="radio-pollbox-4" class="ft-radio__label ft-helper-fontWeight-500" data-percentage="Respuesta 4">Respuesta número 4</label>
+          </div>
+          <div class="ft-mol-pollbox__meter">
+            <span class="ft-mol-pollbox__bar"></span>
+            <span class="ft-mol-pollbox__percentage ft-helper-fontSize-body-S--small">XX%</span>
+          </div>
+          <span class="ft-helper-display-flex ft-helper-display-flex--end ft-helper-fontSize-body-S--small ft-helper-fontWeight-700 ft-mol-pollbox__totalvotes" data-votes="Respuesta 4">XX votos</span>
+        </li>
+      </ul>
+      <div class="ft-helper-display-flex ft-helper-display-flex--end ft-mol-pollbox__sum">
+        <span class="ft-helper-fontSize-body-M--small ft-helper-fontWeight-700">Total de votos: <span data-percentage="Total votos">XX</span></span>
+      </div>
+      <div class="ft-mol-pollbox__msg">
+        <span class="ft-text-alert ft-text-alert--is-warning ft-text-alert--is-bordered">
+          <span class="ft-helper-fontSize-body-M ft-helper-fontWeight-700">Ya has votado esta encuesta</span>
+        </span>
+      </div>
+      <div class="ft-mol-btnGroup ft-mol-btnGroup--rgt">
+        <button type="submit" class="ft-btn ft-btn--secondary ft-btn--md">Votar</button>
+      </div>
+    </form>
+  </div>
+</template>
+
+<template data-story="Checkbox (multi-voto)">
+  <div class="ft-helper-spacer-gap-y-md ft-mol-pollbox">
+    <form action="">
+      <h3 class="ft-mol-pollbox__title">
+        <span class="ft-helper-fontSize-body-XL ft-helper-fontWeight-700">¿Lorem ipsum dolor sit amet, consectetur adipiscing elit?</span>
+      </h3>
+      <ul class="ft-mol-pollbox__list">
+        <li class="ft-mol-pollbox__answer">
+          <div class="ft-check">
+            <input id="checkbox01" type="checkbox" class="ft-check__input">
+            <label for="checkbox01" class="ft-check__label ft-helper-fontWeight-500">Checkbox 1</label>
+          </div>
+          <div class="ft-mol-pollbox__meter">
+            <span class="ft-mol-pollbox__bar" style="width: 100%;"></span>
+            <span class="ft-mol-pollbox__percentage ft-helper-fontSize-body-S--small" data-percentage="Respuesta 1">XX%</span>
+          </div>
+          <span class="ft-helper-display-flex ft-helper-display-flex--end ft-helper-fontSize-body-S--small ft-helper-fontWeight-700 ft-mol-pollbox__totalvotes" data-votes="Respuesta 1">XX votos</span>
+        </li>
+        <li class="ft-mol-pollbox__answer ft-mol-pollbox__answer--is-voted">
+          <div class="ft-check">
+            <input id="checkbox02" type="checkbox" class="ft-check__input">
+            <label for="checkbox02" class="ft-check__label ft-helper-fontWeight-500">Checkbox 2</label>
+          </div>
+          <div class="ft-mol-pollbox__meter">
+            <span class="ft-mol-pollbox__bar" style="width: 100%;"></span>
+            <span class="ft-mol-pollbox__percentage ft-helper-fontSize-body-S--small" data-percentage="Respuesta 2">XX%</span>
+          </div>
+          <span class="ft-helper-display-flex ft-helper-display-flex--end ft-helper-fontSize-body-S--small ft-helper-fontWeight-700 ft-mol-pollbox__totalvotes" data-votes="Respuesta 2">XX votos</span>
+        </li>
+        <li class="ft-mol-pollbox__answer">
+          <div class="ft-check">
+            <input id="checkbox03" type="checkbox" class="ft-check__input">
+            <label for="checkbox03" class="ft-check__label ft-helper-fontWeight-500">Checkbox 3</label>
+          </div>
+          <div class="ft-mol-pollbox__meter">
+            <span class="ft-mol-pollbox__bar" style="width: 100%;"></span>
+            <span class="ft-mol-pollbox__percentage ft-helper-fontSize-body-S--small" data-percentage="Respuesta 3">XX%</span>
+          </div>
+          <span class="ft-helper-display-flex ft-helper-display-flex--end ft-helper-fontSize-body-S--small ft-helper-fontWeight-700 ft-mol-pollbox__totalvotes" data-votes="Respuesta 3">XX votos</span>
+        </li>
+        <li class="ft-mol-pollbox__answer">
+          <div class="ft-check">
+            <input id="checkbox04" type="checkbox" class="ft-check__input">
+            <label for="checkbox04" class="ft-check__label ft-helper-fontWeight-500">Checkbox 4</label>
+          </div>
+          <div class="ft-mol-pollbox__meter">
+            <span class="ft-mol-pollbox__bar" style="width: 100%;"></span>
+            <span class="ft-mol-pollbox__percentage ft-helper-fontSize-body-S--small">XX%</span>
+          </div>
+          <span class="ft-helper-display-flex ft-helper-display-flex--end ft-helper-fontSize-body-S--small ft-helper-fontWeight-700 ft-mol-pollbox__totalvotes" data-votes="Respuesta 4">XX votos</span>
+        </li>
+      </ul>
+      <div class="ft-helper-display-flex ft-helper-display-flex--end ft-mol-pollbox__sum">
+        <span class="ft-helper-fontSize-body-M--small ft-helper-fontWeight-700">Total de votos: <span data-percentage="Total votos">XX</span></span>
+      </div>
+      <div class="ft-mol-pollbox__msg">
+        <span class="ft-text-alert ft-text-alert--is-warning ft-text-alert--is-bordered">
+          <span class="ft-helper-fontSize-body-M ft-helper-fontWeight-700">Ya has votado esta encuesta</span>
+        </span>
+      </div>
+      <div class="ft-mol-btnGroup ft-mol-btnGroup--rgt">
+        <button type="submit" class="ft-btn ft-btn--secondary ft-btn--md">Votar</button>
+      </div>
+    </form>
+  </div>
+</template>

@@ -1,0 +1,27 @@
+<!--
+  popover.html — código HTML original de Popover (.ft-mol-popover)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS.
+  Markup tomado de fourty/molecules/molecule-popover.html. Verbatim, en su
+  ESTADO REAL cerrado: el __content lleva .ft-helper-hide (el controller JS la
+  quita al pulsar el disparador). En el Storybook el bloque se ve cerrado aquí
+  y "forzado visible" en la story Base.
+  ─────────────────────────────────────────────────────────────────────────
+-->
+<template data-story="Base (cerrado · .ft-helper-hide)">
+  <div class="ft-mol-popover">
+    <button type="button" name="go-to" class="ft-btn-nav ft-btn-nav--favorite ft-btn-nav--bordered ft-popover-open-trigger" data-target="trigger2" title="link title">
+      <span class="ft-btn-nav__icon"></span>
+    </button>
+    <div class="ft-mol-popover__content ft-mol-popover__content--top ft-popover-helper ft-helper-hide" id="trigger2">
+      <button type="button" name="close-button" class="ft-btn-nav ft-btn-nav--close ft-popover-close-trigger" title="title text">
+        <span class="ft-btn-nav__text">Cerrar</span>
+        <span class="ft-btn-nav__icon"></span>
+      </button>
+      <p class="ft-mol-popover__text ft-helper-fontSize-body-L">Noticia guardada en tu perfil</p>
+      <p class="ft-mol-popover__text">
+        <a href="#" class="ft-link ft-link--primary" title="title text">Ver noticias guardadas</a>
+      </p>
+    </div>
+  </div>
+</template>

@@ -1,0 +1,40 @@
+<!--
+  promoHeader.html — códigos HTML originales de Promo Header (.ft-mol-promoHeader)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS:
+  añade / edita / quita bloques <template data-story="Nombre"> con HTML PLANO
+  (clases .ft-* reales). El motor los publica en el subgrupo "Markup".
+  Markup tomado de fourty/molecules/molecule-promoHeader.html.
+  Nota: el texto es blanco → se envuelve en una franja de color para que sea legible.
+  ─────────────────────────────────────────────────────────────────────────
+-->
+<template data-story="Base">
+  <div class="ft-helper-bgColor-primary">
+    <div class="ft-mol-promoHeader">
+      <p class="ft-mol-promoHeader__text ft-helper-fontSize-body-M ft-helper-fontColor-white">Suscríbete a un precio único para siempre <span class="ft-helper-fontWeight-700">50% dto.</span></p>
+      <div class="ft-mol-promoHeader__promo ft-helper-bgColor-black"><span class="ft-helper-fontWeight-700 ft-helper-fontSize-body-M">BLACK FRIDAY</span></div>
+      <picture>
+        <source media="(min-width: 768px)" srcset="https://estaticos-cdn.epe.es/epe/piano/promoHeader-Web.svg">
+        <source media="(min-width: 250px)" srcset="https://estaticos-cdn.epe.es/epe/piano/promoHeader-Mobile.svg" size="(min-width: 250px) 30px">
+        <img src="https://estaticos-cdn.epe.es/epe/piano/promoHeader-Web.svg" class="ft-helper-img-rd" loading="lazy" alt="alt text" title="title text">
+      </picture>
+      <a href="#" class="ft-link ft-link--block" title="link title" target="_self">Más información</a>
+    </div>
+  </div>
+</template>
+
+<!-- Posicional: --sticky añade fondo blanco + triángulo (:before) bajo 768px -->
+<template data-story="Sticky (--sticky)">
+  <div class="ft-helper-bgColor-primary">
+    <div class="ft-mol-promoHeader ft-mol-promoHeader--sticky">
+      <p class="ft-mol-promoHeader__text ft-helper-fontSize-body-M ft-helper-fontColor-white">Suscríbete a un precio único para siempre <span class="ft-helper-fontWeight-700">50% dto.</span></p>
+      <div class="ft-mol-promoHeader__promo ft-helper-bgColor-black"><span class="ft-helper-fontWeight-700 ft-helper-fontSize-body-M">BLACK FRIDAY</span></div>
+      <picture>
+        <source media="(min-width: 768px)" srcset="https://estaticos-cdn.epe.es/epe/piano/promoHeader-Web.svg">
+        <source media="(min-width: 250px)" srcset="https://estaticos-cdn.epe.es/epe/piano/promoHeader-Mobile.svg" size="(min-width: 250px) 30px">
+        <img src="https://estaticos-cdn.epe.es/epe/piano/promoHeader-Web.svg" class="ft-helper-img-rd" loading="lazy" alt="alt text" title="title text">
+      </picture>
+      <a href="#" class="ft-link ft-link--block" title="link title" target="_self">Más información</a>
+    </div>
+  </div>
+</template>
