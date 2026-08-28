@@ -1,0 +1,48 @@
+<!--
+  subtitle.html — códigos HTML originales de Subtitle (.ft-mol-subtitle)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS:
+  añade / edita / quita bloques <template data-story="Nombre"> con HTML PLANO
+  (clases .ft-* reales). El motor los publica en el subgrupo "Markup".
+  Markup tomado de fourty/molecules/molecule-subtitle.html.
+  Nota: la viñeta (:before) solo aparece cuando hay VARIOS subtítulos hermanos.
+  ─────────────────────────────────────────────────────────────────────────
+-->
+<template data-story="Base (contenido rico)">
+  <h2 class="ft-mol-subtitle ft-helper-fontColor-quaternary">
+    Lorem Ipsum is simply dummy <span class="ft-helper-fontWeight-800">text of the printing and typesetting industry</span>.
+    <i>Lorem Ipsum </i> has been the industry's
+    <a href="#" class="ft-link ft-link--decoration" title="title text" target="_self">standard dummy text ever </a>since the 1500s, when an unknown printer took a galley of type and
+    scrambled it to make a type specimen book <span class="ft-text--linethrough"> desde hacía una semana, </span>
+  </h2>
+</template>
+
+<template data-story="Centrada (--isCenter)">
+  <h2 class="ft-mol-subtitle ft-mol-subtitle--isCenter ft-helper-fontColor-quaternary">
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry, standard dummy text ever since the 1500s.
+  </h2>
+</template>
+
+<!-- Varios subtítulos: aquí SÍ aparece la viñeta (:not(:only-of-type)) -->
+<template data-story="Lista simple (--listSimple)">
+  <h2 class="ft-mol-subtitle ft-mol-subtitle--listSimple ft-helper-fontColor-quaternary">
+    Lorem Ipsum is simply dummy <span class="ft-helper-fontWeight-800">text of the printing and typesetting industry</span>.
+    <a href="#" class="ft-link ft-link--decoration" title="title text" target="_self">standard dummy text ever </a>since the 1500s.
+  </h2>
+  <h2 class="ft-mol-subtitle ft-mol-subtitle--listSimple ft-helper-fontColor-quaternary">
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+  </h2>
+</template>
+
+<!-- Familia lista: compone con .ft-list (ítems .ft-list__item) -->
+<template data-story="Lista (--list .ft-list--primary)">
+  <div class="ft-mol-subtitle ft-mol-subtitle--list ft-list ft-list--primary">
+    <h2 class="ft-list__item ft-helper-fontColor-quaternary">
+      Lorem Ipsum is simply dummy <span class="ft-helper-fontWeight-600">text of the printing and typesetting industry</span>.
+      <a href="#" class="ft-list__link" title="title text" target="_self">standard dummy text ever </a>since the 1500s.
+    </h2>
+    <h2 class="ft-list__item ft-helper-fontColor-quaternary">
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.
+    </h2>
+  </div>
+</template>

@@ -1,0 +1,78 @@
+<!--
+  table.html — códigos HTML originales de Table (.ft-mol-table)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS:
+  añade / edita / quita bloques <template data-story="Nombre"> con HTML PLANO
+  (clases .ft-* reales). El motor los publica en el subgrupo "Markup".
+  Markup tomado de fourty/molecules/molecule-table.html.
+  ─────────────────────────────────────────────────────────────────────────
+-->
+<template data-story="Base">
+  <div class="ft-mol-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Partido</th>
+          <th class="ft-mol-table__th--align-right">Escaños</th>
+          <th class="ft-mol-table__th--align-right">2019</th>
+          <th class="ft-mol-table__th--align-right">Nº votos</th>
+          <th class="ft-mol-table__th--align-right">% voto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="ft-mol-table__tr ft-mol-table__tr--odd">
+          <th class="ft-mol-table__th"><abbr title="Partido Socialista Obrero Español"><strong>PSOE</strong></abbr><br>Partido Socialista Obrero Español</th>
+          <td class="ft-mol-table__td ft-mol-table__td--align-right"><strong>140</strong><br>140</td>
+          <td class="ft-mol-table__td ft-mol-table__td--align-right ft-mol-table__td--low"><strong>3.215.365</strong><br>3.215.365</td>
+          <td class="ft-mol-table__td ft-mol-table__td--align-right"><strong>3.215.365</strong><br>3.215.365</td>
+          <td class="ft-mol-table__td ft-mol-table__td--align-right"><strong>40%</strong><br>40%</td>
+        </tr>
+        <tr class="ft-mol-table__tr ft-mol-table__tr--even">
+          <th class="ft-mol-table__th"><abbr title="Partido Popular"><strong>PP</strong></abbr><br>Partido Popular</th>
+          <td class="ft-mol-table__td ft-mol-table__td--align-right">120</td>
+          <td class="ft-mol-table__td ft-mol-table__td--align-right ft-mol-table__td--low">2.890.112</td>
+          <td class="ft-mol-table__td ft-mol-table__td--align-right">2.890.112</td>
+          <td class="ft-mol-table__td ft-mol-table__td--align-right">35%</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th>Totales</th>
+          <td class="ft-mol-table__td ft-mol-table__td--align-right">330</td>
+          <td class="ft-mol-table__td ft-mol-table__td--align-right ft-mol-table__td--low">12.303.330</td>
+          <td class="ft-mol-table__td ft-mol-table__td--align-right">12.303.330</td>
+          <td class="ft-mol-table__td ft-mol-table__td--align-right">100%</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</template>
+
+<template data-story="Primary (--primary)">
+  <div class="ft-mol-table ft-mol-table--primary">
+    <table>
+      <thead>
+        <tr>
+          <th>Equipo</th>
+          <th class="ft-mol-table__th--align-right">PJ</th>
+          <th class="ft-mol-table__th--align-right">G</th>
+          <th class="ft-mol-table__th--align-right">Pts</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="ft-mol-table__tr ft-mol-table__tr--odd">
+          <th class="ft-mol-table__th">FC Barcelona</th>
+          <td class="ft-mol-table__td ft-mol-table__td--align-right">10</td>
+          <td class="ft-mol-table__td ft-mol-table__td--align-right">8</td>
+          <td class="ft-mol-table__td ft-mol-table__td--align-right">25</td>
+        </tr>
+        <tr class="ft-mol-table__tr ft-mol-table__tr--even">
+          <th class="ft-mol-table__th">Real Madrid</th>
+          <td class="ft-mol-table__td ft-mol-table__td--align-right">10</td>
+          <td class="ft-mol-table__td ft-mol-table__td--align-right">7</td>
+          <td class="ft-mol-table__td ft-mol-table__td--align-right">23</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</template>

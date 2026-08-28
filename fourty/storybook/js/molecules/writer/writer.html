@@ -1,0 +1,73 @@
+<!--
+  writer.html — códigos HTML originales de Writer (.ft-mol-writer)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS:
+  añade / edita / quita bloques <template data-story="Nombre"> con HTML PLANO
+  (clases .ft-* reales). El motor los publica en el subgrupo "Markup".
+  Markup tomado de fourty/molecules/molecule-writer.html.
+  ─────────────────────────────────────────────────────────────────────────
+-->
+<template data-story="Base">
+  <div class="ft-mol-writer">
+    <div class="ft-mol-writer__group">
+      <div class="ft-mol-writer__item">
+        <img src="/cds-statics/assets/img/templates/ft-mol-writer.png" alt="Francisco de Sert" width="60" height="60" class="ft-helper-img-rd">
+        <div class="ft-mol-writer__title">
+          <p class="ft-mol-writer__titleOpinion ft-helper-fontSize-body-S--small">
+            <a href="#" class="ft-link ft-helper-fontColor-black" title="link title" target="_self">Sección de la redacción</a>
+          </p>
+          <p class="ft-mol-writer__titleOpinion ft-helper-fontSize-body-M--small ft-helper-fontColor-primary">Francisco de Sert, conde de Sert</p>
+          <p class="ft-mol-writer__titleOpinion ft-helper-fontSize-body-S--small ft-helper-fontColor-quaternary">Redactor Jefe de...</p>
+        </div>
+      </div>
+      <div class="ft-mol-writer__item">
+        <img src="/cds-statics/assets/img/templates/ft-mol-writer.png" alt="Francisco de Sert" width="60" height="60" class="ft-helper-img-rd">
+        <div class="ft-mol-writer__title">
+          <p class="ft-mol-writer__titleOpinion ft-helper-fontSize-body-S--small ft-helper-fontColor-quaternary">
+            <a href="#" class="ft-link ft-helper-fontColor-primary" title="link title" target="_self">Francisco de Sert, conde de Sert</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="ft-helper-divider-spacer-xxs ft-helper-divider-line ft-helper-divider-line--thin ft-helper-divider-line--mediumGrey"></div>
+  </div>
+</template>
+
+<!-- --basis: tarjeta centrada con sello de confianza y fuente -->
+<template data-story="Basis (--basis)">
+  <div class="ft-mol-writer ft-mol-writer--basis">
+    <div class="ft-mol-writer__item">
+      <img src="/cds-statics/assets/img/templates/ft-mol-writer--basis.png" alt="Albert Sáez" width="60" height="60" class="ft-mol-writer__image ft-helper-img-rd">
+      <div class="ft-mol-writer__title">
+        <p class="ft-mol-writer__titleOpinion ft-helper-fontSize-heading-XXS ft-helper-fontColor-primary">Albert Sáez</p>
+        <p class="ft-mol-writer__titleOpinion ft-helper-fontSize-body-L--small ft-helper-fontColor-quaternary">Director de El Periódico</p>
+      </div>
+      <div class="ft-trust">
+        <img src="/cds-statics/assets/img/logos/logo-trust.svg" alt="más información" width="13" height="13" class="ft-helper-img-rd">Por qué confiar en El Periódico
+        <a href="#" class="ft-link ft-link--block" title="link title" target="_self">Más información</a>
+      </div>
+      <div class="ft-mol-writer__source">
+        <p class="ft-mol-writer__sourceTitle">Fuente: <a href="#" class="ft-link ft-link--decoration">El Periódico</a></p>
+      </div>
+    </div>
+  </div>
+</template>
+
+<!-- --side: autores en fila + fecha -->
+<template data-story="Side (--side)">
+  <div class="ft-mol-writer ft-mol-writer--side">
+    <div class="ft-mol-writer__item">
+      <div class="ft-mol-writer__title">
+        <p class="ft-mol-writer__titleOpinion ft-helper-fontSize-body-L--small ft-helper-fontColor-primary">Albert Sáez</p>
+      </div>
+    </div>
+    <div class="ft-mol-writer__item">
+      <div class="ft-mol-writer__title">
+        <p class="ft-mol-writer__titleOpinion ft-helper-fontSize-body-L--small ft-helper-fontColor-primary">Lucía Méndez</p>
+      </div>
+    </div>
+    <div class="ft-date">
+      <time class="ft-date__text" datetime="2022-09-05T13:04"><span class="ft-date__textPlace">Barcelona </span><span class="ft-date__textTime">05 SEPT 2022 - 13:04 CET</span></time>
+    </div>
+  </div>
+</template>

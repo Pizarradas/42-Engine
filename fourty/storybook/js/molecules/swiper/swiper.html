@@ -1,0 +1,59 @@
+<!--
+  swiper.html — códigos HTML originales de Swiper (.ft-mol-swiper)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS:
+  añade / edita / quita bloques <template data-story="Nombre"> con HTML PLANO
+  (clases .ft-* reales). El motor los publica en el subgrupo "Markup".
+  Markup tomado de fourty/molecules/molecule-swiper.html.
+  Nota: el deslizamiento lo aporta Swiper (no cargado aquí). El SCSS colapsa
+  (max-height:0) los slides sin .swiper-slide-active, así que el primero la lleva
+  estática para ser visible — igual que el estado activo de Swiper en runtime.
+  ─────────────────────────────────────────────────────────────────────────
+-->
+<template data-story="Base (galería)">
+  <div class="ft-mol-swiper" role="region" aria-roledescription="carrusel" aria-labelledby="swiperGalleryTitleMk">
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide swiper-slide-active">
+          <figure class="ft-img">
+            <picture>
+              <img src="/cds-statics/assets/img/banners/ft-template-swiper-gallery-desktop--slide-01.jpg" class="ft-helper-img-rd" loading="lazy" alt="alt text" title="title text" width="250" height="135">
+            </picture>
+          </figure>
+          <h2 class="ft-helper-hide">Portada (Titular imagen)</h2>
+        </div>
+        <div class="swiper-slide">
+          <figure class="ft-img">
+            <picture>
+              <img src="/cds-statics/assets/img/banners/ft-template-swiper-gallery-desktop--slide-02.jpg" class="ft-helper-img-rd" loading="lazy" alt="alt text" title="title text" width="250" height="135">
+            </picture>
+          </figure>
+          <h2 class="ft-helper-hide">La jornada 7 de LaLiga Santander, en imágenes</h2>
+        </div>
+        <div class="swiper-slide">
+          <div class="ft-embed">
+            <div class="ft-embed__item">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/beY9rSxv_qw" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+          <h2 class="ft-helper-hide">Vídeo de ejemplo</h2>
+        </div>
+      </div>
+      <button class="swiper-button-next"></button>
+      <button class="swiper-button-prev"></button>
+    </div>
+    <div class="ft-mol-swiper--info">
+      <h3 id="swiperGalleryTitleMk" class="ft-mol-swiper--title ft-helper-fontSize-heading-XXS">Titular de la imagen</h3>
+      <div class="ft-mol-swiper--nav">
+        <div class="ft-mol-number-highlighted">
+          <span class="ft-mol-number-highlighted__item">1</span>
+          <span class="ft-mol-number-highlighted__item">3</span>
+        </div>
+        <div class="ft-mol-swiper--nav__btns">
+          <button type="button" name="left-button" class="ft-btn-nav ft-btn-nav--left ft-btn-nav--bordered"><span class="ft-btn-nav__text">Izquierda</span><span class="ft-btn-nav__icon"></span></button>
+          <button type="button" name="right-button" class="ft-btn-nav ft-btn-nav--right ft-btn-nav--bordered"><span class="ft-btn-nav__text">Derecha</span><span class="ft-btn-nav__icon"></span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

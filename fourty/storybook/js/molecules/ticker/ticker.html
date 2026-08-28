@@ -1,0 +1,50 @@
+<!--
+  ticker.html — códigos HTML originales de Ticker (.ft-mol-ticker)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS:
+  añade / edita / quita bloques <template data-story="Nombre"> con HTML PLANO
+  (clases .ft-* reales). El motor los publica en el subgrupo "Markup".
+  Markup tomado de fourty/molecules/molecule-ticker.html.
+  Nota: el desplazamiento es animación CSS (@keyframes move).
+  ─────────────────────────────────────────────────────────────────────────
+-->
+<template data-story="Primary (--is-primary)">
+  <div class="ft-mol-ticker ft-mol-ticker--is-primary" role="region" aria-label="Última hora">
+    <span class="ft-mol-ticker__heading" id="tickerHeadingP">Última hora</span>
+    <div class="ft-mol-ticker__scroll" aria-labelledby="tickerHeadingP" aria-live="polite" aria-atomic="true">
+      <a href="#" class="ft-mol-ticker__item" title="title text" target="_self"><strong class="ft-mol-ticker__txt">Avisos por vientos de hasta 100 km/h, vuelos y trenes cancelados e incidencias en toda España.</strong></a>
+      <a href="#" class="ft-mol-ticker__item" title="title text" target="_self"><strong class="ft-mol-ticker__txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam id nisi id ipsum lobortis pretium.</strong></a>
+    </div>
+  </div>
+</template>
+
+<template data-story="Secondary (--is-secondary)">
+  <div class="ft-mol-ticker ft-mol-ticker--is-secondary" role="region" aria-label="Última hora">
+    <span class="ft-mol-ticker__heading" id="tickerHeadingS">Última hora</span>
+    <div class="ft-mol-ticker__scroll" aria-labelledby="tickerHeadingS" aria-live="polite" aria-atomic="true">
+      <a href="#" class="ft-mol-ticker__item" title="title text" target="_self"><strong class="ft-mol-ticker__txt">Avisos por vientos de hasta 100 km/h, vuelos y trenes cancelados e incidencias en toda España.</strong></a>
+      <a href="#" class="ft-mol-ticker__item" title="title text" target="_self"><strong class="ft-mol-ticker__txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong></a>
+    </div>
+  </div>
+</template>
+
+<template data-story="Tertiary (--is-tertiary)">
+  <div class="ft-mol-ticker ft-mol-ticker--is-tertiary" role="region" aria-label="Última hora">
+    <span class="ft-mol-ticker__heading" id="tickerHeadingT">Última hora</span>
+    <div class="ft-mol-ticker__scroll" aria-labelledby="tickerHeadingT" aria-live="polite" aria-atomic="true">
+      <a href="#" class="ft-mol-ticker__item" title="title text" target="_self"><strong class="ft-mol-ticker__txt">Avisos por vientos de hasta 100 km/h, vuelos y trenes cancelados.</strong></a>
+      <a href="#" class="ft-mol-ticker__item" title="title text" target="_self"><strong class="ft-mol-ticker__txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong></a>
+    </div>
+  </div>
+</template>
+
+<template data-story="Es Noticia (--news)">
+  <div class="ft-mol-ticker ft-mol-ticker--news" role="region" aria-label="Es Noticia">
+    <span class="ft-mol-ticker__heading" id="tickerNewsHeading">Es Noticia:</span>
+    <div class="ft-mol-ticker__scroll" aria-labelledby="tickerNewsHeading" aria-live="polite" aria-atomic="true">
+      <a href="#" class="ft-mol-ticker__item" title="title text" target="_self"><strong class="ft-mol-ticker__txt">Lorem ipsum dolor sit amet</strong></a>
+      <a href="#" class="ft-mol-ticker__item" title="title text" target="_self"><strong class="ft-mol-ticker__txt">Lorem ipsum dolor sit amet</strong></a>
+      <a href="#" class="ft-mol-ticker__item" title="title text" target="_self"><strong class="ft-mol-ticker__txt">Lorem ipsum dolor sit amet</strong></a>
+    </div>
+  </div>
+</template>

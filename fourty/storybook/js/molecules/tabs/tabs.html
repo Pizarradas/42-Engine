@@ -1,0 +1,74 @@
+<!--
+  tabs.html — códigos HTML originales de Tabs (.ft-mol-tabs)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS:
+  añade / edita / quita bloques <template data-story="Nombre"> con HTML PLANO
+  (clases .ft-* reales). El motor los publica en el subgrupo "Markup".
+  Markup tomado de fourty/molecules/molecule-tabs.html.
+  Nota: el cambio de pestaña lo gestiona un JS consumidor; aquí el estado es estático
+  (tab con aria-selected="true", paneles inactivos con [hidden]).
+  ─────────────────────────────────────────────────────────────────────────
+-->
+<template data-story="Base">
+  <section class="ft-mol-tabs">
+    <div class="ft-mol-tabs__list" role="tablist" aria-label="Secciones del contenido" aria-orientation="horizontal">
+      <button class="ft-mol-tabs__tab" type="button" role="tab" aria-selected="true">Sección 1</button>
+      <button class="ft-mol-tabs__tab" type="button" role="tab">Sección 2</button>
+      <button class="ft-mol-tabs__tab" type="button" role="tab">Sección 3</button>
+    </div>
+    <span class="ft-mol-tabs__bar"></span>
+    <div class="ft-mol-tabs__contents">
+      <div class="ft-mol-tabs__content" role="tabpanel" tabindex="0">Contenido de la sección 1</div>
+      <div class="ft-mol-tabs__content" role="tabpanel" hidden>Contenido de la sección 2</div>
+      <div class="ft-mol-tabs__content" role="tabpanel" hidden>Contenido de la sección 3</div>
+    </div>
+  </section>
+</template>
+
+<template data-story="Píldoras (--pills)">
+  <section class="ft-mol-tabs ft-mol-tabs--pills">
+    <div class="ft-mol-tabs__list" role="tablist" aria-label="Secciones">
+      <button class="ft-mol-tabs__tab" type="button" role="tab" aria-selected="true">Sección 1</button>
+      <button class="ft-mol-tabs__tab" type="button" role="tab">Sección 2</button>
+      <button class="ft-mol-tabs__tab" type="button" role="tab">Sección 3</button>
+    </div>
+    <span class="ft-mol-tabs__bar"></span>
+    <div class="ft-mol-tabs__contents">
+      <div class="ft-mol-tabs__content" role="tabpanel" tabindex="0">Contenido de la sección 1</div>
+      <div class="ft-mol-tabs__content" role="tabpanel" hidden>Contenido de la sección 2</div>
+      <div class="ft-mol-tabs__content" role="tabpanel" hidden>Contenido de la sección 3</div>
+    </div>
+  </section>
+</template>
+
+<template data-story="Cápsula (--capsuled)">
+  <section class="ft-mol-tabs ft-mol-tabs--capsuled">
+    <div class="ft-mol-tabs__list" role="tablist" aria-label="Secciones">
+      <button class="ft-mol-tabs__tab" type="button" role="tab" aria-selected="true">Sección 1</button>
+      <button class="ft-mol-tabs__tab" type="button" role="tab">Sección 2</button>
+      <button class="ft-mol-tabs__tab" type="button" role="tab">Sección 3</button>
+    </div>
+    <span class="ft-mol-tabs__bar"></span>
+    <div class="ft-mol-tabs__contents">
+      <div class="ft-mol-tabs__content" role="tabpanel" tabindex="0">Contenido de la sección 1</div>
+      <div class="ft-mol-tabs__content" role="tabpanel" hidden>Contenido de la sección 2</div>
+      <div class="ft-mol-tabs__content" role="tabpanel" hidden>Contenido de la sección 3</div>
+    </div>
+  </section>
+</template>
+
+<template data-story="Vertical (--vertical)">
+  <section class="ft-mol-tabs ft-mol-tabs--vertical">
+    <div class="ft-mol-tabs__list" role="tablist" aria-label="Secciones" aria-orientation="vertical">
+      <button class="ft-mol-tabs__tab" type="button" role="tab" aria-selected="true">Sección 1</button>
+      <button class="ft-mol-tabs__tab" type="button" role="tab">Sección 2</button>
+      <button class="ft-mol-tabs__tab" type="button" role="tab">Sección 3</button>
+    </div>
+    <span class="ft-mol-tabs__bar"></span>
+    <div class="ft-mol-tabs__contents">
+      <div class="ft-mol-tabs__content" role="tabpanel" tabindex="0">Contenido de la sección 1</div>
+      <div class="ft-mol-tabs__content" role="tabpanel" hidden>Contenido de la sección 2</div>
+      <div class="ft-mol-tabs__content" role="tabpanel" hidden>Contenido de la sección 3</div>
+    </div>
+  </section>
+</template>

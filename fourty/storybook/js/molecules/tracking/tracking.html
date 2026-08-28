@@ -1,0 +1,76 @@
+<!--
+  tracking.html — códigos HTML originales de Tracking (.ft-mol-tracking)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS:
+  añade / edita / quita bloques <template data-story="Nombre"> con HTML PLANO
+  (clases .ft-* reales). El motor los publica en el subgrupo "Markup".
+  Markup tomado de fourty/molecules/molecule-tracking.html.
+  ─────────────────────────────────────────────────────────────────────────
+-->
+<template data-story="Base (horizontal)">
+  <div class="ft-mol-tracking">
+    <ul class="ft-mol-tracking__step">
+      <li class="ft-mol-tracking__step-line ft-mol-tracking__step-line-ball ft-mol-tracking__step-line-ball--completed">
+        <div class="ft-date">
+          <time class="ft-date__text" datetime="2022-09-05T13:04"><span class="ft-date__textPlace">Barcelona </span><span class="ft-date__textTime">05 SEPT 2022 - 13:04 CET</span></time>
+        </div>
+        <h3 class="ft-mol-tracking__title"><a href="#" class="ft-link ft-link--secondary" title="title text" target="_self">23-J precampaña: el inicio de la carrera</a></h3>
+      </li>
+      <li class="ft-mol-tracking__step-line ft-mol-tracking__step-line-ball ft-mol-tracking__step-line-ball--active">
+        <div class="ft-date">
+          <time class="ft-date__text" datetime="2022-09-12T13:04"><span class="ft-date__textPlace">Madrid </span><span class="ft-date__textTime">12 SEPT 2022 - 13:04 CET</span></time>
+        </div>
+        <h3 class="ft-mol-tracking__title"><a href="#" class="ft-link ft-link--secondary" title="title text" target="_self">Arranca la campaña con los primeros mítines</a></h3>
+      </li>
+      <li class="ft-mol-tracking__step-line ft-mol-tracking__step-line-ball">
+        <div class="ft-date">
+          <time class="ft-date__text" datetime="2022-09-20T13:04"><span class="ft-date__textPlace">Sevilla </span><span class="ft-date__textTime">20 SEPT 2022 - 13:04 CET</span></time>
+        </div>
+        <h3 class="ft-mol-tracking__title"><a href="#" class="ft-link ft-link--secondary" title="title text" target="_self">Debate a cuatro en televisión</a></h3>
+      </li>
+    </ul>
+  </div>
+</template>
+
+<template data-story="Vertical (--vertical)">
+  <div class="ft-mol-tracking ft-mol-tracking--vertical">
+    <ul class="ft-mol-tracking__step">
+      <li class="ft-mol-tracking__step-line ft-mol-tracking__step-line-ball ft-mol-tracking__step-line-ball--completed">
+        <h3 class="ft-mol-tracking__title"><a href="#" class="ft-link ft-link--secondary" title="title text" target="_self">Inicio de la carrera</a></h3>
+      </li>
+      <li class="ft-mol-tracking__step-line ft-mol-tracking__step-line-ball ft-mol-tracking__step-line-ball--active">
+        <h3 class="ft-mol-tracking__title"><a href="#" class="ft-link ft-link--secondary" title="title text" target="_self">Campaña en marcha</a></h3>
+      </li>
+      <li class="ft-mol-tracking__step-line ft-mol-tracking__step-line-ball">
+        <h3 class="ft-mol-tracking__title"><a href="#" class="ft-link ft-link--secondary" title="title text" target="_self">Jornada de reflexión</a></h3>
+      </li>
+    </ul>
+  </div>
+</template>
+
+<!-- Stepper: pasos con icono (sin fecha); estados --completed / --active -->
+<template data-story="Stepper (--stepper)">
+  <div class="ft-mol-tracking ft-mol-tracking--stepper">
+    <ul class="ft-mol-tracking__step">
+      <li class="ft-mol-tracking__step-line ft-mol-tracking__step-line-ball ft-mol-tracking__step-line-ball--active">
+        <img class="ft-mol-tracking__icon" alt="" src="/cds-statics/assets/img/icons/icon-stepper-grupos.svg">
+        <h3 class="ft-mol-tracking__title"><a href="#" class="ft-link ft-link--secondary">Grupos</a></h3>
+      </li>
+      <li class="ft-mol-tracking__step-line ft-mol-tracking__step-line-ball">
+        <h3 class="ft-mol-tracking__title">Dieciseisavos</h3>
+      </li>
+      <li class="ft-mol-tracking__step-line ft-mol-tracking__step-line-ball">
+        <h3 class="ft-mol-tracking__title">Octavos</h3>
+      </li>
+      <li class="ft-mol-tracking__step-line ft-mol-tracking__step-line-ball">
+        <h3 class="ft-mol-tracking__title">Cuartos</h3>
+      </li>
+      <li class="ft-mol-tracking__step-line ft-mol-tracking__step-line-ball">
+        <h3 class="ft-mol-tracking__title">Semifinales</h3>
+      </li>
+      <li class="ft-mol-tracking__step-line ft-mol-tracking__step-line-ball">
+        <h3 class="ft-mol-tracking__title">Final</h3>
+      </li>
+    </ul>
+  </div>
+</template>
