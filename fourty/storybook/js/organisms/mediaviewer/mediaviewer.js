@@ -1,0 +1,269 @@
+/* ════════════════════════════════════════════════════════════════════════
+   organisms/mediaviewer/mediaviewer.js — Organisms / Mediaviewer
+   Casuística REAL de scss/fourties/organism/mediaviewer/_mediaviewer.scss (.ft-org-mediaviewer).
+   Markup VERBATIM del showroom (organism-mediaviewer.html). Cero invención de API.
+
+   Criterio ORGANISMOS: controles MÍNIMOS (un solo select de variante, o ninguno). La
+   fidelidad la aporta el MARKUP — construcción literal del showroom. Rutas normalizadas
+   (../../cds-statics → /cds-statics).
+   ════════════════════════════════════════════════════════════════════════ */
+(function () {
+    "use strict";
+
+    /* ▼ SINGLE SOURCE OF TRUTH — markup verbatim por variante ▼ */
+    const VARIANTS = {
+        "base": `<button data-target="mediaviewer-1" 
+                                                class="ft-btn ft-btn--primary ft-btn--sm"
+                                                type="button" aria-label="Abrir mediaviewer">
+                                                Ver videos
+                                            </button>
+
+                                            <div id="mediaviewer-1" class="ft-org-mediaviewer is-open" role="region" aria-label="Reproductor multimedia" aria-labelledby="mvTitle" tabindex="0">
+                                                <div class="ft-org-mediaviewer__media" aria-hidden="true">
+                                          
+                                                  
+                                          
+                                                  <div class="ft-org-mediaviewer__controls">
+                                          
+                                                    <div class="ft-org-mediaviewer__controls-time">
+                                                      <div class="ft-org-mediaviewer__time-display">
+                                                        <span id="currentTime">0:00</span>
+                                                        <span class="separator">/</span>
+                                                        <span id="totalTime">0:00</span>
+                                                      </div>
+                                                    </div>
+                                          
+                                                    <button class="ft-org-mediaviewer__action ft-org-mediaviewer__action-more">
+                                                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16" fill="white" aria-hidden="true" focusable="false">
+                                                        <rect x="0" y="0" width="5" height="7"></rect>
+                                                        <rect x="7" y="0" width="5" height="7"></rect>
+                                                        <rect x="7" y="9" width="5" height="7"></rect>
+                                                        <rect x="0" y="9" width="5" height="7"></rect>
+                                                      </svg>
+                                                      Más videos
+                                                    </button>
+                                          
+                                                  </div>    
+                                        
+                                                  <div class="ft-org-mediaviewer__tools">
+
+                                                    <div id="mvAnnouncer" class="ft-helper-hide" aria-live="polite" aria-atomic="true"></div>
+
+                                                    <button class="ft-org-mediaviewer__action ft-org-mediaviewer__action-close" type="button" aria-label="Cerrar multimedia">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white"
+                                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                            <path d="M18 6 6 18"></path>
+                                                            <path d="m6 6 12 12"></path>
+                                                        </svg>
+                                                    </button>
+                                        
+                                                    <details class="ft-org-mediaviewer__meta">
+                                                      <summary>
+                                                        <div class="ft-org-mediaviewer__meta-content">
+                                                          <h3 id="mvTitle" class="ft-org-mediaviewer__title">Video Title</h3>
+                                                          <p class="ft-org-mediaviewer__description">
+                                                            lorem ipsum dolorem ipsum lorem ipsum dolorem ipsum lorem ipsum dolorem ipsum
+                                                          </p>
+                                                        </div>
+                                                      </summary>
+                                                    </details>
+                                            
+                                                    <div class="ft-org-mediaviewer__actions">
+                                            
+                                                      <button class="ft-org-mediaviewer__action ft-org-mediaviewer__action-mute" type="button" aria-label="Silenciar">
+                                                        <svg class="icon-unmuted" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                                          fill="none" aria-hidden="true" focusable="false">
+                                                          <path d="M3 9v6h4l5 5V4L7 9H3z" fill="white" />
+                                                          <path d="M16 9a3 3 0 0 1 0 6" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" />
+                                                          <path d="M16 5a5 5 0 0 1 0 14" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" />
+                                                        </svg>
+                                            
+                                                        <svg class="icon-muted" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                                          fill="none" aria-hidden="true" focusable="false">
+                                                          <path d="M3 9v6h4l5 5V4L7 9H3z" fill="white" />
+                                                          <line x1="16" y1="8" x2="22" y2="14" stroke="white" stroke-width="2" stroke-linecap="round" />
+                                                          <line x1="22" y1="8" x2="16" y2="14" stroke="white" stroke-width="2" stroke-linecap="round" />
+                                                        </svg>
+                                            
+                                                        <svg class="icon-dumb" width="24" height="24" viewBox="0 0 28 28" fill="none" aria-hidden="true" focusable="false"
+                                                          xmlns="http://www.w3.org/2000/svg">
+                                                          <path d="M3.5 10.5V17.5H8.16667L14 23.3333V4.66666L8.16667 10.5H3.5Z" fill="white" />
+                                                          <path
+                                                            d="M22.1666 8.83334C20.8405 8.83334 19.5688 9.36013 18.6311 10.2978C17.6934 11.2355 17.1666 12.5073 17.1666 13.8333C17.1666 15.1594 17.6934 16.4312 18.6311 17.3689C19.5688 18.3066 20.8405 18.8333 22.1666 18.8333C23.4927 18.8333 24.7645 18.3066 25.7022 17.3689C26.6398 16.4312 27.1666 15.1594 27.1666 13.8333C27.1666 12.5073 26.6398 11.2355 25.7022 10.2978C24.7645 9.36013 23.4927 8.83334 22.1666 8.83334ZM18.1666 13.8333C18.1665 13.0848 18.3765 12.3512 18.7726 11.7161C19.1688 11.081 19.7352 10.5697 20.4074 10.2405C21.0797 9.9113 21.8309 9.77733 22.5755 9.85385C23.3201 9.93037 24.0284 10.2143 24.6196 10.6733L19.0066 16.2863C18.462 15.5846 18.1665 14.7216 18.1666 13.8333ZM19.7136 16.9933L25.3266 11.3803C25.9249 12.1499 26.2215 13.1115 26.1609 14.0844C26.1002 15.0573 25.6863 15.9745 24.997 16.6638C24.3078 17.353 23.3905 17.7669 22.4177 17.8276C21.4448 17.8883 20.4832 17.5916 19.7136 16.9933Z"
+                                                            fill="white" stroke="white" stroke-width="0.5" />
+                                                        </svg>
+                                                      </button>
+                                            
+                                                      <button class="ft-org-mediaviewer__action ft-org-mediaviewer__action-share" type="button" aria-label="Compartir multimedia">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                                                          <circle cx="18" cy="5" r="3" fill="white" />
+                                                          <circle cx="6" cy="12" r="3" fill="white" />
+                                                          <circle cx="18" cy="19" r="3" fill="white" />
+                                                          <line x1="8.59" y1="10.49" x2="15.41" y2="6.51" stroke="white" stroke-width="2" stroke-linecap="round" />
+                                                          <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" stroke="white" stroke-width="2" stroke-linecap="round" />
+                                                        </svg>
+                                                      </button>
+                                            
+                                                      <button class="ft-org-mediaviewer__action ft-org-mediaviewer__action-expand" type="button" aria-label="Expandir vídeo">
+                                                        <svg class="icon-default" width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false"
+                                                          xmlns="http://www.w3.org/2000/svg">
+                                                          <path
+                                                            d="M6.90365 0.23698L0.236979 0.236979L0.236979 6.90365L2.73698 4.40365L5.23698 6.90365L6.90365 5.23698L4.40365 2.73698L6.90365 0.23698Z"
+                                                            fill="white" />
+                                                          <path d="M20 6.66667V5.82819e-07L13.3333 0L15.8333 2.5L13.3333 5L15 6.66667L17.5 4.16667L20 6.66667Z"
+                                                            fill="white" />
+                                                          <path d="M13.3333 20L20 20L20 13.3333L17.5 15.8333L15 13.3333L13.3333 15L15.8333 17.5L13.3333 20Z"
+                                                            fill="white" />
+                                                          <path d="M0 13.3333V20H6.66667L4.16667 17.5L6.66667 15L5 13.3333L2.5 15.8333L0 13.3333Z" fill="white" />
+                                                        </svg>
+                                                      </button>
+                                            
+                                                      <button class="ft-org-mediaviewer__action ft-org-mediaviewer__action-collapse"
+                                                        aria-label="Cerrar vídeo expandido">
+                                                        <svg class="icon-default" width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false"
+                                                          xmlns="http://www.w3.org/2000/svg">
+                                                          <path
+                                                            d="M0 18.3333L1.66667 20L4.16667 17.5L6.66667 20V13.3333L0 13.3333L2.5 15.8333L0 18.3333ZM0 6.66667L6.66667 6.66667V1.85428e-07L4.16667 2.5L1.66667 4.03985e-07L0 1.66667L2.5 4.16667L0 6.66667ZM13.3333 20L15.8333 17.5L18.3333 20L20 18.3333L17.5 15.8333L20 13.3333L13.3333 13.3333V20ZM13.3333 6.66667L20 6.66667L17.5 4.16667L20 1.66667L18.3333 -3.24538e-07L15.8333 2.5L13.3333 -1.05981e-07V6.66667Z"
+                                                            fill="white" />
+                                                        </svg>
+                                                      </button>
+                                            
+                                                    </div>
+                                            
+                                                    <div class="ft-org-mediaviewer__progress" role="slider" tabindex="0" aria-label="Progreso del vídeo" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-valuetext="0 segundos">
+                                                      <div class="ft-org-mediaviewer__progress-current"></div>
+                                                      <div class="ft-org-mediaviewer__progress-thumb"></div>
+                                                    </div>
+
+                                                  </div>  
+                                          
+                                                  <button class="ft-org-mediaviewer__overlay-playtoggle" type="button" aria-label="Pausar" aria-pressed="true">
+                                        
+                                                    <svg class="icon-play" width="45" height="45" viewBox="0 0 24 24" fill="white" aria-hidden="true" focusable="false"
+                                                      xmlns="http://www.w3.org/2000/svg">
+                                                      <polygon points="8,5 19,12 8,19" />
+                                                    </svg>
+                                                    <svg class="icon-pause" width="45" height="45" viewBox="0 0 24 24" fill="white" aria-hidden="true" focusable="false"
+                                                      xmlns="http://www.w3.org/2000/svg">
+                                                      <rect x="6" y="4" width="4" height="16" rx="1" />
+                                                      <rect x="14" y="4" width="4" height="16" rx="1" />
+                                                    </svg>
+                                                  
+                                                  </button>
+                                                  
+                                                  <button class="ft-org-mediaviewer__overlay-rotate" type="button" aria-label="Gira tu pantalla">
+                                        
+                                                    <svg class="icon-default" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"
+                                                      fill="none">
+                                                      <path
+                                                        d="M8.72727 5.47727L14.1818 5.47727C14.664 5.47727 15.1265 5.64489 15.4675 5.94324C15.8084 6.24159 16 6.64625 16 7.06818L16 17.4091C16 17.831 15.8084 18.2357 15.4675 18.534C15.1265 18.8324 14.664 19 14.1818 19L8.72727 19C8.24506 19 7.7826 18.8324 7.44162 18.534C7.10065 18.2357 6.90909 17.831 6.90909 17.4091L6.90909 7.06818C6.90909 6.64625 7.10065 6.24159 7.44163 5.94324C7.7826 5.64489 8.24506 5.47727 8.72727 5.47727ZM8.72727 16.6136L14.1818 16.6136L14.1818 7.06818L8.72727 7.06818L8.72727 16.6136Z"
+                                                        fill="white" />
+                                                      <path
+                                                        d="M13.8182 22V20.8068C16.5455 20.8068 19.0273 19.367 20.1 17.1636L18.3636 16.4318L22 14.8409C22 16.7396 21.138 18.5606 19.6036 19.9032C18.0692 21.2457 15.9881 22 13.8182 22Z"
+                                                        fill="white" />
+                                                      <path
+                                                        d="M10.1818 2V3.19318C7.45455 3.19318 4.97273 4.63295 3.9 6.83636L5.63636 7.56818L2 9.15909C2 7.26038 2.86201 5.43944 4.3964 4.09685C5.93079 2.75426 8.01186 2 10.1818 2Z"
+                                                        fill="white" />
+                                                    </svg>
+                                                    Gira tu pantalla
+                                                  
+                                                  </button>
+
+                                                  <div class="ft-org-mediaviewer__navigation">
+
+                                                    <button 
+                                                      class="ft-org-mediaviewer__action ft-org-mediaviewer__action-next"
+                                                      type="button"
+                                                      aria-label="Vídeo anterior">
+                                                  
+                                                      <svg width="20" height="22" viewBox="0 -2 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.50701 13.5434L15.9844 7.93866C16.255 7.70454 16.6912 7.70667 16.9588 7.94342C17.2264 8.18017 17.2239 8.56188 16.9534 8.796L10.084 14.7399C9.75929 15.0209 9.23577 15.0183 8.9147 14.7342L2.19906 8.79121C1.93151 8.55444 1.93398 8.17273 2.20456 7.93863C2.47515 7.70453 2.91139 7.70669 3.17893 7.94345L9.50701 13.5434Z" fill="white"/>
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.50701 8.80711L15.9844 3.20233C16.255 2.96821 16.6912 2.97035 16.9588 3.20709C17.2264 3.44384 17.2239 3.82555 16.9534 4.05967L10.084 10.0036C9.75929 10.2845 9.23577 10.282 8.9147 9.99784L2.19906 4.05488C1.93151 3.81812 1.93398 3.43641 2.20456 3.2023C2.47515 2.9682 2.91139 2.97036 3.17893 3.20712L9.50701 8.80711Z" fill="white"/>
+                                                      </svg>
+                                                  
+                                                    </button>
+                                                  
+                                                    <button 
+                                                      class="ft-org-mediaviewer__action ft-org-mediaviewer__action-prev"
+                                                      type="button"
+                                                      aria-label="Siguiente vídeo">
+                                                  
+                                                      <svg width="20" height="22" viewBox="0 -2 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.65089 4.45608L3.17346 10.0609C2.90289 10.295 2.46665 10.2928 2.19909 10.0561C1.93153 9.81934 1.93397 9.43763 2.20454 9.20352L9.07391 3.25959C9.39861 2.97864 9.92213 2.98121 10.2432 3.26534L16.9588 9.20831C17.2264 9.44507 17.2239 9.82678 16.9533 10.0609C16.6828 10.295 16.2465 10.2928 15.979 10.0561L9.65089 4.45608Z" fill="white"/>
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.65089 9.19241L3.17346 14.7972C2.90289 15.0313 2.46665 15.0292 2.19909 14.7924C1.93153 14.5557 1.93397 14.174 2.20454 13.9398L9.07391 7.99592C9.39861 7.71497 9.92213 7.71754 10.2432 8.00167L16.9588 13.9446C17.2264 14.1814 17.2239 14.5631 16.9533 14.7972C16.6828 15.0313 16.2465 15.0292 15.979 14.7924L9.65089 9.19241Z" fill="white"/>
+                                                      </svg>
+                                                  
+                                                    </button>
+                                                  
+                                                  </div>
+                                          
+                                                  <div class="ft-org-mediaviewer__overlay-next" aria-hidden="true">
+                                                    <svg width="32" height="30" viewBox="0 0 32 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                                                      <g filter="url(#filter0_d_1830_5641)">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                          d="M16.4292 19.2598L22.7266 13.8107C22.9896 13.5831 23.4137 13.5851 23.6739 13.8153C23.934 14.0455 23.9316 14.4166 23.6686 14.6442L16.9901 20.4231C16.6745 20.6962 16.1655 20.6937 15.8534 20.4175L9.32438 14.6395C9.06428 14.4094 9.06667 14.0382 9.32974 13.8106C9.5928 13.583 10.0169 13.5851 10.277 13.8153L16.4292 19.2598Z"
+                                                          fill="white" />
+                                                      </g>
+                                                      <g filter="url(#filter1_d_1830_5641)">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                          d="M16.4292 14.6543L22.7266 9.2052C22.9896 8.97758 23.4137 8.97966 23.6739 9.20983C23.934 9.44 23.9316 9.81112 23.6686 10.0387L16.9901 15.8176C16.6745 16.0907 16.1655 16.0882 15.8534 15.812L9.32438 10.0341C9.06428 9.80389 9.06667 9.43278 9.32974 9.20517C9.5928 8.97757 10.0169 8.97967 10.277 9.20986L16.4292 14.6543Z"
+                                                          fill="white" />
+                                                      </g>
+                                                    </svg>
+                                                  </div>                                          
+                                                </div>
+                                            </div>`
+    };
+
+    const baseArgTypes = [];
+    const baseArgs = {};
+
+    function live() {
+        return VARIANTS["base"];
+    }
+
+    const overview = `<div class="cb-docs__inner">
+        <h1>Mediaviewer</h1>
+        <p class="cb-docs__lead">Organismo del 42DS (<code>.ft-org-mediaviewer</code>): visor de medios a pantalla — imagen/galería principal con su pie y controles, pensado para abrir contenido multimedia.</p>
+
+        <h2>Dependencias</h2>
+        <div class="cb-deps">
+        <table class="cb-table">
+            <thead><tr><th>Dependencia</th><th>Tipo</th><th>Cuándo</th></tr></thead>
+            <tbody>
+                <tr><td><code>brands/[marca]/setting.css</code></td><td>CSS · variables de la marca</td><td>Siempre · <strong>primero</strong></td></tr>
+                <tr><td><code>brands/[marca]/organism/mediaviewer.css</code></td><td>CSS del organismo</td><td>Siempre</td></tr>
+                <tr><td><code>molecules/figcaption · gallery</code></td><td>CSS de las piezas internas</td><td>Según contenido</td></tr>
+                <tr><td>JS (navegación de medios, zoom)</td><td>JavaScript</td><td>En producción. Aquí estático.</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <div class="cb-callout">Es un <strong>overlay</strong> que nace oculto (<code>visibility:hidden</code>) y se revela con <code>.is-open</code> (clase real del SCSS), normalmente al pulsar el botón disparador. Aquí se fuerza <code>.is-open</code> para verlo; el reproductor (jwplayer) es externo y no carga. La navegación/zoom los gobierna el JS del consumidor.</div>
+
+        <h2>Anatomía</h2>
+        <table class="cb-table">
+            <thead><tr><th>Pieza</th><th>Clase</th></tr></thead>
+            <tbody>
+                <tr><td>Bloque</td><td><code>.ft-org-mediaviewer</code></td></tr>
+                <tr><td>Medio</td><td><code>__media</code></td></tr>
+            </tbody>
+        </table>
+
+        <h2>Variantes por marca</h2>
+        <p>Compilado para todas las marcas. Cambia la marca con la <strong>toolbar Brand</strong>.</p>
+
+        <p class="cb-src">Fuente: <code>scss/fourties/organism/mediaviewer/_mediaviewer.scss</code> · markup: <code>fourty/organisms/organism-mediaviewer.html</code></p>
+    </div>`;
+
+    const DEF = {
+        id: "mediaviewer",
+        name: "Mediaviewer",
+        group: "Organisms",
+        overview,
+        stories: [
+            { id: "base", name: "Base", kind: "interactive", full: true, argTypes: baseArgTypes, args: baseArgs, render: live }
+        ]
+    };
+    window.SB.register(DEF);
+    window.SB.loadMarkup(DEF, document.currentScript && document.currentScript.src, { full: true });
+})();

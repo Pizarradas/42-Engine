@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>42DS Storybook | Masthead: Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS de marca (conmutable por el toolbar Brand del storybook) -->
+    <link id="brandStyles-root" rel="stylesheet" href="/cds-statics/css/brands/ux/setting.css">
+    <link id="brandStyles" rel="stylesheet" href="/cds-statics/css/ux-index.css">
+    <style>body{margin:0}</style>
+</head>
+<body class="fourty ft-brand-ep" data-showroom-skin="layout" style="min-height:2000px">
+    <header>
+<!-- Cabecera normal -->
+        <div class="ft-org-masthead ft-org-masthead--branded">
+            <div class="ft-org-masthead__top">
+                <div class="ft-org-masthead__top-left">
+                    <a href="/es/" class="ft-org-masthead__top-left-logo" title="El Periódico de España">
+                    </a>
+                    <div class="ft-date ft-date--inline">
+                        <div class="ft-date__text">
+                            <time class="ft-date__textTime" itemprop="datePublished"
+                                datetime="2025-03-17T04:50:43+01:00">17 MAR 2025</time>
+                        </div>
+                        <time class="ft-date__reload" itemprop="dateModified"
+                            datetime="2025-03-17T06:11:15+01:00">Actualizada 6:11</time>
+                    </div>
+                </div>
+                <div class="ft-org-masthead__top-right">
+
+                  <div class="sticky"  id="hero">
+                    <style tp-style="template-custom-style" type="text/css">
+.tp-container-inner{display: flex;
+  flex-direction: row;
+  height: 25px;
+  max-height: 25px;
+  align-items: center;
+  border-radius: 5rem;
+  width: auto !important;
+  justify-content: flex-start;}
+body{background:transparent!important; margin:0}
+.sticky-text{
+  font-family:-apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+  font-weight: normal;
+  letter-spacing: 0;
+  font-size: 12px;
+  line-height: 14px;
+  color:white;
+  margin: 0px;
+}
+.sticky__content{
+  display: flex;
+  flex-direction: row;
+  background-color: transparent;
+  height: 25px;
+  max-height: 25px;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  justify-content: center;
+}
+.ft-brand-ep .sticky-text{
+  color:black;
+}
+.ft-brand-ep.economia .sticky-text, .ft-brand-ep.gastronomia .sticky-text, .ft-brand-ep.libros .sticky-text, .ft-brand-ep.esncial .sticky-text{color:white;}
+
+.ft-brand-regionales .sticky-text, .ft-brand-epe .sticky-text, .ft-brand-sport .sticky-text, .ft-brand-sport.esncial .sticky-text{
+  color:white;
+}
+.ft-brand-regionales.la-nueva-espana.asturiasexterior .sticky-text, .ft-brand-regionales.diari-de-girona.gironadelicia .sticky-text{
+  color:black;
+}
+.sticky-text__bold{
+  font-weight:bold;
+}
+.sticky-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  text-indent: 101%;
+  white-space: nowrap;
+  margin: auto;
+  height: 100%;
+  width: 100%;
+  border-width: 0;
+  opacity: 0;
+  z-index: 1;
+}
+.sticky-button {
+ background-color: white;
+ color:black;
+ font-weight: bold;
+ padding: .1rem .5rem;
+ border-radius: .3rem;
+ margin-left:.3rem;
+}
+.ft-brand-ep .sticky-button, .ft-brand-regionales.gironadelicia .sticky-button
+{background-color: black; color:white;}
+</style>
+                        <p class="sticky-text">Accede a tu  <span class="sticky-text__bold">ejemplar diario</span> <span class="sticky-button">Kiosco</span>
+                        </p>
+                        
+                        <a class="sticky-link" data-vars-event-cat="piano link" external-event="marketing=base-pm1A"
+                            href="https://micuenta.lne.es/tp/suscripcion/galeria?marketing=base-pm1A" rel="nofollow"
+                            target="_blank" title="link title"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="ft-org-masthead__main">
+                <div class="ft-org-masthead__menu">
+                    <button type="button" class="ft-org-masthead__menu-button" id="toggle">
+                        <span class="ft-org-masthead__menu-buttonIcon"></span>
+                    </button>
+                </div>
+                <div class="ft-org-masthead__logo">
+                    <h1 class="ft-org-masthead__logo-img">
+                        <a href="/es/" class="ft-org-masthead__logo-link" title="Title Text">
+                            <span class="ft-org-masthead--hide">el periódico</span>
+                        </a>
+                    </h1>
+                    <div class="ft-org-masthead__logo-lang">
+                        <button type="button" onclick="triggerDropdownLanguage()" class="ft-org-masthead__logo-button"
+                            id="activeLanguage" data-active=".com">.com</button>
+                        <ul class="ft-org-masthead__dropdown" id="languageDropdown">
+                            <li><a href="https://www.elperiodico.cat/ca/"
+                                    class="ft-org-masthead__dropdown-link">.cat</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="ft-org-masthead__area">
+                    <button class="ft-org-masthead__area--search">
+                    </button>
+                    <div class="ft-mol-dropdown">
+                        <button class="ft-org-masthead__area--login ft-mol-dropdown__trigger"
+                            onclick="toggleDropdown(event)" aria-haspopup="true" aria-expanded="false"
+                            title="Abrir menú desplegable" id="ft-dropdown-trigger-3" aria-controls="ft-dropdown-list-3"">
+
+                                             
+        <ul class=" ft-mol-dropdown__list ft-mol-dropdown--has-icons" role="menu" aria-hidden="true" id="ft-dropdown-list-1"
+            aria-labelledby="ft-dropdown-trigger-1" hidden="">
+            <li class="ft-mol-dropdown__item">
+                <a class="ft-mol-dropdown__link" href="#" target="_self" title="Archivo" tabindex="-1">
+                    <img src="/cds-statics/assets/img/icons/icon-user-masterhead.svg" alt="" width="18" height="19"
+                        loading="eager" class="ft-mol-dropdown__icon">
+                    Mi cuenta
+                </a>
+            </li>
+            <li class="ft-mol-dropdown__item ft-mol-dropdown__item--active">
+                <a class="ft-mol-dropdown__link" href="#" target="_self" title="Archivo" tabindex="-1">
+                    <img src="/cds-statics/assets/img/icons/nav-solid-suscription.svg" alt="" width="18" height="19"
+                        loading="eager" class="ft-mol-dropdown__icon">
+                    Suscribete
+                </a>
+            </li>
+            <li class="ft-mol-dropdown__item">
+                <a class="ft-mol-dropdown__link" href="#" target="_self" title="Archivo" tabindex="-1">
+                    <img src="/cds-statics/assets/img/icons/nav-solid-suscription-ep.svg" alt="" width="18" height="19"
+                        loading="eager" class="ft-mol-dropdown__icon">
+                    Mi suscripción
+                </a>
+            </li>
+            <li class="ft-mol-dropdown__item" role="none">
+                <a class="ft-mol-dropdown__link" role="menuitem" href="#" target="_self" title="title text" tabindex="-1">
+        
+                    <img src="/cds-statics/assets/img/icons/nav-solid-light-save.svg" alt="" width="21" height="21"
+                        loading="eager" class="ft-mol-dropdown__icon">
+        
+        
+                    Mis noticias guardadas</a>
+            </li>
+            <li class="ft-mol-dropdown__item" role="none">
+                <a class="ft-mol-dropdown__link" role="menuitem" href="#" target="_self" title="title text" tabindex="-1">
+                    <img src="/cds-statics/assets/img/icons/nav-solid-light-gift.svg" alt="" width="20" height="21"
+                        loading="eager" class="ft-mol-dropdown__icon">
+        
+                    Mi Medio</a>
+            </li>
+            <li class="ft-mol-dropdown__item" role="none">
+                <a class="ft-mol-dropdown__link" role="menuitem" href="#" target="_self" title="title text" tabindex="-1">
+                    <img src="/cds-statics/assets/img/icons/icon-kiosk-masterhead.svg" alt="" width="20" height="21"
+                        loading="eager" class="ft-mol-dropdown__icon">
+        
+                    Kiosko</a>
+            </li>
+            <li class="ft-mol-dropdown__item" role="none">
+                <a class="ft-mol-dropdown__link" role="menuitem" href="#" target="_self" title="title text" tabindex="-1">
+                    <img src="/cds-statics/assets/img/icons/nav-solid-light-newsletter.svg" alt="" width="20" height="21"
+                        loading="eager" class="ft-mol-dropdown__icon">
+        
+                    Newsletters</a>
+            </li>
+            <li class="ft-mol-dropdown__item" role="none">
+                <a class="ft-mol-dropdown__link" role="menuitem" href="#" target="_self" title="title text" tabindex="-1">
+                    <img src="/cds-statics/assets/img/icons/nav-solid-light-pasatiempos.svg" alt="" width="20" height="21"
+                        loading="eager" class="ft-mol-dropdown__icon">
+        
+                    Jugar</a>
+            </li>
+            <li class="ft-mol-dropdown__item" role="none">
+                <a class="ft-mol-dropdown__link" role="menuitem" href="#" target="_self" title="title text" tabindex="-1">
+                    <img src="/cds-statics/assets/img/icons/icon-close-user-masterhead.svg" alt="" width="20" height="21"
+                        loading="eager" class="ft-mol-dropdown__icon">
+        
+                    Cerrar sesión</a>
+            </li>
+        </ul>
+
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <nav class="ft-org-masthead__nav">
+                <ul class="ft-org-masthead__list">
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            <img src="/cds-statics/assets/img/logos/logo-prueba2.svg" width="85" height="40">
+                        </a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            Enlace 2
+                        </a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            Enlace 3
+                        </a>
+                    </li>
+
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            Enlace 7
+                        </a>
+                    </li>
+                    <li class="ft-org-masthead__item ft-org-masthead__item--live">
+                        <a href="/es/directos/" class="ft-org-masthead__link" title="Directos"> Directos </a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            Enlace 8
+                        </a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            Enlace 9
+                        </a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            Enlace 10
+                        </a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            Enlace 11
+                        </a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            Enlace 12
+                        </a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            Enlace 13
+                        </a>
+                    </li>
+                </ul>
+                <a href="#" class="ft-org-masthead__branded">Ofrecido por <img
+                        src="/cds-statics/assets/img/logos/logo-prueba.svg"></a>
+            </nav>
+            <nav class="ft-org-masthead__nav ft-org-masthead__nav--mobile">
+                <ul class="ft-org-masthead__list">
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            <img src="/cds-statics/assets/img/logos/logo-prueba2.svg" width="85" height="40">
+                        </a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link ft-org-masthead__link--active" title="Title text">
+                            Enlace 2 Mobile
+                        </a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            Enlace 3 Mobile
+                        </a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            Enlace 4 Mobile
+                        </a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            Enlace 5 Mobile
+                        </a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            Enlace 6 Mobile
+                        </a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            Enlace 7 Mobile
+                        </a>
+                    </li>
+                    <li class="ft-org-masthead__item ft-org-masthead__item--live">
+                        <a href="/es/directos/" class="ft-org-masthead__link" title="Directos"> Directos </a>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="ft-org-masthead__subnav">
+                <ul class="ft-org-masthead__list">
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            Ediciones digitales:
+                        </a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            Siero
+                        </a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            Llanera
+                        </a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            Villaviciosa
+                        </a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            Grado
+                        </a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            Salas
+                        </a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            Ribera de Arriba
+                        </a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            La Corredoria
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Cabecera fija -->
+        <div class="ft-org-masthead ft-org-masthead--fix">
+            <div class="ft-org-masthead__main">
+                <div class="ft-org-masthead__menu">
+                    <button type="button" class="ft-org-masthead__menu-button" id="toggle">
+                        <span class="ft-org-masthead__menu-buttonIcon"></span>
+                    </button>
+                </div>
+                <div class="ft-org-masthead__logo">
+                    <h2 class="ft-org-masthead__logo-img">
+                        <a href="/es/" class="ft-org-masthead__logo-link" title="El Periódico">
+                            <span class="ft-org-masthead--hide">el periódico</span>
+                        </a>
+                    </h2>
+                    <div class="ft-org-masthead__logo-lang">
+                        <button type="button" onclick="triggerDropdownLanguage()" class="ft-org-masthead__logo-button"
+                            id="activeLanguage" data-active=".com">.com</button>
+                        <ul class="ft-org-masthead__dropdown" id="languageDropdown">
+                            <li><a href="https://www.elperiodico.cat/ca/"
+                                    class="ft-org-masthead__dropdown-link">.cat</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="ft-org-masthead__area">
+                    <button class="ft-org-masthead__area--search">
+
+                    </button>
+                    <div class="ft-mol-dropdown">
+                        <button class="ft-org-masthead__area--login ft-mol-dropdown__trigger"
+                            onclick="toggleDropdown(event)" aria-haspopup="true" aria-expanded="false"
+                            title="Abrir menú desplegable" id="ft-dropdown-trigger-1"
+                            aria-controls="ft-dropdown-list-1" "="">
+
+                                             
+        <ul class=" ft-mol-dropdown__list ft-mol-dropdown--has-icons" role="menu" aria-hidden="true" id="ft-dropdown-list-1"
+            aria-labelledby="ft-dropdown-trigger-1" hidden="">
+            <li class="ft-mol-dropdown__item">
+                <a class="ft-mol-dropdown__link" href="#" target="_self" title="Archivo" tabindex="-1">
+                    <img src="/cds-statics/assets/img/icons/icon-user-masterhead.svg" alt="" width="18" height="19"
+                        loading="eager" class="ft-mol-dropdown__icon">
+                    Mi cuenta
+                </a>
+            </li>
+            <li class="ft-mol-dropdown__item ft-mol-dropdown__item--active">
+                <a class="ft-mol-dropdown__link" href="#" target="_self" title="Archivo" tabindex="-1">
+                    <img src="/cds-statics/assets/img/icons/nav-solid-suscription.svg" alt="" width="18" height="19"
+                        loading="eager" class="ft-mol-dropdown__icon">
+                    Suscribete
+                </a>
+            </li>
+            <li class="ft-mol-dropdown__item">
+                <a class="ft-mol-dropdown__link" href="#" target="_self" title="Archivo" tabindex="-1">
+                    <img src="/cds-statics/assets/img/icons/nav-solid-suscription-ep.svg" alt="" width="18" height="19"
+                        loading="eager" class="ft-mol-dropdown__icon">
+                    Mi suscripción
+                </a>
+            </li>
+            <li class="ft-mol-dropdown__item" role="none">
+                <a class="ft-mol-dropdown__link" role="menuitem" href="#" target="_self" title="title text" tabindex="-1">
+        
+                    <img src="/cds-statics/assets/img/icons/nav-solid-light-save.svg" alt="" width="21" height="21"
+                        loading="eager" class="ft-mol-dropdown__icon">
+        
+        
+                    Mis noticias guardadas</a>
+            </li>
+            <li class="ft-mol-dropdown__item" role="none">
+                <a class="ft-mol-dropdown__link" role="menuitem" href="#" target="_self" title="title text" tabindex="-1">
+                    <img src="/cds-statics/assets/img/icons/nav-solid-light-gift.svg" alt="" width="20" height="21"
+                        loading="eager" class="ft-mol-dropdown__icon">
+        
+                    Mi Medio</a>
+            </li>
+            <li class="ft-mol-dropdown__item" role="none">
+                <a class="ft-mol-dropdown__link" role="menuitem" href="#" target="_self" title="title text" tabindex="-1">
+                    <img src="/cds-statics/assets/img/icons/icon-kiosk-masterhead.svg" alt="" width="20" height="21"
+                        loading="eager" class="ft-mol-dropdown__icon">
+        
+                    Kiosko</a>
+            </li>
+            <li class="ft-mol-dropdown__item" role="none">
+                <a class="ft-mol-dropdown__link" role="menuitem" href="#" target="_self" title="title text" tabindex="-1">
+                    <img src="/cds-statics/assets/img/icons/nav-solid-light-newsletter.svg" alt="" width="20" height="21"
+                        loading="eager" class="ft-mol-dropdown__icon">
+        
+                    Newsletters</a>
+            </li>
+            <li class="ft-mol-dropdown__item" role="none">
+                <a class="ft-mol-dropdown__link" role="menuitem" href="#" target="_self" title="title text" tabindex="-1">
+                    <img src="/cds-statics/assets/img/icons/nav-solid-light-pasatiempos.svg" alt="" width="20" height="21"
+                        loading="eager" class="ft-mol-dropdown__icon">
+        
+                    Jugar</a>
+            </li>
+            <li class="ft-mol-dropdown__item" role="none">
+                <a class="ft-mol-dropdown__link" role="menuitem" href="#" target="_self" title="title text" tabindex="-1">
+                    <img src="/cds-statics/assets/img/icons/icon-close-user-masterhead.svg" alt="" width="20" height="21"
+                        loading="eager" class="ft-mol-dropdown__icon">
+        
+                    Cerrar sesión</a>
+            </li>
+        </ul>
+
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="progress-bar" class="ft-org-masthead__progress-bar"></div>
+        </div>
+        <!-- Menú Lateral Único -->
+        <div class="ft-org-masthead ft-org-masthead--side" id="sideMenu">
+            <div class="ft-org-masthead__main">
+                <div class="ft-org-masthead__menu">
+                    <button type="button" class="ft-org-masthead__menu-button" id="toggle">
+                        <span class="ft-org-masthead__menu-buttonIcon"></span>
+                    </button>
+                </div>
+
+                <div class="ft-org-masthead__logo">
+                    <div class="ft-org-masthead__logo-img">
+                        <a href="/es/" class="ft-org-masthead__logo-link" title="El Periódico">
+                            <span class="ft-org-masthead--hide">el periódico</span>
+                        </a>
+                    </div>
+                    <div class="ft-org-masthead__logo-lang">
+                        <button type="button" onclick="triggerDropdownLanguage()" class="ft-org-masthead__logo-button"
+                            id="activeLanguage" data-active=".com">.com</button>
+                        <ul class="ft-org-masthead__dropdown" id="languageDropdown">
+                            <li><a href="https://www.elperiodico.cat/ca/"
+                                    class="ft-org-masthead__dropdown-link">.cat</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="ft-org-masthead__area">
+                    <button class="ft-org-masthead__area--search">
+
+                    </button>
+                    <div class="ft-mol-dropdown">
+                        <button class="ft-org-masthead__area--login ft-mol-dropdown__trigger"
+                            onclick="toggleDropdown(event)" aria-haspopup="true" aria-expanded="false"
+                            title="Abrir menú desplegable" id="ft-dropdown-trigger-1"
+                            aria-controls="ft-dropdown-list-1" "="">
+
+        <ul class=" ft-mol-dropdown__list ft-mol-dropdown--has-icons" role="menu" aria-hidden="true" id="ft-dropdown-list-1"
+            aria-labelledby="ft-dropdown-trigger-1" hidden="">
+            <li class="ft-mol-dropdown__item">
+                <a class="ft-mol-dropdown__link" href="#" target="_self" title="Archivo" tabindex="-1">
+                    <img src="/cds-statics/assets/img/icons/icon-user-masterhead.svg" alt="" width="18" height="19"
+                        loading="eager" class="ft-mol-dropdown__icon">
+                    Mi cuenta
+                </a>
+            </li>
+            <li class="ft-mol-dropdown__item ft-mol-dropdown__item--active">
+                <a class="ft-mol-dropdown__link" href="#" target="_self" title="Archivo" tabindex="-1">
+                    <img src="/cds-statics/assets/img/icons/nav-solid-suscription.svg" alt="" width="18" height="19"
+                        loading="eager" class="ft-mol-dropdown__icon">
+                    Suscribete
+                </a>
+            </li>
+            <li class="ft-mol-dropdown__item">
+                <a class="ft-mol-dropdown__link" href="#" target="_self" title="Archivo" tabindex="-1">
+                    <img src="/cds-statics/assets/img/icons/nav-solid-suscription-ep.svg" alt="" width="18" height="19"
+                        loading="eager" class="ft-mol-dropdown__icon">
+                    Mi suscripción
+                </a>
+            </li>
+            <li class="ft-mol-dropdown__item" role="none">
+                <a class="ft-mol-dropdown__link" role="menuitem" href="#" target="_self" title="title text" tabindex="-1">
+        
+                    <img src="/cds-statics/assets/img/icons/nav-solid-light-save.svg" alt="" width="21" height="21"
+                        loading="eager" class="ft-mol-dropdown__icon">
+        
+        
+                    Mis noticias guardadas</a>
+            </li>
+            <li class="ft-mol-dropdown__item" role="none">
+                <a class="ft-mol-dropdown__link" role="menuitem" href="#" target="_self" title="title text" tabindex="-1">
+                    <img src="/cds-statics/assets/img/icons/nav-solid-light-gift.svg" alt="" width="20" height="21"
+                        loading="eager" class="ft-mol-dropdown__icon">
+        
+                    Mi Medio</a>
+            </li>
+            <li class="ft-mol-dropdown__item" role="none">
+                <a class="ft-mol-dropdown__link" role="menuitem" href="#" target="_self" title="title text" tabindex="-1">
+                    <img src="/cds-statics/assets/img/icons/icon-kiosk-masterhead.svg" alt="" width="20" height="21"
+                        loading="eager" class="ft-mol-dropdown__icon">
+        
+                    Kiosko</a>
+            </li>
+            <li class="ft-mol-dropdown__item" role="none">
+                <a class="ft-mol-dropdown__link" role="menuitem" href="#" target="_self" title="title text" tabindex="-1">
+                    <img src="/cds-statics/assets/img/icons/nav-solid-light-newsletter.svg" alt="" width="20" height="21"
+                        loading="eager" class="ft-mol-dropdown__icon">
+        
+                    Newsletters</a>
+            </li>
+            <li class="ft-mol-dropdown__item" role="none">
+                <a class="ft-mol-dropdown__link" role="menuitem" href="#" target="_self" title="title text" tabindex="-1">
+                    <img src="/cds-statics/assets/img/icons/nav-solid-light-pasatiempos.svg" alt="" width="20" height="21"
+                        loading="eager" class="ft-mol-dropdown__icon">
+        
+                    Jugar</a>
+            </li>
+            <li class="ft-mol-dropdown__item" role="none">
+                <a class="ft-mol-dropdown__link" role="menuitem" href="#" target="_self" title="title text" tabindex="-1">
+                    <img src="/cds-statics/assets/img/icons/icon-close-user-masterhead.svg" alt="" width="20" height="21"
+                        loading="eager" class="ft-mol-dropdown__icon">
+        
+                    Cerrar sesión</a>
+            </li>
+        </ul>
+
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="ft-org-masthead__box ft-org-masthead__box--white">
+                <div class="form-field">
+                    <div class="select-wrapper">
+                        <select required>
+                            <option value="" disabled selected></option>
+                            <option value="opcion1">Opción 1</option>
+                            <option value="opcion2">Opción 2</option>
+                            <option value="opcion3">Opción 3</option>
+                        </select>
+                        <label>Selecciona una opción</label>
+                        <span class="select-arrow"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="ft-org-masthead__box ft-org-masthead__box--white">
+                <h2 class="ft-org-masthead__title">Secciones</h2>
+                <nav aria-label="Menú principal" class="ft-org-masthead__acordeon">
+                    <ul class="ft-org-masthead__acordeon-list ft-org-masthead__acordeon-list--nivel-1">
+                        <li class="ft-org-masthead__acordeon-item">
+                            <button class="ft-org-masthead__acordeon-toggle" aria-expanded="false"
+                                aria-controls="submenu-1">
+                                Asturias
+                            </button>
+                            <ul id="submenu-1"
+                                class="ft-org-masthead__acordeon-list ft-org-masthead__acordeon-list--nivel-2" hidden>
+                                <li class="ft-org-masthead__acordeon-item">
+                                    <a class="ft-org-masthead__acordeon-link ft-org-masthead__acordeon-linkTitle"
+                                        href="/ruta-1-3">Portada Asturias</a></li>
+                                <li class="ft-org-masthead__acordeon-item">
+                                    <button class="ft-org-masthead__acordeon-toggle" aria-expanded="false"
+                                        aria-controls="submenu-1-2">
+                                        Asturias Exterior
+                                    </button>
+                                    <ul id="submenu-1-2"
+                                        class="ft-org-masthead__acordeon-list ft-org-masthead__acordeon-list--nivel-3"
+                                        hidden>
+                                        <li class="ft-org-masthead__acordeon-item"><a
+                                                class="ft-org-masthead__acordeon-link ft-org-masthead__acordeon-linkTitle" href="/ruta-1-2-1">
+                                               Portada Asturias Exterior</a></li>
+                                        <li class="ft-org-masthead__acordeon-item"><a
+                                                class="ft-org-masthead__acordeon-link" href="/ruta-1-2-2">Subsección
+                                                Subnivel 1.2.2</a></li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="ft-org-masthead__acordeon-item">
+                            <button class="ft-org-masthead__acordeon-toggle" aria-expanded="false"
+                                aria-controls="submenu-2">
+                                Sección 2
+
+                            </button>
+                            <ul id="submenu-2"
+                                class="ft-org-masthead__acordeon-list ft-org-masthead__acordeon-list--nivel-2" hidden>
+                                <li class="ft-org-masthead__acordeon-item"><a class="ft-org-masthead__acordeon-link"
+                                        href="/ruta-2-1">Subsección 2.1</a></li>
+                                <li class="ft-org-masthead__acordeon-item"><a class="ft-org-masthead__acordeon-link"
+                                        href="/ruta-2-1">Subsección 2.2</a></li>
+                            </ul>
+                        </li>
+                        <li class="ft-org-masthead__acordeon-item">
+                            <button class="ft-org-masthead__acordeon-toggle" aria-expanded="false"
+                                aria-controls="submenu-3">
+                                Sección 3
+
+                            </button>
+                            <ul id="submenu-3"
+                                class="ft-org-masthead__acordeon-list ft-org-masthead__acordeon-list--nivel-2" hidden>
+                                <li class="ft-org-masthead__acordeon-item"><a class="ft-org-masthead__acordeon-link"
+                                        href="/ruta-2-1">Subsección 3.1</a></li>
+                                <li class="ft-org-masthead__acordeon-item"><a class="ft-org-masthead__acordeon-link"
+                                        href="/ruta-2-1">Subsección 3.2</a></li>
+                            </ul>
+                        </li>
+                        <li class="ft-org-masthead__acordeon-item">
+                            <a class="ft-org-masthead__acordeon-link">
+                                Sección 4
+                            </a>
+
+                        </li>
+                        <li class="ft-org-masthead__acordeon-item">
+                            <button class="ft-org-masthead__acordeon-toggle" aria-expanded="false"
+                                aria-controls="submenu-5">
+                                Sección 5
+                            </button>
+                            <ul id="submenu-5"
+                                class="ft-org-masthead__acordeon-list ft-org-masthead__acordeon-list--nivel-2" hidden>
+                                <li class="ft-org-masthead__acordeon-item"><a class="ft-org-masthead__acordeon-link"
+                                        href="/ruta-2-1">Subsección 5.1</a></li>
+                                <li class="ft-org-masthead__acordeon-item"><a class="ft-org-masthead__acordeon-link"
+                                        href="/ruta-2-1">Subsección 5.2</a></li>
+                            </ul>
+                        </li>
+                        <li class="ft-org-masthead__acordeon-item">
+                            <button class="ft-org-masthead__acordeon-toggle" aria-expanded="false"
+                                aria-controls="submenu-6">
+                                Sección 6
+                            </button>
+                            <ul id="submenu-6"
+                                class="ft-org-masthead__acordeon-list ft-org-masthead__acordeon-list--nivel-2" hidden>
+                                <li class="ft-org-masthead__acordeon-item"><a class="ft-org-masthead__acordeon-link"
+                                        href="/ruta-2-1">Subsección 5.1</a></li>
+                                <li class="ft-org-masthead__acordeon-item"><a class="ft-org-masthead__acordeon-link"
+                                        href="/ruta-2-1">Subsección 5.2</a></li>
+                            </ul>
+                        </li>
+                        <li class="ft-org-masthead__acordeon-item">
+                            <button class="ft-org-masthead__acordeon-toggle" aria-expanded="false"
+                                aria-controls="submenu-7">
+                                Sección 7
+                            </button>
+                            <ul id="submenu-7"
+                                class="ft-org-masthead__acordeon-list ft-org-masthead__acordeon-list--nivel-2" hidden>
+                                <li class="ft-org-masthead__acordeon-item"><a class="ft-org-masthead__acordeon-link"
+                                        href="/ruta-2-1">Subsección 5.1</a></li>
+                                <li class="ft-org-masthead__acordeon-item"><a class="ft-org-masthead__acordeon-link"
+                                        href="/ruta-2-1">Subsección 5.2</a></li>
+                            </ul>
+                        </li>
+                        <li class="ft-org-masthead__acordeon-item">
+                            <button class="ft-org-masthead__acordeon-toggle" aria-expanded="false"
+                                aria-controls="submenu-8">
+                                <svg class="ft-org-masthead__acordeon-toggleImg" width="15" height="15"
+                                    viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M7.59511 1.39615L8.84631 5.24696C9.03374 5.82379 9.57127 6.21434 10.1778 6.21434H14.2268C14.2637 6.21434 14.2791 6.22419 14.2871 6.23042C14.2991 6.23971 14.3134 6.25733 14.3219 6.28344C14.3304 6.30954 14.3292 6.33218 14.3249 6.34676C14.3221 6.35653 14.3154 6.37355 14.2856 6.39524L11.0099 8.77517C10.5192 9.13168 10.3139 9.76359 10.5013 10.3404L11.7525 14.1912C11.7639 14.2263 11.7593 14.244 11.7558 14.2536C11.7507 14.2679 11.7384 14.2869 11.7162 14.303C11.6939 14.3192 11.6721 14.325 11.6569 14.3255C11.6467 14.3258 11.6285 14.3247 11.5986 14.303L8.3229 11.9231C7.83222 11.5666 7.16778 11.5666 6.6771 11.9231L3.4014 14.303C3.37154 14.3247 3.35331 14.3258 3.34313 14.3255C3.32795 14.325 3.30605 14.3192 3.28385 14.303C3.26164 14.2869 3.24929 14.2679 3.24416 14.2536C3.24072 14.244 3.23611 14.2263 3.24752 14.1912L4.49872 10.3404C4.68615 9.76359 4.48083 9.13167 3.99014 8.77517L0.714445 6.39524C0.684584 6.37354 0.677924 6.35653 0.675071 6.34676C0.670813 6.33218 0.669636 6.30954 0.678119 6.28344C0.686601 6.25733 0.700859 6.23971 0.712873 6.23042C0.720929 6.22419 0.736315 6.21434 0.773226 6.21434H4.82221C5.42873 6.21434 5.96627 5.82379 6.15369 5.24696L7.40489 1.39615C7.4163 1.36104 7.43042 1.34945 7.43883 1.34372C7.45138 1.33516 7.47255 1.32705 7.5 1.32705C7.52745 1.32705 7.54861 1.33516 7.56116 1.34372C7.56958 1.34945 7.5837 1.36105 7.59511 1.39615Z"
+                                        stroke="currentcolor" stroke-width="1.3" />
+                                </svg>
+                                Sección 8
+                            </button>
+                            <ul id="submenu-8"
+                                class="ft-org-masthead__acordeon-list ft-org-masthead__acordeon-list--nivel-2" hidden>
+                                <li class="ft-org-masthead__acordeon-item"><a class="ft-org-masthead__acordeon-link"
+                                        href="/ruta-2-1">Subsección 5.1</a></li>
+                                <li class="ft-org-masthead__acordeon-item"><a class="ft-org-masthead__acordeon-link"
+                                        href="/ruta-2-1">Subsección 5.2</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="ft-org-masthead__box">
+                <div class="ft-org-masthead__section">
+                    <a href="#" class="ft-org-masthead__link">
+                        <img class="" src="/cds-statics/assets/img/icons/sopa-letras-PRUEBA.svg" width="120"
+                            height="75">
+                    </a>
+                    <p class="ft-org-masthead__subtitle ft-org-masthead__subtitle--center">Sopa de letras</p>
+                </div>
+                <div class="ft-org-masthead__section">
+                    <a href="#" class="ft-org-masthead__link">
+                        <img class="" src="/cds-statics/assets/img/icons/wordle-PRUEBA.svg" width="120" height="75">
+                    </a>
+                    <p class="ft-org-masthead__subtitle ft-org-masthead__subtitle--center">Wordle</p>
+                </div>
+            </div>
+            <div class="ft-org-masthead__box ft-org-masthead__box--white">
+                <h2 class="ft-org-masthead__title">La newsletter del Director</h2>
+                <div class="ft-mol-authors ft-mol-authors--horizontal ft-mol-authors--reduced js-prism">
+                    <div class="ft-mol-authors__photo">
+                        <a href="layout-noticia-Woman.html" title="title" target="_self">
+                            <img src="https://estaticos-cdn.prensaiberica.es/clip/3a5b2a1b-70e3-4746-a273-67c33eb9016e_source-aspect-ratio_default_0.jpg"
+                                width="60" height="60" class="ft-helper-img-rd alt=" alt="" text"="" title="title text">
+                        </a>
+                    </div>
+                    <div class="ft-mol-authors__content">
+                        <h2 class="ft-mol-authors__contentName">
+                            <a href="layout-noticia-Woman.html" class="ft-link ft-link--secondary" target="_self">
+                                Joan Vehils
+                            </a>
+                        </h2>
+                        <p class="ft-mol-authors__contentCategory">
+                            <a href="#" class="ft-link ft-link--tertiary" title="title text">
+                                Director de Sport
+                            </a>
+                        </p>
+                        <p class="ft-mol-authors__contentText">
+                            Recibe en tu correo una selección de las noticias más importantes del director
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="ft-org-masthead__box">
+                <div class="ft-mol-ticker ft-mol-ticker--news" role="region" aria-label="Es Noticia">
+                    <span class="ft-mol-ticker__heading" id="tickerNewsHeading">Es Noticia:</span>
+                    <div class="ft-mol-ticker__scroll" aria-labelledby="tickerNewsHeading" aria-live="polite"
+                        aria-atomic="true">
+                        <a href="#" class="ft-mol-ticker__item" title="title text" target="_self">
+                            <strong class="ft-mol-ticker__txt">Lorem ipsum dolor sit amet</strong>
+                        </a>
+                        <a href="#" class="ft-mol-ticker__item" title="title text" target="_self">
+                            <strong class="ft-mol-ticker__txt">Lorem ipsum dolor sit amet</strong>
+                        </a>
+                        <a href="#" class="ft-mol-ticker__item" title="title text" target="_self">
+                            <strong class="ft-mol-ticker__txt">Lorem ipsum dolor sit amet</strong>
+                        </a>
+                        <a href="#" class="ft-mol-ticker__item" title="title text" target="_self">
+                            <strong class="ft-mol-ticker__txt">Lorem ipsum dolor sit amet</strong>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="ft-org-masthead__box">
+                <div class="ft-mol-rrss-inline ft-mol-rrss-inline--center">
+                    <div class="ft-mol-rrss-inline__items">
+                        <a href="#" class="ft-btn-rrss ft-btn-rrss--twitter" title="Twitter" target="”_blank”"
+                            rel="nofollow">
+                            <span class="ft-mol-rrss ft-mol-rrssTwitter--default ft-btn-rrss__icon"></span>
+                            <span class="ft-btn-rrss__text">
+                                RRSS Twitter
+                            </span>
+                        </a>
+                        <a href="#" class="ft-btn-rrss ft-btn-rrss--facebook" title="Facebook" target="”_blank”"
+                            rel="nofollow">
+                            <span class="ft-mol-rrss ft-mol-rrssFacebook--default ft-btn-rrss__icon"></span>
+                            <span class="ft-btn-rrss__text">
+                                RRSS Facebook
+                            </span>
+                        </a>
+                        <a href="#" class="ft-btn-rrss ft-btn-rrss--email" title="Email" target="”_blank”"
+                            rel="nofollow">
+                            <span class="ft-mol-rrss ft-mol-rrssEmail--default ft-btn-rrss__icon"></span>
+                            <span class="ft-btn-rrss__text">
+                                RRSS Email
+                            </span>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+    <main></main>
+    <script src="/cds-statics/js/affix/affix.js" defer></script>
+    <script src="/cds-statics/js/headers/masthead.js" defer></script>
+    <script src="/cds-statics/js/sticking/fourty-header-sticky.js" defer></script>
+    <script src="/cds-statics/js/switch/fourty-js-switch-2024.js" defer></script>
+    <script src="/cds-statics/js/form/fourty-js-form-combo-search.js" defer></script>
+    <script src="/cds-statics/js/sidenav/fourty-js-sidenav-default.js" defer></script>
+    <script src="/cds-statics/js/modal/fourty-js-popover.js" defer></script>
+    <script src="/cds-statics/js/switch/fourty-js-switch-darkmode.js" defer></script>
+</body>
+</html>
