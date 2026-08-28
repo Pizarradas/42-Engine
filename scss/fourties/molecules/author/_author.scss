@@ -1,0 +1,298 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// .ft-mol-author
+// ===============================================
+.ft-mol-author {
+  $self: &;
+  @include position(relative, null null null null);
+  @include padding(null 1.5rem 1.5rem 1.5rem);
+  @include margin(0);
+  //  @include min-screen(768px)
+  @include min-screen(768px) {
+    @include margin(0 0 2.5rem 0);
+  }
+
+  // &__previous
+  &__previous {
+    @include margin(0 null 1rem null);
+    @include font--body-S--small;
+    display: block;
+    color: var(--color-quaternary);
+    text-transform: uppercase;
+  }
+
+  // &__subcategory
+  &__subcategory {
+    @include margin(.5rem null null null);
+    color: var(--color-primary);
+    display:flex;
+
+    @include behavior-parent(ft-mol-author--is-vertical){
+      justify-content: center;
+    }
+    @include behavior-parent(ft-mol-author--is-horizontal){
+      justify-content: flex-start;
+    }
+  }
+
+  // &__photo
+  &__photo {
+    @include border-top-radius(50%);
+    @include border-bottom-radius(50%);
+    transition: filter .25s ease-in-out;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    filter: grayscale(100%) brightness(110%); 
+
+    // &.ft-helper-img-rd
+    &.ft-helper-img-rd {
+      @include size(10rem);
+    } 
+  }
+
+  // &__name
+  &__name {
+    @include margin(null null 0 null);
+    @include font--body-M--small;
+    @include fontPrimary;
+    @include fontBold;
+
+    // &:hover, &:focus-within
+    &:hover,
+    &:focus-within {
+      text-decoration: underline;
+    }
+  }
+
+  // &__quote
+  &__quote {
+    @include margin(1rem null 0 null);
+    @include font--body-L--small;
+    @include fontPrimary;
+    @include font--weight-600;
+    display: flex;
+    font-style: italic;
+
+    // a
+    a {
+      color: var(--color-black);
+    }
+  }
+
+  // &:hover, &:focus-within
+  &:hover,
+  &:focus-visible {
+    // [class*="__photo"]
+    [class*="__photo"] {
+      filter: none;
+    }
+  }
+
+  // &--premium 
+  &--premium {
+    // #{ $self }
+    #{ $self } {
+      // &__quote
+      &__quote {
+
+        a{
+        // &::before
+        &::before {
+          content: "";
+          @include margin(-.2rem .5rem null null);
+          @include border-top-radius(.2rem);
+          @include border-bottom-radius(.2rem);
+          display: inline-block;
+          vertical-align: middle;
+          min-width: 1.5rem;
+          height: 1.5rem;
+          background-color: var(--color-primary);
+          background-size: 1.1rem;
+          background-repeat: no-repeat;
+          background-position: center;
+
+          // @if $brand ==: ep
+        @if $brand ==ep {
+            background-image: url("https://est.elperiodico.com/ep-static/img/p-subs-plus.svg");
+          }
+
+          // @if $brand ==: epe
+                  @if $brand ==epe {
+            background-image: url("#{$images-path}/logos/logoEPEplus.svg");
+          }
+
+          // @if $brand ==: regionales
+                  @if $brand ==regionales {
+            background-image: url("#{$images-path}/logos/logo-regionalesPlus.svg");
+            background-color: var(--color-premium);
+          }
+
+          // @if $brand ==: sport
+                  @if $brand ==sport {
+            background-image: url("#{$images-path}/logos/logo-SportPlus.svg");
+          }
+
+          // @if $brand ==: ux
+                  @if $brand ==ux {
+            background-image: url("#{$images-path}/logos/logo-regionalesPlus.svg");
+          }
+
+           // @if $brand ==: revistas
+                   @if $brand ==revistas
+           {
+            display:none;
+           }
+          
+        }
+      }
+      }
+    }
+  }
+
+  // &--is
+  &--is {
+    // &-highlighted
+    &-highlighted {
+      @include padding(2rem null 2rem null);
+      @include border-top-radius(0.5rem);
+      @include border-bottom-radius(0.5rem);
+
+      @include min-screen(1024px) {
+        background-color: var(--color-lightGrey);
+      }
+
+      // &:after
+      &:after {
+        content: "";
+        @include margin(2rem auto null auto);
+        @include size(4.5rem, 3rem);
+        @include background-setup(
+          map-icons(decoration, brand--signatureEpe),
+          // img path
+          "0 0 / contain",
+          // position and size
+          no-repeat,
+          // repeat
+          null,
+          // attachment
+          null,
+          // origin
+          null,
+          // clip
+          transparent,
+          // color
+        );
+
+        // behavior-parent(ft-brand-ep)
+        @if $brand ==ep {
+          filter: map-filters(reds, brand--ep);
+        }
+
+        // behavior-parent(ft-brand-epe)
+           @if $brand ==epe{
+          filter: map-filters(blues, brand--epe);
+        }
+
+        // behavior-parent(ft-brand-regionales)
+                @if $brand ==regionales {
+          filter: map-filters(blues, brand--regionales);
+        }
+
+        // behavior-parent(ft-brand-sport)
+                @if $brand ==sport {
+          filter: map-filters(reds, brand--sport);
+        }
+      }
+    }
+
+    // &-horizontal
+    &-horizontal {
+      @include padding(2rem 2rem 2rem 12.5rem);
+
+      // #{ $self }
+      #{ $self } {
+        // &__photo
+        &__photo {
+          @include position(absolute, 3rem null null 0); 
+          @include min-screen(768px) {
+            @include position(absolute, 2rem null null 0);
+          }
+        }
+      }
+    }
+
+    // &-vertical
+    &-vertical {
+      @include margin(2rem null);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      text-align: center;
+    
+      @include min-screen(1024px) {
+        @include margin(2rem null 0 null);;
+      }
+
+      // #{ $self }
+      #{ $self } {
+        // &__previous
+        &__previous {
+          flex-basis: 100%;
+        }
+
+        // &__name 
+        &__name {
+          @include margin(1rem null null null);
+          flex-basis: 100%;
+        }
+
+        // &__quote
+        &__quote {
+          flex-basis: 100%;
+          justify-content: center;
+        }
+      }
+    }
+
+    // &-bordered
+    &-bordered {
+      @include border-width(.1rem);
+      @include border-color(var(--color-mediumGrey));
+
+      // &-y
+      &-y {
+        @include padding(2rem null 2rem null);
+        @include border-style(solid null solid null);
+      }
+
+      // &-all
+      &-all {
+        @include border-style(solid);
+
+        .ft {
+          // &-mol
+          &-mol {
+            // &-author
+            &-author {
+              // &__photo
+              &__photo {
+                top: 1.8rem;
+                left: 1rem;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // &-rounded
+    &-rounded {
+      @include border-top-radius(.3rem);
+      @include border-bottom-radius(.3rem); 
+    }
+  }
+}

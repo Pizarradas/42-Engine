@@ -1,0 +1,292 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// ft-mol-accordion
+// ===============================================
+.ft-mol-accordion {
+  $self: &;
+  @include margin(2rem null);
+  display: block;
+
+  // &__summary
+  &__summary {
+    @include position(relative, null null null null);
+    @include padding(1rem 4rem 1rem null);
+    @include border-style(null null solid null);
+    @include border-width(0 0 0.1rem 0);
+    @include border-color(null null var(--color-lightGrey) null);
+    @include font--body-XL;
+    @include fontBold;
+    cursor: pointer;
+    width: 100%;
+    color: var(--color-black);
+    list-style-type: none;
+    @include behavior-parent(ft-mol-accordion--xs){
+      @include font--body-L;
+          @include fontBold;
+    }
+
+    // &:after
+    &:after {
+      content: "";
+      @include position(absolute, 1.2rem 1rem 0 null);
+      @include size(1.6rem);
+      pointer-events: none;
+      @include background-setup(
+        // img path
+        map-icons(chevrons, brand--default),
+        // position and size
+        "center left / contain",
+        // repeat
+        no-repeat,
+        // attachment
+        null,
+        // origin
+        null,
+        // clip
+        null,
+        // color
+        transparent
+      );
+      transform: rotate(360deg);
+      filter: map-filters(blacks, brand--all);
+      @include min-screen(768px) {
+        top: 0;
+        @include margin(auto null auto null);
+      }
+    }
+
+    // &:hover
+    &:hover {
+      // &:hover // &:after
+      &:after {
+       // @if $brand ==sport
+        @if $brand ==sport {
+          filter: map-filters(reds, brand--sport);
+        }
+
+       // @if $brand ==epe
+        @if $brand ==epe {
+          filter: map-filters(blues, brand--epe);
+        }
+
+       // @if $brand ==ux
+        @if $brand ==ux {
+          filter: map-filters(greys, brand--500);
+        }
+
+       // @if $brand ==ep
+       @if $brand ==ep {
+          filter: map-filters(reds, brand--ep);
+        }
+
+       // @if $brand ==regionales
+        @if $brand ==regionales {
+          filter: map-filters(blues, brand--regionales);
+        }
+
+       // @if $brand ==revistas
+        @if $brand ==revistas {
+          // behavior-brand: cuore
+          @include behavior-parent(cuore) {
+            filter: map-filters(reds, brand--cuore);
+          }
+
+          // behavior-brand: cuore
+          @include behavior-parent(woman) {
+            filter: map-filters(reds, brand--woman);
+          }
+
+          // behavior-brand: viajar
+          @include behavior-parent(viajar) {
+            filter: map-filters(blues, brand--viajar);
+          }
+
+         // behavior-brand: stilo
+          @include behavior-parent(stilo) {
+            filter: map-filters(reds, brand--stilo);
+          }
+        }
+
+        // behavior: bg(Color-black)
+        @include behavior-ft-helper-bg(Color-black) {
+          filter: map-filters(whites, brand--all);
+        }
+      }
+    }
+  }
+
+  // &__icon
+  &__icon {
+    @include position(absolute, 1.8rem null null 0);
+  }
+
+  // &__subtitle
+  &__subtitle {
+    @include margin(0);
+    @include padding(null 4rem null null);
+    @include font--body-M;
+    width: 100%;
+  }
+
+  // &__text
+  &__text {
+    @include padding(0 0 1.5rem 0);
+    width: 100%;
+    @include min-screen(768px) {
+      @include padding(0.5rem 1.5rem 1.5rem 0);
+    }
+
+    // .ft-text
+    .ft-text {
+      @include margin(0);
+      @include font--body-L;
+        @include behavior-parent(ft-mol-accordion--xs){
+      @include font--body-M;
+     
+    }
+    }
+  }
+
+// &--xs
+&--xs {
+  @include padding(1rem 4rem 1rem null);
+}
+  // &--has
+  &--has {
+    // &-icon
+    &-icon {
+      // [class*="__summary"]
+      [class*="__summary"] {
+        @include padding(null null null 2.8rem);
+      }
+    }
+
+    // &-data-rgt
+    &-data-rgt {
+      // [class*="__summary"]
+      [class*="__summary"] {
+        @include padding(null 12rem null null); 
+      }
+
+      // [class*="__data-rgt"]
+      [class*="__data-rgt"] {
+        @include position(absolute, 1rem 5rem 0 null);
+        @include font--heading-XXS;
+      }
+    }
+  }
+
+  // &__details[open] > &__summary
+  &__details[open] > &__summary {
+    @include border-width(0);
+    color: var(--color-primary);
+
+   // @if $brand ==revistas
+    @if $brand ==revistas {
+      color: var(--color-secondary);
+    }
+
+    // &:after
+    &:after {
+      transform: rotate(180deg);
+
+     // @if $brand ==sport
+      @if $brand ==sport {
+        filter: map-filters(reds, brand--sport);
+      }
+
+     // @if $brand ==epe
+      @if $brand ==epe {
+        filter: map-filters(blues, brand--epe);
+      }
+
+     // @if $brand ==ux
+      @if $brand ==ux {
+        filter: map-filters(greys, brand--500);
+      }
+
+     // @if $brand ==ep
+     @if $brand ==ep {
+        filter: map-filters(reds, brand--ep);
+      }
+
+     // @if $brand ==regionales
+      @if $brand ==regionales {
+        filter: map-filters(blues, brand--regionales);
+      }
+
+     // @if $brand ==revistas
+      @if $brand ==revistas {
+        // behavior-brand: cuore
+        @include behavior-parent(cuore) {
+          filter: map-filters(reds, brand--cuore);
+        }
+
+        // behavior-brand: cuore
+        @include behavior-parent(woman) {
+          filter: map-filters(reds, brand--woman);
+        }
+
+        // behavior-brand: viajar
+        @include behavior-parent(viajar) {
+          filter: map-filters(blues, brand--viajar);
+        }
+        
+         // behavior-brand: stilo
+          @include behavior-parent(stilo) {
+            filter: map-filters(reds, brand--stilo);
+          }
+      }
+
+      // behavior: bg(Color-black)
+      @include behavior-ft-helper-bg(Color-black) {
+        filter: map-filters(whites, brand--all);
+      }
+    }
+
+    // [class*="__icon"]
+    [class*="__icon"] {
+      // behavior: ep
+     @if $brand ==ep {
+        filter: map-filters(reds, brand--ep);
+      }
+
+      // behavior: epe
+      @if $brand ==epe {
+        filter: map-filters(blues, brand--epe);
+      }
+
+      // behavior: regionales 
+      @if $brand ==regionales {
+        filter: map-filters(blues, brand--regionales);
+      }
+
+      // behavior: sport 
+      @if $brand ==sport {
+        filter: map-filters(reds, brand--sport);
+      }
+    }
+
+    // [class*="__data-rgt"]
+    [class*="__data-rgt"] {
+      color: var(--color-primary);
+    }
+  }
+
+  // &__details[open] > &__summary &__subtitle
+  &__details[open] > &__summary &__subtitle {
+    color: var(--color-black);
+  }
+
+  // &__details[open]>&__text
+  &__details[open] > &__text {
+    @include border-style(null null solid null);
+    @include border-width(0 0 0.1rem 0);
+    @include border-color(null null var(--color-lightGrey) null);
+    
+  }
+}

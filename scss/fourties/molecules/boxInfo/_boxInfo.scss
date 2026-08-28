@@ -1,0 +1,667 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// ft-mol-boxInfo
+// ===============================================
+.ft-mol-boxInfo {
+  // generals
+  @include border-style(solid);
+  @include border-width(0.1rem);
+  @include border-color(var(--color-mediumGrey));
+  @include position(relative, null);
+  @include margin(4rem null);
+  @include padding(2rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  // min-screen(768px)
+  @include min-screen(768px) {
+    // generals
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  //  .ft-text
+  // ---------------------------------------------
+  .ft-text {
+    // generals
+    @include font--body-L;
+
+    // end //  &:flast-of-type
+  }
+
+  //  .ft-text:last-of-type
+  // ---------------------------------------------
+  .ft-text:last-of-type {
+    // generals
+    @include margin(0);
+
+    // end //  &:flast-of-type
+  }
+
+  //  .ft-btn
+  // ---------------------------------------------
+  .ft-btn {
+    // generals
+    @include margin(1rem 0 0 0);
+
+    // end //  &:flast-of-type
+  }
+
+  &:before {
+    // generals
+    content: "";
+    @include border-style(solid);
+    @include border-width(2px);
+    @include border-color(var(--color-primary));
+    @include margin(null null 1rem null);
+    @include position(absolute, 0 null null 0);
+    width: 15%;
+    height: 0.2rem;
+
+    // min-screen(768px)
+    @include min-screen(768px) {
+      width: 150px;
+    }
+  }
+
+  .ft-img {
+    // generals
+    @include padding(null 0 1.5rem null);
+    display: flex;
+    justify-content: center;
+
+    // min-screen(768px)
+    @include min-screen(768px) {
+      @include padding(null 2rem 0 null);
+      justify-content: flex-start;
+    }
+
+    .ft-helper-img-rd {
+      // generals
+      max-width: 110px;
+    }
+
+    // generals
+  }
+
+  // &__content
+  // ---------------------------------------------
+  &__content {
+    // generals
+    display: block;
+    text-align: center;
+
+    // min-screen(768px)
+    @include min-screen(768px) {
+      text-align: inherit;
+    }
+
+    // behavior parent: ft-mol-boxInfo--erratum
+    @include behavior-parent(ft-mol-boxInfo--erratum) {
+      // generals
+      text-align: left;
+    }
+
+    // behavior parent: ft-mol-boxInfo--richtext
+    @include behavior-parent(ft-mol-boxInfo--richtext) {
+      // generals
+      text-align: left;
+    }
+
+    // behavior parent: ft-mol-boxInfo--between
+    @include behavior-parent(ft-mol-boxInfo--between) {
+      // generals
+      width: 100%;
+    }
+
+    // behavior parent: ft-mol-boxInfo--ranking
+    @include behavior-parent(ft-mol-boxInfo--ranking) {
+      // generals
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    // END //  &__content
+  }
+
+  // &--Aligncenter
+  // ---------------------------------------------
+  &--Aligncenter {
+    // generals
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    // .ft-img
+    .ft-img {
+      @include padding(null 0 1.5rem null);
+    }
+
+    // END //  &--Aligncenter
+  }
+
+  // &--richtext
+  // ---------------------------------------------
+  &--richtext {
+    // generals
+    background-color: var(--color-lightGrey);
+    flex-direction: row;
+    align-items: flex-start;
+
+    // .ft-text: first-of-type
+    .ft-text:first-of-type {
+      margin: 0;
+    }
+
+    // .ft-text: last-of-type
+    .ft-text:last-of-type {
+      margin: 0 0 1rem;
+    }
+
+    // .ft-img
+    .ft-img {
+      @include padding(null 2rem null null);
+      min-width: 11rem;
+
+      // END  // .ft-img
+    }
+
+    // END //  &--richtext
+  }
+
+  //  &--score
+  // ---------------------------------------------
+  &--score {
+    // generals
+    @include padding(2rem 0);
+    @include margin(0);
+    @include border-style(dotted none none none);
+    @include border-width(0.1rem);
+    @include border-color(var(--color-mediumGrey));
+    @include position(relative, null null);
+    display: block;
+    width: 100%;
+
+    &:before {
+      // generals
+      content: none;
+    }
+
+    // &__header
+    // ---------------------------------------------
+    &__header {
+      // generals
+      @include margin(1.5rem 0 0.5rem 0);
+      @include font--heading-XXS;
+
+      // min-screen(768px)
+      @include min-screen(768px) {
+        @include margin(0 0 0.5rem 0);
+      }
+
+      // END // // &__header
+    }
+
+    // &__subtitle
+    // ---------------------------------------------
+    &__subtitle {
+      // generals
+      @include font--body-L;
+      @include margin(0 0 0.5rem 0);
+      color: var(--color-primary);
+
+      // end // // &__subtitle
+    }
+
+    // &__image
+    // ---------------------------------------------
+    &__image {
+      // generals
+      @include margin(0 1rem 2rem 0);
+      float: left;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+
+      // min-screen(768px)
+      @include min-screen(768px) {
+        @include margin(0 2rem 4rem 0);
+      }
+
+      // end // &__image
+    }
+
+    // &__number
+    // ---------------------------------------------
+    &__number {
+      // generals
+      @include position(absolute, 7rem null null 0);
+      @include font--heading-XXS;
+      width: 4.5rem;
+      height: 4.5rem;
+      border-radius: 50%;
+      background: var(--color-primary);
+      color: var(--color-white);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      outline: 3px solid var(--color-white);
+
+      // end // // &__number
+    }
+
+    .ft-text {
+      // generals
+      color: var(--color-quaternary);
+      float: inherit;
+      margin-top: 0;
+      width: 100%;
+      display: block;
+
+      // min-screen(768px)
+      @include min-screen(768px) {
+        float: none;
+      }
+    }
+
+    // END //  &--score
+  }
+
+  // &--ranking
+  // ---------------------------------------------
+  &--ranking {
+    // generals
+    @include padding(2rem 0 0 0);
+    @include border-width(0);
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &:before {
+      content: "";
+      @include border-style(solid);
+      @include border-width(2px);
+      @include border-color(var(--color-mediumGrey));
+      width: 15%;
+
+      // min-screen(768px)
+      @include min-screen(768px) {
+        width: 150px;
+      }
+    }
+
+    // &Primary
+    // ---------------------------------------------
+    &Primary {
+      &:before {
+        content: "";
+        @include border-color(var(--color-functional-success));
+      }
+
+      // END //  &Primary
+    }
+
+    // &Secondary
+    // ---------------------------------------------
+    &Secondary {
+      &:before {
+        content: "";
+        @include border-color(var(--color-functional-info));
+      }
+
+      // END //   &Secondary
+    }
+
+    // &Tertiary
+    // ---------------------------------------------
+    &Tertiary {
+      &:before {
+        content: "";
+        @include border-color(var(--color-functional-warning));
+      }
+
+      // END //   &Tertiary
+    }
+
+    //  &Quaternary
+    // ---------------------------------------------
+    &Quaternary {
+      &:before {
+        content: "";
+        @include border-color(var(--color-functional-error));
+      }
+
+      // END //  &Quaternary
+    }
+
+    // &__header
+    // ---------------------------------------------
+    &__header {
+      // generals
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      @include margin(1rem 0 0 0);
+
+      // min-screen(768px)
+      @include min-screen(768px) {
+        @include margin(1rem 0 1.5rem);
+      }
+
+      &Has {
+        // &title
+        // ---------------------------------------------
+        &title {
+          // generals
+          @include font--heading-XXS;
+
+          // end // &title
+        }
+
+        // &image
+        // ---------------------------------------------
+        &image {
+          // generals
+          @include margin(0 1rem 0 0);
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+
+          // min-screen(768px)
+          @include min-screen(768px) {
+            @include margin(0 2rem 0 0);
+            width: 80px;
+            height: 80px;
+          }
+
+          // end // &image
+        }
+      }
+
+      // END // // &__header
+    }
+
+    // ft-text:first-of-type
+    // ---------------------------------------------
+    .ft-text:first-of-type {
+      margin-top: 1rem;
+    }
+
+    // ---------------------------------------------
+
+    // ---------------------------------------------
+
+    // END // ft-mol-ranking
+  }
+
+  // &--erratum
+  // ---------------------------------------------
+  &--erratum {
+    // generals
+    @include border-style(solid none none none);
+    background-color: var(--color-lightGrey);
+
+    &:before {
+      // generals
+      content: none;
+    }
+
+    // END // &--erratum
+  }
+
+  // &--between
+  // ---------------------------------------------
+  &--between {
+    // generals
+    @include border-style(none);
+    background-color: var(--color-subscription-septenary);
+    color: var(--color-black);
+
+    &:before {
+      // generals
+      content: none;
+    }
+
+    // &__head
+    &__head {
+      // generals
+      @include position(relative, null);
+      @include margin(0);
+      @include border-style(null null solid null);
+      @include border-width(0 0 0.2rem 0);
+      @include border-color(
+        transparent transparent var(--color-black) transparent
+      );
+      @include padding(null null 0.5rem null);
+      @include font--body-M;
+      width: 100%;
+
+      &:after {
+        content: " ";
+        @include position(absolute, null null -1.2rem 4.5rem);
+        @include border-style(solid);
+        @include border-width(1rem 2rem 0 0);
+        @include border-color(var(--color-black) transparent transparent);
+      }
+
+      // END // &__head
+    }
+
+    //  &__title
+    &__title {
+      // generals
+      @include margin(2rem 0 0 0);
+      @include font--body-XL;
+      @include fontBold;
+      // END // &__title
+    }
+
+    // .ft-text
+    .ft-text {
+      @include font--body-M;
+    }
+
+    // END // .ft-text
+
+    // .ft-text:last-of-type
+    .ft-text:last-of-type {
+      @include margin(0 0 1rem 0); // END // .ft-text:last-of-type
+    }
+
+    // END //  &--between
+  }
+
+  // Estilos genéricos
+  // ul
+  // ---------------------------------------------
+  ul {
+    // generals
+    // ---------------------------------------------
+    list-style: none;
+    @include font--body-M;
+
+    // ---------------------------------------------
+
+    // li
+    // ---------------------------------------------
+    li {
+      // generals
+      @include position(relative, null null null null);
+      @include padding(null null null 1.5rem);
+
+      // &:before
+      &:before {
+        // generals
+        content: "";
+        // generals
+        @include position(absolute, 0.9rem null null 0);
+        @include size(0.6rem, 0.6rem);
+        @include background-setup(
+          map-icons(bullets, brand--default),
+          // img path
+          "0 0 / 100%",
+          // position and size
+          no-repeat,
+          // repeat
+          null,
+          // attachment
+          null,
+          // origin
+          null,
+          // clip
+          transparent // color
+        );
+        filter: map-filters(blacks, brand--all);
+
+        // @if $brand ==sport
+        @if $brand ==sport {
+          filter: map-filters(reds, brand--sport);
+        }
+
+        // @if $brand ==epe
+        @if $brand ==epe {
+          filter: map-filters(blues, brand--epe);
+        }
+
+        // @if $brand ==ux
+        @if $brand ==ux {
+          filter: map-filters(greys, brand--500);
+        }
+
+        // @if $brand ==ep
+        @if $brand ==ep {
+          filter: map-filters(reds, brand--ep);
+        }
+
+        // @if $brand ==regionales
+        @if $brand ==regionales {
+          filter: map-filters(blues, brand--regionales);
+        }
+
+        // behavior: bg(Color-black)
+        @include behavior-ft-helper-bg(Color-black) {
+          filter: map-filters(whites, brand--all);
+          // end // behavior: bg(Color-black)
+        }
+      }
+
+      // a
+      a {
+        color: var(--color-primary);
+
+        // behavior: bg(Color-black)
+        @include behavior-ft-helper-bg(Color-black) {
+          color: var(--color-white);
+        }
+
+        // &:hover, &:focus-within
+        &:hover,
+        &:focus-within {
+          text-decoration: none;
+          color: var(--color-black);
+        }
+
+        // end // a
+      }
+    }
+
+    // ---------------------------------------------
+
+    // END // li
+  }
+
+  // ol
+  // ---------------------------------------------
+  ol {
+    // generals
+    // ---------------------------------------------
+    @include font--body-M;
+    list-style: auto;
+    @include margin(null null null 2rem);
+
+    // li
+    li {
+      // generals
+      @include margin(null null 0.5rem null);
+
+      // &::marker
+      &::marker {
+        @include font--body-L;
+        color: var(--color-primary);
+      }
+
+      // end // &__item
+
+      // a
+      a {
+        color: var(--color-primary);
+
+        // behavior: bg(Color-black)
+        @include behavior-ft-helper-bg(Color-black) {
+          color: var(--color-white);
+        }
+
+        // &:hover, &:focus-within
+        &:hover,
+        &:focus-within {
+          text-decoration: none;
+          color: var(--color-black);
+        }
+
+        // end // a
+      }
+
+      // end // li
+    }
+
+    // end // ol
+  }
+
+  // ===============================================
+
+  // ---------------------------------------------
+
+  // &--inline
+  &--inline {
+    @include margin(0);
+    @include padding(1.2rem 1.6rem);
+    width: 100%;
+
+    &:before {
+      content: none;
+    }
+
+    .ft-mol-boxInfo__content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.2rem;
+      width: 100%;
+      text-align: left;
+
+      > .ft-helper-display-flex--column {
+        flex: 1 1 auto;
+        min-width: 0;
+        gap: 0.2rem;
+      }
+    }
+
+    .ft-text {
+      @include margin(0);
+      font-size: 1.2rem;
+      line-height: 1.1;
+    }
+
+    .ft-btn {
+      @include margin(0);
+      flex: 0 0 auto;
+    }
+  }
+}

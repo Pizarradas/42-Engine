@@ -1,0 +1,709 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+
+// ================================================
+// ft-mol-card
+// ===============================================
+.ft-mol-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: stretch;
+  @include margin(null null 2rem null);
+
+  //&__edition
+  &__edition {
+    --color-edition-bg-1: var(--color-darkGrey);
+    --color-edition-bg-2: var(--color-mediumGrey);
+    --color-edition-font: var(--color-lightGrey);
+    @include margin(-1.5rem -1.5rem 1.5rem -1.5rem);
+    @include border-top-radius(1rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: stretch;
+    min-height: 3rem;
+    max-height: 3rem;
+    margin-bottom: 15px;
+    color: var(--color-edition-font);
+    background: linear-gradient(90deg, var(--color-edition-bg-2) 5%, var(--color-edition-bg-1) 20%, var(--color-edition-bg-1) 80%, var(--color-edition-bg-2) 95%);
+    overflow: hidden;
+
+    &-logo {
+      align-self: flex-start;
+      margin: 5px 5px 0 0;
+      max-width: 36px;
+      max-height: 36px;
+    }
+
+    &-text {
+      color: inherit;
+    }
+
+    @include behavior-parent(ft-mol-card--prime) {
+      @include margin(.8rem .8rem 0 .8rem);
+      @include border-top-radius(2rem);
+      @include border-bottom-radius(2rem);
+
+      @include min-screen(768px) {
+        @include margin(1.1rem 1.1rem null 1.1rem);
+      }
+
+      @include min-screen(1024px) {
+        @include margin(null auto null auto);
+        max-width: 1002px;
+      }
+
+      @include min-screen(1200px) {
+        @include margin(null auto null auto);
+        max-width: 1200px;
+      }
+    }
+
+    @include behavior-parent(ft-mol-card--featured) {
+      position: absolute;
+      top: 6rem;
+      left: 0;
+      width: 100%;
+      margin: 0;
+      border-radius: unset;
+    }
+  }
+
+  //&__header
+  &__header {
+    @include margin(0 null null null);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: stretch;
+
+    // generals
+    @include min-screen(768px) {
+      @include margin(1.5rem null null null);
+    }
+
+    @include behavior-parent(ft-mol-card--row) {
+      @include margin(0 null null null);
+    }
+
+    @include behavior-parent(ft-mol-card--white) {
+      color: var(--color-white);
+    }
+
+    @include behavior-parent(ft-mol-card--prime) {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      @include min-screen(768px) {
+        @include margin(0 null null null);
+      }
+
+      @include min-screen(1024px) {
+        @include margin(1rem null 1rem null);
+      }
+    }
+  }
+
+  //&__headband
+  &__headband {
+    @include margin(0);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+
+    @include behavior-parent(ft-mol-card--center) {
+      align-items: flex-start;
+      flex-direction: column;
+
+      // generals
+      @include min-screen(768px) {
+        align-items: center;
+      }
+    }
+
+    @include behavior-parent(ft-mol-card--featured) {
+      align-items: center;
+      flex-direction: column;
+    }
+
+    @include behavior-parent(ft-mol-card--prime) {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+
+  //Titulo de la card
+  &__title {
+    @include margin(0);
+    @include font--heading-S;
+
+    //variante pequeña
+    @include behavior-parent(ft-mol-card--xs) {
+      @include font--heading-XXS;
+    }
+
+    //variante en fila
+    @include behavior-parent(ft-mol-card--row) {
+      @include font--heading-XXS;
+    }
+
+    @include behavior-parent(ft-mol-card--prime) {
+      @include font--display-S;
+    }
+  }
+
+  //Subtitulo de la card
+  &__subtitle {
+    @include margin(.5rem null 0 null);
+    width: 100%;
+    @include font--body-XXL;
+
+    //variante pequeña
+    @include behavior-parent(ft-mol-card--xs) {
+      @include font--body-XXL;
+    }
+
+    //variante en fila
+    @include behavior-parent(ft-mol-card--row) {
+      @include font--body-XXL;
+    }
+
+    //variante en fila
+    @include behavior-parent(ft-mol-card--featured) {
+      @include margin(.5rem null 0 null);
+
+      // generals
+      @include min-screen(768px) {
+        @include margin(1.5rem null 0 null);
+      }
+    }
+  }
+
+  //&__image
+  &__image {
+    display: block;
+    object-fit: contain;
+    height: 68px;
+    width: 68px;
+
+    // generals
+    @include min-screen(768px) {
+      width: 100%;
+      height: 124px;
+    }
+
+    @include behavior-parent(ft-mol-card--xs) {
+      height: 68px;
+      width: 68px;
+
+      // generals
+      @include min-screen(768px) {
+        height: 145px;
+        width: 100%;
+      }
+    }
+
+    @include behavior-parent(ft-mol-card--row) {
+      height: 68px;
+      width: 68px;
+    }
+
+    @include behavior-parent(ft-mol-card--featured) {
+      height: 130px;
+      width: 130px;
+
+      // generals
+      @include min-screen(768px) {
+        height: 200px;
+        width: 100%;
+      }
+    }
+
+    @include behavior-parent(ft-mol-card--prime) {
+      height: 160px;
+      width: 160px;
+
+      // generals
+      @include min-screen(768px) {
+        height: 240px;
+        width: 240px;
+      }
+
+      @include min-screen(1024px) {
+        height: 320px;
+        width: 320px;
+      }
+    }
+
+  }
+
+  //&__body
+  &__body {
+    @include position(relative, null null null null);
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    color: var(--color-black);
+
+    // generals
+    @include min-screen(768px) {
+      flex-direction: column;
+    }
+
+    @include behavior-parent(ft-mol-card--row) {
+      flex-direction: row;
+    }
+
+    @include behavior-parent(ft-mol-card--featured) {
+      flex-direction: column;
+    }
+
+    @include behavior-parent(ft-mol-card--prime) {
+      flex-direction: row;
+      min-height: 22rem;
+
+      @include min-screen(1024px) {
+        height: 27rem;
+        flex-direction: row-reverse;
+        gap: 2rem;
+      }
+    }
+
+  }
+
+  //Fecha de la card
+  &__date {
+    @include font--body-L;
+    @include margin(0);
+    color: var(--color-quaternary);
+
+    //variante pequeña
+    @include behavior-parent(ft-mol-card--xs) {
+      @include font--body-S;
+    }
+
+    @include min-screen(768px) {
+      @include margin(null);
+    }
+  }
+
+  //Texto de la card
+  &__text {
+    @include font--body-L;
+    @include margin(1rem null 1rem null);
+    width: 100%;
+
+    //variante pequeña
+    @include behavior-parent(ft-mol-card--xs) {
+      @include font--body-M--small;
+    }
+
+    //variante en row
+    @include behavior-parent(ft-mol-card--row) {
+      text-align: left;
+    }
+
+    //si después de este div hay otro con la clase &~ .ft-mol-card__text    
+    &~.ft-mol-card__text {
+      @include margin(0);
+    }
+
+    //variante en fila
+    @include behavior-parent(ft-mol-card--featured) {
+      @include margin(1rem null 0 null);
+
+      // generals
+      @include min-screen(768px) {
+        @include margin(1.5rem null 0 null);
+      }
+    }
+
+    @include behavior-parent(ft-mol-card--prime) {
+      @include margin(1rem null 0 null);
+      max-width: 66.67vw;
+
+      // generals
+      @include min-screen(768px) {
+        @include margin(1.5rem null 0 null);
+        max-width: 60vw;
+      }
+    }
+  }
+
+  //&__content
+  &__content {
+    display: flex;
+    @include margin(null 1.5rem null null);
+    @include position(relative, null);
+
+    // generals
+    @include min-screen(768px) {
+      @include margin(null 0 null null);
+    }
+
+    //&--bordered
+    @include behavior-parent(ft-mol-card--row) {
+      @include margin(null 1.5rem null null);
+    }
+
+
+    //&--bordered
+    @include behavior-parent(ft-mol-card--featured) {
+      @include margin(null 0 2rem null);
+
+      // generals
+      @include min-screen(768px) {
+        @include margin(null 0 0 null);
+      }
+    }
+
+    @include behavior-parent(ft-mol-card--prime) {
+      @include position(absolute, null -3rem -6.5rem null);
+      @include margin(null 0 null null);
+      transform: rotate(-22.5deg);
+
+      // generals
+      @include min-screen(768px) {
+        @include position(absolute, null -5rem -9.5rem null);
+      }
+
+      @include min-screen(1024px) {
+        @include position(absolute, null -7rem -12.5rem null);
+      }
+
+      &:has(video) {
+        @include min-screen(1024px) {
+          @include position(relative, null 0 0 null);
+          transform: none;
+        }
+
+        picture {
+          @include min-screen(1024px) {
+            display: none;
+          }
+        }
+
+        video {
+          display: none;
+
+          @include min-screen(1024px) {
+            display: block;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    // generals
+    //si el div siguiente es .ft-mol-card__header
+    /*     &+.ft-mol-card__header {
+      @include margin(1.5rem null null null);
+    } */
+
+    /* // si el div siguiente es .ft-mol-card__header y si su padre es ft-mol-card--row
+    @include behavior-parent(ft-mol-card--row) {
+      &+.ft-mol-card__header {
+        @include margin(0 null null null);
+
+        @include min-screen(768px) {
+          @include margin(1rem null null null);
+        }
+      }
+    } */
+
+    & .ft-img {
+      width: 100%;
+      max-width: 100%;
+      @include border-top-radius(1rem);
+      @include border-bottom-radius(1rem);
+      @include position(relative, null);
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      //&--bordered
+      @include behavior-parent(ft-mol-card--bordered) {
+        background-color: var(--color-lightGrey);
+        @include padding(1.5rem);
+      }
+
+      //&--center
+      @include behavior-parent(ft-mol-card--center) {
+        justify-content: flex-start;
+
+        // generals
+        @include min-screen(768px) {
+          justify-content: center;
+        }
+      }
+
+      //&--featured
+      @include behavior-parent(ft-mol-card--featured) {
+        justify-content: center;
+      }
+
+      //&--crucigrama
+      @include behavior-parent(ft-mol-card--crucigrama) {
+        background-color: var(--color-crucigrama);
+      }
+
+      @include behavior-parent(ft-mol-card--wordle) {
+        background-color: var(--color-wordle);
+      }
+
+      @include behavior-parent(ft-mol-card--sopa) {
+        background-color: var(--color-sopa);
+      }
+
+      //&--sudoku
+      @include behavior-parent(ft-mol-card--sudoku) {
+        background-color: var(--color-sudoku);
+      }
+
+      //&--porra
+      @include behavior-parent(ft-mol-card--porra) {
+        background-color: var(--color-lightGrey);
+      }
+
+      //&--cuatroencampo
+      @include behavior-parent(ft-mol-card--cuatroencampo) {
+        background-color: var(--color-cuatroencampo);
+      }
+
+      //&--pangramax
+      @include behavior-parent(ft-mol-card--pangramax) {
+        background-color: var(--color-pangramax);
+      }
+
+      //&--cuadronumerico
+      @include behavior-parent(ft-mol-card--cuadronumerico) {
+        background-color: var(--color-cuadronumerico);
+      }
+
+      //&--saltaminas
+      @include behavior-parent(ft-mol-card--saltaminas) {
+        background-color: var(--color-saltaminas);
+      }
+
+      //&--timequest
+      @include behavior-parent(ft-mol-card--timequest) {
+        background-color: var(--color-timequest);
+      }
+    }
+
+
+    // cartelito de nuevo
+    &New {
+      @include position(absolute, -.5rem null null -.8rem);
+      @include padding(.4rem 1rem);
+      @include font--body-M--small;
+      @include fontBold;
+      @include border-top-radius(1rem);
+      @include border-bottom-radius(1rem);
+      background-color: var(--color-black);
+      color: var(--color-white);
+      z-index: 10;
+
+      @include behavior-parent(ft-mol-card--xs) {
+        @include font--body-S--small;
+        @include fontBold;
+      }
+
+      @include behavior-parent(ft-mol-card--prime) {
+        @include position(relative, 0 null null 0);
+        @include font--body-S--small;
+        @include fontBold;
+      }
+    }
+  }
+
+  //&__footer
+  &__footer {
+    @include margin(auto null null null);
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+
+    @include behavior-parent(ft-mol-card--row) {
+      justify-content: flex-start;
+    }
+
+    @include behavior-parent(ft-mol-card--center) {
+      justify-content: flex-start;
+
+      // generals
+      @include min-screen(768px) {
+        justify-content: center;
+      }
+    }
+
+    @include behavior-parent(ft-mol-card--featured) {
+      justify-content: center;
+      @include margin(1.5rem null null null);
+
+      // generals
+      @include min-screen(768px) {
+        @include margin(2.5rem null 0 null);
+      }
+    }
+
+
+    .ft-btn {
+
+      // si el div siguiente es .ft-btn
+      &+.ft-btn {
+        @include margin(null null null 1rem);
+      }
+
+    }
+
+  }
+
+  //&--bordered
+  &--bordered {
+    @include padding(1.5rem);
+    @include border-style(solid);
+    @include border-width(.1rem);
+    @include border-color(var(--color-lightGrey));
+    @include border-top-radius(1rem);
+    @include border-bottom-radius(1rem);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    background-color: var(--color-white);
+
+    &:hover {
+      box-shadow: rgba(0, 0, 0, 0.20) 0px 1px 8px;
+    }
+  }
+
+  //&--center
+  &--center {
+    align-items: flex-start;
+    text-align: left;
+
+    // generals
+    @include min-screen(768px) {
+      align-items: center;
+      text-align: center;
+    }
+
+  }
+
+  //&--featured
+  &--featured {
+    align-items: center;
+    text-align: center;
+  }
+
+  //&--prime
+  &--prime {
+    @include margin(null null 0 null);
+    text-align: left;
+    overflow: hidden;
+  }
+
+  //&--row
+  &--row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  //&--text
+  &--text {
+    &White {
+      .ft-mol-card__header {
+        color: var(--color-white);
+      }
+    }
+  }
+
+  .ft-btn--secondary {
+    border-color: var(--color-white);
+    color: var(--color-white);
+    background-color: transparent;
+  }
+
+  .ft-btn--secondary:hover {
+    background: var(--color-secondary) radial-gradient(circle, transparent 1%, var(--color-secondary) 1%) center / 15000%;
+    color: var(--color-white);
+    border-color: var(--color-black);
+  }
+
+  // Variables de color disponibles cuando el juego vive dentro de .fcbarcelona
+  @include behavior-parent(fcbarcelona) {    
+    &__edition {
+      --color-edition-bg-1: #004d98;
+      --color-edition-bg-2: #a50044;
+      --color-edition-font: #ffff00;
+    }
+  }
+
+  // Variables de color disponibles cuando el juego vive dentro de .realmadrid  
+  @include behavior-parent(realmadrid) {    
+    &__edition {
+      --color-edition-bg-1: #3e31fa;
+      --color-edition-bg-2: #3227c8;
+      --color-edition-font: #ffffff;
+    }
+  }
+
+  // Variables de color disponibles cuando el juego vive dentro de .seleccion.
+  @include behavior-parent(seleccion) {
+    --color-game: #702833;
+    --color-game-dark: #06162d;
+    --color-game-medium: #dac56c;
+    --color-game-light: #f1ede7;
+
+    &__edition {
+      background: var(--color-game);
+      border-top: 4px solid var(--color-game-medium);
+      color: var(--color-white);
+    }
+
+    &__image {
+      filter: brightness(0) saturate(100%) invert(16%) sepia(26%) saturate(4297%) hue-rotate(324deg) brightness(89%) contrast(85%);
+    }
+
+    &--white .ft-mol-card__header {
+      color: var(--color-game);
+    }
+
+    .ft-btn {
+      --color-black: var(--color-game);
+
+      &--secondary {
+        --color-white: var(--color-game);
+
+        &:hover {
+          color: white;
+        }
+
+        &-has--icon {
+          .ft-btn__icon {
+            filter: brightness(0) saturate(100%) invert(16%) sepia(26%) saturate(4297%) hue-rotate(324deg) brightness(89%) contrast(85%);
+          }
+
+          &:hover {
+            .ft-btn__icon {
+              filter: brightness(0) invert(100%);
+            }
+          }
+        }
+      }
+
+      &__badge {
+        background-color: var(--color-functional-warning);
+      }
+    }
+  }
+}

@@ -1,0 +1,260 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// ft-mol-az-list
+// ================================================
+// Lista larga indexada A-Z: titulo sticky opcional, cabeceras de grupo
+// por letra, rail lateral tipo scrubber iOS Contacts y empty state.
+// Vive habitualmente dentro de un contenedor con altura limitada
+// (p. ej. .ft-mol-modal__body). El <ul> de la lista compone con el
+// atomo ft-list + modificador --add (definido en atoms/list/_list.scss).
+//
+// Estructura:
+//   .ft-mol-az-list
+//     __title          label de seccion sticky (opcional)
+//     __layout         fila lista + rail (opcional)
+//       __list         <ul> grid (+ .ft-list.ft-list--add ...)
+//         __group      <li> cabecera de letra A-Z
+//         .ft-list__item ...   <li> item clicable (compone con --add)
+//           __name       nombre
+//           __region     region (opcional)
+//       __rail         <nav> scrubber A-Z
+//         __rail-letter
+//           --is-active
+//         __rail-bubble
+//         --is-dragging  (modifier del rail)
+//     __empty          empty state
+// ================================================
+.ft-mol-az-list {
+  $self: &;
+
+  // &__title  (label sticky en el top del scroll del contenedor)
+  &__title {
+    @include position(sticky, -0.1rem null null null);
+    z-index: 2;
+    @include margin(0 1.4rem 1.4rem 0);
+    @include padding(0.6rem null);
+    background-color: var(--color-white);
+    color: color-mix(in srgb, var(--color-black) 80%, var(--color-primary));
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.06em;
+    text-align: left;
+    text-transform: uppercase;
+  }
+
+  // &__layout  (fila lista + rail; se omite si la lista no necesita indice)
+  &__layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+
+    // dentro de __layout, la lista ocupa el espacio restante junto al rail
+    #{$self}__list {
+      flex: 1;
+      min-width: 0;
+    }
+  }
+
+  // &__list  (columna unica; las cabeceras de grupo ocupan toda la fila)
+  &__list {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+    @include margin(0);
+    @include padding(0);
+    list-style: none;
+    text-align: left;
+
+    // @include min-screen(768px)
+    @include min-screen(768px) {
+      @include margin(1.5rem null null null);
+    }
+  }
+
+  // &__group  (cabecera A-Z; ocupa toda la fila del grid)
+  &__group {
+    grid-column: 1 / -1;
+    @include margin(1.4rem 0 0.4rem 0);
+    @include padding(0.6rem 0);
+    color: var(--color-primary);
+    font-size: 1.4rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    // &:first-child
+    &:first-child {
+      @include margin(0 null null null);
+    }
+  }
+
+  // &__name  (nombre del item; vive dentro de un .ft-list__item)
+  &__name {
+    flex: 1 1 auto;
+    min-width: 0;
+    color: color-mix(in srgb, var(--color-black) 90%, var(--color-primary));
+    font-size: 1.35rem;
+    font-weight: 600;
+    line-height: 1.25;
+
+    // @include min-screen(768px)
+    @include min-screen(768px) {
+      font-size: 1.55rem;
+    }
+
+    // mark  (resaltado del termino buscado: sin background, peso bold)
+    mark {
+      background: transparent;
+      color: inherit;
+      font-weight: 700;
+    }
+
+    // cuando el item esta seleccionado (modifier en .ft-list__item--is-selected)
+    .ft-list__item--is-selected & {
+      color: #14532d;
+    }
+  }
+
+  // &__region  (region/subtitulo del item)
+  &__region {
+    flex: 0 0 auto;
+    color: #7d8694;
+    font-size: 1rem;
+    text-transform: uppercase;
+    white-space: normal;
+
+    // @include min-screen(768px)
+    @include min-screen(768px) {
+      font-size: 1.2rem;
+      white-space: nowrap;
+    }
+
+    // cuando el item esta seleccionado
+    .ft-list__item--is-selected & {
+      color: #4b7b5e;
+    }
+  }
+
+  // &__rail  (scrubber A-Z tipo iOS Contacts)
+  // touch-action:none captura todo el gesto (el rail hace drag-scroll, no
+  // el body). user-select y tap-highlight neutralizados para UX nitida.
+  &__rail {
+    @include position(sticky, 1rem null null null);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    align-items: stretch;
+    align-self: flex-start;
+    justify-content: space-between;
+    width: 3.5rem;
+    @include padding(1.2rem 0.4rem);
+    border-radius: 999px;
+    background-color: var(--color-lightGrey);
+    box-shadow: inset 0 0 0 0.1rem color-mix(in srgb, var(--color-primary) 12%, var(--color-white));
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: none;
+    -webkit-tap-highlight-color: transparent;
+
+    // &[hidden]
+    &[hidden] {
+      display: none;
+    }
+  }
+
+  // &__rail-letter
+  // pointer-events:none -> el rail delega el gesto al contenedor.
+  &__rail-letter {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 2.7rem;
+    @include padding(0);
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    pointer-events: none;
+    cursor: pointer;
+    transition: color 120ms cubic-bezier(0.2, 0, 0, 1), transform 120ms cubic-bezier(0.2, 0, 0, 1);
+
+    // &:focus-visible, &--is-active  (letra resaltada)
+    &:focus-visible,
+    &--is-active {
+      color: var(--color-primary);
+      outline: none;
+      transform: scale(1.35);
+    }
+
+    // cuando el rail esta en drag, la letra activa se pinta en chip
+    #{$self}__rail--is-dragging &--is-active {
+      border-radius: 999px;
+      background: var(--color-primary);
+      color: #fff;
+      transform: scale(1.1);
+    }
+  }
+
+  // &__rail-bubble  (preview a la izquierda del rail mientras se arrastra)
+  &__rail-bubble {
+    @include position(absolute, null null null null);
+    right: calc(100% + 1rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4.8rem;
+    height: 4.8rem;
+    border-radius: 999px;
+    background: var(--color-primary);
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 800;
+    line-height: 1;
+    text-align: center;
+    pointer-events: none;
+    opacity: 0;
+    box-shadow: 0 0.8rem 2rem rgba(15, 23, 42, 0.18);
+    transform: translateY(-50%);
+    transition: opacity 120ms cubic-bezier(0.2, 0, 0, 1);
+
+    // cuando el rail esta en drag, mostramos la burbuja
+    #{$self}__rail--is-dragging & {
+      opacity: 1;
+    }
+  }
+
+  // viewports muy bajos: comprimimos letras para que quepa todo el alfabeto
+  // sin scroll. max-screen-height es excepcion al mobile-first; aqui es
+  // genuinamente "solo viewports bajos" (no responsive ancho).
+  @include max-screen-height(640px) {
+    #{$self}__rail-letter {
+      min-height: 1.6rem;
+      font-size: 0.64rem;
+    }
+  }
+
+  // &__empty  (estado sin resultados)
+  &__empty {
+    @include margin(1.2rem 0.9rem null 0.9rem);
+    @include padding(2.8rem 2.4rem);
+    border: 0;
+    border-radius: 1.2rem;
+    background: color-mix(in srgb, var(--color-primary) 6%, var(--color-white));
+    color: color-mix(in srgb, var(--color-quaternary) 70%, var(--color-primary));
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: center;
+  }
+}

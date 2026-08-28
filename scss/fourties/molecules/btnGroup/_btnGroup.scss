@@ -1,0 +1,100 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// .ft-mol-btnGroup
+// ===============================================
+.ft-mol-btnGroup {
+  @include position(relative, null null null null);
+  @include padding(1rem null null null);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  @include min-screen(768px) {
+    justify-content: flex-start;
+  }
+  gap: 1rem;
+
+  // &--lft
+  &--lft {
+    justify-content: flex-start;
+  }
+
+  // &--rgt
+  &--rgt {
+    @include min-screen(768px) {
+      justify-content: flex-end;
+    }
+  }
+
+  // &--cnt
+  &--cnt {
+    justify-content: center;
+  }
+
+  // &--is
+  &--is {
+    // &-fixed
+    &-fixed {
+      @include position(fixed, null 0 0 0);
+      @include padding(null null 1rem null);
+      z-index: 10;
+      width: 100%;
+      background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.9) 0%,
+        rgba(255, 255, 255, 0.9) 100%
+      );
+      border-top: 1px solid var(--color-lightGrey);
+
+      // &-mo
+      &-mo {
+        @include position(fixed, null 0 0 0);
+        @include padding(null null 1rem null);
+        z-index: 10;
+        width: 100%;
+        background: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0.9) 0%,
+          rgba(255, 255, 255, 0.9) 100%
+        );
+        border-top: 1px solid var(--color-ligthGrey);
+        @include min-screen(768px) {
+          @include position(initial, null null null null);
+          z-index: 1;
+          background-image: none;
+        }
+      }
+    }
+
+    // &-scrollable
+    &-scrollable {
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      overflow-x: auto;
+      overflow-y: hidden;
+      cursor: grab;
+      -webkit-overflow-scrolling: touch;
+
+      > * {
+        flex: 0 0 auto;
+      }
+
+      @include min-screen(768px) {
+        &.ft-mol-btnGroup--cnt {
+          justify-content: center;
+        }
+
+        &.ft-mol-btnGroup--rgt {
+          justify-content: flex-end;
+        }
+
+        &.ft-mol-btnGroup--lft {
+          justify-content: flex-start;
+        }
+      }
+    }
+  }
+}

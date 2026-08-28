@@ -1,0 +1,428 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// .ft-mol-author
+// ===============================================
+.ft-mol-authors {
+    $self: &;
+    @include margin(2.5rem null 2.5rem null);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+    // behavior-parent(ft-mol-authors--horizontal)
+    @include behavior-parent-nested(ft-mol-authors--horizontal) {
+        align-items: flex-start;
+
+        // min-screen(768px)
+        @include min-screen(768px) {
+            flex-direction: column;
+
+            // behavior-parent(ft-mol-authors--reduced)
+            @include behavior-parent-nested(ft-mol-authors--reduced) {
+                flex-direction: column;
+            }
+        }
+    }
+
+
+
+    // &__main
+    &__main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+
+        // behavior-parent(ft-mol-authors--horizontal)
+        @include behavior-parent(ft-mol-authors--horizontal) {
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+
+        // &Info
+        &Info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+
+            @include behavior-parent(ft-mol-authors--horizontal) {
+                @include margin(null null null 2rem);
+                align-items: flex-start;
+                justify-content: flex-start;
+            }
+        }
+
+    }
+
+    // &___photo 
+    &__photo {
+
+        @include margin(null null 1rem null);
+        @include padding(0);
+
+
+
+        &Image {
+            border-radius: 50%;
+            height: 7rem;
+            width: 7rem;
+            min-width: 7rem;
+            object-fit: cover;
+            border-radius: 50%;
+            aspect-ratio: 1/1;
+            @include border-style(solid);
+            @include border-width(.1rem);
+            @include border-color(var(--color-mediumGrey));
+
+            // behavior-parent(ft-mol-authors--reduced)
+            @include behavior-parent(ft-mol-authors--reduced) {
+                height: 5rem;
+                width: 5rem;
+                min-width: 5rem;
+            }
+
+            // min-screen(768px)
+            @include min-screen(768px) {
+                height: 10rem;
+                width: 10rem;
+                min-width: 10rem;
+            }
+        }
+    }
+
+    &--reduced {
+        .ft-mol-tagsNews {
+            display: none;
+        }
+    }
+
+    //  &__name
+    &__name {
+        @include margin(0 null .5rem null);
+        @include font--heading-S;
+        @include fontStack;
+        @include font--weight-600;
+        color: var(--color-primary);
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+
+        @include behavior-parent(ft-mol-authors--horizontal) {
+            justify-content: flex-start;
+            text-align: left;
+        }
+
+        // @if $brand(revistas)
+        @if $brand ==revistas {
+            @include font--heading-M;
+        }
+
+        // behavior-parent(ft-mol-authors--reduced)
+        @include behavior-parent(ft-mol-authors--reduced) {
+            @include font--body-M--small;
+            @include font--weight-600;
+        }
+    }
+
+    //  &__category
+    &__category {
+        @include margin(0 0 1rem 0);
+        @include font--body-M;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        @include border-style(null null solid null);
+        @include border-width(null null 0.1rem null);
+        @include border-color(var(--color-mediumGrey) null);
+        @include padding(null null .5rem null);
+
+        @include behavior-parent(ft-mol-authors--horizontal) {
+            justify-content: flex-start;
+            text-align: left;
+        }
+
+
+        // behavior-parent(ft-mol-authors--reduced)
+        @include behavior-parent(ft-mol-authors--reduced) {
+            @include font--body-S
+        }
+    }
+
+    //  &__rrss
+    &__rrss {
+        @include margin (0 null 1rem null);
+        display: flex;
+        flex-direction: row;
+        column-gap: 1.4rem;
+        justify-content: center;
+        flex-wrap:wrap;
+        // a
+        a {
+            @include min-click-area();
+        }
+
+
+        // ft-mol-authors--horizontal
+         @include behavior-parent(ft-mol-authors--horizontal) {
+            justify-content: flex-start;
+        }
+    }
+
+    //  &quote
+    &quote {
+        @include margin(0 null);
+        @include font--body-XL;
+        @include fontPrimary;
+        @include fontBold;
+        text-align: center;
+
+        // behavior-parent(ft-mol-authors--horizontal)
+        @include behavior-parent(ft-mol-authors--horizontal) {
+            text-align: center;
+
+            // min-screen(768px)
+            @include min-screen(768px) {
+                text-align: left;
+            }
+        }
+    }
+
+    // &__content
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width:100%;
+
+        // behavior-parent(ft-mol-authors--horizontal)
+        @include behavior-parent(ft-mol-authors--horizontal) {
+            justify-content: flex-start;
+            align-items: flex-start;
+
+            // min-screen(768px)
+            @include min-screen(768px) {
+
+                // behavior-parent(ft-mol-authors--reduced)
+                @include behavior-parent-nested(ft-mol-authors--reduced) {
+                    @include margin(null null null 0);
+                }
+            }
+        }
+
+        //  &Text
+        &Description {
+            @include margin(0 null 0rem null);
+            @include font--body-L;
+            text-align: center;
+            color: var(--color-black);
+
+            // behavior-parent(ft-mol-authors--horizontal)
+            @include behavior-parent(ft-mol-authors--horizontal) {
+                text-align: left;
+            }
+
+            // behavior-parent(ft-mol-authors--reduced)
+            @include behavior-parent(ft-mol-authors--reduced) {
+                @include font--body-M
+            }
+        }
+
+        //  &Text
+        &Text {
+            @include margin(0 null 1rem null);
+            @include font--body-L;
+            text-align: center;
+
+            // behavior-parent(ft-mol-authors--horizontal)
+            @include behavior-parent(ft-mol-authors--horizontal) {
+                text-align: left;
+            }
+
+            // behavior-parent(ft-mol-authors--reduced)
+            @include behavior-parent(ft-mol-authors--reduced) {
+                @include font--body-S
+            }
+            a{
+               color: var(--color-primary);
+               text-decoration: underline; 
+            }
+        }
+
+        // .ft-readMore
+        .ft-readMore {
+            align-items: center;
+            @include margin(null null 1rem null);
+
+            // behavior-parent(ft-mol-authors--horizontal)
+            @include behavior-parent(ft-mol-authors--horizontal) {
+                align-items: flex-start;
+            }
+        }
+    }
+
+    // &--premium
+    &--premium {
+
+        // #{ $self }
+        #{$self } {
+
+            // &Quote
+            &__contentQuote {
+                @include position(relative, null);
+
+                // &::before
+                &::before {
+                    content: "";
+                    @include margin(-.5rem .5rem null null);
+                    @include border-top-radius(.2rem);
+                    @include border-bottom-radius(.2rem);
+                    display: inline-block;
+                    vertical-align: middle;
+                    min-width: 2rem;
+                    height: 2rem;
+                    background-color: var(--color-primary);
+                    background-size: 1.2rem;
+                    background-repeat: no-repeat;
+                    background-position: center;
+
+                    // @if $brand ==: ep
+                    @if $brand ==ep {
+                        background-image: url("https://est.elperiodico.com/ep-static/img/p-subs-plus.svg");
+                    }
+
+                    // @if $brand ==: epe
+                    @if $brand ==epe {
+                        background-image: url("#{$images-path}/logos/logoEPEplus.svg");
+                    }
+
+                    // @if $brand ==: regionales
+                    @if $brand ==regionales {
+                        background-image: url("#{$images-path}/logos/logo-regionalesPlus.svg");
+                        background-color: var(--color-premium);
+                    }
+
+                    // @if $brand ==: sport
+                    @if $brand ==sport {
+                        background-image: url("#{$images-path}/logos/logo-SportPlus.svg");
+                    }
+
+                    // @if $brand ==: ux
+                    @if $brand ==ux {
+                        background-image: url("#{$images-path}/logos/logo-regionalesPlus.svg");
+                    }
+
+                    // @if $brand ==: revistas
+                    @if $brand ==revistas {
+                        display: none;
+                    }
+
+                    background-color: var(--color-primary);
+
+
+                }
+
+
+            }
+        }
+    }
+
+    //  &--background
+    &--background {
+        background-color: var(--color-lightGrey);
+        @include padding(3rem 2rem);
+
+        .ft-readMore__content {
+            &:after {
+                background: linear-gradient(to bottom, transparent, var(--color-lightGrey) 99%);
+            }
+        }
+    }
+
+    //  &--background
+    &--bordered {
+        @include border-style(solid null);
+        @include border-width(0.1rem null);
+        @include border-color(var(--color-mediumGrey) null);
+        @include padding(3rem 2rem);
+    }
+
+    .ft-mol-tagsNews {
+        @include border-style(none);
+        @include border-width(0);
+        @include margin(1rem 0 1rem 0);
+        @include padding(0);
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        gap: .5rem;
+        width: 100%;
+        overflow: hidden;
+
+        // behavior-parent(ft-mol-authors--horizontal)
+        @include behavior-parent-nested(ft-mol-authors--horizontal) {
+            align-items: flex-start;
+
+            // min-screen(768px)
+            @include min-screen(768px) {
+                align-items: center;
+            }
+            justify-content: flex-start;
+        }
+
+        // min-screen(768px)
+        @include min-screen(768px) {
+            flex-direction: row;
+            gap: 1.5rem;
+            justify-content: center;
+             // behavior-parent(ft-mol-authors--horizontal)
+            @include behavior-parent-nested(ft-mol-authors--horizontal) {
+                align-items: center;
+                justify-content: flex-start;
+            }
+        }
+
+        &__title {
+            @include font--body-S;
+            @include padding(0);
+            color: var(--color-quaternary);
+
+                // min-screen(768px)
+                @include min-screen(768px) {
+                @include padding(0 0 .5rem 0);
+                }
+        }
+
+        &__tags {
+            justify-content: flex-start;
+            align-items: center;
+            @include padding(0 0 .5rem 0);
+            overflow-y: auto;
+            scrollbar-width: none;
+                width: 100%;
+            max-width:fit-content;
+            &::-webkit-scrollbar {
+                display: none;
+              }
+
+            .ft-tag {
+                @include margin(0 null 0 null);
+            }
+        }
+    }
+    .ft-mol-rrss {
+        text-align:left;
+    }
+}

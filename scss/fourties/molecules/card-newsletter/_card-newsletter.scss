@@ -1,0 +1,325 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+
+// .ft-mol-card-newsletter
+.ft-mol-card-newsletter {
+  @include position(relative, null null null null);
+  padding: 1rem;
+  border: 0.1rem solid var(--color-lightGrey);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100%;
+
+  // switch: legacy
+  .btn-bool {
+    --w: 52px;
+    --h: 28px;
+    --p: 2px;
+    --bg-off: var(--color-quaternary);
+    --bg-on: var(--color-functional-success);
+    --knob: var(--color-white);
+    --icon-off: var(--color-quaternary);
+    --icon-on: var(--color-white);
+
+    @include position(relative, null null null null);
+    cursor: pointer;
+    width: var(--w);
+    height: var(--h);
+    border-radius: var(--h);
+    background: var(--bg-off);
+    padding: var(--p);
+
+    > input {
+      @include position(absolute, null null null null);
+      @include margin(0);
+      @include size(100%, 100%);
+      cursor: pointer;
+      inset: 0;
+      opacity: 0;
+      z-index: 3;
+      -webkit-appearance: none;
+      appearance: none;
+
+      &:checked + .btn-position {
+        transform: translateX(calc(var(--w) - var(--h)));
+
+        &::after {
+          background-image: url("#{$images-path}/icons/icon-alerts--ok.svg");
+          filter: brightness(0) saturate(100%) invert(52%) sepia(59%)
+            saturate(2334%) hue-rotate(102deg) brightness(93%) contrast(101%);
+        }
+      }
+
+      &:focus-visible + .btn-position {
+        outline: 2px solid #005fcc;
+        outline-offset: 2px;
+      }
+    }
+
+    &:has(> input:checked) {
+      background: var(--bg-on);
+    }
+  }
+
+  // .btn-position: legacy
+  .btn-position {
+    @include position(relative, null null null null);
+    width: calc(var(--h) - 2 * var(--p));
+    height: calc(var(--h) - 2 * var(--p));
+    background-color: var(--knob);
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+    transform: translateX(0);
+    transition: transform 0.2s ease;
+    z-index: 1;
+
+    // &:after
+    &::after {
+      content: "";
+      @include position(absolute, null null null null);
+      @include margin(auto);
+      @include size(1rem, 1rem);
+      z-index: 2;
+      inset: 0;
+      color: var(--icon-off);
+      background: center / contain no-repeat url("#{$images-path}/icons/icon-alerts--ko.svg");
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .btn-position {
+      transition: none;
+    }
+  }
+
+  // .subscribe: legacy
+  .subscribe {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+
+    // label
+    label {
+      display: none; /* (coincide con tu CSS original) */
+      font-size: 1rem;
+      line-height: 1.2rem;
+      color: var(--color-quaternary);
+    }
+  }
+
+  // ul
+  ul {
+    @include margin(0);
+    @include padding(0);
+    list-style: none;
+    flex-shrink: 0;
+  }
+
+  // .ft-tag
+  .ft-tag {
+    @include position(relative, null null null null);
+    @include padding(0.2rem 0.8rem);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    border: 2px solid var(--color-lightGrey);
+    background-color: var(--color-lightGrey);
+    border-radius: 1.2rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--color-black);
+  }
+
+  // &__top
+  &__top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-shrink: 0;
+  }
+
+  // &__content
+  &__content {
+    @include margin(1rem null null null);
+    display: flex;
+    gap: 2rem;
+    flex: 1;
+    align-items: flex-start;
+
+    // > figure
+    > figure {
+      flex-shrink: 0;
+
+      // > .ft-helper-img-rd
+      > .ft-helper-img-rd {
+        @include size(9rem, 9rem);
+        object-fit: cover;
+        object-position: 50% 20%;
+        background: var(--color-lightGrey);
+      }
+
+      // > figcaption
+      > figcaption {
+        @include position(absolute, null null null null);
+        @include margin(-0.1rem);
+        @include padding(0);
+        @include size(0.1rem, 0.1rem);
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+    }
+  }
+
+  // &__text
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+
+    // > h2, h3, h4, h5, h6
+    > h2, h3, h4, h5, h6 {
+      @include margin(0 0 0.5rem 0);
+      flex-shrink: 0;
+    }
+
+    // > p
+    > p {
+      @include margin(0);
+      flex: 1;
+      color: var(--color-quaternary);
+    }
+
+    // > .ft-list
+    > .ft-list {
+      @include margin(1rem 0 0 0);
+      display: inline-flex;
+      align-items: center;
+      flex-shrink: 0;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-weight: 600;
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+      color: var(--color-tertiary);
+
+      // .ft-list__item
+      .ft-list__item {
+        @include margin(0);
+        flex-basis: 100%;
+
+        // .ft-link
+        .ft-link {
+          text-decoration: underline;
+        }
+
+        // &:first-child
+        &:first-child {
+          color: var(--color-quaternary);
+        }
+      }
+    }
+  }
+
+  // &--is
+  &--is {
+    // &-premium
+    &-premium {
+      @include position(relative, null null null null);
+
+      // .ft-tag
+      .ft-tag {
+        @include padding(null null null 2.8rem);
+        border-color: var(--color-premium);
+        color: var(--color-white);
+        background-color: var(--color-premium);
+
+        // @if $brand == epe
+        @if $brand == epe {
+          @include padding(null null null .8rem);
+          border-color: var(--color-primary);
+          background-color: var(--color-primary);
+        }
+
+        // @if $brand == regionales
+        @if $brand == regionales {
+          @include padding(null null null 2.2rem);
+        }
+
+        // @if $brand == sport
+        @if $brand == sport {
+          @include padding(null null null .8rem);
+          border-color: var(--color-primary);
+          background-color: var(--color-primary);
+        }
+
+        // &:before
+        &:before {
+          content: "";
+          @include position(absolute, null null null 0.5rem);
+          @include size(1.5rem, 1.5rem);
+          z-index: 2;
+          background-repeat: no-repeat;
+          background-size: contain;
+
+          // @if $brand == epe
+          @if $brand == epe {
+            display: none;
+          }
+          // @if $brand == sport
+          @if $brand == sport {
+            display: none;
+          }
+        }
+
+        // .ft-link
+        .ft-link {
+          color: var(--color-white);
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .ft-mol-card-newsletter__top {
+          @include margin(auto null null null);
+        }
+        .subscribe {
+          @include position(absolute, 0.75rem 0.75rem null null);
+          z-index: 1;
+        }
+      }
+    }
+  }
+
+  /* =========================
+     Selectores con padre externo (quedan dentro usando @at-root)
+     ========================= */
+
+  /* Espaciado de cards en el grid que contiene la card */
+  @at-root .ft-layout-grid-flex__colXs-12:has(> #{&}) {
+    margin-block-end: 1rem;
+  }
+  @media (min-width: 1024px) {
+    @at-root .ft-layout-grid-flex__colXs-12:has(> #{&}) {
+      margin-block-end: 2.2rem;
+    }
+  }
+
+  /* Logos premium por marca */
+  @at-root {
+    .ft-brand-ep #{&}--is-premium .ft-tag:before {
+      background-image: url("#{$images-path}/logos/logoEPplus2-no-bg.svg");
+    }
+    .ft-brand-regionales #{&}--is-premium .ft-tag:before {
+      background-image: url("#{$images-path}/logos/logo-regionalesPlus2.svg");
+    }
+  }
+}

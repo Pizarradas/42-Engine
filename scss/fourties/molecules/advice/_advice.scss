@@ -1,0 +1,105 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+
+@mixin hide {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// .ft-mol-advice
+// ===============================================
+.ft-mol-advice {
+  $self: &;
+  // Override local de primary solo para advice
+  --color-primary: var(--color-black);
+  display:flex;
+  flex-direction:row;
+  justify-content: space-between;
+  align-items: center;
+  @include padding(null 0 .5rem 0);
+  @include margin(1rem null 1.5rem null);
+  border-bottom:1px solid var(--color-mediumGrey);
+  flex-wrap: wrap;
+  width: 100%;
+  min-height:2rem;
+
+  @include behavior-parent(videos){
+    @include margin(0 null 1.5rem null);
+  }
+ @include behavior-parent(galeriav){
+  border-bottom:0px none;
+    flex-wrap: nowrap;
+    @include margin(.2rem null 0 null);
+    width:auto;
+}
+   //  @include min-screen(768px)
+        @include min-screen(768px) {
+          min-height:4rem;
+            @include behavior-parent(galeriav){
+                min-height:auto;
+              }
+          
+        }
+
+  &__content{
+    display:flex;
+    @include padding(.5rem 0rem);
+  }
+  &__title{
+      @include font--body-M;
+      @include fontBold;
+      @include margin(null .5rem null null);
+          white-space: nowrap;
+
+          @if $brand ==revistas{
+            @include fontStack;
+          }
+  }
+   &__subtitle{
+      @include font--body-M;
+      display:none;
+        //  @include min-screen(768px)
+        @include min-screen(768px) {
+          display:flex;
+        }
+  }
+  .ft-btn{
+    @include font--body-S;
+    @include padding(null null null 2.8rem);
+    border-width: 0.1rem;
+    //.ft-btn__icon
+    .ft-btn__icon {
+    max-height: 2.5rem;
+    max-width: 2.5rem;
+    left: .3rem;
+}
+  }
+  .ft-btn--secondary-has--icon.ft-btn--sm{
+  @include padding(null null null 2.8rem);
+      text-transform: inherit;
+}
+
+  &--only{
+      @include margin(.2rem null);
+      width:auto;
+      border-bottom:0px none;
+       //  @include min-screen(768px)
+        @include min-screen(768px) {
+          @include hide;
+        }
+        .ft-mol-advice__content{
+        @include hide;
+    }
+  }
+}

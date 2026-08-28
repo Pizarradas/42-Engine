@@ -1,0 +1,152 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// ft-mol-bar
+// ===============================================
+.ft-mol-bar {
+  $this: &;
+  @include margin(null null 2rem null);
+
+  // &--xs
+  &--xs {
+    #{$this}__title,
+    #{$this}__votes {
+      @include font--body-XS;
+    }
+
+    #{$this}__background {
+      @include size(100%, 10px);
+    }
+
+    #{$this}__background-inProgress {
+      @include size(auto, 10px);
+    }
+  }
+
+  // &--sm
+  &--sm {
+    #{$this}__title,
+    #{$this}__votes {
+      @include font--body-S;
+    }
+
+    #{$this}__background {
+      @include size(100%, 15px);
+    }
+
+    #{$this}__background-inProgress {
+      @include size(auto, 15px);
+    }
+  }
+
+  // &--md
+  &--md {
+    #{$this}__background {
+      @include size(100%, 30px);
+    }
+
+    #{$this}__background-inProgress {
+      @include size(auto, 30px);
+    }
+  }
+
+  // &--lg
+  &--lg {
+    #{$this}__title,
+    #{$this}__votes {
+      @include font--body-XL;
+    }
+
+    #{$this}__background {
+      @include size(100%, 45px);
+    }
+
+    #{$this}__background-inProgress {
+      @include size(auto, 45px);
+    }
+  }
+
+  // &__info
+  &__info {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+  }
+
+  // &__title
+  &__title {
+    @include margin(0 0 0 0);
+    @include font--body-M;
+    font-weight: 700;
+  }
+
+  // &__votes
+  &__votes {
+    @include font--body-M;
+    color: var(--color-quaternary);
+  }
+
+  // &__background
+  &__background {
+    @include position(relative, null null null null);
+    background-color: var(--color-lightGrey);
+    overflow: hidden;
+
+    @include behavior-parent(ft-mol-bar--stacked) {
+      display: flex;
+    }
+    // default
+    @include size(100%, 30px);
+
+    // &-inProgress
+    &-inProgress {
+      @include position(absolute, 0 null null 0);
+
+      @include behavior-parent(ft-mol-bar--stacked) {
+        @include position(relative, unset null null unset);
+      }
+      @include size(auto, 30px);
+    }
+  }
+
+  // &__user
+  &__user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  // &--data-inside
+  &--data-inside {
+    @include position(relative, null null null null);
+    @include margin(null null 0 null);
+    @include padding(0);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    // &__info
+    #{$this}__info {
+      flex: 0 0 auto;
+    }
+
+    // &__background
+    #{$this}__background {
+      flex: 1 1 auto;
+    }
+
+    // &__data
+    #{$this}__data {
+      @include position(absolute, 50% null null 0);
+      @include padding(.6rem 1.4rem);
+      @include font--body-XS;
+      z-index: 2;
+      transform: translateY(-50%); 
+      color: var(--color-black);
+      white-space: nowrap;
+    }
+  }
+}

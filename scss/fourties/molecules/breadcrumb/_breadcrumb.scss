@@ -1,0 +1,3556 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// .ft-mol-breadcrumb
+// ===============================================
+.ft-mol-breadcrumb {
+  $self: &;
+  @include position(relative, null null null null);
+  @include margin(1rem null null null);
+  @include padding(null null null 0);
+  list-style-type: none;
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: flex;
+  width: 100%;
+  white-space: nowrap;
+
+  @if $brand ==epe {
+    @include behavior-parent(activos) {
+      font-family: var(--font-stack);
+    }
+  }
+
+  // &__link
+  &__link {
+    @include position(relative, null null null null);
+    @include padding(0 null 0 null);
+    @include font--body-M;
+    color: var(--color-quaternary);
+
+    // behavior: parent(ft-mol-breadcrumb-has--lvl)
+    @include behavior-parent(ft-mol-breadcrumb-has--lvl) {
+      @include margin(null null 0.5rem null);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      color: var(--color-black);
+      width: fit-content;
+
+      // min-screen(768px)
+      @include min-screen(768px) {
+        @include margin(null null 0 null);
+      }
+    }
+
+    // behavior: bg(Color-black)
+    @include behavior-ft-helper-bg(Color-black) {
+      color: var(--color-white);
+    }
+
+    // &:hover, &:focus
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
+  // &__item
+  &__item {
+    @include position(relative, null null null null);
+    @include margin(0 0 1rem 0);
+    @include font--body-M;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    color: var(--color-black);
+
+    // &:not(:last-child)
+    &:not(:last-child) {
+      #{$self}__link {
+        @include padding(null 2.5rem null null);
+      }
+    }
+
+    // behavior: bg(Color-black)
+    @include behavior-ft-helper-bg(Color-black) {
+      color: var(--color-white);
+    }
+
+    // &:not(::last-child)
+    &:not(:last-child) {
+      &:after {
+        content: "";
+        @include margin(auto null auto null);
+        @include position(absolute, 0 0 0 null);
+        @include size(1rem, 2rem);
+        @include background-setup(
+          map-icons(chevrons, brand--default),
+          // img path
+          "0 0 / contain",
+          // position and size
+          no-repeat,
+          // repeat
+          null,
+          // attachment
+          null,
+          // origin
+          null,
+          // clip
+          transparent // color
+        );
+        transform: rotate(-90deg);
+        filter: map-filters(greys, brand--500);
+
+        // behavior: bg(Color-black)
+        @include behavior-ft-helper-bg(Color-black) {
+          filter: map-filters(whites, brand--all);
+        }
+      }
+    }
+
+    // behavior: parent(ft-mol-breadcrumb-has--home)
+    @include behavior-parent(ft-mol-breadcrumb-has--home) {
+      // &:first-of-type
+      &:first-of-type {
+        @include padding(null null null 2rem);
+      }
+    }
+
+    // behavior: parent(ft-mol-breadcrumb-has--lvl)
+    @include behavior-parent(ft-mol-breadcrumb-has--lvl) {
+      @include margin(0);
+      @include fontBold;
+      align-items: baseline;
+    }
+  }
+
+  // &__mask
+  &__mask {
+    @include position(relative, null null null null);
+    @include margin(null null null auto);
+    max-width: 25rem;
+    max-height: 8rem;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 33% 100%);
+    background-color: var(--color-primary);
+
+    @include min-screen(1280px) {
+      min-height: 9rem;
+    }
+
+    // &-link
+    &-link {
+      @include hide-visually;
+
+      @include min-screen(360px) {
+        @include hide-visually("unhide");
+        @include position(absolute, 0 0 0 0);
+        @include margin(auto 0 auto auto);
+        @include size(100%);
+        max-width: 50%;
+        text-indent: -9999px;
+        z-index: 2;
+      }
+
+      @include min-screen(768px) {
+        max-width: 35rem;
+      }
+    }
+
+    // .ft
+    .ft {
+      // &-img
+      &-img {
+        height: 100%;
+      }
+
+      // &-helper
+      &-helper {
+        // &-img
+        &-img {
+          // &-rd
+          &-rd {
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+
+
+  // &-links-support
+  &-links-support {
+    @include margin(1.2rem auto 0 auto);
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-basis: 100%;
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-start;
+
+    // &__link
+    &__link {
+      @include font--body-M--small;
+      color: var(--color-quaternary);
+
+      // behavior: bg(Color-black)
+      @include behavior-ft-helper-bg(Color-black) {
+        color: var(--color-white);
+      }
+
+      // &:hover, &:focus-visible
+      &:hover,
+      &:focus-visible {
+        text-decoration: underline;
+      }
+    }
+
+    // &__item
+    &__item {
+      // &:not(:last-child)
+      &:not(:last-child) {
+        @include margin(null 1.5rem null null);
+      }
+    }
+  }
+
+
+
+  // &-has
+  &-has {
+    // &--home
+    &--home {
+      @include padding(null null null 2.4rem);
+
+      // &:before
+      &:before {
+        content: "";
+        @include margin(auto null auto null);
+        @include position(absolute, 0.4rem null null 0);
+        @include size(1.4rem, 1.4rem);
+        @include background-setup(
+          map-icons(navigation, brand--home),
+          // img path
+          "0 0 / 100%",
+          // position and size
+          no-repeat,
+          // repeat
+          null,
+          // attachment
+          null,
+          // origin
+          null,
+          // clip
+          transparent // color
+        );
+        filter: map-filters(greys, brand--500);
+
+        // behavior: bg(Color-black)
+        @include behavior-ft-helper-bg(Color-black) {
+          filter: map-filters(whites, brand--all);
+        }
+      }
+    }
+
+    // &--lvl
+    &--lvl {
+      @include margin(0 null null null);
+      @include padding(null null 0 null);
+      @include border-style(null null solid null);
+      @include border-width(null null 0.1rem null);
+      @include border-color(null null var(--color-mediumGrey) null);
+      overflow-x: hidden;
+      flex-wrap: wrap;
+      white-space: initial;
+
+      @include min-screen(1280px) {
+        @include padding(null null 0.5rem null);
+      }
+
+      @include min-screen(1024px) {
+        align-items: flex-end;
+      }
+
+      // #{ $self }__lvl
+      #{ $self }__lvl {
+        @include position(relative, null null null null);
+        @include margin(0);
+        font-size: 2rem;
+        line-height: 2.4rem;
+
+        // @if $brand ==sport
+        @if $brand ==sport {
+          @include behavior-parent(portadilla-automatica) {
+            @include fontMediaSans;
+          }
+
+          @include behavior-parent(portadilla-manual) {
+            @include fontMediaSans;
+          }
+        }
+
+        @include min-screen(980px) {
+          font-size: 2.8rem;
+          line-height: 3rem;
+        }
+
+        @include min-screen(1024px) {
+          width: 100%;
+        }
+
+        // &:not(:last-child)
+        &:not(:last-child) {
+          @include min-screen(1024px) {
+            @include margin(1rem null null null null);
+          }
+        }
+      }
+
+      // #{ $self }__link
+      #{ $self }__link {
+        @include margin(null null 0 null);
+        @include padding(null 2.5rem null null);
+        @include fontBold;
+
+        // &:after
+        &:after {
+          content: "";
+          @include margin(auto null auto null);
+          @include position(absolute, 0 0 0 null);
+          @include size(1rem, 2rem);
+          @include background-setup(
+            map-icons(chevrons, brand--default),
+            // img path
+            "0 0 / contain",
+            // position and size
+            no-repeat,
+            // repeat
+            null,
+            // attachment
+            null,
+            // origin
+            null,
+            // clip
+            transparent // color
+          );
+          transform: rotate(-90deg);
+          filter: map-filters(greys, brand--500);
+
+          // behavior: bg(Color-black)
+          @include behavior-ft-helper-bg(Color-black) {
+            filter: map-filters(whites, brand--all);
+          }
+        }
+
+        // #{ $self }__lvl
+        #{ $self }__lvl {
+          font-size: 1.4rem;
+          line-height: 2.4rem;
+          color: var(--color-quaternary);
+
+          // behavior: bg(Color-black)
+          @include behavior-ft-helper-bg(Color-black) {
+            color: var(--color-white);
+          }
+        }
+      }
+
+      // #{ $self }__item
+      #{ $self }__item {
+        // &::after
+        &:after {
+          @include hide-visually;
+        }
+
+        // &Is
+        &Is {
+          // &-not-link
+          &-not-link {
+            font-family: var(--font-primary);
+
+            @include min-screen(980px) {
+              flex-basis: 100%;
+            }
+
+            // @if $brand ==sport
+            @if $brand ==sport {
+              @include fontMediaSans;
+              text-transform: uppercase;
+            }
+
+            // @if $brand ==epe
+            @else if $brand ==epe {
+              @include behavior-parent(activos) {
+                font-family: var(--font-stack);
+              }
+            }
+
+            //  @include min-screen(1280px)
+            @include min-screen(1280px) {
+              flex-basis: 100%;
+            }
+          }
+        }
+
+        // &:not(:nth-child(2)):not(:last-child)
+        &:not(:nth-child(2)):not(:last-child) {
+          @include hide-visually;
+
+          @include min-screen(768px) {
+            @include hide-visually("unhide");
+          }
+        }
+      }
+
+      // #{ $self }__item
+      #{ $self }__list {
+        @include margin(0 null 0 null);
+        @include padding(1rem null 0 null);
+        flex-basis: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+
+        //  @include min-screen(1024px)
+        @include min-screen(1024px) {
+          @include padding(1.2rem null 0.8rem null);
+        }
+
+        //  @include min-screen(1280px)
+        @include min-screen(1280px) {
+          flex-basis: 30%;
+        }
+      }
+
+      // #{ $self }-links-support
+      #{ $self }-links-support {
+        @include margin(0.5rem auto);
+        overflow-x: auto;
+        overflow-y: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        // &::-webkit-scrollbar
+        &::-webkit-scrollbar {
+          // &:horizontal
+          &:horizontal {
+            height: 5px;
+          }
+
+          // &-track
+          &-track {
+            background-color: transparent;
+            border-radius: 0;
+          }
+
+          // &-track-piece
+          &-track-piece {
+            background-clip: content-box;
+            border: 2px solid transparent;
+            border-radius: 0;
+            background-color: rgba(0, 0, 0, 0.1);
+
+            // &:horizontal
+            &:horizontal {
+              border-left: 0;
+              border-right: 0;
+            }
+          }
+
+          // &-thumb
+          &-thumb {
+            background-clip: content-box;
+            border: 1px solid transparent;
+            border-radius: 0;
+            background-color: rgba(0, 0, 0, 0.2);
+
+            // &:hover
+            &:hover {
+              border: 1px solid transparent;
+              background-color: rgba(0, 0, 0, 1);
+            }
+
+            // &:active
+            &:active {
+              border: 0px solid transparent;
+              background-color: rgba(0, 0, 0, 1);
+            }
+
+            // &:horizontal
+            &:horizontal {
+              border-left: 0;
+              border-right: 0;
+            }
+          }
+
+          // behavior-parent-nested: gironadelicia
+          @include behavior-in-ancestors(".gironadelicia") {
+            // &-track-piece
+            &-track-piece {
+              background-color: rgba(255, 255, 255, 0.1);
+            }
+
+            // &-thumb
+            &-thumb {
+              background-color: rgba(255, 255, 255, 0.2);
+
+              // &:hover
+              &:hover {
+                background-color: rgba(255, 255, 255, 1);
+              }
+
+              // &:active
+              &:active {
+                background-color: rgba(255, 255, 255, 1);
+              }
+            }
+          }
+        }
+
+        //  @include min-screen(1024px)
+        @include min-screen(1024px) {
+          @include margin(0 auto 0.5rem auto);
+          cursor: grab;
+          flex-basis: 100%;
+        }
+
+        // &__link
+        &__link {
+          @include font--body-M;
+          color: var(--color-quaternary);
+          white-space: nowrap;
+
+          // behavior: bg(Color-black)
+          @include behavior-ft-helper-bg(Color-black) {
+            color: var(--color-white);
+          }
+
+          // &:hover, &:focus-visible
+          &:hover,
+          &:focus-visible {
+            text-decoration: underline;
+          }
+        }
+
+        // &__item
+        &__item {
+          // &:not(:last-child)
+          &:not(:last-child) {
+            @include margin(null 1.5rem null null);
+          }
+        }
+      }
+    }
+
+    // &-1-lvl
+    &--1-lvl {
+      // #{ $self }__list
+      #{ $self }__list {
+        @include position(relative, null null null null);
+        @include border-style(null null solid null);
+        @include border-width(null null 0.1rem null);
+        @include border-color(null null var(--color-mediumGrey) null);
+        width: 100%;
+
+        // behavior-parent: gironadelicia
+        @include behavior-parent(gironadelicia) {
+          @include border-width(null null 0 null);
+
+          // &:after
+          &:after {
+            background-color: transparent;
+          }
+        }
+
+        //  @include min-screen(1280px)
+        @include min-screen(1280px) {
+          @include border-width(null null 0 null);
+        }
+
+        /*  @if $brand ==sport
+        {
+          @include border-style(null null none null);
+        } */
+        // @if $brand
+        @if $brand ==ep {
+          @include behavior-parent(hospitalet) {
+            @include border-style(null null none null);
+          }
+
+          @include behavior-parent(tarragona) {
+            @include border-style(null null none null);
+          }
+
+          @include behavior-parent(sanamente) {
+            @include border-style(null null none null);
+          }
+
+          @include behavior-parent(masbarcelona) {
+            @include border-style(null null none null);
+          }
+
+          @include behavior-parent(lamerce) {
+            @include border-style(null null none null);
+          }
+
+          @include behavior-parent(cuidamostusalud) {
+            @include border-style(null null none null);
+          }
+        }
+
+        // @if $brand ==epe
+        @else if $brand ==epe {
+          @include behavior-parent(medioambiente) {
+            @include border-style(null null none null);
+          }
+        }
+
+        // &:after
+        &:after {
+          content: "";
+          @include position(absolute, null null 0 0);
+          @include size(50%, 0.2rem);
+          background-color: var(--color-black);
+
+          // @if $brand
+          @if $brand ==ep {
+            @include behavior-parent(hospitalet) {
+              content: none;
+            }
+
+            @include behavior-parent(tarragona) {
+              content: none;
+            }
+
+            @include behavior-parent(sanamente) {
+              content: none;
+            }
+
+            @include behavior-parent(masbarcelona) {
+              content: none;
+            }
+
+            @include behavior-parent(lamerce) {
+              content: none;
+            }
+
+            @include behavior-parent(cuidamostusalud) {
+              content: none;
+            }
+
+            @include behavior-parent(que-hacer) {
+              content: none;
+            }
+          }
+
+          // @if $brand ==epe
+          @else if $brand ==epe {
+            @include behavior-parent(medioambiente) {
+              content: none;
+            }
+          }
+
+          // @if $brand ==sport
+          @else if $brand ==sport {
+            content: none;
+          }
+
+          //  @include min-screen(1024px)
+          @include min-screen(1024px) {
+            @include hide-visually;
+          }
+
+          // behavior: bg(Color-black)
+          @include behavior-ft-helper-bg(Color-black) {
+            background-color: var(--color-white);
+          }
+        }
+      }
+
+      @if $brand ==ep {
+        @include behavior-parent(que-hacer) {
+          // #{ $self }__itemIs-not-link
+          #{ $self }__item {
+            @include border-style(null null none null);
+            @include padding(1rem);
+            background-color: var(--color-primary);
+            width: fit-content;
+            flex-basis: fit-content;
+
+            // .ft-link--secondary
+            .ft-link--secondary {
+              &:hover,
+              &:active {
+                color: var(--color-white);
+              }
+            }
+          }
+        }
+      }
+
+      // #{ $self }__itemIs-not-link
+      #{ $self }__itemIs-not-link {
+        @include padding(null null 0.5rem null);
+        width: 100%;
+
+        @include min-screen(1280px) {
+          @include padding(null null 0 null);
+        }
+
+        // revistas
+        @if $brand ==revistas {
+          @include padding(1rem null null null);
+          @include margin(1rem null null null);
+          @include position(relative, null);
+
+          // solo para woman
+          @include behavior-parent(woman) {
+            text-transform: uppercase;
+          }
+
+          // &:before
+          &:before {
+            content: none;
+            @include min-screen(1280px) {
+              content: "";
+              @include position(absolute, 0 null null 0);
+              @include border-style(solid null null null);
+              @include border-width(0.2rem null null null);
+              @include border-color(var(--color-black) null null null);
+
+              width: 5rem;
+              height: 0.2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// SECCIONES
+// ===============================================
+
+// Personalización TODAS LAS MEDIAS
+// ===============================================
+@mixin breadcrumbs {
+  // .ft-mol-breadcrumb
+  .ft-mol-breadcrumb {
+    $this: &;
+
+    // &-section
+    &-section {
+      @include min-screen(1280px) {
+        @include padding(0 null 1.2rem null);
+      }
+    }
+
+    // &-has
+    &-has {
+      // &--lvl
+      &--lvl {
+        @include padding(null null 0 null);
+        @include border-width(null null 0 null);
+        align-items: center;
+        justify-content: space-between;
+
+        // &::before
+        &:before {
+          content: none;
+
+          @include min-screen(360px) {
+            content: "";
+            @include position(relative, null -1.1rem null null);
+            @include margin(null null null auto);
+            @include size(23rem, 7.5rem);
+            order: 2;
+            flex-basis: 50%;
+            max-width: 23rem;
+            max-height: 7.5rem;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-image: url("#{$images-path}/bgs/cuidamostusalud-promo-breadcrumb.png");
+            clip-path: none;
+          }
+
+          @include min-screen(768px) {
+            @include size(25rem, 8rem);
+            max-height: 8rem;
+          }
+        }
+
+        // .ft
+        .ft {
+          // &-mol
+          &-mol {
+            // &-breadcrumb
+            &-breadcrumb {
+              // &__list
+              &__list {
+                @include padding(1rem null);
+                order: 1;
+                flex-basis: 100%;
+
+                @include min-screen(360px) {
+                  flex-basis: 50%;
+                }
+              }
+
+              // &-links-support
+              &-links-support {
+                @include margin(0 null null null);
+                @include border-style(solid null null null);
+                @include border-width(0px);
+                @include border-color(var(--color-mediumGrey));
+                order: 3;
+
+                // &__item
+                &__item {
+                  @include padding(0.5rem null 0.5rem null);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// @include behavior: cuidamostusalud
+// ===============================================
+@include behavior-parent(cuidamostusalud) {
+  @include breadcrumbs();
+}
+
+// $brand ==sport
+@if $brand ==sport {
+  // SECCIONES
+  // ===============================================
+  @include behavior-parent-nested(fourty) {
+
+    // &.neomotorsport
+    .neomotorsport {
+      // .ft
+      .ft {
+        // &-mol
+        &-mol {
+          // &-breadcrumb
+          &-breadcrumb {
+            // &-is
+            &-is {
+              // &--sectioned
+              &--sectioned {
+                // &-bordered
+                &-bordered {
+                  // .ft
+                  .ft {
+                    // &-mol
+                    &-mol {
+                      // &-breadcrumb
+                      &-breadcrumb {
+                        // &__mask
+                        &__mask {
+                          // &:before
+                          &:before {
+                            background-color: var(--color-section-motor);
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            // &-has
+            &-has {
+              // &--lvl
+              &--lvl {
+                // .ft
+                .ft {
+                  // &-mol
+                  &-mol {
+                    // &-breadcrumb
+                    &-breadcrumb {
+                      // &__item
+                      &__itemIs-not-link {
+                        @include position(relative, null null null null);
+
+                        // &:after
+                        &:before {
+                          content: "";
+                          @include size(13.6rem, 2.4rem);
+                          background-image: url("#{$images-path}/logos/logo-neomotor.png");
+                          background-repeat: no-repeat;
+                          background-position: center;
+                          background-size: contain;
+
+                          @include min-screen(980px) {
+                            @include size(18.7rem, 3.3rem);
+                          }
+                        }
+
+                        // .ft-mol-breadcrumb__lvl
+                        .ft-mol-breadcrumb__lvl {
+                          @include hide-visually;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // &.areajugones
+    .areajugones {
+      // .ft
+      .ft {
+        // &-mol
+        &-mol {
+          // &-breadcrumb
+          &-breadcrumb {
+            // &-has
+            &-has {
+              // &--lvl
+              &--lvl {
+                // .ft
+                .ft {
+                  // &-mol
+                  &-mol {
+                    // &-breadcrumb
+                    &-breadcrumb {
+                      // &__list
+                      &__list {
+                        @include min-screen(1024px) {
+                          flex-basis: 100%;
+                        }
+                      }
+
+                      // &__item
+                      &__itemIs-not-link {
+                        @include position(relative, null null null null);
+                        @include margin(null null 0.5rem null);
+
+                        @include min-screen(768px) {
+                          @include margin(null null 1rem null);
+                        }
+
+                        @include min-screen(1024px) {
+                          justify-content: center;
+                        }
+
+                        // &:after
+                        &:before {
+                          content: "";
+                          @include size(14.8rem, 3.2rem);
+                          background-image: url("#{$images-path}/logos/logo-areajugones.svg");
+                          background-repeat: no-repeat;
+                          background-position: center;
+                          background-size: contain;
+
+                          @include min-screen(1024px) {
+                            @include size(32.5rem, 7rem);
+                          }
+                        }
+
+                        // .ft-mol-breadcrumb__lvl
+                        .ft-mol-breadcrumb__lvl {
+                          @include hide-visually;
+                        }
+                      }
+
+                      // &-links-support
+                      &-links-support {
+                        @include min-screen(1024px) {
+                          justify-content: center;
+                        }
+
+                        // &__link
+                        &__link {
+                          @include min-screen(1024px) {
+                            font-weight: bold;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+  // .ft-mol-breadcrumb
+  .ft-mol-breadcrumb {
+    $this: &;
+
+    // &-section
+    &-section {
+      @include min-screen(1280px) {
+        @include padding(0 null 1.2rem null);
+      }
+    }
+
+    // &-has
+    &-has {
+      // &--lvl
+      &--lvl {
+        @include padding(null null 0 null);
+        @include border-width(null null 0 null);
+        align-items: center;
+        justify-content: space-between;
+
+        // &::before
+        &:before {
+          content: none;
+
+          @include min-screen(768px) {
+            content: "";
+            @include position(relative, null -1.1rem null null);
+            @include margin(null null null auto);
+            @include size(35rem, 9.8rem);
+            order: 2;
+            flex-basis: 50%;
+            max-width: 25rem;
+            max-height: 8rem;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 33% 100%);
+          }
+
+          @include min-screen(1280px) {
+            @include margin(null null null 0);
+            flex-basis: 25%;
+            order: 3;
+            max-height: 8rem;
+            max-width: 35rem;
+          }
+        }
+
+        // .ft
+        .ft {
+          // &-mol
+          &-mol {
+            // &-breadcrumb
+            &-breadcrumb {
+              // &__list
+              &__list {
+                @include padding(1rem null 0.5rem null);
+                @include border-width(0);
+                order: 1;
+                flex-basis: 100%;
+
+                @include min-screen(768px) {
+                  @include padding(0 null 0 null);
+                  flex-basis: auto;
+                  width: auto;
+                }
+              }
+
+              // &-links-support
+              &-links-support {
+                @include margin(0 null null null);
+                order: 3;
+
+                @include min-screen(768px) {
+                  @include border-style(solid null null null);
+                  @include border-width(1px);
+                  @include border-color(var(--color-mediumGrey));
+                }
+
+                // &__item
+                &__item {
+                  @include padding(0.5rem null 0.5rem null);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // &.cuidamostusalud
+  .cuidamostusalud {
+    @include breadcrumbs();
+  }
+
+  // &.areajugones
+  .areajugones {
+    // .ft-mol-breadcrumb-has--lvl
+    .ft-mol-breadcrumb-has--lvl {
+      // &:before
+      &:before {
+        content: "";
+        @include position(absolute, 0 0 0 0);
+        @include size(auto, 3.2rem);
+        @include margin(1rem null null auto);
+        background-image: url("#{$images-path}/bgs/ft-mol-breadcrumb-is-sectioned--areajugones-sport.svg");
+        background-repeat: no-repeat;
+        background-position: right;
+        background-size: auto 2rem;
+        background-origin: content-box;
+
+        @include min-screen(768px) {
+          @include margin(0 null null null);
+        }
+
+        @include min-screen(1024px) {
+          @include size(auto, 7rem);
+          background-size: auto 3.5rem;
+        }
+      }
+    }
+  }
+
+  // &.nfl
+  /* .nfl {
+    // .ft-mol-breadcrumb-has--lvl
+    .ft-mol-breadcrumb-has--lvl {
+      // &:before
+      &:before {
+        content: "";
+        @include position(absolute, 0 0 null null);
+        @include size(auto, 4.2rem);
+        min-width: 22rem;
+        background-image: url("#{$images-path}/bgs/ft-mol-breadcrumb-is-sectioned--nfl-sport.svg");
+        background-repeat: no-repeat;
+        background-origin: content-box;
+        background-clip: content-box;
+        background-position: right center;
+        background-size: calc(100% - 9rem) auto;
+        clip-path: none;
+        @include min-screen(768px) {
+          @include position(relative, initial initial null null);
+          height: 9.8rem;
+          min-width: fit-content;
+        }
+      }
+    }
+  } */
+
+  // &.apuestasdeportivas
+  .apuestasdeportivas {
+    // .ft-mol-breadcrumb-has--lvl
+    .ft-mol-breadcrumb-has--lvl {
+      background-color: var(--color-black);
+
+      // &:before
+      &:before {
+        background-color: var(--color-black);
+      }
+
+      // .ft-mol
+      .ft {
+        // &-link
+        &-link {
+          color: var(--color-white);
+        }
+
+        // &-mol
+        &-mol {
+          // &-breadcrumb
+          &-breadcrumb {
+            // &__lvl
+            &__lvl {
+              color: var(--color-white);
+            }
+
+            // &-links-support__link
+            &-links-support__link {
+              color: var(--color-white);
+            }
+          }
+        }
+      }
+    }
+
+    // .ft
+    .ft {
+      // &-org
+      &-org {
+        // &-breadcrumb
+        &-breadcrumb {
+          background-color: var(--color-black);
+
+          // .ft
+          .ft {
+            // &-mol
+            &-mol {
+              // &-breadcrumb
+              &-breadcrumb {
+                // &-section
+                &-section {
+                  color: var(--color-white);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // &.sport.aniversari
+  .sport[class*="aniversario"] {
+    // .ft-mol-breadcrumb-has--lvl
+    .ft-mol-breadcrumb-has--lvl {
+      // &:before
+      &:before {
+        right: -65px;
+        background-image: url("#{$images-path}/bgs/ft-mol-breadcrumb-is-sectioned--45aniversario.svg");
+        background-color: var(--color-black);
+
+        @include min-screen(1280px) {
+          right: -96px;
+        }
+      }
+
+      // .ft-mol
+      .ft {
+        // &-mol
+        &-mol {
+          // &-breadcrumb
+          &-breadcrumb {
+            // &__lvl
+            &__lvl {
+              color: var(--color-white);
+            }
+
+            // &-links-support
+            &-links-support {
+              // &__link
+              &__link {
+                color: var(--color-white);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // &.euroliga
+  .euroliga {
+    .ft-mol-breadcrumb {
+      $this: &;
+
+      // &-section
+      &-section {
+        @include min-screen(1280px) {
+          @include padding(0 null 1.2rem null);
+        }
+      }
+
+      // &-has
+      &-has {
+        // &--lvl
+        &--lvl {
+          @include padding(null null 0 null);
+          @include border-width(null null 0 null);
+          align-items: center;
+          justify-content: space-between;
+
+          // &::before
+          &:before {
+            content: none;
+
+            @include min-screen(360px) {
+              content: "";
+              @include position(relative, null -1.1rem null null);
+              @include margin(null null null auto);
+              @include size(23rem, 7.5rem);
+              order: 2;
+              flex-basis: 50%;
+              max-width: 23rem;
+              max-height: 7.5rem;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: contain;
+              background-image: url("#{$images-path}/bgs/ft-mol-breadcrumb-is-sectioned--olybet-mobile.svg");
+              clip-path: none;
+            }
+
+            @include min-screen(768px) {
+              @include size(25rem, 8rem);
+              max-height: 8rem;
+              background-image: url("#{$images-path}/bgs/ft-mol-breadcrumb-is-sectioned--olybet-desktop.svg");
+            }
+          }
+
+          // .ft
+          .ft {
+            // &-mol
+            &-mol {
+              // &-breadcrumb
+              &-breadcrumb {
+                // &__list
+                &__list {
+                  @include padding(1rem null);
+                  order: 1;
+                  flex-basis: 100%;
+
+                  @include min-screen(360px) {
+                    flex-basis: 50%;
+                  }
+                }
+
+                // &-links-support
+                &-links-support {
+                  @include margin(0 null null null);
+                  @include border-style(solid null null null);
+                  @include border-width(1px);
+                  @include border-color(var(--color-mediumGrey));
+                  order: 3;
+
+                  // &__item
+                  &__item {
+                    @include padding(0.5rem null 0.5rem null);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+// $brand ==ep
+@if $brand ==ep {
+  // Special behavior: Hospitalet
+  // ===============================================
+  @include behavior-parent(hospitalet) {
+    // .ft-mol-breadcrumb
+    .ft-mol-breadcrumb {
+      $this: &;
+
+      // &-section
+      &-section {
+        @include min-screen(1280px) {
+          @include padding(0 null 1.2rem null);
+        }
+      }
+
+      // &-has
+      &-has {
+        // &--lvl
+        &--lvl {
+          @include padding(null null 0 null);
+          @include border-width(null null 0 null);
+          align-items: center;
+          justify-content: space-between;
+
+          // &::before
+          &:before {
+            content: none;
+
+            @include min-screen(360px) {
+              content: "";
+              @include position(relative, null -1.1rem null null);
+              @include margin(null null null auto);
+              @include size(23rem, 7.5rem);
+              order: 2;
+              flex-basis: 50%;
+              max-width: 23rem;
+              max-height: 7.5rem;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+              background-image: url("#{$images-path}/bgs/logo-Hospitalet.svg");
+            }
+
+            @include min-screen(768px) {
+              @include size(25rem, 8rem);
+              max-height: 8rem;
+            }
+          }
+
+          // .ft
+          .ft {
+            // &-mol
+            &-mol {
+              // &-breadcrumb
+              &-breadcrumb {
+                // &__list
+                &__list {
+                  @include padding(1rem null);
+                  order: 1;
+                  flex-basis: 100%;
+
+                  @include min-screen(360px) {
+                    flex-basis: 50%;
+                  }
+                }
+
+                // &-links-support
+                &-links-support {
+                  @include margin(0 null null null);
+                  @include border-style(solid null null null);
+                  @include border-width(1px);
+                  @include border-color(var(--color-mediumGrey));
+                  order: 3;
+
+                  // &__item
+                  &__item {
+                    @include padding(0.5rem null 0.5rem null);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Special behavior: Tarragona
+  // ===============================================
+  @include behavior-parent(tarragona) {
+    // .ft-mol-breadcrumb
+    .ft-mol-breadcrumb {
+      $this: &;
+
+      // &-section
+      &-section {
+        @include min-screen(1280px) {
+          @include padding(0 null 1.2rem null);
+        }
+      }
+
+      // &-has
+      &-has {
+        // &--lvl
+        &--lvl {
+          @include padding(null null 0 null);
+          @include border-width(null null 0 null);
+          align-items: center;
+          justify-content: space-between;
+
+          // &::before
+          &:before {
+            content: none;
+
+            @include min-screen(360px) {
+              content: "";
+              @include position(relative, null -1.1rem null null);
+              @include margin(null null null auto);
+              @include size(23rem, 7.5rem);
+              order: 2;
+              flex-basis: 50%;
+              max-width: 23rem;
+              max-height: 7.5rem;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+              background-image: url("#{$images-path}/bgs/logo-Tarragona.svg");
+            }
+
+            @include min-screen(768px) {
+              @include size(25rem, 8rem);
+              max-height: 8rem;
+            }
+          }
+
+          // .ft
+          .ft {
+            // &-mol
+            &-mol {
+              // &-breadcrumb
+              &-breadcrumb {
+                // &__list
+                &__list {
+                  @include padding(1rem null);
+                  order: 1;
+                  flex-basis: 100%;
+
+                  @include min-screen(360px) {
+                    flex-basis: 50%;
+                  }
+                }
+
+                // &-links-support
+                &-links-support {
+                  @include margin(0 null null null);
+                  @include border-style(solid null null null);
+                  @include border-width(1px);
+                  @include border-color(var(--color-mediumGrey));
+                  order: 3;
+
+                  // &__item
+                  &__item {
+                    @include padding(0.5rem null 0.5rem null);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Special behavior: Sanamente
+  // ===============================================
+  @include behavior-parent(sanamente) {
+    // .ft-mol-breadcrumb
+    .ft-mol-breadcrumb {
+      $this: &;
+
+      // &-section
+      &-section {
+        @include min-screen(1280px) {
+          @include padding(0 null 1.2rem null);
+        }
+      }
+
+      // &-has
+      &-has {
+        // &--lvl
+        &--lvl {
+          @include padding(null null 0 null);
+          @include border-width(null null 0 null);
+          align-items: center;
+          justify-content: space-between;
+
+          // &::before
+          &:before {
+            content: none;
+
+            @include min-screen(360px) {
+              content: "";
+              @include position(relative, null -1.1rem null null);
+              @include margin(null null null auto);
+              @include size(23rem, 7.5rem);
+              order: 2;
+              flex-basis: 50%;
+              max-width: 23rem;
+              max-height: 7.5rem;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+              background-image: url("#{$images-path}/bgs/logo-Sanamente.svg");
+            }
+
+            @include min-screen(768px) {
+              @include size(25rem, 8rem);
+              max-height: 8rem;
+            }
+          }
+
+          // .ft
+          .ft {
+            // &-mol
+            &-mol {
+              // &-breadcrumb
+              &-breadcrumb {
+                // &__list
+                &__list {
+                  @include padding(1rem null);
+                  order: 1;
+                  flex-basis: 100%;
+
+                  @include min-screen(360px) {
+                    flex-basis: 50%;
+                  }
+                }
+
+                // &-links-support
+                &-links-support {
+                  @include margin(0 null null null);
+                  @include border-style(solid null null null);
+                  @include border-width(1px);
+                  @include border-color(var(--color-mediumGrey));
+                  order: 3;
+
+                  // &__item
+                  &__item {
+                    @include padding(0.5rem null 0.5rem null);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Special behavior: masbarcelona
+  // ===============================================
+  @include behavior-parent(masbarcelona) {
+    // .ft-mol-breadcrumb
+    .ft-mol-breadcrumb {
+      $this: &;
+
+      // &-section
+      &-section {
+        @include min-screen(1280px) {
+          @include padding(0 null 1.2rem null);
+        }
+      }
+
+      // &-has
+      &-has {
+        // &--lvl
+        &--lvl {
+          @include padding(null null 0 null);
+          @include border-width(null null 0 null);
+          align-items: center;
+          justify-content: space-between;
+
+          // &::before
+          &:before {
+            content: none;
+
+            @include min-screen(360px) {
+              content: "";
+              @include position(relative, null -1.1rem null null);
+              @include margin(null null null auto);
+              @include size(23rem, 7.5rem);
+              order: 2;
+              flex-basis: 50%;
+              max-width: 23rem;
+              max-height: 7.5rem;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+              background-image: url("#{$images-path}/bgs/logo-masbarcelona.svg");
+            }
+
+            @include min-screen(768px) {
+              @include size(25rem, 8rem);
+              max-height: 8rem;
+            }
+          }
+
+          // .ft
+          .ft {
+            // &-mol
+            &-mol {
+              // &-breadcrumb
+              &-breadcrumb {
+                // &__list
+                &__list {
+                  @include padding(1rem null);
+                  order: 1;
+                  flex-basis: 100%;
+
+                  @include min-screen(360px) {
+                    flex-basis: 50%;
+                  }
+                }
+
+                // &-links-support
+                &-links-support {
+                  @include margin(0 null null null);
+                  @include border-style(solid null null null);
+                  @include border-width(1px);
+                  @include border-color(var(--color-mediumGrey));
+                  order: 3;
+
+                  // &__item
+                  &__item {
+                    @include padding(0.5rem null 0.5rem null);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Special behavior: lamerce
+  // ===============================================
+  @include behavior-parent(lamerce) {
+    // .ft-mol-breadcrumb
+    .ft-mol-breadcrumb {
+      $this: &;
+
+      // &-section
+      &-section {
+        @include min-screen(1280px) {
+          @include padding(0 null 1.2rem null);
+        }
+      }
+
+      // &-has
+      &-has {
+        // &--lvl
+        &--lvl {
+          @include padding(null null 0 null);
+          @include border-width(null null 0 null);
+          align-items: center;
+          justify-content: space-between;
+
+          // &::before
+          &:before {
+            content: none;
+
+            @include min-screen(360px) {
+              content: "";
+              @include position(relative, null -1.1rem null null);
+              @include margin(null null null auto);
+              @include size(23rem, 7.5rem);
+              order: 2;
+              flex-basis: 50%;
+              max-width: 23rem;
+              max-height: 7.5rem;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+              background-image: url("#{$images-path}/bgs/logo-masbarcelona.svg");
+            }
+
+            @include min-screen(768px) {
+              @include size(25rem, 8rem);
+              max-height: 8rem;
+            }
+          }
+
+          // .ft
+          .ft {
+            // &-mol
+            &-mol {
+              // &-breadcrumb
+              &-breadcrumb {
+                // &__list
+                &__list {
+                  @include padding(1rem null);
+                  order: 1;
+                  flex-basis: 100%;
+
+                  @include min-screen(360px) {
+                    flex-basis: 50%;
+                  }
+                }
+
+                // &-links-support
+                &-links-support {
+                  @include margin(0 null null null);
+                  @include border-style(solid null null null);
+                  @include border-width(1px);
+                  @include border-color(var(--color-mediumGrey));
+                  order: 3;
+
+                  // &__item
+                  &__item {
+                    @include padding(0.5rem null 0.5rem null);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Special behavior: metropolisbarcelona
+  // ===============================================
+  @include behavior-parent(metropolisbarcelona) {
+    // .ft-mol-breadcrumb
+    .ft-mol-breadcrumb {
+      $this: &;
+
+      // &-section
+      &-section {
+        @include min-screen(1280px) {
+          @include padding(0 null 1.2rem null);
+        }
+      }
+
+      // &-has
+      &-has {
+        // &--lvl
+        &--lvl {
+          @include padding(null null 0 null);
+          @include border-width(null null 0 null);
+          align-items: center;
+          justify-content: space-between;
+
+          // &::before
+          &:before {
+            content: none;
+
+            @include min-screen(360px) {
+              content: "";
+              @include position(relative, null -1.1rem null null);
+              @include margin(null null null auto);
+              @include size(23rem, 7.5rem);
+              order: 2;
+              flex-basis: 50%;
+              max-width: 23rem;
+              max-height: 7.5rem;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: contain;
+              background-image: url("#{$images-path}/bgs/logo-amb.png");
+            }
+
+            @include min-screen(768px) {
+              @include size(25rem, 8rem);
+              max-height: 8rem;
+            }
+          }
+
+          // .ft
+          .ft {
+            // &-mol
+            &-mol {
+              // &-breadcrumb
+              &-breadcrumb {
+                // &__list
+                &__list {
+                  @include padding(1rem null);
+                  order: 1;
+                  flex-basis: 100%;
+
+                  @include min-screen(360px) {
+                    flex-basis: 50%;
+                  }
+                }
+
+                // &-links-support
+                &-links-support {
+                  @include margin(0 null null null);
+                  @include border-style(solid null null null);
+                  @include border-width(1px);
+                  @include border-color(var(--color-mediumGrey));
+                  order: 3;
+
+                  // &__item
+                  &__item {
+                    @include padding(0.5rem null 0.5rem null);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Special behavior: metropolisbarcelona
+  // ===============================================
+  @include behavior-parent(unanuevaformadevivir) {
+    // .ft-mol-breadcrumb
+    .ft-mol-breadcrumb {
+      $this: &;
+
+      // &-section
+      &-section {
+        @include min-screen(1280px) {
+          @include padding(0 null 1.2rem null);
+        }
+      }
+
+      // &-has
+      &-has {
+        // &--lvl
+        &--lvl {
+          @include padding(null null 0 null);
+          @include border-width(null null 0 null);
+          align-items: center;
+          justify-content: space-between;
+
+          // &::before
+          &:before {
+            content: none;
+
+            @include min-screen(360px) {
+              content: "";
+              @include position(relative, null -1.1rem null null);
+              @include margin(null null null auto);
+              @include size(23rem, 7.5rem);
+              order: 2;
+              flex-basis: 50%;
+              max-width: 23rem;
+              max-height: 7.5rem;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: contain;
+              background-image: url("#{$images-path}/logos/logo-endesa.png");
+            }
+
+            @include min-screen(768px) {
+              @include size(25rem, 8rem);
+              max-height: 8rem;
+            }
+          }
+
+          // .ft
+          .ft {
+            // &-mol
+            &-mol {
+              // &-breadcrumb
+              &-breadcrumb {
+                // &__list
+                &__list {
+                  @include padding(1rem null);
+                  order: 1;
+                  flex-basis: 100%;
+
+                  @include min-screen(360px) {
+                    flex-basis: 50%;
+                  }
+                }
+
+                // &-links-support
+                &-links-support {
+                  @include margin(0 null null null);
+                  @include border-style(solid null null null);
+                  @include border-width(1px);
+                  @include border-color(var(--color-mediumGrey));
+                  order: 3;
+
+                  // &__item
+                  &__item {
+                    @include padding(0.5rem null 0.5rem null);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Special behavior: eixample
+  // ===============================================
+  @include behavior-parent(eixample) {
+    // .ft-mol-breadcrumb
+    .ft-mol-breadcrumb {
+      $this: &;
+
+      // &-section
+      &-section {
+        @include min-screen(1280px) {
+          @include padding(0 null 1.2rem null);
+        }
+      }
+
+      // &-has
+      &-has {
+        // &--lvl
+        &--lvl {
+          @include padding(null null 0 null);
+          @include border-width(null null 0 null);
+          align-items: center;
+          justify-content: space-between;
+
+          // &::before
+          &:before {
+            content: none;
+
+            @include min-screen(360px) {
+              content: "";
+              @include position(relative, null -1.1rem null null);
+              @include margin(null null null auto);
+              @include size(23rem, 7.5rem);
+              order: 2;
+              flex-basis: 50%;
+              max-width: 23rem;
+              max-height: 7.5rem;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: contain;
+              background-image: url("#{$images-path}/bgs/logo-periodico-eixample.png");
+            }
+
+            @include min-screen(768px) {
+              @include size(25rem, 8rem);
+              max-height: 8rem;
+            }
+          }
+
+          // .ft
+          .ft {
+            // &-mol
+            &-mol {
+              // &-breadcrumb
+              &-breadcrumb {
+                // &__list
+                &__list {
+                  @include padding(1rem null);
+                  order: 1;
+                  flex-basis: 100%;
+
+                  @include min-screen(360px) {
+                    flex-basis: 50%;
+                  }
+                }
+
+                // &-links-support
+                &-links-support {
+                  @include margin(0 null null null);
+                  @include border-style(solid null null null);
+                  @include border-width(1px);
+                  @include border-color(var(--color-mediumGrey));
+                  order: 3;
+
+                  // &__item
+                  &__item {
+                    @include padding(0.5rem null 0.5rem null);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Special behavior: empresa-del-ano, empresa-de-l-any
+  // ===============================================
+  .empresa-del-ano,
+  .empresa-de-l-any {
+    // .ft-mol-breadcrumb
+    .ft-mol-breadcrumb {
+      $this: &;
+
+      // &-section
+      &-section {
+        @include min-screen(1280px) {
+          @include padding(0 null 1.2rem null);
+        }
+      }
+
+      // &-has
+      &-has {
+        // &--lvl
+        &--lvl {
+          @include padding(null null 0 null);
+          @include border-width(null null 0 null);
+          align-items: center;
+          justify-content: space-between;
+
+          // &::before
+          &:before {
+            content: none;
+
+            @include min-screen(360px) {
+              content: "";
+              @include position(relative, null -1.1rem null null);
+              @include margin(null null null auto);
+              @include size(23rem, 7.5rem);
+              order: 2;
+              flex-basis: 50%;
+              max-width: 23rem;
+              max-height: 7.5rem;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: contain;
+              background-image: url("#{$images-path}/bgs/logo-sabadell-empresa-de-lany.png");
+            }
+
+            @include min-screen(768px) {
+              @include size(25rem, 8rem);
+              max-height: 8rem;
+            }
+          }
+
+          // .ft
+          .ft {
+            // &-mol
+            &-mol {
+              // &-breadcrumb
+              &-breadcrumb {
+                // &__list
+                &__list {
+                  @include padding(1rem null);
+                  order: 1;
+                  flex-basis: 100%;
+
+                  @include min-screen(360px) {
+                    flex-basis: 50%;
+                  }
+                }
+
+                // &-links-support
+                &-links-support {
+                  @include margin(0 null null null);
+                  @include border-style(solid null null null);
+                  @include border-width(1px);
+                  @include border-color(var(--color-mediumGrey));
+                  order: 3;
+
+                  // &__item
+                  &__item {
+                    @include padding(0.5rem null 0.5rem null);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Special behavior: mobileworldcapital
+  // ===============================================
+  @include behavior-parent(mobileworldcapital) {
+    // .ft-mol-breadcrumb
+    .ft-mol-breadcrumb {
+      $this: &;
+
+      // &-section
+      &-section {
+        @include min-screen(1280px) {
+          @include padding(0 null 1.2rem null);
+        }
+      }
+
+      // &-has
+      &-has {
+        // &--lvl
+        &--lvl {
+          @include padding(null null 0 null);
+          @include border-width(null null 0 null);
+          align-items: center;
+          justify-content: space-between;
+
+          // &::before
+          &:before {
+            content: none;
+
+            @include min-screen(360px) {
+              content: "";
+              @include position(relative, null -1.1rem null null);
+              @include margin(null null null auto);
+              @include size(23rem, 7.5rem);
+              order: 2;
+              flex-basis: 50%;
+              max-width: 23rem;
+              max-height: 7.5rem;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: contain;
+              background-image: url("#{$images-path}/bgs/logo-mobile-worldcapital-barcelona.png");
+            }
+
+            @include min-screen(768px) {
+              @include size(25rem, 8rem);
+              max-height: 8rem;
+            }
+          }
+
+          // .ft
+          .ft {
+            // &-mol
+            &-mol {
+              // &-breadcrumb
+              &-breadcrumb {
+                // &__list
+                &__list {
+                  @include padding(1rem null);
+                  order: 1;
+                  flex-basis: 100%;
+
+                  @include min-screen(360px) {
+                    flex-basis: 50%;
+                  }
+                }
+
+                // &-links-support
+                &-links-support {
+                  @include margin(0 null null null);
+                  @include border-style(solid null null null);
+                  @include border-width(1px);
+                  @include border-color(var(--color-mediumGrey));
+                  order: 3;
+
+                  // &__item
+                  &__item {
+                    @include padding(0.5rem null 0.5rem null);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Special behavior: consorcizonafranca
+  // ===============================================
+  @include behavior-parent(consorcizonafranca) {
+    // .ft-mol-breadcrumb
+    .ft-mol-breadcrumb {
+      $this: &;
+
+      // &-section
+      &-section {
+        @include min-screen(1280px) {
+          @include padding(0 null 1.2rem null);
+        }
+      }
+
+      // &-has
+      &-has {
+        // &--lvl
+        &--lvl {
+          @include padding(null null 0 null);
+          @include border-width(null null 0 null);
+          align-items: center;
+          justify-content: space-between;
+
+          // &::before
+          &:before {
+            content: none;
+
+            @include min-screen(360px) {
+              content: "";
+              @include position(relative, null 1.5rem null null);
+              @include margin(null null null auto);
+              @include size(23rem, 7.5rem);
+              order: 2;
+              flex-basis: 50%;
+              max-width: 23rem;
+              max-height: 7.5rem;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: contain;
+              background-image: url("#{$images-path}/bgs/logo-zf-consorci-barcelona.png");
+            }
+
+            @include min-screen(768px) {
+              @include size(25rem, 8rem);
+              max-height: 8rem;
+            }
+          }
+
+          // .ft
+          .ft {
+            // &-mol
+            &-mol {
+              // &-breadcrumb
+              &-breadcrumb {
+                // &__list
+                &__list {
+                  @include padding(1rem null);
+                  order: 1;
+                  flex-basis: 100%;
+
+                  @include min-screen(360px) {
+                    flex-basis: 50%;
+                  }
+                }
+
+                // &-links-support
+                &-links-support {
+                  @include margin(0 null null null);
+                  @include border-style(solid null null null);
+                  @include border-width(1px);
+                  @include border-color(var(--color-mediumGrey));
+                  order: 3;
+
+                  // &__item
+                  &__item {
+                    @include padding(0.5rem null 0.5rem null);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// $brand ==epe
+@if $brand ==epe {
+  // Special behavior: medioambiente
+  // ===============================================
+  @include behavior-parent(medioambiente) {
+    // .ft-mol-breadcrumb
+    .ft-mol-breadcrumb {
+      $this: &;
+
+      // &-section
+      &-section {
+        @include min-screen(1280px) {
+          @include padding(0 null 1.2rem null);
+        }
+      }
+
+      // &-has
+      &-has {
+        // &--lvl
+        &--lvl {
+          @include padding(null null 0 null);
+          @include border-width(null null 0 null);
+          align-items: center;
+          justify-content: space-between;
+
+          // &::before
+          &:before {
+            content: none;
+          }
+
+          // .ft
+          .ft {
+            // &-mol
+            &-mol {
+              // &-breadcrumb
+              &-breadcrumb {
+                // &__list
+                &__list {
+                  @include padding(1rem null);
+                  order: 1;
+                  flex-basis: 100%;
+
+                  @include min-screen(360px) {
+                    flex-basis: 50%;
+                  }
+                }
+
+                // &-links-support
+                &-links-support {
+                  @include margin(0 null null null);
+                  @include border-style(solid null null null);
+                  @include border-width(1px);
+                  @include border-color(var(--color-mediumGrey));
+                  order: 3;
+
+                  // &__item
+                  &__item {
+                    @include padding(0.5rem null 0.5rem null);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// $brand ==regionales
+@if $brand ==regionales {
+  // Special behavior: regionales / asturiasexterior
+  // ===============================================
+  @include behavior-parent(asturiasexterior) {
+    // .ft-mol-breadcrumb
+    .ft-mol-breadcrumb {
+      // &--has
+      &-has {
+        // &-lvl
+        &--lvl {
+          @include border-style(null null solid null);
+          @include border-width(0.1rem);
+          @include border-color(var(--color-asturiasexterior-green));
+          background-color: var(--color-asturiasexterior-grey);
+
+          // [class*=__lvl]
+          [class*="__lvl"] {
+            color: var(--color-asturiasexterior-green);
+          }
+
+          // [class*=-links-support__link]
+          [class*="-links-support__link"] {
+            color: var(--color-white);
+          }
+
+          // [class*=__list]
+          [class*="__list"] {
+            @include border-width(0);
+
+            @include min-screen(1024px) {
+              top: 0.4rem;
+            }
+
+            // &:after
+            &:after {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // @include behavior: faroeduca y adelantados
+  // ===============================================
+  @include behavior-parent(faroeduca) {
+    // .ft-mol-breadcrumb
+    .ft-mol-breadcrumb {
+      $this: &;
+
+      // &-section
+      &-section {
+        @include min-screen(1280px) {
+          @include padding(0 null 1.2rem null);
+        }
+      }
+
+      // &-has
+      &-has {
+        // &--lvl
+        &--lvl {
+          @include padding(null null 0 null);
+          @include border-width(null null 0 null);
+          align-items: center;
+          justify-content: space-between;
+
+          // &::before
+          &:before {
+            content: none;
+
+            @include min-screen(360px) {
+              content: "";
+              @include position(relative, null -1.1rem null null);
+              @include margin(null null null auto);
+              @include size(23rem, 7.5rem);
+              order: 2;
+              flex-basis: 50%;
+              max-width: 23rem;
+              max-height: 7.5rem;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: contain;
+              background-image: url("#{$images-path}/bgs/faroeduca-promo-breadcrumb.png");
+              clip-path: none;
+            }
+
+            @include min-screen(768px) {
+              @include size(25rem, 8rem);
+              max-height: 8rem;
+            }
+          }
+
+          // .ft
+          .ft {
+            // &-mol
+            &-mol {
+              // &-breadcrumb
+              &-breadcrumb {
+                // &__list
+                &__list {
+                  @include padding(1rem null);
+                  order: 1;
+                  flex-basis: 100%;
+
+                  @include min-screen(360px) {
+                    flex-basis: 50%;
+                  }
+                }
+
+                // &-links-support
+                &-links-support {
+                  @include margin(0 null null null);
+                  @include border-style(solid null null null);
+                  @include border-width(0px);
+                  @include border-color(var(--color-mediumGrey));
+                  order: 3;
+
+                  // &__item
+                  &__item {
+                    @include padding(0.5rem null 0.5rem null);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // @include behavior: asturianos
+  // ===============================================
+  @include behavior-parent(asturianos) {
+    @include breadcrumbs();
+
+    // .ft-mol-breadcrumb-has--lvl
+    .ft-mol-breadcrumb-has--lvl {
+      // &:before
+      &:before {
+        background-image: url("#{$images-path}/bgs/asturianos-promo-breadcrumb.png");
+      }
+    }
+  }
+
+  // @include behavior: adelantados
+  // ===============================================
+  @include behavior-parent(adelantados) {
+    @include breadcrumbs();
+
+    // .ft-mol-breadcrumb-has--lvl
+    .ft-mol-breadcrumb-has--lvl {
+      // &:before
+      &:before {
+        background-image: url("#{$images-path}/bgs/ft-mol-breadcrumb-has--lvl--unicaja.svg");
+      }
+    }
+  }
+
+  // @include behavior: buenahuella
+  // ===============================================
+  @include behavior-parent(buenahuella) {
+    @include breadcrumbs();
+
+    // .ft-mol-breadcrumb-has--lvl
+    .ft-mol-breadcrumb-has--lvl {
+      // &:before
+      &:before {
+        background-image: url("#{$images-path}/bgs/buenahuella-promo-breadcrumb.png");
+      }
+    }
+  }
+
+  // @include behavior: ayuntamiento-santiago-del-teide
+  // ===============================================
+  @include behavior-parent(ayuntamiento-santiago-del-teide) {
+    @include breadcrumbs();
+
+    // .ft-mol-breadcrumb-has--lvl
+    .ft-mol-breadcrumb-has--lvl {
+      // &:before
+      &:before {
+        background-image: url("#{$images-path}/bgs/ayuntamiento-santiago-del-teide-promo-breadcrumb.png");
+      }
+    }
+  }
+
+  // @include behavior: bisbarras
+  // ===============================================
+  @include behavior-parent(bisbarras) {
+    @include breadcrumbs();
+
+    // .ft-mol-breadcrumb-has--lvl
+    .ft-mol-breadcrumb-has--lvl {
+      // &:before
+      &:before {
+        background-image: url("#{$images-path}/bgs/bisbarras-promo-breadcrumb.png");
+      }
+    }
+  }
+
+  // @include behavior: visado
+  // ===============================================
+  @include behavior-parent(visado) {
+    @include breadcrumbs();
+
+    // .ft-mol-breadcrumb-has--lvl
+    .ft-mol-breadcrumb-has--lvl {
+      // &:before
+      &:before {
+        background-image: url("#{$images-path}/bgs/visado-promo-breadcrumb.png");
+      }
+    }
+  }
+
+  // Special behavior: bellver
+  // ===============================================
+  @include behavior-parent(bellver) {
+    @include breadcrumbs();
+
+    // .ft-mol-breadcrumb-has--lvl
+    .ft-mol-breadcrumb-has--lvl {
+      // &:before
+      &:before {
+        background-image: url("#{$images-path}/bgs/bellver-promo-breadcrumb.png");
+      }
+    }
+  }
+
+  // @include behavior: fnd
+  // ===============================================
+  @include behavior-parent(fnd) {
+    @include breadcrumbs();
+
+    // .ft-mol-breadcrumb-has--lvl
+    .ft-mol-breadcrumb-has--lvl {
+      // &:before
+      &:before {
+        background-image: url("#{$images-path}/bgs/fnd-promo-breadcrumb.png");
+      }
+    }
+  }
+
+  // @include behavior: lavidabuena
+  // ===============================================
+  @include behavior-parent(lavidabuena) {
+    @include breadcrumbs();
+
+    // .ft-mol-breadcrumb-has--lvl
+    .ft-mol-breadcrumb-has--lvl {
+      // &:before
+      &:before {
+        background-image: url("#{$images-path}/bgs/lavidabuena-promo-breadcrumb.png");
+      }
+    }
+  }
+
+  // @include behavior: el-periodico-de-aragon
+  // ===============================================
+  @include behavior-parent(el-periodico-de-aragon) {
+    // &.elestudiante
+    &.elestudiante {
+      // .ft
+      .ft {
+        // &-mol
+        &-mol {
+          // &-breadcrumb
+          &-breadcrumb {
+            // &-section
+            &-section {
+              @include min-screen(1280px) {
+                @include padding(0 null 1.2rem null);
+              }
+            }
+
+            // &-is
+            &-is {
+              // &--sectioned
+              &--sectioned {
+                // &-bordered
+                &-bordered {
+                  // .ft
+                  .ft {
+                    // &-mol
+                    &-mol {
+                      // &-breadcrumb
+                      &-breadcrumb {
+                        // &__mask
+                        &__mask {
+                          // &:before
+                          &:before {
+                            background-color: var(--color-white);
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            // &-has
+            &-has {
+              // &--lvl
+              &--lvl {
+                @include padding(null null 0 null);
+                @include border-width(null null 0 null);
+                align-items: center;
+                justify-content: space-between;
+
+                // &::before
+                &:before {
+                  content: none;
+
+                  @include min-screen(360px) {
+                    content: "";
+                    @include position(relative, null -1.1rem null null);
+                    @include margin(null null null auto);
+                    @include size(23rem, 7.5rem);
+                    order: 2;
+                    flex-basis: 50%;
+                    max-width: 23rem;
+                    max-height: 7.5rem;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-image: url("#{$images-path}/bgs/ft-mol-breadcrumb-is-sectioned--el-estudiante.png");
+                  }
+
+                  @include min-screen(768px) {
+                    @include size(25rem, 8rem);
+                    max-height: 8rem;
+                  }
+                }
+
+                // .ft
+                .ft {
+                  // &-mol
+                  &-mol {
+                    // &-breadcrumb
+                    &-breadcrumb {
+                      // &__list
+                      &__list {
+                        @include padding(1rem null);
+                        order: 1;
+                        flex-basis: 100%;
+
+                        @include min-screen(360px) {
+                          flex-basis: 50%;
+                        }
+                      }
+
+                      // &-links-support
+                      &-links-support {
+                        @include margin(0 null null null);
+                        @include border-style(solid null null null);
+                        @include border-width(1px);
+                        @include border-color(var(--color-mediumGrey));
+                        order: 3;
+
+                        // &__item
+                        &__item {
+                          @include padding(0.5rem null 0.5rem null);
+                        }
+                      }
+
+                      // &__item
+                      &__itemIs-not-link {
+                        @include position(relative, null null null null);
+
+                        // &:after
+                        &:before {
+                          content: "";
+                          @include size(13.6rem, 2.4rem);
+                          background-image: url("#{$images-path}/logos/logo-el-periodico-estudiante.png");
+                          background-repeat: no-repeat;
+                          background-position: center;
+                          background-size: contain;
+
+                          @include min-screen(980px) {
+                            @include size(18.7rem, 3.3rem);
+                          }
+                        }
+
+                        // .ft-mol-breadcrumb__lvl
+                        .ft-mol-breadcrumb__lvl {
+                          @include hide-visually;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      // &.noticia
+      &.noticia {
+        // .ft-mol-breadcrumb
+        .ft-mol-breadcrumb {
+          // &-has
+          &-has {
+            // &--lvl
+            &--lvl {
+              // &::before
+              &:before {
+                @include hide-visually;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // &.espacio3
+    &.espacio3 {
+      // .ft
+      .ft {
+        // &-mol
+        &-mol {
+          // &-breadcrumb
+          &-breadcrumb {
+            // &-section
+            &-section {
+              @include min-screen(1280px) {
+                @include padding(0 null 1.2rem null);
+              }
+            }
+
+            // &-is
+            &-is {
+              // &--sectioned
+              &--sectioned {
+                // &-bordered
+                &-bordered {
+                  // .ft
+                  .ft {
+                    // &-mol
+                    &-mol {
+                      // &-breadcrumb
+                      &-breadcrumb {
+                        // &__mask
+                        &__mask {
+                          // &:before
+                          &:before {
+                            background-color: var(--color-white);
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            // &-has
+            &-has {
+              // &--lvl
+              &--lvl {
+                @include padding(null null 0 null);
+                @include border-width(null null 0 null);
+                align-items: center;
+                justify-content: space-between;
+
+                // .ft
+                .ft {
+                  // &-mol
+                  &-mol {
+                    // &-breadcrumb
+                    &-breadcrumb {
+                      // &__list
+                      &__list {
+                        @include padding(1rem null);
+                        order: 1;
+                        flex-basis: 100%;
+
+                        @include min-screen(360px) {
+                          flex-basis: 50%;
+                        }
+                      }
+
+                      // &-links-support
+                      &-links-support {
+                        @include margin(0 null null null);
+                        @include border-style(solid null null null);
+                        @include border-width(1px);
+                        @include border-color(var(--color-mediumGrey));
+                        order: 3;
+
+                        // &__item
+                        &__item {
+                          @include padding(0.5rem null 0.5rem null);
+                        }
+                      }
+
+                      // &__item
+                      &__itemIs-not-link {
+                        @include position(relative, null null null null);
+
+                        // &:after
+                        &:before {
+                          content: "";
+                          @include size(13.6rem, 2.4rem);
+                          background-image: url("#{$images-path}/logos/logo-espacio3.png");
+                          background-repeat: no-repeat;
+                          background-position: center;
+                          background-size: contain;
+
+                          @include min-screen(980px) {
+                            @include size(18.7rem, 3.3rem);
+                          }
+                        }
+
+                        // .ft-mol-breadcrumb__lvl
+                        .ft-mol-breadcrumb__lvl {
+                          @include hide-visually;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      // &.noticia
+      &.noticia {
+        // .ft-mol-breadcrumb
+        .ft-mol-breadcrumb {
+          // &-has
+          &-has {
+            // &--lvl
+            &--lvl {
+              // &::before
+              &:before {
+                @include hide-visually;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // &.integracion
+    &.integracion {
+      // .ft
+      .ft {
+        // &-mol
+        &-mol {
+          // &-breadcrumb
+          &-breadcrumb {
+            // &-section
+            &-section {
+              @include min-screen(1280px) {
+                @include padding(0 null 1.2rem null);
+              }
+            }
+
+            // &-is
+            &-is {
+              // &--sectioned
+              &--sectioned {
+                // &-bordered
+                &-bordered {
+                  // .ft
+                  .ft {
+                    // &-mol
+                    &-mol {
+                      // &-breadcrumb
+                      &-breadcrumb {
+                        // &__mask
+                        &__mask {
+                          // &:before
+                          &:before {
+                            background-color: var(--color-white);
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            // &-has
+            &-has {
+              // &--lvl
+              &--lvl {
+                @include padding(null null 0 null);
+                @include border-width(null null 0 null);
+                align-items: center;
+                justify-content: space-between;
+
+                // &::before
+                &:before {
+                  content: none;
+
+                  @include min-screen(360px) {
+                    content: "";
+                    @include position(relative, -0.5rem null null 0);
+                    @include margin(null 0 null null);
+                    @include size(26rem, 5.5rem);
+                    order: 2;
+                    flex-basis: 100%;
+                    max-width: inherit;
+                    max-height: 5.5rem;
+                    background-position: left;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-image: url("#{$images-path}/bgs/ft-mol-breadcrumb-is-sectioned--integracion.png");
+                  }
+
+                  @include min-screen(768px) {
+                    @include size(25rem, 8rem);
+                    flex-basis: 50%;
+                    max-height: 8rem;
+                    background-position: right;
+                  }
+                }
+
+                // .ft
+                .ft {
+                  // &-mol
+                  &-mol {
+                    // &-breadcrumb
+                    &-breadcrumb {
+                      // &__list
+                      &__list {
+                        @include padding(1rem null);
+                        order: 1;
+                        flex-basis: 100%;
+
+                        @include min-screen(360px) {
+                          flex-basis: 50%;
+                        }
+                      }
+
+                      // &-links-support
+                      &-links-support {
+                        @include margin(0 null null null);
+                        @include border-style(solid null null null);
+                        @include border-width(1px);
+                        @include border-color(var(--color-mediumGrey));
+                        order: 3;
+
+                        // &__item
+                        &__item {
+                          @include padding(0.5rem null 0.5rem null);
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      // &.noticia
+      &.noticia {
+        // .ft-mol-breadcrumb
+        .ft-mol-breadcrumb {
+          // &-has
+          &-has {
+            // &--lvl
+            &--lvl {
+              // &::before
+              &:before {
+                @include hide-visually;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // &.fiestasdelpilar
+    &.fiestasdelpilar {
+      // .ft
+      .ft {
+        // &-mol
+        &-mol {
+          // &-breadcrumb
+          &-breadcrumb {
+            // &-section
+            &-section {
+              @include min-screen(1280px) {
+                @include padding(0 null 1.2rem null);
+              }
+            }
+
+            // &-is
+            &-is {
+              // &--sectioned
+              &--sectioned {
+                // &-bordered
+                &-bordered {
+                  // .ft
+                  .ft {
+                    // &-mol
+                    &-mol {
+                      // &-breadcrumb
+                      &-breadcrumb {
+                        // &__mask
+                        &__mask {
+                          // &:before
+                          &:before {
+                            background-color: var(--color-white);
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            // &-has
+            &-has {
+              // &--lvl
+              &--lvl {
+                @include padding(null null 0 null);
+                @include border-width(null null 0 null);
+                align-items: center;
+                justify-content: space-between;
+
+                // &::before
+                &:before {
+                  content: none;
+
+                  @include min-screen(360px) {
+                    content: "";
+                    @include position(relative, -0.5rem null null 0);
+                    @include margin(null 0 null null);
+                    @include size(26rem, 5.5rem);
+                    order: 2;
+                    flex-basis: 100%;
+                    max-width: inherit;
+                    max-height: 5.5rem;
+                    background-position: left;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-image: url("#{$images-path}/bgs/ft-mol-breadcrumb-is-sectioned--fiestas-del-pilar.png");
+                  }
+
+                  @include min-screen(768px) {
+                    @include size(25rem, 8rem);
+                    flex-basis: 50%;
+                    max-height: 8rem;
+                    background-position: right;
+                  }
+                }
+
+                // .ft
+                .ft {
+                  // &-mol
+                  &-mol {
+                    // &-breadcrumb
+                    &-breadcrumb {
+                      // &__list
+                      &__list {
+                        @include padding(1rem null);
+                        order: 1;
+                        flex-basis: 100%;
+
+                        @include min-screen(360px) {
+                          flex-basis: 50%;
+                        }
+                      }
+
+                      // &-links-support
+                      &-links-support {
+                        @include margin(0 null null null);
+                        @include border-style(solid null null null);
+                        @include border-width(1px);
+                        @include border-color(var(--color-mediumGrey));
+                        order: 3;
+
+                        // &__item
+                        &__item {
+                          @include padding(0.5rem null 0.5rem null);
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      // &.noticia
+      &.noticia {
+        // .ft-mol-breadcrumb
+        .ft-mol-breadcrumb {
+          // &-has
+          &-has {
+            // &--lvl
+            &--lvl {
+              // &::before
+              &:before {
+                @include hide-visually;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // @include behavior: diario-de-mallorca
+  // ===============================================
+  @include behavior-parent(diario-de-mallorca) {
+    // &.ido
+    &.ido {
+      // .ft-mol-breadcrumb
+      .ft-mol-breadcrumb {
+        $this: &;
+
+        // &-section
+        &-section {
+          @include min-screen(1280px) {
+            @include padding(0 null 1.2rem null);
+          }
+        }
+
+        // &-has
+        &-has {
+          // &--lvl
+          &--lvl {
+            @include padding(null null 0 null);
+            @include border-width(null null 0 null);
+            align-items: center;
+            justify-content: space-between;
+
+            // &::before
+            &:before {
+              content: none;
+
+              @include min-screen(360px) {
+                content: "";
+                @include position(relative, null -1.1rem null null);
+                @include margin(null null null auto);
+                @include size(23rem, 7.5rem);
+                order: 2;
+                flex-basis: 50%;
+                max-width: 23rem;
+                max-height: 7.5rem;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-image: url("#{$images-path}/bgs/ft-mol-breadcrumb-is-sectioned--ido.svg");
+                clip-path: none;
+              }
+
+              @include min-screen(768px) {
+                @include size(25rem, 8rem);
+                max-height: 8rem;
+              }
+            }
+
+            // &::after
+            &:after {
+              display: none;
+            }
+
+            // .ft
+            .ft {
+              // &-mol
+              &-mol {
+                // &-breadcrumb
+                &-breadcrumb {
+                  // &__list
+                  &__list {
+                    @include padding(1rem null);
+                    order: 1;
+                    flex-basis: 100%;
+
+                    @include min-screen(360px) {
+                      flex-basis: 50%;
+                    }
+                  }
+
+                  // &-links-support
+                  &-links-support {
+                    @include margin(0 null null null);
+                    @include border-style(solid null null null);
+                    @include border-width(1px);
+                    @include border-color(var(--color-mediumGrey));
+                    order: 3;
+
+                    // &__item
+                    &__item {
+                      @include padding(0.5rem null 0.5rem null);
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          // &--1-lvl
+          &--1-lvl {
+            // [class*="ft-mol-breadcrumb__list"]
+            [class*="ft-mol-breadcrumb__list"] {
+              @include border-width(0);
+
+              // &:after
+              &:after {
+                @include hide-visually;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// @include behavior: faro-de-vigo
+// ===============================================
+@include behavior-parent(faro-de-vigo) {
+  // &.clubfaro
+  &.clubfaro {
+    // .ft
+    .ft {
+      // &-mol
+      &-mol {
+        // &-breadcrumb
+        &-breadcrumb {
+          // &-section
+          &-section {
+            @include min-screen(1280px) {
+              @include padding(0 null 1.2rem null);
+            }
+          }
+
+          // &-is
+          &-is {
+            // &--sectioned
+            &--sectioned {
+              // &-bordered
+              &-bordered {
+                // .ft
+                .ft {
+                  // &-mol
+                  &-mol {
+                    // &-breadcrumb
+                    &-breadcrumb {
+                      // &__mask
+                      &__mask {
+                        // &:before
+                        &:before {
+                          background-color: var(--color-white);
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          // &-has
+          &-has {
+            // &--lvl
+            &--lvl {
+              @include padding(null null 0 null);
+              @include border-width(null null 0 null);
+              align-items: center;
+              justify-content: space-between;
+
+              // &::before
+              &:before {
+                content: none;
+
+                @include min-screen(360px) {
+                  content: "";
+                  @include position(relative, -0.5rem null null 0);
+                  @include margin(null 0 null null);
+                  @include size(26rem, 5.5rem);
+                  order: 2;
+                  flex-basis: 100%;
+                  max-width: inherit;
+                  max-height: 5.5rem;
+                  background-position: left;
+                  background-repeat: no-repeat;
+                  background-size: contain;
+                  background-image: url("#{$images-path}/bgs/ft-mol-breadcrumb-is-sectioned--club-faro.svg");
+                }
+
+                @include min-screen(768px) {
+                  @include size(25rem, 8rem);
+                  flex-basis: 50%;
+                  max-height: 8rem;
+                  background-position: right;
+                }
+              }
+
+              // .ft
+              .ft {
+                // &-mol
+                &-mol {
+                  // &-breadcrumb
+                  &-breadcrumb {
+                    // &__list
+                    &__list {
+                      @include padding(1rem null);
+                      order: 1;
+                      flex-basis: 100%;
+
+                      @include min-screen(360px) {
+                        flex-basis: 50%;
+                      }
+                    }
+
+                    // &-links-support
+                    &-links-support {
+                      @include margin(0 null null null);
+                      @include border-style(solid null null null);
+                      @include border-width(1px);
+                      @include border-color(var(--color-mediumGrey));
+                      order: 3;
+
+                      // &__item
+                      &__item {
+                        @include padding(0.5rem null 0.5rem null);
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // &.noticia
+    &.noticia {
+      // .ft-mol-breadcrumb
+      .ft-mol-breadcrumb {
+        // &-has
+        &-has {
+          // &--lvl
+          &--lvl {
+            // &::before
+            &:before {
+              @include hide-visually;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // &.escolaencamino
+  &.escolaencamino {
+    // .ft
+    .ft {
+      // &-mol
+      &-mol {
+        // &-breadcrumb
+        &-breadcrumb {
+          // &-section
+          &-section {
+            @include min-screen(1280px) {
+              @include padding(0 null 1.2rem null);
+            }
+          }
+
+          // &-is
+          &-is {
+            // &--sectioned
+            &--sectioned {
+              // &-bordered
+              &-bordered {
+                // .ft
+                .ft {
+                  // &-mol
+                  &-mol {
+                    // &-breadcrumb
+                    &-breadcrumb {
+                      // &__mask
+                      &__mask {
+                        // &:before
+                        &:before {
+                          background-color: var(--color-white);
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          // &-has
+          &-has {
+            // &--lvl
+            &--lvl {
+              @include padding(null null 0 null);
+              @include border-width(null null 0 null);
+              align-items: center;
+              justify-content: space-between;
+
+              // &::before
+              &:before {
+                content: none;
+
+                @include min-screen(360px) {
+                  content: "";
+                  @include position(relative, null -1.1rem null null);
+                  @include margin(null null 1rem auto);
+                  @include size(23rem, 7.5rem);
+                  order: 2;
+                  flex-basis: 50%;
+                  max-width: 23rem;
+                  max-height: 5rem;
+                  background-position: right;
+                  background-repeat: no-repeat;
+                  background-size: contain;
+                  background-image: url("#{$images-path}/bgs/ft-mol-breadcrumb-is-sectioned--escola-en-camino.svg");
+                  clip-path: none;
+                }
+
+                @include min-screen(768px) {
+                  @include size(25rem, 8rem);
+                  max-height: 8rem;
+                }
+              }
+
+              // .ft
+              .ft {
+                // &-mol
+                &-mol {
+                  // &-breadcrumb
+                  &-breadcrumb {
+                    // &__list
+                    &__list {
+                      @include padding(1rem null);
+                      order: 1;
+                      flex-basis: 100%;
+                      border: none;
+
+                      @include min-screen(360px) {
+                        flex-basis: 50%;
+                      }
+
+                      // &:after
+                      &:after {
+                        @include hide-visually;
+                      }
+                    }
+
+                    // &-links-support
+                    &-links-support {
+                      @include margin(0 null null null);
+                      @include border-style(solid null null null);
+                      @include border-width(1px);
+                      @include border-color(var(--color-mediumGrey));
+                      order: 3;
+
+                      // &__item
+                      &__item {
+                        @include padding(0.5rem null 0.5rem null);
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // &.noticia
+    &.noticia {
+      // .ft-mol-breadcrumb
+      .ft-mol-breadcrumb {
+        // &-has
+        &-has {
+          // &--lvl
+          &--lvl {
+            // &::before
+            &:before {
+              @include hide-visually;
+            }
+          }
+        }
+      }
+    }
+  }
+}
