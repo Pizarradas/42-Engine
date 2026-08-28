@@ -1,0 +1,279 @@
+// CORE SETUP // BRAND: DEFAULT
+// ===============================================
+
+// BRAND SETUP
+// ================================================
+@import "maps/colors";
+@import "maps/fonts";
+
+// ================================================
+
+// FONT CALLS // ---------------------------------------------
+// Font Stack
+:root
+{
+  --font-stack: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
+    helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial,
+    sans-serif;
+  --font-primary: "Google-Roboto--Bold", Arial, sans-serif;
+}
+
+// Google-Roboto 
+
+// &--bold
+@include font-family("Google-Roboto--bold",
+  "#{$fonts-path}/google-roboto/Roboto-Bold",
+  700,
+  normal,
+  eot woff2 woff ttf svg);
+
+// ---------------------------------------------
+
+// Google-Roboto
+
+// END // FONT CALLS
+// ---------------------------------------------
+
+// RESETS-BLOGAL
+// ---------------------------------------------
+@include resets-global( // FONT STYLE
+  normal,
+
+  // FONT VARIANT
+  normal,
+
+  // FONT WEIGHT
+  500,
+
+  // FONT FAMILY
+  var(--font-stack),
+  // FONT SIZE
+  1.6rem,
+
+  // LINE HEIGHT
+  2rem,
+
+  // FONT COLOR
+  var(--color-black),
+  // LETTER SPACING
+  0px,
+
+  // BACKGROUND COLOR
+  var(--color-white),
+  // END // RESETS-BLOGAL
+);
+// ---------------------------------------------
+
+// RESETS-CUSTOM
+// ---------------------------------------------
+@include resets-custom( // BRAND NAME
+  ux,
+
+  // FONT FAMILY PRIMARY
+  var(--font-primary),
+  // FONT FAMILY PRIMARY REGULAR
+  null,
+  // FONT FAMILY SECONDARY
+  var(--font-stack),
+  // FONT FAMILY TERTIARY
+  null,
+  // FONT WEIGHT BRAND
+  500,
+  // RESET FONT COLOR PRIMARY
+  var(--color-primary),
+  // RESET FONT COLOR SEPTENARY
+  var(--color-white),
+  // RESET FONT COLOR OCTONARY
+  var(--color-black),
+  // RESET TEXT SELECTION COLOR
+  var(--color-black),
+  // RESET TEXT SELECTION BACKGROUND COLOR
+  var(--color-darkGrey),
+  // RESET LINK SELECTION COLOR
+  var(--color-white),
+  // RESET LINK SELECTION BACKGROUND COLOR
+  var(--color-primary),
+  // SCROLL BAR WIDTH
+  initial,
+  // SCROLL BAR VERTICAL
+  10px,
+  // SCROLL BAR HORIZONTAL
+  10px,
+  // SCROLL BAR TRACK BORDER-RADIUS TOP
+  10px,
+  // SCROLL BAR TRACK BORDER-RADIUS BOTTOM
+  10px,
+  // SCROLL BAR TRACK BACKGROUND COLOR
+  var(--color-lightGrey),
+  // SCROLL BAR THUMB BORDER-RADIUS TOP
+  20px,
+  // SCROLL BAR THUMB BORDER-RADIUS BOTTOM
+  20px,
+  // SCROLL BAR THUMB BACKGROUND COLOR
+  var(--color-mediumGrey),
+  // SCROLL BAR THUMB BORDER STYLE
+  solid,
+  // SCROLL BAR THUMB BORDER WIDTH
+  0,
+  // SCROLL BAR THUMB BORDER COLOR
+  var(--color-lightGrey),
+  // SCROLL BAR THUMB HOVER
+  var(--color-black) // END // RESETS-CUSTOM
+);
+// ---------------------------------------------
+
+// END // BRAND--DEFAULT // RESETS
+// ===============================================
+
+// HELPERS
+// ===============================================
+
+// AFFIXES
+// ---------------------------------------------
+@include ft-helper-affixes();
+// ---------------------------------------------
+
+// ALIGN
+// ---------------------------------------------
+@include ft-helper-align();
+// ---------------------------------------------
+
+// ANCHORS
+// ---------------------------------------------
+@include ft-helperAnchors();
+// ---------------------------------------------
+
+// ANIMATIONS
+// ---------------------------------------------
+@include ft-helperAnimations();
+// ---------------------------------------------
+
+// BACKGROUNDS
+// ---------------------------------------------
+@include ft-helper-backgrounds( // BRAND NAME
+  ux,
+
+  // &--primary
+  var(--color-primary),
+  // &--secondary
+  var(--color-secondary),
+  // &--tertiary
+  var(--color-tertiary),
+  // &--quaternary
+  var(--color-quaternary),
+  // &--quinary
+  var(--color-quinary),
+  // &--senary
+  var(--color-senary),
+  // &--septenary
+  var(--color-septenary),
+  // &-- var(--color-darkGrey)
+  var(--color-darkGrey),
+  //  var(--color-mediumGrey)
+  var(--color-mediumGrey),
+  //  var(--color-lightGrey)
+  var(--color-lightGrey));
+// ---------------------------------------------
+
+// COLLAPSES
+// ---------------------------------------------
+@include ft-helper-collapses();
+// ---------------------------------------------
+
+// DISPLAY
+// ---------------------------------------------
+@include ft-helper-display();
+// ---------------------------------------------
+
+// DIVIDERS
+// ---------------------------------------------
+@include ft-helper-divider();
+// ---------------------------------------------
+
+// FONTS
+// ---------------------------------------------
+@include ft-helper-fonts( // BRAND NAME
+  ux,
+
+  // &--primary
+  var(--color-primary),
+  // &--secondary
+  var(--color-secondary),
+  // &--tertiary
+  var(--color-tertiary),
+  // &--quaternary
+  var(--color-quaternary),
+  // &--300
+  null,
+  // &--400
+  null,
+  // &--500
+  null,
+  // &--600
+  null,
+  // &--700
+  var(--font-primary),
+  // &--800
+  null);
+// ---------------------------------------------
+
+// GRIDS
+// ---------------------------------------------
+@include ft-helperGrids();
+// ---------------------------------------------
+
+// HIDES
+// ---------------------------------------------
+@include ft-helper-hides();
+// ---------------------------------------------
+
+// IMAGES
+// ---------------------------------------------
+@include ft-helper-images();
+// ---------------------------------------------
+
+// OVERLAYS
+// ---------------------------------------------
+@include ft-helper-overlays();
+// ---------------------------------------------
+
+// POSITION
+// ---------------------------------------------
+@include ft-helper-position();
+// ---------------------------------------------
+
+// PROPERTIES
+// ---------------------------------------------
+@include ft-helper-properties();
+// ---------------------------------------------
+
+// SCROLL
+// ---------------------------------------------
+@include ft-helper-scroll();
+// ---------------------------------------------
+
+// SHOWS
+// ---------------------------------------------
+@include ft-helper-shows();
+// ---------------------------------------------
+
+// SPACERS
+// ---------------------------------------------
+@include ft-helper-spacers();
+// ---------------------------------------------
+
+// TEXTS
+// ---------------------------------------------
+@include ft-helper-texts();
+// ---------------------------------------------
+
+// CLOSENEWS
+// ---------------------------------------------
+@include ft-helper-closenews();
+// ---------------------------------------------
+
+// .UI-HELPER-HIDDEN-ACCESIBLE
+// ---------------------------------------------
+@include helper-ui-helper-hidden-accesible();
+// ---------------------------------------------
+// ===============================================

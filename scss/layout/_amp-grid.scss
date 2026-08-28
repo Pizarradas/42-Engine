@@ -1,0 +1,112 @@
+// FOURTY LAYOUT: GRID
+// ===============================================
+.ft-layout-grid
+{
+
+  // &-flex-
+  &-flex
+  {
+    @include margin(null auto null auto);
+    @include padding(null 0 null 0);
+
+    // &__col
+    &__col
+    {
+      outline: 1px solid var(--color-primary);
+
+      // &Xs
+      &Xs
+      {
+        // xs-6
+        &-6
+        {
+          @include padding(null 0.8rem null 0.8rem);
+          flex-basis: 50%;
+          max-width: 50%;
+        }
+
+        // &-12
+        &-12
+        {
+          @include padding(null 0.8rem null 0.8rem);
+          flex-basis: 100%;
+          max-width: 100%;
+        }
+      }
+
+      // &-adds
+      &-adds
+      {
+
+        // &Content
+        &Content
+        {
+          @include margin(0 auto);
+          @include padding(0);
+          text-align: left;
+
+
+          &--L
+          {
+            @include margin(0 auto);
+            @include padding(0);
+            text-align: left;
+          }
+
+          &--XL
+          {
+            @include margin(0 auto);
+            @include padding(0);
+            text-align: left;
+          }
+        }
+
+      }
+    }
+
+    // &__row
+    &__row
+    {
+      @include margin(null auto null auto);
+      @include padding(null 0.8rem null 0.8rem);
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      max-width: $max-width-grid;
+      width: 100%;
+
+      // &Is
+      &Is
+      {
+
+        // &-p-less
+        &-p-less
+        {
+          @include padding(null 0 null 0);
+          max-width: $max-width-grid-p-less;
+        }
+      }
+    }
+
+    // &__nested
+    &__nested
+    {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+          // &Gutter
+    &Gutter {
+      // &-0
+      &-0 {
+        @include margin(null -0.8rem null -0.8rem);
+        @include min-screen(768px) {
+          @include margin(null -1.1rem null -1.1rem);
+        }
+      }
+    }
+    }
+
+
+  }
+}

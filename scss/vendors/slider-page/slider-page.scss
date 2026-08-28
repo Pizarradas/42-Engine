@@ -1,0 +1,583 @@
+// ABSTRACTS
+// ================================================
+@import "../../abstracts/abstracts.scss";
+@import "../bourbon/bourbon";
+// ================================================
+
+// SLIDER PAGE
+// ===============================================
+
+  // HTML
+  // ---------------------------------------------
+  html {
+
+    // &.FP-ENABLED
+    &.fp-enabled {
+      overflow: hidden;
+      -webkit-tap-highlight-color: rgba(0,0,0,0); /*Avoid flicker on slides transitions for mobile phones #336 */
+    }
+
+  // END // HTML
+  }
+  // ---------------------------------------------
+
+  // .FP
+  // ---------------------------------------------
+  .fp {
+
+    // &-ENABLED
+    &-enabled {
+
+      // body
+      body {
+        overflow: hidden;
+        -webkit-tap-highlight-color: rgba(0,0,0,0); /*Avoid flicker on slides transitions for mobile phones #336 */
+      }
+
+    // END // &-ENABLED
+    }
+
+    // &-SECTION
+    &-section {
+      position: relative;
+      box-sizing: border-box;
+    }
+
+    // &-SLIDE
+    &-slide {
+
+      // generals
+      display: block;
+      float: left;
+      height: 100%;
+
+      // &.FP
+      &.fp {
+
+        // &-table
+        &-table {
+          display: table;
+          table-layout: fixed;
+          width: 100%;
+        }
+
+      // END // &.FP
+      }
+
+    // END // &-SLIDE
+    }
+
+    // &-SLIDESCONTAINER
+    &-slidesContainer {
+      position: relative;
+      display: block;
+      float: left;
+      height: 100%;
+    }
+
+    // &-SLIDES
+    &-slides {
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      transition: all .3s ease-out;
+      height: 100%;
+    }
+
+    // &-SECTION
+    &-section {
+
+      // &.FP
+      &.fp {
+
+        // &-table
+        &-table {
+          display: table;
+          table-layout: fixed;
+          width: 100%;
+        }
+
+      // END // &.FP
+      }
+
+    // END // &-SECTION
+    }
+
+    // &-CONTAINER
+    &-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    // &-TABLECELL
+    &-tableCell {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      height: 100%;
+    }
+
+    // &-CONTROLARROW
+    &-controlArrow {
+
+      // GENERALS
+      position: absolute;
+      bottom: 10%;
+      z-index: 4;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      transition: background-color .25s ease-in;
+      transform: translate3d(0,0,0);
+      border-radius: 50%;
+      background-color: map-colors(whites, brand--all);
+      @include min-screen(1024px) {
+        @include margin(-22px null null null);
+        top: 50%;
+        bottom: auto;
+      };
+
+      // &:BEFORE
+      &:before {
+        content: "";
+        @include margin(auto);
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 24px;
+        height: 24px;
+        background-repeat: no-repeat;
+        background-size: 100%;
+      }
+
+      // &.FP
+      &.fp {
+
+        // &-prev
+        &-prev {
+
+          // generals
+          left: 5px;
+          @include min-screen(768px) {
+            left: 5%;
+          };
+
+        // end // &-prev
+        }
+
+        // &-next
+        &-next {
+
+          // generals
+          @include border-width(38.5px 0 38.5px 34px);
+          @include border-color( transparent transparent transparent map-colors(whites, brand--all));
+          right: 5px;
+          @include min-screen(768px) {
+            right: 5%;
+          };
+
+        // end // &-next
+        }
+
+      // END // &.FP
+      }
+
+    // END // &-CONTROLARROW
+    }
+
+    // &-SLIDESNAV
+    &-slidesNav {
+
+      // generals
+      @include margin(0 auto);
+      position: absolute;
+      right: 0;
+      left: 0;
+      z-index: 4;
+      opacity: 1;
+      transform: translate3d(0,0,0);
+
+      // &.FP
+      &.fp {
+
+        // &-top
+        &-top {
+          top: 17px;
+        }
+
+        // &-bottom
+        &-bottom {
+          bottom: 17px;
+        }
+
+      // END // &.FP
+      }
+
+    // END // &-SLIDESNAV
+    }
+
+    // &-SCROLLABLE
+    &-scrollable {
+      position: relative;
+      overflow: hidden;
+    }
+
+    // &-SCROLLER
+    &-scroller {
+      overflow: hidden;
+    }
+
+    // &-menutop
+    &-menutop {
+
+      // generals
+      position: absolute;
+      top: 0;
+      z-index: 2;
+      display: flex;
+      flex-wrap: wrap;
+
+      // &-item
+      &-item {
+
+        // generals
+        @include margin(null null 0 null);
+
+        // &-anchor
+        &-anchor {
+          @include padding(10px);
+        }
+
+      // end // // &-item
+      }
+
+    // end // &-menutop
+    }
+
+    // &-SHOW-ACTIVE
+    &-show-active {
+
+      // generals
+      position: fixed;
+      top: 50%;
+      z-index: 100;
+      opacity: 1;
+      transform: translateY(-50%);
+
+      // ul
+      ul {
+
+        // generals
+        @include margin(0);
+        @include padding(0);
+
+        // li
+        li {
+
+          // generals
+          @include margin(8px);
+          position: relative;
+          display: block;
+          width: 14px;
+          height: 13px;
+
+          // span
+          span {
+            @include margin(-4px 0 0 -4px);
+            @include border-style(solid);
+            @include border-width(2px 2px 2px 2px);
+            @include border-color(map-colors(blacks, brand--all));
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 1;
+            transition: all .1s ease-in-out;
+            height: 8px;
+            width: 8px;
+            border-radius: 50%;
+            background-color: map-colors(blacks, brand--all);
+          }
+
+          // a
+          a {
+
+            // generals
+            position: relative;
+            z-index: 1;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+
+            // &.active
+            &.active {
+
+              // span
+              span {
+                @include margin(-6px 0 0 -6px);
+                height: 12px;
+                width: 12px;
+                background-color: map-colors(whites, brand--all);
+              }
+
+              // + .fp-tooltip
+              + .fp-tooltip {
+                transition: opacity 0.2s ease-in;
+                width: auto;
+                opacity: 1;
+              }
+
+            // end // &.active
+            }
+
+          // end // a
+          }
+
+          // .fp-tooltip
+          .fp-tooltip {
+            position: absolute;
+            top: -2px;
+            cursor: pointer;
+            overflow: hidden;
+            opacity: 0;
+            width: 0;
+            max-width: 220px;
+            font-family: 'Helvetica--Neue--75', Arial, sans-serif;
+            font-size: 1.4rem;
+            line-height: 1.6rem;
+            color: map-colors(whites, brand--all);
+            white-space: nowrap;
+          }
+
+          // &:hover, &:focus
+          &:hover,
+          &:focus {
+
+            // span
+            span {
+              @include margin(-5px 0px 0px -5px);
+              width: 10px;
+              height: 10px;
+            }
+
+          // end // &:hover, &:focus
+          }
+
+        // end // li
+        }
+
+      // end // ul
+      }
+
+      // &.FP // MODIFIER
+      &.fp {
+
+        // &-right
+        &-right {
+          right: 17px;
+        }
+
+        // &-right
+        &-left {
+          left: 17px;
+        }
+
+      // END // &.FP // MODIFIER
+      }
+
+    // END // &-SHOW-ACTIVE
+    }
+
+    // &-TOOLTIP
+    &-tooltip {
+
+
+      // &.fp-right // modifier
+      &.fp-right {
+        right: 20px;
+      }
+
+      // &.fp-left // modifier
+      &.fp-left {
+        left: 20px;
+      }
+
+    // END // &-TOOLTIP
+    }
+
+    // &-IMG
+    &-img {
+
+      // &-fullwidth
+      &-fullwidth {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+    // END // &-IMG
+    }
+
+    // &-VIDEO
+    &-video {
+
+      // &-bg
+      &-bg {
+
+        // generals
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        background-color: map-colors(blacks, brand--all);
+        background-position: center center;
+        background-size: contain;
+        object-fit: cover;
+
+        // &::-webkit-media-controls
+        &::-webkit-media-controls {
+          display: none;
+        }
+
+      // end // &-bg
+      }
+
+      // &-layer
+      &-layer {
+        position: absolute;
+        top: 43%;
+        left: 0;
+        z-index: 2;
+        transform: translate3d(0,0,0);
+        width: 100%;
+      }
+
+    // END // &-VIDEO
+    }
+
+    // &-NOTRANSITION
+    &-notransition {
+      transition: none;
+    }
+
+    // &-SR-ONLY // Only display content to screen readers
+    &-sr-only {
+      @include padding(0);
+      @include border-width(0 0 0 0);
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+    }
+
+    // &-AUTO-HEIGHT // MODIFIER
+    &-auto-height {
+
+      // .FP
+      .fp {
+
+        // &-slide
+        &-slide {
+          height: auto;
+        }
+
+        // &-tableCell
+        &-tableCell {
+          height: auto;
+        }
+
+      // END // .FP
+      }
+
+      // &.FP // MODIFIER
+      &.fp {
+
+        // &-section
+        &-section {
+          height: auto;
+        }
+
+      // END // &.FP // MODIFIER
+      }
+
+    // END // &-AUTO-HEIGHT // MODIFIER
+    }
+
+    // &-RESPONSIVE // MODIFIER
+    &-responsive {
+
+      // .FP
+      .fp {
+
+        // &-auto-height-responsive
+        &-auto-height-responsive {
+
+          // generals
+          height: auto;
+
+          // .fp
+          .fp {
+
+            // &-slide
+            &-slide {
+              height: auto;
+            }
+
+            // &-tableCell
+            &-tableCell {
+              height: auto;
+            }
+
+          // end // .fp
+          }
+
+          // &.fp // modifier
+          &.fp {
+
+            // &-section
+            &-section {
+              height: auto;
+            }
+
+          // end // &.fp // modifier
+          }
+
+        // end // &-auto-height-responsive
+        }
+
+      // END // .FP
+      }
+
+    // END // &-RESPONSIVE // MODIFIER
+    }
+
+  // END // .FP
+  }
+  // ---------------------------------------------
+
+  // .iScrollIndicator
+  // ---------------------------------------------
+  .iScrollIndicator {
+    @include border-width(0 0 0 0);
+  }
+  // ---------------------------------------------
+
+// END // SLIDER PAGE
+// ===============================================

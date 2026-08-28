@@ -1,0 +1,204 @@
+// BASE
+// ===============================================
+
+  // .HAS-SCROLL
+  // ---------------------------------------------
+  .has-scroll {
+
+    // &
+    & {
+      overflow: hidden;
+    }
+
+    // &-smooth
+    &-smooth {
+      overflow: hidden;
+    }
+
+    // &-dragging
+    &-dragging {
+      user-select: none;
+    }
+
+  // END // &.HAS-SCROLL
+  }
+  // ---------------------------------------------
+
+  // [DATA-SCROLL-CONTAINER]
+  // ---------------------------------------------
+  [data-scroll-container] {
+
+    // .has-scroll-smooth &
+    .has-scroll-smooth & {
+        min-height: 100vh;
+    }
+
+    // [data-scroll-direction="horizontal"] &
+    [data-scroll-direction="horizontal"] & {
+        display: inline-block;
+        height: 100vh;
+        white-space: nowrap;
+    }
+
+  // END [DATA-SCROLL-CONTAINER]
+  }
+  // ---------------------------------------------
+
+  // [DATA-SCROLL-SECTION]
+  // ---------------------------------------------
+  [data-scroll-section] {
+
+    // [data-scroll-direction="horizontal"] &
+    [data-scroll-direction="horizontal"] & {
+        display: inline-block;
+        vertical-align: top;
+        white-space: nowrap;
+        height: 100%;
+    }
+
+  // END // [DATA-SCROLL-SECTION]
+  }
+  // ---------------------------------------------
+
+  // .DATA-SCROLL
+  // ---------------------------------------------
+  .data-scroll {
+
+    // &-IMG
+    &-img {
+
+      // generals
+      position: relative;
+
+      // &-example
+      &-example {
+
+        // generals
+        width: 400px;
+        height: 400px;
+
+        // &-wrapper
+        &-wrapper {
+          position: relative;
+          overflow: hidden;
+        }
+
+        // &-image
+        &-image {
+          width: 100%;
+          opacity: 0;
+          transform: scale(1.4);
+          transition: opacity 1.2s cubic-bezier(.215,.61,.355,1),transform 1.2s cubic-bezier(.215,.61,.355,1);
+          mix-blend-mode: multiply;
+        }
+
+        // &-imagebox
+        &-imagebox {
+
+          // generals
+          opacity: .75;
+          background-color: transparent;
+
+          // &.is-inview
+          &.is-inview {
+
+            // .data-scroll-img-example-image
+            .data-scroll-img-example-image {
+              opacity: 1;
+              transform: scale(1);
+              transition-delay: .6s;
+            }
+
+          // end // &.is-inview
+          }
+
+        // end // &-imagebox
+        }
+
+      // end // &-example
+      }
+
+    // END // &-IMG
+    }
+
+    // &-BUBBLE
+    &-bubble {
+
+      // &-example
+      &-example {
+
+        // generals
+        position: absolute;
+        top: 30%;
+        right: 20px;
+        z-index: 1;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+color: map-colors(whites, brand-all);
+
+        // &:before
+        &:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: -1;
+          transform: scale(0);
+          transition: transform .6s cubic-bezier(.17,.67,.3,1.33);
+          background-color: map-colors(blacks, brand-all);
+          border-radius: 50%;
+        }
+
+        // &.is-inview
+        &.is-inview {
+
+          // &:before
+          &:before {
+            transform: scale(1);
+            transition-delay: .3s;
+          }
+
+        // end // &.is-inview
+        }
+
+      // end // &-example
+      }
+
+    // END // &-BUBBLE
+    }
+
+    // &-LETTERS
+    &-letters {
+
+      // &-example
+      &-example {
+
+        // generals
+        display: inline-block;
+        vertical-align: middle;
+
+        // &-item
+        &-item {
+          display: inline-block;
+          font-size: 8rem;
+        }
+
+      // end // &-example
+      }
+
+    // END // &-LETTERS
+    }
+
+  // END // .DATA-SCROLL
+  }
+  // ---------------------------------------------
+
+// ===============================================

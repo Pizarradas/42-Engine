@@ -1,0 +1,378 @@
+$glide-class: 'glide' !default;
+$glide-element-separator: '__' !default;
+$glide-modifier-separator: '--' !default;
+@import '../../abstracts/abstracts.scss';
+@import '../../vendors/bourbon/bourbon';
+
+.#{$glide-class}
+{
+    $this: &;
+    $se: $glide-element-separator;
+    $sm: $glide-modifier-separator;
+
+    padding-bottom: 1rem;
+
+    &#{$se}slides
+    {
+        margin: 1.5rem 0 2rem;
+    }
+
+
+    &#{$se}track
+    {
+        @include position(relative, null null null null);
+        @include border-style (null null dotted null);
+        @include border-width(null null 0.1rem null);
+        @include border-color(null null var(--color-mediumGrey) null);
+        overflow: hidden;
+        /* fix for flashing background */
+        -webkit-transform: translate3d(0px, 0px, 0px);
+    }
+
+    &#{$se}arrows
+    {
+        @include position(relative, 8px null null null);
+        display: flex;
+        justify-content: space-between;
+        min-height: 2rem;
+
+        @include min-screen(768px)
+        {
+            justify-content: flex-end;
+            gap: 2rem;
+
+        }
+    }
+
+    &#{$se}arrow
+    {
+        @include position(absolute, null null null null);
+        @include border-style (solid);
+        @include border-width(1px);
+        @include border-color(var(--color-black));
+        -webkit-tap-highlight-color: transparent;
+        text-align: center;
+        display: block;
+        top: 50%;
+        z-index: 2;
+        color: var(--color-black);
+        border-radius: 0;
+        opacity: 1;
+        cursor: pointer;
+        transition: opacity 150ms ease, border 300ms ease-in-out;
+        transform: translateY(-50%);
+        line-height: 1;
+
+        &:focus
+        {
+            outline: none;
+        }
+
+        &:hover
+        {
+            border-color: var(--color-white);
+        }
+
+        &#{$sm}left
+        {
+            // generals
+            cursor: pointer;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            @include position(absolute, 3.2rem null 0 0);
+            @include margin(auto 0 auto 0);
+            @include padding(0);
+            @include size(3.2rem, 3.2rem);
+            @include border-width(0.2rem);
+            @include border-style(solid);
+            @include border-color(var(--color-black));
+            user-select: none;
+            transition: background-color 0.25s ease-in;
+            background: var(--color-white);
+
+            // min-screen(768px) 
+            @include min-screen(768px)
+            {
+                @include position(absolute, 3.2rem calc(3.2rem + 18px) null auto);
+            }
+
+            // &:before
+            &:before
+            {
+                // generals
+                content: "";
+                @include position(absolute, 0 0.7rem 0 0);
+                @include margin(auto);
+                @include size(1.5rem, 1.5rem);
+                transition: color 0.25s ease-in, opacity 0.25s ease-in;
+                transform: rotate(90deg);
+                filter: map-filters(blacks, brand--all);
+                @include background-setup(map-icons(chevrons, brand--default),
+                    // img path
+                    "0 0 / 100%",
+                    // position and size
+                    no-repeat,
+                    // repeat
+                    null,
+                    // attachment
+                    null,
+                    // origin
+                    null,
+                    // clip
+                    null,
+                    // color
+                );
+
+                // end // &:before
+            }
+
+            // span
+            span
+            {
+                opacity: 0;
+            }
+
+
+            // &:hover, &:focus-within
+            &:hover,
+            &:focus-within
+            {
+                @include border-width(0);
+                background: var(--color-black);
+
+                // &:before
+                &:before
+                {
+                    filter: map-filters(whites, brand--all);
+                }
+
+                // end // &:hover, &:focus
+            }
+
+            // end // &-prev
+        }
+
+        &#{$sm}right
+        {
+            // generals
+            cursor: pointer;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            //@include position(relative, null 0 0.6rem null);
+            @include position(absolute, 3.2rem 0 0 null);
+            @include margin(auto 0 auto 0);
+            @include padding(0);
+            @include size(3.2rem, 3.2rem);
+            @include border-width(0.2rem);
+            @include border-style(solid);
+            @include border-color(var(--color-black));
+            transition: background-color 0.25s ease-in;
+            background: var(--color-white);
+
+
+            // min-screen(768px)  
+            @include min-screen(768px)
+            {
+                //@include position(relative, auto 0 0 null);
+            }
+
+            // &:before
+            &:before
+            {
+                // generals
+                content: "";
+                @include position(absolute, 0 0 0 0.7rem);
+                @include margin(auto);
+                @include size(1.5rem, 1.5rem);
+                transition: color 0.25s ease-in, opacity 0.25s ease-in;
+                transform: rotate(-90deg);
+                filter: map-filters(blacks, brand--all);
+                @include background-setup(map-icons(chevrons, brand--default),
+                    // img path
+                    "0 0 / 100%",
+                    // position and size
+                    no-repeat,
+                    // repeat
+                    null,
+                    // attachment
+                    null,
+                    // origin
+                    null,
+                    // clip
+                    null,
+                    // color
+                );
+
+                // end // &:before
+            }
+
+            // span
+            span
+            {
+                opacity: 0;
+            }
+
+
+            // &:hover, &:focus-within
+            &:hover,
+            &:focus-within
+            {
+                @include border-width(0);
+                background: var(--color-black);
+
+                // &:before
+                &:before
+                {
+                    filter: map-filters(whites, brand--all);
+                }
+
+                // end // &:hover, &:focus-within
+            }
+
+            // end // &-next
+        }
+
+        // &.disabled
+
+        &#{$sm}disabled
+        {
+            // generals
+            background: var(--color-lightGrey);
+            @include border-width(0);
+            cursor: not-allowed;
+            // &:before
+
+            &:before
+            {
+                filter: map-filters(greys, brand--300);
+            }
+
+            // &:hover, &:focus-within
+            &:hover,
+            &:focus-within
+            {
+                background: var(--color-lightGrey);
+                cursor: not-allowed;
+
+                &:before
+                {
+                    filter: map-filters(greys, brand--300);
+                    cursor: not-allowed;
+                }
+            }
+
+            // end // &.disabled
+        }
+    }
+
+    &#{$se}bullets
+    {
+
+        // generals
+        -webkit-tap-highlight-color: transparent;
+        @include margin(1rem null null null);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+
+        // &.disabled
+        &.disabled
+        {
+            display: none;
+        }
+
+    }
+
+    &#{$se}bullet
+    {
+        // generals
+        @include border-width(0);
+        background-color: transparent;
+
+        // span
+        span
+        {
+            -webkit-backface-visibility: visible;
+            @include margin(0.6rem 0.2rem);
+            @include size(1.2rem, 1.2rem);
+            @include border-style(solid);
+            @include border-width(0.2rem 0.2rem 0.2rem 0.2rem);
+            @include border-color(var(--color-white));
+            @include border-top-radius(3rem);
+            @include border-bottom-radius(3rem);
+            display: block;
+            transition: opacity 200ms ease;
+            background-color: var(--color-black);
+        }
+
+        // &.active
+        &--active
+        {
+
+            //  span
+            span
+            {
+
+                @include border-color(var(--color-primary));
+                background-color: var(--color-primary);
+            }
+
+            // &:hover, &:focus-within
+            &:hover,
+            &:focus-within
+            {
+
+                // span
+                span
+                {
+                    @include border-color(var(--color-primary));
+                    background-color: var(--color-primary);
+
+                }
+
+                // end // &:hover, &:focus-within
+            }
+
+            // end // &.active
+        }
+
+        // &:hover, &:focus-within
+        &:hover,
+        &:focus-within
+        {
+            // generals
+            cursor: pointer;
+
+            //  span
+            span
+            {
+
+                background-color: var(--color-black);
+            }
+
+            // end // &:HOVER, &:focus
+        }
+
+        // end // &-dot
+    }
+
+    &#{$sm}swipeable
+    {
+        cursor: grab;
+        cursor: -moz-grab;
+        cursor: -webkit-grab;
+    }
+
+    &#{$sm}dragging
+    {
+        cursor: grabbing;
+        cursor: -moz-grabbing;
+        cursor: -webkit-grabbing;
+    }
+}

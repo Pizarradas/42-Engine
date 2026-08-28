@@ -1,0 +1,153 @@
+@media (min-width: 48em)
+{
+
+  .sticky {
+    .site-header__content,
+    .wow-aperture + #site-header .site-header__content {
+      grid-template-rows: 30px repeat(3, auto);
+      grid-template-areas: 
+        ". brand tags tags tags tags ."
+        ". brand promosticky search-btn account menuBtn ."
+        "scroll scroll scroll scroll scroll scroll scroll"
+        "search search search search search search search";
+    }
+  }
+}
+
+.grid-promo
+{
+  grid-area: promo;
+}
+
+.ft-mol-promoHeader.ft-mol-promoHeader--sticky
+{
+  .ft-mol-promoHeader__promo
+  {
+    display: flex;
+  }
+}
+
+.ft-mol-promoHeader
+{
+  .ft-mol-promoHeader__promo
+  {
+    display: none;
+  }
+
+  .ft-mol-promoHeader__text
+  {
+    max-width: auto;
+
+    // min screen 768
+    @include min-screen(768px)
+    {
+      max-width: 200px;
+    }
+  }
+}
+
+.sticky
+{
+  .grid-promo
+  {
+    grid-area: promosticky;
+  }
+
+  // FT-MOL-PROMOHEADER
+  // ===============================================
+  .ft-mol-promoHeader
+  {
+    // general
+    @include padding(0.2rem);
+    @include margin(null null null auto);
+    @include position(relative, null);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    grid-area: promosticky;
+
+    & picture
+    {
+      display: none;
+    }
+
+    // min screen 768
+    @include min-screen(768px)
+    {
+      background-color: transparent;
+    }
+
+    // end general
+
+    //&--sticky
+    // ---------------------------------------------
+    &--sticky
+    {
+      @include padding(0.2rem);
+      @include position(relative, null);
+      @include margin(null null null auto);
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      background-color: var(--color-white);
+
+      &:before
+      {
+        content: "";
+        @include position(absolute, null 17rem -1.1rem null);
+        width: 0;
+        height: 0;
+        border-top: 12px solid white;
+        border-right: 15px solid transparent;
+        z-index: 100;
+
+        // min screen 768
+        @include min-screen(768px)
+        {
+          content: none;
+        }
+      }
+    }
+
+    //&__text
+    // ---------------------------------------------
+    &__text
+    {
+      // &__text
+      @include padding(0);
+      @include margin(0 0.5rem 0 0);
+      text-align: right;
+      max-width: inherit;
+      // end // &__text
+    }
+
+    // ---------------------------------------------
+    //&__promo
+    // ---------------------------------------------
+    &__promo
+    {
+      // general
+      @include padding(0.5rem 1rem);
+      @include margin(null 0.5rem null 0.5rem);
+      @include border-top-radius(4px);
+      @include border-bottom-radius(4px);
+      display: flex;
+      justify-content: center;
+      // end // &__promo
+    }
+
+    // ---------------------------------------------
+
+    // ---------------------------------------------
+  }
+
+  // ===============================================
+}
+
+// Ajuste imagenes para evitar el img width: 100% de los css de cabecera y pie de zeta: epe, ep y sport
+
+body img.ft-helper-img-rd
+{
+  width: auto;
+  display: inline-block;
+}

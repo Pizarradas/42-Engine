@@ -1,0 +1,233 @@
+.graph{
+  $this: &;
+  &-wrapper{
+    position: relative;
+    padding-top: 16px;
+    display: flex;
+    flex-direction: column;   
+    border: 1px solid red;
+
+    @media (max-width: 600px){
+      //padding-top: 8px;
+      gap: 32px;
+    }
+  }
+  &-content{
+    position: relative;
+    width: 100%;
+  }
+  &-info{
+    position: absolute; z-index: 121;
+    left: 0; right: 0; bottom: 0; 
+    top: 60%; //50%; 
+    margin: auto;
+    width: 150px;
+    text-align: center;    
+    display: flex; align-items: center; flex-direction: column;
+  
+    @media (max-width: 767px){
+      //top: 45%;
+    }
+    @media (max-width: 599px){
+      top: 70%;
+    }
+  
+    .pie-complete &{
+      top: 45%;
+      @media (max-width: 599px){
+        top: 35%;
+      }
+    }
+
+    &__seats{
+      @include font--body-XL;
+    }
+    &__name{
+      @include font--body-M;
+    }
+  
+    &__info{
+      @include font--body-M;
+      .pie-complete &{
+        display: none;
+      }     
+    }  
+  }
+}
+
+.ct{
+  &-label{ 
+    color: white; fill: white;
+    padding: 20px;
+    display: block; width: 40px; height: 40px; 
+    font-family: barlow;
+    font-size: 24px;
+
+    @media (max-width: 599px){
+      font-size: 16px;
+    }
+  }
+  &-legend{
+    &.ct-legend-inside{
+      display: flex;
+      flex-wrap: wrap;
+      position: static;
+      bottom: 0;
+      top: initial;
+      right: initial;
+    }
+    li{
+      display: flex; align-items: center;
+    }
+  }
+  &-golden-section{
+    & > svg.ct-chart-donut{
+      top: 20%;
+      overflow: visible;
+      @media (max-width: 599px){
+         //top: 28%;
+      }
+      @media (max-width: 480px){
+         top: 25%;
+      }
+    }
+
+    &:before{
+      padding-bottom: 50%;
+    }
+  }
+}
+
+.nested-chart{
+  position: absolute;
+  left: 0; right: 0; margin: auto;
+  z-index: 10;
+  top: 32%;
+
+  @media (max-width: 480px){
+    top: 22%;
+  }
+
+  &:before {
+    padding-bottom: 38%;
+    content: "";
+  }
+
+  & .graph-info{
+    display: none;
+  }
+
+  & .marker{
+    display: none;
+  }
+
+  & .yeargraph{
+    bottom: 37%;
+    left: 30%;
+    @media (max-width: 1023px){
+      bottom: 40%;
+    }
+    @media (max-width: 599px){
+      //bottom: 15%;
+    }
+    @media (max-width: 480px){
+      bottom: 15%;
+      left: 30%;
+    }
+  }
+
+  svg{
+    &.ct-chart-donut{
+      top: initial;
+      bottom: 0; left: 0; right: 0; margin: auto; 
+      @media (max-width: 599px){
+        //top: 40%;
+      }
+      @media (max-width: 480px){
+        top: 40%;
+      }
+    }
+  }
+
+  svg,
+  svg g{
+    @media (max-width: 599px){
+      width: 70% !important;
+    }
+  }
+}
+
+.marker{
+  position: absolute;
+  top: 0; left: 0; right: 0; margin: auto; 
+  width: 1px;
+  height: 50%;
+  background-image: linear-gradient(0deg, #000 3px, hsla(0deg, 0%, 100%, 0) 2px);
+  background-position: bottom;
+  background-size: 1px 10px;
+  background-repeat: repeat-y;
+  z-index: 120;
+  @media (max-width: 1023px){
+    top: 5%;
+  }
+  //@media (max-width: 767px){ top: 5%; }
+  @media (max-width: 599px){
+    top: 10%;
+    height: 60%;
+  }
+  @media (max-width: 480px){
+    top: 8%;
+  }
+  @media (max-width: 370px){
+    top: 3%;
+  }
+}
+
+.yeargraph {
+  position: absolute;
+  bottom: 20%;
+  left: 19%;
+  @include font--body-M;
+
+  @media (max-width: 1023px){
+    //top: 5%;
+    bottom: 22%;
+  }
+  @media (max-width: 767px){
+    left: 18%;
+  }
+  @media (max-width: 599px){
+    //bottom: 3%;
+    left: 17%;
+  }
+  @media (max-width: 480px){    
+    bottom: 13.5%; // 0;
+    left: 14%;
+  }
+  @media (max-width: 370px){    
+    left: 12%; // 7%;
+  }
+}
+
+.pie-complete {
+  margin: 50px auto;
+  &  > svg.ct-chart-donut{
+    top: 0;
+  }
+  & .marker {
+    display: none;
+  }
+  & .yeargraph{
+    display: none;
+  }
+}
+
+
+// solo para testear los gráficos (se elimina al pasarlo a limpio)
+
+/* @media (max-width: 1200px{
+  .ft-layout-grid-flex__colXs-2{
+    display: none;
+  }
+}) */
+

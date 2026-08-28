@@ -1,0 +1,31 @@
+// MAP-FONTS
+// ===============================================
+$map-fonts: (
+  //  GOOGLE
+  Google:
+    (
+      // Roboto
+      Roboto--400: ("Google-Roboto--light", Arial, sans-serif),
+      Roboto-italic--400: ("Google-Roboto--lightItalic", Arial, sans-serif),
+      Roboto--500: ("Google-Roboto--regular", Arial, sans-serif),
+      Roboto-italic--500: ("Google-Roboto--italic", Arial, sans-serif),
+      Roboto--600: ("Google-Roboto--medium", Arial, sans-serif),
+      Roboto-italic--600: ("Google-Roboto--mediumItalic", Arial, sans-serif),
+      Roboto--700: ("Google-Roboto--bold", Arial, sans-serif),
+      Roboto-italic--700: ("Google-Roboto--boldItalic", Arial, sans-serif),
+      Roboto--800: ("Google-Roboto--black", Arial, sans-serif),
+      Roboto-italic--800: ("Google-Roboto--blackItalic", Arial, sans-serif),
+      // END // GOOGLE
+    ),
+
+  // END // MAP-FONTS
+);
+// ===============================================
+
+// FUNCTION MAP-FONTS
+// ===============================================
+@function map-fonts($font-name, $font-variant: null) {
+  // map inception
+  @return map-get(map-get($map-fonts, $font-name), $font-variant);
+}
+// ===============================================
