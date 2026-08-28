@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>42DS Storybook | Img path y anchor url</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="brandStyles-root" rel="stylesheet" href="/cds-statics/css/brands/ux/setting.css">
+    <link id="brandStyles" rel="stylesheet" href="/cds-statics/css/ux-index.css">
+    <style>body{margin:0}</style>
+</head>
+<body class="fourty ft-brand-ux ft-skin ft-skin--showroom">
+<a class="header__logo-link" href="#">
+                                                <img alt="Información"
+                                                    src="https://estaticos-cdn.informacion.es/images/logo-informacion.png?id=6285f85b0bcdd4a75346">
+                                            </a>
+                                            <script>
+                                                // SCRIPT PARA MODICIAR LA URL DE .HEADER__LOGO-LINK
+                                                // Obtenemos todos los elementos con la clase ".header__logo-link"
+                                                const logoLinks = document.querySelectorAll('.header__logo-link');
+
+                                                // Cambio de valor del atributo href
+                                                logoLinks.forEach(link => {
+                                                    link.href = 'https://www.informacion.es/videos/';
+                                                });
+
+                                                // SCRIPT PARA CAMBIAR LA RUTA DE LA IMAGEN RELATIVA A .HEADER__LOGO-LINK
+                                                document.addEventListener('DOMContentLoaded', function () {
+                                                    // Obtenemos todos los elementos con la clase ".header__logo-link"
+                                                    const logoLinks = document.querySelectorAll('.header__logo-link');
+
+                                                    // Cambio de valor del atributo srce en etiqueta img
+                                                    logoLinks.forEach(link => {
+                                                        const img = link.querySelector('img');
+                                                        img.src = 'https://estaticos-cdn.prensaiberica.es/statics/img/informacionTV.png';
+                                                    });
+                                                });
+                                            </script>
+</body>
+</html>
