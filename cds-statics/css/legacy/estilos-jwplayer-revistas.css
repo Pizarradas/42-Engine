@@ -1,0 +1,125 @@
+/* JWPLayer - Estilos */
+
+@keyframes ds-jwplayer {
+    0% {
+        opacity: 0;
+        transform: translateY(-250px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.jw-float-bar {
+    background: none !important;
+}
+
+.jw-flag-floating.jw-floating-dismissible .jw-float-bar {
+    top: 0 !important;
+}
+
+.jw-flag-floating .jw-wrapper.jw-float-to-top {
+    animation: ds-jwplayer 2s ease-in 0s 1 normal backwards;
+    top: auto !important;
+
+}
+
+.jw-flag-floating.jw-floating-dismissible .jw-wrapper {
+    bottom: 135px !important;
+    animation: ds-jwplayer 2s ease-in 0s 1 normal backwards;
+    z-index:25000!important;
+}
+
+@keyframes closeJWPlayer {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.jw-flag-floating .jw-float-bar-icon {
+    animation: closeJWPlayer 10s ease-in 0.3s 1 normal forwards;
+}
+
+.jw-flag-floating.jw-floating-dismissible .jw-float-bar {
+    width: auto;
+    right: auto;
+    left: -33px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 980px) {
+
+    .jw-flag-floating.jw-floating-dismissible .jw-wrapper {
+        max-width: calc(41.66666667% - 1.8rem) !important;
+    }
+}
+
+@media only screen and (min-width:981px) {
+
+    .jw-flag-floating.jw-floating-dismissible .jw-wrapper {
+        right: -15px;
+        left: 0;
+        transform: translate(100%) !important;
+        max-width: 325px !important;
+    }
+
+}
+
+@media only screen and (min-width:1680px) {
+
+    .jw-flag-floating.jw-floating-dismissible .jw-wrapper {
+        right: -687px;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+
+    .jw-flag-floating .jw-wrapper.jw-float-to-top {
+        max-width: 100% !important;
+        max-height: 125px;
+        animation: ds-jwplayer 2s ease-in 0s 1 normal backwards;
+    }
+
+    .jw-flag-touch .jw-slider-horizontal.jw-chapter-slider-time .jw-slider-container::before {
+        height: 29px !important;
+        bottom: calc(100% - 18px) !important;
+    }
+
+    .jw-controlbar {
+        max-height: 45px !important;
+    }
+
+    .jw-slider-horizontal.jw-chapter-slider-time {
+        height: 5px !important;
+    }
+
+    .jw-flag-floating .jw-wrapper.jw-float-to-top {
+        top: 84px !important;
+    }
+
+    .jw-plugin-googima .jw-ads-view video {
+        left: 50% !important;
+        top: 50% !important;
+        right: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        width: auto !important;
+    }
+
+    .jw-flag-floating.jw-floating-dismissible .jw-wrapper {
+        bottom: 0 !important;
+        max-width: 100% !important;
+        max-height: 125px !important;
+    }
+
+    .jw-flag-floating.jw-floating-dismissible .jw-wrapper {
+        top: 84px !important;
+    }
+}
+
+/* JWPLayer - Estilos */

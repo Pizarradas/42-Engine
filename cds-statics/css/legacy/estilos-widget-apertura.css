@@ -1,0 +1,640 @@
+:root{
+  --c-brand: #1b6598;
+  --c-brand-brand30: 4, 15, 22;
+  --c-brand-themeto--black: #1b6598;
+  --c-cta: #003c54;
+  --c-darkgrey-01: #848484;
+  --c-black: #111111;
+  --c-mediumgrey-01: #d0d0d0;
+  --c-white: #ffffff;
+  --c-primary: #004d71;
+  --c-neonblue: #0075ff;
+  --c-lightblue: #f2f6f8;
+  --c-primary-light: #aec5d2;
+  --c-ninyo: #0092c5;
+  --size-factor: 1;
+}
+@keyframes fadeInOut { 10% { opacity: 1; }
+  50% { opacity: 0; }
+  90% { opacity: 1; } }
+
+html { -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; -webkit-font-smoothing: antialiased; 
+  -moz-osx-font-smoothing: grayscale; 
+  text-rendering: optimizeLegibility; 
+  font: normal normal normal 62.5%/1.5 var(--font-stack);text-align: left; vertical-align: baseline; color: #333; }
+
+/* Font Icon */
+[class^="i-"], [class*=" i-"] { /* use !important to prevent issues with browser extensions that change fonts */ font-family: 'epi-icon-font' !important; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1; /* Better Font Rendering =========== */ -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+.i-goal, .i-goalPP, .i-change { display: inline-block; position: relative; z-index: 2; height: 1.25rem; width: .9375rem; }
+
+.i-goal:before, .i-goalPP:before, .i-change:before { content: " "; position: absolute; left: 0; top: 0; height: 1.25rem; width: .9375rem; font-size: 0; background: transparent url("../img/timeline_icon_goal.png") no-repeat center top; background-size: contain; }
+
+.i-goalPP:before { background-image: url("../img/timeline_icon_goalPP.png"); }
+
+.i-change:before { background-image: url("../img/timeline_icon_change.png"); }
+
+.i-comments-circle:before { content: "\e908"; }
+
+.i-comments-circle ~ span { position: absolute; left: 15px; top: 18px; width: 20px;     font-family:-apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+    font-weight: normal; font-size: 10px; line-height: 10px; text-align: center; }
+
+.i-play:before { content: "\e910"; background-color: rgba(22, 22, 22, 0.5); border-radius: 50%; }
+
+.i-play:hover:before { background-color: rgba(27, 101, 152, 0.5); }
+
+.i-gallery:before { content: "\e919"; background-color: rgba(22, 22, 22, 0.5); border-radius: 50%; }
+
+.i-gallery:hover:before { background-color: rgba(27, 101, 152, 0.5); }
+
+.i-screen:before { content: "\e92a" !important; }
+
+.i-sound:before { content: "\e92b" !important; }
+
+.i-play1:before { content: "\e92c" !important; }
+
+.i-pause:before { content: "\F103" !important; }
+
+.i-sound_zero:before { content: "\e945"; }
+
+.i-sound_on_medium:before { content: "\e946"; }
+
+.i-sound_muted:before { content: "\e947" !important; }
+
+.i-fullscreen_off:before { content: "\e948"; }
+
+.i-information:before { content: "\e94c"; }
+
+.i-blocked:before { content: "\e94d"; }
+
+.i-share_rrss:before { content: "\e94e"; }
+
+body { -ms-overflow-x: hidden; overflow-x: hidden; }
+
+*, :after, :before { -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+* { margin: 0; padding: 0; border: 0; outline: 0; background: transparent; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, hr, main, menu, nav, section, summary { display: block; }
+
+audio, canvas, progress, video { display: inline-block; vertical-align: baseline; }
+
+[hidden], template { display: none; }
+
+img { border: 0; }
+
+svg:not(:root) { overflow: hidden; }
+
+[disabled] { cursor: default; }
+
+hr { height: 1px; border: 0; border-top: 1px solid; overflow: visible; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+
+abbr, address, blockquote, body, cite, code, dd, dfn, dl, dt, figcaption, h1, h2, h3, h4, h5, h6, kbd, li, ol, p, pre, q, samp, small, sub, sup, ul { font-family: inherit; font-size: inherit; font-weight: inherit; line-height: inherit; text-align: inherit; vertical-align: inherit; color: inherit; }
+
+b, strong { font-weight: 700; }
+
+dfn, em, i { font-style: italic; }
+
+abbr[title], dfn[title] { border-bottom: 1px dotted; cursor: help; }
+
+del { text-decoration: line-through; }
+
+mark { background: #fcf8e3; color: #000; }
+
+code, kbd, pre, samp { font: monospace; }
+
+pre { white-space: pre; white-space: pre-wrap; white-space: pre-line; word-wrap: break-word; }
+
+blockquote, q { quotes: none; }
+
+blockquote:after, blockquote:before, q:after, q:before { content: ""; content: none; }
+
+small, sub, sup { font-size: 75%; }
+
+sub, sup { line-height: 0; position: relative; vertical-align: baseline; }
+
+sup { top: -.5em; }
+
+sub { bottom: -.25em; }
+
+a { background-color: transparent; }
+
+a:active, a:focus, a:hover, a:link, a:visited { outline: 0; }
+
+a[href^=tel] { color: inherit; text-decoration: none; }
+
+li, ol, ul { list-style: none; list-style-image: none; }
+
+button, fieldset, input, label, legend, select, textarea { font: 400 1em/1.35 inherit; text-align: left; text-transform: none; white-space: normal; }
+
+button, input, optgroup, select, textarea { color: inherit; font: inherit; margin: 0; -webkit-border-radius: 0; border-radius: 0; -webkit-appearance: none; }
+
+input, select { line-height: normal; vertical-align: middle; }
+
+input:focus, select:focus { outline: 0; }
+
+input::-webkit-input-placeholder, select::-webkit-input-placeholder { line-height: normal; }
+
+input[type=search] { -webkit-appearance: textfield; }
+
+input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-search-decoration { -webkit-appearance: none; }
+
+button, input[type=submit] { -webkit-appearance: button; }
+
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+
+optgroup { font-weight: 700; }
+
+textarea { overflow: auto; }
+
+/* Google Fonts */
+/* TT Commons */
+body { max-width: 100%; font-size: 100%; font-kerning: normal; -moz-osx-font-smoothing: grayscale; text-align: left; text-rendering: optimizeLegibility; text-size-adjust: 100%; color: #161616; }
+
+body.has-gallery { background-color: #161616; }
+
+/* Links */
+a { text-decoration: none; color: inherit; cursor: pointer; background-position: bottom; background-size: 3.5px 1px; background-repeat: repeat-x; }
+
+a.no-deco { background-image: none; color: inherit; }
+
+@media (max-width: 767px) { .no-mobile, .hide-mobile, .only-desktop { display: none !important; } }
+
+@media (min-width: 768px) { .no-desktop, .hide-desktop, .mobile-only { display: none !important; } }
+
+@media (max-width: 767px) { .no-baldomero { margin-left: auto; margin-right: auto; } }
+
+.lozad { display: block; min-height: 1rem; }
+
+picture.lozad { position: relative; }
+
+picture.lozad[data-loaded] img ~ img { display: block; position: absolute; left: 0; right: 0; top: 0; max-width: 100%; animation: fadeInFromNone 0.4s ease-out; animation-fill-mode: forwards; }
+
+@keyframes fadeInFromNone { 0% { display: none;
+    opacity: 0; }
+  1% { display: block;
+    opacity: 0; }
+  100% { display: block;
+    opacity: 1; } }
+
+/* Typography base */
+body { font-family:-apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;    
+  font-weight: normal;
+  font-size:16px; }
+
+h1, .h1 {font-family:-apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;    
+  font-weight: normal;
+  font-size:30px;}
+
+@media (min-width: 1024px) { h1, .h1 { font-size: 46px; line-height: 1; } }
+
+h2, .h2 { font-family:-apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;    
+  font-weight: bold;
+  font-size:28px; }
+
+@media (max-width: 767px) { h2, .h2 { font-size: 22px; } }
+
+h3, .h3 { font-family:-apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;    
+  font-weight: normal;
+  font-size:17px;}
+
+@media (min-width: 1024px) { h3, .h3 { font-size: 22px; } }
+
+h4, .h4 {font-family:-apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;    
+  font-weight: 600;
+  font-size:18px;}
+
+h5, .h5 {font-family:-apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;    
+  font-weight: 600;
+  font-size:15px;}
+
+h6, .h6 {font-family:-apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;    
+  font-weight:600;
+  font-size:14px;}
+
+.title-hatband {font-family:-apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;    
+  font-weight: bold;
+  font-size:12px;}
+
+.article-subtitle {font-family:-apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;    
+  font-weight: 600;
+  font-size:18px;}
+
+@media (min-width: 1024px) { .article-subtitle { font-size: 22px; } }
+
+.link { color: #1b6598; }
+
+.link:hover { color: #161616; }
+
+.link-text { color: inherit; }
+
+.link-text:hover { color: #1b6598; }
+
+.link-title { color: inherit; }
+
+.link-title:hover { color: #4A4A4A; }
+
+.grp-new-line:after { content: ''; width: 100%; }
+
+.video { position: relative; }
+
+.video-news { margin-bottom: 20px; }
+
+@media (max-width: 767px) { .video-with-title { height: auto; } }
+
+.videojs-wrapper { position: relative; }
+
+.videojs-wrapper.new__media { overflow: hidden; }
+
+@media (max-width: 767px) { .videojs-content { width: 100%; height: auto; } }
+
+.video-js { object-fit: cover; left: inherit; font-family: epi-icon-font; }
+
+.vjs-poster { background-size: cover; }
+
+.vjs-control-bar { max-width: 80%; margin: 0 auto 21px; background: transparent; display: flex; opacity: 1; transition: visibility .1s, opacity .1s; }
+
+.video-js .vjs-control-bar { background: transparent; }
+
+.vjs-big-play-button { display: none !important; }
+
+.vjs-playing .vjs-control-bar { display: flex; }
+
+.vjs-paused .vjs-control-bar { display: none; }
+
+.vjs-paused:before { font-family: epi-icon-font; content: "\e92c"; font-size: 20px; line-height: 27px; }
+
+.vjs-playing:before { font-family: VideoJS; content: "\F103"; font-size: 20px; line-height: 27px; }
+
+.vjs-vol-3:before { font-family: epi-icon-font; content: "\e92b"; font-size: 20px; line-height: 27px; }
+
+.vjs-vol-2:before { font-family: epi-icon-font; content: "\E946"; font-size: 20px; line-height: 27px; }
+
+.vjs-vol-1:before { font-family: epi-icon-font; content: "\E945"; font-size: 20px; line-height: 27px; }
+
+.vjs-vol-0:before { font-family: epi-icon-font; content: "\E947"; font-size: 20px; line-height: 27px; }
+
+.vjs-fullscreen-control:before { font-family: epi-icon-font; content: "\e92a"; font-size: 20px; line-height: 27px; }
+
+.vjs-quality-selector:before { font-family:-apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif; content: "QC"; font-size: 18px; line-height: 30px; }
+
+.vjs-share-control:before { font-family: VideoJS; content: "\F10F"; font-size: 27px; }
+
+.video-js .vjs-time-control { font-family: Arial,Helvetica,sans-serif; font-size: 12px; line-height: 30px; }
+
+.vjs-modal-dialog .vjs-modal-dialog-content { position: relative; display: flex; justify-content: center; align-items: center; background-color: rgba(0, 0, 0, 0.7); z-index: 2; }
+
+.vjs-modal-dialog { position: relative; }
+
+.vjs-modal-dialog .vjs-close-button { position: absolute; color: #fff; }
+
+.vjs-modal-dialog .vjs-close-button:before { font-family: epi-icon-font; content: '\E92E'; font-size: 27px; line-height: 27px; }
+
+.vjs-modal-dialog-content .vjs-share { font-family:-apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif; display: flex; flex-direction: column; position: relative; top: 0; bottom: 0; z-index: 2; font-size: 20px; padding: 15px; border-radius: 20px; background-color: #161616; }
+
+.vjs-modal-dialog-content .vjs-share__top { margin: 10px 0 0; }
+
+.vjs-modal-dialog-content .vjs-share__middle { margin: 10px 0; }
+
+.vjs-modal-dialog-content .vjs-share__middle .vjs-share__short-link { padding: 7px; background-color: #d8d8d8; color: #161616; margin: 5px 0; width: 100%; }
+
+.vjs-modal-dialog-content .vjs-share__bottom { margin-top: 20px; text-align: center; }
+
+.video-js .vjs-control.vjs-close-button { right: 10px; top: 15px; }
+
+.vjs-icon-cancel:before, .video-js .vjs-control.vjs-close-button .vjs-icon-placeholder:before { font-family: VideoJS; content: "\F115"; font-size: 36px; line-height: 26.72px; }
+
+.info-ticker { display: flex; flex-direction: column; height: 100%; margin-bottom: 48px; }
+
+.info-ticker .rwd-media-ico { left: 20px; pointer-events: none; cursor: pointer; }
+
+@media (min-width: 768px) { .info-ticker .rwd-media-ico { left: 8.75px; } }
+
+
+.info-ticker .btn-view-more {
+  display: table;
+  margin: 0 auto;
+}
+
+.info-ticker .article-body__embed { float: right; }
+
+.info-ticker .narrative-info-headline { flex-direction: row; justify-content: space-between; align-items: center; font-size: 15px; font-family:-apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;    
+  font-weight: 600; }
+
+.info-ticker .narrative-info-headline .last-update { margin: 0; }
+
+.info-ticker__competition {font-family:-apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+    font-weight: 600; font-size: 1.4rem; text-align: center; text-transform: uppercase; background-color: #f2f2f2; color: #4A4A4A; line-height: 2rem; padding: 0.25rem 0 0; }
+
+.info-ticker--sponsorship { width: 100%; padding: 5px;     font-family:-apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+    font-weight: normal; font-size: 14px; text-align: center; display: flex; justify-content: center; align-items: center; }
+
+.info-ticker--sponsor-logo { margin-left: 8px; }
+
+.info-ticker .narrative-news { overflow: hidden; margin: 0 .6875rem; padding: .6875rem 0; border-bottom: 1px solid #e2e2e2; }
+
+.info-ticker .narrative-news__info { display: flex; width: 100%; flex-direction: row; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+
+@media (min-width: 768px) { .info-ticker .narrative-news__info { flex-direction: column; justify-content: start; align-items: start; } }
+
+.info-ticker .narrative-news__content { overflow: hidden; position: relative; padding: 0; margin-top: 0; }
+
+.info-ticker .narrative-news__content .article-body__text { font-size: 15px; line-height: 19px; color: #161616; margin: 0; }
+
+.info-ticker .narrative-news__content .article-photo, .info-ticker .narrative-news__content .video-news, .info-ticker .narrative-news__content .media, .info-ticker .narrative-news__content .video__embed { display: block; float: none; max-width: 100%; width: 100%; margin: 20px 0 11px; }
+
+@media (min-width: 768px) { .info-ticker .narrative-news__content .article-photo, .info-ticker .narrative-news__content .video-news, .info-ticker .narrative-news__content .media, .info-ticker .narrative-news__content .video__embed { display: table; float: right; margin: 2px 0 11px 11px; } }
+
+.info-ticker .narrative-news__content__author { font-family: "Source Code Pro", monospace; background-color: rgba(255, 255, 255, 0.6); max-width: 100%; width: 100%; margin: 0; padding: 8px 11px 6px 11px; border-radius: 8px 8px 0 0; }
+
+.info-ticker .narrative-news__content__author img { display: table; float: left; height: 36px; width: 36px; margin-right: 6px; border-radius: 100%; }
+
+.info-ticker .narrative-news__content__author .signature { display: table; position: relative; font-size: 11px; line-height: 14px; color: #161616; background-image: linear-gradient(to right, #1b6598 20%, rgba(255, 255, 255, 0) 0%); }
+
+.info-ticker .narrative-news__content__author .signature:hover { color: #1b6598; }
+
+.info-ticker .narrative-news__content__author .signature:last-child { margin-top: 6px; color: #1b6598; background-image: none; }
+
+.info-ticker .narrative-news__content__author .signature:last-child:hover { color: #161616; }
+
+@media (min-width: 768px) { .info-ticker .narrative-news__content__author { display: table; float: left; max-width: 100%; width: 100%; padding: 8px 0 11px 6px; border-radius: 8px 0 0 8px; }
+  .info-ticker .narrative-news__content__author .article-body__text { overflow: hidden; position: relative; margin-left: 11px; padding: 8px 11px; border-radius: 0 8px 8px 8px; } }
+
+.info-ticker .narrative-news-container { border: 1px solid #d8d8d8; margin: 0; border-top: 0; flex-grow: 1; overflow: auto; width: 100%; text-align: left; }
+
+.info-ticker--event { overflow: hidden; margin: 0 16px; padding: 16px 0; border-bottom: 1px solid #d8d8d8; }
+
+@media (min-width: 768px) { .info-ticker--event { margin: 0 11px; padding: 11px 0 11px; } }
+
+.info-ticker--event:last-child { border-bottom: 0; }
+
+.info-ticker--event__info { float: none; width: auto; margin-bottom: 6px; padding-top: 0; line-height: 16px; }
+
+@media (min-width: 768px) { .info-ticker--event__info { float: left; width: 19%; padding-top: 6px; } }
+
+.info-ticker--event__info__countdown { display: block; position: relative; font-family:-apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif; font-size: 16px; line-height: 16px; text-transform: uppercase; }
+
+.info-ticker--event__info__time { float: right; margin-top: -8px; color: #4A4A4A; }
+
+@media (min-width: 768px) { .info-ticker--event__info__time { margin-top: 0; float: none; } }
+
+.info-ticker--event__content__author__info { overflow: hidden; position: relative; }
+
+.info-ticker--event__text { font-size: 15px; line-height: 19px; color: #161616; }
+
+.info-ticker--event__text .link { color: #161616; }
+
+.info-ticker--event__text .link:hover { color: #1b6598; }
+
+.info-ticker .twitter-tweet { width: auto !important; margin-top: 0 !important; }
+
+@media (min-width: 768px) { .info-ticker .twitter-tweet { margin-top: 4px !important; } }
+
+@media (max-width: 767px) { .info-ticker .video-gallery { height: inherit; } }
+
+@media (min-width: 768px) { .info-ticker .video-js .vjs-control-bar { max-width: 100%; }
+  .info-ticker .video-js .vjs-volume-panel.vjs-volume-panel-horizontal:hover { width: 7em; }
+  .info-ticker .video-js .vjs-volume-panel .vjs-mute-control:hover ~ .vjs-volume-control.vjs-volume-horizontal, .info-ticker .video-js .vjs-volume-panel:hover .vjs-volume-control.vjs-volume-horizontal { width: 3em; } }
+
+.info-ticker__blink:before { content: " "; display: inline-block; height: 10px; width: 10px; margin-right: 8px; border-radius: 10px; -webkit-animation: blink 10s infinite; animation: blink 1.5s infinite; }
+
+.info-ticker--event__info .sports-icon { display: inline-block; background-size: cover; height: 35px; width: 35px; border-radius: 50%; }
+
+.info-ticker--event__info .sports-icon.yellow-card, .info-ticker--event__info .sports-icon.secondyellow-card { background-image: url("https://www.lne.es/deportes/ed/img/icons/narrative-icon01.png"); }
+
+.info-ticker--event__info .sports-icon.penalty-won, .info-ticker--event__info .sports-icon.goal { background-image: url("https://www.lne.es/deportes/ed/img/icons/narrative-icon02.png"); }
+
+.info-ticker--event__info .sports-icon.whistle { background-image: url("https://www.lne.es/deportes/ed/img/icons/narrative-icon03.png"); }
+
+.info-ticker--event__info .sports-icon.injury { background-image: url("https://www.lne.es/deportes/ed/img/icons/narrative-icon04.png"); }
+
+.info-ticker--event__info .sports-icon.penalty-goal, .info-ticker--event__info .sports-icon.penalty { background-image: url("https://www.lne.es/deportes/ed/img/icons/narrative-icon05.png"); }
+
+.info-ticker--event__info .sports-icon.chrono { background-image: url("https://www.lne.es/deportes/ed/img/icons/narrative-icon06.png"); }
+
+.info-ticker--event__info .sports-icon.red-card { background-image: url("https://www.lne.es/deportes/ed/img/icons/narrative-icon07.png"); }
+
+.info-ticker--event__info .sports-icon.flag { background-image: url("https://www.lne.es/deportes/ed/img/icons/narrative-icon08.png"); }
+
+.info-ticker--event__info .sports-icon.goal, .info-ticker--event__info .sports-icon.goal-main { background-image: url("https://www.lne.es/deportes/ed/img/icons/narrative-icon09.png"); }
+
+.info-ticker--event__info .sports-icon.own-goal { background-image: url("https://www.lne.es/deportes/ed/img/icons/timeline_icon_goalPP.png"); }
+
+.info-ticker--event__info .sports-icon.end-14, .info-ticker--event__info .sports-icon.end-2, .info-ticker--event__info .sports-icon.referee { background-image: url("https://www.lne.es/deportes/ed/img/icons/narrative-icon10.png"); }
+
+.info-ticker--event__info .sports-icon.miss, .info-ticker--event__info .sports-icon.kick-off { background-image: url("https://www.lne.es/deportes/ed/img/icons/narrative-icon11.png"); }
+
+.info-ticker--event__info .sports-icon.substitution { background-image: url("https://www.lne.es/deportes/ed/img/icons/narrative-icon12.png"); }
+
+.info-ticker--event__info .sports-icon.offside { background-image: url("https://www.lne.es/deportes/ed/img/icons/narrative-icon13.png"); }
+
+.info-ticker--event__info .sports-icon.var, .info-ticker--event__info .sports-icon.contentious-referee-decisions { background-image: url("https://www.lne.es/deportes/ed/img/icons/narrative-icon14.png"); }
+
+@keyframes blink { 0% { background-color: #fff; }
+  49% { background-color: #fff; }
+  50% { background-color: #d0021b; }
+  100% { background-color: #d0021b; } }
+
+.sport-ticker { display: flex; flex-direction: column; height: 100%; }
+
+.sport-ticker .info-ticker__headline { font-size: 13px; }
+
+.sport-ticker--scoreboard { position: relative; width: 100%; padding: 0.9375rem 0; font-size: 0; color: #fff; background-color: #4A4A4A; }
+
+
+.sport-ticker--scoreboard--period { top: 15%; font-family:-apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;    
+  font-weight: 600; font-size:0.6rem; text-transform: uppercase; }
+
+.sport-ticker--scoreboard--team { align-items: center; box-sizing: border-box; display: inline-flex; vertical-align: middle; min-height: 34px; width: 50%; padding: 0 0 0 8px; text-align: right; }
+
+
+.sport-ticker--scoreboard--team-icon > img { max-height: 2.625rem; margin: -5px 0 -5px .5rem; background-size: cover; }
+
+.sport-ticker--scoreboard--team--team-score { margin-left: 20px; }
+
+.sport-ticker--scoreboard--team:last-child { flex-direction: row-reverse; text-align: left; padding: 0 .8rem 0 0; }
+
+.sport-ticker--scoreboard--team:last-child > img { margin: -5px 0 -5px .5rem; }
+
+.sport-ticker--scoreboard--team:last-child .sport-ticker--scoreboard--team-icon > img { margin: -5px 0.5rem -5px 0; }
+
+@media (max-width: 767px) { .sport-ticker--scoreboard--team { padding: 0 0 0 8px; } }
+
+
+
+.sport-ticker--scoreboard--team-score--penal { position: absolute; bottom: -10px; font-size: 0.75rem; font-family:-apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;    
+  font-weight: 600; left: 0; right: 0; }
+
+  .sport-ticker--scoreboard {
+    position: relative;
+    width: 100%;
+    padding: .9375rem 0;
+    font-size: 0;
+    color: #161616;
+    background-color: #fff;
+    border-bottom-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+    border: 1px solid #ccc;
+}
+
+.sport-ticker--scoreboard>h3 {
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px
+}
+
+.sport-ticker--scoreboard--period, .sport-ticker--scoreboard--time {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+    font-size:1.2rem;
+    font-weight:400;
+    text-align: center;
+    color: #666;
+}
+
+.sport-ticker--scoreboard--period {
+    text-transform: uppercase;
+    top:5%;
+}
+.sport-ticker--scoreboard--time {
+    font-size: 1.4rem;
+    bottom:0;
+}
+.sport-ticker--scoreboard--team {
+    align-items: center;
+    box-sizing: border-box;
+    display: inline-flex;
+    vertical-align: middle;
+    min-height: 60px;
+    width: 50%;
+    padding: 0 0 0 5px;
+    text-align: right
+}
+
+.sport-ticker--scoreboard--team > img {
+    max-height: 2.625rem;
+    margin: -5px .5rem -5px 0;
+    background-size: cover
+}
+
+.sport-ticker--scoreboard--team--team-score {
+    margin-left: 20px
+}
+
+
+@media (max-width: 767px) {
+    .sport-ticker--scoreboard--team {
+        padding:0 0 0 .8rem;
+    }
+}
+
+.sport-ticker--scoreboard--team-name {
+    flex: 1;
+    padding: 5px .625rem 0;
+    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+    font-size:1.4rem;
+    line-height: 1;
+    font-weight:600;
+}
+
+@media (max-width: 767px) {
+    .sport-ticker--scoreboard--team-name {
+        padding:5px .5rem 0
+    }
+}
+
+.sport-ticker--scoreboard--team-score {
+    padding: 0 1rem;
+    border-radius: 6px;
+    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    display: block;
+}
+
+
+
+
+.sport-ticker--sponsorship { width: 100%; padding: 0.125rem 0.3125rem 0.125rem;     font-family:-apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+    font-weight: normal; font-size: 0.75rem; text-align: center; display: flex; justify-content: center; align-items: center; }
+
+.sport-ticker--sponsorship > a, .sport-ticker--sponsorship > img { margin-left: 0.5rem; }
+
+.sport-ticker .info-ticker--event { border-bottom: 1px solid #fff; }
+
+.sport-ticker .info-ticker--event:last-child { border-bottom: 0; }
+
+.sport-ticker .info-ticker--event__info { align-items: center; display: flex; flex: 1 1 0%; flex-direction: column; float: left; width: auto; padding-top: 12px; text-align: center; }
+
+@media (max-width: 767px) { .sport-ticker .info-ticker--event__info { padding-bottom: 0; } }
+
+.sport-ticker .info-ticker--event-list { flex-grow: 1; overflow: auto; min-height: 500px; width: 100%; background-color: #f2f2f2; }
+
+@media (max-width: 767px) { .sport-ticker .info-ticker--event-list { height: auto; max-height: 100%;  background-color: #f2f2f2;} }
+
+.sport-ticker .info-ticker--event__info__time { width: 100%; font-family:-apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif; font-size: 1.2rem; text-align: center; color: #4A4A4A; }
+
+.sport-ticker .info-ticker--event--picto { width: 100%; margin-top: 2px; font-size: 1.25rem; }
+
+.sport-ticker .info-ticker--event--picto .i-card { display: inline-block; height: 1.25rem; width: 0.9375rem; border-radius: 2px; }
+
+.sport-ticker .info-ticker--event--picto .i-card.yellow-card { background-color: #F8E71C; }
+
+.sport-ticker .info-ticker--event--picto .i-card.red-card { background-color: #F81C1C; }
+
+.sport-ticker .narrative-news__content { padding: 0.9375rem 0.625rem 0.9375rem 0.9375rem;     font-family:-apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+    font-weight: normal; font-size: 0.9375rem; }
+
+@media (max-width: 767px) { .sport-ticker .narrative-news__content { min-width: 86%; padding: 3px 0 0 15px; }
+  .sport-ticker .narrative-news__content .article-photo, .sport-ticker .narrative-news__content .video-news, .sport-ticker .narrative-news__content .media, .sport-ticker .narrative-news__content .video__embed { margin-top: 0; } }
+
+.sport-ticker .article-body__text {     font-family:-apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+    font-weight: normal; font-size: 0.9375rem; }
+
+.article-body .sports-ticker { margin-bottom: 48px; }
+
+.article-body .sports-ticker .info-ticker--event-list { height: auto; max-height: 100%; }
+
+.article-photo img, .article-video img { max-width: 100%; }
+
+.video-js.vjs-4-3, .video-js.vjs-16-9, .video-js.vjs-fluid { width: 100%; max-width: 100%; }
+
+.rwd-media-ico { pointer-events: none; cursor: pointer; align-items: center; display: flex; flex-direction: column; position: absolute; left: .25em; top: .25em; font-size: 35px; margin: 0; padding: 0; color: #fff; }
+
+.info-ticker .info-ticker__headline, .sports-ticker .info-ticker__headline { display: flex;
+  background-color:#000;
+  justify-content: space-between;
+  align-items: center;
+  padding: .2rem .8rem;
+  width: 100%;
+  color: #fff;
+  text-transform: uppercase;}
+
+  .btn-view-more {
+    display: table;
+    cursor: pointer;
+    margin: 12px auto 32px;
+    padding: 0.38rem 1.5rem;
+    border: 1px solid var(--c-brand);
+    border-radius: 30px;
+    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    font-weight:bold;   
+    text-align: center;
+    color: #fff;
+    transition: opacity .2s ease-in-out;
+    background: none repeat scroll 0 0 var(--c-brand);
+  }
+
+.info-ticker--event-list::-webkit-scrollbar { width: 8px; }
+
+.info-ticker--event-list::-webkit-scrollbar-thumb { height: auto; min-height: 60px; width: 8px; border-radius: 4px; background: #9a9a9a; }
+
+.info-ticker--event-list::-webkit-scrollbar-track { width: 8px; border-radius: 4px; background: #e6e6e6; }
+

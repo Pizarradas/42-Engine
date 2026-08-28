@@ -1,0 +1,412 @@
+.adblock-info.ft-layout-grid-flex {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 0;
+    padding-left: 0
+}
+
+.adblock-info .ft-layout-grid-flex__row {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 8px;
+    padding-left: 8px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 1680px;
+    width: 100%
+}
+
+@media only screen and (min-width:768px) {
+    .adblock-info .ft-layout-grid-flex__row {
+        padding-right: 11px;
+        padding-left: 11px
+    }
+}
+
+
+.adblock-info .ft-layout-grid-flex__colXs-1 {
+    padding-right: 8px;
+    padding-left: 8px;
+    flex-basis: 8.33333333%;
+    max-width: 8.33333333%
+}
+
+@media only screen and (min-width:768px) {
+    .adblock-info .ft-layout-grid-flex__colXs-1 {
+        padding-right: 11px;
+        padding-left: 11px
+    }
+}
+
+.adblock-info .ft-layout-grid-flex__colXs-2 {
+    padding-right: 8px;
+    padding-left: 8px;
+    flex-basis: 16.66666667%;
+    max-width: 16.66666667%
+}
+
+@media only screen and (min-width:768px) {
+    .adblock-info .ft-layout-grid-flex__colXs-2 {
+        padding-right: 11px;
+        padding-left: 11px
+    }
+}
+
+.adblock-info .ft-layout-grid-flex__colXs-3 {
+    padding-right: 8px;
+    padding-left: 8px;
+    flex-basis: 25%;
+    max-width: 25%
+}
+
+@media only screen and (min-width:768px) {
+    .adblock-info .ft-layout-grid-flex__colXs-3 {
+        padding-right: 11px;
+        padding-left: 11px
+    }
+}
+
+.adblock-info .ft-layout-grid-flex__colXs-4 {
+    padding-right: 8px;
+    padding-left: 8px;
+    flex-basis: 33.33333333%;
+    max-width: 33.33333333%
+}
+
+@media only screen and (min-width:768px) {
+    .adblock-info .ft-layout-grid-flex__colXs-4 {
+        padding-right: 11px;
+        padding-left: 11px
+    }
+}
+
+.adblock-info .ft-layout-grid-flex__colXs-5 {
+    padding-right: 8px;
+    padding-left: 8px;
+    flex-basis: 41.66666667%;
+    max-width: 41.66666667%
+}
+
+@media only screen and (min-width:768px) {
+    .adblock-info .ft-layout-grid-flex__colXs-5 {
+        padding-right: 11px;
+        padding-left: 11px
+    }
+}
+
+.adblock-info .ft-layout-grid-flex__colXs-6 {
+    padding-right: 8px;
+    padding-left: 8px;
+    flex-basis: 50%;
+    max-width: 50%
+}
+
+@media only screen and (min-width:768px) {
+    .adblock-info .ft-layout-grid-flex__colXs-6 {
+        padding-right: 11px;
+        padding-left: 11px
+    }
+}
+
+.adblock-info .ft-layout-grid-flex__colXs-7 {
+    padding-right: 8px;
+    padding-left: 8px;
+    flex-basis: 58.33333333%;
+    max-width: 58.33333333%
+}
+
+@media only screen and (min-width:768px) {
+    .adblock-info .ft-layout-grid-flex__colXs-7 {
+        padding-right: 11px;
+        padding-left: 11px
+    }
+}
+
+.adblock-info .ft-layout-grid-flex__colXs-8 {
+    padding-right: 8px;
+    padding-left: 8px;
+    flex-basis: 66.66666667%;
+    max-width: 66.66666667%
+}
+
+@media only screen and (min-width:768px) {
+    .adblock-info .ft-layout-grid-flex__colXs-8 {
+        padding-right: 11px;
+        padding-left: 11px
+    }
+}
+
+.adblock-info .ft-layout-grid-flex__colXs-9 {
+    padding-right: 8px;
+    padding-left: 8px;
+    flex-basis: 75%;
+    max-width: 75%
+}
+
+@media only screen and (min-width:768px) {
+    .adblock-info .ft-layout-grid-flex__colXs-9 {
+        padding-right: 11px;
+        padding-left: 11px
+    }
+}
+
+.adblock-info .ft-layout-grid-flex__colXs-10 {
+    padding-right: 8px;
+    padding-left: 8px;
+    flex-basis: 83.33333333%;
+    max-width: 83.33333333%
+}
+
+@media only screen and (min-width:768px) {
+    .adblock-info .ft-layout-grid-flex__colXs-10 {
+        padding-right: 11px;
+        padding-left: 11px
+    }
+}
+
+.adblock-info .ft-layout-grid-flex__colXs-11 {
+    padding-right: 8px;
+    padding-left: 8px;
+    flex-basis: 91.66666667%;
+    max-width: 91.66666667%
+}
+
+@media only screen and (min-width:768px) {
+    .adblock-info .ft-layout-grid-flex__colXs-11 {
+        padding-right: 11px;
+        padding-left: 11px
+    }
+}
+
+.adblock-info .ft-layout-grid-flex__colXs-12 {
+    padding-right: 8px;
+    padding-left: 8px;
+    flex-basis: 100%;
+    max-width: 100%
+}
+
+@media only screen and (min-width:768px) {
+    .adblock-info .ft-layout-grid-flex__colXs-12 {
+        padding-right: 11px;
+        padding-left: 11px
+    }
+}
+
+.adblock-info .ft-org-adblock {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+}
+
+@media only screen and (min-width:768px) {
+    .adblock-info .ft-org-adblock {
+        padding-top: 40px;
+        padding-bottom: 40px
+    }
+}
+
+.adblock-info .ft-org-adblock__banner {
+    position: relative;
+    margin-bottom: 20px;
+    min-height: 50px;
+    background-color: #f2f2f2
+}
+
+@media only screen and (min-width:768px) {
+    .adblock-info .ft-org-adblock__banner {
+        margin-bottom: 60px;
+        min-height: 150px
+    }
+}
+
+.adblock-info .ft-org-adblock__banner:before {
+    content: "";
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    display: block;
+    min-height: 50px;
+    background: transparent url("https://estaticos-cdn.elperiodico.com/statics/42DS/img/bgs/ft-org-adblock-banner--mobile.png") no-repeat center bottom;
+    background-size: contain
+}
+
+@media only screen and (min-width:768px) {
+    .adblock-info .ft-org-adblock__banner:before {
+        min-height: 150px;
+        background-image: url("https://estaticos-cdn.elperiodico.com/statics/42DS/img/bgs/ft-org-adblock-banner--desktop.png")
+    }
+}
+
+.adblock-info .ft-org-adblock__name {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+    font-size: 20px;
+    line-height: 22px;
+    letter-spacing: 0;
+    color: #333333
+}
+
+ .ft-brand-regionales .ft-org-adblock__name {
+    font-size: 22px;
+    line-height: 24px
+}
+
+@media only screen and (min-width:768px) {
+    .adblock-info .ft-org-adblock__name {
+        font-size: 24px;
+        line-height: 26px
+    }
+
+    .adblock-info .ft-brand-regionales .ft-org-adblock__name {
+        font-size: 26px;
+        line-height: 28px
+    }
+}
+
+.adblock-info .ft-org-adblock__tutorial {
+    padding-left: 20px;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: 0;
+    color: #666666
+}
+
+@media only screen and (min-width:768px) {
+    .adblock-info .ft-org-adblock__tutorial {
+        line-height: 28px
+    }
+}
+
+.fourty .adblock-info .ft-org-adblock__tutorial {
+    padding-left: 20px
+}
+
+.adblock-info .ft-org-adblock__tutorial-icon {
+    position: relative;
+    margin-right: 5px;
+    margin-left: 5px;
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    vertical-align: middle
+}
+
+.adblock-info .ft-org-adblock__tutorial-icon:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    height: 20px;
+    width: 20px;
+    background-repeat: no-repeat;
+    background-size: contain
+}
+
+.adblock-info .ft-org-adblock__tutorial-icon--adblock:before {
+    background-image: url('data:image/svg+xml,<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.5451 1.09841L1.09822 13.5464C0.395057 14.2497 2.17425e-05 15.2034 0 16.1979V33.8033C4.96276e-06 34.7978 0.395091 35.7516 1.09834 36.4549L13.5451 48.9017C14.2484 49.6049 15.2022 50 16.1967 50H33.802C34.7965 50 35.7503 49.6049 36.4535 48.9017L48.9003 36.4549C49.6035 35.7516 49.9986 34.7978 49.9986 33.8033V16.1979C49.9986 15.2034 49.6036 14.2497 48.9004 13.5464L36.4536 1.09841C36.1053 0.750164 35.6919 0.473924 35.2369 0.285459C34.782 0.0969933 34.2943 -5.85293e-06 33.8018 2.64882e-10H16.1968C15.7044 -5.85293e-06 15.2167 0.0969933 14.7617 0.285459C14.3067 0.473924 13.8933 0.750164 13.5451 1.09841Z" fill="%23F40D12"/><path fill-rule="evenodd" clip-rule="evenodd" d="M24.4035 43.1238C32.6866 43.1238 34.652 35.5261 34.652 35.5261L39.406 21.8667C39.406 21.8667 39.8353 20.4488 39.7566 20.433C35.3294 19.606 34.3881 22.7254 34.3881 22.7254C34.3881 22.7254 32.6866 27.1446 32.4227 27.1446C32.1588 27.1446 32.1273 26.8177 32.1273 26.8177V10.9408C32.1273 10.9408 32.21 8.89267 30.1068 8.89267C28.0035 8.89267 28.1098 10.9448 28.1098 10.9448L28.1138 22.6741C28.1138 22.6741 28.1413 23.1468 27.7474 23.1468C27.3969 23.1468 27.4166 22.6899 27.4166 22.6899V8.55792C27.4166 8.55792 27.5466 6.2498 25.4197 6.2498C23.2927 6.2498 23.407 8.57368 23.407 8.57368L23.3874 22.5166C23.3874 22.5166 23.4149 22.9459 23.0643 22.9459C22.7374 22.9459 22.7492 22.5205 22.7492 22.5205V10.8305C22.7492 10.8305 22.8674 8.45155 20.7011 8.45155C18.5742 8.45155 18.6885 10.8739 18.6885 10.8739L18.6688 23.2177C18.6688 23.2177 18.7081 23.5761 18.3733 23.5761C18.0189 23.5761 18.0268 23.2177 18.0268 23.2177L18.011 15.7539C18.011 15.7539 18.0307 13.69 16.2425 13.69C14.3401 13.69 14.3756 15.7539 14.3756 15.7539V31.8631C14.3874 31.8592 13.895 43.1238 24.4035 43.1238Z" fill="white"/></svg>')
+}
+
+.adblock-info .ft-org-adblock__tutorial-icon--adblockplus:before {
+    background-image: url('data:image/svg+xml,<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.47749 15.7681H46.0102V34.0899H3.47749V15.7681Z" fill="white"/><path d="M0 35.3741V14.6251L14.6259 0H35.2737L49.8987 14.626V35.375L35.2729 50H14.6251L0 35.3741ZM47.6721 34.3629V15.6371L34.3618 2.32794H15.6344L2.32834 15.6377L2.32785 34.3618L15.637 47.6721H34.3617L47.6721 34.3629Z" fill="white"/><path d="M2.32146 34.4597V15.5326L15.5642 2.32478H34.3355L47.6797 15.6338V34.3596L34.3355 47.6687H15.5631L2.32146 34.4597ZM27.6803 33.4372C30.2082 32.893 31.6413 31.317 31.8181 28.8871C31.9376 27.2445 31.4508 25.8328 30.5087 25.0901C30.0573 24.7341 29.0833 24.2883 28.7573 24.2883C28.4913 24.2883 28.5015 24.1077 28.7713 24.0402C29.5835 23.8369 30.5008 22.8287 30.8348 21.7726C31.0838 20.985 31.11 19.5054 30.8881 18.7602C30.673 18.0377 30.0586 17.2136 29.4121 16.7804C28.247 15.9998 26.8581 15.7951 22.6921 15.7896L20.0791 15.7862V33.6505L23.5038 33.6248C26.1848 33.6045 27.0918 33.5639 27.6803 33.4372ZM23.6307 25.9076H24.9822C26.4945 25.9076 27.1803 26.0524 27.6884 26.4789C28.1753 26.8874 28.3312 27.281 28.3317 28.1028C28.3326 29.1563 28.0356 29.6989 27.2347 30.1077C26.6653 30.3984 26.5738 30.4132 25.1351 30.4462L23.6307 30.4808V25.9076ZM23.6307 19.0053L24.9752 19.0411C26.464 19.0807 26.9312 19.2249 27.3279 19.7666C27.6472 20.2027 27.6302 21.5584 27.2989 22.09C26.8952 22.7375 26.4239 22.9091 24.9245 22.9539L23.6307 22.9928V19.0053ZM8.04291 31.9045C8.25231 30.9721 8.46802 30.0384 8.52219 29.8296L8.62065 29.45H13.264L13.4854 30.4368C13.6414 31.1289 13.7992 31.8205 13.9589 32.5117L14.2108 33.5998H16.0904C17.5496 33.5998 17.9603 33.5715 17.9267 33.4733C17.9029 33.4036 16.816 29.4184 15.5113 24.6171L13.1392 15.8875H8.86364L8.58704 16.9249C8.19749 18.386 4.15595 33.2077 4.08842 33.4228C4.03692 33.587 4.16567 33.5999 5.84753 33.5999H7.66219L8.04291 31.9045ZM9.363 26.034C9.50818 25.5533 10.0851 22.9957 10.476 21.0999C10.7384 19.8275 10.9396 19.0556 10.9775 19.1768C11.0123 19.2882 11.2243 20.2446 11.4487 21.3023C11.673 22.36 12.0114 23.8972 12.2005 24.7183L12.5443 26.2112H10.9269C9.43377 26.2112 9.3136 26.1975 9.363 26.034ZM37.7355 27.6282H39.1472C40.8607 27.6282 41.8839 27.4488 42.8907 26.9719C44.3096 26.2998 45.4202 24.8489 45.7588 23.2253C45.941 22.352 45.9167 20.5291 45.7124 19.7335C45.1955 17.7205 43.8649 16.4754 41.7733 16.0475C41.1516 15.9202 40.2932 15.8874 37.5875 15.8874H34.184V33.6H37.7354L37.7355 27.6282ZM37.7355 19.1262H39.087C40.6918 19.1262 41.3301 19.2772 41.8289 19.7747C42.2796 20.2242 42.4404 20.8362 42.3828 21.8829C42.2785 23.7801 41.4526 24.3893 38.9855 24.3893H37.7355V19.1262Z" fill="%23E00000"/></svg>')
+}
+
+.adblock-info .ft-org-adblock__tutorial-icon--adblockplus-activacion:before {
+    background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><rect width="18" height="18" fill="url(%23pattern0_1410_178)"/><defs><pattern id="pattern0_1410_178" patternContentUnits="objectBoundingBox" width="1" height="1"><use xlink:href="%23image0_1410_178" transform="scale(0.03125)"/></pattern><image id="image0_1410_178" width="32" height="32" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAD2klEQVRYCb1XSWhTQRgeBDOvSiuldUHEk6AnD1486kFEkIreBG+KBxXcLupBqAdptZ2xpNVWxINUKAouqKBYWnGpemirmenrFmOXtLS1+5Imqa0j/yR5vDd56SSS+uDlzcz//9/3zfZPBqF0H68fY2IeMgivxYS1GoT3Y8rmMWUhg/I+TFmLtNG2InS3eXW6sHq/EpaPCS/DlM8alIt0XkzYFMSgEpavJ0jlUWx6MGEXDcIm0iF19SFsAlN2ARWbnlQ07u1efx6mrMEVNM1RsMdiyp4jrz/PnUxpxRW+7ZiyTjtANsqY8A5POduh0CnV8q5CTHl3NgjdMDBhXcjrX6+wxqt3m1cblH92C8xy2yfXXeKh7HKmRMde9Qt4M40DLucoeP3rMeEzmQJFFv8IeDONw5RPozLfBksEJrxGB1JQaYo3PTMiMBm1CEX8ScTy0bB41z8nNlSZlk/Cpn6BMyagNLAOEx5VHez1jbdNwUbDku77r7BYcyuWkFQBzcPzsql9LCIgxo6hljHlEVQaWIc85eywalTrL3/MSOCmwZCjd6qAwkpTfBoIyeYXP6aXFQAcwI10w7/vUUACTkeXxJbqdgeoKgBAt9Z0iKnIkjTtqQs4/NWOyWkwKPuqGuz1e75xCXb143ASmJsAiL3+ZUSaqlrHkmLs2MCNDMJ7nY3OAwfmE54d9zuTwFIJ2PWgW5q+jYSTYhxchPciWAyORiXXzy3EhnNtfOHZfVMJyPe2SdNMdGlZAXIh6gSMhRclmNuqXvwjBLx2UVDefKddxoyEfifZ7L5SgG4KPgTnJNjBJz1JYKky4ZFnvTKmsW8uKcYuALiRbhFe+TAkwd72zC4PZps62K7wnG8c1MSwr9ptCEM/G18HR1/0aQC5ONswKMknI0sCsqejxzaR0C63YTqJ6NL72ChA3j/+OugKmkO5ONcwKNcEKDj1dsDVzy4IU/MAgnSoW4gQ9LB9UvYMfiAdg5D9j3/K93T9gOiaiG1XsFd/G9eTEx61/qrpsmFC9eX3QyI4u2AJUQtwUJ2p1817LM/I4beOw5vmJkx4OEGk++6tC8hsB2fE0+5pca1pWOyu9Wt7ncAFLsdxDEIw5RUJhxX/ElZqdd4qyH/C3PcfyL8gGsyxeB0Fr2+LQVlwpURgyv2ovKvQwalWPBV8J/xlyroIwkcxNbepfO71qo4Cg/CmbInAlNWjqo4Cd7JUrcVilUH5CYPy4X8WQtiIQdpOomKxKhWNvv1GZ65BWGmml1OIQTc6c/UE6XrA9Zy2FcWu4KwlfiUPwRVdXtVjV/ZauMK7XjxS8PwF7jNjjeU4N/MAAAAASUVORK5CYII="/></defs></svg>')
+}
+
+.adblock-info .ft-org-adblock__tutorial-icon--ublock:before {
+    background-image: url('data:image/svg+xml,<svg width="44" height="50" viewBox="0 0 44 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.899 49.8062C43.6042 37.4029 43.6042 37.4029 43.6042 6.39523C34.302 6.39523 31.2012 6.39523 21.8993 0.193828M21.8993 49.8059C0.193811 37.4031 0.193807 37.4031 0.193807 6.39523C9.49599 6.39523 12.5968 6.39523 21.899 0.193828" fill="%23800000"/><path fill-rule="evenodd" clip-rule="evenodd" d="M21.8991 2.55172e-07C21.8621 -5.98011e-05 21.8246 0.0104802 21.7915 0.0325702C17.1472 3.12874 14.0682 4.66484 10.9994 5.43204C7.92632 6.20029 4.85122 6.20142 0.193807 6.20142C0.086769 6.20142 0 6.28819 0 6.39523V6.40402C0 14.1486 0 19.9684 0.339683 24.5299C0.67955 29.0938 1.36044 32.4178 2.73364 35.1642C4.10867 37.9142 6.16911 40.0679 9.23651 42.3076C12.2976 44.5426 16.3751 46.8726 21.7923 49.9681L21.7928 49.9683C21.8518 50.0069 21.9298 50.0118 21.9951 49.9744L22.006 49.9682C27.4232 46.8726 31.5006 44.5426 34.5616 42.3076C37.6289 40.0679 39.6894 37.9141 41.0644 35.164C42.4376 32.4176 43.1184 29.0936 43.4583 24.5297C43.798 19.9683 43.798 14.1485 43.798 6.40386V6.39523C43.798 6.28819 43.7112 6.20142 43.6042 6.20142C38.9468 6.20142 35.8717 6.20029 32.7986 5.43204C29.7298 4.66484 26.6509 3.12874 22.0068 0.0325716C21.9736 0.0104816 21.9362 -5.89077e-05 21.8991 2.55172e-07ZM21.8991 0.426575C26.4976 3.48438 29.5961 5.03096 32.7046 5.80808C35.7893 6.57925 38.872 6.58892 43.4104 6.58904C43.4103 14.247 43.4074 19.9935 43.0718 24.501C42.7333 29.0456 42.0576 32.3107 40.7177 34.9907C39.3795 37.667 37.3702 39.7768 34.333 41.9945C31.3095 44.2022 27.281 46.5074 21.8993 49.5828C16.5174 46.5074 12.4887 44.2022 9.46508 41.9945C6.42782 39.7769 4.41849 37.6671 3.08034 34.9908C1.74036 32.3109 1.06466 29.0457 0.726227 24.5011C0.390566 19.9936 0.387642 14.247 0.387616 6.58904C4.92594 6.58892 8.00868 6.57924 11.0934 5.80808C14.2019 5.03096 17.3005 3.48438 21.8991 0.426575Z" fill="white"/><path fill-rule="evenodd" clip-rule="evenodd" d="M26.5506 18.7975C23.9819 18.7975 21.8995 20.8799 21.8995 23.4487C21.8995 26.0174 23.9819 28.0998 26.5506 28.0998C29.1194 28.0998 31.2017 26.0174 31.2017 23.4487C31.2017 20.8799 29.1194 18.7975 26.5506 18.7975ZM18.7988 23.4487C18.7988 19.1674 22.2694 15.6968 26.5506 15.6968C30.8319 15.6968 34.3025 19.1674 34.3025 23.4487C34.3025 27.7299 30.8319 31.2005 26.5506 31.2005C22.2694 31.2005 18.7988 27.7299 18.7988 23.4487Z" fill="white"/><path d="M21.8993 24.999C21.8993 29.2625 19.9613 31.2005 15.6978 31.2005C11.4342 31.2005 9.49626 29.2625 9.49626 24.999V15.6968H12.597V24.999C12.597 27.7122 12.9846 28.0998 15.6978 28.0998C18.4109 28.0998 18.7985 27.7122 18.7985 24.999V15.6968H21.8993V24.999Z" fill="white"/></svg>')
+}
+
+.adblock-info .ft-org-adblock__tutorial-icon--ublock-activacion:before {
+    background-image: url('data:image/svg+xml,<svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><rect x="0.797974" width="18" height="18" fill="url(%23pattern0_1410_182)"/><defs><pattern id="pattern0_1410_182" patternContentUnits="objectBoundingBox" width="1" height="1"><use xlink:href="%23image0_1410_182" transform="scale(0.03125)"/></pattern><image id="image0_1410_182" width="32" height="32" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAC3ElEQVRYCb2WOYgUQRSGX+IReIE3iEfqgYiCiqCD2/3ejIEsCGKgIigKhoKyHsEaaSoiiAaaeAQLGggGRi6ieKCx7nhisigoHrubrL+86Z2uraOnZ2rEhmZeNf//9d/Tr6qaKPZIcYAE74nxhgT7YjFxvhTbSADrrGJzHCzGxTht3VzDMPpiUHEeRn8gQH8cLMb1XwIwVhPjDgnGiPGCtmNZnrUsAGMFMV5NeAdIsCr3tlUIdjfMkxuN8TD3lgUQDDqvaIwEu3J/y4LRS4JxB6BN9i33lQf44fmVmWJHzggWNSwhQcisU+5e7ikPcD8QIHuIHizMOV4heFBgfEuCxbm+LIA+CONjAWsg51iF/j2T37mpn1EP5lrasgAqrmE+CV4WMBOL1xgwnntixldKMNsTtxNATRpcGeZhstWT8chmJljjidTE2GMLJ0btBlB5ir1BtjU1GScDoqHgzfViJwFUL3jt8RnHDV/gd22KY0bgVIJTHlCvFR2CEwH9XSNnfA4I1hqBU4V2Q8ZWR2WGKTYE+HUjYIx6ggrmGUGgEhwiwQcS1Em/DVodjAUen/HdWHS9dzt1JaYaQZeVslw+Y8RQGZ88QYKlRtBlVcVyj894Z6iCp54gBRtBl1V4kRs0VME1L4DgqhF0WTGue3zGZUNNsTMgGKUKFhlRZKUNGGpyQdUQtUkYPwMhLhlRZMW44nF1x12PKTYxxfmAUJfjXlvYwSj7trC/nrMl/pxP2YKZJPjihWD8ogTiG0quqEfwO8AbpgpmhN2Mg54hm7/jxDgT3BldUg2zSHCWGH8KWPtdiz0Oz4jmNjpCgpukQROsawSqYE6j1pWRcaug4ZqvoY2ZVcM0EjwuSN8Edf7LeEJtr64agnH7H4a4Qcrs+GAcDTamu64XjRnDlOJIx/e1DBVMpyxIvYN/ZIgYh+Oe2rq7M0iwiQQXSd+nfvXqjqanbsvZtQvE2Oi4Wg7/AqCCCiGjI0QxAAAAAElFTkSuQmCC"/></defs></svg>')
+}
+
+.adblock-info .ft-org-adblock__tutorial-icon--ublock-actualizar:before {
+    background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><rect width="18" height="18" fill="url(%23pattern0_1410_184)"/><defs><pattern id="pattern0_1410_184" patternContentUnits="objectBoundingBox" width="1" height="1"><use xlink:href="%23image0_1410_184" transform="scale(0.03125)"/></pattern><image id="image0_1410_184" width="32" height="32" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADA0lEQVRYCe1XOYsUQRRu8QJBRbxFDbxATQTBwMhEBBNRMBAjYXFBETQzEGlkp77v9a7JsMmKiAcGTuAfUDRRBBEDD/Bg111WPFFRdMVAx35jd9NTVtd0z4Y60EzVe6++7+vqV1WvgqDkj+RGkkdIngNwi+QIgG/JM0ryDsk6ya0lIcuFich6AFdJNis8YyR7G43GVBeLMWYdyRsA9rr8LdvQ0NB0kiD5qwKxLfKJiGzPkwBYE4t7nWCO531ZW4NidY8nQWwLGazX6zMBrALwJoc7kZGmDQCbAXzMBdlg3fYfAHhp4bYLMMZsIPnVCrIJX8Sf5WQM1hMn3g4AuwEcI3kpN7X2GGdfEzh98UCniOQjD/m4iBwIw3BaNsjR0G+uCebBycS0CQBgPIPOishsB5/T1Gw2p5Ac9OClIv58gv7+/kUkJwoGHHaydDBGUbTag9kSkM0AgKiA/EoHHqc7iqK1JN8WYKZv3wTwPUjW+yc7GMBoGIaznAweYxRFm+Id84ON5+q3ZsAYs7PA2ePhKXSR1F0we0tfuyWgIFnGwjCcUcjicVQUcD8wxiwEsC3/1Gq1xR4Or0tEluWxfG1Nfi/Yf+e/MQO1Wm2pL1Hyvskkpx50eSxtDwwMLAgAPPWt1bxPa4RuPoseYCTf57G0rYdbYBt9fQAPuxEAYL8LV5dsaQEA3uk0VhUAYB7JZ7YAAPdaWLbD1QfwSsu0quRJjXG7APNQKQFxtfM5LsVXViXXrRxAo4B8WA/BUgISgMv6NmVFJCvrrotcbSKyJ8MqCrLtAIbjFbMvG+hoJIXNCV8tEFfGF9uG2kSd+poPJC+IyFGSu1RUUs5dB/Czw/iRMAzndBKgGTveAajUeZ/H0D0kiqIlbeTasYKGNcgYMz+561UmyuOlbQDXSM79i1wN6SVES7C+vr4VaZBmMcnTAH6kQF386x2jN8V0/msdD+C8iCx3BSQFyykVWFZAEnu8tde7QLu1aakdJ+FBkmf0ip7sEV/irfY5yZsAQhHZoveCshy/AQEKgSSKdrdxAAAAAElFTkSuQmCC"/></defs></svg>')
+}
+
+.adblock-info .ft-org-adblock__tutorial-icon--otros:before {
+    background-image: url('data:image/svg+xml,<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M25 0C11.1929 0 0 11.1929 0 25C0 38.8071 11.1929 50 25 50C38.8071 50 50 38.8071 50 25C50 11.1929 38.8071 0 25 0ZM14.5 23C13.1193 23 12 24.1193 12 25.5C12 26.8807 13.1193 28 14.5 28C15.8807 28 17 26.8807 17 25.5C17 24.1193 15.8807 23 14.5 23ZM22 25.5C22 24.1193 23.1193 23 24.5 23C25.8807 23 27 24.1193 27 25.5C27 26.8807 25.8807 28 24.5 28C23.1193 28 22 26.8807 22 25.5ZM34.5 23C33.1193 23 32 24.1193 32 25.5C32 26.8807 33.1193 28 34.5 28C35.8807 28 37 26.8807 37 25.5C37 24.1193 35.8807 23 34.5 23Z" fill="%23BBBBBB"/></svg>')
+}
+
+.adblock-info .ft-org-adblock__tutorial-item [class*=-item] {
+    font-size: smaller
+}
+
+.adblock-info .ft-org-adblock__tutorial-item [class*=__tutorial] {
+    margin-bottom: 10px;
+}
+
+.adblock-info .ft-org-adblock__item {
+    position: relative;
+    padding-left: 40px;
+    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+}
+
+@media only screen and (min-width:768px) {
+    .adblock-info .ft-org-adblock__item {
+        padding-left: 70px
+    }
+}
+
+.adblock-info .ft-org-adblock__item:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-repeat: no-repeat;
+    background-size: contain
+}
+
+@media only screen and (min-width:768px) {
+    .adblock-info .ft-org-adblock__item:before {
+        height: 50px;
+        width: 50px
+    }
+}
+
+.adblock-info .ft-org-adblock__item strong {
+    color: #333333
+}
+
+.adblock-info .ft-org-adblock__item:not(:last-child) {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #cccccc
+}
+
+@media only screen and (min-width:768px) {
+    .adblock-info .ft-org-adblock__item:not(:last-child) {
+        margin-bottom: 40px
+    }
+}
+
+.adblock-info .ft-org-adblock__item[class*="--adblock"]:before {
+    background-image: url('data:image/svg+xml,<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.5451 1.09841L1.09822 13.5464C0.395057 14.2497 2.17425e-05 15.2034 0 16.1979V33.8033C4.96276e-06 34.7978 0.395091 35.7516 1.09834 36.4549L13.5451 48.9017C14.2484 49.6049 15.2022 50 16.1967 50H33.802C34.7965 50 35.7503 49.6049 36.4535 48.9017L48.9003 36.4549C49.6035 35.7516 49.9986 34.7978 49.9986 33.8033V16.1979C49.9986 15.2034 49.6036 14.2497 48.9004 13.5464L36.4536 1.09841C36.1053 0.750164 35.6919 0.473924 35.2369 0.285459C34.782 0.0969933 34.2943 -5.85293e-06 33.8018 2.64882e-10H16.1968C15.7044 -5.85293e-06 15.2167 0.0969933 14.7617 0.285459C14.3067 0.473924 13.8933 0.750164 13.5451 1.09841Z" fill="%23F40D12"/><path fill-rule="evenodd" clip-rule="evenodd" d="M24.4035 43.1238C32.6866 43.1238 34.652 35.5261 34.652 35.5261L39.406 21.8667C39.406 21.8667 39.8353 20.4488 39.7566 20.433C35.3294 19.606 34.3881 22.7254 34.3881 22.7254C34.3881 22.7254 32.6866 27.1446 32.4227 27.1446C32.1588 27.1446 32.1273 26.8177 32.1273 26.8177V10.9408C32.1273 10.9408 32.21 8.89267 30.1068 8.89267C28.0035 8.89267 28.1098 10.9448 28.1098 10.9448L28.1138 22.6741C28.1138 22.6741 28.1413 23.1468 27.7474 23.1468C27.3969 23.1468 27.4166 22.6899 27.4166 22.6899V8.55792C27.4166 8.55792 27.5466 6.2498 25.4197 6.2498C23.2927 6.2498 23.407 8.57368 23.407 8.57368L23.3874 22.5166C23.3874 22.5166 23.4149 22.9459 23.0643 22.9459C22.7374 22.9459 22.7492 22.5205 22.7492 22.5205V10.8305C22.7492 10.8305 22.8674 8.45155 20.7011 8.45155C18.5742 8.45155 18.6885 10.8739 18.6885 10.8739L18.6688 23.2177C18.6688 23.2177 18.7081 23.5761 18.3733 23.5761C18.0189 23.5761 18.0268 23.2177 18.0268 23.2177L18.011 15.7539C18.011 15.7539 18.0307 13.69 16.2425 13.69C14.3401 13.69 14.3756 15.7539 14.3756 15.7539V31.8631C14.3874 31.8592 13.895 43.1238 24.4035 43.1238Z" fill="white"/></svg>')
+}
+
+.adblock-info .ft-org-adblock__item[class*="--adblockplus"]:before {
+    background-image: url('data:image/svg+xml,<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.47749 15.7681H46.0102V34.0899H3.47749V15.7681Z" fill="white"/><path d="M0 35.3741V14.6251L14.6259 0H35.2737L49.8987 14.626V35.375L35.2729 50H14.6251L0 35.3741ZM47.6721 34.3629V15.6371L34.3618 2.32794H15.6344L2.32834 15.6377L2.32785 34.3618L15.637 47.6721H34.3617L47.6721 34.3629Z" fill="white"/><path d="M2.32146 34.4597V15.5326L15.5642 2.32478H34.3355L47.6797 15.6338V34.3596L34.3355 47.6687H15.5631L2.32146 34.4597ZM27.6803 33.4372C30.2082 32.893 31.6413 31.317 31.8181 28.8871C31.9376 27.2445 31.4508 25.8328 30.5087 25.0901C30.0573 24.7341 29.0833 24.2883 28.7573 24.2883C28.4913 24.2883 28.5015 24.1077 28.7713 24.0402C29.5835 23.8369 30.5008 22.8287 30.8348 21.7726C31.0838 20.985 31.11 19.5054 30.8881 18.7602C30.673 18.0377 30.0586 17.2136 29.4121 16.7804C28.247 15.9998 26.8581 15.7951 22.6921 15.7896L20.0791 15.7862V33.6505L23.5038 33.6248C26.1848 33.6045 27.0918 33.5639 27.6803 33.4372ZM23.6307 25.9076H24.9822C26.4945 25.9076 27.1803 26.0524 27.6884 26.4789C28.1753 26.8874 28.3312 27.281 28.3317 28.1028C28.3326 29.1563 28.0356 29.6989 27.2347 30.1077C26.6653 30.3984 26.5738 30.4132 25.1351 30.4462L23.6307 30.4808V25.9076ZM23.6307 19.0053L24.9752 19.0411C26.464 19.0807 26.9312 19.2249 27.3279 19.7666C27.6472 20.2027 27.6302 21.5584 27.2989 22.09C26.8952 22.7375 26.4239 22.9091 24.9245 22.9539L23.6307 22.9928V19.0053ZM8.04291 31.9045C8.25231 30.9721 8.46802 30.0384 8.52219 29.8296L8.62065 29.45H13.264L13.4854 30.4368C13.6414 31.1289 13.7992 31.8205 13.9589 32.5117L14.2108 33.5998H16.0904C17.5496 33.5998 17.9603 33.5715 17.9267 33.4733C17.9029 33.4036 16.816 29.4184 15.5113 24.6171L13.1392 15.8875H8.86364L8.58704 16.9249C8.19749 18.386 4.15595 33.2077 4.08842 33.4228C4.03692 33.587 4.16567 33.5999 5.84753 33.5999H7.66219L8.04291 31.9045ZM9.363 26.034C9.50818 25.5533 10.0851 22.9957 10.476 21.0999C10.7384 19.8275 10.9396 19.0556 10.9775 19.1768C11.0123 19.2882 11.2243 20.2446 11.4487 21.3023C11.673 22.36 12.0114 23.8972 12.2005 24.7183L12.5443 26.2112H10.9269C9.43377 26.2112 9.3136 26.1975 9.363 26.034ZM37.7355 27.6282H39.1472C40.8607 27.6282 41.8839 27.4488 42.8907 26.9719C44.3096 26.2998 45.4202 24.8489 45.7588 23.2253C45.941 22.352 45.9167 20.5291 45.7124 19.7335C45.1955 17.7205 43.8649 16.4754 41.7733 16.0475C41.1516 15.9202 40.2932 15.8874 37.5875 15.8874H34.184V33.6H37.7354L37.7355 27.6282ZM37.7355 19.1262H39.087C40.6918 19.1262 41.3301 19.2772 41.8289 19.7747C42.2796 20.2242 42.4404 20.8362 42.3828 21.8829C42.2785 23.7801 41.4526 24.3893 38.9855 24.3893H37.7355V19.1262Z" fill="%23E00000"/></svg>')
+}
+
+.adblock-info .ft-org-adblock__item[class*="--ublock"]:before {
+    background-image: url('data:image/svg+xml,<svg width="44" height="50" viewBox="0 0 44 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.899 49.8062C43.6042 37.4029 43.6042 37.4029 43.6042 6.39523C34.302 6.39523 31.2012 6.39523 21.8993 0.193828M21.8993 49.8059C0.193811 37.4031 0.193807 37.4031 0.193807 6.39523C9.49599 6.39523 12.5968 6.39523 21.899 0.193828" fill="%23800000"/><path fill-rule="evenodd" clip-rule="evenodd" d="M21.8991 2.55172e-07C21.8621 -5.98011e-05 21.8246 0.0104802 21.7915 0.0325702C17.1472 3.12874 14.0682 4.66484 10.9994 5.43204C7.92632 6.20029 4.85122 6.20142 0.193807 6.20142C0.086769 6.20142 0 6.28819 0 6.39523V6.40402C0 14.1486 0 19.9684 0.339683 24.5299C0.67955 29.0938 1.36044 32.4178 2.73364 35.1642C4.10867 37.9142 6.16911 40.0679 9.23651 42.3076C12.2976 44.5426 16.3751 46.8726 21.7923 49.9681L21.7928 49.9683C21.8518 50.0069 21.9298 50.0118 21.9951 49.9744L22.006 49.9682C27.4232 46.8726 31.5006 44.5426 34.5616 42.3076C37.6289 40.0679 39.6894 37.9141 41.0644 35.164C42.4376 32.4176 43.1184 29.0936 43.4583 24.5297C43.798 19.9683 43.798 14.1485 43.798 6.40386V6.39523C43.798 6.28819 43.7112 6.20142 43.6042 6.20142C38.9468 6.20142 35.8717 6.20029 32.7986 5.43204C29.7298 4.66484 26.6509 3.12874 22.0068 0.0325716C21.9736 0.0104816 21.9362 -5.89077e-05 21.8991 2.55172e-07ZM21.8991 0.426575C26.4976 3.48438 29.5961 5.03096 32.7046 5.80808C35.7893 6.57925 38.872 6.58892 43.4104 6.58904C43.4103 14.247 43.4074 19.9935 43.0718 24.501C42.7333 29.0456 42.0576 32.3107 40.7177 34.9907C39.3795 37.667 37.3702 39.7768 34.333 41.9945C31.3095 44.2022 27.281 46.5074 21.8993 49.5828C16.5174 46.5074 12.4887 44.2022 9.46508 41.9945C6.42782 39.7769 4.41849 37.6671 3.08034 34.9908C1.74036 32.3109 1.06466 29.0457 0.726227 24.5011C0.390566 19.9936 0.387642 14.247 0.387616 6.58904C4.92594 6.58892 8.00868 6.57924 11.0934 5.80808C14.2019 5.03096 17.3005 3.48438 21.8991 0.426575Z" fill="white"/><path fill-rule="evenodd" clip-rule="evenodd" d="M26.5506 18.7975C23.9819 18.7975 21.8995 20.8799 21.8995 23.4487C21.8995 26.0174 23.9819 28.0998 26.5506 28.0998C29.1194 28.0998 31.2017 26.0174 31.2017 23.4487C31.2017 20.8799 29.1194 18.7975 26.5506 18.7975ZM18.7988 23.4487C18.7988 19.1674 22.2694 15.6968 26.5506 15.6968C30.8319 15.6968 34.3025 19.1674 34.3025 23.4487C34.3025 27.7299 30.8319 31.2005 26.5506 31.2005C22.2694 31.2005 18.7988 27.7299 18.7988 23.4487Z" fill="white"/><path d="M21.8993 24.999C21.8993 29.2625 19.9613 31.2005 15.6978 31.2005C11.4342 31.2005 9.49626 29.2625 9.49626 24.999V15.6968H12.597V24.999C12.597 27.7122 12.9846 28.0998 15.6978 28.0998C18.4109 28.0998 18.7985 27.7122 18.7985 24.999V15.6968H21.8993V24.999Z" fill="white"/></svg>')
+}
+
+.adblock-info .ft-org-adblock__item[class*="--otros"]:before {
+    background-image: url('data:image/svg+xml,<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M25 0C11.1929 0 0 11.1929 0 25C0 38.8071 11.1929 50 25 50C38.8071 50 50 38.8071 50 25C50 11.1929 38.8071 0 25 0ZM14.5 23C13.1193 23 12 24.1193 12 25.5C12 26.8807 13.1193 28 14.5 28C15.8807 28 17 26.8807 17 25.5C17 24.1193 15.8807 23 14.5 23ZM22 25.5C22 24.1193 23.1193 23 24.5 23C25.8807 23 27 24.1193 27 25.5C27 26.8807 25.8807 28 24.5 28C23.1193 28 22 26.8807 22 25.5ZM34.5 23C33.1193 23 32 24.1193 32 25.5C32 26.8807 33.1193 28 34.5 28C35.8807 28 37 26.8807 37 25.5C37 24.1193 35.8807 23 34.5 23Z" fill="%23BBBBBB"/></svg>')
+}
