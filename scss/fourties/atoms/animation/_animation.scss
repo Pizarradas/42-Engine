@@ -1,0 +1,323 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// REDUCE MOTION
+// ===============================================
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// .ft-animation
+// ===============================================
+.ft-animation {
+  // &-blur
+  &-blur {
+    // &-out
+    &-out {
+      opacity: 1;
+      filter: blur(0px);
+      transform: scale(1);
+      animation: ft-blur-out 1s ease-out forwards;
+    }
+  }
+
+  // &-fade
+  &-fade {
+    // &-in (nuevo)
+    &-in {
+      opacity: 0;
+      transform: none;
+      animation: ft-fade-in 0.8s ease-out forwards;
+    }
+
+    // &-out
+    &-out {
+      opacity: 1;
+      transform: none;
+      animation: ft-fade-out 1s ease-out forwards;
+    }
+
+    // &-up
+    &-up {
+      opacity: 0;
+      transform: translateY(40px);
+      animation: ft-fade-up 1s ease-out forwards;
+    }
+  }
+  
+  // &-flip
+  &-flip {
+    animation: flip 1s ease-in-out 1;
+    transform-style: preserve-3d;
+  }
+
+  /* Animación tipo "flip" */
+  @keyframes flip {
+    0% {
+      transform: perspective(100em) rotateY(0);
+    }
+    100% {
+      transform: perspective(100em) rotateY(360deg);
+    }
+  }
+  
+  // &-flip-out
+  &-flip-out {
+    display: block;
+    overflow: hidden; /* necesario para que max-height funcione */
+    animation: flip-out 0.8s ease-in-out forwards;
+    transform-style: preserve-3d;
+  }
+  
+  /* Animación tipo "flip-out" */
+  @keyframes flip-out {
+    0% {
+      transform: perspective(100em) rotateY(0);
+      opacity: 1;
+      margin: 1em 0;
+    }
+    99% {
+      transform: perspective(100em) rotateY(180deg);
+      opacity: 0;
+    }
+    100% {
+      max-height: 0;
+      margin: 0;
+      padding: 0;
+    }
+  }
+  
+  // &-grayscale
+  &-grayscale {
+    // &-out
+    &-out {
+      opacity: 1;
+      filter: grayscale(0%);
+      animation: ft-grayscale-out 1s ease-out forwards;
+    }
+  }
+
+  // &-liquify-melt-in
+  &-liquify-melt-in {
+    opacity: 0;
+    transform: scale(1.2) skewX(10deg);
+    filter: blur(10px) brightness(1.4);
+    animation: ft-liquify-melt-in 1s ease-out forwards;
+  }
+
+  // &-scale
+  &-press {
+    animation: press 0.3s ease-in-out 1;
+  }
+
+  /* Animación tipo "press" */
+  @keyframes press {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(0.75);
+    }
+  }
+
+  // &-scale
+  &-scale {
+    // &-in
+    &-in {
+      opacity: 0;
+      transform: scale(0.8);
+      animation: ft-scale-in 1s ease-out forwards;
+    }
+
+    // &-down-in (nuevo)
+    &-down-in {
+      opacity: 0;
+      transform: scale(1.05);
+      animation: ft-scale-down-in 0.9s ease-out forwards;
+    }
+  }
+
+  // &-scale
+  &-shake {
+    animation: shake 0.6s ease-in-out 1;
+  }
+
+  /* Animación tipo "shake" */
+  @keyframes shake {
+    0%, 100% {
+      transform: translateX(0) rotate(0deg);
+    }
+    10%, 30%, 50%, 70%, 90% {
+      transform: translateX(-10px) rotate(-1deg);
+    }
+    20%, 40%, 60%, 80% {
+      transform: translateX(10px) rotate(1deg);
+    }
+  }
+
+  // &-zoom
+  &-zoom {
+    // &-blur-in
+    &-blur-in {
+      opacity: 0;
+      transform: scale(1.3);
+      filter: blur(10px);
+      animation: ft-zoom-blur-in 1s ease-out forwards;
+    }
+
+    // &-in
+    &-in {
+      opacity: 0;
+      transform: scale(0.5);
+      animation: ft-zoom-in 1s ease-out forwards;
+    }
+
+    // &-out
+    &-out {
+      opacity: 0;
+      transform: scale(1.2);
+      animation: ft-zoom-out 1.5s ease-out forwards;
+    }
+  }
+}
+
+// Keyframes
+// ===============================================
+
+// BLURS
+@keyframes ft-blur-out {
+  0% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    filter: blur(10px);
+    transform: scale(1.1);
+  }
+}
+
+// FADES
+@keyframes ft-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes ft-fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes ft-fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// GRAYSCALE
+@keyframes ft-grayscale-out {
+  0% {
+    opacity: 1;
+    filter: grayscale(0%);
+  }
+  100% {
+    opacity: 0.5;
+    filter: grayscale(100%);
+  }
+}
+
+// LIQUIFY
+@keyframes ft-liquify-melt-in {
+  0% {
+    opacity: 0;
+    transform: scale(1.2) skewX(10deg);
+    filter: blur(10px) brightness(1.4);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) skewX(0deg);
+    filter: blur(0px) brightness(1);
+  }
+}
+
+// SCALES
+@keyframes ft-scale-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes ft-scale-down-in {
+  0% {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+// ZOOMS
+@keyframes ft-zoom-blur-in {
+  0% {
+    opacity: 0;
+    transform: scale(1.3);
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes ft-zoom-in {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes ft-zoom-out {
+  0% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,54 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// ft-advice
+// ===============================================
+.ft-advice
+{
+      @include padding(.2rem 1rem);
+      @include font--body-S--small;
+      @include fontBold;
+      @include margin(null null null 2rem);
+      background-color: var(--color-black);
+      color: var(--color-white);
+      border-radius: 2rem;
+
+  // &--primary
+  &--primary{
+    background-color: var(--color-primary);
+  }
+  // &--secondary
+  &--secondary{
+    background-color: var(--color-subscription-septenary);
+  }
+  // &--white
+  &--white{
+    background-color: var(--color-white);
+    color: var(--color-black);
+  }
+   // &--primary
+   &--size{
+      &-M{
+        @include font--body-M--small;
+        @include fontBold;
+      }
+      // &--primary
+      &-L{
+        @include padding(.3rem 1rem);
+        @include font--body-L--small;
+        @include fontBold;
+      }
+  }
+    // generals
+    // END // ft-advice
+}
+// DARK MODE: manual
+// ===============================================
+      [data-theme=dark]{
+       .ft-advice
+{      color: var(--color-white);}
+      }
+// ---------------------------------------------

@@ -1,0 +1,2527 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+//  .ft-btn
+// ===============================================
+.ft-btn {
+  $self: &;
+  @include position(relative, null null null null);
+  @include overflow-wrap;
+  @include border-style(solid);
+  @include border-width(0.2rem 0.2rem 0.2rem 0.2rem);
+  @include border-top-radius(30px);
+  @include border-bottom-radius(30px);
+  @include transition-button(
+    100ms,
+    // border-color
+    50ms,
+    // background
+    100ms // color
+  );
+  display: inline-block;
+  background-color: transparent;
+  user-select: none;
+  text-align: center;
+  color: var(--color-black);
+  box-shadow: none;
+  font-weight: bold;
+
+  // @if $brand(revistas)
+  @if $brand ==revistas {
+    text-transform: uppercase;
+  }
+
+  // behavior: bg(Color-black)
+  @include behavior-ft-helper-bg(Color-black) {
+    color: var(--color-white);
+  }
+
+  // =========================
+  // MIXINS DE TAMAÑO
+  // =========================
+
+  @mixin btn-size-xs {
+    @include padding(0.28rem 1rem 0.28rem 1rem);
+    @include font--body-S;
+    @include fontBold;
+  }
+
+  @mixin btn-size-sm {
+    @include padding(0.38rem 1.5rem 0.38rem 1.5rem);
+    @include font--body-M;
+    @include fontBold;
+  }
+
+  @mixin btn-size-md {
+    @include padding(0.88rem 2rem 0.88rem 2rem);
+    @include font--body-L;
+    @include fontBold;
+  }
+
+  @mixin btn-size-lg {
+    @include padding(1.38rem 2rem 1.38rem 2rem);
+    @include font--body-XL;
+    @include fontBold;
+  }
+
+  // &--xs
+  &--xs {
+    @include btn-size-xs;
+  }
+
+  // &--sm
+  &--sm {
+    @include btn-size-sm;
+  }
+
+  // &--md
+  &--md {
+    @include btn-size-md;
+  }
+
+  // &--lg
+  &--lg {
+    @include btn-size-lg;
+  }
+
+  // sm en mobile / md en tablet+
+  &--sm-md {
+    @include btn-size-sm;
+
+    @include min-screen(768px) {
+      @include btn-size-md;
+    }
+  }
+
+  // md en mobile / lg en tablet+
+  &--md-lg {
+    @include btn-size-md;
+
+    @include min-screen(768px) {
+      @include btn-size-lg;
+    }
+  }
+
+  // &--primary
+  &--primary {
+    @include border-color(var(--color-primary));
+    color: var(--color-white);
+    background-color: var(--color-primary);
+
+    // @if $brand(revistas)
+    @if $brand ==revistas {
+      @include border-color(var(--color-secondary));
+      background-color: var(--color-secondary);
+      // behavior: btn--pulse
+      @include behavior-ft-btn--pulse(
+        // :hover, & focus: mobile background color
+        var(--color-secondary),
+        // :hover, & focus: mobile text color
+        var(--color-white),
+        // :hover, & focus: border color
+        var(--color-secondary),
+        // :hover, & focus: desktop text color
+        var(--color-white),
+        // hover & focus: desktop background color
+        var(--color-secondary),
+        // &:focus: desktop outline
+        0.2rem,
+        solid,
+        var(--color-secondary),
+        // &:focus: desktop outline offset
+        0.4rem,
+
+        // :active: mobile background color
+        var(--color-black),
+        // :active: border color
+        var(--color-black),
+        // :active: text color
+        var(--color-white),
+        // :active: background-color
+        var(--color-black),
+        // :disabled: text color
+        null,
+
+        // disabled: background color
+        null // end // behavior: btn--pulse
+      );
+    }
+
+    // behavior: btn--pulse
+    @include behavior-ft-btn--pulse(
+      // :hover, & focus: mobile background color
+      var(--color-primary),
+      // :hover, & focus: mobile text color
+      var(--color-white),
+      // :hover, & focus: border color
+      var(--color-primary),
+      // :hover, & focus: desktop text color
+      var(--color-primary),
+      // hover & focus: desktop background color
+      var(--color-white),
+      // &:focus: desktop outline
+      0.2rem,
+      solid,
+      var(--color-primary),
+      // &:focus: desktop outline offset
+      0.4rem,
+
+      // :active: mobile background color
+      var(--color-black),
+      // :active: border color
+      var(--color-black),
+      // :active: text color
+      var(--color-white),
+      // :active: background-color
+      var(--color-black),
+      // :disabled: text color
+      null,
+
+      // disabled: background color
+      null
+    );
+
+    // behavior: bg(Color-black)
+    @include behavior-ft-helper-bg(Color-black) {
+      @include border-color(var(--color-primary));
+      color: var(--color-white);
+      background-color: var(--color-primary);
+
+      // @if $brand(revistas)
+      @if $brand ==revistas {
+        @include border-color(var(--color-white));
+        color: var(--color-black);
+        background-color: var(--color-white);
+      }
+
+      // behavior: btn--pulse
+      @include behavior-ft-btn--pulse(
+        // :hover, & focus: mobile background color
+        var(--color-black),
+        // :hover, & focus: mobile text color
+        null,
+        // :hover, & focus: border color
+        var(--color-white),
+        // :hover, & focus: desktop text color
+        var(--color-white),
+        // hover & focus: desktop background color
+        var(--color-black),
+        // &:focus: desktop outline
+        null,
+        null,
+        null,
+        // &:focus: desktop outline offset
+        null,
+
+        // :active: mobile background color
+        var(--color-quaternary),
+        // :active: border color
+        var(--color-quaternary),
+        // :active: text color
+        null,
+
+        // :active: background-color
+        var(--color-quaternary),
+        // :disabled: text color
+        null,
+
+        // disabled: background color
+        null
+      );
+    }
+
+    // &-has
+    &-has {
+      // &--icon
+      &--icon {
+        @include position(relative, null null null null);
+
+        // &:hover, &:focus-visible
+        &:hover,
+        &:focus-visible {
+          .ft-btn__icon {
+            // @if $brand ==sport
+            @if $brand ==sport {
+              filter: map-filters(reds, brand--sport);
+            }
+
+            // @if $brand ==epe
+            @if $brand ==epe {
+              filter: map-filters(blues, brand--epe);
+            }
+
+            // @if $brand ==ux
+            @if $brand ==ux {
+              filter: map-filters(greys, brand--500);
+            }
+
+            // @if $brand ==ep
+            @if $brand ==ep {
+              filter: map-filters(reds, brand--ep);
+            }
+
+            // @if $brand ==regionales
+            @if $brand ==regionales {
+              filter: map-filters(blues, brand--regionales);
+            }
+
+            // @if $brand ==revsitas
+            @if $brand ==revistas {
+              filter: map-filters(whites, brand--all);
+            }
+
+            // behavior: bg(Color-black)
+            @include behavior-ft-helper-bg(Color-black) {
+              filter: map-filters(blacks, brand--all);
+            }
+          }
+        }
+
+        // &.ft-btn
+        &.ft-btn {
+          // &-sm
+          &--sm {
+            @include padding(null null null 4rem);
+          }
+
+          // &-sm-md
+          &--sm-md {
+            @include padding(null null null 4rem);
+
+            @include min-screen(768px) {
+              @include padding(null null null 4.5rem);
+            }
+          }
+
+          // &-md
+          &--md {
+            @include padding(null null null 4.5rem);
+          }
+
+          // &-md
+          &--md-lg {
+            @include padding(null null null 4.5rem);
+
+            @include min-screen(768px) {
+              @include padding(null null null 5rem);
+            }
+          }
+
+          // &-lg
+          &--lg {
+            @include padding(null null null 5rem);
+          }
+        }
+
+        // &:hover, &:focus-visible
+        &:hover,
+        &:focus-visible {
+          // .ft-btn__icon
+          .ft-btn__icon {
+            // behavior: bg(Color-black)
+            @include behavior-ft-helper-bg(Color-black) {
+              filter: map-filters(blacks, brand--all);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // &--secondary
+  &--secondary {
+    @include border-color(var(--color-primary));
+    color: var(--color-primary);
+    background-color: transparent;
+
+    // @if $brand ==revistas
+    @if $brand ==revistas {
+      @include border-color(var(--color-secondary));
+      color: var(--color-secondary);
+    }
+
+    // behavior: btn--pulse
+    @include behavior-ft-btn--pulse(
+      // :hover, & focus: mobile background color
+      var(--color-secondary),
+      // :hover, & focus: mobile text color
+      var(--color-white),
+      // :hover, & focus: border color
+      var(--color-primary),
+      // :hover, & focus: desktop text color
+      var(--color-white),
+      // hover & focus: desktop background color
+      var(--color-primary),
+      // &:focus: desktop outline
+      0.2rem,
+      solid,
+      var(--color-primary),
+      // &:focus: desktop outline offset
+      0.4rem,
+      // :active: mobile background color
+      var(--color-white),
+      // :active: border color
+      var(--color-secondary),
+      // :active: text color
+      var(--color-white),
+      // :active: background-color
+      var(--color-secondary),
+      // :disabled: text color
+      var(--color-darkGrey),
+      // disabled: background color
+      transparent
+    );
+
+    @include behavior-parent(pasatiempos) {
+      @include border-color(var(--color-black));
+      color: var(--color-black);
+      background-color: transparent;
+
+      // behavior: btn--pulse
+      @include behavior-ft-btn--pulse(
+        // :hover, & focus: mobile background color
+        var(--color-black),
+        // :hover, & focus: mobile text color
+        var(--color-white),
+        // :hover, & focus: border color
+        var(--color-black),
+        // :hover, & focus: desktop text color
+        var(--color-white),
+        // hover & focus: desktop background color
+        var(--color-black),
+        // &:focus: desktop outline
+        0.2rem,
+        solid,
+        var(--color-black),
+        // &:focus: desktop outline offset
+        0.4rem,
+        // :active: mobile background color
+        var(--color-white),
+        // :active: border color
+        var(--color-black),
+        // :active: text color
+        var(--color-white),
+        // :active: background-color
+        var(--color-black),
+        // :disabled: text color
+        var(--color-darkGrey),
+        // disabled: background color
+        transparent
+      );
+    }
+    // behavior: bg(Color-black)
+    @include behavior-ft-helper-bg(Color-black) {
+      @include border-color(var(--color-white));
+      color: var(--color-white);
+      background-color: var(--color-black);
+
+      // behavior: btn--pulse
+      @include behavior-ft-btn--pulse(
+        // :hover, & focus: mobile background color
+        var(--color-primary),
+        // :hover, & focus: mobile text color
+        null,
+
+        // :hover, & focus: border color
+        var(--color-primary),
+        // :hover, & focus: desktop text color
+        var(--color-white),
+        // hover & focus: desktop background color
+        var(--color-primary),
+        // &:focus: desktop outline
+        null,
+        null,
+        null,
+        // &:focus: desktop outline offset
+        null,
+
+        // :active: mobile background color
+        var(--color-white),
+        // :active: border color
+        var(--color-white),
+        // :active: text color
+        var(--color-black),
+        // :active: background-color
+        null,
+
+        // :disabled: text color
+        null,
+
+        // disabled: background color
+        null
+      );
+    }
+    // behavior: bg(Color-white)
+    @include behavior-ft-helper-bg(Color-white) {
+      @include border-color(var(--color-black));
+      color: var(--color-black);
+      background-color: var(--color-white);
+
+      // behavior: btn--pulse
+      @include behavior-ft-btn--pulse(
+        // :hover, & focus: mobile background color
+        var(--color-primary),
+        // :hover, & focus: mobile text color
+        null,
+
+        // :hover, & focus: border color
+        var(--color-primary),
+        // :hover, & focus: desktop text color
+        var(--color-black),
+        // hover & focus: desktop background color
+        var(--color-primary),
+        // &:focus: desktop outline
+        null,
+        null,
+        null,
+        // &:focus: desktop outline offset
+        null,
+
+        // :active: mobile background color
+        var(--color-black),
+        // :active: border color
+        var(--color-black),
+        // :active: text color
+        var(--color-white),
+        // :active: background-color
+        null,
+
+        // :disabled: text color
+        null,
+
+        // disabled: background color
+        null
+      );
+    }
+
+    // &-has
+
+    &-has {
+      // &--icon
+      &--icon {
+        @include position(relative, null null null null);
+
+        // .ft-btn__icon
+        .ft-btn__icon {
+          // @if $brand ==sport
+          @if $brand ==sport {
+            filter: map-filters(reds, brand--sport);
+          }
+
+          // @if $brand ==epe
+          @if $brand ==epe {
+            filter: map-filters(blues, brand--epe);
+          }
+
+          // @if $brand ==ux
+          @if $brand ==ux {
+            filter: map-filters(greys, brand--500);
+          }
+
+          // @if $brand ==ep
+          @if $brand ==ep {
+            filter: map-filters(reds, brand--ep);
+          }
+
+          // @if $brand ==regionales
+          @if $brand ==regionales {
+            filter: map-filters(blues, brand--regionales);
+          }
+
+          // @if $brand ==revsitas
+          @if $brand ==revistas {
+            filter: map-filters(whites, brand--all);
+          }
+
+          // behavior: bg(Color-black)
+          @include behavior-ft-helper-bg(Color-black) {
+            filter: map-filters(blacks, brand--all);
+          }
+        }
+
+        // &:hover, &:focus-visible
+        &:hover,
+        &:focus-visible {
+          .ft-btn__icon {
+            filter: map-filters(whites, brand--all);
+
+            @include behavior-parent(pasatiempos) {
+              filter: map-filters(whites, brand--all);
+            }
+          }
+        }
+
+        // &.ft-btn
+        &.ft-btn {
+          // &-sm
+          &--sm {
+            @include padding(null null null 4rem);
+          }
+
+          // &-sm-md
+          &--sm-md {
+            @include padding(null null null 4rem);
+
+            @include min-screen(768px) {
+              @include padding(null null null 4.5rem);
+            }
+          }
+
+          // &-md
+          &--md {
+            @include padding(null null null 4.5rem);
+          }
+
+          // &-md
+          &--md-lg {
+            @include padding(null null null 4.5rem);
+
+            @include min-screen(768px) {
+              @include padding(null null null 5rem);
+            }
+          }
+
+          // &-lg
+          &--lg {
+            @include padding(null null null 5rem);
+          }
+        }
+      }
+    }
+  }
+
+  // &--tertiary
+  &--tertiary {
+    @include border-color(var(--color-black));
+    color: var(--color-white);
+    background-color: var(--color-black);
+
+    // @if $brand ==revistas
+    @if $brand ==revistas {
+      @include border-color(var(--color-primary));
+      color: var(--color-secondary);
+      background-color: var(--color-primary);
+    }
+
+    // behavior: btn--pulse
+    @include behavior-ft-btn--pulse(
+      // :hover, & focus: mobile background color
+      var(--color-white),
+      // :hover, & focus: mobile text color
+      var(--color-black),
+      // :hover, & focus: border color
+      var(--color-black),
+      // :hover, & focus: desktop text color
+      var(--color-black),
+      // hover & focus: desktop background color
+      var(--color-white),
+      // &:focus: desktop outline
+      0.4rem,
+      solid,
+      var(--color-black),
+      // &:focus: desktop outline offset
+      0.4rem,
+
+      // :active: mobile background color
+      var(--color-primary),
+      // :active: border color
+      var(--color-primary),
+      // :active: text color
+      var(--color-white),
+      // :active: background-color
+      var(--color-primary),
+      // :disabled: text color
+      null,
+
+      // disabled: background color
+      null
+    );
+
+    // behavior: bg(Color-black)
+    @include behavior-ft-helper-bg(Color-black) {
+      @include border-color(var(--color-white));
+      color: var(--color-black);
+      background-color: var(--color-white);
+
+      // behavior: btn--pulse
+      @include behavior-ft-btn--pulse(
+        // :hover, & focus: mobile background color
+        var(--color-black),
+        // :hover, & focus: mobile text color
+        null,
+
+        // :hover, & focus: border color
+        var(--color-white),
+        // :hover, & focus: desktop text color
+        var(--color-white),
+        // hover & focus: desktop background color
+        var(--color-black),
+        // &:focus: desktop outline
+        null,
+        null,
+        null,
+        // &:focus: desktop outline offset
+        null,
+
+        // :active: mobile background color
+        var(--color-primary),
+        // :active: border color
+        var(--color-primary),
+        // :active: text color
+        var(--color-white),
+        // :active: background-color
+        var(--color-primary),
+        // :disabled: text color
+        null,
+
+        // disabled: background color
+        null
+      );
+    }
+
+    // &-has
+    &-has {
+      // &--icon
+      &--icon {
+        @include position(relative, null null null null);
+
+        // &:hover, &:focus-visible
+        &:hover,
+        &:focus-visible {
+          .ft-btn__icon {
+            filter: map-filters(whites, brand--all);
+          }
+        }
+
+        // &.ft-btn
+        &.ft-btn {
+          // &-sm
+          &--sm {
+            @include padding(null null null 4rem);
+          }
+
+          // &-sm-md
+          &--sm-md {
+            @include padding(null null null 4rem);
+
+            @include min-screen(768px) {
+              @include padding(null null null 4.5rem);
+            }
+          }
+
+          // &-md
+          &--md {
+            @include padding(null null null 4.5rem);
+          }
+
+          // &-md
+          &--md-lg {
+            @include padding(null null null 4.5rem);
+
+            @include min-screen(768px) {
+              @include padding(null null null 5rem);
+            }
+          }
+
+          // &-lg
+          &--lg {
+            @include padding(null null null 5rem);
+          }
+        }
+      }
+    }
+  }
+
+  // &--hue-grey
+  &--hue-grey {
+    appearance: none;
+    -webkit-appearance: none;
+    filter: grayscale(100%) saturate(0);
+    -webkit-filter: grayscale(100%) saturate(0);
+  }
+
+  // &--scrollUp
+  &--scrollUp {
+    @include position(fixed, null 1rem 25% null);
+    @include padding(null 1rem null 1rem);
+    @include size(5rem, 5rem);
+    @include border-style(solid);
+    @include border-width(0.2rem 0.2rem 0.2rem 0.2rem);
+    @include transition-button(
+      0.15s,
+      // border-color
+      0.15s,
+      // background
+      0.15s // color
+    );
+    z-index: 5;
+    display: none;
+    background-color: var(--color-white);
+
+    // &:before
+    &:before {
+      content: "";
+      @include position(absolute, 0);
+      @include margin(auto);
+    }
+  }
+
+  // &__icon
+  &__icon {
+    @include position(absolute, 0 null 0 null);
+    @include margin(auto null auto null);
+
+    &:not(.ft-btn__icon--primal) {
+      @include behavior-parent-selector(".pasatiempos .ft-btn--secondary-has--icon") {
+        filter: invert(1);
+      }
+    }
+
+    // behavior: parent(ft-btn--sm)
+    @include behavior-parent(ft-btn--sm) {
+      max-height: 2rem;
+      max-width: 2rem;
+      left: 1.5rem;
+    }
+
+    // behavior: parent(ft-btn--sm-md)
+    @include behavior-parent(ft-btn--sm-md) {
+      max-height: 2rem;
+      max-width: 2rem;
+      left: 1.5rem;
+
+      @include min-screen(768px) {
+        @include size(2.3rem, 2.3rem);
+      }
+    }
+
+    // behavior: parent(ft-btn--md)
+    @include behavior-parent(ft-btn--md) {
+      @include size(2.3rem, 2.3rem);
+      left: 1.5rem;
+    }
+
+    // behavior: parent(ft-btn--md-lg)
+    @include behavior-parent(ft-btn--md-lg) {
+      @include size(2.3rem, 2.3rem);
+      left: 1.5rem;
+
+      @include min-screen(768px) {
+        @include size(2.6rem, 2.6rem);
+      }
+    }
+
+    // behavior: parent(ft-btn--lg)
+    @include behavior-parent(ft-btn--lg) {
+      @include size(2.6rem, 2.6rem);
+      left: 1.5rem;
+    }
+  }
+
+  &__badge {
+    aspect-ratio: 1 / 1;
+    position: absolute;
+    top: -1.2rem;
+    right: -0.2rem;
+    width: 2.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-mediumGrey);
+    color: var(--color-black);
+    @include font--body-XS;
+    @include fontBold;
+    border-radius: 50%;
+  }
+
+  // &-rrss
+  &-rrss {
+    @include position(relative, null);
+    @include margin(0);
+    @include size(3.4rem, 3.4rem);
+    @include border-style(solid);
+    @include border-width(0.2rem 0.2rem 0.2rem 0.2rem);
+    @include border-color(var(--color-white));
+    text-align: center;
+    @include min-click-area();
+
+    // :hover, &:focus-within
+    &:hover,
+    &:focus-within {
+      @include border-color(var(--color-black));
+      background: var(--color-white);
+    }
+
+    // &__text
+    &__text {
+      @include position(absolute, 0 null null -1.3rem);
+      @include hide-text;
+      pointer-events: none;
+      width: 5rem;
+    }
+
+    // &__icon
+    &__icon {
+      @include position(absolute, 0 0 0 0);
+      @include margin(auto auto auto auto);
+      pointer-events: none;
+      filter: map-filters(whites, brand--all);
+    }
+
+    // &--email
+    &--email {
+      @include border-top-radius(50%);
+      @include border-bottom-radius(50%);
+      background-color: var(--color-black);
+      display: inline-block;
+
+      // behavior: bg(Color-black)
+      @include behavior-ft-helper-bg(Color-black) {
+        background-color: var(--color-darkGrey);
+      }
+    }
+
+    // &--facebook
+    &--facebook {
+      @include border-top-radius(50%);
+      @include border-bottom-radius(50%);
+      display: inline-block;
+      background-color: var(--color-facebook);
+    }
+
+    // &--instagram
+    &--instagram {
+      @include border-top-radius(50%);
+      @include border-bottom-radius(50%);
+      box-sizing: border-box;
+      display: inline-block;
+      background: var(--color-instagram);
+    }
+
+    // &--linkedin
+    &--linkedin {
+      @include border-top-radius(50%);
+      @include border-bottom-radius(50%);
+      background-color: var(--color-linkedin);
+      display: inline-block;
+      transition:
+        border-color 200ms ease,
+        background-color 200ms ease;
+    }
+
+    // &--pinterest
+    &--pinterest {
+      @include border-top-radius(50%);
+      @include border-bottom-radius(50%);
+      background-color: var(--color-pinterest);
+      display: inline-block;
+      transition:
+        border-color 200ms ease,
+        background-color 200ms ease;
+    }
+
+    // &--snapchat
+    &--snapchat {
+      @include border-top-radius(50%);
+      @include border-bottom-radius(50%);
+      background-color: var(--color-snapchat);
+      display: inline-block;
+      transition:
+        border-color 200ms ease,
+        background-color 200ms ease;
+    }
+
+    // &--twitter
+    &--twitter {
+      @include border-top-radius(50%);
+      @include border-bottom-radius(50%);
+      background-color: var(--color-twitter);
+      display: inline-block;
+      transition:
+        border-color 200ms ease,
+        background-color 200ms ease;
+    }
+
+    // &--telegram
+    &--telegram {
+      @include border-top-radius(50%);
+      @include border-bottom-radius(50%);
+      background-color: var(--color-telegram);
+      display: inline-block;
+      transition:
+        border-color 200ms ease,
+        background-color 200ms ease;
+    }
+
+    // &--whatsapp
+    &--whatsapp {
+      @include border-top-radius(50%);
+      @include border-bottom-radius(50%);
+      background-color: var(--color-whatsapp);
+      display: inline-block;
+      transition:
+        border-color 200ms ease,
+        background-color 200ms ease;
+    }
+
+    // &--youtube
+    &--youtube {
+      @include border-top-radius(50%);
+      @include border-bottom-radius(50%);
+      background-color: var(--color-youtube);
+      display: inline-block;
+      transition:
+        border-color 200ms ease,
+        background-color 200ms ease;
+    }
+
+    // &--tiktok
+    &--tiktok {
+      @include border-top-radius(50%);
+      @include border-bottom-radius(50%);
+      background-color: var(--color-tiktok);
+      display: inline-block;
+      transition:
+        border-color 200ms ease,
+        background-color 200ms ease;
+    }
+
+    // &--threads
+    &--threads {
+      @include border-top-radius(50%);
+      @include border-bottom-radius(50%);
+      box-sizing: border-box;
+      display: inline-block;
+      background: var(--color-threads);
+    }
+
+    // &--bluesky
+    &--bluesky {
+      @include border-top-radius(50%);
+      @include border-bottom-radius(50%);
+      box-sizing: border-box;
+      display: inline-block;
+      background: var(--color-bluesky);
+    }
+
+    // &--bookmark
+    &--bookmark {
+      @include border-top-radius(50%);
+      @include border-bottom-radius(50%);
+      background-color: var(--color-tiktok);
+      display: inline-block;
+      transition:
+        border-color 200ms ease,
+        background-color 200ms ease;
+    }
+
+    // &--share
+    &--share {
+      @include border-top-radius(50%);
+      @include border-bottom-radius(50%);
+      background-color: var(--color-tiktok);
+      display: inline-block;
+      transition:
+        border-color 200ms ease,
+        background-color 200ms ease;
+    }
+
+    // &:hover
+    &:hover {
+      // .ft-btn-rrss
+      .ft-btn-rrss {
+        // &__icon
+        &__icon {
+          // &:before
+          &:before {
+            filter: map-filters(whites, brand--all);
+          }
+        }
+      }
+    }
+
+    // &:focus-within
+    &:focus-within {
+      @include focus--custom(var(--color-black));
+
+      // behavior: bg(Color-black)
+      @include behavior-ft-helper-bg(Color-black) {
+        @include focus--custom(var(--color-white));
+      }
+
+      // .ft-btn-rrss
+      .ft-btn-rrss {
+        // &__icon
+        &__icon {
+          // &:before
+          &:before {
+            filter: map-filters(whites, brand--all);
+          }
+        }
+      }
+    }
+
+    // &--primary
+    &--primary {
+      @include border-color(var(--color-mediumGrey));
+      background-color: transparent;
+      background-image: none;
+
+      // [class*="__icon"]
+      [class*="__icon"] {
+        width: 100%;
+        height: 100%;
+        filter: initial;
+
+        // &::before
+        &:before {
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background: transparent none center / contain no-repeat;
+          filter: invert(30%) sepia(2%) saturate(288%) hue-rotate(125deg)
+            brightness(235%) contrast(84%);
+        }
+      }
+
+      // &[class*="--email"]
+      &[class*="--email"] {
+        // [class*="__icon"]
+        [class*="__icon"] {
+          // &::before
+          &:before {
+            background-image: url("#{$images-path}/icons/rrss-solid-light-email.svg");
+          }
+        }
+      }
+
+      // &[class*="--facebook"]
+      &[class*="--facebook"] {
+        // [class*="__icon"]
+        [class*="__icon"] {
+          // &::before
+          &:before {
+            background-image: url("#{$images-path}/icons/rrss-solid-light-fb.svg");
+          }
+        }
+      }
+
+      // &[class*="--instagram"]
+      &[class*="--instagram"] {
+        // [class*="__icon"]
+        [class*="__icon"] {
+          // &::before
+          &:before {
+            background-image: url("#{$images-path}/icons/rrss-solid-light-instagram.svg");
+          }
+        }
+      }
+
+      // &[class*="--linkedin"]
+      &[class*="--linkedin"] {
+        // [class*="__icon"]
+        [class*="__icon"] {
+          // &::before
+          &:before {
+            background-image: url("#{$images-path}/icons/rrss-solid-light-linkedin.svg");
+          }
+        }
+      }
+
+      // &[class*="--pinterest"]
+      &[class*="--pinterest"] {
+        // [class*="__icon"]
+        [class*="__icon"] {
+          // &::before
+          &:before {
+            background-image: url("#{$images-path}/icons/rrss-solid-light-pinterest.svg");
+          }
+        }
+      }
+
+      // &[class*="--snapchat"]
+      &[class*="--snapchat"] {
+        // [class*="__icon"]
+        [class*="__icon"] {
+          // &::before
+          &:before {
+            background-image: url("#{$images-path}/icons/rrss-solid-light-snapchat.svg");
+          }
+        }
+      }
+
+      // &[class*="--twitter"]
+      &[class*="--twitter"] {
+        // [class*="__icon"]
+        [class*="__icon"] {
+          // &::before
+          &:before {
+            background-image: url("#{$images-path}/icons/rrss-solid-light-twitter.svg");
+          }
+        }
+      }
+
+      // &[class*="--whatsapp"]
+      &[class*="--whatsapp"] {
+        // [class*="__icon"]
+        [class*="__icon"] {
+          // &::before
+          &:before {
+            background-image: url("#{$images-path}/icons/rrss-solid-light-whatsapp.svg");
+          }
+        }
+      }
+
+      // &[class*="--youtube"]
+      &[class*="--youtube"] {
+        // [class*="__icon"]
+        [class*="__icon"] {
+          // &::before
+          &:before {
+            background-image: url("#{$images-path}/icons/rrss-solid-light-youtube.svg");
+          }
+        }
+      }
+
+      // &[class*="--telegram"]
+      &[class*="--telegram"] {
+        // [class*="__icon"]
+        [class*="__icon"] {
+          // &::before
+          &:before {
+            background-image: url("#{$images-path}/icons/rrss-solid-light-telegram.svg");
+          }
+        }
+      }
+
+      // &[class*="--tiktok"]
+      &[class*="--tiktok"] {
+        // [class*="__icon"]
+        [class*="__icon"] {
+          // &::before
+          &:before {
+            background-image: url("#{$images-path}/icons/rrss-solid-light-tiktok.svg");
+          }
+        }
+      }
+
+      // &[class*="--threads"]
+      &[class*="--threads"] {
+        // [class*="__icon"]
+        [class*="__icon"] {
+          // &::before
+          &:before {
+            background-image: url("#{$images-path}/icons/rrss-solid-light-threads.svg");
+          }
+        }
+      }
+
+      // &[class*="--bluesky"]
+      &[class*="--bluesky"] {
+        // [class*="__icon"]
+        [class*="__icon"] {
+          // &::before
+          &:before {
+            background-image: url("#{$images-path}/icons/rrss-solid-light-bluesky.svg");
+          }
+        }
+      }
+
+      // &:hover
+      &:hover {
+        background-color: var(--color-black);
+
+        // .ft-btn-rrss
+        .ft-btn-rrss {
+          // &__icon
+          &__icon {
+            // &:before
+            &:before {
+              filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg)
+                brightness(103%) contrast(103%);
+            }
+          }
+        }
+      }
+
+      // &:focus-within
+      &:focus-within {
+        background-color: transparent;
+
+        // .ft-btn-rrss
+        .ft-btn-rrss {
+          // &__icon
+          &__icon {
+            // &:before
+            &:before {
+              filter: invert(30%) sepia(2%) saturate(288%) hue-rotate(125deg)
+                brightness(235%) contrast(84%);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // &-nav
+  &-nav {
+    @include position(relative, null);
+    @include margin(null);
+    @include size(3rem, 3rem);
+    @include border-style(solid);
+    @include border-width(0.2rem 0.2rem 0.2rem 0.2rem);
+    @include border-color(transparent);
+    @include border-top-radius(100%);
+    @include border-bottom-radius(100%);
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    transition: border-color 0.2s ease;
+    background-color: transparent;
+    color: var(--color-black);
+    @include min-click-area();
+
+   @include min-screen(768px) {
+         @include size(3.4rem, 3.4rem);
+      }
+
+    // &__icon
+    &__icon {
+      @include position(absolute, null null null null);
+      @include size(1.8rem, 1.8rem);
+      pointer-events: none;
+      // @include behavior-parent(ft-btn-nav--md)
+      @include behavior-parent(ft-btn-nav--md) {
+        @include size(2.8rem, 2.8rem);
+      }
+
+      // &:after
+      &:after {
+        content: "";
+        @include position(absolute, 0 0 0 0);
+        @include margin(auto);
+        @include size(1.6rem);
+        transition: filter 0.2s ease;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        // @include behavior-parent(ft-btn-nav--md)
+        @include behavior-parent(ft-btn-nav--md) {
+          @include size(2.4rem);
+        }
+
+        // behavior: bg(Color-black)
+        @include behavior-ft-helper-bg(Color-black) {
+          filter: map-filters(whites, brand--all);
+        }
+      }
+    }
+
+    // &__text
+    &__text {
+      @include position(absolute, null null null 0);
+      @include hide-text;
+      pointer-events: none;
+    }
+
+    // &--md
+    &--md {
+      @include size(4.4rem, 4.4rem);
+    }
+
+    // &--back
+    &--back {
+      // .ft-btn-nav
+      .ft-btn-nav {
+        // &__icon
+        &__icon {
+          // &:after
+          &:after {
+            background-image: url("#{$images-path}/icons/nav-solid-light-back.svg");
+          }
+        }
+      }
+    }
+
+    // &--close
+    &--close {
+      // .ft-btn-nav
+      .ft-btn-nav {
+        // &__icon
+        &__icon {
+          // &:after
+          &:after {
+            background-image: url("#{$images-path}/icons/nav-solid-light-close.svg");
+          }
+        }
+      }
+    }
+
+    // &--send
+    &--send {
+      // .ft-btn-nav
+      .ft-btn-nav {
+        // &__icon
+        &__icon {
+          // &:after
+          &:after {
+            background-image: url("#{$images-path}/icons/nav-solid-light-send.svg");
+          }
+        }
+      }
+    }
+
+    // &--remove
+    &--remove {
+      // .ft-btn-nav
+      .ft-btn-nav {
+        // &__icon
+        &__icon {
+          // &:after
+          &:after {
+            background-image: url("#{$images-path}/icons/nav-solid-light-remove.svg");
+          }
+        }
+      }
+    }
+
+    // &--right
+    &--right {
+      // .ft-btn-nav
+      .ft-btn-nav {
+        // &__icon
+        &__icon {
+          // &:after
+          &:after {
+            background-image: url("#{$images-path}/icons/nav-solid-light-right.svg");
+          }
+        }
+      }
+    }
+
+    // &--down
+    &--down {
+      // .ft-btn-nav
+      .ft-btn-nav {
+        // &__icon
+        &__icon {
+          // &:after
+          &:after {
+            background-image: url("#{$images-path}/icons/nav-solid-light-down.svg");
+          }
+        }
+      }
+    }
+
+    // &--left
+    &--left {
+      // .ft-btn-nav
+      .ft-btn-nav {
+        // &__icon
+        &__icon {
+          // &:after
+          &:after {
+            background-image: url("#{$images-path}/icons/nav-solid-light-left.svg");
+          }
+        }
+      }
+    }
+
+    // &--viewfull
+    &--viewfull {
+      // .ft-btn-nav
+      .ft-btn-nav {
+        // &__icon
+        &__icon {
+          // &:after
+          &:after {
+            background-image: url("#{$images-path}/icons/nav-solid-light-view-full.svg");
+          }
+        }
+      }
+    }
+
+    // &--viewgrid
+    &--viewgrid {
+      // .ft-btn-nav
+      .ft-btn-nav {
+        // &__icon
+        &__icon {
+          // &:after
+          &:after {
+            background-image: url("#{$images-path}/icons/nav-solid-light-view-grid.svg");
+          }
+        }
+      }
+    }
+
+    // &--info
+    &--info {
+      // .ft-btn-nav
+      .ft-btn-nav {
+        // &__icon
+        &__icon {
+          // &:after
+          &:after {
+            background-image: url("#{$images-path}/icons/nav-solid-light-info.svg");
+          }
+        }
+      }
+    }
+
+    // &--user
+    &--user {
+      // .ft-btn-nav
+      .ft-btn-nav {
+        // &__icon
+        &__icon {
+          // &:after
+          &:after {
+            background-image: url("#{$images-path}/icons/nav-solid-light-user.svg");
+          }
+        }
+      }
+    }
+
+    // &--users
+    &--users {
+      // .ft-btn-nav
+      .ft-btn-nav {
+        // &__icon
+        &__icon {
+          // &:after
+          &:after {
+            background-image: url("#{$images-path}/icons/nav-solid-light-users.svg");
+          }
+        }
+      }
+    }
+
+    // &--edit
+    &--edit {
+      // .ft-btn-nav
+      .ft-btn-nav {
+        // &__icon
+        &__icon {
+          // &:after
+          &:after {
+            background-image: url("#{$images-path}/icons/nav-solid-light-edit.svg");
+          }
+        }
+      }
+    }
+
+    // &--delete
+    &--delete {
+      // .ft-btn-nav
+      .ft-btn-nav {
+        // &__icon
+        &__icon {
+          // &:after
+          &:after {
+            background-image: url("#{$images-path}/icons/nav-solid-light-delete.svg");
+          }
+        }
+      }
+    }
+
+    // &--query
+    &--query {
+      // .ft-btn-nav
+      .ft-btn-nav {
+        // &__icon
+        &__icon {
+          // &:after
+          &:after {
+            background-image: url("#{$images-path}/icons/nav-solid-light-ask.svg");
+          }
+        }
+      }
+    }
+
+    // &--copy
+    &--copy {
+      // .ft-btn-nav
+      .ft-btn-nav {
+        // &__icon
+        &__icon {
+          // &:after
+          &:after {
+            background-image: url("#{$images-path}/icons/nav-solid-light-copy.svg");
+          }
+        }
+      }
+    }
+
+    // &--arrow
+    &--arrow {
+      // .ft-btn-nav
+      .ft-btn-nav {
+        // &__icon
+        &__icon {
+          // &:after
+          &:after {
+            background-image: url("#{$images-path}/icons/nav-solid-light-arrow.svg");
+          }
+        }
+      }
+    }
+
+    // &--favorite
+    &--favorite {
+      // .ft-btn-nav
+      .ft-btn-nav {
+        // &__icon
+        &__icon {
+          // &:after
+          &:after {
+            background-image: url("#{$images-path}/icons/nav-solid-favorite.svg");
+
+            @include behavior-parent-nested(ft-btn-nav--active) {
+              background-image: url("#{$images-path}/icons/nav-solid-favorite--active.svg");
+            }
+          }
+        }
+      }
+    }
+
+    // &--gift
+    &--gift {
+      // .ft-btn-nav
+      .ft-btn-nav {
+        // &__icon
+        &__icon {
+          // &:after
+          &:after {
+            background-image: url("#{$images-path}/icons/nav-solid-light-gift.svg");
+          }
+        }
+      }
+    }
+
+    // &--like
+    &--like {
+      // .ft-btn-nav
+      .ft-btn-nav {
+        // &__icon
+        &__icon {
+          // &:after
+          &:after {
+            background-image: url("#{$images-path}/icons/nav-solid-light-thumb-ok.svg");
+          }
+        }
+      }
+    }
+
+    // &--dislike
+    &--dislike {
+      // .ft-btn-nav
+      .ft-btn-nav {
+        // &__icon
+        &__icon {
+          // &:after
+          &:after {
+            background-image: url("#{$images-path}/icons/nav-solid-light-thumb-ko.svg");
+          }
+        }
+      }
+    }
+
+    // &--bookmark
+    &--bookmark {
+      // .ft-btn-nav
+      .ft-btn-nav {
+        // &__icon
+        &__icon {
+          // &:after
+          &:after {
+            background-image: url("#{$images-path}/icons/nav-solid-light-bookmark.svg");
+          }
+        }
+      }
+    }
+
+    // &--share
+    &--share {
+      // .ft-btn-nav
+      .ft-btn-nav {
+        // &__icon
+        &__icon {
+          // &:after
+          &:after {
+            background-image: url("#{$images-path}/icons/nav-solid-light-share.svg");
+          }
+        }
+      }
+    }
+
+    // &--reload
+    &--reload {
+      // .ft-btn-nav
+      .ft-btn-nav {
+        // &__icon
+        &__icon {
+          // &:after
+          &:after {
+            background-image: url("#{$images-path}/icons/nav-solid-light-reload.svg");
+          }
+        }
+      }
+    }
+
+    // &---more-v
+    &--more-v {
+      // .ft-btn-nav
+      .ft-btn-nav {
+        // &__icon
+        &__icon {
+          // &:after
+          &:after {
+            background-image: url("#{$images-path}/icons/nav-solid-light-actions-more.svg");
+          }
+        }
+      }
+    }
+
+    // &---plus
+    &--plus {
+      // .ft-btn-nav
+      .ft-btn-nav {
+        // &__icon
+        &__icon {
+          // &:after
+          &:after {
+            background-image: url("#{$images-path}/icons/nav-solid-light-actions-plus.svg");
+          }
+        }
+      }
+    }
+
+    // &--check
+    &--check {
+      // .ft-btn-nav
+      .ft-btn-nav {
+        // &__icon
+        &__icon {
+          // &:after
+          &:after {
+            background-image: url("#{$images-path}/icons/nav-solid-light-check.svg");
+          }
+        }
+      }
+    }
+
+    // &---minus
+    &--minus {
+      // .ft-btn-nav
+      .ft-btn-nav {
+        // &__icon
+        &__icon {
+          // &:after
+          &:after {
+            background-image: url("#{$images-path}/icons/nav-solid-light-actions-minus.svg");
+          }
+        }
+      }
+    }
+
+    // &--bordered
+    &--bordered {
+      @include border-color(var(--color-black));
+      //boton like
+      @include behavior-parent-nested(ft-btn-nav--like) {
+        @include border-color(var(--color-functional-success));
+      }
+      //boton dislike
+      @include behavior-parent-nested(ft-btn-nav--dislike) {
+        @include border-color(var(--color-functional-error));
+      }
+      //boton dislike
+      @include behavior-parent-nested(ft-btn-nav--active) {
+        @include border-color(var(--color-functional-error));
+      }
+      // behavior: bg(Color-black)
+      @include behavior-ft-helper-bg(Color-black) {
+        @include border-color(var(--color-white));
+      }
+
+      // &:hover
+      &:hover {
+        @include border-color(var(--color-primary));
+
+        //boton dislike
+        @include behavior-parent-nested(ft-btn-nav--active) {
+          @include border-color(var(--color-black));
+        }
+        // @if $brand ==epe
+        @if $brand ==epe {
+          filter: map-filters(blues, brand--epe);
+          @include behavior-parent(pasatiempos) {
+            filter: map-filters(blacks, brand--all);
+          }
+        }
+
+        // @if $brand ==ep
+        @if $brand ==ep {
+          filter: map-filters(reds, brand--ep);
+          @include behavior-parent(pasatiempos) {
+            filter: map-filters(blacks, brand--all);
+          }
+        }
+
+        // @if $brand ==regionales
+        @if $brand ==regionales {
+          filter: map-filters(blues, brand--regionales);
+          @include behavior-parent(pasatiempos) {
+            filter: map-filters(blacks, brand--all);
+          }
+        }
+
+        // @if $brand ==sport
+        @if $brand ==sport {
+          filter: map-filters(reds, brand--sport);
+          @include behavior-parent(pasatiempos) {
+            filter: map-filters(blacks, brand--all);
+          }
+        }
+
+        // @if $brand ==ux
+        @if $brand ==ux {
+          filter: map-filters(greys, brand--500);
+          @include behavior-parent(pasatiempos) {
+            filter: map-filters(blacks, brand--all);
+          }
+        }
+      }
+    }
+
+    // &--circle
+    &--circle {
+      border-width: 1px;
+      border-color: var(--color-mediumGrey);
+      border-radius: 50%;
+
+      // &--sm-md
+      &--sm-md {
+        @media (min-width: 768px) {
+          @include size(4.4rem);
+        }
+      }
+
+      // &--md
+      &--md {
+        @include size(4.4rem);
+      }
+
+      // &--lg
+      &--lg {
+        @include size(4.4rem);
+
+        @media (min-width: 768px) {
+          @include size(6rem);
+        }
+      }
+
+      // &:hover
+      &:hover {
+        @include border-color(var(--color-primary));
+
+        //boton dislike
+        @include behavior-parent-nested(ft-btn-nav--active) {
+          @include border-color(var(--color-black));
+        }
+        // @if $brand ==epe
+        @if $brand ==epe {
+          filter: map-filters(blues, brand--epe);
+          @include behavior-parent(pasatiempos) {
+            filter: map-filters(blacks, brand--all);
+          }
+        }
+
+        // @if $brand ==ep
+        @if $brand ==ep {
+          filter: map-filters(reds, brand--ep);
+          @include behavior-parent(pasatiempos) {
+            filter: map-filters(blacks, brand--all);
+          }
+        }
+
+        // @if $brand ==regionales
+        @if $brand ==regionales {
+          filter: map-filters(blues, brand--regionales);
+          @include behavior-parent(pasatiempos) {
+            filter: map-filters(blacks, brand--all);
+          }
+        }
+
+        // @if $brand ==sport
+        @if $brand ==sport {
+          filter: map-filters(reds, brand--sport);
+          @include behavior-parent(pasatiempos) {
+            filter: map-filters(blacks, brand--all);
+          }
+        }
+
+        // @if $brand ==ux
+        @if $brand ==ux {
+          filter: map-filters(greys, brand--500);
+          @include behavior-parent(pasatiempos) {
+            filter: map-filters(blacks, brand--all);
+          }
+        }
+      }
+    }
+
+    // &--square
+    &--square {
+      border-width: 1px;
+      border-color: var(--color-mediumGrey);
+      border-radius: 4px;
+
+      // &--md
+      &--md {
+        @include size(4.4rem);
+      }
+
+      // &--lg
+      &--lg {
+        @include size(4.4rem);
+
+        @media (min-width: 768px) {
+          @include size(6rem);
+        }
+      }
+
+      // &:hover
+      &:hover {
+        @include border-color(var(--color-primary));
+
+        //boton dislike
+        @include behavior-parent-nested(ft-btn-nav--active) {
+          @include border-color(var(--color-black));
+        }
+        // @if $brand ==epe
+        @if $brand ==epe {
+          filter: map-filters(blues, brand--epe);
+          @include behavior-parent(pasatiempos) {
+            filter: map-filters(blacks, brand--all);
+          }
+        }
+
+        // @if $brand ==ep
+        @if $brand ==ep {
+          filter: map-filters(reds, brand--ep);
+          @include behavior-parent(pasatiempos) {
+            filter: map-filters(blacks, brand--all);
+          }
+        }
+
+        // @if $brand ==regionales
+        @if $brand ==regionales {
+          filter: map-filters(blues, brand--regionales);
+          @include behavior-parent(pasatiempos) {
+            filter: map-filters(blacks, brand--all);
+          }
+        }
+
+        // @if $brand ==sport
+        @if $brand ==sport {
+          filter: map-filters(reds, brand--sport);
+          @include behavior-parent(pasatiempos) {
+            filter: map-filters(blacks, brand--all);
+          }
+        }
+
+        // @if $brand ==ux
+        @if $brand ==ux {
+          filter: map-filters(greys, brand--500);
+          @include behavior-parent(pasatiempos) {
+            filter: map-filters(blacks, brand--all);
+          }
+        }
+      }
+    }
+
+    // &--checked
+    &--checked {
+      border-color: var(--color-functional-success);
+
+      &:before {
+        content: "";
+        @include position(absolute, -0.9rem -0.4rem null null);
+        @include size(1.8rem);
+        background-image: url('data:image/svg+xml;utf-8,<svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.2328 2.06529C13.2357 1.63103 12.9794 1.23689 12.5812 1.0635C12.183 0.890115 11.7199 0.9709 11.4039 1.26883L11.4037 1.26863L4.97765 7.52529L2.8604 5.16737L2.86021 5.16761C2.43011 4.79601 1.78574 4.82079 1.38544 5.22431L0.950959 5.66111C0.559474 6.05547 0.525122 6.68042 0.871025 7.11532L0.87084 7.11545L4.34676 11.4835L4.34693 11.4833C4.55217 11.7423 4.8645 11.8933 5.19493 11.8933C5.52537 11.8933 5.8377 11.7423 6.04294 11.4833L6.04312 11.4835L12.9948 2.74747L12.9947 2.74733C13.1492 2.55365 13.2332 2.31309 13.2328 2.06529Z" fill="white"/></svg>');
+        background-color: var(--color-functional-success);
+        background-size: 1rem;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 50%;
+      }
+    }
+
+    // &--shadow
+    &--shadow {
+      box-shadow: 0 2px 2px 0 var(--color-darkGrey);
+
+      &:active {
+        top: 2px;
+        box-shadow: inset 0 2px 2px 0 var(--color-darkGrey);
+      }
+    }
+
+    // &:hover
+    &:hover {
+      // .ft-btn-nav
+      .ft-btn-nav {
+        // &__icon
+        &__icon {
+          // &:after
+          &:after {
+            filter: map-filters(blacks, brand--all);
+            -webkit-filter: map-filters(blacks, brand--all);
+          }
+        }
+      }
+    }
+
+    // &:focus-within
+    &:focus-within {
+      @include focus--custom(var(--color-white));
+    }
+
+    // &:disabled
+    &:disabled {
+      // .ft-btn-nav
+      .ft-btn-nav {
+        // &__icon
+        &__icon {
+          &:after {
+            filter: map-filters(greys, brand--300);
+          }
+        }
+      }
+
+      // &.ft-btn-nav
+      &.ft-btn-nav {
+        // &--bordered
+        &--bordered {
+          @include border-color(var(--color-quaternary));
+        }
+      }
+
+      // &:hover
+      &:hover {
+        cursor: not-allowed;
+
+        // .ft-btn-nav
+        .ft-btn-nav {
+          // &__icon
+          &__icon {
+            // &:after
+            &:after {
+              filter: map-filters(greys, brand--300);
+            }
+          }
+        }
+      }
+    }
+
+    // &--primary
+    &--primary {
+      @include border-color(var(--color-mediumGrey));
+      background-color: transparent;
+      background-image: none;
+
+      // [class*="__icon"]
+      [class*="__icon"] {
+        // &::after
+        &:after {
+          background: transparent none center / contain no-repeat;
+          filter: invert(30%) sepia(2%) saturate(288%) hue-rotate(125deg)
+            brightness(235%) contrast(84%);
+        }
+      }
+
+      // &[class*="--copy"]
+      &[class*="--copy"] {
+        // [class*="__icon"]
+        [class*="__icon"] {
+          // &::before
+          &:after {
+            background-image: url("#{$images-path}/icons/nav-solid-light-copy.svg");
+          }
+        }
+      }
+
+      // &:hover
+      &:hover {
+        @include border-color(var(--color-black));
+        background-color: var(--color-black);
+
+        // .ft-btn-nav__icon
+        .ft-btn-nav__icon {
+          // &:after
+          &:after {
+            filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg)
+              brightness(103%) contrast(103%);
+          }
+        }
+      }
+
+      // &:focus-within
+      &:focus-within {
+        background-color: transparent;
+
+        // .ft-btn-nav__icon
+        .ft-btn-nav__icon {
+          // &:after
+          &:after {
+            filter: invert(30%) sepia(2%) saturate(288%) hue-rotate(125deg)
+              brightness(235%) contrast(84%);
+          }
+        }
+      }
+    }
+  }
+
+  // &-help
+  &-help {
+    @include position(relative, null null null null);
+    @include border-style(solid);
+    @include border-width(0.2rem 0.2rem 0.2rem 0.2rem);
+    @include border-top-radius(2.5rem);
+    @include border-bottom-radius(2.5rem);
+    @include padding(1rem 1rem 1rem 4rem);
+    @include transition-button(
+      100ms,
+      // border-color
+      50ms,
+      // background
+      100ms // color
+    );
+    @include border-color(var(--color-primary));
+    color: var(--color-primary);
+    @include min-click-area();
+
+    // &:before
+    &:before {
+      content: "";
+      @include position(absolute, 0 null 0 1rem);
+      @include margin(auto null auto null);
+      @include size(2.5rem, 2.5rem);
+      @include border-style(solid);
+      @include border-width(0.2rem 0.2rem 0.2rem 0.2rem);
+      @include border-color(var(--color-black));
+      @include border-top-radius(50%);
+      @include border-bottom-radius(50%);
+      background: center / 50% no-repeat
+        url("#{$images-path}/icons/nav-solid-light-ask.svg");
+    }
+
+    // &:hover
+    &:hover {
+      color: var(--color-quaternary);
+      background-color: var(--color-white);
+
+      // &:before
+      &:before {
+        filter: map-filters(blacks, brand--all);
+      }
+    }
+
+    // &:focus-within
+    &:focus-within {
+      @include focus--custom(var(--color-white));
+    }
+
+    // behavior: bg(Color-black)
+    @include behavior-ft-helper-bg(Color-black) {
+      @include border-color(var(--color-white));
+      background-color: transparent;
+
+      // &:before
+      &:before {
+        filter: map-filters(whites, brand--all);
+      }
+
+      // &:hover
+      &:hover {
+        color: var(--color-black);
+        background-color: var(--color-white);
+
+        // &:before
+        &:before {
+          filter: map-filters(blacks, brand--all);
+        }
+      }
+    }
+  }
+
+  // &-txt
+  &-txt {
+    @include padding(1rem null 1rem null);
+    display: inline-flex;
+    align-items: center;
+
+    // &__text
+    &__text {
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+    }
+
+    // &__icon
+    &__icon {
+      @include position(relative, null null null null);
+      @include margin(null null null 0.5rem);
+      @include padding(1rem);
+      @include size(1.2rem, 1.2rem);
+      @include border-style(solid);
+      @include border-width(0.2rem);
+      @include border-color(transparent);
+      @include border-top-radius(50%);
+      @include border-bottom-radius(50%);
+
+      // &:after
+      &:after {
+        content: "";
+        @include position(absolute, 0 0 0 0);
+        @include margin(auto);
+        @include size(1.2rem, 1.2rem);
+        transition: filter 0.2s ease;
+
+        // behavior: bg(Color-black)
+        @include behavior-ft-helper-bg(Color-black) {
+          filter: map-filters(whites, brand--all);
+        }
+      }
+    }
+
+    // &--close
+    &--close {
+      // #{ $self }
+      #{ $self } {
+        // &-txt
+        &-txt {
+          // &__icon
+          &__icon {
+            // &::after
+            &:after {
+              background: center / 50% no-repeat
+                url("#{$images-path}/icons/nav-solid-light-close.svg");
+            }
+          }
+        }
+      }
+    }
+
+    // &:hover, &:focus-visible
+    &:hover,
+    &:focus-visible {
+      text-decoration: underline;
+
+      // #{ $self }
+      #{ $self } {
+        // &-txt
+        &-txt {
+          // &__icon
+          &__icon {
+            @include border-color(var(--color-black));
+
+            // behavior: bg(Color-black)
+            @include behavior-ft-helper-bg(Color-black) {
+              @include border-color(var(--color-white));
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // &-is
+  &-is {
+    // &--squared
+    &--squared {
+      @include padding(0);
+      border-radius: 0;
+
+      // [class*="__icon"]
+      [class*="__icon"] {
+        @include margin(null auto null auto);
+        right: 0;
+        left: 0;
+        pointer-events: none;
+      }
+
+      // [class*="--sm"]
+      &[class*="--sm"] {
+        @include padding(1.5rem);
+      }
+
+      // [class*="--md"]
+      &[class*="--md"] {
+        @include padding(2rem);
+      }
+
+      // [class*="--lg"]
+      &[class*="--lg"] {
+        @include padding(2rem);
+      }
+
+      // &:hover, &:focus
+      &:hover,
+      &:focus {
+        // svg
+        svg {
+          // path, rect, circle, ellipse, line, polyline, polygon, text
+          path,
+          rect,
+          circle,
+          ellipse,
+          line,
+          polyline,
+          polygon,
+          text {
+            fill: var(--color-white);
+          }
+        }
+      }
+    }
+
+    &--disabled {
+      @include border-color(var(--color-darkGrey));
+      @include behavior-parent(pasatiempos) {
+        @include border-color(var(--color-darkGrey));
+      }
+
+      // &--primary, &--tertiary
+      &Primary,
+      &Tertiary {
+        color: var(--color-white);
+        background-color: var(--color-darkGrey);
+      }
+
+      // &--secondary
+      &Secondary {
+        color: var(--color-darkGrey);
+        background-color: null;
+        @include behavior-parent(pasatiempos) {
+          color: var(--color-darkGrey);
+          background-color: null;
+        }
+      }
+
+      // &:hover
+      &:hover,
+      &:focus {
+        cursor: not-allowed;
+        @include behavior-parent(pasatiempos) {
+          cursor: not-allowed;
+          color: var(--color-darkGrey);
+          @include border-color(var(--color-darkGrey));
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
+  // &-has
+  &-has {
+    // &--icon-rgt
+    &--icon-rgt {
+      // .ft-btn__icon
+      .ft-btn__icon {
+        left: auto;
+        right: 1.5rem;
+      }
+
+      // &.ft-btn 
+      &.ft-btn {
+        // &--sm
+        &--sm {
+          @include padding(null 4rem null 1.5rem);
+        }
+
+        // &--sm-md
+        &--sm-md {
+          @include padding(null 4rem null 1.5rem);
+
+          @include min-screen(768px) {
+            @include padding(null 4.5rem null 2rem);
+          }
+        }
+
+        // &--md
+        &--md {
+          @include padding(null 4.5rem null 2rem);
+        }
+
+        // &--md-lg
+        &--md-lg {
+          @include padding(null 4.5rem null 2rem);
+
+          @include min-screen(768px) {
+            @include padding(null 5rem null 2rem);
+          }
+        }
+
+        // &--lg
+        &--lg {
+          @include padding(null 5rem null 2rem);
+        }
+      }
+    }
+  }
+
+  // &:focus
+  &:focus {
+    outline: 0;
+  }
+
+  // &:disabled — override por marca (asegura estilos en todas las marcas tras recompilar)
+  @if $brand ==ux {
+    &:disabled,
+    &[disabled] {
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+    &.ft-btn--primary:disabled,
+    &.ft-btn--primary[disabled],
+    &.ft-btn--tertiary:disabled,
+    &.ft-btn--tertiary[disabled] {
+      @include border-color(var(--color-mediumGrey));
+      color: var(--color-darkGrey);
+      background-color: var(--color-lightGrey);
+    }
+    &.ft-btn--secondary:disabled,
+    &.ft-btn--secondary[disabled] {
+      @include border-color(var(--color-mediumGrey));
+      color: var(--color-darkGrey);
+      background-color: transparent;
+    }
+  }
+  @if $brand ==sport {
+    &:disabled,
+    &[disabled] {
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+    &.ft-btn--primary:disabled,
+    &.ft-btn--primary[disabled],
+    &.ft-btn--tertiary:disabled,
+    &.ft-btn--tertiary[disabled] {
+      @include border-color(var(--color-mediumGrey));
+      color: var(--color-darkGrey);
+      background-color: var(--color-lightGrey);
+    }
+    &.ft-btn--secondary:disabled,
+    &.ft-btn--secondary[disabled] {
+      @include border-color(var(--color-mediumGrey));
+      color: var(--color-darkGrey);
+      background-color: transparent;
+    }
+  }
+  @if $brand ==ep {
+    &:disabled,
+    &[disabled] {
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+    &.ft-btn--primary:disabled,
+    &.ft-btn--primary[disabled],
+    &.ft-btn--tertiary:disabled,
+    &.ft-btn--tertiary[disabled] {
+      @include border-color(var(--color-mediumGrey));
+      color: var(--color-darkGrey);
+      background-color: var(--color-lightGrey);
+    }
+    &.ft-btn--secondary:disabled,
+    &.ft-btn--secondary[disabled] {
+      @include border-color(var(--color-mediumGrey));
+      color: var(--color-darkGrey);
+      background-color: transparent;
+    }
+  }
+  @if $brand ==epe {
+    &:disabled,
+    &[disabled] {
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+    &.ft-btn--primary:disabled,
+    &.ft-btn--primary[disabled],
+    &.ft-btn--tertiary:disabled,
+    &.ft-btn--tertiary[disabled] {
+      @include border-color(var(--color-mediumGrey));
+      color: var(--color-darkGrey);
+      background-color: var(--color-lightGrey);
+    }
+    &.ft-btn--secondary:disabled,
+    &.ft-btn--secondary[disabled] {
+      @include border-color(var(--color-mediumGrey));
+      color: var(--color-darkGrey);
+      background-color: transparent;
+    }
+  }
+  @if $brand ==regionales {
+    &:disabled,
+    &[disabled] {
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+    &.ft-btn--primary:disabled,
+    &.ft-btn--primary[disabled],
+    &.ft-btn--tertiary:disabled,
+    &.ft-btn--tertiary[disabled] {
+      @include border-color(var(--color-mediumGrey));
+      color: var(--color-darkGrey);
+      background-color: var(--color-lightGrey);
+    }
+    &.ft-btn--secondary:disabled,
+    &.ft-btn--secondary[disabled] {
+      @include border-color(var(--color-mediumGrey));
+      color: var(--color-darkGrey);
+      background-color: transparent;
+    }
+  }
+  @if $brand ==revistas {
+    &:disabled,
+    &[disabled] {
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+    &.ft-btn--primary:disabled,
+    &.ft-btn--primary[disabled],
+    &.ft-btn--tertiary:disabled,
+    &.ft-btn--tertiary[disabled] {
+      @include border-color(var(--color-mediumGrey));
+      color: var(--color-darkGrey);
+      background-color: var(--color-lightGrey);
+    }
+    &.ft-btn--secondary:disabled,
+    &.ft-btn--secondary[disabled] {
+      @include border-color(var(--color-mediumGrey));
+      color: var(--color-darkGrey);
+      background-color: transparent;
+    }
+  }
+
+  // .ft-btn__icon--primal
+  .ft-btn__icon--primal.ft-btn__icon--primal,
+  &:hover .ft-btn__icon--primal.ft-btn__icon--primal,
+  &:focus .ft-btn__icon--primal.ft-btn__icon--primal,
+  &:focus-visible .ft-btn__icon--primal.ft-btn__icon--primal,
+  &:focus-within .ft-btn__icon--primal.ft-btn__icon--primal,
+  &:active .ft-btn__icon--primal.ft-btn__icon--primal,
+  &:disabled .ft-btn__icon--primal.ft-btn__icon--primal,
+  &[disabled] .ft-btn__icon--primal.ft-btn__icon--primal {
+    filter: unset;
+    -webkit-filter: unset;
+  }
+
+  @include min-click-area();
+}

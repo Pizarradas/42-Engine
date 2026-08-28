@@ -1,0 +1,26 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// ft-anchor
+// ===============================================
+.ft-anchor
+{
+
+
+    // generals
+    display: block;
+
+    &--absolute
+    {
+        @include position(absolute, null null null null);
+        overflow: hidden;
+        z-index: -1;
+    }
+
+    // END // ft-anchor
+}
+
+// ---------------------------------------------

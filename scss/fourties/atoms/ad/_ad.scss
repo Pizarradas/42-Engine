@@ -1,0 +1,705 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// ft-AD
+// ===============================================
+.ft-ad {
+    // generals4r55 
+    @include margin(null auto 2rem auto);
+    @include padding(null null 0 null);
+    min-height:125px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width:100%;
+
+           //  div[data-ad-position]
+           div[data-ad-position] {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+          }
+
+    // &:before
+    &:before {
+        @include margin(0 auto);
+        @include padding(.45rem null 0 null);
+        @include font--body-XS;
+        content: "Publicidad";
+        color: var(--color-quaternary);
+        text-transform: uppercase;
+        text-align: center;
+        align-items: center;
+        display: block;
+
+        @if $brand ==regionales {
+            @include behavior-parent(mallorca-zeitung) {
+                content: "werbung";
+            }
+
+            @include behavior-parent(diari-de-girona) {
+                content: "publicitat";
+            }
+
+            @include behavior-parent(regio7) {
+                content: "publicitat";
+            }
+
+            @include behavior-parent(emporda) {
+                content: "publicitat";
+            }
+        }
+
+    }
+
+    // &:first-child 
+    &:first-child {
+
+        // min-screen(768px)
+        @include min-screen(768px) {
+            @include margin(-24px null null null);
+
+            // behavior-parent(portada)
+            @include behavior-parent(portada) {
+                @include margin(-2px auto null auto);
+            }
+             // behavior-parent(portadilla-manual)
+            @include behavior-parent(portadilla-manual)
+            {
+                @include margin(-2px auto null auto);
+            }
+        }
+
+
+    }
+
+    // ---------------------------------------------
+
+    // &--sticky
+    &--sticky {
+        // generals
+        @include position(sticky, null null null null);
+        @include margin(0 auto);
+        @include padding(null null 0 null);
+        z-index: 10;
+        display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+
+        @if $brand ==revistas or $brand ==sport{
+            top: 60px;
+              @include behavior-parent(ft-ad--mega){
+            top:0;
+        }
+        }
+
+        @if $brand ==regionales or $brand ==ep or $brand ==epe or $brand ==ux{
+            top: 90px;
+              @include behavior-parent(ft-ad--mega){
+            top:0;
+        }
+        }
+
+      
+        // &:before  
+        &:before {
+            @include margin(null auto 0 auto);
+            @include padding(.45rem null 0 null);
+            @include font--body-XS;
+            content: none;
+            color: var(--color-quaternary);
+            text-transform: uppercase;
+            text-align: center;
+            align-items: center;
+            display: block;
+
+          
+                content: "Publicidad";
+         
+
+            @if $brand ==regionales {
+                @include behavior-parent(mallorca-zeitung) {
+                    content: "werbung";
+                }
+
+                @include behavior-parent(diari-de-girona) {
+                    content: "publicitat";
+                }
+
+                @include behavior-parent(regio7) {
+                    content: "publicitat";
+                }
+
+                @include behavior-parent(emporda) {
+                    content: "publicitat";
+                }
+            }
+
+            // min-screen(768px)
+            @include min-screen(768px) {
+                content: "Publicidad";
+
+                @if $brand ==regionales {
+                    @include behavior-parent(mallorca-zeitung) {
+                        content: "werbung";
+                    }
+
+                    @include behavior-parent(diari-de-girona) {
+                        content: "publicitat";
+                    }
+
+                    @include behavior-parent(regio7) {
+                        content: "publicitat";
+                    }
+
+                    @include behavior-parent(emporda) {
+                        content: "publicitat";
+                    }
+                }
+            }
+        }
+
+        //end  // &--sticky
+        // ---------------------------------------------
+
+    }
+
+    // ---------------------------------------------
+
+    // &--intext
+    // ----------------------------------------------
+    &--intext {
+        // generals
+        @include margin(3.5rem null 2.5rem null);
+        @include padding(1.25rem null 2rem null);
+        @include position(relative, null);
+        background-color: var(--color-lightGrey);
+        min-height: 270px;
+
+        // min-screen(768px)
+        @include min-screen(768px) {
+            min-height: 356px;
+        }
+
+        // &:first-child
+        &:first-child {
+
+            // min-screen(768px)
+            @include min-screen(768px) {
+                @include margin(0 null null null);
+            }
+        }
+
+         // &:before
+    &:before {
+        @include position(absolute, -27px null null 50%);
+        transform: translateX(-50%);
+    }
+
+        //&Notext
+        &Notext {
+
+            // &:before
+            &:before {
+                content: none;
+
+                @if $brand ==regionales {
+                    @include behavior-parent(mallorca-zeitung) {
+                        content: none;
+                    }
+
+                    @include behavior-parent(diari-de-girona) {
+                        content: none;
+                    }
+
+                    @include behavior-parent(regio7) {
+                        content: none;
+                    }
+
+                    @include behavior-parent(emporda) {
+                        content: none;
+                    }
+                }
+            }
+
+            // end //  &--Notext
+        }
+
+        // end //  &--intext
+    }
+
+    // ---------------------------------------------
+
+    // &--roba
+    // ---------------------------------------------
+    &--roba {
+        // generals
+        @include margin(0 auto 2.5rem auto);
+        @include padding(null null 0 null);
+        position: relative;
+        min-height: 600px;
+
+
+
+        // min-screen(768px)
+        @include min-screen(768px) {
+            min-height: 700px;
+            max-width: 300px;
+
+            // behavior-parent(portada)
+            @include behavior-parent(portada) {
+                height: calc(100% - 32px);
+            }
+        }
+ 
+
+        // &:first-child
+        &:first-child {
+
+            // min-screen(768px)
+            @include min-screen(768px) {
+                @include margin(-24px auto 2.5rem auto);
+
+                // behavior-parent(portada)
+                @include behavior-parent(portada) {
+                    @include margin(-2px auto 2.5rem auto);
+                }
+                 // behavior-parent(portadilla-manual)
+                @include behavior-parent(portadilla-manual)
+                {
+                @include margin(-2px auto 2.5rem auto);
+                }
+            }
+
+
+        }
+
+        // &:before
+        &:before {
+
+            // behavior parent: fourty
+            @include behavior-parent(fourty & sticky) {
+                // generals
+                content: none;
+            }
+
+        }
+
+        // &x2
+        &X2 {
+            min-height: 600px;
+        }
+
+        //&Notext
+        &Notext {
+
+            // &:before
+            &:before {
+                content: none;
+
+                @if $brand ==regionales {
+                    @include behavior-parent(mallorca-zeitung) {
+                        content: none;
+                    }
+
+                    @include behavior-parent(diari-de-girona) {
+                        content: none;
+                    }
+
+                    @include behavior-parent(regio7) {
+                        content: none;
+                    }
+
+                    @include behavior-parent(emporda) {
+                        content: none;
+                    }
+                }
+            }
+            // end //  &--Notext
+        }
+
+        // img
+        img {
+            @include margin(null auto);
+            max-width: -webkit-fill-available;
+            width: auto;
+
+        }
+
+        // end // &--roba
+    }
+
+    // ---------------------------------------------
+
+    // &--mega
+    // ---------------------------------------------
+    &--mega {
+        // generals
+
+        @include margin(1.25rem auto);
+        @include padding(1.25rem null);
+        max-width: 990px;
+        min-height: 125px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        @include border-style(solid);
+        @include border-width(0.10em 0);
+        @include border-color(var(--color-lightGrey));
+
+        @include behavior-parent(portada) {
+            @include border-width(0);
+        }
+        // behavior-parent(portadilla-manual)
+        @include behavior-parent(portadilla-manual)
+        {
+        @include border-width(0);
+        }
+
+        // min-screen(768px)
+        @include min-screen(768px) {
+            @include margin(0 auto 2rem auto);
+            @include padding(0 null 0 null);
+            @include border-style(none);
+            @include border-width(0);
+            min-height: 280px;
+        }
+
+        // &:first-child
+        &:first-child {
+
+            // min-screen(768px)
+            @include min-screen(768px) {
+                @include margin(0 null null null);
+
+                // behavior-parent(portada)
+                @include behavior-parent(portada) {
+                    @include margin(0 auto 2.5rem auto);
+                }
+                // behavior-parent(portadilla-manual)
+                @include behavior-parent(portadilla-manual)
+                {
+                    @include margin(0 auto 2.5rem auto);
+                }
+            }
+        }
+
+        // &:before
+        &:before {
+            @include margin(0px auto);
+            content: "Publicidad";
+
+                @if $brand ==regionales {
+                    @include behavior-parent(mallorca-zeitung) {
+                        content: "werbung";
+                    }
+
+                    @include behavior-parent(diari-de-girona) {
+                        content: "publicitat";
+                    }
+
+                    @include behavior-parent(regio7) {
+                        content: "publicitat";
+                    }
+
+                    @include behavior-parent(emporda) {
+                        content: "publicitat";
+                    }
+                }
+          
+        }
+
+        //&Notext
+        &Notext {
+
+            // &:before
+            &:before {
+                content: none;
+
+                @if $brand ==regionales {
+                    @include behavior-parent(mallorca-zeitung) {
+                        content: none;
+                    }
+
+                    @include behavior-parent(diari-de-girona) {
+                        content: none;
+                    }
+
+                    @include behavior-parent(regio7) {
+                        content: none;
+                    }
+
+                    @include behavior-parent(emporda) {
+                        content: none;
+                    }
+                }
+            }
+
+            // end //  &--Notext
+        }
+
+        // end // &--mega
+    }
+
+    // ---------------------------------------------
+
+
+    //&__image
+    &__image {
+        // generals
+        width: auto;
+    }
+
+    // ---------------------------------------------
+
+    // &--taboola
+    // ----------------------------------------------
+    &--taboola {
+        // generals
+        @include margin(0 auto);
+        @include position(relative, null);
+        min-height: 2620px; 
+
+        // min-screen(768px)
+        @include min-screen(768px) {
+            min-height: 860px;
+        }
+
+        // &:first-child
+        &:first-child {
+
+            // min-screen(768px)
+            @include min-screen(768px) {
+                @include margin(0 null null null);
+            }
+        }
+
+         // &:before
+        &:before {
+            content: none;
+
+            @if $brand ==regionales {
+                @include behavior-parent(mallorca-zeitung) {
+                    content: none;
+                }
+
+                @include behavior-parent(diari-de-girona) {
+                    content: none;
+                }
+
+                @include behavior-parent(regio7) {
+                    content: none;
+                }
+
+                @include behavior-parent(emporda) {
+                    content: none;
+                }
+            }
+        }
+
+        // end //  &--intext
+    }
+
+    // ---------------------------------------------
+
+
+    //  &--footer
+    &--footer {
+        // generals
+        @include position(fixed, null 0 0 0);
+        @include padding(1rem null 1rem null);
+        @include border-left-radius(.5rem);
+        @include border-bottom-radius(0);
+        background-color: var(--color-white);
+        width: 100%;
+        text-align: center;
+        max-width: 1010px;
+        margin: 0px auto;
+        box-shadow: 2px 2px 25px -6px rgba(0, 0, 0, 0.2);
+        z-index: 2000;
+        min-height:initial;
+
+
+        // &:before
+        &:before {
+            content: none;
+
+            @if $brand ==regionales {
+                @include behavior-parent(mallorca-zeitung) {
+                    content: none;
+                }
+
+                @include behavior-parent(diari-de-girona) {
+                    content: none;
+                }
+
+                @include behavior-parent(regio7) {
+                    content: none;
+                }
+
+                @include behavior-parent(emporda) {
+                    content: none;
+                }
+            }
+        }
+
+        //  &__content
+        &__content {
+            @include position(relative, null null null nul);
+            @include padding(0);
+            max-width: 1010px;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin: 0px auto;
+
+            // .ft-btn-nav
+            .ft-btn-nav {
+                height: 2.5rem;
+                width: 2.5rem;
+            }
+
+            // .ft-btn-nav--close
+            .ft-btn-nav--close {
+                @include position(absolute, -3rem 0 null nul);
+                @include border-top-radius(0);
+                @include border-bottom-radius(0);
+                @include margin(0);
+                background-color: var(--color-white);
+                box-shadow: 0px -6px 8px rgba(0, 0, 0, 0.1);
+
+
+                // &:hover
+                &:hover {
+                    background-color: var(--color-white);
+                }
+
+                // &:focus
+                &:focus {
+                    background-color: var(--color-white);
+                }
+
+                // .ft-btn-nav__icon
+                .ft-btn-nav__icon {
+
+                    // &:after
+                    &:after {
+                        width: 1.1rem;
+                        height: 1.1rem;
+
+                        // behavior: bg(Color-black)
+                        @include behavior-ft-helper-bg(Color-black) {
+                            filter: map-filters(blacks, brand--all);
+                        }
+
+                        // end // &:after
+                    }
+
+                    // end // &__icon
+                }
+
+                // end // .ft-btn-nav--close
+            }
+
+
+
+            // end // .ft-btn-nav__icon
+        }
+
+        //  &__embed
+        &__embed {
+            border-width: 0;
+            width: 100%;
+            display: block;
+            max-height: 100px;
+            // end //  &__embed
+        }
+
+        //&Notext
+        &Notext {
+
+            // &:before
+            &:before {
+                content: none;
+
+                @if $brand ==regionales {
+                    @include behavior-parent(mallorca-zeitung) {
+                        content: none;
+                    }
+
+                    @include behavior-parent(diari-de-girona) {
+                        content: none;
+                    }
+
+                    @include behavior-parent(regio7) {
+                        content: none;
+                    }
+
+                    @include behavior-parent(emporda) {
+                        content: none;
+                    }
+                }
+            }
+
+            // end //  &--Notext
+        }
+
+        // end //  &--footer
+    }
+
+    // ---------------------------------------------
+
+    //  &--Marketing 
+    &--Marketing {
+        // generals
+        @include position(fixed, null 0 -0.5rem 0);
+        @include margin (0 auto);
+        @include padding(null null 0 null);
+        text-align: center;
+        z-index: 100;
+        max-height: fit-content;
+        min-height:initial;
+
+        // &:before
+        &:before {
+            content: none;
+            @include margin(0);
+            @include padding(0);
+
+            @if $brand ==regionales {
+                @include behavior-parent(mallorca-zeitung) {
+                    content: none;
+                }
+
+                @include behavior-parent(diari-de-girona) {
+                    content: none;
+                }
+
+                @include behavior-parent(regio7) {
+                    content: none;
+                }
+
+                @include behavior-parent(emporda) {
+                    content: none;
+                }
+            }
+        }
+    }
+
+    // .ft-helper-img-rd
+    .ft-helper-img-rd {
+        margin: 0 auto;
+    }
+
+    // ---------------------------------------------
+
+    // END // ft-ad
+}
+
+// ---------------------------------------------
