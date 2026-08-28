@@ -1,0 +1,169 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// .ft-mol-swiper
+// ===============================================
+.ft-mol-swiper
+{
+  $self: &;
+  @include position(relative, null null null null);
+  @include margin(2rem null 2rem null);
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+  // .swiper
+  // ---------------------------------------------
+  .swiper
+  {
+    @include size(100%);
+    text-align: center;
+
+    // &-slide 
+    &-slide 
+    {
+      // &:not(.swiper-slide-active) 
+      &:not(.swiper-slide-active) 
+      {
+        max-height: 0;
+      }
+    }
+
+    // &-button
+    &-button 
+    {
+      // &-next
+      &-next {
+        // &:after
+        &:after {
+          right: 2px;
+        }
+      }
+
+      // &-prev
+      &-prev {
+        // &:after
+        &:after {
+          left: 2px;
+        }
+      }
+
+      // &-next, &-prev
+      &-next,
+      &-prev 
+      {
+        background-color: rgba(255, 255, 255, .67);
+        border: 2px solid rgba(0, 0, 0, .33);
+        width: 3.2rem;
+        height: 3.2rem;
+
+        // :before
+        &:before {
+          content: "";
+          @include position(absolute, 50% null null 50%);
+          @include size(100%);
+          transform: translate(-50%, -50%);
+          min-width:  44px;
+          min-height: 44px;
+          background-color: rgba(0, 0, 0, 0);
+          border-radius: inherit;
+        }
+
+  
+        // &.swiper-button-disabled
+        &.swiper-button-disabled 
+        {
+          opacity: 0;
+        }
+      }
+    }
+
+    // .ft-embed
+    .ft-embed 
+    {
+      @include margin(null null 0 null)
+    }
+  }
+
+  // &--info
+  // ---------------------------------------------
+  &--info
+  {
+    @include position(relative, null null null null);
+    width: 100%;
+  }
+
+  // &--title
+  // ---------------------------------------------
+  &--title
+  {
+    @include margin(2rem null 0 null);
+  }
+
+  // &--nav
+  // ---------------------------------------------
+  &--nav
+  {
+    @include position(relative, null null null null);
+    @include margin(1rem null null null);
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    @include min-screen(768px) 
+    {
+      justify-content: flex-end;
+      gap: 2rem;
+    }
+
+    // .ft
+    .ft
+    {
+      // &-btn-nav
+      &-btn-nav
+      {
+        @include margin(null null 0 null);
+        top: 0;
+
+        // &--disabled
+        &--disabled 
+        {
+          opacity: .1;
+          cursor: auto;
+          pointer-events: none;
+        }
+      }
+    }
+
+    // &__btns
+    &__btns
+    {
+      display: flex;
+      gap: 1.4rem;
+
+      // .ft
+      .ft
+      {
+        // &-btn
+        &-btn
+        {
+          // &-nav
+          &-nav
+          {
+            // &:last-of-type
+            &:last-of-type
+            {
+              @include margin(null 0 null null);
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// .ft-mol-switcher
+// ===============================================
+.ft-mol-switcher {
+  @include position(relative, null null null null);
+  @include margin(null 1.4rem null 1rem);
+  top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  min-width: 7rem;
+  @include min-screen(1280px) {
+    @include margin(null null null 2rem);
+  }
+
+  // [class*="ft-switch"]
+  [class*="ft-switch"] {
+    // &[class*="__switch"]
+    &[class*="__switch"] {
+      // &::after
+      &::after {
+        transition: transform 0.25s ease;
+        width: 1.5rem;
+        height: 1.5rem;
+        background-image: url("#{$images-path}/icons/icons-tech--showroom-amp.svg");
+      }
+    }
+
+    // &[class*="__checkbox"]
+    &[class*="__checkbox"] {
+      // &:checked
+      &:checked {
+        + [class*="__label"] {
+          // [class*="__inner"]
+          [class*="__inner"] {
+            background-color: #1279bf;
+          }
+
+          // [class*="__switch"]
+          [class*="__switch"] {
+            // &::after
+            &::after {
+              transform: rotate(180deg);
+              background-image: url("#{$images-path}/icons/icons-tech--showroom-amp.svg");
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // &__title
+  &__title {
+    @include position(absolute, -2rem null null 0);
+    @include font--body-S;
+    width: 100%;
+    font-weight: bold;
+    text-align: center;
+  }
+}

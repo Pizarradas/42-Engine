@@ -1,0 +1,173 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// .ft-mol-score
+// ===============================================
+.ft-mol-sorting {
+  @include font--body-S--small;
+  @include margin(0);
+  @include padding(0);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  // > ul
+  > ul {
+    @include margin(0);
+  }
+
+  // &__header
+  &__header {
+    @include font--body-L--small;
+    @include margin(0 0 0 1.3rem);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  // titulo dentro del &__header
+  &__title {
+    @include margin(1rem 0 .5rem 0);
+    @include font--body-L--small;
+    @include fontBold;
+  }
+
+  // listado general
+  &__list {
+    width: 100%;
+      @include padding(null .5rem null 1rem);
+      @include border-style(null null solid solid);
+      @include border-color(null null var(--color-lightGrey) transparent);
+      @include border-width(null null .1rem .3rem);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      min-height: 3rem;
+
+      // &:last-child
+      &:last-child {
+        @include margin(null null 0 null);
+        @include border-width(null null 0 null);
+      }
+
+      @include behavior-parent(ft-mol-sorting--team){
+         @include padding(null null null 1rem);
+      }
+
+      &--active{
+        background-color: color-mix(in srgb, var(--color-white) 80%, var(--color-functional-warning) 20%);
+
+        .ft-mol-sorting__statusPoints{
+           color: var(--color-functional-error);
+        }
+        .ft-mol-sorting__infoName{
+           color: var(--color-functional-error);
+        }
+      }
+
+      &--primary {
+         @include border-color(null null var(--color-lightGrey) var(--color-functional-error));
+      }
+      &--secondary {
+         @include border-color(null null var(--color-lightGrey) var(--color-black));
+      }
+      &--tertiary {
+         @include border-color(null null var(--color-lightGrey) var(--color-mediumGrey));
+      }
+       &--opacity {
+          opacity: 0.5;
+      }
+  }
+ //parte izquierda del listado
+  &__info{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: .7rem;
+    //&Name
+    &Name{
+     @include font--body-M--small;
+      @include fontBold;
+    white-space: nowrap;
+       // @include min-screen(768px) 
+       @include min-screen(768px) {
+            @include font--body-L--small;
+            @include fontBold;
+      }
+
+      //ft-mol-sorting--team
+      @include behavior-parent(ft-mol-sorting--team){
+        @include font--weight-500;
+      }
+    }
+    //&Number
+    &Number{
+      display:flex;
+      color: var(--color-functional-error);
+       @include fontBold;
+        //ft-mol-sorting--team
+        @include behavior-parent(ft-mol-sorting--team){
+        display:none; 
+        }
+    }
+     //.ft-helper-img-rd
+    .ft-helper-img-rd{
+      width:25px;
+      height:25px;
+      border-radius: 50%;
+      object-fit: cover;
+       @include border-style(solid);
+      @include border-color(var(--color-lightGrey));
+      @include border-width(.1rem);
+      // @include min-screen(768px) 
+      @include min-screen(768px) {
+        width:30px;
+        height:30px;
+      }
+    }
+  }
+
+  &__status{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 1rem;
+      //stuación clasificacion
+      &Badge{
+            @include padding(.4rem);
+            @include font--body-XS--small;
+            @include fontBold;
+            display:none; 
+            border-radius:.4rem;
+            background-color: var(--color-black);
+            color:var(--color-white);
+              //ft-mol-sorting--team
+              @include behavior-parent(ft-mol-sorting--team){
+                      display:flex;
+              }
+
+              //ft-mol-sorting--team
+              &--red{
+                        background-color: var(--color-functional-error);
+                        color:var(--color-white);
+              }
+              //ft-mol-sorting--team
+              &--green{
+                        background-color: var(--color-functional-success);
+                        color:var(--color-white);
+              }
+      }
+       &Points{
+           display:flex;
+           justify-content: flex-end;
+           align-items: flex-end;
+           min-width:62px;
+           text-align: right;
+           white-space: nowrap;
+      }
+  }
+}

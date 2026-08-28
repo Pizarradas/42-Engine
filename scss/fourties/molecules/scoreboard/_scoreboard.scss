@@ -1,0 +1,461 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// .ft-mol-scoreboard
+// ===============================================
+.ft-mol-scoreboard {
+  $self: &;
+  @include padding(1.5rem null null null);
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--color-mediumGrey);
+  @include min-screen(1024px) {
+    @include padding(3rem null 3rem null);
+  }
+
+  // &--interactive
+  &--interactive {
+    @include padding(1.5rem null 1.5rem null);
+    border-bottom: 0px none;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    text-align: center;
+    flex-wrap: unset;
+    @include min-screen(768px) {
+      @include padding(3rem null 3rem null);
+    }
+  }
+
+  // 🟦 Equipos (izq / der)
+  &__team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+
+    // &__shield
+    .ft-mol-scoreboard__shield {
+      @include size(4.8rem);
+      @include margin(0 null .5rem null);
+      background: none;
+      border-radius: unset;
+      order: unset;
+      
+      @include min-screen(768px) {
+        @include size(8rem);
+      }
+    }
+
+    // &__club
+    .ft-mol-scoreboard__club {
+      @include font--body-S--small;
+      min-height: 2.8rem;
+      text-align: center;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      
+      @include min-screen(768px) {
+        @include font--heading-XS;
+        font-weight: normal;
+      }
+    }
+  }
+
+  // 🟨 Centro (marcador)
+  &__center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0;
+    @include margin(0 2rem);
+  }
+
+  // 🧩 Control (cada lado del marcador)
+  &__control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .ft-mol-scoreboard__score:nth-last-of-type(1):before {content: none;}
+
+    .ft-btn-nav {
+      
+      &--plus {
+        @include margin(0 null 1rem null);        
+      }
+
+      &--minus {
+        @include margin(1rem null 0 null);
+      }
+    }
+  }
+
+  // ➖ Separador
+  &__separator {
+    @include font--heading-XL;
+    @include margin(0 1rem);
+      
+    @include min-screen(768px) {
+      @include font--display-M;
+    }
+  }
+
+  // &__club
+  &__club {
+    display: block;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    word-break: break-all;
+    @include min-screen(1024px) {
+      font-size: 2rem;
+      line-height: 2.2rem;
+      word-break: normal;
+    }
+
+    @include behavior-parent(ft-mol-scoreboard--interactive) {
+      @include font--body-S--small;
+      min-height: 2.8rem;
+      text-align: center;
+      
+      @include min-screen(768px) {
+        @include font--body-XL--small;
+        font-weight: normal;
+      }
+    }
+  }
+
+  // &-event-list
+  &-event-list {
+    @include margin(1rem null 2rem null);
+     @include behavior-parent(ft-mol-scoreboard--interactive) {
+                 @include margin(2rem null 2rem null);
+     }
+
+    // &__item
+    &__item {
+      @include margin(0.8rem null 0.8rem null);
+      font-size: 1.2rem;
+      line-height: 1.4rem;
+      text-align: center;
+      color: var(--color-quaternary);
+      @include min-screen(1024px) {
+        @include margin(0.4rem null 0.4rem null);
+        font-weight: bold;
+      }
+
+      // &:not(time)
+      &:not(.ft-mol-scoreboard-event-list__item) time {
+        font-weight: bold;
+      }
+    }
+  }
+
+  // &__score
+  &__score {
+    font-size: 2.4rem;
+    line-height: 4.2rem;
+    font-weight: bold;
+
+    @include behavior-parent(ft-mol-scoreboard--interactive) {
+      position: absolute;
+      left: calc(100% / 6);
+      transform: translate(-50%,-50%);
+    }
+
+    @include min-screen(1024px) {
+      font-size: 4rem;
+      line-height: 4.2rem;
+    }
+
+    // &:nth-last-of-type(1)
+    &:nth-last-of-type(1) {
+
+      @include behavior-parent(ft-mol-scoreboard--interactive) {
+        left: calc(100% / 6 * 5);
+      }
+      // &:before
+      &:before {
+        content: "-";
+        @include margin(null 0.5rem null 0.5rem);
+        display: inline-block;
+
+        @include behavior-parent(ft-mol-scoreboard--interactive) {
+          display: none;
+        }
+      }
+    }
+
+    @include behavior-parent(ft-mol-scoreboard--interactive) {
+      @include font--heading-XL;
+      
+      @include min-screen(768px) {
+        @include font--display-M;
+      }
+    }
+  }
+
+  &__btn-group {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 5rem;
+    flex-direction: column;
+    
+    @include min-screen(768px) {
+      gap: 8.4rem;
+    }
+
+    &:first-child {
+      left: calc(100% / 6);
+    }
+
+    &:last-child {
+      left: calc(100% / 6 * 5);
+    }
+  }
+
+  // &__state
+  &__state {
+    flex-basis: 100%;
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    color: var(--color-quaternary);
+    @include min-screen(1024px) {
+      @include margin(1rem null null null);
+    }
+  }
+
+  // &__brief
+  &__brief {
+    width: 100%;
+    order: 2;
+    flex-basis: 100%;
+    @include min-screen(1024px) {
+      flex-basis: calc(100% - 8rem);
+    }
+  }
+
+  // &__shield
+  &__shield {
+    @include position(relative, null null null null);
+    @include size(6.5rem);
+    @include border-top-radius(50%);
+    @include border-bottom-radius(50%);
+    border: 1px solid var(--color-mediumGrey);
+    order: 1;
+    background-color: var(--color-white);
+
+    @include min-screen(1024px) {
+      @include size(8rem);
+    }
+
+    // .ft
+    .ft {
+      // &-helper
+      &-helper {
+        // &-img-rd
+        &-img-rd {
+          @include position(absolute, 0 0 0 0);
+          @include margin(auto);
+          max-width: 4.5rem;
+          max-height: 5.5rem;
+          @include min-screen(768px) {
+            @include behavior-parent(ft-mol-scoreboard--interactive) {
+              max-width: 7rem;
+              max-height: 8rem; 
+            }
+          }
+
+          @include min-screen(1024px) {
+            max-width: 5rem;
+            max-height: 6rem; 
+
+            @include behavior-parent(ft-mol-scoreboard--interactive) {
+              max-width: 7rem;
+              max-height: 8rem; 
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // &__col
+  &__col {
+    // &-lft, &-ctn, &-rgt
+    &-lft,
+    &-cnt,
+    &-rgt {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-content: flex-start;
+    }
+
+    // &-lft
+    &-lft {
+      @include padding(null 0.8rem null 0.8rem);
+      flex-basis: 31.33%;
+
+      @include min-screen(1024px) {
+        flex-basis: 37.5%;
+      }
+    
+      @include behavior-parent(ft-mol-scoreboard--interactive) {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      // #{ $self }
+      #{ $self } {
+        // &__club
+        &__club {
+          @include min-screen(1024px) {
+            text-align: right;
+    
+            @include behavior-parent(ft-mol-scoreboard--interactive) {
+              text-align: center;
+            }
+          }
+        }
+
+        // &__shield
+        &__shield {
+          @include min-screen(1024px) {
+            order: 2;
+    
+            @include behavior-parent(ft-mol-scoreboard--interactive) {
+              order: 1;
+            }
+          }
+        }
+
+        // &-event-list
+        &-event-list {
+          // &__item
+          &__item {
+            @include min-screen(1024px) {
+              text-align: right;
+      
+              @include behavior-parent(ft-mol-scoreboard--interactive) {
+                text-align: center;
+              }
+            }
+          }
+        }
+
+        // &__brief
+        &__brief {
+          @include min-screen(1024px) {
+            @include padding(null 2rem null null);
+            order: 1;
+    
+            @include behavior-parent(ft-mol-scoreboard--interactive) {
+              @include padding(null 0 null null);
+              order: 2;
+            }
+          }
+        }
+      }
+    }
+
+    // &-cnt
+    &-cnt {
+      @include position(relative, null null null null);
+      flex-basis: 35.33%;
+
+      @include min-screen(680px) {
+        align-content: center;
+      }
+
+      @include min-screen(1024px) {
+        flex-basis: 25%;
+      }
+
+      @include behavior-parent(ft-mol-scoreboard--interactive) {
+        align-self: center;
+
+        &::before {
+          content: "-";
+          position: absolute;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          
+          font-size: 2.4rem;
+          line-height: 4.2rem;
+          font-weight: bold;
+
+          @include min-screen(1024px) {
+            font-size: 4rem;
+            line-height: 4.2rem;
+          }
+        }
+      }
+    }
+
+    // &-rgt
+    &-rgt {
+      @include padding(null 0.8rem null 0.8rem);
+      flex-basis: 31.33%;
+
+      @include min-screen(1024px) {
+        flex-basis: 37.5%;
+      }
+    
+      @include behavior-parent(ft-mol-scoreboard--interactive) {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      // #{ $self }
+      #{ $self } {
+        // &__club
+        &__club {
+          @include min-screen(1024px) {
+            text-align: left;
+    
+            @include behavior-parent(ft-mol-scoreboard--interactive) {
+              text-align: center;
+            }
+          }
+        }
+
+        // &-event-list
+        &-event-list {
+          // &__item
+          &__item {
+            @include min-screen(1024px) {
+              text-align: left;
+    
+            @include behavior-parent(ft-mol-scoreboard--interactive) {
+              text-align: center;
+            }
+            }
+          }
+        }
+
+        // &__brief
+        &__brief {
+          @include min-screen(1024px) {
+            @include padding(null null null 2rem);
+    
+            @include behavior-parent(ft-mol-scoreboard--interactive) {
+              @include padding(null null null 0);
+              order: 2;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,248 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// ft-mol-carousel
+// ===============================================
+.ft-mol-carousel
+{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
+
+    // &__wrapper
+    &__wrapper
+    {
+        display: none;
+        // end // &__wrapper
+    }
+
+    // &:has(input#radio0:checked)
+    &:has(input#radio0:checked)
+    {
+        .ft-mol-carousel__wrapper:nth-child(1)
+        {
+            display: flex;
+        }
+
+        // end // &:has(input#radio0:checked)
+    }
+
+    // &:has(input#radio1:checked)
+    &:has(input#radio1:checked)
+    {
+        .ft-mol-carousel__wrapper:nth-child(2)
+        {
+            display: flex;
+        }
+
+        // end // &:has(input#radio1:checked)
+    }
+
+    // &:has(input#radio2:checked)
+    &:has(input#radio2:checked)
+    {
+        .ft-mol-carousel__wrapper:nth-child(3)
+        {
+            display: flex;
+        }
+
+        // end // &:has(input#radio2:checked)
+    }
+
+    // &__content
+    &__content
+    {
+        //generals
+        display: grid;
+        grid-template-areas: "p img n";
+        grid-template-columns: auto 70vmin auto;
+        place-items: center;
+    }
+
+    // &__nav
+    &__nav
+    {
+        //generals
+        @include margin(auto 0 auto 0);
+        @include padding(0);
+        @include size(3.2rem, 3.2rem);
+        @include border-width(0.2rem);
+        @include border-style(solid);
+        @include border-color(var(--color-black));
+        transition: background-color 0.25s ease-in;
+        background: var(--color-white);
+        user-select: none;
+        transition: all 40ms;
+
+        // &:active
+        &:active
+        {
+            //generals
+            background: var(--color-primary);
+            @include border-width(0);
+
+            // &:before
+            &:before
+            {
+                filter: map-filters(whites, brand--all);
+
+            }
+        }
+
+        // &--prev
+        &--prev
+        {
+            grid-area: p;
+            position: relative;
+
+            // generals
+
+            // &:before
+            &:before
+            {
+                // generals
+                content: "";
+                @include position(absolute, 0 0.7rem 0 0);
+                @include margin(auto);
+                @include size(1.5rem, 1.5rem);
+                transition: color 0.25s ease-in, opacity 0.25s ease-in;
+                transform: rotate(90deg);
+                filter: map-filters(blacks, brand--all);
+                @include background-setup(map-icons(chevrons, brand--default),
+                    // img path
+                    "0 0 / 100%",
+                    // position and size
+                    no-repeat,
+                    // repeat
+                    null,
+                    // attachment
+                    null,
+                    // origin
+                    null,
+                    // clip
+                    null,
+                    // color
+                );
+
+                // end // &:before
+            }
+
+            // end // &--prev
+        }
+
+        // &--next
+        &--next
+        {
+            grid-area: n;
+            position: relative;
+
+            // &:before
+            &:before
+            {
+                // generals
+                content: "";
+                @include position(absolute, 0 0 0 0.7rem);
+                @include margin(auto);
+                @include size(1.5rem, 1.5rem);
+                transition: color 0.25s ease-in, opacity 0.25s ease-in;
+                transform: rotate(-90deg);
+                filter: map-filters(blacks, brand--all);
+                @include background-setup(map-icons(chevrons, brand--default),
+                    // img path
+                    "0 0 / 100%",
+                    // position and size
+                    no-repeat,
+                    // repeat
+                    null,
+                    // attachment
+                    null,
+                    // origin
+                    null,
+                    // clip
+                    null,
+                    // color
+                );
+
+                // end // &:before
+            }
+        }
+
+        // end // &__nav
+    }
+
+    // &__img
+    &__img
+    {
+        //generals
+        display: grid;
+        grid-template-areas: "p img n";
+        grid-template-columns: auto 70vmin auto;
+        place-items: center;
+
+        // img
+        img
+        {
+            //generals
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        // end // &__img
+
+    }
+
+    // &__pagination
+    &__pagination
+    {
+        //generals
+        display: flex;
+        gap: 0.4rem;
+        justify-content: center;
+        width: 100%;
+        @include margin(1rem 0 0 0);
+
+        // input
+        input
+        {
+            appearance: none;
+            display: block;
+            width: 1rem;
+            height: 1rem;
+            backface-visibility: visible;
+            @include margin(0.5rem);
+            @include size(1.2rem, 1.2rem);
+            @include border-style(solid);
+            @include border-width(0.2rem 0.2rem 0.2rem 0.2rem);
+            @include border-color(var(--color-white));
+            @include border-top-radius(3rem);
+            @include border-bottom-radius(3rem);
+            display: block;
+            transition: opacity 200ms ease;
+            background-color: var(--color-black);
+
+            &:checked
+            {
+                @include border-color(var(--color-primary));
+                background-color: var(--color-primary);
+
+            }
+
+            // end // input
+        }
+
+        // end // &__pagination
+    }
+
+    // END // ft-mol-carousel
+}
+
+// ===============================================
+
+// ===============================================

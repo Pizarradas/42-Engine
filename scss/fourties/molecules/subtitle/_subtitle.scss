@@ -1,0 +1,314 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// .ft-mol-subtitle
+// ===============================================
+.ft-mol-subtitle
+{
+  @include position(relative, null null null null);
+  @include font--body-XXL;
+    @include fontStack;
+  @include margin(1rem null 1rem null);
+  @include padding(null null null 1.5rem);
+  text-align: left;
+
+  
+  // &::marker
+  &::marker
+  {
+    color: var(--color-primary);
+  }
+
+  // &:not(:only-of-type)
+  &:not(:only-of-type)
+  {
+
+    // &:before
+    &:before
+    {
+      content: "";
+      @include position(absolute, 1rem null null 0);
+      @include size(0.6rem, 0.6rem);
+      @include background-setup( // img path
+        map-icons(bullets, brand--default),
+        // position and size
+        "0 0 / 100%",
+        // repeat
+        no-repeat,
+        // attachment
+        null,
+        // origin
+        null,
+        // clip
+        null,
+        // color
+        transparent);
+      filter: map-filters(blacks, brand--all);
+
+     // @if $brand ==sport
+      @if $brand ==sport
+      {
+        filter: map-filters(reds, brand--sport);
+      }
+
+     // @if $brand ==epe
+      @if $brand ==epe
+      {
+        filter: map-filters(blues, brand--epe);
+      }
+
+     // @if $brand ==ux
+      @if $brand ==ux
+      {
+        filter: map-filters(greys, brand--500);
+      }
+
+     // @if $brand ==ep
+      @if $brand ==ep
+      {
+        filter: map-filters(reds, brand--ep);
+      }
+
+     // @if $brand ==regionales
+      @if $brand ==regionales
+      {
+        filter: map-filters(blues, brand--regionales);
+      }
+      @if $brand ==revistas
+      {
+      // behavior-parent(woman)
+      @include behavior-parent-nested(woman)
+      {
+        filter: map-filters(reds, brand--woman);
+      }
+                // behavior-brand: cuore
+          @include behavior-parent-nested(cuore) {
+            filter: map-filters(reds, brand--cuore);
+          }
+
+          // behavior-brand: viajar
+           @include behavior-parent-nested(viajar) {
+            filter: map-filters(blues, brand--viajar);
+          }
+
+                    // behavior-brand: stilo
+           @include behavior-parent-nested(stilo) {
+            filter: map-filters(reds, brand--stilo);
+          }
+    }
+      // behavior-parent(premium)
+      @include behavior-parent(premium)
+      {
+        filter: map-filters(browns, brand--premium);
+
+        // @if brand == ep
+        @if brand == ep
+        {
+          filter: map-filters(reds, brand--ep);
+        }
+      }
+      // behavior-parent(loggedPremium)
+      @include behavior-parent(loggedPremium)
+      {
+        filter: map-filters(browns, brand--premium);
+
+        // @if brand == ep
+        @if brand == ep
+        {
+          filter: map-filters(reds, brand--ep);
+        }
+      }
+
+      // behavior: bg(Color-black)
+      @include behavior-ft-helper-bg(Color-black)
+      {
+        filter: map-filters(whites, brand--all);
+      }
+    }
+  }
+
+  // &:only-of-type
+  &:only-of-type
+  {
+    @include padding(null null null 0);
+
+    // &:before
+    &:before
+    {
+      @include hide-visually;
+    }
+  }
+
+  // &.ft-mol-subtitle--isCenter
+  &.ft-mol-subtitle--isCenter
+  {
+
+    // &:before
+    &:before
+    {
+      content: none;
+    }
+  }
+
+  // &:first-of-type
+  &:last-of-type
+  {
+    @include padding(null null 1rem null);
+
+    // @include min-screen(768px)
+    @include min-screen(768px)
+    {
+      @include padding(null null 3rem null);
+    }
+  }
+
+  // &--is
+  &--is
+  {
+    @include padding(null null null 0);
+
+    // &Center
+    &Center
+    {
+      text-align: center;
+    }
+  }
+
+  // &--list
+  &--list
+  {
+    @include margin(null null null 0);
+    @include padding(null null null 0);
+    @include fontStack;
+
+    // &.ft-list--numbered
+    &.ft-list--numbered
+    {
+      @include margin(null null null 0);
+      @include font--body-XL;
+      @include fontStack;
+
+      // &:before
+      &:before
+      {
+        content: none;
+      }
+
+      // .ft-list__item
+      .ft-list__item
+      {
+        @include padding(null null null 2rem);
+        @include position(relative, null null null null);
+
+        // &:first-child
+        &:first-child
+        {
+          counter-reset: section;
+        }
+
+        // &:before
+        &::before
+        {
+          content: counters(section, ".") " ";
+          @include position(absolute, 0 null null 0);
+          color: var(--color-primary);
+          counter-increment: section;
+        }
+      }
+    }
+
+    // .ft-list__item
+    .ft-list__item
+    {
+      @include font--body-XXL;
+      @include fontStack;
+      text-align: left;
+    }
+  }
+
+  // &--listSimple
+  &--listSimple
+  {
+    @include position(relative, null null null null);
+    @include margin(1rem null 1rem null);
+    @include padding(null null null 1.5rem);
+    @include fontStack;
+
+    // &::marker
+    &::marker
+    {
+      color: var(--color-primary);
+    }
+
+    // &:first-of-type
+    &:last-of-type
+    {
+      @include padding(null null 1rem null);
+
+      // @include min-screen(768px)
+      @include min-screen(768px)
+      {
+        @include padding(null null 3rem null);
+        &~ .ft-ad ~ .ft-mol-writer{
+        @include margin(0 null null null);
+        }
+      }
+    }
+  }
+
+  // &--ft-link
+  .ft-link
+  {
+    border-bottom: 1px dashed var(--color-primary);
+
+      // @if $brand(ft-brand-revistas)
+      @if $brand ==revistas
+      {
+        border-bottom: none;
+      }
+
+    // &--secondary
+    &--secondary
+    {
+      border-bottom: 1px dashed var(--color-secondary);
+
+      // &:hover, &:focus
+      &:hover
+      {
+        border-bottom: 1px dashed var(--color-primary);
+      }
+    }
+
+    // &--tertiary
+    &--tertiary
+    {
+      border-bottom: 1px dashed var(--color-tertiary);
+
+      // &:hover, &:focus
+      &:hover
+      {
+        border-bottom: 1px dashed var(--color-primary);
+      }
+    }
+
+    // &--decoration
+    &--decoration
+    {
+
+      // &:hover, &:focus
+      &:hover
+      {
+        text-decoration: none;
+        // @if $brand(ft-brand-revistas)
+        @if $brand ==revistas
+        {
+            color: var(--color-black);
+        }
+      }
+    }
+
+  }
+}

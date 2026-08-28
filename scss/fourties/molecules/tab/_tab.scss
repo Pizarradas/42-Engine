@@ -1,0 +1,390 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// .ft-mol-tab
+// ===============================================
+.ft-mol-tab {
+  // &__nav
+  &__nav {
+    @include margin(0);
+    @include padding(0);
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: flex;
+    gap: 0.8rem;
+
+    // &::-webkit-scrollbar
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    // Reparto equitativo del ancho por nº de items (2–4) SIN clases nuevas ni tocar el HTML.
+    // Se cuenta con :has() + :nth-child():last-child sobre los __header (<li>):
+    // flex:1 1 0 reparte el track a partes iguales → 2 items = 50% · 3 = 33.33% · 4 = 25%.
+    // Fuera de 2–4 se conserva el comportamiento actual (scroll horizontal / ancho-contenido).
+    &:has(> .ft-mol-tab__header:nth-child(2):last-child),
+    &:has(> .ft-mol-tab__header:nth-child(3):last-child),
+    &:has(> .ft-mol-tab__header:nth-child(4):last-child) {
+      > .ft-mol-tab__header {
+        flex: 1 1 0;
+        display: flex;
+        justify-content: center; // centra el trigger/link dentro de su hueco
+
+        // Anula el auto-margin que centraba el grupo (dejaría el reparto irregular)
+        &:first-child,
+        &:last-child {
+          @include margin(0);
+        }
+      }
+    }
+  }
+
+  // &__header
+  &__header {
+    @include margin(0);
+    @include padding(0);
+    @include fontBold;
+
+    // @if $brand(revistas)
+        @if $brand ==revistas
+        {
+            text-transform: uppercase;
+        }
+
+    // &:first-child
+    &:first-child {
+      @include margin(null null null auto);
+    }
+
+    // &:last-child
+    &:last-child {
+      @include margin(null auto null null);
+    }
+  }
+
+  // &__bar
+  &__bar {
+    @include position(relative, null null null null);
+    @include size(100%, 0.2rem);
+    display: block;
+
+    // &:after
+    &:after {
+      content: "";
+      @include position(absolute, null 0 0 0);
+      @include margin(null auto null auto);
+      @include size(100%, 100%);
+      @include border-top-radius(0.5rem);
+      @include border-bottom-radius(0.5rem);
+      z-index: 1;
+      background-color: var(--color-lightGrey);
+    }
+  }
+
+  // &__trigger, &__trigger
+  &__link,
+  &__trigger {
+    @include margin(0 1.6rem); 
+    @include padding(0);
+    @include border-width(0);
+    @include font--body-M;
+    @include fontBold;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: max-content;
+    height: 30px;
+    color: var(--color-quaternary);
+    background-color: transparent;
+
+  
+
+    // &:after
+    &:after {
+      content: "";
+      @include size(calc(100% + 3.2rem), 0.2rem);
+      @include margin(0 0 0 -1.6rem);
+      display: block;
+      z-index: 2;
+      color: var(--color-lightGrey);
+    }
+
+    // &[aria-selected="true"]
+    &[aria-selected="true"] {
+      color: var(--color-primary);
+        // @if $brand(revistas)
+        @if $brand ==revistas{
+            color: var(--color-black);
+        }
+    }
+
+    // &[aria-selected="true"]:after
+    &[aria-selected="true"]:after {
+      @include border-style(solid);
+      @include border-width(0.2rem);
+      @include border-color(var(--color-primary));
+      transform: scale(1);
+      color: var(--color-primary);
+        // @if $brand(revistas)
+        @if $brand ==revistas
+            {
+                color: var(--color-black);
+                @include border-color(var(--color-black));
+            }
+    }
+
+    // &:hover, &:focus-within
+    &:hover,
+    &:focus-visible {
+      color: var(--color-primary);
+        // @if $brand(revistas)
+        @if $brand ==revistas
+        {
+            color: var(--color-black);
+        }
+
+      // &:after
+      &:after {
+        transform: scale(1);
+      }
+    }
+  }
+
+  // &__button
+  &__button {
+    cursor: pointer;
+    @include margin(0 0 1rem 0);
+    @include padding(0.5rem 1rem);
+    @include border-style(solid);
+    @include border-width(0.2rem);
+    @include border-color(var(--color-lightGrey));
+    @include border-top-radius(0.5rem);
+    @include border-bottom-radius(0.5rem);
+    background-color: transparent;
+    width: max-content;
+
+    // &:hover, &:focus-within
+    &:hover,
+    &:focus-visible {
+      @include border-color(var(--color-primary));
+        // @if $brand(revistas)
+        @if $brand ==revistas
+        {
+            @include border-color(var(--color-black));
+        }
+    }
+
+    // &[aria-selected="true"]
+    &[aria-selected="true"] {
+      @include border-color(var(--color-primary));
+      color: var(--color-primary);
+        // @if $brand(revistas)
+            @if $brand ==revistas
+            {
+                color: var(--color-black);
+                @include border-color(var(--color-black));
+            }
+    }
+
+    // &[aria-selected="true"]:after
+    &[aria-selected="true"]:after {
+      @include border-style(solid);
+      @include border-width(0.2rem);
+      @include border-color(var(--color-primary));
+      transform: scale(1);
+      color: var(--color-primary);
+
+        // @if $brand(revistas)
+        @if $brand ==revistas
+        {
+            color: var(--color-black);
+            @include border-color(var(--color-black));
+        }
+    }
+  }
+
+  // &__content
+  &__content {
+    @include padding(1rem 0rem);
+    display: none;
+
+    // &[aria-selected="true"]
+    &[aria-selected="true"] {
+      display: block;
+    }
+  }
+
+  // &--vertical
+  &--vertical {
+    @include min-screen(768px) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    // [class*="__header"]
+    [class*="__header"] {
+      // &:first-child
+      &:first-child {
+        @include min-screen(768px) {
+          @include margin(null null null 0);
+        }
+      }
+
+      // &:last-child
+      &:last-child {
+        @include min-screen(768px) {
+          @include margin(null 0 null null);
+        }
+      }
+    }
+
+    // [class*="__trigger"]
+    [class*="__trigger"] {
+      @include min-screen(768px) {
+        @include margin(null 0 null 0);
+        @include padding(1.6rem);
+        @include size(100%, auto);
+        text-align: left;
+      }
+
+      // &:after
+      &:after {
+        @include min-screen(768px) {
+          @include hide-visually;
+        }
+      }
+
+      // &[aria-selected="true"]
+      &[aria-selected="true"] {
+        @include min-screen(768px) {
+          color: var(--color-white);
+          background-color: var(--color-primary);
+        }
+      }
+    }
+
+    // [class*="__nav"]
+    [class*="__nav"] {
+      @include min-screen(768px) {
+        overflow-x: hidden;
+        flex-basis: 30%;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        background-color: var(--color-lightGrey);
+      }
+
+      @include min-screen(1280px) {
+        max-width: 300px;
+      }
+    }
+
+    // [class*="__bar"]
+    [class*="__bar"] {
+      @include min-screen(768px) {
+        @include hide-visually;
+      }
+    }
+
+    // [class*="__content"]
+    [class*="__content"] {
+      @include min-screen(768px) {
+        @include padding(2rem);
+      }
+    }
+
+    // [class*="__tab-contents"]
+    [class*="__tab-contents"] {
+      @include min-screen(768px) {
+        @include border-style(solid solid solid null);
+        @include border-width(0.2rem);
+        @include border-color(var(--color-lightGrey));
+        flex-basis: 70%;
+      }
+
+      @include min-screen(1280px) {
+        flex-basis: calc(100% - 300px);
+      }
+    }
+  }
+}
+
+// AMP
+// ===============================================
+/* Styles for the flex layout based tabs */
+amp-selector[role="tablist"].tabs-with-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+amp-selector[role="tablist"].tabs-with-flex [role="tab"] {
+  flex-grow: 1;
+  color: var(--color-quaternary);
+}
+
+amp-selector[role="tablist"].tabs-with-flex [role="tab"][selected] {
+  @include border-style(null null solid null);
+  @include border-width(0.4rem);
+  @include border-color(var(--color-primary));
+  color: var(--color-primary);
+  outline: none;
+}
+
+amp-selector[role="tablist"].tabs-with-flex [role="tabpanel"] {
+  display: none;
+  width: 100%;
+  order: 1;
+}
+
+amp-selector[role="tablist"].tabs-with-flex
+  [role="tab"][selected]
+  + [role="tabpanel"] {
+  display: block;
+}
+
+/* Styles for the selector based tabs */
+amp-selector[role="tablist"].tabs-with-selector {
+  display: flex;
+}
+
+amp-selector[role="tablist"].tabs-with-selector [role="tab"][selected] {
+  outline: none;
+}
+
+amp-selector[role="tablist"].tabs-with-selector {
+  display: flex;
+}
+
+amp-selector[role="tablist"].tabs-with-selector [role="tab"] {
+  width: 100%;
+  text-align: center;
+}
+
+amp-selector.tabpanels [role="tabpanel"] {
+  display: none;
+}
+
+amp-selector.tabpanels [role="tabpanel"][selected] {
+  outline: none;
+  display: block;
+}
+
+// .ft-mol-tab-amp
+.ft-mol-tab-amp {
+  // &__trigger
+  &__trigger {
+    @include padding(null null 0.4rem null);
+    text-align: center;
+  }
+
+  // &__content
+  &__content {
+    @include border-style(solid null null null);
+    @include border-width(0.2rem);
+    @include border-color(var(--color-lightGrey));
+  }
+}
