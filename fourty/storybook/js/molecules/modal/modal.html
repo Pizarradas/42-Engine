@@ -1,0 +1,66 @@
+<!--
+  modal.html — códigos HTML originales de Modal (.ft-mol-modal)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS.
+  Markup tomado de fourty/molecules/molecule-modal.html.
+
+  Nota: el modal nace `display:none`; aquí se le añade `style="display:block"`
+  para mostrarlo ABIERTO en la doc (en producción ese display lo conmuta
+  fourty-js-modal.js al pulsar un trigger con data-toggle/data-target). El
+  trigger se incluye como referencia, pero es inerte sin ese JS.
+  ─────────────────────────────────────────────────────────────────────────
+-->
+<template data-story="Base (abierto · -has--img --md)">
+  <button aria-controls="modalDefault" aria-haspopup="dialog" class="ft-btn ft-btn--primary ft-btn--sm" data-target="modalDefault" data-toggle="ft-mol-modal" name="modal-trigger" title="Abrir modal" type="button">Modal default</button>
+  <div aria-describedby="modalDefaultDesc" aria-labelledby="modalDefaultTitle" aria-modal="true" class="ft-mol-modal ft-mol-modal--cnt ft-mol-modal-has--img ft-mol-modal--md" id="modalDefault" role="dialog" style="display:block">
+    <div class="ft-mol-modal__container ft-mol-modal__container--cnt">
+      <div class="ft-mol-modal__window">
+        <img alt="alt text" class="ft-mol-modal__img ft-mol-modal__img--rounded" src="/cds-statics/assets/img/templates/ft-modal-has--image.svg" />
+        <div class="ft-mol-modal__header">
+          <h3 class="ft-mol-modal__title" id="modalDefaultTitle">María Pilar Fernández Bozal</h3>
+          <p class="ft-helper-fontSize-body-M">Redactora jefa</p>
+        </div>
+        <div class="ft-mol-modal__body" id="modalDefaultDesc">
+          <p class="ft-helper-fontSize-body-M">Especialista en <span class="ft-helper-fontWeight-700">Macroeconomía, presupuestos, impuestos y pensiones.</span></p>
+        </div>
+        <div class="ft-mol-modal__footer">
+          <div class="ft-mol-btnGroup">
+            <a class="ft-btn ft-btn--sm" href="#" target="_self" title="Cancelar">Cancelar</a>
+            <a class="ft-btn ft-btn--tertiary ft-btn--sm" href="#" target="_self" title="Confirmar">Confirmar</a>
+          </div>
+          <div class="ft-mol-btnGroup">
+            <a class="ft-btn-rrss ft-btn-rrss--twitter" href="#" target="_self" title="title text"><span class="ft-mol-rrss ft-mol-rrssTwitter--default ft-btn-rrss__icon"></span><span class="ft-btn-rrss__text">RRSS Twitter</span></a>
+            <a class="ft-btn-rrss ft-btn-rrss--linkedin" href="#" target="_self" title="title text"><span class="ft-mol-rrss ft-mol-rrssLinkedin--default ft-btn-rrss__icon"></span><span class="ft-btn-rrss__text">RRSS Linkedin</span></a>
+            <a class="ft-btn-rrss ft-btn-rrss--email" href="#" target="_self" title="title text"><span class="ft-mol-rrss ft-mol-rrssEmail--default ft-btn-rrss__icon"></span><span class="ft-btn-rrss__text">EMail</span></a>
+          </div>
+          <button class="ft-btn-nav ft-btn-nav--close ft-mol-modal__close" data-dismiss="ft-mol-modal" name="close-button" title="Cerrar ventana emergente" type="button">
+            <span class="ft-btn-nav__text">Cerrar</span>
+            <span class="ft-btn-nav__icon"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<!-- -has--error: pinta el border del __window en var(--color-functional-error) -->
+<template data-story="Estado error (-has--error)">
+  <div aria-describedby="modalHasErrorDesc" aria-labelledby="modalHasErrorTitle" aria-modal="true" class="ft-mol-modal ft-mol-modal--cnt ft-mol-modal--md ft-mol-modal-has--error" id="modalHasError" role="dialog" style="display:block">
+    <div class="ft-mol-modal__container ft-mol-modal__container--cnt">
+      <div class="ft-mol-modal__window">
+        <div class="ft-mol-modal__header">
+          <h3 class="ft-mol-modal__title" id="modalHasErrorTitle">Error de validación</h3>
+        </div>
+        <div class="ft-mol-modal__body" id="modalHasErrorDesc">
+          <p class="ft-helper-fontSize-body-M">El border del <em>__window</em> se tinta con <em>--color-functional-error</em>.</p>
+        </div>
+        <div class="ft-mol-modal__footer">
+          <button class="ft-btn-nav ft-btn-nav--close ft-mol-modal__close" data-dismiss="ft-mol-modal" name="close-button" title="Cerrar ventana emergente" type="button">
+            <span class="ft-btn-nav__text">Cerrar</span>
+            <span class="ft-btn-nav__icon"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

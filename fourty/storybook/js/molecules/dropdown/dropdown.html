@@ -1,0 +1,96 @@
+<!--
+  dropdown.html — códigos HTML originales de Dropdown (.ft-mol-dropdown)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS.
+  Markup tomado de fourty/molecules/molecule-dropdown.html.
+
+  Estado: en el showroom la lista va `hidden` y el JS añade `__listIs-active`
+  al abrir. Aquí se muestran en estado ABIERTO (con __listIs-active, sin hidden,
+  aria-expanded="true") para que se vean los ítems; es el estado que produce
+  toggleDropdown. El wrapper reserva alto porque la lista es position:absolute.
+  ─────────────────────────────────────────────────────────────────────────
+-->
+<template data-story="Base (abierto)">
+  <div style="min-height:240px;">
+    <div class="ft-mol-dropdown">
+      <button type="button" class="ft-btn ft-btn--primary ft-btn--md ft-mol-dropdown__trigger" aria-haspopup="true" aria-expanded="true" title="Abrir menú desplegable">Dropdown</button>
+      <ul class="ft-mol-dropdown__list ft-mol-dropdown__listIs-active" role="menu" aria-hidden="false">
+        <li class="ft-mol-dropdown__item" role="none"><a class="ft-mol-dropdown__link" role="menuitem" href="#" target="_self" title="title text">Lorem ipsum dolor est</a></li>
+        <li class="ft-mol-dropdown__item" role="none"><a class="ft-mol-dropdown__link" role="menuitem" href="#" target="_self" title="title text">Lorem ipsum dolor est</a></li>
+        <li class="ft-mol-dropdown__item" role="none"><a class="ft-mol-dropdown__link" role="menuitem" href="#" target="_self" title="title text">Lorem ipsum dolor est</a></li>
+        <li class="ft-mol-dropdown__item" role="none"><a class="ft-mol-dropdown__link" role="menuitem" href="#" target="_self" title="title text">Lorem ipsum dolor est</a></li>
+      </ul>
+    </div>
+  </div>
+</template>
+
+<template data-story="Lista + botón nav (--is-list-rgt --has-btn-nav)">
+  <div style="min-height:240px;">
+    <div class="ft-mol-dropdown ft-mol-dropdown--is-list-rgt ft-mol-dropdown--has-btn-nav">
+      <button type="button" class="ft-btn-nav ft-btn-nav--more-v ft-btn-nav--bordered ft-mol-dropdown__trigger" aria-haspopup="true" aria-expanded="true" title="Desplegar más opciones">
+        <span class="ft-btn-nav__text">Desplegar más opciones</span>
+        <span class="ft-btn-nav__icon" aria-hidden="true"></span>
+      </button>
+      <ul class="ft-mol-dropdown__list ft-mol-dropdown__listIs-active" role="menu" aria-hidden="false">
+        <li class="ft-mol-dropdown__item" role="none"><a class="ft-mol-dropdown__link" role="menuitem" href="#" target="_self" title="title text">Lorem ipsum dolor est</a></li>
+        <li class="ft-mol-dropdown__item" role="none"><a class="ft-mol-dropdown__link" role="menuitem" href="#" target="_self" title="title text">Lorem ipsum dolor est</a></li>
+        <li class="ft-mol-dropdown__item" role="none"><a class="ft-mol-dropdown__link" role="menuitem" href="#" target="_self" title="title text">Lorem ipsum dolor est</a></li>
+      </ul>
+    </div>
+  </div>
+</template>
+
+<template data-story="Con iconos (--has-icons)">
+  <div style="min-height:200px;">
+    <div class="ft-mol-dropdown ft-mol-dropdown--is-list-lft ft-mol-dropdown--has-btn-nav ft-mol-dropdown--has-icons">
+      <button type="button" class="ft-btn-nav ft-btn-nav--more-v ft-mol-dropdown__trigger" aria-haspopup="listbox" aria-expanded="true" id="more-nav-trigger" aria-controls="more-nav-list">
+        <span class="ft-btn-nav__text">Desplegar más opciones</span>
+        <span class="ft-btn-nav__icon" aria-hidden="true"></span>
+      </button>
+      <ul class="ft-mol-dropdown__list ft-mol-dropdown__listIs-active" id="more-nav-list" aria-labelledby="more-nav-trigger">
+        <li class="ft-mol-dropdown__item">
+          <a class="ft-mol-dropdown__link" href="#" target="_self" title="Archivo">
+            <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg" class="ft-mol-dropdown__icon" aria-hidden="true" focusable="false">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M5.22 0.5C5.81647 0.5 6.3 0.983533 6.3 1.58V3.92C6.3 3.93156 6.29982 3.94307 6.29946 3.95454H11.5205C11.5202 3.94307 11.52 3.93156 11.52 3.92V1.58C11.52 0.983533 12.0035 0.5 12.6 0.5C13.1965 0.5 13.68 0.983533 13.68 1.58V3.92C13.68 3.93156 13.6798 3.94307 13.6795 3.95454H17.1C17.5971 3.95454 18 4.35749 18 4.85454V17.6C18 18.0971 17.5971 18.5 17.1 18.5H0.9C0.402944 18.5 0 18.0971 0 17.6V4.85454C0 4.35749 0.402944 3.95454 0.9 3.95454H4.14054C4.14018 3.94307 4.14 3.93156 4.14 3.92V1.58C4.14 0.983533 4.62353 0.5 5.22 0.5ZM1.26 5.21454V7.16H16.74V5.21454H1.26ZM1.26 17.24V8.6H16.74V17.24H1.26Z" fill="currentColor" />
+            </svg>
+            Archivo
+          </a>
+        </li>
+        <li class="ft-mol-dropdown__item">
+          <a class="ft-mol-dropdown__link" href="#" target="_self" title="Compartir">
+            <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg" class="ft-mol-dropdown__icon" aria-hidden="true" focusable="false">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M13.9619 1.713C12.9012 1.713 12.0413 2.57287 12.0413 3.63357C12.0413 3.93832 12.1123 4.2265 12.2386 4.48246C12.2695 4.51555 12.2972 4.55266 12.3209 4.59356C12.3436 4.63278 12.3613 4.67348 12.3744 4.71496C12.7202 5.22158 13.3022 5.55415 13.9619 5.55415C15.0226 5.55415 15.8825 4.69428 15.8825 3.63357C15.8825 2.57287 15.0226 1.713 13.9619 1.713ZM11.6104 5.70485C12.1846 6.35623 13.0253 6.76715 13.9619 6.76715C15.6925 6.76715 17.0955 5.3642 17.0955 3.63357C17.0955 1.90295 15.6925 0.5 13.9619 0.5C12.2313 0.5 10.8283 1.90295 10.8283 3.63357C10.8283 3.99197 10.8885 4.33632 10.9993 4.65706L6.20503 7.42873C5.63082 6.77734 4.79018 6.36643 3.85357 6.36643C2.12295 6.36643 0.72 7.76937 0.72 9.5C0.72 11.2306 2.12295 12.6336 3.85357 12.6336C4.79018 12.6336 5.63082 12.2227 6.20503 11.5713L10.9993 14.3429C10.8885 14.6637 10.8283 15.008 10.8283 15.3664C10.8283 17.0971 12.2313 18.5 13.9619 18.5C15.6925 18.5 17.0955 17.0971 17.0955 15.3664C17.0955 13.6358 15.6925 12.2329 13.9619 12.2329C13.0253 12.2329 12.1846 12.6438 11.6104 13.2952L6.81619 10.5235C6.92698 10.2027 6.98715 9.8584 6.98715 9.5C6.98715 9.1416 6.92698 8.79726 6.81619 8.47651L11.6104 5.70485Z" fill="currentColor" />
+            </svg>
+            Compartir
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</template>
+
+<!-- Submenús nativos: cada ítem puede contener un <details>/<summary> -->
+<template data-story="Con desplegables (summary)">
+  <div style="min-height:240px;">
+    <div class="ft-mol-dropdown ft-mol-dropdown--is-list-lft ft-mol-dropdown--has-btn-nav">
+      <button type="button" class="ft-btn-nav ft-btn-nav--more-v ft-mol-dropdown__trigger" aria-haspopup="listbox" aria-expanded="true" id="more-nav-trigger2" aria-controls="more-nav-list2">
+        <span class="ft-btn-nav__text">Desplegar más opciones</span>
+        <span class="ft-btn-nav__icon" aria-hidden="true"></span>
+      </button>
+      <ul class="ft-mol-dropdown__list ft-mol-dropdown__listIs-active" id="more-nav-list2" aria-labelledby="more-nav-trigger2">
+        <li class="ft-mol-dropdown__item">
+          <details class="ft-mol-dropdown__details" open>
+            <summary class="ft-mol-dropdown__summary">
+              <span class="ft-mol-dropdown__title">Desplegable</span>
+              <span class="ft-mol-dropdown__icon" aria-hidden="true"></span>
+            </summary>
+            <ul class="ft-mol-dropdown__details-list" role="list">
+              <li class="ft-mol-dropdown__details-item">Item desplegado</li>
+              <li class="ft-mol-dropdown__details-item">Item desplegado</li>
+            </ul>
+          </details>
+        </li>
+      </ul>
+    </div>
+  </div>
+</template>

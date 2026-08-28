@@ -1,0 +1,63 @@
+<!--
+  masonry.html — códigos HTML originales de Masonry (.ft-mol-masonry)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS.
+  Markup tomado de fourty/molecules/molecule-masonry.html.
+  El icono de media es un <span class="ft-mol-masonry__icon"> vacío; el SVG lo
+  aporta el CSS según el modificador --has-photo/--has-video/--has-audio del padre.
+  ─────────────────────────────────────────────────────────────────────────
+-->
+<template data-story="Base">
+  <div class="ft-mol-masonry">
+    <div class="ft-mol-masonry__picture">
+      <a href="#" title="titulo">
+        <picture>
+          <source media="(min-width: 768px)" srcset="https://estaticos-cdn.prensaiberica.es/clip/c1c91040-9844-47c9-9bab-d7c93f1c1d8f_16-9-aspect-ratio_25p_0.jpg">
+          <img src="https://estaticos-cdn.prensaiberica.es/clip/c1c91040-9844-47c9-9bab-d7c93f1c1d8f_16-9-aspect-ratio_25p_0.jpg" loading="lazy" class="ft-helper-img-rd" alt="alt text" title="title text" width="420" height="215">
+        </picture>
+      </a>
+    </div>
+    <div class="ft-mol-masonry__content">
+      <a href="#" class="ft-mol-masonry__previous" title="title text" target="_self">Lorem ipsum dolor est</a>
+      <h2 class="ft-mol-masonry__contentTitle"><a href="#" title="titulo" class="ft-link ft-link--secondary">¿Cuántos partidos ha jugado Busquets?</a></h2>
+      <p class="ft-mol-masonry__contentText">Lorem ipsum dolor sit amet consecteur</p>
+    </div>
+  </div>
+</template>
+
+<template data-story="Con vídeo (--has-video)">
+  <div class="ft-mol-masonry ft-mol-masonry--has-video">
+    <div class="ft-mol-masonry__picture">
+      <a href="#" title="titulo">
+        <picture>
+          <source media="(min-width: 768px)" srcset="https://estaticos-cdn.prensaiberica.es/clip/c1c91040-9844-47c9-9bab-d7c93f1c1d8f_16-9-aspect-ratio_25p_0.jpg">
+          <img src="https://estaticos-cdn.prensaiberica.es/clip/c1c91040-9844-47c9-9bab-d7c93f1c1d8f_16-9-aspect-ratio_25p_0.jpg" loading="lazy" class="ft-helper-img-rd" alt="alt text" title="title text" width="420" height="215">
+        </picture>
+      </a>
+      <span class="ft-mol-masonry__icon"></span>
+    </div>
+    <div class="ft-mol-masonry__content">
+      <a href="#" class="ft-mol-masonry__previous" title="title text" target="_self">Lorem ipsum dolor est</a>
+      <h2 class="ft-mol-masonry__contentTitle"><a href="#" title="titulo" class="ft-link ft-link--secondary">¿Cuántos partidos ha jugado Busquets?</a></h2>
+      <p class="ft-mol-masonry__contentText">Lorem ipsum dolor sit amet consecteur</p>
+    </div>
+  </div>
+</template>
+
+<template data-story="Imagen a la izquierda (Is-lft)">
+  <div class="ft-mol-masonry ft-mol-masonryIs-lft">
+    <div class="ft-mol-masonry__picture">
+      <a href="#" title="titulo">
+        <picture>
+          <source media="(min-width: 768px)" srcset="https://estaticos-cdn.prensaiberica.es/clip/c1c91040-9844-47c9-9bab-d7c93f1c1d8f_16-9-aspect-ratio_25p_0.jpg">
+          <img src="https://estaticos-cdn.prensaiberica.es/clip/c1c91040-9844-47c9-9bab-d7c93f1c1d8f_16-9-aspect-ratio_25p_0.jpg" loading="lazy" class="ft-helper-img-rd" alt="alt text" title="title text" width="420" height="215">
+        </picture>
+      </a>
+    </div>
+    <div class="ft-mol-masonry__content">
+      <a href="#" class="ft-mol-masonry__previous" title="title text" target="_self">Lorem ipsum dolor est</a>
+      <h2 class="ft-mol-masonry__contentTitle"><a href="#" title="titulo" class="ft-link ft-link--secondary">¿Cuántos partidos ha jugado Busquets?</a></h2>
+      <p class="ft-mol-masonry__contentText">Lorem ipsum dolor sit amet consecteur</p>
+    </div>
+  </div>
+</template>

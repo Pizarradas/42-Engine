@@ -1,0 +1,139 @@
+<!--
+  form.html — códigos HTML originales de Form (.ft-mol-form)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS.
+  Markup tomado de fourty/molecules/molecule-form.html. Cada bloque se acota a
+  ~360px (ancho real de campo). Cobertura: input/select + label + soporte +
+  estados + search-icon + buttons. Las variantes de autocompletado predictivo
+  (-predictive / -dropdown--full / -slide) son JS-driven y NO se reproducen aquí;
+  su markup completo está en fourty/molecules/molecule-form.html.
+  ─────────────────────────────────────────────────────────────────────────
+-->
+<template data-story="Base">
+  <div style="max-width:360px;width:100%;">
+    <div class="ft-mol-form">
+      <input type="search" id="" class="ft-mol-form__input" name="" placeholder="&nbsp;">
+      <label for="" class="ft-mol-form__label">Label</label>
+      <p class="ft-mol-form__supporting-text">
+        <span class="ft-mol-form__supporting-message">Supporting text</span>
+        <span class="ft-mol-form__supporting-numbers">11/20</span>
+      </p>
+    </div>
+  </div>
+</template>
+
+<template data-story="Con label (--has-label)">
+  <div style="max-width:360px;width:100%;">
+    <div class="ft-mol-form ft-mol-form--has-label">
+      <input type="search" id="" class="ft-mol-form__input" name="" placeholder="&nbsp;">
+      <label for="" class="ft-mol-form__label">Label</label>
+      <p class="ft-mol-form__supporting-text">
+        <span class="ft-mol-form__supporting-message">Supporting text</span>
+        <span class="ft-mol-form__supporting-numbers">11/20</span>
+      </p>
+    </div>
+  </div>
+</template>
+
+<template data-story="Con texto de soporte (--has-supporting-text)">
+  <div style="max-width:360px;width:100%;">
+    <div class="ft-mol-form ft-mol-form--has-supporting-text">
+      <input type="search" id="" class="ft-mol-form__input" name="" placeholder="&nbsp;">
+      <label for="" class="ft-mol-form__label">Label</label>
+      <p class="ft-mol-form__supporting-text">
+        <span class="ft-mol-form__supporting-message">Supporting text</span>
+        <span class="ft-mol-form__supporting-numbers">11/20</span>
+      </p>
+    </div>
+  </div>
+</template>
+
+<template data-story="Deshabilitado (--is-disabled)">
+  <div style="max-width:360px;width:100%;">
+    <div class="ft-mol-form ft-mol-form--is-disabled">
+      <input type="search" id="" class="ft-mol-form__input" name="" placeholder="&nbsp;" disabled>
+      <label for="" class="ft-mol-form__label">Label</label>
+      <p class="ft-mol-form__supporting-text">
+        <span class="ft-mol-form__supporting-message">Supporting text</span>
+        <span class="ft-mol-form__supporting-numbers">11/20</span>
+      </p>
+    </div>
+  </div>
+</template>
+
+<template data-story="Warning (--is-info)">
+  <div style="max-width:360px;width:100%;">
+    <div class="ft-mol-form ft-mol-form--is-info">
+      <input type="search" id="" class="ft-mol-form__input" name="" placeholder="&nbsp;">
+      <label for="" class="ft-mol-form__label">Label</label>
+      <p class="ft-mol-form__supporting-text">
+        <span class="ft-mol-form__supporting-message">Supporting text</span>
+        <span class="ft-mol-form__supporting-numbers">11/20</span>
+      </p>
+    </div>
+  </div>
+</template>
+
+<template data-story="Error (--is-error)">
+  <div style="max-width:360px;width:100%;">
+    <div class="ft-mol-form ft-mol-form--is-error">
+      <input type="search" id="" class="ft-mol-form__input" name="" placeholder="&nbsp;">
+      <label for="" class="ft-mol-form__label">Label</label>
+      <p class="ft-mol-form__supporting-text">
+        <span class="ft-mol-form__supporting-message">Supporting text</span>
+        <span class="ft-mol-form__supporting-numbers">11/20</span>
+      </p>
+    </div>
+  </div>
+</template>
+
+<template data-story="Dropdown (select)">
+  <div style="max-width:360px;width:100%;">
+    <div class="ft-mol-form ft-mol-form--has-label ft-mol-form-dropdown">
+      <select name="select" class="ft-mol-form__select">
+        <option>Opción 1</option>
+        <option>Opción 2</option>
+        <option>Opción 3</option>
+      </select>
+      <label for="" class="ft-mol-form__label">Label</label>
+    </div>
+  </div>
+</template>
+
+<!-- Tipo búsqueda con icono de lupa -->
+<template data-story="Búsqueda con icono (-search--has-search-icon)">
+  <div style="max-width:360px;width:100%;">
+    <div class="ft-mol-form ft-mol-form-search ft-mol-form-search--has-search-icon">
+      <input type="search" id="" class="ft-mol-form__input" name="" placeholder="&nbsp;">
+      <label for="" class="ft-mol-form__label">Label</label>
+      <p class="ft-mol-form__supporting-text">
+        <span class="ft-mol-form__supporting-message">Supporting text</span>
+        <span class="ft-mol-form__supporting-numbers">11/20</span>
+      </p>
+    </div>
+  </div>
+</template>
+
+<!-- Campo con grupo de acciones (compone .ft-mol-btnGroup + .ft-btn-nav) -->
+<template data-story="Con botones (--has-buttons)">
+  <div style="max-width:360px;width:100%;">
+    <div class="ft-mol-form ft-mol-form--has-buttons">
+      <input type="search" id="" class="ft-mol-form__input" name="" placeholder="&nbsp;">
+      <label for="" class="ft-mol-form__label">Label</label>
+      <p class="ft-mol-form__supporting-text">
+        <span class="ft-mol-form__supporting-message">Supporting text</span>
+        <span class="ft-mol-form__supporting-numbers">11/20</span>
+      </p>
+      <div class="ft-mol-btnGroup">
+        <a type="button" name="remove-button" class="ft-btn-nav ft-btn-nav--remove" title="Remove">
+          <span class="ft-btn-nav__text">Remove</span>
+          <span class="ft-btn-nav__icon"></span>
+        </a>
+        <a type="button" name="send-button" class="ft-btn-nav ft-btn-nav--send" title="Enviar">
+          <span class="ft-btn-nav__text">Enviar</span>
+          <span class="ft-btn-nav__icon"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</template>

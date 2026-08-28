@@ -1,0 +1,52 @@
+<!--
+  pagination.html — códigos HTML originales de Pagination (.ft-mol-pagination)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS.
+  Markup tomado de fourty/molecules/molecule-pagination.html (incluye elipsis
+  y página deshabilitada intermedia).
+  ─────────────────────────────────────────────────────────────────────────
+-->
+<template data-story="Base">
+  <nav aria-label="Paginación" class="ft-mol-pagination">
+    <ul class="ft-mol-pagination__content">
+      <li class="ft-mol-pagination__item ft-mol-pagination__itemIsDisabled ft-mol-pagination__itemIsIconized ft-mol-pagination__itemIsNavPrev">
+        <a href="/page/**" rel="prev" class="ft-mol-pagination__trigger" aria-disabled="true" tabindex="-1" title="Anterior"><span class="ft-helper-hide">Anterior</span></a>
+      </li>
+      <li class="ft-mol-pagination__item"><a href="/page/**" class="ft-mol-pagination__trigger" title="Ir a la página 1">1</a></li>
+      <li class="ft-mol-pagination__item"><a href="/page/**" class="ft-mol-pagination__trigger" title="Ir a la página 2">2</a></li>
+      <li class="ft-mol-pagination__item ft-mol-pagination__itemIsActive"><a href="/page/**" class="ft-mol-pagination__trigger" title="Página actual" aria-current="page">3</a></li>
+      <li class="ft-mol-pagination__item ft-mol-pagination__itemIsDisabled"><a href="/page/**" class="ft-mol-pagination__trigger" title="Página deshabilitada" aria-disabled="true" tabindex="-1">4</a></li>
+      <li class="ft-mol-pagination__item"><span class="ft-mol-pagination__trigger" aria-hidden="true">...</span></li>
+      <li class="ft-mol-pagination__item"><a href="/page/**" class="ft-mol-pagination__trigger" title="Ir a la página 20">20</a></li>
+      <li class="ft-mol-pagination__item ft-mol-pagination__itemIsIconized ft-mol-pagination__itemIsNavNext">
+        <a href="/page/**" rel="next" class="ft-mol-pagination__trigger" title="Siguiente"><span class="ft-helper-hide">Siguiente</span></a>
+      </li>
+    </ul>
+  </nav>
+</template>
+
+<template data-story="Centrada (-is--cnt)">
+  <nav aria-label="Paginación" class="ft-mol-pagination ft-mol-pagination-is--cnt">
+    <ul class="ft-mol-pagination__content">
+      <li class="ft-mol-pagination__item ft-mol-pagination__itemIsIconized ft-mol-pagination__itemIsNavPrev">
+        <a href="/page/**" rel="prev" class="ft-mol-pagination__trigger" title="Anterior"><span class="ft-helper-hide">Anterior</span></a>
+      </li>
+      <li class="ft-mol-pagination__item"><a href="/page/**" class="ft-mol-pagination__trigger" title="Ir a la página 1">1</a></li>
+      <li class="ft-mol-pagination__item ft-mol-pagination__itemIsActive"><a href="/page/**" class="ft-mol-pagination__trigger" title="Página actual" aria-current="page">2</a></li>
+      <li class="ft-mol-pagination__item"><a href="/page/**" class="ft-mol-pagination__trigger" title="Ir a la página 3">3</a></li>
+      <li class="ft-mol-pagination__item ft-mol-pagination__itemIsIconized ft-mol-pagination__itemIsNavNext">
+        <a href="/page/**" rel="next" class="ft-mol-pagination__trigger" title="Siguiente"><span class="ft-helper-hide">Siguiente</span></a>
+      </li>
+    </ul>
+  </nav>
+</template>
+
+<template data-story="A la derecha (-is--rgt)">
+  <nav aria-label="Paginación" class="ft-mol-pagination ft-mol-pagination-is--rgt">
+    <ul class="ft-mol-pagination__content">
+      <li class="ft-mol-pagination__item"><a href="/page/**" class="ft-mol-pagination__trigger" title="Ir a la página 1">1</a></li>
+      <li class="ft-mol-pagination__item ft-mol-pagination__itemIsActive"><a href="/page/**" class="ft-mol-pagination__trigger" title="Página actual" aria-current="page">2</a></li>
+      <li class="ft-mol-pagination__item"><a href="/page/**" class="ft-mol-pagination__trigger" title="Ir a la página 3">3</a></li>
+    </ul>
+  </nav>
+</template>

@@ -1,0 +1,52 @@
+<!--
+  header-custom.html — códigos HTML originales de Header Custom (.ft-mol-header-custom)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS.
+  Markup tomado de fourty/molecules/molecule-headercustom.html. Rutas /cds-statics.
+  ─────────────────────────────────────────────────────────────────────────
+-->
+<template data-story="Base">
+  <div class="ft-mol-header-custom">
+    <div class="ft-mol-header-custom__txt">
+      <h1 class="ft-mol-header-custom__title">Notas de corte <span class="ft-mol-header-custom__highlighted">2024</span></h1>
+      <p class="ft-mol-header-custom__subtitle">Lorem ipsum dolor est</p>
+    </div>
+    <figure class="ft-img">
+      <picture>
+        <source media="(min-width:640.1px)" srcset="/cds-statics/assets/img/templates/ft-mol-tab-header-custom-img-desktop--template.png" width="250" height="140">
+        <source media="(max-width: 640px)" srcset="/cds-statics/assets/img/templates/ft-mol-tab-header-custom-img-mobile--template.png" width="710" height="540">
+        <img src="/cds-statics/assets/img/templates/ft-mol-tab-header-custom-img-desktop--template.png" alt="" width="250" height="140" loading="eager" class="ft-helper-img-rd">
+      </picture>
+    </figure>
+  </div>
+</template>
+
+<template data-story="Texto a la izquierda (--has-txt-lft)">
+  <div class="ft-mol-header-custom ft-mol-header-custom--has-txt-lft">
+    <div class="ft-mol-header-custom__txt">
+      <h1 class="ft-mol-header-custom__title">Notas de corte <span class="ft-mol-header-custom__highlighted">2024</span></h1>
+      <p class="ft-mol-header-custom__subtitle">Lorem ipsum dolor est</p>
+    </div>
+    <figure class="ft-img">
+      <picture>
+        <source media="(min-width:640.1px)" srcset="/cds-statics/assets/img/templates/ft-mol-tab-header-custom-img-desktop--template.png" width="250" height="140">
+        <img src="/cds-statics/assets/img/templates/ft-mol-tab-header-custom-img-desktop--template.png" alt="" width="250" height="140" loading="eager" class="ft-helper-img-rd">
+      </picture>
+    </figure>
+  </div>
+</template>
+
+<!-- Texto centrado, sin imagen -->
+<template data-story="Texto centrado (--has-txt-cnt)">
+  <div class="ft-mol-header-custom ft-mol-header-custom--has-txt-cnt">
+    <div class="ft-mol-header-custom__txt">
+      <h1 class="ft-mol-header-custom__title">Notas de corte <span class="ft-mol-header-custom__highlighted">2024</span></h1>
+      <p class="ft-mol-header-custom__subtitle">Lorem ipsum dolor est</p>
+    </div>
+    <figure class="ft-img">
+      <picture>
+        <img src="/cds-statics/assets/img/templates/ft-mol-tab-header-custom-img-desktop--template.png" alt="" width="250" height="140" loading="eager" class="ft-helper-img-rd">
+      </picture>
+    </figure>
+  </div>
+</template>
