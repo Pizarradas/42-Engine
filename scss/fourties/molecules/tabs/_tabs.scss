@@ -1,0 +1,505 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// .ft-mol-tabs
+// ===============================================
+.ft-mol-tabs {
+  // behavior: --mobileonly
+  @include behavior-parent-nested(ft-mol-tabs--mobileonly) {
+    @include min-screen(768px) {
+      display: none;
+    }
+  }
+
+  // &--vertical
+  &--vertical {
+    @include min-screen(768px) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  // &__list
+  &__list {
+    @include position(relative, null null null null);
+    @include margin(0);
+    @include padding(0);
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: flex;
+    height: 4rem;
+    gap: 0.8rem;
+
+    // &::-webkit-scrollbar
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    // behavior: --mobileonly
+    @include behavior-in-ancestors(".ft-mol-tabs--mobileonly") {
+      justify-content: space-between;
+
+      // behavior-parent(ft-brand-ep)
+      @if $brand ==ep {
+        background-color: var(--color-primary);
+      }
+      // behavior-parent(ft-brand-epe)
+      @if $brand ==epe {
+        background-color: var(--color-primary);
+      }
+      // behavior-parent(ft-brand-sport)
+      @if $brand ==sport {
+        background-color: var(--color-primary);
+      }
+    }
+
+    // behavior: --pills
+    @include behavior-in-ancestors(".ft-mol-tabs--pills") {
+      gap: 0;
+      height: auto;
+    }
+
+    // behavior: --capsuled
+    @include behavior-in-ancestors(".ft-mol-tabs--capsuled") {
+      @include margin(0 auto);
+      @include padding(0.4rem);
+      @include border-top-radius(5rem);
+      @include border-bottom-radius(5rem);
+      border: .1rem solid var(--color-lightGrey);
+      background-color: var(--color-white);
+      width: max-content;
+      max-width: 100%;
+      height: auto;
+      gap: 0.4rem;
+    }
+
+    // behavior: --capsuled + --pills (chained para ganar especificidad sobre las reglas
+    // que --pills inyecta vía behavior-in-ancestors)
+    @include behavior-in-ancestors(".ft-mol-tabs--capsuled.ft-mol-tabs--pills") {
+      gap: 0.4rem;
+    }
+
+    // behavior: --vertical
+    @include behavior-in-ancestors(".ft-mol-tabs--vertical") {
+      @include min-screen(768px) {
+        overflow-x: hidden;
+        flex-basis: 25%;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        background-color: var(--color-lightGrey);
+        height: auto;
+        max-width: 300px;
+      }
+    }
+  }
+
+  // &__tab
+  &__tab {
+    @include position(relative, null null null null);
+    @include padding(0 1.6rem);
+    @include border-width(0);
+    @include min-click-area();
+    @include size(max-content, 100%);
+    @include font--body-M;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: 700;
+    color: var(--color-quaternary);
+    background-color: transparent;
+    white-space: nowrap;
+
+    // behavior: --mobileonly
+    @include behavior-in-ancestors(".ft-mol-tabs--mobileonly") {
+      font-weight: unset;
+
+      // behavior-parent(ft-brand-ep)
+      @if $brand ==ep {
+        color: var(--color-white);
+      }
+      // behavior-parent(ft-brand-epe)
+      @if $brand ==epe {
+        color: var(--color-white);
+      }
+      // behavior-parent(ft-brand-sport)
+      @if $brand ==sport {
+        color: var(--color-white);
+      }
+      // behavior-parent(ft-brand-regionales)
+      @if $brand ==regionales {
+        // @include behavior-in-ancestors('.gironadelicia')
+        @include behavior-in-ancestors(".gironadelicia") {
+          color: var(--color-gironadelicia-white);
+        }
+      }
+    }
+
+    // behavior: --button
+    @include behavior-in-ancestors(".ft-mol-tabs--button") {
+      @include margin(0 0 0.8rem 0);
+      @include padding(0.5rem 1rem);
+      @include border-style(solid);
+      @include border-width(0.2rem);
+      @include border-color(var(--color-lightGrey));
+      @include border-top-radius(0.5rem);
+      @include border-bottom-radius(0.5rem);
+      background-color: transparent;
+      height: 3.2rem;
+    }
+
+    // behavior: --pills
+    @include behavior-in-ancestors(".ft-mol-tabs--pills") {
+      @include margin(0 0 0.8rem 0);
+      @include border-style(solid solid solid none);
+      @include border-width(0.1rem);
+      @include border-color(var(--color-lightGrey));
+      text-align: center;
+      background-color: transparent;
+      height: 4rem;
+    }
+
+    // behavior: --capsuled
+    @include behavior-in-ancestors(".ft-mol-tabs--capsuled") {
+      @include margin(0);
+      @include padding(0.6rem 1.2rem);
+      @include border-style(none);
+      @include border-width(0);
+      @include border-top-radius(5rem);
+      @include border-bottom-radius(5rem);
+      @include font--body-S;
+      font-weight: bold;
+      background-color: transparent;
+      color: var(--color-black);
+      height: auto;
+
+      // min-screen(768px)
+      @include min-screen(768px) {
+        @include font--body-M;
+        font-weight: bold;
+      }
+    }
+
+    // behavior: --vertical
+    @include behavior-in-ancestors(".ft-mol-tabs--vertical") {
+      @include min-screen(768px) {
+        @include margin(null 0 null 0);
+        @include padding(1.6rem);
+        @include size(100%, 4rem);
+        text-align: left;
+      }
+    }
+
+    // &:first-child
+    &:first-child {
+      @include margin(null null null auto);
+
+      // behavior: --mobileonly
+      @include behavior-in-ancestors(".ft-mol-tabs--mobileonly") {
+        @include margin(null null null 0);
+      }
+
+      // behavior: --pills
+      @include behavior-in-ancestors(".ft-mol-tabs--pills") {
+        @include border-left-radius(5rem);
+        @include border-style(null null null solid);
+      }
+
+      // behavior: --capsuled + --pills (chained para ganar especificidad sobre --pills)
+      @include behavior-in-ancestors(".ft-mol-tabs--capsuled.ft-mol-tabs--pills") {
+        @include border-style(none);
+        @include border-width(0);
+      }
+
+      // &[aria-selected="true"] (override del :before en --pills)
+      &[aria-selected="true"] {
+        // &:before
+        &:before {
+          // behavior: --pills
+          @include behavior-in-ancestors(".ft-mol-tabs--pills") {
+            content: none;
+          }
+        }
+      }
+    }
+
+    // &:last-child
+    &:last-child {
+      @include margin(null auto null null);
+
+      // behavior: --mobileonly
+      @include behavior-in-ancestors(".ft-mol-tabs--mobileonly") {
+        @include margin(null 0 null null);
+      }
+
+      // behavior: --pills
+      @include behavior-in-ancestors(".ft-mol-tabs--pills") {
+        @include border-right-radius(5rem);
+        @include border-style(null solid null null);
+      }
+
+      // behavior: --capsuled + --pills (chained para ganar especificidad sobre --pills)
+      @include behavior-in-ancestors(".ft-mol-tabs--capsuled.ft-mol-tabs--pills") {
+        @include border-style(none);
+        @include border-width(0);
+      }
+    }
+
+    // &:before
+    &:before {
+      content: "";
+      @include position(absolute, null 0 0 0);
+      @include size(100%, 0.2rem);
+
+      // behavior: --button
+      @include behavior-in-ancestors(".ft-mol-tabs--button") {
+        content: none;
+      }
+
+      // behavior: --capsuled
+      @include behavior-in-ancestors(".ft-mol-tabs--capsuled") {
+        content: none;
+      }
+
+      // behavior: --vertical
+      @include behavior-in-ancestors(".ft-mol-tabs--vertical") {
+        @include min-screen(768px) {
+          @include hide-visually;
+        }
+      }
+    }
+
+    // &:hover
+    &:hover {
+      color: var(--color-primary);
+
+      // behavior: --mobileonly
+      @include behavior-in-ancestors(".ft-mol-tabs--mobileonly") {
+        // behavior-parent(ft-brand-ep)
+        @if $brand ==ep {
+          color: var(--color-white);
+        }
+        // behavior-parent(ft-brand-epe)
+        @if $brand ==epe {
+          color: var(--color-white);
+        }
+        // behavior-parent(ft-brand-sport)
+        @if $brand ==sport {
+          color: var(--color-white);
+        }
+      }
+    }
+
+    // &:focus-visible
+    &:focus-visible {
+      @include border-top-radius(0.5rem);
+      @include border-bottom-radius(0.5rem);
+      outline: 2px solid var(--color-black);
+      outline-offset: -2px;
+    }
+
+    // &[aria-selected="true"]
+    &[aria-selected="true"] {
+      color: var(--color-primary);
+
+      // behavior: --mobileonly
+      @include behavior-in-ancestors(".ft-mol-tabs--mobileonly") {
+        font-weight: 700;
+
+        // behavior-parent(ft-brand-ep)
+        @if $brand ==ep {
+          color: var(--color-white);
+        }
+        // behavior-parent(ft-brand-epe)
+        @if $brand ==epe {
+          color: var(--color-white);
+        }
+        // behavior-parent(ft-brand-sport)
+        @if $brand ==sport {
+          color: var(--color-white);
+        }
+        // behavior-parent(ft-brand-regionales)
+        @if $brand ==regionales {
+          // @include behavior-in-ancestors('.gironadelicia')
+          @include behavior-in-ancestors(".gironadelicia") {
+            color: var(--color-gironadelicia-white);
+          }
+        }
+      }
+
+      // behavior: --button
+      @include behavior-in-ancestors(".ft-mol-tabs--button") {
+        @include border-color(var(--color-primary));
+      }
+
+      // behavior: --pills
+      @include behavior-in-ancestors(".ft-mol-tabs--pills") {
+        @include border-color(var(--color-primary));
+        background-color: var(--color-primary);
+        color: var(--color-white);
+      }
+
+      // behavior: --vertical
+      @include behavior-in-ancestors(".ft-mol-tabs--vertical") {
+        @include min-screen(768px) {
+          color: var(--color-white);
+          background-color: var(--color-primary);
+        }
+      }
+
+      // &:before
+      &:before {
+        @include border-style(solid);
+        @include border-width(0.2rem);
+        @include border-color(var(--color-primary));
+
+        // behavior: --mobileonly
+        @include behavior-in-ancestors(".ft-mol-tabs--mobileonly") {
+          // behavior-parent(ft-brand-ep)
+          @if $brand ==ep {
+            @include border-color(var(--color-white));
+          }
+          // behavior-parent(ft-brand-epe)
+          @if $brand ==epe {
+            @include border-color(var(--color-white));
+          }
+          // behavior-parent(ft-brand-sport)
+          @if $brand ==sport {
+            @include border-color(var(--color-white));
+          }
+          // behavior-parent(ft-brand-regionales)
+          @if $brand ==regionales {
+            // @include behavior-in-ancestors('.gironadelicia')
+            @include behavior-in-ancestors(".gironadelicia") {
+              @include border-color(var(--color-gironadelicia-white));
+            }
+          }
+        }
+
+        // behavior: --pills
+        @include behavior-in-ancestors(".ft-mol-tabs--pills") {
+          @include position(absolute, -0.1rem unset -0.1rem -0.1rem);
+          @include border-style(none none none solid);
+          @include border-width(0.1rem);
+          @include size(0, auto);
+        }
+
+        // behavior: --capsuled
+        @include behavior-in-ancestors(".ft-mol-tabs--capsuled") {
+          content: none;
+        }
+      }
+    }
+  }
+
+  // &__bar
+  &__bar {
+    @include position(relative, null null null null);
+    @include size(100%, 0.2rem);
+    display: block;
+
+    // behavior: --mobileonly
+    @include behavior-in-ancestors(".ft-mol-tabs--mobileonly") {
+      @include size(100%, 0.1rem);
+    }
+
+    // behavior: --capsuled
+    @include behavior-in-ancestors(".ft-mol-tabs--capsuled") {
+      display: none;
+    }
+
+    // behavior: --vertical
+    @include behavior-in-ancestors(".ft-mol-tabs--vertical") {
+      @include min-screen(768px) {
+        @include hide-visually;
+      }
+    }
+
+    // &:before
+    &:before {
+      content: "";
+      @include position(absolute, null 0 0 0);
+      @include margin(null auto null auto);
+      @include size(100%, 100%);
+      @include border-top-radius(0.5rem);
+      @include border-bottom-radius(0.5rem);
+      z-index: 1;
+      background-color: var(--color-lightGrey);
+
+      // behavior: --mobileonly
+      @include behavior-in-ancestors(".ft-mol-tabs--mobileonly") {
+        // behavior-parent(ft-brand-ep)
+        @if $brand ==ep {
+          background-color: var(--color-primary);
+        }
+        // behavior-parent(ft-brand-epe)
+        @if $brand ==epe {
+          background-color: var(--color-primary);
+        }
+        // behavior-parent(ft-brand-sport)
+        @if $brand ==sport {
+          background-color: var(--color-primary);
+        }
+        // behavior-parent(ft-brand-regionales)
+        @if $brand ==regionales {
+          // @include behavior-in-ancestors('.gironadelicia')
+          @include behavior-in-ancestors(".gironadelicia") {
+            background-color: var(--color-gironadelicia-border);
+          }
+        }
+      }
+    }
+  }
+
+  // &__contents
+  &__contents {
+    @include margin(0);
+
+    // behavior: --vertical
+    @include behavior-in-ancestors(".ft-mol-tabs--vertical") {
+      @include min-screen(768px) {
+        @include border-style(solid solid solid null);
+        @include border-width(0.2rem);
+        @include border-color(var(--color-lightGrey));
+        flex-basis: 75%;
+        width: 100%;
+      }
+    }
+  }
+
+  // &__content
+  &__content {
+    @include position(relative, null null null null);
+    @include padding(2rem 0rem);
+
+    // behavior: --vertical
+    @include behavior-in-ancestors(".ft-mol-tabs--vertical") {
+      @include min-screen(768px) {
+        @include padding(2rem);
+        height: 100%;
+      }
+    }
+
+    // &[hidden]
+    &[hidden] {
+      display: none;
+    }
+
+    // &[tabindex="0"]
+    &[tabindex="0"] {
+      display: block;
+    }
+
+    // &:focus-visible
+    &:focus-visible {
+      @include border-top-radius(0.5rem);
+      @include border-bottom-radius(0.5rem);
+      outline: 2px solid var(--color-black);
+      outline-offset: -2px;
+    }
+  }
+}

@@ -1,0 +1,261 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// animation
+// ===============================================
+@keyframes move
+{
+  to
+  {
+    transform: translateX(-100%);
+  }
+}
+
+      // @keyframes shift
+      @keyframes shift
+      {
+        0%,
+            100%
+            {
+                opacity: 0;
+            }
+        
+            50%
+            {
+                opacity: 1;
+            }
+      }
+
+
+// .ft-mol-ticker
+// ===============================================
+.ft-mol-ticker
+{
+  $self: &;
+  @include margin(1.5rem 0);
+  @include position(relative, null);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+
+
+  // &__heading
+  &__heading
+  {
+    @include font--body-XS--small;
+    @include font--weight-700;
+    @include padding(0.6rem 1rem 0.6rem 2rem);
+    @include border-bottom-radius(2rem);
+    @include border-top-radius(2rem);
+    @include position (relative, null null null null);
+    z-index: 2;
+    min-width: fit-content;
+    color: var(--color-white);
+    text-transform: uppercase;
+    background-size: 200%;
+    transition: all .5s;
+
+    // @include min-screen(768px)
+    @include min-screen(768px) {
+      @include padding(0.6rem 1.5rem 0.6rem 2.3rem);
+      @include font--body-S--small;
+      @include font--weight-700;
+    }
+
+     // &:before
+     &:before
+     {
+         @include position (absolute, 0 null 0 .7rem);
+         @include margin(auto);
+        background-color:var(--color-white);
+         content: "";
+         width: 8px;
+         height: 8px;
+         border-radius: 50%;
+         animation: shift 1s infinite;
+
+         // min-screen(768px)
+         @include min-screen(768px)
+         {
+             @include position (absolute, 0 null 0 .9rem);
+         }
+
+         // end // &:before
+     }
+     @include behavior-parent(ft-mol-ticker--news){
+      display: flex;
+      align-items: center;
+      @include font--body-S--small;
+      @include fontBold;
+      @include padding(0);
+      @include margin(0 0 .8rem 0);
+      height:2.5rem;
+      text-transform: capitalize;
+      color: var(--color-black);
+      &:before {
+        content: none;
+      }
+    }
+
+
+  }
+
+  // &__txt
+  &__txt
+  {
+    font-weight: normal;
+    color: var(--color-black);
+  }
+
+  // &__item
+  &__item
+  {
+    @include padding(0rem 2rem 0 0);
+    @include font--body-S--small;
+    white-space: nowrap;
+     // @include min-screen(768px)
+     @include min-screen(768px) {
+      @include padding(0.3rem 2rem .3rem 0);
+      @include font--body-M--small;
+      // variante Es Noticia
+     @include behavior-parent(ft-mol-ticker--news){
+      @include font--body-S--small;
+   }
+    }
+
+    /*// &:not(:last-child) 
+    &:not(:last-child)
+    {
+
+      // #{ $self }
+      #{ $self }
+      {
+
+        // &__txt
+        &__txt
+        {
+
+          // &:after
+          &:after
+          {
+            content: "|";
+            @include margin(null 1rem null .5rem);
+            color: var(--color-black);
+          }
+        }
+      }
+    }*/
+  }
+
+  // &__scroll
+  &__scroll
+  {
+@include padding(.5rem 0);
+@include margin(null null null 1rem);
+    display: flex;
+    flex-basis: 100%;
+    overflow-x: auto;
+
+    // Oculta el scroll visual pero permite scroll funcional en la variante --news
+    @include behavior-parent(ft-mol-ticker--news){
+      @include padding(0);
+        height: 2.5rem;
+      scrollbar-width: initial; // Firefox
+      -ms-overflow-style: none; // IE/Edge
+      &::-webkit-scrollbar {
+        display: none; // Chrome/Safari
+       
+      }
+        // min-screen(768px)
+        @include min-screen(768px)
+        {
+          height:3rem;
+          scrollbar-width: initial; // Firefox
+          -ms-overflow-style: initial; // IE/Edge
+          &::-webkit-scrollbar {
+            display: block; // Chrome/Safari
+           
+          }
+        }
+    }
+   /* @include font--body-M--small;
+    display: flex;
+    flex-basis: 100%;
+    transform: translateX(0%);
+    animation: move 15s linear infinite;
+    padding-left: 100%;
+
+     // min-screen(768px)
+     @include min-screen(768px)
+     {
+      transform: translateX(0%);
+      animation: none;
+      padding-left: 2rem;
+     }*/
+  }
+
+  // &--is
+  &--is
+  {
+
+    // &-primary
+    &-primary
+    {
+
+      // #{ $self }
+      #{ $self }
+      {
+
+        // &__heading
+        &__heading
+        {
+          background-color: var(--color-functional-error);
+
+          //color base oscuro por defecto para revistas
+          @if $brand ==revistas {
+            background-color: var(--color-primary);
+          }
+        }
+      }
+    }
+
+    // &-secondary
+    &-secondary
+    {
+
+      // #{ $self }
+      #{ $self }
+      {
+
+        // &__heading
+        &__heading
+        {
+          background-color: var(--color-secondary);
+        }
+      }
+    }
+
+    // &-tertiary
+    &-tertiary
+    {
+
+      // #{ $self }
+      #{ $self }
+      {
+
+        // &__heading
+        &__heading
+        {
+          background-color: var(--color-functional-success);
+        }
+      }
+    }
+  }
+// variante Ticker
+  &--news{
+    @include margin(0);
+  }
+}

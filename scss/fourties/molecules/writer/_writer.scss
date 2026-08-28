@@ -1,0 +1,527 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// ft-mol-writer
+// ===============================================
+.ft-mol-writer {
+  @include margin(2.5rem null);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  color: var(--color-quaternary);
+
+  // @if $brand(revistas)
+  @if $brand ==revistas {
+    @include font--body-L--small;
+  }
+
+  // behavior parent: ft-mol-comment
+  @include behavior-parent(ft-mol-comment) {
+    @include margin(0);
+  }
+
+  // .ft-trust .ft-helper-img-rd
+  .ft-trust .ft-helper-img-rd {
+    @include margin(null 0.6rem null null);
+    @include border-style(none);
+    @include border-width(0);
+    @include border-top-radius(0%);
+    @include border-left-radius(0%);
+    @include border-bottom-radius(0%);
+    @include border-right-radius(0%);
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  // .ft-helper-img-rd
+  .ft-helper-img-rd {
+    @include margin(null 1rem null null);
+    @include border-style(solid);
+    @include border-width(0.1rem);
+    @include border-color(var(--color-mediumGrey));
+    transition: filter 0.25s ease-in-out;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    filter: grayscale(100%) brightness(110%);
+
+    // &.ft-mol-writer__image
+    &.ft-mol-writer__image {
+      @include margin(null 0 null null);
+      max-width: 4.5rem;
+      max-height: 4.5rem;
+      width: 4.5rem;
+      height: 4.5rem;
+      clip-path: circle(50px at 50% 50%);
+      border-radius: 50%;
+      object-fit: cover;
+
+      @include min-screen(768px) {
+        width: 6.5rem;
+        height: 6.5rem;
+        max-width: 6.5rem;
+        max-height: 6.5rem;
+      }
+    }
+  }
+
+  // .ft-mol-modal__img
+  .ft-mol-modal__img {
+    filter: grayscale(100%) brightness(110%);
+  }
+
+  // &__group
+  &__group {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  // &__item
+  &__item {
+    @include margin(0.2rem 1rem 0.2rem 0);
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+
+    // behavior parent: ft-mol-writer--basis
+    @include behavior-parent(ft-mol-writer--basis) {
+      flex-direction: column;
+    }
+
+    // behavior parent: ft-mol-writer--side
+    @include behavior-parent(ft-mol-writer--side) {
+      @include position(relative, null null null null);
+      @include margin(0);
+
+      // &:before
+      &:before {
+        content: "|";
+        padding: 0 0.9rem;
+        display: inline-block;
+      }
+
+      // &:first-child: after
+      &:first-child:before {
+        content: none;
+      }
+    }
+
+    // behavior parent: ft-mol-writer--sideHasimage
+    @include behavior-parent(ft-mol-writer--sideHasimage) {
+      flex-direction: row;
+      align-items: center;
+
+      // &:before
+      &:before {
+        content: none;
+      }
+    }
+
+    // behavior parent: ft-mol-writer--cardHome
+    @include behavior-parent(ft-mol-writer--cardHome) {
+      @include margin(0);
+      // Cambios 6305 //
+      // width: 100%;
+      //
+      width: auto;
+      // Cambios 6305 nuevo//
+      flex-direction: row;
+      //
+    }
+
+// @if $brand(revistas)
+      @if $brand ==revistas {
+          @include behavior-parent(ft-mol-writer--has-rrss){
+           width: 100%;
+              @include min-screen(768px) {
+                width: initial;
+              }
+          }
+      }
+
+    // &:hover, &:focus-within
+    &:hover,
+    &:focus-within {
+      // [class*="ft-helper-img-rd"]
+      [class*="ft-helper-img-rd"] {
+        filter: none;
+      }
+    }
+  }
+
+  // &__title
+  &__title {
+    // generals
+    @include margin(0.5rem null 0.5rem null);
+    @include fontBold;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+
+    // behavior parent: ft-mol-writer--basis
+    @include behavior-parent(ft-mol-writer--basis) {
+      align-items: center;
+    }
+
+    // behavior parent: ft-mol-writer--side
+    @include behavior-parent(ft-mol-writer--side) {
+      @include margin(0);
+      @include padding(0.2rem null null null);
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-direction: row;
+
+      // @if $brand(revistas)
+      @if $brand ==revistas {
+        align-items: flex-start;
+      }
+
+      // min-screen(768px)
+      @include min-screen(768px) {
+        align-items: flex-start;
+            flex-direction: row;
+      }
+    }
+
+    // behavior parent: ft-mol-writer--sideHasimage
+    @include behavior-parent(ft-mol-writer--sideHasimage) {
+      @include margin(0rem 1rem 0.5rem 1rem);
+
+      // min-screen(768px)
+      @include min-screen(768px) {
+        align-items: flex-start;
+      }
+    }
+
+    // behavior parent: ft-mol-writer--cardHome
+    @include behavior-parent(ft-mol-writer--cardHome) {
+      @include margin(0 null 0 null);
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+    // @if $brand(revistas)
+      @if $brand ==revistas {
+          @include behavior-parent(ft-mol-writer--has-rrss){
+            justify-content: center;
+              @include min-screen(768px) {
+                justify-content: flex-start;
+              }
+          }
+      }
+ 
+
+    // &Opinion
+    &Opinion {
+      @include margin(0 0 0.2rem 0);
+
+      // @if $brand(revistas)
+      @if $brand ==revistas {
+        @include font--body-XL--small;
+        color: var(--color-secondary);
+      }
+
+      // behavior parent: ft-mol-writer--side
+      @include behavior-parent(ft-mol-writer--side) {
+        @include fontBold;
+        color: var(--color-primary);
+        // @if $brand(revistas)
+        @if $brand ==revistas {
+          color: var(--color-secondary);
+        }
+      }
+
+      // behavior parent: ft-mol-writer--cardHome
+      @include behavior-parent(ft-mol-writer--cardHome) {
+        @include font--body-S--small;
+        @include position(relative, null null null null);
+        @include margin(0);
+        @include padding(0 0.5rem 0 0);
+        text-transform: uppercase;
+
+        // &:before
+        &:before {
+          content: "|";
+          @include margin(0 0.5rem 0 0);
+          display: inline-block;
+        }
+
+        // &:first-child: after
+        &:first-child:before {
+          content: none;
+        }
+      }
+
+      // &:before
+        &:before {
+          content: "|";
+          @include margin(0 0.5rem 0 0.7rem);
+          display: inline-block;
+          color: var(--color-mediumGrey);
+          @include behavior-parent(ft-mol-writer--basis){
+             content: none;
+              @include margin(0);
+          }
+        }
+
+        // &:first-child: after
+        &:first-child:before {
+          content: none;
+        }
+
+        .ft-link{
+           // @if $brand(revistas)
+            @if $brand ==revistas {
+              color: var(--color-secondary);
+
+              &:hover{
+                color: var(--color-primary);
+              }
+            }
+        }
+    }
+  }
+
+  // &__source
+  &__source {
+    @include margin(0 0 0.5rem 0);
+    @include font--body-S--small;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+
+    // behavior parent: ft-mol-writer--side
+    @include behavior-parent(ft-mol-writer--side) {
+      @include min-screen(768px) {
+        align-items: flex-start;
+        @include margin(0 0 1rem 0);
+      }
+    }
+
+    // behavior parent: ft-mol-writer--cardHome
+    @include behavior-parent(ft-mol-writer--cardHome) {
+      @include margin(1rem 0);
+    }
+
+    // &Title
+    &Title {
+      @include margin(0);
+    }
+  }
+
+  // &--basis
+  &--basis {
+    @include margin(0);
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }
+
+  // &--side
+  &--side {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    @include margin(2.25rem null 0 null);
+
+    @include min-screen(768px) {
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 100%;
+      @include margin(2.5rem null 2.5rem null);
+
+    }
+
+    // .ft-date
+    .ft-date {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      justify-content: flex-start;
+      align-items: flex-start;
+      @include margin(0.25rem null null null);
+
+      @include min-screen(768px) {
+        text-align: left;
+        flex-direction: row;
+        @include margin(0.5rem null null null);
+      }
+      // @if $brand(revistas)
+      @if $brand ==revistas {
+        text-align: left;
+          align-items: flex-start;
+          @include min-screen(768px) {
+          align-items: center;
+      }
+      }
+
+      &__textPlace {
+        @include margin(null 0.3rem null null);
+      }
+
+      &__text {
+        @include margin(null null 0.2rem null);
+
+        @include min-screen(768px) {
+          @include margin(null 1rem 0 null);
+        }
+      }
+    }
+
+    // .ft-date--inline
+    .ft-date--inline {
+      display: flex;
+    }
+
+    // .ft-trust
+    .ft-trust {
+      width: 100%;
+      text-align: left;
+      align-items: flex-start;
+      justify-content: flex-start;
+      @include margin(null null 0.5rem null);
+
+      @include min-screen(768px) {
+        @include margin(null null 1rem null);
+      }
+    }
+
+    // &Has
+    &Has {
+      // &image
+      &image {
+        column-gap: 1rem;
+
+        @include min-screen(768px) {
+          flex-direction: row;
+        }
+
+        // .ft-date
+        .ft-date {
+          width: 100%;
+        }
+
+        // .ft-trust
+        .ft-trust {
+          width: 100%;
+        }
+      }
+
+      //authors
+      &-authors{
+        .ft-mol-writer__titleOpinion{
+          a[name="modal-trigger"]{
+                &:before{
+                  content: "|";
+                    padding: 0 0.9rem;
+                    display: inline-block;
+                    color: var(--color-darkGrey);
+                    font-weight: 400;
+                }
+                &:first-child:before{
+                  content: none;
+                }
+        }
+        }
+      }
+    }
+  }
+
+  // &--cardHome
+  &--cardHome {
+    @include margin(1rem null 1rem null);
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    // ft-org-cardHome--xs
+    @include behavior-parent(ft-org-cardHome--xs) {
+      flex-direction: column;
+    }
+    // .ft-trust
+    .ft-trust {
+      width: 100%;
+      display: block;
+      text-align: center;
+
+      @include min-screen(768px) {
+        text-align: left;
+      }
+
+    }
+  }
+
+  // &--has
+  &--has {
+    // &-rrss
+    &-rrss {
+      // .ft
+      .ft {
+        // &-mol
+        &-mol {
+          // &-rrss
+          &-rrss {
+            // &-inline
+            &-inline {
+              @include margin(0.5rem null 0 null);
+              @include padding(0.5rem null null null);
+              @include border-style(solid);
+              @include border-width(0.1rem 0 0 0);
+              @include border-color(var(--color-mediumGrey));
+              flex-basis: 100%;
+              //revistas
+               @if $brand ==revistas {
+                  @include margin(1.5rem null 0 null);
+                  @include padding(1.5rem null null null);
+               }
+
+              @include min-screen(768px) {
+                @include border-width(0 0 0 0);
+                @include padding(0 null null null);
+                @include margin(1rem null null null);
+              }
+
+              @include min-screen(1024px) {
+                @include margin(0 null null auto);
+                flex-basis: auto;
+              }
+
+              // &--quickbar
+              &--quickbar {
+                flex-basis: 100%;
+                @include min-screen(768px) {
+                  @include margin(1rem null null null);
+                  border-top-width: 0.1rem;
+                }
+              }
+            }
+          }
+        }
+      }
+ // @if $brand(revistas)
+      @if $brand ==revistas {
+        .ft-date{
+    text-align: center;
+    align-items: center;
+           @include min-screen(768px) {
+               text-align: left;
+    align-items: flex-start;
+              }
+        }
+      }
+      
+    }
+  }
+}

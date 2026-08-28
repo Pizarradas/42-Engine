@@ -1,0 +1,572 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// .ft-mol-tapbar
+// ==========================================================================
+.ft-mol-tapbar {
+  @include position(fixed, null 0 0 0);
+  width: 100%;
+  z-index: 2500;
+  contain: layout;
+  will-change: transform;
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  // Borde superior: hairline claro (antes mediumGrey, demasiado duro).
+  border-top: 0.07rem solid var(--color-lightGrey);
+  // Sombra suave y ascendente (la barra vive abajo): difusa, tenue, sin cerco omnidireccional.
+  box-shadow: 0 -0.2rem 1.6rem -0.5rem rgba(0, 0, 0, 0.1);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.98) 0%,
+    rgba(237, 239, 242, 0.98) 100%
+  );
+
+  // Degradado vertical sutil blanco→gris en TODAS las resoluciones (coste nulo: 1 capa GPU).
+  // A partir de 768px se añade el "glass" (backdrop-filter: blur) para entrever el contenido
+  // de detrás; el blur se limita a >=768px por RENDIMIENTO (en móvil solo el degradado, sin blur).
+  // El blur va en el <nav> (no en ::before/::after/__canvas) porque el nav tiene
+  // will-change:transform y un ancestro transformado deja vacío el backdrop de sus hijos.
+  // Los tres rellenos internos ya no pintan fondo: lo pinta el <nav> a todo el ancho.
+  @include min-screen(768px) {
+    backdrop-filter: blur(25px);
+  }
+
+  // &__skip-link
+  &__skip-link {
+    @include position(absolute, -40px 0 null 0);
+    @include padding(0.8rem);
+    z-index: 100;
+    transition: top 0.3s;
+    background: var(--color-primary);
+    color: var(--color-white);
+
+    // &:focus
+    &:focus {
+      top: 0;
+    }
+  }
+
+  // &__container
+  &__container {
+    @include position(relative, null null null null);
+    @include margin(0 auto);
+    @include padding(0.5rem 1.6rem null 1.6rem);
+    @include size(100%, auto);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 60rem;
+    min-height: 4.5rem;
+
+    // ::before, &::after
+    // Sin fondo propio en ningún tamaño: el degradado (y el glass a >=768px) lo pinta
+    // el <nav> a todo el ancho. Estos pseudo-elementos ya no aportan relleno.
+    &::before {
+      content: "";
+      @include position(absolute, 0 null null null);
+      @include size(100vw, 100%);
+      z-index: -1;
+    }
+
+    &::after {
+      content: "";
+      @include position(absolute, 0 null null null);
+      @include size(100vw, 100%);
+      z-index: -1;
+    }
+
+    // &::before
+    &::before {
+      left: -100vw;
+    }
+
+    // &::after
+    &::after {
+      right: -100vw;
+    }
+  }
+
+  // &__icon-wrapper — caja que centra el icono (flex) y sirve de contexto de
+  // posicionamiento para el círculo del estado activo (position: relative).
+  // TAMAÑO FIJO (2.4rem): "seguro" anti-baile. El icono activo es más pequeño (2.1rem),
+  // pero al fijar la caja del wrapper su altura NO cambia entre activo/no-activo, así el
+  // texto de debajo no se desplaza. El icono se centra dentro por flex (contenido variable).
+  &__icon-wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    @include size(2.4rem);
+    transition:
+      background 0.2s,
+      transform 0.18s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  }
+
+  // &__item
+  &__item {
+    @include position(relative, null null null null);
+    cursor: pointer;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.45rem; // separa el icono de su texto (sube un poco los iconos)
+    flex-basis: 100%;
+    transition: background-color 0.2s ease;
+    color: var(--color-quaternary);
+    border-radius: 8px;
+    outline: none;
+
+    // &:hover
+    &:hover {
+      background: rgba(var(--color-primary-rgb), 0.08);
+    }
+
+    // &:focus-visible
+    &:focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 2px;
+      background: rgba(var(--color-primary-rgb), 0.08);
+    }
+
+    // &:active
+    &:active {
+      transform: scale(0.96, 0.94);
+    }
+
+    // &:focus:not(:focus-visible)
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
+
+    // &--disabled
+    &--disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    // &--active
+    &--active {
+      color: var(--color-black);
+      font-weight: bold;
+
+      //.ft-mol-tapbar__icon — el icono activo va en BLANCO; la elevación la hace el wrapper.
+      .ft-mol-tapbar__icon {
+        // position:relative (sin offset) para que su z-index:2 aplique y quede POR ENCIMA
+        // del círculo (::after, z-index:1); si no, el círculo lo taparía.
+        position: relative;
+        // Ligeramente más pequeño que el no-activo (2.4rem): respira más dentro del círculo.
+        // Se cambia el tamaño (no scale) para no chocar con la animación transform; el wrapper
+        // se ajusta y el círculo sigue centrado en él.
+        @include size(2.1rem);
+        // Animación de entrada SOLO en desktop (>=768px): en móvil el estado es instantáneo
+        // (una animación menos que componer en táctil). Solo anima transform/opacity = composited.
+        @include min-screen(768px) {
+          animation: tapbar-bounceIn 0.32s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+        // Icono del activo BLANCO en todas las marcas (contrasta dentro del círculo primario).
+        stroke: var(--color-white);
+      }
+
+      // &_text
+      .ft-mol-tapbar__text {
+        // Texto del activo: TERCIARIO en todas las marcas.
+        color: var(--color-black);
+        transition: color 0.2s;
+        font-weight: 400;
+      }
+
+      // &__icon-wrapper — se eleva como unidad (icono + círculo juntos, siempre concéntricos).
+      .ft-mol-tapbar__icon-wrapper {
+        z-index: 3;
+        transform: translateY(
+          -0.4rem
+        ); // antes se elevaba solo el icono con top:-0.4rem
+
+        // &::after — círculo tras el icono, CONCÉNTRICO en ambos ejes.
+        // Centrado bulletproof: top/left:50% + translate(-50%,-50%) (basado en el propio
+        // tamaño del círculo, inmune al box del wrapper). El centrado va HORNEADO en cada
+        // keyframe de tapbar-circle-in para que la animación no lo pise.
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          @include size(3.2rem);
+          transform: translate(-50%, -50%);
+          z-index: 1;
+          // Animación de entrada SOLO desktop; en móvil el transform:translate base ya deja
+          // el círculo centrado (sin entrada), un composite continuo menos en táctil.
+          @include min-screen(768px) {
+            animation: tapbar-circle-in 0.32s
+              cubic-bezier(0.68, -0.55, 0.27, 1.55);
+          }
+          // Círculo del activo: PRIMARIO en todas las marcas. (Sin border: era del mismo
+          // color que el fondo — invisible — y desalineaba el centrado por box-sizing.)
+          background-color: var(--color-black);
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  // &__icon
+  &__icon {
+    @include size(2.4rem);
+    z-index: 2;
+    // Icono del ítem NO activo: PRIMARIO en todas las marcas.
+    stroke: var(--color-black);
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+
+    // path
+    path {
+      transition: fill 0.3s ease;
+    }
+  }
+
+  // &__text
+  &__text {
+    @include position(relative, -0.2rem null null null);
+    z-index: 2;
+    transition: color 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    font-weight: normal;
+    font-size: 1.1rem;
+    line-height: 1.25rem;
+    text-align: center;
+    color: var(--color-black);
+  }
+
+  // &__alert — "dot" de aviso de novedad sobre un ítem. Se coloca dentro del __item
+  // (el JS lo inyecta con setAlert()). Plano por defecto; con &--pulse añade un aro que late.
+  &__alert {
+    @include position(absolute, 0 null null 50%);
+    @include size(0.8rem);
+    margin-left: 0.6rem; // lo desplaza hacia la esquina superior derecha del icono
+    z-index: 4; // por encima del icono (z-index 2) y del icono activo (3)
+    border-radius: 50%;
+    background-color: var(--color-functional-error);
+    // Aro grueso en el color del fondo: recorta el trazo del icono y despega el dot.
+    box-shadow: 0 0 0 0.35rem var(--color-white);
+    pointer-events: none;
+
+    // &--pulse — el propio punto LATE (heartbeat) además de emitir los aros: el centro
+    // "respira" (scale 1→1.18) sincronizado con el ripple → el aviso llama más la atención
+    // sin cambiar de estilo. Solo transform = composited. Corre en TODAS las resoluciones
+    // (también móvil): el aviso debe apreciarse igual en táctil. Se frena con
+    // prefers-reduced-motion (media query al final del archivo).
+    &--pulse {
+      animation: tapbar-alert-beat 1.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    // &--pulse — DOS aros concéntricos que se expanden y se desvanecen tras el dot,
+    // desfasados medio ciclo (0.8s de 1.6s) → siempre hay una onda en curso = ripple
+    // continuo, más llamativo, sin cambiar el estilo (mismo disco que crece y se apaga).
+    &--pulse::before,
+    &--pulse::after {
+      content: "";
+      @include position(absolute, 0 0 0 0);
+      z-index: -1;
+      border-radius: 50%;
+      background-color: inherit; // mismo color que el dot
+      // Pulso INFINITO en todas las resoluciones (móvil incluido). Solo anima
+      // transform/opacity = composited; se detiene con prefers-reduced-motion.
+      animation: tapbar-alert-pulse 1.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    // Segundo aro a mitad de ciclo: rellena el hueco entre pulsos del primero.
+    &--pulse::before {
+      animation-delay: 0.8s;
+    }
+
+    // Recalibración en el ÍTEM ACTIVO. En ese estado el wrapper se eleva -0.4rem y el icono
+    // queda centrado dentro del círculo (3.5rem > 2.4rem del icono), así que el aviso, que
+    // estaba en la esquina del icono suelto, debe SUBIR (seguir la elevación) y ABRIRSE
+    // (hacia el borde superior-derecho del círculo, que es mayor y más alto).
+    // :has(> &) engancha desde el ítem activo solo cuando realmente contiene un aviso; el
+    // compuesto resultante (0,3,0) gana al base .ft-mol-tapbar__alert sin depender del orden.
+    .ft-mol-tapbar__item--active:has(> &) > & {
+      top: -0.9rem;
+      margin-left: 1rem;
+    }
+  }
+
+  // &__canvas
+  // El fondo (degradado + glass) lo pinta el <nav> a todo el ancho, así que el canvas
+  // decorativo ya no aporta nada: no se renderiza (display:none = sin caja ni pintado).
+  &__canvas {
+    display: none;
+  }
+
+  // ── Halo del tooltip sticky dentro del tapbar ──────────────────────────────
+  // El átomo tooltip, en su variante sticky, dibuja un halo de MARCA de 6rem tras el
+  // trigger (.ft-tooltip--sticky::after: rojo en ep/sport, azul en epe, gris en regionales;
+  // definido en scss/fourties/atoms/tooltip/_tooltip.scss). En el modelo BLANCO del tapbar
+  // ese halo de color choca con el círculo del ítem activo (rojo sobre rojo). Dentro del
+  // tapbar lo forzamos a BLANCO para que DESTAQUE el círculo del activo: sobre el fondo
+  // blanco/glass de la barra el halo se integra y el círculo queda limpio.
+  // Especificidad (0,2,1) > la del átomo (0,1,1) → gana sin depender del orden de cascada.
+  .ft-tooltip--sticky::after {
+    background-color: var(--color-white);
+  }
+
+  // ── Pico del tooltip-aviso (advice, NO sticky) en positionLeft / positionRight ──
+  // PROBLEMA: en --positionLeft/--positionRight el átomo desplaza el globo a un lado (para
+  // no desbordar el borde) y dibuja el pico como pseudo del PROPIO globo, con un offset
+  // genérico. Al ir pegado al globo desplazado, el pico NO cae en la vertical del ítem, y
+  // el desajuste depende del ancho de celda (= container/n): cambia con el nº de ítems y
+  // con el ancho del canvas → "baila". Un offset (fijo o %) no puede seguir al ítem.
+  // SOLUCIÓN: anclar el pico al CENTRO DEL ÍTEM, que es invariante. .ft-tooltip--advice
+  // (el ancestro position:relative) ocupa la celda y el ítem está centrado en ella, así
+  // que `left: 50%` de ese ancestro SIEMPRE cae en el ítem —medido: 0px de desvío con
+  // 2/3/4 ítems y de 320 a 1300px de ancho—. Por eso:
+  //   1) se OCULTA el pico del átomo (va pegado al globo → baila), y
+  //   2) se REDIBUJA como pseudo de .ft-tooltip--top, cuyo offset parent es
+  //      .ft-tooltip--advice → left:50% = centro del ítem; top:-1.1rem lo sitúa en el
+  //      borde inferior del globo (= su margin-bottom), offset vertical FIJO e invariante.
+  // El ancla (centro del ítem) es la MISMA para izquierda y derecha —solo cambia hacia
+  // dónde abre el globo—, así que la redibujada vale igual para :is(positionLeft,
+  // positionRight). Réplica fiel del pico del átomo (::after relleno + ::before borde 1px
+  // mayor), con su modo dark. :not(.ft-tooltip--sticky) excluye la píldora (pico lateral).
+  :is(.ft-tooltip--positionLeft, .ft-tooltip--positionRight):not(.ft-tooltip--sticky) {
+    // 1) el pico del átomo (pseudo del globo) se retira: sigue al globo desplazado.
+    .ft-tooltip__content::after,
+    .ft-tooltip__content::before {
+      display: none;
+    }
+
+    // 2) pico redibujado, anclado al centro del ítem vía .ft-tooltip--top → advice.
+    //    GATE :has(> checkbox:checked): el pico se dibuja sobre .ft-tooltip--top, que —a
+    //    diferencia del __content— está SIEMPRE presente (es el ancestro del checkbox). Sin
+    //    esta condición, al cerrar la burbuja el __content se oculta pero el pico se quedaba
+    //    flotando como un triángulo suelto sobre el ítem ("no se cierra bien"). Atándolo al
+    //    checkbox el pico sigue el estado abierto/cerrado igual que el globo. El sticky no
+    //    entra aquí (:not(--sticky)) y tiene su propio pico dentro de __content.
+    .ft-tooltip--top:has(.ft-tooltip__checkbox:checked) {
+      &::after,
+      &::before {
+        content: "";
+        @include position(absolute, -1.1rem null null 50%);
+        border: solid transparent;
+        @include size(0, 0);
+        pointer-events: none;
+        z-index: 22222222223; // por encima del globo (z-index 22222222222)
+      }
+
+      // relleno del pico (apex hacia abajo, hacia el ítem)
+      &::after {
+        @include margin(null null null -7px);
+        border-width: 7px;
+        border-top-color: var(--color-white);
+      }
+
+      // borde del pico (1px mayor, asoma como filo)
+      &::before {
+        @include margin(null null null -8px);
+        border-width: 8px;
+        border-top-color: var(--color-mediumGrey);
+      }
+    }
+  }
+
+  // Modo dark (el globo del tapbar suele ir --dark): relleno negro, filo blanco.
+  .ft-tooltip--dark:is(.ft-tooltip--positionLeft, .ft-tooltip--positionRight):not(.ft-tooltip--sticky) .ft-tooltip--top:has(.ft-tooltip__checkbox:checked) {
+    &::after {
+      border-top-color: var(--color-black);
+    }
+
+    &::before {
+      border-top-color: var(--color-white);
+    }
+  }
+
+  // ── --positionLeft en la píldora STICKY: misma lógica que el resto ─────────
+  // En "auto" todos los ítems (salvo el último) llevan --positionLeft, que sirve para
+  // desplazar la BURBUJA advice y que no desborde por la izquierda. Pero la píldora
+  // STICKY no necesita ese desplazamiento: su default ya abre a la DERECHA (bien para
+  // cualquier ítem que no sea el último). El problema: la regla advice de --positionLeft
+  // del átomo (.ft-tooltip--positionLeft .ft-tooltip--top .ft-tooltip__content, (0,3,0))
+  // se cuela sobre la píldora (base sticky (0,2,0)) y la desposiciona. Aquí la
+  // NEUTRALIZAMOS: dentro del tapbar, --positionLeft + sticky = default sticky, así el
+  // primer ítem sticky tiene la MISMA lógica que el resto. El ÚLTIMO usa --positionRight,
+  // que SÍ tiene su regla sticky en el átomo (abre a la izquierda) y no se toca.
+  // Especificidad (0,4,0)/(0,4,1) > la regla advice colada (0,3,0)/(0,3,1).
+  .ft-tooltip--sticky.ft-tooltip--positionLeft .ft-tooltip__content {
+    right: -3.5rem;
+    left: inherit;
+
+    &::after,
+    &::before {
+      top: 0;
+      right: 0px;
+      left: 0.2rem;
+    }
+  }
+
+  // ── Aprieto de la píldora sticky cuando hay 3 ítems ────────────────────────
+  // Mismo mecanismo que el caso de 4 (ver bloque siguiente), pero con 3 ítems
+  // cada ítem es más ancho, así que la píldora necesita MENOS apriete: se ciñe
+  // solo lo justo para no rozar el ítem contiguo. Aquí :nth-child(3):last-child
+  // → el __container tiene EXACTAMENTE 3 hijos directos; sin __canvas, 3 hijos =
+  // 3 ítems. :where() mantiene el gate a especificidad 0 → peso (0,3,0) igual que
+  // el bloque de 4, gana al átomo (0,2,0) sin depender del orden.
+  &__container:where(:has(> :nth-child(3):last-child):has(.ft-tooltip--sticky)) {
+    // Móvil: apriete moderado (más aire que con 4 ítems, ítems más anchos).
+    .ft-tooltip--sticky .ft-tooltip__txt {
+      @include padding(0.15rem 0.35rem);
+      max-width: 6rem;
+      font-size: 0.9rem;
+      line-height: 1.05;
+    }
+
+    // Desktop: recorte ligero respecto al valor base del átomo (11rem).
+    @include min-screen(768px) {
+      .ft-tooltip--sticky .ft-tooltip__txt {
+        @include padding(0.4rem);
+        max-width: 9.5rem;
+        font-size: 1.05rem;
+        line-height: 1.15;
+      }
+    }
+  }
+
+  // ── Aprieto de la píldora sticky cuando hay 4 ítems ────────────────────────
+  // Con 4 ítems cada ítem es más estrecho y la píldora sticky (que se abre en
+  // horizontal a un lado del icono) se solapa con los ítems vecinos. Se ciñe la
+  // píldora SOLO en ese caso, sin añadir variantes nuevas al markup:
+  //   · :has(> :nth-child(4):last-child) → el __container tiene EXACTAMENTE 4
+  //     hijos directos; al haber quitado el __canvas, sus hijos son solo ítems,
+  //     así que 4 hijos = 4 ítems.
+  //   · :has(.ft-tooltip--sticky) → uno de ellos lleva el tooltip en sticky.
+  // El gate va envuelto en :where() para que NO sume especificidad: el peso del
+  // selector lo dan solo .ft-mol-tapbar__container + .ft-tooltip--sticky +
+  // .ft-tooltip__txt = (0,3,0), que gana al átomo (.ft-tooltip--sticky
+  // .ft-tooltip__txt = (0,2,0), incluidas sus media queries) sin depender del orden.
+  &__container:where(:has(> :nth-child(4):last-child):has(.ft-tooltip--sticky)) {
+    // Móvil: apriete mayor. Menos ancho (envuelve en más líneas → menor huella
+    // horizontal), tipografía y padding compactos para no invadir los vecinos.
+    .ft-tooltip--sticky .ft-tooltip__txt {
+      @include padding(0.15rem 0.3rem);
+      max-width: 5rem;
+      font-size: 0.8rem;
+      line-height: 1.05;
+    }
+
+    // Desktop: ajuste más fino. Con más ancho de barra la píldora respira algo
+    // más, pero sigue más ceñida que el valor base del átomo (11rem) para no
+    // pisar el ítem contiguo con 4 ítems.
+    @include min-screen(768px) {
+      .ft-tooltip--sticky .ft-tooltip__txt {
+        @include padding(0.35rem);
+        max-width: 8rem;
+        font-size: 1rem;
+        line-height: 1.15;
+      }
+    }
+  }
+}
+
+// ==========================================================================
+// ANIMATIONS
+// ==========================================================================
+
+@keyframes tapbar-bounceIn {
+  0% {
+    transform: scale(0.85) translateY(12px);
+    opacity: 0.2;
+  }
+
+  60% {
+    transform: scale(1.08) translateY(-4px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+
+// Entrada del círculo del activo. El centrado translate(-50%,-50%) va en TODOS los pasos
+// para que el círculo quede concéntrico con el icono durante y después de la animación.
+@keyframes tapbar-circle-in {
+  0% {
+    transform: translate(-50%, -50%) scale(0.6);
+    opacity: 0;
+  }
+
+  60% {
+    transform: translate(-50%, -50%) scale(1.08);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+// Pulso del dot de aviso (__alert--pulse): aro que crece y se desvanece.
+// Arranca más opaco (0.8) y llega más lejos (scale 3.2) → onda más grande y visible.
+@keyframes tapbar-alert-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+
+  70% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(3.8);
+    opacity: 0;
+  }
+}
+
+// Latido del propio punto (__alert--pulse): breve golpe de escala sincronizado con la
+// emisión del aro (el pico coincide con el 0% del ripple) → el centro también "respira".
+@keyframes tapbar-alert-beat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  15% {
+    transform: scale(1.18);
+  }
+
+  40% {
+    transform: scale(1);
+  }
+}
+
+// (Se eliminaron tapbar-circle-pop y tapbar-icon-smooth: keyframes sin uso.)
+
+// ==========================================================================
+// MEDIA QUERIES
+// ==========================================================================
+
+@media (prefers-reduced-motion: reduce) {
+  // Incluye pseudo-elementos (* no los selecciona): así se frenan también el pulso del
+  // dot (__alert--pulse::after) y el círculo del ítem activo (__icon-wrapper::after).
+  .ft-mol-tapbar *,
+  .ft-mol-tapbar *::before,
+  .ft-mol-tapbar *::after {
+    transition: none;
+    animation: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .ft-mol-tapbar {
+    border: 1px solid CanvasText;
+  }
+
+  .ft-mol-tapbar__item {
+    border: 1px solid CanvasText;
+  }
+
+  .ft-mol-tapbar__item--active {
+    border-width: 2px;
+  }
+}

@@ -1,0 +1,444 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// .ft-mol-table
+// ===============================================
+.ft-mol-table {
+  @include margin(null -1rem 2rem -1rem);
+  @include font--body-M;
+  overflow-x: auto;
+  @include min-screen(768px) {
+    @include margin(null 0 null 0);
+  }
+
+  // table
+  table {
+    width: 100%;
+  }
+
+  // thead, tbody, tfoot
+  thead,
+  tbody,
+  tfoot {
+    // tr
+    tr {
+      @include position(relative, null null null null);
+      @include border-style(solid);
+      @include border-width(0.8rem);
+      @include border-color(var(--color-white));
+
+      // th, td
+      th,
+      td {
+        @include position(relative, null null null null);
+        @include padding(1rem);
+        width: auto;
+
+        // &:first-child
+        &:first-child {
+          @include position(sticky, null null null 0);
+          z-index: 1;
+          text-align: left;
+          min-width: 12rem;
+
+          // &:after
+          &:after {
+            content: "";
+            @include position(absolute, 0 0 null null);
+            @include size(0.1rem, 100%);
+            @include border-style(dotted);
+            @include border-width(0.1rem);
+            @include border-color(var(--color-mediumGrey));
+            display: block;
+          }
+        }
+      }
+
+      // th
+      th {
+        color: var(--color-quaternary);
+
+        // strong
+        strong {
+          color: var(--color-black);
+        }
+      }
+    }
+  }
+
+  // thead
+  thead {
+    // tr
+    tr {
+      // th, td
+      th,
+      td {
+        background-color: var(--color-lightGrey);
+      }
+
+      // th
+      th {
+        &:first-child {
+          background-color: var(--color-lightGrey);
+        }
+      }
+    }
+  }
+
+  // tfoot
+  tfoot {
+    // tr
+    tr {
+      // th, td
+      th,
+      td {
+        background-color: var(--color-lightGrey);
+      }
+    }
+  }
+
+  // [class*="__tr"]
+  [class*="__tr"] {
+    // &[class*="--odd"]
+    &[class*="--odd"] {
+      // th, td
+      th,
+      td {
+        background-color: var(--color-white);
+      }
+    }
+
+    // &[class*="--even"]
+    &[class*="--even"] {
+      // th, td
+      th,
+      td {
+        background-color: var(--color-lightGrey);
+      }
+    }
+  }
+
+  // &__td, &__th
+  &__td,
+  &__th {
+    // &--align-left
+    &--align-left {
+      text-align: left;
+    }
+
+    // &--align-center
+    &--align-center {
+      text-align: center;
+    }
+
+    // &--align-right
+    &--align-right {
+      text-align: right;
+    }
+
+    // &--align-low
+    &--align-low {
+      color: var(--color-quaternary);
+
+      // strong
+      strong {
+        color: var(--color-quaternary);
+      }
+    }
+  }
+
+  // &--markered
+  &--markered {
+    // [class*="__th"]
+    [class*="__th"] {
+      @include position(relative, null null null null);
+    }
+
+    // &[class*="__marker"]
+    [class*="__marker"] {
+      @include position(absolute, 0 null null 0);
+      @include size(0.6rem, 100%);
+      z-index: 1;
+      display: block;
+      background: var(--color-mediumGrey);
+    }
+  }
+
+  // &--sticky
+  &--sticky {
+    // thead
+    thead {
+      @include position(sticky, 0 null null null);
+    }
+
+    // th
+    th {
+      // &:first-of-type
+      &:first-of-type {
+        @include position(sticky, null null null 0);
+      }
+    }
+
+    // &[class*="--striped"]
+    &[class*="--striped"] {
+      // tbody
+      tbody {
+        // tr
+        tr {
+          // &:nth-child(odd)
+          &:nth-child(odd) {
+            // th
+            th {
+              background-color: var(--color-lightGrey);
+            }
+          }
+
+          // &:nth-child(even)
+          &:nth-child(even) {
+            // th
+            th {
+              background-color: var(--color-white);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // &--mf
+  &--mf {
+    @include margin(null null 2rem null);
+
+    // [class*="__th"], [class*="__td"]
+    [class*="__th"],
+    [class*="__td"] {
+      // &:before
+      &:before {
+        content: attr(data-label);
+        @include margin(null null 1rem null);
+        float: left;
+        width: 100%;
+        font-family: var(--font-stack);
+        font-weight: bold;
+        font-size: 1.6rem;
+        line-height: 1.8rem;
+        @include min-screen(768px) {
+          display: none;
+        }
+      }
+
+      // &:not(:first-of-type)
+      &:not(:first-of-type) {
+        @include margin(1.2rem null null null);
+        @include min-screen(768px) {
+          @include margin(0 null null null);
+        }
+      }
+    }
+
+    // [class*="__td"]
+    [class*="__td"] {
+      word-wrap: break-word;
+      word-break: break-word;
+      white-space: normal;
+      @include min-screen(768px) {
+        @include padding(1rem);
+      }
+      @include max-screen(768px) {
+        display: block;
+      }
+    }
+
+    // [class*="__tr"]
+    [class*="__tr"] {
+      @include max-screen(768px) {
+        display: block;
+      }
+    }
+
+    // thead, tbody, tfoot
+    thead,
+    tbody,
+    tfoot {
+      // tr, th
+      tr,
+      th,
+      tr th {
+        // &:first-child
+        &:first-child {
+          // &::after
+          &:after {
+            display: none;
+            @include min-screen(768px) {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+
+    // thead
+    thead {
+      @include hide-visually;
+      @include min-screen(768px) {
+        @include hide-visually("unhide");
+        color: var(--color-white);
+        background-color: var(--color-primary);
+      }
+
+      // th
+      th {
+        @include min-screen(768px) {
+          @include padding(1rem);
+        }
+      }
+    }
+
+    // tbody
+    tbody {
+      // [class*="__tr"]
+      [class*="__tr"] {
+        @include padding(1rem);
+        @include border-style(solid);
+        @include border-width(0.2rem);
+        @include border-color(var(--color-mediumGrey));
+        @include min-screen(768px) {
+          @include border-width(0.8rem);
+          @include border-color(var(--color-white));
+        }
+
+        // &:nth-child(even)
+        &:nth-child(even) {
+          background-color: var(--color-lightGrey);
+          @include min-screen(768px) {
+            background-color: transparent;
+          }
+        }
+
+        // &:not(:first-child)
+        &:not(:first-child) {
+          @include margin(2rem null null null);
+          @include min-screen(768px) {
+            @include margin(0 null null null);
+          }
+        }
+      }
+    }
+
+    // tfoot
+    tfoot {
+      @include margin(2rem null null null);
+      @include padding(1rem);
+      background-color: var(--color-primary);
+      @include min-screen(768px) {
+        @include margin(0 null null null);
+        @include padding(0);
+        background-color: transparent;
+      }
+
+      // tr
+      tr {
+        @include border-width(0);
+        display: table-caption;
+        width: 100%;
+        @include min-screen(768px) {
+          @include border-width(0.8rem);
+          display: table-row;
+          width: auto;
+        }
+
+        // th
+        th {
+          @include position(relative, null null null null);
+          color: var(--color-white);
+          background-color: transparent;
+          @include min-screen(768px) {
+            color: var(--color-quaternary);
+            background-color: var(--color-lightGrey);
+          }
+        }
+      }
+
+      // [class*="__td"]
+      [class*="__td"] {
+        background-color: transparent;
+        color: var(--color-white);
+        @include min-screen(768px) {
+          color: var(--color-black);
+          background-color: var(--color-lightGrey);
+        }
+
+        // &:not(:first-of-type)
+        &:not(:first-of-type) {
+          @include margin(0 null null null);
+        }
+
+        // &::before
+        &:before {
+          @include hide-visually;
+        }
+      }
+    }
+
+    // table
+    table {
+      display: grid;
+      @include min-screen(768px) {
+        display: table;
+      }
+    }
+  }
+
+  // &--primary
+  &--primary {
+    // thead
+    thead {
+      // tr
+      tr {
+        // th, td
+        th, td {
+          color: var(--color-white);
+          background-color: var(--color-primary);
+
+          // &:first-child
+          &:first-child {
+            background-color: var(--color-primary); 
+          }
+        }
+      }
+    }
+
+    // tfoot
+    tfoot {
+      // tr
+      tr {
+        // th, td
+        th, td {
+          color: var(--color-white);
+          background-color: var(--color-primary);
+
+          // &:first-child 
+          &:first-child {
+            background-color: var(--color-primary); 
+          }
+        }
+      }
+
+      // [class*="__td"]
+      [class*="__td"] {
+        @include min-screen(768px) {
+          color: var(--color-white);
+          background-color: var(--color-primary); 
+        }
+      }
+    }
+
+    // &[class*="__marker"]
+    [class*="__marker"] {
+      background: var(--color-primary);
+    }
+  }
+}

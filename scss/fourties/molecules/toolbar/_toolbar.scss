@@ -1,0 +1,752 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// .ft-mol-toolbar
+// ===============================================
+.ft-mol-toolbar {
+  $this: &;
+  @include position(relative, null null null null);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include behavior-parent(seleccion) {
+    --color-game: #702833;
+  }
+
+  // &__icon
+  &__icon {
+    flex-basis: 100%;
+    color: var(--color-black);
+  }
+
+  // &__label
+  &__label {
+    color: var(--color-black);
+    @include font--body-S--small;
+    flex-basis: 100%;
+    text-align: center;
+
+    @include min-screen(1024px) {
+      @include font--body-M--small;
+    }
+  }
+
+  // &__button
+  &__button {
+    gap: 0.4rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 0;
+    background-color: transparent;
+
+    // @include behavior-parent(ft-mol-toolbar__itemBack)
+    @include behavior-parent(ft-mol-toolbar__itemBack) {
+      @include padding(0);
+    }
+  }
+
+  // &__item
+  &__item {
+    @include padding(0.5rem 0);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-width: 5rem;
+    transition: background-color 0.2s ease-out;
+
+    //  @include min-screen(1024px)
+    @include min-screen(1024px) {
+      min-width: 6rem;
+    }
+
+    // .ft-btn-nav
+    .ft-btn-nav {
+      // &__icon
+      &__icon {
+        display: none;
+
+        // &:after
+        &::after {
+          display: none;
+        }
+      }
+
+      // &__text
+      &__text {
+        @include position(relative, null null null auto);
+        color: var(--color-black);
+        @include size(auto, auto);
+        @include font--body-S--small;
+        overflow: visible;
+        text-indent: -1.1rem;
+        white-space: normal;
+        pointer-events: auto;
+        clip: auto;
+        clip-path: none;
+        display: block;
+        // @include min-screen(768px)
+        @include min-screen(768px) {
+          @include font--body-M--small;
+        }
+
+        // &:before
+        &::before {
+          content: "";
+          @include position(absolute, 0.2rem -1.3rem 0 null);
+          @include margin(auto null auto null);
+          @include size(1rem, 1rem);
+          background: center / contain no-repeat
+            url("#{$images-path}/icons/nav-chevron-filled.svg");
+          transform: rotate(0deg);
+          transition: transform 0.25s ease;
+        }
+      }
+    }
+
+    // .ft-mol-dropdown
+    .ft-mol-dropdown {
+      width: 100%;
+
+      // &__link
+      &__link {
+        text-align: left;
+        border: 0;
+
+        // &:hover, &:focus-visible
+        &:not(:disabled):hover,
+        &:not(:disabled):focus-visible {
+          @include behavior-parent(ft-mol-toolbar--pangramax) {
+            @include min-screen(1024px) {
+              background-color: var(--color-pangramax);
+            }
+          }
+
+          @include behavior-parent(ft-mol-toolbar--sudoku) {
+            @include min-screen(1024px) {
+              background-color: var(--color-sudoku);
+            }
+          }
+
+          @include behavior-parent(ft-mol-toolbar--porra) {
+            @include min-screen(1024px) {
+              background-color: var(--color-porra);
+            }
+          }
+
+          @include behavior-parent(ft-mol-toolbar--wordle) {
+            @include min-screen(1024px) {
+              background-color: var(--color-wordle);
+            }
+          }
+
+          @include behavior-parent(ft-mol-toolbar--sopa) {
+            @include min-screen(1024px) {
+              background-color: var(--color-sopa);
+            }
+          }
+
+          @include behavior-parent(ft-mol-toolbar--crucigrama) {
+            @include min-screen(1024px) {
+              background-color: var(--color-crucigrama);
+            }
+          }
+
+          @include behavior-parent(ft-mol-toolbar--saltaminas) {
+            @include min-screen(1024px) {
+              background-color: var(--color-saltaminas);
+            }
+          }
+        }
+      }
+
+      // &__trigger
+      &__trigger {
+        gap: 0.2rem;
+        @include size(100%, 100%);
+        border: 0;
+        border-radius: 0;
+
+        // &[aria-expanded="true"]
+        &[aria-expanded="true"] {
+          // .ft-btn-nav__text::before
+          .ft-btn-nav__text::before {
+            transform: rotate(180deg);
+          }
+        }
+
+        // &:focus-visible
+        &:focus,
+        &:focus-visible {
+          @include min-screen(1024px) {
+            outline: none;
+          }
+        }
+      }
+
+      // &__item
+      &__item {
+        // .ft-tag
+        .ft-tag {
+          @include margin(0.4rem null null null);
+          font-weight: bold;
+          color: var(--color-black);
+          background-color: var(--color-black);
+          border: 0;
+
+          @include behavior-parent(ft-mol-toolbar--pangramax) {
+            background-color: var(--color-pangramax--medium);
+          }
+
+          @include behavior-parent(ft-mol-toolbar--sudoku) {
+            background-color: var(--color-sudoku--medium);
+          }
+
+          @include behavior-parent(ft-mol-toolbar--wordle) {
+            background-color: var(--color-wordle--medium);
+          }
+
+          @include behavior-parent(ft-mol-toolbar--sopa) {
+            background-color: var(--color-sopa--medium);
+          }
+
+          @include behavior-parent(ft-mol-toolbar--crucigrama) {
+            background-color: var(--color-crucigrama--medium);
+          }
+
+          @include behavior-parent(ft-mol-toolbar--saltaminas) {
+            background-color: var(--color-saltaminas--medium);
+          }
+        }
+      }
+
+      // &--has
+      &--has {
+        // &-btn-nav
+        &-btn-nav {
+          // .ft-mol-dropdown__listIs-active
+          .ft-mol-dropdown__listIs-active {
+            top: 4.5rem;
+
+            @include min-screen(768px) {
+              top: 5.3rem;
+            }
+          }
+        }
+      }
+
+      // &--is-list-rgt
+      &--is {
+        // &-list-rgt
+        &-list-rgt {
+          // .ft-mol-dropdown__listIs-active::before
+          .ft-mol-dropdown__listIs-active::before {
+            display: none;
+          }
+        }
+      }
+    }
+
+    // &:hover, &:focus-visible
+    &:hover,
+    &:focus-visible,
+    &:focus-within {
+      border-radius: 0.3rem;
+
+      @include behavior-parent(ft-mol-toolbar--pangramax) {
+        @include min-screen(1024px) {
+          background-color: var(--color-pangramax);
+        }
+      }
+
+      @include behavior-parent(ft-mol-toolbar--sudoku) {
+        @include min-screen(1024px) {
+          background-color: var(--color-sudoku);
+        }
+      }
+
+      @include behavior-parent(ft-mol-toolbar--porra) {
+        @include min-screen(1024px) {
+          background-color: var(--color-porra);
+        }
+      }
+
+      @include behavior-parent(ft-mol-toolbar--wordle) {
+        @include min-screen(1024px) {
+          background-color: var(--color-wordle);
+        }
+      }
+
+      @include behavior-parent(ft-mol-toolbar--sopa) {
+        @include min-screen(1024px) {
+          background-color: var(--color-sopa);
+        }
+      }
+
+      @include behavior-parent(ft-mol-toolbar--crucigrama) {
+        @include min-screen(1024px) {
+          background-color: var(--color-crucigrama);
+        }
+      }
+
+      @include behavior-parent(ft-mol-toolbar--saltaminas) {
+        @include min-screen(1024px) {
+          background-color: var(--color-saltaminas);
+        }
+      }
+
+      @include behavior-parent(ft-mol-toolbar--cuatroencampo) {
+        @include min-screen(1024px) {
+          background-color: var(--color-cuatroencampo);
+        }
+      }
+
+      @include behavior-parent(seleccion) {
+        @include min-screen(1024px) {
+          background-color: var(--color-game);
+        }
+      }
+
+      // .ft-btn-nav
+      .ft-btn-nav {
+        // &__text
+        &__text {
+          @include min-screen(1024px) {
+            color: var(--color-white);
+          }
+
+          // &:before
+          &:before {
+            @include min-screen(1024px) {
+              filter: brightness(0) invert(1);
+            }
+          }
+        }
+      }
+
+      // .ft-mol-toolbar
+      .ft-mol-toolbar {
+        // &__icon
+        &__icon {
+          @include min-screen(1024px) {
+            filter: brightness(0) invert(1);
+
+            // .ft-mol-toolbar__itemBack
+            @include behavior-parent-nested(ft-mol-toolbar__itemBack) {
+              filter: brightness(1) invert(0);
+            }
+          }
+        }
+
+        // &__label
+        &__label {
+          @include min-screen(1024px) {
+            color: var(--color-white);
+
+            @include behavior-parent-nested(ft-mol-toolbar__itemBack) {
+              color: var(--color-black);
+            }
+          }
+        }
+      }
+    }
+
+    // &Back
+    &Back {
+      align-items: center;
+      justify-content: flex-start;
+      min-width: 3.5rem;
+
+      // @include min-screen(1024px)
+      @include min-screen(1024px) {
+        min-width: 5rem;
+      }
+
+      &:hover,
+      &:focus-visible,
+      &:focus-within {
+        @include behavior-parent(ft-mol-toolbar--pangramax) {
+          background-color: transparent;
+        }
+
+        @include behavior-parent(seleccion) {
+          @include min-screen(1024px) {
+            background-color: var(--color-game);
+          }
+        }
+      }
+    }
+  }
+
+  // &__layer
+  &__layer {
+    @include position(absolute, null 0 -5.4rem 0);
+    @include margin(auto);
+    z-index: 9;
+    background-color: var(--color-black);
+    width: 200px;
+    height: 50px;
+    clip-path: ellipse(45% 64% at 54% 6%);
+    transform: rotate(0deg) skew(-30deg);
+
+    //  @include behavior-parent(ft-mol-toolbar--pangramax)
+    @include behavior-parent(ft-mol-toolbar--pangramax) {
+      @include padding(0);
+    }
+
+    .ft-timer {
+      transform: rotate(0deg) skew(30deg);
+    }
+  }
+
+  // &__more-options
+  &__more-options {
+    @include position(relative, null null null null);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4.8rem;
+    width: 4.8rem;
+    background-color: var(--color-white);
+    border-radius: 5rem 0 0 5rem;
+
+    // .ft-btn-nav
+    .ft-btn-nav {
+      // &__icon
+      &__icon {
+        @include size(100%, 100%);
+        color: var(--color-black);
+        top: 0;
+        bottom: 0;
+        margin: auto;
+
+        // &:after
+        &::after {
+          @include size(2.2rem, 2.2rem);
+        }
+      }
+    }
+
+    // .ft-mol-dropdown
+    .ft-mol-dropdown {
+      // &__link, &__summary
+      &__link,
+      &__summary {
+        // &:hover, &:focus-visible
+        &:not(:disabled):hover,
+        &:not(:disabled):focus-visible {
+          @include behavior-parent(ft-mol-toolbar--pangramax) {
+            @include min-screen(1024px) {
+              background-color: var(--color-pangramax);
+            }
+          }
+
+          @include behavior-parent(ft-mol-toolbar--sudoku) {
+            @include min-screen(1024px) {
+              background-color: var(--color-sudoku);
+            }
+          }
+
+          @include behavior-parent(ft-mol-toolbar--porra) {
+            @include min-screen(1024px) {
+              background-color: var(--color-porra);
+            }
+          }
+
+          @include behavior-parent(ft-mol-toolbar--wordle) {
+            @include min-screen(1024px) {
+              background-color: var(--color-wordle);
+            }
+          }
+
+          @include behavior-parent(ft-mol-toolbar--sopa) {
+            @include min-screen(1024px) {
+              background-color: var(--color-sopa);
+            }
+          }
+
+          @include behavior-parent(ft-mol-toolbar--crucigrama) {
+            @include min-screen(1024px) {
+              background-color: var(--color-crucigrama);
+            }
+          }
+
+          @include behavior-parent(ft-mol-toolbar--saltaminas) {
+            @include min-screen(1024px) {
+              background-color: var(--color-saltaminas);
+            }
+          }
+        }
+
+        // &:hover
+        &:hover,
+        &:focus-visible {
+          .ft-mol-dropdown__icon {
+            filter: invert(0);
+          }
+        }
+      }
+
+      // &__trigger
+      &__trigger {
+        @include size(4rem, 4rem);
+      }
+
+      //  &__list
+      &__list {
+        min-width: 22rem;
+
+        // &Is-active
+        &Is-active {
+          top: 4.5rem;
+        }
+      }
+
+      // &--is
+      &--is {
+        // &-list-lft
+        &-list-lft {
+          // .ft-mol-dropdown__listIs-active::before
+          .ft-mol-dropdown__listIs-active::before {
+            right: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  // &__list
+  &__list {
+    @include margin(0 null 0 null);
+    display: flex;
+
+    // @include min-screen(768px)
+    @include min-screen(768px) {
+      gap: 0.5rem;
+    }
+  }
+
+  // &--slider
+  &--slider {
+    @include padding(0);
+    contain: layout style;
+
+    // #{$this}__inner
+    #{$this}__inner {
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+      width: 100%;
+    }
+
+    // #{$this}__list
+    #{$this}__list {
+      @include margin(0);
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+      list-style: none;
+      padding-block: 0;
+      padding-inline: 24px 0.5rem;
+      width: 100%;
+      gap: 0.2rem;
+      overflow-x: auto;
+      overflow-y: hidden;
+      touch-action: pan-x;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      scroll-snap-type: x proximity;
+      scroll-behavior: smooth;
+      scroll-padding-inline: 24px 0.5rem;
+      overscroll-behavior-x: contain;
+      mask-image: linear-gradient(
+        to right,
+        transparent 0,
+        #000 10px,
+        #000 calc(100% - 10px),
+        transparent 100%
+      );
+      contain-intrinsic-block-size: 5rem;
+
+      // Showroom — padding-left adicional cuando vive bajo .fourty
+      .fourty & {
+        padding-left: 1rem;
+      }
+
+      // Scrollbar oculta (webkit)
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      // Fade animado por scroll-timeline (browsers que lo soportan)
+      @supports (animation-timeline: scroll()) {
+        animation: gamebar-fade linear both;
+        animation-timeline: scroll(self inline);
+      }
+    }
+
+    // #{$this}__item
+    #{$this}__item {
+      @include padding(0);
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      min-width: 0;
+      display: flex;
+      align-items: stretch;
+
+      // Neutraliza el hover por marca del partial: aquí el bg lo
+      // pinta el __button, el <li> debe permanecer transparente.
+      &:hover,
+      &:focus-visible,
+      &:focus-within {
+        background-color: transparent;
+        border-radius: 0;
+      }
+
+      &#{$this}__itemBack {
+        &:hover,
+        &:focus-visible,
+        &:focus-within {
+          @include behavior-parent(seleccion) {
+            @include min-screen(1024px) {
+              background-color: var(--color-game);
+              border-radius: 0.3rem;
+            }
+          }
+        }
+      }
+
+      // &--active — estado activo via clase explícita (sin aria)
+      &--active {
+        .ft-mol-toolbar__button {
+          background-color: rgba(0, 0, 0, 0.25);
+        }
+      }
+    }
+
+    // #{$this}__button
+    #{$this}__button {
+      @include margin(0);
+      @include padding(0.6rem 1.4rem);
+      cursor: pointer;
+      display: inline-flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.8rem;
+      width: 100%;
+      height: 3.4rem;
+      border: 0;
+      border-radius: 100rem;
+      color: var(--color-white);
+      font-family: var(--font-stack);
+      font-size: 1.4rem;
+      line-height: 1.2;
+      white-space: nowrap;
+
+      @include min-screen(768px) {
+        height: 4.4rem;
+      }
+
+      // Hover / aria-current — oscurece el pill
+      &:hover,
+      &[aria-current="location"] {
+        background-color: rgba(0, 0, 0, 0.45);
+      }
+
+      // Reset estados heredados: focus/active/visited no deben
+      // cambiar el color del botón en este contexto.
+      &:focus,
+      &:focus-visible,
+      &:active,
+      &:visited {
+        color: var(--color-white);
+        border-color: transparent;
+        box-shadow: none;
+        outline: none;
+        text-decoration: none;
+        transform: none;
+        filter: none;
+        opacity: 1;
+      }
+    }
+
+    // .ft-btn-nav--back
+    .ft-btn-nav--back {
+      flex: 0 0 auto;
+    }
+
+    // #{$this}__icon
+    #{$this}__icon {
+      flex: 0 0 auto;
+      height: 2.4rem;
+      width: auto;
+      max-height: none;
+      max-width: none;
+
+      @include min-screen(768px) {
+        height: 2.7rem;
+      }
+    }
+
+    // #{$this}__label
+    #{$this}__label {
+      flex: 0 0 auto;
+      @include font--body-M--small;
+      text-align: left;
+
+      @include min-screen(768px) {
+        @include font--body-L--small;
+      }
+
+      // &:empty: Caso del back: label vacío; no ocupa espacio.
+      &:empty {
+        display: none;
+      }
+    }
+
+    // #{$this}__itemBack
+    #{$this}__itemBack {
+      // #{$this}__button
+      #{$this}__button {
+        @include padding(0.8rem);
+        @include size(3.4rem, 3.4rem);
+        justify-content: center;
+        aspect-ratio: 1;
+        background-color: rgba(0, 0, 0, 0.25);
+
+        @include min-screen(768px) {
+          @include size(4.4rem, 4.4rem);
+        }
+
+        // &:hover
+        &:hover,
+        &:focus-visible {
+          background-color: rgba(0, 0, 0, 0.5);
+
+          @include behavior-parent(seleccion) {
+            @include min-screen(1024px) {
+              background-color: var(--color-game);
+            }
+          }
+        }
+      }
+
+      // #{$this}__icon
+      #{$this}__icon {
+        height: 1.8rem;
+
+        // &:hover
+        &:hover {
+          color: var(--color-white);
+        }
+      }
+    }
+  }
+}

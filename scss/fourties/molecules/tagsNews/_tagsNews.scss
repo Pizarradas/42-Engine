@@ -1,0 +1,89 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// ft-mol-tagsNews
+// ===============================================
+.ft-mol-tagsNews {
+  @include border-style(none null solid null);
+  @include border-color(var(--color-mediumGrey));
+  @include border-width(0.1rem);
+  @include margin(2rem 0);
+  @include padding(0);
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  @include min-screen(768px) {
+    @include border-style(solid null solid null);
+  }
+
+
+  // &__title
+  &__title {
+    @include font--body-M;
+    @include fontBold;
+    @include margin(0);
+
+    // @if $brand ==revistas
+@if $brand ==revistas {
+      text-transform: uppercase;
+          font-family: var(--font-secondary);
+    }
+  }
+
+  // &__tags
+  &__tags {
+    @include margin(0);
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: calc(100vw - 100px);
+    min-height: 4.4rem;
+    text-transform: uppercase;
+
+    // .ft
+    .ft {
+      // &-link
+      &-link {
+        white-space: nowrap;
+      }
+    }
+  }
+
+  &--last{
+    @include border-style(none);
+
+   // [class*="__title"]
+   [class*="__title"] {
+    @include font--body-S;
+    @include fontBold;
+    @include margin(0);
+ // @if $brand ==revistas
+ @if $brand ==revistas {
+    // behavior-parent(woman)
+    @include behavior-parent-nested(woman) {
+      @include margin(.1rem null null null); 
+      text-transform: uppercase;
+    }
+  }
+}
+   // [class*="__tags"]
+   [class*="__tags"] {
+    max-width: calc(100vw - 120px);
+    text-transform: none;
+    min-height: unset;
+  }
+   // .ft
+   .ft {
+    // &-tag
+    &-tag {
+      @include margin(null null .3rem null);
+    }
+  }
+  }
+}
+

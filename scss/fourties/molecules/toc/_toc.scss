@@ -1,0 +1,160 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// FT-MOL-TOC
+// ===============================================
+.ft-mol-toc
+{
+    // GENERALS
+    // ---------------------------------------------
+    @include margin(2.5rem 0);
+    @include padding(3rem);
+    @include position(relative, null null null null);
+    background-color: var(--color-lightGrey);
+
+    &:before
+    {
+        width: 0;
+        height: 0;
+        @include position (absolute, null null null null);
+        @include border-style(solid solid null null);
+        @include border-width(30px 30px null null);
+        @include border-color(var(--color-primary) transparent null null);
+        content: "";
+        left: 0;
+        top: 0;
+
+    }
+
+    // ---------------------------------------------
+
+    // &__title
+    // ---------------------------------------------
+    &__title
+    {
+        // generals
+        @include font--heading-XS;
+        @include margin(0);
+        @include padding(0 0 2rem 0);
+        @include border-style(null null solid null);
+        @include border-width(null null .1rem null);
+        @include border-color(null null var(--color-mediumGrey) null);
+        display: block;
+        width: 100%;
+        // end // &__title
+    }
+
+    // &__message
+    // ---------------------------------------------
+    &__message
+    {
+        // generals
+
+        @include position(absolute, null null null null);
+        @include padding(.5rem 1rem);
+        @include font--body-XS--small;
+        @include border-top-radius(7px);
+        @include border-right-radius(7px);
+        @include border-left-radius(7px);
+        @include border-bottom-radius(7px);
+        @include fontBold;
+        background: var(--color-primary);
+        min-width: max-content;
+        min-height: fit-content;
+        bottom: 120%;
+        left: -1rem;
+        color: var(--color-white);
+
+        &:before
+        {
+            border: solid transparent;
+            @include position (absolute, null null null null);
+            @include border-color(null null var(--color-primary) null);
+            @include border-width(7px);
+            @include margin (null null null -7px);
+            content: "";
+            height: 0;
+            width: 0;
+            pointer-events: none;
+            z-index: 2;
+            rotate: 180deg;
+            bottom: -11px;
+            left: 1.5rem;
+        }
+
+        // end // &__title
+    }
+
+    .ft-list--numbered
+    {
+        // generals
+        @include border-style(solid null null null);
+        @include border-width(.1rem null null null);
+        @include border-color(var(--color-white) null null null);
+        @include padding(2rem 0 0 0);
+        @include margin(0);
+
+        // .ft-list__item
+        .ft-list__item
+        {
+            // generals
+            @include fontBold;
+            @include margin(null null 2rem null);
+
+            // &:before
+            &:before
+            {
+                // generals
+                color: var(--color-black);
+
+                // end // &:before
+            }
+
+            // &Is
+            &Is
+            {
+
+                // &--active
+                &--active
+                {
+
+                    // generals
+                    color: var(--color-quaternary);
+                    @include margin(4.5rem null null null);
+                    @include font--weight-500;
+
+                    // @media (min-width: 1078px)
+                    @media (min-width: 1078px)
+                    {
+                        @include margin(3.5rem null null null);
+                    }
+
+                    // &:before
+                    &:before
+                    {
+                        // generals
+                        @include font--weight-500;
+                        color: var(--color-quaternary);
+
+                        // end // &:before
+                    }
+
+                    // end // &--active
+                }
+
+                // end // &Is
+            }
+
+            // end // .ft-list__item
+        }
+
+        // end // .ft-list--numbered
+    }
+
+    // ---------------------------------------------
+
+    // END // FT-MOL-TOC
+}
