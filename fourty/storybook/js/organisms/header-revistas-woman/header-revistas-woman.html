@@ -1,0 +1,255 @@
+<!--
+  header-revistas-woman.html — markup de Organisms / Header Revistas (Woman) (.ft-org-header-revistas)
+  Verbatim de las páginas-layout del showroom (organism-header-revistas-woman.html). Rutas normalizadas a /cds-statics.
+  El motor lo publica en el subgrupo "Markup".
+-->
+<template data-story="Woman">
+<header class="ft-org-header-revistas">
+        <!-- El checkbox que controla el menú desplegable -->
+        <input type="checkbox" id="menu-toggle"> 
+        <!-- Menú temas -->
+        <div class="ft-org-header-revistas--themes">
+            <nav aria-label="Temas destacados del día" class="ft-org-header-revistas--themes__breaking-news">
+                <span class="ft-org-header-revistas--themes__breaking-news__title">Temas del día:</span>
+                <ul>
+                    <li>
+                        <a href="https://woman.elperiodico.com/celebrities/irene-urdangarin-juan-urquijo-relacion-107819489"
+                            title="Irene Urdangarin">Irene Urdangarin
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://woman.elperiodico.com/celebrities/exigente-entrenamiento-princesa-leonor-escuela-marin-107817851"
+                            title="Princesa Leonor">Princesa Leonor
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://woman.elperiodico.com/moda/festval-vitoria-2024-famosos-alfombra-naranja-107767521"
+                            title="FesTVal">FesTVal
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://woman.elperiodico.com/celebrities/kate-middleton-reaparece-escocia-fish-and-chips-107814916"
+                            title="Kate Middleton">Kate Middleton
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <nav aria-label="Themes Buttons" class="ft-org-header-revistas--themes__buttons">
+                <ul>
+                    <li class="ft-org-header-revistas--themes__buttons--newsletter">
+                        <a href="/newsletter/" title="Newsletter" external="true"
+                            class="ft-btn ft-btn--tertiary">
+                            Newsletter
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Menú principal -->
+        <div class="ft-org-header-revistas--main">
+            <div class="ft-org-header-revistas--main__content">
+                <div class="ft-org-header-revistas--main__content__container">
+                    <h1><a href="/" title="Woman"
+                            class="ft-org-header-revistas--main__content__container__logo"><img
+                                src="https://woman.elperiodico.com/WOM/images/logotipo.svg" alt="Woman"
+                                class="ft-org-header-revistas--main__content__container__logo__image">
+                            <span>Woman</span></a></h1>
+                    <nav aria-label="Main Menu" class="ft-org-header-revistas--main__content__container__nav">
+                        <ul>
+                            <li><a href="/moda/" title="Moda" external="true">
+                                    Moda
+                                </a> <!----></li>
+                            <li><a href="/belleza/" title="Belleza" external="true">
+                                    Belleza
+                                </a> <!----></li>
+                            <li><a href="/lifestyle/" title="Lifestyle" external="true">
+                                    Lifestyle
+                                </a> <!----></li>
+                            <li><a href="/celebrities/" title="Celebrities" external="true">
+                                    Celebrities
+                                </a> <!----></li>
+                            <li><a href="/podcasts/" title="Podcasts" external="true">
+                                    Podcasts
+                                </a> <!----></li>
+                            <li><a href="/woman_tv/" title="Woman TV" external="true">
+                                    Woman TV
+                                </a> <!----></li>
+                        </ul>
+                    </nav>
+                    <div class="ft-org-header-revistas--main__content__container__tools">
+                        <div id="miCuentaLogin" class="ft-org-header-revistas--main__content__container__tools__user">
+                            <button aria-label="Ver menú de usuario" name="avatar"
+                                class="ft-org-header-revistas--main__content__container__tools__user__avatar">
+                                <span id="userAcronym" class="ft-org-header-revistas--main__content__container__tools__user__avatar__initials"></span>
+                            </button>
+                            <nav aria-label="Perfil Menú" class="ft-org-header-revistas--main__content__container__tools__user__menu">
+                                <button aria-label="Cerrar menú de usuario" name="close-user-menu"
+                                    class="ft-org-header-revistas--main__content__container__tools__user__menu__close">
+                                    <span>Cerrar</span>
+                                </button>
+                                <ul>
+                                    <li><a href="https://micuenta-woman.elperiodico.com/tp/perfil" title="Ver perfil"
+                                            class="ft-org-header-revistas--main__content__container__tools__user__menu__item">
+                                            Ver perfil
+                                        </a></li>
+                                    <li><a href="https://micuenta-woman.elperiodico.com/tp/logout" title="Cerrar sesión"
+                                            class="ft-org-header-revistas--main__content__container__tools__user__menu__item">
+                                            Cerrar sesión
+                                        </a></li>
+                                </ul>
+                            </nav>
+                        </div> 
+                        <a href="https://micuenta-woman.elperiodico.com/tp/login" title="Acceder" id="accessLoginButton"
+                            class="ft-org-header-revistas--main__content__container__tools__login ft-org-header-revistas--main__content__container__tools__login--active">
+                        </a>
+                        <span class="ft-org-header-revistas--main__content__container__tools__separator"></span>
+                        <label for="menu-toggle" class="ft-org-header-revistas--main__content__container__tools__hamburger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Menú desplegable -->
+        <div class="ft-org-header-revistas--side">
+            <label for="menu-toggle" class="ft-org-header-revistas--side__background">
+            </label>
+            <nav aria-label="Dropdown Menu" class="ft-org-header-revistas--side__content">
+                <div class="ft-org-header-revistas--side__rrss">
+                    <h5 class="ft-org-header-revistas--side__rrss__title">En las redes</h5>
+                    <div class="ft-mol-rrss-inline ft-mol-rrss-inline--right">
+                        <div class="ft-mol-rrss-inline__items">
+                            <a href="https://twitter.com/revistawoman" title="Red social twitter" target="_blank" class="ft-btn-rrss ft-btn-rrss--twitter">
+                                <span class="ft-mol-rrss ft-mol-rrssTwitter--default ft-btn-rrss__icon"></span>
+                                <span class="ft-btn-rrss__text">
+                                    RRSS Twitter
+                                </span>
+                            </a>
+                            <a href="https://www.facebook.com/WomanMadameFigaro" title="Red social facebook" target="_blank" class="ft-btn-rrss ft-btn-rrss--facebook">
+                                <span class="ft-mol-rrss ft-mol-rrssFacebook--default ft-btn-rrss__icon"></span>
+                                <span class="ft-btn-rrss__text">
+                                    RRSS Facebook
+                                </span>
+                            </a>
+                            <a href="https://instagram.com/woman_es/" title="Red social instagram" target="_blank" class="ft-btn-rrss ft-btn-rrss--instagram">
+                                <span class="ft-mol-rrss ft-mol-rrssInstagram--default ft-btn-rrss__icon"></span>
+                                <span class="ft-btn-rrss__text">
+                                  RRSS Instagram
+                                </span>
+                              </a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <nav>
+                        <ul class="ft-org-header-revistas--side__items">
+                            <li>
+                                <a href="/moda/">
+                                    Moda
+                                </a>
+                                <ul>
+                                    <li>
+                                        <div><a href="/moda/tendencias/" target="_self">
+                                                Tendencias
+                                            </a></div>
+                                    </li>
+                                    <li>
+                                        <div><a href="/moda/pasarelas/" target="_self">
+                                                Pasarelas
+                                            </a></div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="ft-org-header-revistas--side__items">
+                            <li>
+                                <a href="/belleza/">
+                                    Belleza
+                                </a>
+                                <ul>
+                                    <li>
+                                        <div><a href="/belleza/maquillaje/" target="_self">
+                                                Maquillaje
+                                            </a></div>
+                                    </li>
+                                    <li>
+                                        <div><a href="/belleza/pelo/" target="_self">
+                                                Cabello
+                                            </a></div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="ft-org-header-revistas--side__items">
+                            <li>
+                                <a href="/lifestyle/">
+                                    Lifestyle
+                                </a>
+                                <ul>
+                                    <li>
+                                        <div><a href="/lifestyle/decoracion/" target="_self">
+                                                Decoración
+                                            </a></div>
+                                    </li>
+                                    <li>
+                                        <div><a href="/lifestyle/ocio/" target="_self">
+                                                Ocio
+                                            </a></div>
+                                    </li>
+                                    <li>
+                                        <div><a href="/lifestyle/womanpower/" target="_self">
+                                                Womanpower
+                                            </a></div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="ft-org-header-revistas--side__items">
+                            <li>
+                                <a href="/celebrities/">
+                                    Celebrities
+                                </a>
+                                <ul></ul>
+                            </li>
+                        </ul>
+                        <ul class="ft-org-header-revistas--side__items">
+                            <li>
+                                <a href="/shopping/">
+                                    Shopping
+                                </a>
+                                <ul></ul>
+                            </li>
+                        </ul>
+                        <ul class="ft-org-header-revistas--side__items">
+                            <li>
+                                <a href="/podcasts/">
+                                    Podcasts
+                                </a>
+                                <ul></ul>
+                            </li>
+                        </ul>
+                        <ul class="ft-org-header-revistas--side__items">
+                            <li>
+                                <a href="/woman_tv/">
+                                    WomanTV
+                                </a>
+                                <ul></ul>
+                            </li>
+                        </ul>
+                        <ul class="ft-org-header-revistas--side__items">
+                            <li>
+                                <a href="/galerias/">
+                                    Fotos
+                                </a>
+                                <ul></ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </nav>
+        </div>
+    </header>
+</template>

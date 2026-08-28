@@ -1,0 +1,1948 @@
+/* ════════════════════════════════════════════════════════════════════════
+   organisms/comments/comments.js — Organisms / Comments
+   Casuística REAL de scss/fourties/organism/comments/_comments.scss (.ft-org-comments).
+   Markup VERBATIM de fourty/organisms/organism-comments.html. Cero invención de API.
+   Rutas de asset normalizadas (../../cds-statics → /cds-statics, raíz del server).
+   ════════════════════════════════════════════════════════════════════════ */
+(function () {
+    "use strict";
+
+    /* ▼ SINGLE SOURCE OF TRUTH — markup verbatim por variante ▼ */
+    const VARIANTS = {
+        "base": `<div class="ft-org-comments">
+                                                <!-- Main -->
+                                                <div class="ft-org-comments__content">
+                                                    <!-- Molecula Acordeon-->
+                                                    <div class="ft-mol-accordion">
+                                                        <details class="ft-mol-accordion__details">
+                                                            <summary class="ft-mol-accordion__summary">11 comentarios
+                                                                <p class="ft-mol-accordion__subtitle">Para comentar
+                                                                    debes <a href="#" class="ft-link" title="title text"
+                                                                        target="_self">iniciar sesión </a>o <a href="#"
+                                                                        class="ft-link" title="title text"
+                                                                        target="_self">regístrate </a>si aún no tienes
+                                                                    una cuenta.</p>
+                                                            </summary>
+                                                            <div class="ft-mol-accordion__text">
+                                                                <!--Usuario-->
+                                                                <div class="ft-org-comments__contentHeader">
+                                                                    <!--Publicar Comentario-->
+                                                                    <div class="ft-mol-writer">
+                                                                        <div class="ft-mol-writer__group">
+                                                                            <div class="ft-mol-writer__item">
+                                                                                <img src="/cds-statics/assets/img/icons/icon-c-user.svg"
+                                                                                    alt="avatar" width="60" height="60"
+                                                                                    class="ft-helper-img-rd">
+                                                                                <div class="ft-mol-writer__title">
+                                                                                    <p
+                                                                                        class="ft-mol-writer__titleOpinion ft-helper-fontSize-body-L--small">
+                                                                                        <a href="#"
+                                                                                            class="ft-link ft-link--primary"
+                                                                                            title="link title"
+                                                                                            target="_self">
+                                                                                            Mariagg33B</a>
+                                                                                    </p>
+                                                                                    <p
+                                                                                        class="ft-mol-writer__titleOpinion ft-helper-fontSize-body-M--small ft-helper-fontColor-primary">
+                                                                                        <a class="ft-link ft-link--secondary"
+                                                                                            href="#">
+                                                                                            Cambiar tu avatar
+                                                                                        </a>
+                                                                                    </p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div
+                                                                        class="ft-mol-form ft-mol-form--has-supporting-text ft-mol-form-search">
+                                                                        <textarea name="textarea" rows="10" cols="50"
+                                                                            type="textarea" id=""
+                                                                            class="ft-mol-form__input ui-autocomplete-input"
+                                                                            placeholder=" "
+                                                                            autocomplete="off"></textarea>
+                                                                        <p class="ft-mol-form__supporting-text">
+                                                                            <span
+                                                                                class="ft-mol-form__supporting-message">
+                                                                                Supporting text
+                                                                            </span>
+                                                                            <span
+                                                                                class="ft-mol-form__supporting-numbers">11/20</span>
+                                                                        </p>
+                                                                    </div>
+                                                                    <div
+                                                                        class="ft-mol-form ft-mol-form--has-supporting-text ft-mol-form--is-error ft-mol-form-search">
+                                                                        <textarea name="textarea" rows="10" cols="50"
+                                                                            type="textarea" id=""
+                                                                            class="ft-mol-form__input ui-autocomplete-input"
+                                                                            placeholder=" "
+                                                                            autocomplete="off"></textarea>
+                                                                        <p class="ft-mol-form__supporting-text">
+                                                                            <span
+                                                                                class="ft-mol-form__supporting-message">
+                                                                                Supporting text
+                                                                            </span>
+                                                                            <span
+                                                                                class="ft-mol-form__supporting-numbers">11/20</span>
+                                                                        </p>
+                                                                    </div>
+
+                                                                    <!-- Texto  -->
+                                                                    <p
+                                                                        class="ft-helper-spacer-b-xs ft-helper-fontSize-body-S">
+                                                                        Realizando un comentario acepta las <a href=""
+                                                                            class="ft-link">Normas de Participación</a>
+                                                                        y la <a href="" class="ft-link">Política de
+                                                                            Privacidad</a></p>
+                                                                    <!-- Fin Texto  -->
+
+                                                                    <a href="#"
+                                                                        class="ft-btn ft-btn--secondary ft-btn--sm"
+                                                                        title="title text" target="_self">
+                                                                        Publicar comentario
+                                                                    </a>
+
+                                                                    <!--Fin Publicar Comentario-->
+                                                                </div>
+                                                                <!--Fin Usuario-->
+                                                                <!--Tabs-->
+                                                                <div class="ft-mol-tab">
+                                                                    <ul class="ft-mol-tab__nav" role="tablist">
+                                                                        <li class="ft-mol-tab__header">
+                                                                            <button type="button" role="tab"
+                                                                                data-target="tab1"
+                                                                                class="ft-mol-tab__trigger ft-helper-fontSize-body-M  ft-helper-fontWeight-700"
+                                                                                title="Title text" aria-selected="true">
+                                                                                Orden ascendente
+                                                                            </button>
+                                                                        </li>
+                                                                        <li class="ft-mol-tab__header">
+                                                                            <button type="button" role="tab"
+                                                                                data-target="tab2"
+                                                                                class="ft-mol-tab__trigger ft-helper-fontSize-body-M  ft-helper-fontWeight-700"
+                                                                                title="Title text">
+                                                                                Orden descendente
+                                                                            </button>
+                                                                        </li>
+                                                                    </ul>
+                                                                    <span class="ft-mol-tab__bar"></span>
+                                                                    <div class="ft-mol-tab__tab-contents">
+                                                                        <div class="ft-mol-tab__content" role="tabpanel"
+                                                                            aria-labelledby="tab1" aria-selected="true">
+                                                                            <div class="ft-helper-display-flex">
+                                                                                <div
+                                                                                    class="ft-layout-grid-flex__colXs-12">
+                                                                                    <!--Comentario-->
+                                                                                    <article class="ft-mol-comment">
+                                                                                        <div
+                                                                                            class="ft-mol-comment__left">
+                                                                                            <div class="ft-mol-writer">
+                                                                                                <div
+                                                                                                    class="ft-mol-writer__group">
+                                                                                                    <div
+                                                                                                        class="ft-mol-writer__item">
+                                                                                                        <img src="/cds-statics/assets/img/icons/icon-c-user.svg"
+                                                                                                            alt="avatar"
+                                                                                                            width="60"
+                                                                                                            height="60"
+                                                                                                            class="ft-helper-img-rd">
+                                                                                                        <div
+                                                                                                            class="ft-mol-writer__title">
+                                                                                                            <p
+                                                                                                                class="ft-mol-writer__titleOpinion ft-helper-fontSize-body-L--small">
+                                                                                                                <a href="#"
+                                                                                                                    class="ft-link ft-link--primary"
+                                                                                                                    title="link title"
+                                                                                                                    target="_self">
+                                                                                                                    Mariagg33B</a>
+                                                                                                            </p>
+                                                                                                            <div
+                                                                                                                class="ft-date">
+                                                                                                                <time
+                                                                                                                    class="ft-date__text"
+                                                                                                                    datetime="2011-11-18T14:54:39+00:00">05
+                                                                                                                    SEPT
+                                                                                                                    2022
+                                                                                                                    -
+                                                                                                                    13:04
+                                                                                                                    CET</time>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div
+                                                                                            class="ft-mol-comment__center">
+                                                                                            #10
+                                                                                        </div>
+                                                                                        <div
+                                                                                            class="ft-mol-comment__right">
+                                                                                            <p
+                                                                                                class="ft-mol-comment__rightText">
+                                                                                                jurisprudencia art 10
+                                                                                                CEDH : "es calidad
+                                                                                                democrática, es
+                                                                                                contraste de opiniones,
+                                                                                                es empoderamiento del
+                                                                                                criterio de los
+                                                                                                ciudadanos que es el
+                                                                                                único que sirve cuando
+                                                                                                se trata de la
+                                                                                                convocatoria electoral".
+                                                                                                volantes de pacientes
+                                                                                                para consultas externas
+                                                                                                en sobres HUSA
+                                                                                            </p>
+                                                                                            <ul class="ft-list-block">
+                                                                                                <li
+                                                                                                    class="ft-list-block__item">
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+                                                                                                        <svg class="ft-list-block__icon"
+                                                                                                            width="18"
+                                                                                                            height="18"
+                                                                                                            viewBox="0 0 24 24"
+                                                                                                            fill="none"
+                                                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                                                            <path
+                                                                                                                fill-rule="evenodd"
+                                                                                                                clip-rule="evenodd"
+                                                                                                                d="M16.4236 2.53201C14.1571 1.71909 11.5187 1.61302 9.1977 2.11152C4.63029 3.09249 2.43896 6.1594 1.78492 9.39422C1.45469 11.0275 1.51949 12.7008 1.88128 14.1575C2.24549 15.6239 2.89469 16.8108 3.67576 17.5285L3.95251 17.7828L3.68697 21.8358L6.88722 20.117L7.208 20.2234C11.2717 21.5708 14.555 20.7795 15.7541 20.3632C19.9649 18.9014 21.6798 16.2705 22.2225 13.7132C22.7794 11.089 22.1126 8.47354 21.423 7.16021L21.4018 7.11979L21.3854 7.07718C20.5208 4.83042 18.6815 3.34183 16.4236 2.53201ZM22.8344 6.47108C21.7612 3.72368 19.5176 1.97367 16.9537 1.0541C14.3853 0.13291 11.4468 0.0225722 8.868 0.576433C3.61429 1.70481 1.00769 5.31568 0.245968 9.08307C-0.131683 10.9509 -0.058817 12.8598 0.357481 14.5359C0.734994 16.0559 1.40824 17.4346 2.33775 18.4133L2.08057 22.3386C2.01723 23.3053 3.0418 23.9645 3.89527 23.5061L7.0388 21.8178C11.3751 23.1593 14.8855 22.3267 16.2691 21.8464C20.9999 20.2041 23.1016 17.1338 23.7584 14.0392C24.3955 11.0371 23.6627 8.07488 22.8344 6.47108Z"
+                                                                                                                fill="black">
+                                                                                                            </path>
+                                                                                                        </svg>
+                                                                                                    </a>
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+                                                                                                        <span
+                                                                                                            class="ft-list-block__text ft-helper-fontSize-body-M--small">
+                                                                                                            Responder
+                                                                                                        </span>
+                                                                                                    </a>
+                                                                                                </li>
+                                                                                                <li
+                                                                                                    class="ft-list-block__item">
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+
+                                                                                                        <svg class="ft-list-block__icon"
+                                                                                                            width="22"
+                                                                                                            height="32"
+                                                                                                            viewBox="0 0 22 32"
+                                                                                                            fill="none"
+                                                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                                                            <g
+                                                                                                                clip-path="url(#clip0_547_25)">
+                                                                                                                <mask
+                                                                                                                    id="path-1-inside-1_547_25"
+                                                                                                                    fill="white">
+                                                                                                                    <path
+                                                                                                                        fill-rule="evenodd"
+                                                                                                                        clip-rule="evenodd"
+                                                                                                                        d="M3.68677 21.7324L3.68677 12.5164H1.17021L1.17021 21.7324H3.68677ZM4.85698 22.8916C4.82876 22.8929 4.80126 22.8945 4.77426 22.8961C4.71745 22.8994 4.66283 22.9027 4.6082 22.9027H0.861374C0.254616 22.9027 0 22.647 0 22.0398L0 12.1939C0 11.6007 0.2552 11.3462 0.848526 11.3462H4.85698L4.85698 22.8916Z">
+                                                                                                                    </path>
+                                                                                                                </mask>
+                                                                                                                <path
+                                                                                                                    d="M3.68677 12.5164H5.68677V10.5164H3.68677V12.5164ZM3.68677 21.7324V23.7324H5.68677L5.68677 21.7324H3.68677ZM1.17021 12.5164L1.17021 10.5164H-0.829787L-0.829787 12.5164H1.17021ZM1.17021 21.7324H-0.829787L-0.829787 23.7324H1.17021L1.17021 21.7324ZM4.85698 22.8916L4.9502 24.8894L6.85698 24.8004V22.8916H4.85698ZM4.77426 22.8961L4.65669 20.8996L4.65668 20.8996L4.77426 22.8961ZM4.85698 11.3462H6.85698V9.34619H4.85698V11.3462ZM1.68677 12.5164L1.68677 21.7324H5.68677L5.68677 12.5164H1.68677ZM1.17021 14.5164H3.68677L3.68677 10.5164H1.17021L1.17021 14.5164ZM3.17021 21.7324L3.17021 12.5164H-0.829787L-0.829787 21.7324H3.17021ZM4.76376 20.8937C4.72142 20.8957 4.68193 20.8981 4.65669 20.8996L4.89182 24.8926C4.92059 24.8909 4.93609 24.8901 4.9502 24.8894L4.76376 20.8937ZM4.65668 20.8996C4.64185 20.9004 4.63139 20.901 4.62161 20.9016C4.61224 20.9021 4.60609 20.9024 4.60187 20.9026C4.5931 20.903 4.59695 20.9027 4.6082 20.9027L4.6082 24.9027C4.73169 24.9027 4.8455 24.8954 4.89183 24.8926L4.65668 20.8996ZM4.6082 20.9027H0.861374L0.861374 24.9027H4.6082L4.6082 20.9027ZM0.861374 20.9027C0.780661 20.9027 1.21056 20.8769 1.619 21.2863C2.0264 21.6947 2 22.1228 2 22.0398H-2C-2 22.5639 -1.89909 23.4235 -1.2127 24.1115C-0.525261 24.8005 0.335329 24.9027 0.861374 24.9027L0.861374 20.9027ZM2 22.0398L2 12.1939H-2L-2 22.0398H2ZM2 12.1939C2 12.1303 2.02102 12.5573 1.61502 12.9628C1.20962 13.3676 0.783549 13.3462 0.848526 13.3462L0.848526 9.34619C0.320177 9.34619 -0.530156 9.45202 -1.21149 10.1324C-1.89342 10.8134 -2 11.6644 -2 12.1939H2ZM3.68677 19.7324H1.17021L1.17021 23.7324H3.68677L3.68677 19.7324ZM0.848526 13.3462H4.85698V9.34619H0.848526L0.848526 13.3462ZM2.85698 11.3462L2.85698 22.8916H6.85698L6.85698 11.3462H2.85698Z"
+                                                                                                                    fill="#00BD3E"
+                                                                                                                    mask="url(#path-1-inside-1_547_25)">
+                                                                                                                </path>
+                                                                                                                <path
+                                                                                                                    d="M21.2313 14.2263C21.1333 14.0621 21.0152 13.9144 20.8968 13.7764C20.8469 13.7181 20.7987 13.6636 20.7515 13.6103C20.6999 13.5519 20.6495 13.495 20.5994 13.436C20.6323 13.3727 20.6657 13.3061 20.6932 13.2408C21.353 11.6933 20.2032 10.0438 18.5612 10.0656C17.6396 10.0775 16.7185 10.0746 15.7959 10.0717C15.3868 10.0704 14.9775 10.0691 14.5676 10.0691H14.5238C14.5334 10.0209 14.5431 9.97289 14.5527 9.9251C14.5984 9.69708 14.6432 9.47399 14.682 9.25168C14.8972 8.0216 15.1118 6.76753 15.0525 5.48646L15.0524 5.48559C15.0313 5.0729 14.9677 4.66357 14.8626 4.2643C14.7605 3.87095 14.5654 3.56494 14.2931 3.34557C14.0223 3.12741 13.6854 3.00304 13.3107 2.95376C12.5753 2.85659 11.9819 3.16406 11.5626 3.75094L11.5612 3.75285L11.5599 3.75479C11.4019 3.98875 11.2732 4.24172 11.1768 4.50785M21.2313 14.2263L21.0823 14.3178M21.2313 14.2263C21.3148 14.3657 21.3665 14.5181 21.4076 14.6615C21.4251 14.7226 21.4401 14.7791 21.4544 14.8335C21.4761 14.9157 21.4965 14.9931 21.5228 15.0743L21.5315 15.1011V15.5049L21.5272 15.5239C21.5223 15.5464 21.5175 15.5674 21.5129 15.5875C21.5034 15.6288 21.4948 15.6666 21.4872 15.7065M21.4872 15.7065L21.4874 15.7052L21.3158 15.6742L21.487 15.7075L21.4872 15.7065ZM21.4872 15.7065C21.3883 16.2667 21.085 16.7686 20.6378 17.1125M20.6378 17.1125L20.6387 17.1118L20.5315 16.9724L20.6367 17.1133L20.6378 17.1125ZM20.6378 17.1125C20.6205 17.1261 20.6027 17.1398 20.5847 17.1534M20.5847 17.1534C20.5576 17.1044 20.5287 17.0564 20.4979 17.0095L20.3527 17.1072L20.4569 17.2489C20.4749 17.2353 20.4944 17.2208 20.5147 17.2058C20.5374 17.1889 20.5612 17.1713 20.5847 17.1534ZM20.5847 17.1534C21.1257 18.1308 20.9474 19.4987 19.7901 20.2472M19.7901 20.2472C19.7856 20.238 19.781 20.2288 19.7763 20.2195C19.7645 20.1962 19.7552 20.1757 19.7446 20.1526C19.7376 20.1374 19.7301 20.1209 19.721 20.1017L19.5639 20.1784L19.6488 20.3327C19.6974 20.3052 19.7445 20.2767 19.7901 20.2472ZM19.7901 20.2472C20.2636 21.2151 20.0244 22.3295 19.2029 23.0181C18.8732 23.2941 18.4939 23.4247 18.1254 23.5257L18.1031 23.5318H12.1691L12.1463 23.5254C12.1012 23.5127 12.0553 23.5034 12.009 23.4974M12.009 23.4974C12.011 23.4975 12.0131 23.4976 12.0152 23.4977L12.0244 23.3212L12.0033 23.4966C12.0052 23.4969 12.0071 23.4971 12.009 23.4974ZM12.009 23.4974C10.2489 23.4019 8.50975 23.0639 6.8395 22.4929L6.83866 22.4926L6.83783 22.4923C6.74777 22.4605 6.66247 22.4115 6.60865 22.3215C6.55811 22.237 6.55307 22.144 6.55307 22.073C6.55605 18.5883 6.55605 15.1038 6.55307 11.6195M6.55307 11.6195C6.55312 11.6209 6.55318 11.6224 6.55324 11.6238L6.72736 11.6158L6.55307 11.616C6.55307 11.6171 6.55307 11.6183 6.55307 11.6195ZM6.55307 11.6195C6.54992 11.5322 6.56902 11.4455 6.60857 11.3678C6.64752 11.2914 6.70496 11.2262 6.77548 11.1784M6.77548 11.1784C6.77374 11.1798 6.772 11.1812 6.77025 11.1825L6.87676 11.3224L6.78235 11.1739C6.78005 11.1754 6.77776 11.1769 6.77548 11.1784ZM6.77548 11.1784C7.54725 10.5741 8.28372 9.93967 8.92675 9.20731C9.45271 8.60844 9.88908 7.96912 10.1559 7.22022C10.4808 6.30943 10.8279 5.40667 11.1768 4.50785M11.1768 4.50785L11.1761 4.50981L11.3397 4.57068L11.1775 4.50595L11.1768 4.50785ZM6.90404 22.1348L6.90503 22.1358M11.5033 4.63154C11.5896 4.39298 11.7048 4.16621 11.8462 3.95644C12.1996 3.46302 12.6726 3.22587 13.2659 3.30429C13.5938 3.34742 13.8665 3.4533 14.0763 3.62231C14.2844 3.79005 14.4409 4.02801 14.5256 4.35455L14.5257 4.35519C14.6246 4.73057 14.6844 5.1154 14.7043 5.5034C14.7614 6.7389 14.5548 7.95505 14.3387 9.19005C14.3007 9.40814 14.2575 9.62329 14.2123 9.84828C14.1887 9.96612 14.1644 10.0867 14.1402 10.2117L14.0992 10.4226H14.5676C14.9751 10.4226 15.3832 10.4239 15.7915 10.4252C16.7156 10.4281 17.6413 10.431 18.5657 10.4191C19.9683 10.4004 20.9278 11.8006 20.373 13.1009L20.3728 13.1014L20.3726 13.1019C20.3418 13.1752 20.3069 13.2412 20.268 13.3146C20.2477 13.3529 20.2264 13.3932 20.204 13.4376C20.2456 13.4857 20.4577 13.8076 20.4994 13.8548C20.546 13.9075 20.5916 13.9591 20.6338 14.0083C20.7477 14.1411 20.8506 14.2712 20.9333 14.4095C20.9927 14.5089 21.0344 14.6258 21.0729 14.7602C21.0859 14.8057 21.0993 14.8561 21.1133 14.9086C21.135 14.9903 21.158 15.0769 21.1829 15.157V15.4655C21.1804 15.4766 21.1777 15.4881 21.1751 15.4998C21.1648 15.5447 21.1536 15.5938 21.1447 15.6408L21.1444 15.642L21.1442 15.6431C21.0609 16.1167 20.8045 16.541 20.4263 16.8315L20.4253 16.8322L20.4243 16.833C20.3879 16.8618 20.3526 16.888 20.3153 16.9157C20.2939 16.9316 20.2718 16.9479 20.2485 16.9655L20.1163 17.0656L20.2075 17.205C20.7732 18.0691 20.6306 19.3729 19.479 20.024L19.3357 20.105L19.4068 20.255C19.4118 20.2653 19.4175 20.2779 19.4239 20.2916C19.4367 20.3196 19.4518 20.3524 19.466 20.3806C19.8826 21.206 19.6852 22.1552 18.9808 22.7457C18.7165 22.9669 18.4052 23.0817 18.0567 23.1783H12.2156C12.1597 23.1637 12.1029 23.1529 12.0455 23.1458L12.0396 23.145L12.0337 23.1447C10.3034 23.0514 8.5937 22.7195 6.95175 22.1583C6.92396 22.1484 6.9114 22.1407 6.90659 22.137C6.90617 22.1355 6.90563 22.1332 6.90506 22.13C6.9031 22.1189 6.90166 22.1016 6.90166 22.0731C6.90464 18.5871 6.90464 15.1013 6.90166 11.6157L6.90165 11.6118L6.90148 11.6079C6.90028 11.5809 6.90608 11.554 6.91831 11.53C6.93054 11.506 6.94877 11.4856 6.97117 11.471L6.9774 11.4669L6.98326 11.4623C7.76431 10.851 8.52189 10.2 9.18711 9.44236C9.73082 8.82327 10.1968 8.14566 10.4838 7.34032C10.807 6.43393 11.1528 5.53459 11.5019 4.6354L11.5026 4.63348L11.5033 4.63154Z"
+                                                                                                                    stroke="#00BD3E"
+                                                                                                                    stroke-miterlimit="10">
+                                                                                                                </path>
+                                                                                                            </g>
+                                                                                                            <defs>
+                                                                                                                <clipPath
+                                                                                                                    id="clip0_547_25">
+                                                                                                                    <rect
+                                                                                                                        width="22"
+                                                                                                                        height="32"
+                                                                                                                        fill="white">
+                                                                                                                    </rect>
+                                                                                                                </clipPath>
+                                                                                                            </defs>
+                                                                                                        </svg>
+                                                                                                    </a>
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+                                                                                                        <span
+                                                                                                            class="ft-list-block__text ft-helper-fontSize-body-S--small">
+                                                                                                            0
+                                                                                                        </span>
+                                                                                                    </a>
+                                                                                                </li>
+                                                                                                <li
+                                                                                                    class="ft-list-block__item">
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+                                                                                                        <svg class="ft-list-block__icon"
+                                                                                                            width="22"
+                                                                                                            height="32"
+                                                                                                            viewBox="0 0 22 32"
+                                                                                                            fill="none"
+                                                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                                                            <g
+                                                                                                                clip-path="url(#clip0_547_11)">
+                                                                                                                <mask
+                                                                                                                    id="path-1-inside-1_547_11"
+                                                                                                                    fill="white">
+                                                                                                                    <path
+                                                                                                                        fill-rule="evenodd"
+                                                                                                                        clip-rule="evenodd"
+                                                                                                                        d="M18.3132 12.4355L18.3132 21.6516L20.8298 21.6516L20.8298 12.4355L18.3132 12.4355ZM17.143 11.2764C17.1712 11.2751 17.1987 11.2735 17.2257 11.2719C17.2826 11.2685 17.3372 11.2653 17.3918 11.2653L21.1386 11.2653C21.7454 11.2653 22 11.521 22 12.1282L22 21.9741C22 22.5672 21.7448 22.8218 21.1515 22.8218L17.143 22.8218L17.143 11.2764Z">
+                                                                                                                    </path>
+                                                                                                                </mask>
+                                                                                                                <path
+                                                                                                                    d="M18.3132 21.6516L16.3132 21.6516L16.3132 23.6516L18.3132 23.6516L18.3132 21.6516ZM18.3132 12.4355L18.3132 10.4355L16.3132 10.4355L16.3132 12.4355L18.3132 12.4355ZM20.8298 21.6516L20.8298 23.6516L22.8298 23.6516L22.8298 21.6516L20.8298 21.6516ZM20.8298 12.4355L22.8298 12.4355L22.8298 10.4355L20.8298 10.4355L20.8298 12.4355ZM17.143 11.2764L17.0498 9.27857L15.143 9.36754L15.143 11.2764L17.143 11.2764ZM17.2257 11.2719L17.3433 13.2684L17.3433 13.2684L17.2257 11.2719ZM17.143 22.8218L15.143 22.8218L15.143 24.8218L17.143 24.8218L17.143 22.8218ZM20.3132 21.6516L20.3132 12.4355L16.3132 12.4355L16.3132 21.6516L20.3132 21.6516ZM20.8298 19.6516L18.3132 19.6516L18.3132 23.6516L20.8298 23.6516L20.8298 19.6516ZM18.8298 12.4355L18.8298 21.6516L22.8298 21.6516L22.8298 12.4355L18.8298 12.4355ZM17.2362 13.2742C17.2786 13.2722 17.3181 13.2699 17.3433 13.2684L17.1082 9.27533C17.0794 9.27702 17.0639 9.27791 17.0498 9.27857L17.2362 13.2742ZM17.3433 13.2684C17.3582 13.2675 17.3686 13.2669 17.3784 13.2664C17.3878 13.2659 17.3939 13.2656 17.3981 13.2654C17.4069 13.265 17.4031 13.2653 17.3918 13.2653L17.3918 9.26531C17.2683 9.26531 17.1545 9.2726 17.1082 9.27533L17.3433 13.2684ZM17.3918 13.2653L21.1386 13.2653L21.1386 9.26531L17.3918 9.26531L17.3918 13.2653ZM21.1386 13.2653C21.2193 13.2653 20.7894 13.291 20.381 12.8816C19.9736 12.4733 20 12.0451 20 12.1282L24 12.1282C24 11.6041 23.8991 10.7445 23.2127 10.0565C22.5253 9.36745 21.6647 9.26531 21.1386 9.26531L21.1386 13.2653ZM20 12.1282L20 21.9741L24 21.9741L24 12.1282L20 12.1282ZM20 21.9741C20 22.0377 19.979 21.6106 20.385 21.2052C20.7904 20.8003 21.2165 20.8218 21.1515 20.8218L21.1515 24.8218C21.6798 24.8218 22.5302 24.7159 23.2115 24.0355C23.8934 23.3545 24 22.5036 24 21.9741L20 21.9741ZM18.3132 14.4355L20.8298 14.4355L20.8298 10.4355L18.3132 10.4355L18.3132 14.4355ZM21.1515 20.8218L17.143 20.8218L17.143 24.8218L21.1515 24.8218L21.1515 20.8218ZM19.143 22.8218L19.143 11.2764L15.143 11.2764L15.143 22.8218L19.143 22.8218Z"
+                                                                                                                    fill="#FD3700"
+                                                                                                                    mask="url(#path-1-inside-1_547_11)">
+                                                                                                                </path>
+                                                                                                                <path
+                                                                                                                    d="M0.768663 19.9417C0.86674 20.1058 0.984788 20.2536 1.10319 20.3916C1.15314 20.4498 1.20134 20.5043 1.24853 20.5577C1.3001 20.616 1.35047 20.673 1.40064 20.732C1.36768 20.7952 1.33427 20.8619 1.30683 20.9272C0.64699 22.4747 1.79683 24.1241 3.43882 24.1024C4.36045 24.0905 5.28146 24.0934 6.20415 24.0963C6.61316 24.0975 7.0225 24.0988 7.43237 24.0988L7.47621 24.0988C7.46658 24.1471 7.45694 24.1951 7.44735 24.2429C7.40156 24.4709 7.35677 24.694 7.31802 24.9163C7.10283 26.1464 6.88821 27.4004 6.94752 28.6815L6.94756 28.6824C6.96867 29.0951 7.0323 29.5044 7.1374 29.9037C7.23949 30.297 7.4346 30.603 7.70689 30.8224C7.97766 31.0406 8.31455 31.1649 8.68927 31.2142C9.42474 31.3114 10.0181 31.0039 10.4374 30.417L10.4388 30.4151L10.4401 30.4132C10.5981 30.1792 10.7268 29.9263 10.8232 29.6601M0.768663 19.9417L0.917722 19.8501M0.768663 19.9417C0.685228 19.8023 0.633498 19.6498 0.592376 19.5064C0.574855 19.4453 0.559945 19.3889 0.545594 19.3345C0.523888 19.2523 0.503459 19.1749 0.477215 19.0937L0.468545 19.0669L0.468545 18.6631L0.47276 18.644C0.477722 18.6216 0.482521 18.6006 0.487127 18.5805C0.496583 18.5392 0.50523 18.5014 0.51281 18.4615M0.51281 18.4615L0.512589 18.4628L0.684171 18.4938L0.513002 18.4605L0.51281 18.4615ZM0.51281 18.4615C0.611748 17.9013 0.914983 17.3994 1.36222 17.0555M1.36222 17.0555L1.36133 17.0562L1.4685 17.1956L1.36327 17.0547L1.36222 17.0555ZM1.36222 17.0555C1.37947 17.0419 1.39732 17.0282 1.41529 17.0146M1.41529 17.0146C1.44241 17.0636 1.47135 17.1116 1.50206 17.1585L1.64727 17.0607L1.54307 16.9191C1.52514 16.9326 1.50562 16.9471 1.48531 16.9622C1.46256 16.9791 1.43884 16.9967 1.41529 17.0146ZM1.41529 17.0146C0.874258 16.0372 1.05258 14.6693 2.20991 13.9207M2.20991 13.9207C2.21443 13.93 2.21901 13.9392 2.22366 13.9484C2.23547 13.9718 2.24485 13.9923 2.25543 14.0154C2.2624 14.0306 2.26991 14.047 2.27902 14.0662L2.43609 13.9896L2.3512 13.8353C2.30257 13.8627 2.25548 13.8913 2.20991 13.9207ZM2.20991 13.9207C1.73644 12.9528 1.97562 11.8384 2.79713 11.1499C3.12676 10.8739 3.50607 10.7433 3.87461 10.6423L3.89694 10.6362L9.83092 10.6362L9.85374 10.6426C9.89881 10.6552 9.94469 10.6646 9.99104 10.6706M9.99104 10.6706C9.98897 10.6705 9.9869 10.6704 9.98483 10.6703L9.97557 10.8468L9.99669 10.6713C9.9948 10.6711 9.99292 10.6709 9.99104 10.6706ZM9.99104 10.6706C11.7511 10.7661 13.4903 11.104 15.1605 11.6751L15.1613 11.6754L15.1622 11.6756C15.2522 11.7075 15.3375 11.7565 15.3913 11.8464C15.4419 11.9309 15.4469 12.024 15.4469 12.095C15.4439 15.5796 15.4439 19.0642 15.4469 22.5485M15.4469 22.5485C15.4469 22.5471 15.4468 22.5456 15.4468 22.5442L15.2726 22.5521L15.4469 22.552C15.4469 22.5508 15.4469 22.5497 15.4469 22.5485ZM15.4469 22.5485C15.4501 22.6358 15.431 22.7225 15.3914 22.8001C15.3525 22.8766 15.295 22.9418 15.2245 22.9895M15.2245 22.9895C15.2263 22.9882 15.228 22.9868 15.2297 22.9854L15.1232 22.8455L15.2177 22.9941C15.22 22.9926 15.2222 22.9911 15.2245 22.9895ZM15.2245 22.9895C14.4528 23.5939 13.7163 24.2283 13.0732 24.9607C12.5473 25.5595 12.1109 26.1988 11.8441 26.9478C11.5192 27.8585 11.1721 28.7613 10.8232 29.6601M10.8232 29.6601L10.8239 29.6582L10.6603 29.5973L10.8225 29.662L10.8232 29.6601ZM15.096 12.0332L15.095 12.0322M10.4967 29.5364C10.4104 29.775 10.2952 30.0018 10.1538 30.2115C9.80043 30.7049 9.32745 30.9421 8.7341 30.8637C8.40616 30.8206 8.13352 30.7147 7.92374 30.5457C7.71555 30.3779 7.55913 30.14 7.47444 29.8134L7.47427 29.8128C7.37544 29.4374 7.31559 29.0526 7.29571 28.6646C7.23856 27.4291 7.44522 26.2129 7.66127 24.9779C7.69928 24.7598 7.74249 24.5447 7.78768 24.3197C7.81135 24.2019 7.83555 24.0813 7.85984 23.9562L7.90079 23.7454L7.43237 23.7454C7.02486 23.7454 6.61682 23.7441 6.20848 23.7428C5.28441 23.7399 4.35875 23.737 3.43425 23.7489C2.03174 23.7675 1.07217 22.3674 1.62697 21.0671L1.62718 21.0666L1.62738 21.0661C1.65816 20.9927 1.69313 20.9267 1.73198 20.8534C1.75228 20.8151 1.77363 20.7748 1.79601 20.7304C1.7544 20.6823 1.54227 20.3604 1.50059 20.3132C1.45402 20.2605 1.40844 20.2089 1.36619 20.1596C1.25228 20.0268 1.14942 19.8968 1.06673 19.7584C1.00727 19.6591 0.965649 19.5422 0.927102 19.4077C0.914075 19.3623 0.900678 19.3119 0.886745 19.2594C0.865042 19.1777 0.842043 19.0911 0.817135 19.011L0.817135 18.7024C0.819636 18.6914 0.822258 18.6799 0.824943 18.6682C0.835218 18.6232 0.846426 18.5742 0.85534 18.5271L0.855554 18.526L0.855753 18.5249C0.939127 18.0513 1.19549 17.6269 1.57372 17.3365L1.5747 17.3357L1.57567 17.335C1.61206 17.3062 1.6474 17.28 1.68474 17.2523C1.70613 17.2364 1.72819 17.22 1.75147 17.2024L1.88374 17.1024L1.79249 16.963C1.22682 16.0989 1.36944 14.7951 2.52097 14.144L2.66428 14.0629L2.59315 13.913C2.58824 13.9026 2.58245 13.8901 2.57614 13.8763C2.56327 13.8483 2.54821 13.8156 2.53397 13.7874C2.11738 12.962 2.31478 12.0128 3.01922 11.4223C3.28354 11.2011 3.59485 11.0863 3.94335 10.9897L9.78443 10.9897C9.84033 11.0042 9.89713 11.0151 9.95446 11.0222L9.96037 11.0229L9.96632 11.0232C11.6966 11.1166 13.4063 11.4484 15.0482 12.0097C15.076 12.0196 15.0886 12.0273 15.0934 12.0309C15.0938 12.0324 15.0944 12.0347 15.0949 12.0379C15.0969 12.0491 15.0983 12.0664 15.0983 12.0949C15.0954 15.5808 15.0954 19.0667 15.0983 22.5523L15.0983 22.5562L15.0985 22.5601C15.0997 22.5871 15.0939 22.614 15.0817 22.638C15.0695 22.662 15.0512 22.6823 15.0288 22.697L15.0226 22.701L15.0167 22.7056C14.2357 23.317 13.4781 23.968 12.8129 24.7256C12.2692 25.3447 11.8032 26.0223 11.5162 26.8277C11.193 27.734 10.8472 28.6334 10.4981 29.5326L10.4974 29.5345L10.4967 29.5364Z"
+                                                                                                                    stroke="#FD3700"
+                                                                                                                    stroke-miterlimit="10">
+                                                                                                                </path>
+                                                                                                            </g>
+                                                                                                            <defs>
+                                                                                                                <clipPath
+                                                                                                                    id="clip0_547_11">
+                                                                                                                    <rect
+                                                                                                                        width="22"
+                                                                                                                        height="32"
+                                                                                                                        fill="white"
+                                                                                                                        transform="translate(22 32) rotate(-180)">
+                                                                                                                    </rect>
+                                                                                                                </clipPath>
+                                                                                                            </defs>
+                                                                                                        </svg>
+                                                                                                    </a>
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+                                                                                                        <span
+                                                                                                            class="ft-list-block__text ft-helper-fontSize-body-S--small">
+                                                                                                            0
+                                                                                                        </span>
+                                                                                                    </a>
+                                                                                                </li>
+                                                                                            </ul>
+                                                                                        </div>
+                                                                                    </article>
+                                                                                    <!--Fin Comentario-->
+                                                                                    <!--Respuesta Comentario-->
+                                                                                    <article
+                                                                                        class="ft-mol-comment ft-mol-comment--answer">
+                                                                                        <div
+                                                                                            class="ft-mol-comment__left">
+                                                                                            <div class="ft-mol-writer">
+                                                                                                <div
+                                                                                                    class="ft-mol-writer__group">
+                                                                                                    <div
+                                                                                                        class="ft-mol-writer__item">
+                                                                                                        <img src="/cds-statics/assets/img/icons/icon-c-user.svg"
+                                                                                                            alt="avatar"
+                                                                                                            width="60"
+                                                                                                            height="60"
+                                                                                                            class="ft-helper-img-rd">
+                                                                                                        <div
+                                                                                                            class="ft-mol-writer__title">
+                                                                                                            <p
+                                                                                                                class="ft-mol-writer__titleOpinion ft-helper-fontSize-body-L--small ft-helper-fontColor-black">
+                                                                                                                nick_82c716
+                                                                                                            </p>
+                                                                                                            <div
+                                                                                                                class="ft-date">
+                                                                                                                <time
+                                                                                                                    class="ft-date__text"
+                                                                                                                    datetime="2011-11-18T14:54:39+00:00">05
+                                                                                                                    SEPT
+                                                                                                                    2022
+                                                                                                                    -
+                                                                                                                    13:04
+                                                                                                                    CET</time>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div
+                                                                                            class="ft-mol-comment__center">
+                                                                                            #10
+                                                                                        </div>
+                                                                                        <div
+                                                                                            class="ft-mol-comment__right">
+                                                                                            <p
+                                                                                                class="ft-mol-comment__rightTitle">
+                                                                                                <strong>En respuesta a
+                                                                                                    Mariagg33B</strong>
+                                                                                            </p>
+                                                                                            <p
+                                                                                                class="ft-mol-comment__rightText">
+                                                                                                jurisprudencia art 10
+                                                                                                CEDH : "es calidad
+                                                                                                democrática, es
+                                                                                                contraste de opiniones,
+                                                                                                es empoderamiento del
+                                                                                                criterio de los
+                                                                                                ciudadanos que es el
+                                                                                                único que sirve cuando
+                                                                                                se trata de la
+                                                                                                convocatoria electoral".
+                                                                                                volantes de pacientes
+                                                                                                para consultas externas
+                                                                                                en sobres HUSA
+                                                                                            </p>
+                                                                                            <ul class="ft-list-block">
+                                                                                                <li
+                                                                                                    class="ft-list-block__item">
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+                                                                                                        <svg class="ft-list-block__icon"
+                                                                                                            width="18"
+                                                                                                            height="18"
+                                                                                                            viewBox="0 0 24 24"
+                                                                                                            fill="none"
+                                                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                                                            <path
+                                                                                                                fill-rule="evenodd"
+                                                                                                                clip-rule="evenodd"
+                                                                                                                d="M16.4236 2.53201C14.1571 1.71909 11.5187 1.61302 9.1977 2.11152C4.63029 3.09249 2.43896 6.1594 1.78492 9.39422C1.45469 11.0275 1.51949 12.7008 1.88128 14.1575C2.24549 15.6239 2.89469 16.8108 3.67576 17.5285L3.95251 17.7828L3.68697 21.8358L6.88722 20.117L7.208 20.2234C11.2717 21.5708 14.555 20.7795 15.7541 20.3632C19.9649 18.9014 21.6798 16.2705 22.2225 13.7132C22.7794 11.089 22.1126 8.47354 21.423 7.16021L21.4018 7.11979L21.3854 7.07718C20.5208 4.83042 18.6815 3.34183 16.4236 2.53201ZM22.8344 6.47108C21.7612 3.72368 19.5176 1.97367 16.9537 1.0541C14.3853 0.13291 11.4468 0.0225722 8.868 0.576433C3.61429 1.70481 1.00769 5.31568 0.245968 9.08307C-0.131683 10.9509 -0.058817 12.8598 0.357481 14.5359C0.734994 16.0559 1.40824 17.4346 2.33775 18.4133L2.08057 22.3386C2.01723 23.3053 3.0418 23.9645 3.89527 23.5061L7.0388 21.8178C11.3751 23.1593 14.8855 22.3267 16.2691 21.8464C20.9999 20.2041 23.1016 17.1338 23.7584 14.0392C24.3955 11.0371 23.6627 8.07488 22.8344 6.47108Z"
+                                                                                                                fill="black">
+                                                                                                            </path>
+                                                                                                        </svg>
+                                                                                                    </a>
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+                                                                                                        <span
+                                                                                                            class="ft-list-block__text ft-helper-fontSize-body-M--small">
+                                                                                                            Responder
+                                                                                                        </span>
+                                                                                                    </a>
+                                                                                                </li>
+                                                                                                <li
+                                                                                                    class="ft-list-block__item">
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+
+                                                                                                        <svg class="ft-list-block__icon"
+                                                                                                            width="22"
+                                                                                                            height="32"
+                                                                                                            viewBox="0 0 22 32"
+                                                                                                            fill="none"
+                                                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                                                            <g
+                                                                                                                clip-path="url(#clip0_547_25)">
+                                                                                                                <mask
+                                                                                                                    id="path-1-inside-1_547_25"
+                                                                                                                    fill="white">
+                                                                                                                    <path
+                                                                                                                        fill-rule="evenodd"
+                                                                                                                        clip-rule="evenodd"
+                                                                                                                        d="M3.68677 21.7324L3.68677 12.5164H1.17021L1.17021 21.7324H3.68677ZM4.85698 22.8916C4.82876 22.8929 4.80126 22.8945 4.77426 22.8961C4.71745 22.8994 4.66283 22.9027 4.6082 22.9027H0.861374C0.254616 22.9027 0 22.647 0 22.0398L0 12.1939C0 11.6007 0.2552 11.3462 0.848526 11.3462H4.85698L4.85698 22.8916Z">
+                                                                                                                    </path>
+                                                                                                                </mask>
+                                                                                                                <path
+                                                                                                                    d="M3.68677 12.5164H5.68677V10.5164H3.68677V12.5164ZM3.68677 21.7324V23.7324H5.68677L5.68677 21.7324H3.68677ZM1.17021 12.5164L1.17021 10.5164H-0.829787L-0.829787 12.5164H1.17021ZM1.17021 21.7324H-0.829787L-0.829787 23.7324H1.17021L1.17021 21.7324ZM4.85698 22.8916L4.9502 24.8894L6.85698 24.8004V22.8916H4.85698ZM4.77426 22.8961L4.65669 20.8996L4.65668 20.8996L4.77426 22.8961ZM4.85698 11.3462H6.85698V9.34619H4.85698V11.3462ZM1.68677 12.5164L1.68677 21.7324H5.68677L5.68677 12.5164H1.68677ZM1.17021 14.5164H3.68677L3.68677 10.5164H1.17021L1.17021 14.5164ZM3.17021 21.7324L3.17021 12.5164H-0.829787L-0.829787 21.7324H3.17021ZM4.76376 20.8937C4.72142 20.8957 4.68193 20.8981 4.65669 20.8996L4.89182 24.8926C4.92059 24.8909 4.93609 24.8901 4.9502 24.8894L4.76376 20.8937ZM4.65668 20.8996C4.64185 20.9004 4.63139 20.901 4.62161 20.9016C4.61224 20.9021 4.60609 20.9024 4.60187 20.9026C4.5931 20.903 4.59695 20.9027 4.6082 20.9027L4.6082 24.9027C4.73169 24.9027 4.8455 24.8954 4.89183 24.8926L4.65668 20.8996ZM4.6082 20.9027H0.861374L0.861374 24.9027H4.6082L4.6082 20.9027ZM0.861374 20.9027C0.780661 20.9027 1.21056 20.8769 1.619 21.2863C2.0264 21.6947 2 22.1228 2 22.0398H-2C-2 22.5639 -1.89909 23.4235 -1.2127 24.1115C-0.525261 24.8005 0.335329 24.9027 0.861374 24.9027L0.861374 20.9027ZM2 22.0398L2 12.1939H-2L-2 22.0398H2ZM2 12.1939C2 12.1303 2.02102 12.5573 1.61502 12.9628C1.20962 13.3676 0.783549 13.3462 0.848526 13.3462L0.848526 9.34619C0.320177 9.34619 -0.530156 9.45202 -1.21149 10.1324C-1.89342 10.8134 -2 11.6644 -2 12.1939H2ZM3.68677 19.7324H1.17021L1.17021 23.7324H3.68677L3.68677 19.7324ZM0.848526 13.3462H4.85698V9.34619H0.848526L0.848526 13.3462ZM2.85698 11.3462L2.85698 22.8916H6.85698L6.85698 11.3462H2.85698Z"
+                                                                                                                    fill="#00BD3E"
+                                                                                                                    mask="url(#path-1-inside-1_547_25)">
+                                                                                                                </path>
+                                                                                                                <path
+                                                                                                                    d="M21.2313 14.2263C21.1333 14.0621 21.0152 13.9144 20.8968 13.7764C20.8469 13.7181 20.7987 13.6636 20.7515 13.6103C20.6999 13.5519 20.6495 13.495 20.5994 13.436C20.6323 13.3727 20.6657 13.3061 20.6932 13.2408C21.353 11.6933 20.2032 10.0438 18.5612 10.0656C17.6396 10.0775 16.7185 10.0746 15.7959 10.0717C15.3868 10.0704 14.9775 10.0691 14.5676 10.0691H14.5238C14.5334 10.0209 14.5431 9.97289 14.5527 9.9251C14.5984 9.69708 14.6432 9.47399 14.682 9.25168C14.8972 8.0216 15.1118 6.76753 15.0525 5.48646L15.0524 5.48559C15.0313 5.0729 14.9677 4.66357 14.8626 4.2643C14.7605 3.87095 14.5654 3.56494 14.2931 3.34557C14.0223 3.12741 13.6854 3.00304 13.3107 2.95376C12.5753 2.85659 11.9819 3.16406 11.5626 3.75094L11.5612 3.75285L11.5599 3.75479C11.4019 3.98875 11.2732 4.24172 11.1768 4.50785M21.2313 14.2263L21.0823 14.3178M21.2313 14.2263C21.3148 14.3657 21.3665 14.5181 21.4076 14.6615C21.4251 14.7226 21.4401 14.7791 21.4544 14.8335C21.4761 14.9157 21.4965 14.9931 21.5228 15.0743L21.5315 15.1011V15.5049L21.5272 15.5239C21.5223 15.5464 21.5175 15.5674 21.5129 15.5875C21.5034 15.6288 21.4948 15.6666 21.4872 15.7065M21.4872 15.7065L21.4874 15.7052L21.3158 15.6742L21.487 15.7075L21.4872 15.7065ZM21.4872 15.7065C21.3883 16.2667 21.085 16.7686 20.6378 17.1125M20.6378 17.1125L20.6387 17.1118L20.5315 16.9724L20.6367 17.1133L20.6378 17.1125ZM20.6378 17.1125C20.6205 17.1261 20.6027 17.1398 20.5847 17.1534M20.5847 17.1534C20.5576 17.1044 20.5287 17.0564 20.4979 17.0095L20.3527 17.1072L20.4569 17.2489C20.4749 17.2353 20.4944 17.2208 20.5147 17.2058C20.5374 17.1889 20.5612 17.1713 20.5847 17.1534ZM20.5847 17.1534C21.1257 18.1308 20.9474 19.4987 19.7901 20.2472M19.7901 20.2472C19.7856 20.238 19.781 20.2288 19.7763 20.2195C19.7645 20.1962 19.7552 20.1757 19.7446 20.1526C19.7376 20.1374 19.7301 20.1209 19.721 20.1017L19.5639 20.1784L19.6488 20.3327C19.6974 20.3052 19.7445 20.2767 19.7901 20.2472ZM19.7901 20.2472C20.2636 21.2151 20.0244 22.3295 19.2029 23.0181C18.8732 23.2941 18.4939 23.4247 18.1254 23.5257L18.1031 23.5318H12.1691L12.1463 23.5254C12.1012 23.5127 12.0553 23.5034 12.009 23.4974M12.009 23.4974C12.011 23.4975 12.0131 23.4976 12.0152 23.4977L12.0244 23.3212L12.0033 23.4966C12.0052 23.4969 12.0071 23.4971 12.009 23.4974ZM12.009 23.4974C10.2489 23.4019 8.50975 23.0639 6.8395 22.4929L6.83866 22.4926L6.83783 22.4923C6.74777 22.4605 6.66247 22.4115 6.60865 22.3215C6.55811 22.237 6.55307 22.144 6.55307 22.073C6.55605 18.5883 6.55605 15.1038 6.55307 11.6195M6.55307 11.6195C6.55312 11.6209 6.55318 11.6224 6.55324 11.6238L6.72736 11.6158L6.55307 11.616C6.55307 11.6171 6.55307 11.6183 6.55307 11.6195ZM6.55307 11.6195C6.54992 11.5322 6.56902 11.4455 6.60857 11.3678C6.64752 11.2914 6.70496 11.2262 6.77548 11.1784M6.77548 11.1784C6.77374 11.1798 6.772 11.1812 6.77025 11.1825L6.87676 11.3224L6.78235 11.1739C6.78005 11.1754 6.77776 11.1769 6.77548 11.1784ZM6.77548 11.1784C7.54725 10.5741 8.28372 9.93967 8.92675 9.20731C9.45271 8.60844 9.88908 7.96912 10.1559 7.22022C10.4808 6.30943 10.8279 5.40667 11.1768 4.50785M11.1768 4.50785L11.1761 4.50981L11.3397 4.57068L11.1775 4.50595L11.1768 4.50785ZM6.90404 22.1348L6.90503 22.1358M11.5033 4.63154C11.5896 4.39298 11.7048 4.16621 11.8462 3.95644C12.1996 3.46302 12.6726 3.22587 13.2659 3.30429C13.5938 3.34742 13.8665 3.4533 14.0763 3.62231C14.2844 3.79005 14.4409 4.02801 14.5256 4.35455L14.5257 4.35519C14.6246 4.73057 14.6844 5.1154 14.7043 5.5034C14.7614 6.7389 14.5548 7.95505 14.3387 9.19005C14.3007 9.40814 14.2575 9.62329 14.2123 9.84828C14.1887 9.96612 14.1644 10.0867 14.1402 10.2117L14.0992 10.4226H14.5676C14.9751 10.4226 15.3832 10.4239 15.7915 10.4252C16.7156 10.4281 17.6413 10.431 18.5657 10.4191C19.9683 10.4004 20.9278 11.8006 20.373 13.1009L20.3728 13.1014L20.3726 13.1019C20.3418 13.1752 20.3069 13.2412 20.268 13.3146C20.2477 13.3529 20.2264 13.3932 20.204 13.4376C20.2456 13.4857 20.4577 13.8076 20.4994 13.8548C20.546 13.9075 20.5916 13.9591 20.6338 14.0083C20.7477 14.1411 20.8506 14.2712 20.9333 14.4095C20.9927 14.5089 21.0344 14.6258 21.0729 14.7602C21.0859 14.8057 21.0993 14.8561 21.1133 14.9086C21.135 14.9903 21.158 15.0769 21.1829 15.157V15.4655C21.1804 15.4766 21.1777 15.4881 21.1751 15.4998C21.1648 15.5447 21.1536 15.5938 21.1447 15.6408L21.1444 15.642L21.1442 15.6431C21.0609 16.1167 20.8045 16.541 20.4263 16.8315L20.4253 16.8322L20.4243 16.833C20.3879 16.8618 20.3526 16.888 20.3153 16.9157C20.2939 16.9316 20.2718 16.9479 20.2485 16.9655L20.1163 17.0656L20.2075 17.205C20.7732 18.0691 20.6306 19.3729 19.479 20.024L19.3357 20.105L19.4068 20.255C19.4118 20.2653 19.4175 20.2779 19.4239 20.2916C19.4367 20.3196 19.4518 20.3524 19.466 20.3806C19.8826 21.206 19.6852 22.1552 18.9808 22.7457C18.7165 22.9669 18.4052 23.0817 18.0567 23.1783H12.2156C12.1597 23.1637 12.1029 23.1529 12.0455 23.1458L12.0396 23.145L12.0337 23.1447C10.3034 23.0514 8.5937 22.7195 6.95175 22.1583C6.92396 22.1484 6.9114 22.1407 6.90659 22.137C6.90617 22.1355 6.90563 22.1332 6.90506 22.13C6.9031 22.1189 6.90166 22.1016 6.90166 22.0731C6.90464 18.5871 6.90464 15.1013 6.90166 11.6157L6.90165 11.6118L6.90148 11.6079C6.90028 11.5809 6.90608 11.554 6.91831 11.53C6.93054 11.506 6.94877 11.4856 6.97117 11.471L6.9774 11.4669L6.98326 11.4623C7.76431 10.851 8.52189 10.2 9.18711 9.44236C9.73082 8.82327 10.1968 8.14566 10.4838 7.34032C10.807 6.43393 11.1528 5.53459 11.5019 4.6354L11.5026 4.63348L11.5033 4.63154Z"
+                                                                                                                    stroke="#00BD3E"
+                                                                                                                    stroke-miterlimit="10">
+                                                                                                                </path>
+                                                                                                            </g>
+                                                                                                            <defs>
+                                                                                                                <clipPath
+                                                                                                                    id="clip0_547_25">
+                                                                                                                    <rect
+                                                                                                                        width="22"
+                                                                                                                        height="32"
+                                                                                                                        fill="white">
+                                                                                                                    </rect>
+                                                                                                                </clipPath>
+                                                                                                            </defs>
+                                                                                                        </svg>
+                                                                                                    </a>
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+                                                                                                        <span
+                                                                                                            class="ft-list-block__text ft-helper-fontSize-body-S--small">
+                                                                                                            0
+                                                                                                        </span>
+                                                                                                    </a>
+                                                                                                </li>
+                                                                                                <li
+                                                                                                    class="ft-list-block__item">
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+                                                                                                        <svg class="ft-list-block__icon"
+                                                                                                            width="22"
+                                                                                                            height="32"
+                                                                                                            viewBox="0 0 22 32"
+                                                                                                            fill="none"
+                                                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                                                            <g
+                                                                                                                clip-path="url(#clip0_547_11)">
+                                                                                                                <mask
+                                                                                                                    id="path-1-inside-1_547_11"
+                                                                                                                    fill="white">
+                                                                                                                    <path
+                                                                                                                        fill-rule="evenodd"
+                                                                                                                        clip-rule="evenodd"
+                                                                                                                        d="M18.3132 12.4355L18.3132 21.6516L20.8298 21.6516L20.8298 12.4355L18.3132 12.4355ZM17.143 11.2764C17.1712 11.2751 17.1987 11.2735 17.2257 11.2719C17.2826 11.2685 17.3372 11.2653 17.3918 11.2653L21.1386 11.2653C21.7454 11.2653 22 11.521 22 12.1282L22 21.9741C22 22.5672 21.7448 22.8218 21.1515 22.8218L17.143 22.8218L17.143 11.2764Z">
+                                                                                                                    </path>
+                                                                                                                </mask>
+                                                                                                                <path
+                                                                                                                    d="M18.3132 21.6516L16.3132 21.6516L16.3132 23.6516L18.3132 23.6516L18.3132 21.6516ZM18.3132 12.4355L18.3132 10.4355L16.3132 10.4355L16.3132 12.4355L18.3132 12.4355ZM20.8298 21.6516L20.8298 23.6516L22.8298 23.6516L22.8298 21.6516L20.8298 21.6516ZM20.8298 12.4355L22.8298 12.4355L22.8298 10.4355L20.8298 10.4355L20.8298 12.4355ZM17.143 11.2764L17.0498 9.27857L15.143 9.36754L15.143 11.2764L17.143 11.2764ZM17.2257 11.2719L17.3433 13.2684L17.3433 13.2684L17.2257 11.2719ZM17.143 22.8218L15.143 22.8218L15.143 24.8218L17.143 24.8218L17.143 22.8218ZM20.3132 21.6516L20.3132 12.4355L16.3132 12.4355L16.3132 21.6516L20.3132 21.6516ZM20.8298 19.6516L18.3132 19.6516L18.3132 23.6516L20.8298 23.6516L20.8298 19.6516ZM18.8298 12.4355L18.8298 21.6516L22.8298 21.6516L22.8298 12.4355L18.8298 12.4355ZM17.2362 13.2742C17.2786 13.2722 17.3181 13.2699 17.3433 13.2684L17.1082 9.27533C17.0794 9.27702 17.0639 9.27791 17.0498 9.27857L17.2362 13.2742ZM17.3433 13.2684C17.3582 13.2675 17.3686 13.2669 17.3784 13.2664C17.3878 13.2659 17.3939 13.2656 17.3981 13.2654C17.4069 13.265 17.4031 13.2653 17.3918 13.2653L17.3918 9.26531C17.2683 9.26531 17.1545 9.2726 17.1082 9.27533L17.3433 13.2684ZM17.3918 13.2653L21.1386 13.2653L21.1386 9.26531L17.3918 9.26531L17.3918 13.2653ZM21.1386 13.2653C21.2193 13.2653 20.7894 13.291 20.381 12.8816C19.9736 12.4733 20 12.0451 20 12.1282L24 12.1282C24 11.6041 23.8991 10.7445 23.2127 10.0565C22.5253 9.36745 21.6647 9.26531 21.1386 9.26531L21.1386 13.2653ZM20 12.1282L20 21.9741L24 21.9741L24 12.1282L20 12.1282ZM20 21.9741C20 22.0377 19.979 21.6106 20.385 21.2052C20.7904 20.8003 21.2165 20.8218 21.1515 20.8218L21.1515 24.8218C21.6798 24.8218 22.5302 24.7159 23.2115 24.0355C23.8934 23.3545 24 22.5036 24 21.9741L20 21.9741ZM18.3132 14.4355L20.8298 14.4355L20.8298 10.4355L18.3132 10.4355L18.3132 14.4355ZM21.1515 20.8218L17.143 20.8218L17.143 24.8218L21.1515 24.8218L21.1515 20.8218ZM19.143 22.8218L19.143 11.2764L15.143 11.2764L15.143 22.8218L19.143 22.8218Z"
+                                                                                                                    fill="#FD3700"
+                                                                                                                    mask="url(#path-1-inside-1_547_11)">
+                                                                                                                </path>
+                                                                                                                <path
+                                                                                                                    d="M0.768663 19.9417C0.86674 20.1058 0.984788 20.2536 1.10319 20.3916C1.15314 20.4498 1.20134 20.5043 1.24853 20.5577C1.3001 20.616 1.35047 20.673 1.40064 20.732C1.36768 20.7952 1.33427 20.8619 1.30683 20.9272C0.64699 22.4747 1.79683 24.1241 3.43882 24.1024C4.36045 24.0905 5.28146 24.0934 6.20415 24.0963C6.61316 24.0975 7.0225 24.0988 7.43237 24.0988L7.47621 24.0988C7.46658 24.1471 7.45694 24.1951 7.44735 24.2429C7.40156 24.4709 7.35677 24.694 7.31802 24.9163C7.10283 26.1464 6.88821 27.4004 6.94752 28.6815L6.94756 28.6824C6.96867 29.0951 7.0323 29.5044 7.1374 29.9037C7.23949 30.297 7.4346 30.603 7.70689 30.8224C7.97766 31.0406 8.31455 31.1649 8.68927 31.2142C9.42474 31.3114 10.0181 31.0039 10.4374 30.417L10.4388 30.4151L10.4401 30.4132C10.5981 30.1792 10.7268 29.9263 10.8232 29.6601M0.768663 19.9417L0.917722 19.8501M0.768663 19.9417C0.685228 19.8023 0.633498 19.6498 0.592376 19.5064C0.574855 19.4453 0.559945 19.3889 0.545594 19.3345C0.523888 19.2523 0.503459 19.1749 0.477215 19.0937L0.468545 19.0669L0.468545 18.6631L0.47276 18.644C0.477722 18.6216 0.482521 18.6006 0.487127 18.5805C0.496583 18.5392 0.50523 18.5014 0.51281 18.4615M0.51281 18.4615L0.512589 18.4628L0.684171 18.4938L0.513002 18.4605L0.51281 18.4615ZM0.51281 18.4615C0.611748 17.9013 0.914983 17.3994 1.36222 17.0555M1.36222 17.0555L1.36133 17.0562L1.4685 17.1956L1.36327 17.0547L1.36222 17.0555ZM1.36222 17.0555C1.37947 17.0419 1.39732 17.0282 1.41529 17.0146M1.41529 17.0146C1.44241 17.0636 1.47135 17.1116 1.50206 17.1585L1.64727 17.0607L1.54307 16.9191C1.52514 16.9326 1.50562 16.9471 1.48531 16.9622C1.46256 16.9791 1.43884 16.9967 1.41529 17.0146ZM1.41529 17.0146C0.874258 16.0372 1.05258 14.6693 2.20991 13.9207M2.20991 13.9207C2.21443 13.93 2.21901 13.9392 2.22366 13.9484C2.23547 13.9718 2.24485 13.9923 2.25543 14.0154C2.2624 14.0306 2.26991 14.047 2.27902 14.0662L2.43609 13.9896L2.3512 13.8353C2.30257 13.8627 2.25548 13.8913 2.20991 13.9207ZM2.20991 13.9207C1.73644 12.9528 1.97562 11.8384 2.79713 11.1499C3.12676 10.8739 3.50607 10.7433 3.87461 10.6423L3.89694 10.6362L9.83092 10.6362L9.85374 10.6426C9.89881 10.6552 9.94469 10.6646 9.99104 10.6706M9.99104 10.6706C9.98897 10.6705 9.9869 10.6704 9.98483 10.6703L9.97557 10.8468L9.99669 10.6713C9.9948 10.6711 9.99292 10.6709 9.99104 10.6706ZM9.99104 10.6706C11.7511 10.7661 13.4903 11.104 15.1605 11.6751L15.1613 11.6754L15.1622 11.6756C15.2522 11.7075 15.3375 11.7565 15.3913 11.8464C15.4419 11.9309 15.4469 12.024 15.4469 12.095C15.4439 15.5796 15.4439 19.0642 15.4469 22.5485M15.4469 22.5485C15.4469 22.5471 15.4468 22.5456 15.4468 22.5442L15.2726 22.5521L15.4469 22.552C15.4469 22.5508 15.4469 22.5497 15.4469 22.5485ZM15.4469 22.5485C15.4501 22.6358 15.431 22.7225 15.3914 22.8001C15.3525 22.8766 15.295 22.9418 15.2245 22.9895M15.2245 22.9895C15.2263 22.9882 15.228 22.9868 15.2297 22.9854L15.1232 22.8455L15.2177 22.9941C15.22 22.9926 15.2222 22.9911 15.2245 22.9895ZM15.2245 22.9895C14.4528 23.5939 13.7163 24.2283 13.0732 24.9607C12.5473 25.5595 12.1109 26.1988 11.8441 26.9478C11.5192 27.8585 11.1721 28.7613 10.8232 29.6601M10.8232 29.6601L10.8239 29.6582L10.6603 29.5973L10.8225 29.662L10.8232 29.6601ZM15.096 12.0332L15.095 12.0322M10.4967 29.5364C10.4104 29.775 10.2952 30.0018 10.1538 30.2115C9.80043 30.7049 9.32745 30.9421 8.7341 30.8637C8.40616 30.8206 8.13352 30.7147 7.92374 30.5457C7.71555 30.3779 7.55913 30.14 7.47444 29.8134L7.47427 29.8128C7.37544 29.4374 7.31559 29.0526 7.29571 28.6646C7.23856 27.4291 7.44522 26.2129 7.66127 24.9779C7.69928 24.7598 7.74249 24.5447 7.78768 24.3197C7.81135 24.2019 7.83555 24.0813 7.85984 23.9562L7.90079 23.7454L7.43237 23.7454C7.02486 23.7454 6.61682 23.7441 6.20848 23.7428C5.28441 23.7399 4.35875 23.737 3.43425 23.7489C2.03174 23.7675 1.07217 22.3674 1.62697 21.0671L1.62718 21.0666L1.62738 21.0661C1.65816 20.9927 1.69313 20.9267 1.73198 20.8534C1.75228 20.8151 1.77363 20.7748 1.79601 20.7304C1.7544 20.6823 1.54227 20.3604 1.50059 20.3132C1.45402 20.2605 1.40844 20.2089 1.36619 20.1596C1.25228 20.0268 1.14942 19.8968 1.06673 19.7584C1.00727 19.6591 0.965649 19.5422 0.927102 19.4077C0.914075 19.3623 0.900678 19.3119 0.886745 19.2594C0.865042 19.1777 0.842043 19.0911 0.817135 19.011L0.817135 18.7024C0.819636 18.6914 0.822258 18.6799 0.824943 18.6682C0.835218 18.6232 0.846426 18.5742 0.85534 18.5271L0.855554 18.526L0.855753 18.5249C0.939127 18.0513 1.19549 17.6269 1.57372 17.3365L1.5747 17.3357L1.57567 17.335C1.61206 17.3062 1.6474 17.28 1.68474 17.2523C1.70613 17.2364 1.72819 17.22 1.75147 17.2024L1.88374 17.1024L1.79249 16.963C1.22682 16.0989 1.36944 14.7951 2.52097 14.144L2.66428 14.0629L2.59315 13.913C2.58824 13.9026 2.58245 13.8901 2.57614 13.8763C2.56327 13.8483 2.54821 13.8156 2.53397 13.7874C2.11738 12.962 2.31478 12.0128 3.01922 11.4223C3.28354 11.2011 3.59485 11.0863 3.94335 10.9897L9.78443 10.9897C9.84033 11.0042 9.89713 11.0151 9.95446 11.0222L9.96037 11.0229L9.96632 11.0232C11.6966 11.1166 13.4063 11.4484 15.0482 12.0097C15.076 12.0196 15.0886 12.0273 15.0934 12.0309C15.0938 12.0324 15.0944 12.0347 15.0949 12.0379C15.0969 12.0491 15.0983 12.0664 15.0983 12.0949C15.0954 15.5808 15.0954 19.0667 15.0983 22.5523L15.0983 22.5562L15.0985 22.5601C15.0997 22.5871 15.0939 22.614 15.0817 22.638C15.0695 22.662 15.0512 22.6823 15.0288 22.697L15.0226 22.701L15.0167 22.7056C14.2357 23.317 13.4781 23.968 12.8129 24.7256C12.2692 25.3447 11.8032 26.0223 11.5162 26.8277C11.193 27.734 10.8472 28.6334 10.4981 29.5326L10.4974 29.5345L10.4967 29.5364Z"
+                                                                                                                    stroke="#FD3700"
+                                                                                                                    stroke-miterlimit="10">
+                                                                                                                </path>
+                                                                                                            </g>
+                                                                                                            <defs>
+                                                                                                                <clipPath
+                                                                                                                    id="clip0_547_11">
+                                                                                                                    <rect
+                                                                                                                        width="22"
+                                                                                                                        height="32"
+                                                                                                                        fill="white"
+                                                                                                                        transform="translate(22 32) rotate(-180)">
+                                                                                                                    </rect>
+                                                                                                                </clipPath>
+                                                                                                            </defs>
+                                                                                                        </svg>
+                                                                                                    </a>
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+                                                                                                        <span
+                                                                                                            class="ft-list-block__text ft-helper-fontSize-body-S--small">
+                                                                                                            0
+                                                                                                        </span>
+                                                                                                    </a>
+                                                                                                </li>
+                                                                                            </ul>
+                                                                                        </div>
+                                                                                    </article>
+                                                                                    <!--Fin Respuesta Comentario-->
+                                                                                    <!--Respuesta a la Respuesta del Comentario-->
+                                                                                    <article
+                                                                                        class="ft-mol-comment ft-mol-comment--answer ft-mol-comment--answer-hasAnswer">
+                                                                                        <div
+                                                                                            class="ft-mol-comment__left">
+                                                                                            <div class="ft-mol-writer">
+                                                                                                <div
+                                                                                                    class="ft-mol-writer__group">
+                                                                                                    <div
+                                                                                                        class="ft-mol-writer__item">
+                                                                                                        <img src="/cds-statics/assets/img/icons/icon-c-user.svg"
+                                                                                                            alt="avatar"
+                                                                                                            width="60"
+                                                                                                            height="60"
+                                                                                                            class="ft-helper-img-rd">
+                                                                                                        <div
+                                                                                                            class="ft-mol-writer__title">
+                                                                                                            <p
+                                                                                                                class="ft-mol-writer__titleOpinion ft-helper-fontSize-body-L--small   ft-helper-fontColor-black">
+                                                                                                                Mariagg33B
+                                                                                                            </p>
+                                                                                                            <div
+                                                                                                                class="ft-date">
+                                                                                                                <time
+                                                                                                                    class="ft-date__text"
+                                                                                                                    datetime="2011-11-18T14:54:39+00:00">05
+                                                                                                                    SEPT
+                                                                                                                    2022
+                                                                                                                    -
+                                                                                                                    13:04
+                                                                                                                    CET</time>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div
+                                                                                            class="ft-mol-comment__center">
+                                                                                            #10
+                                                                                        </div>
+                                                                                        <div
+                                                                                            class="ft-mol-comment__right">
+                                                                                            <p
+                                                                                                class="ft-mol-comment__rightTitle">
+                                                                                                <strong>En respuesta a
+                                                                                                    nick_82c716</strong>
+                                                                                            </p>
+                                                                                            <p
+                                                                                                class="ft-mol-comment__rightText">
+                                                                                                jurisprudencia art 10
+                                                                                                CEDH : "es calidad
+                                                                                                democrática, es
+                                                                                                contraste de opiniones,
+                                                                                                es empoderamiento del
+                                                                                                criterio de los
+                                                                                                ciudadanos que es el
+                                                                                                único que sirve cuando
+                                                                                                se trata de la
+                                                                                                convocatoria electoral".
+                                                                                                volantes de pacientes
+                                                                                                para consultas externas
+                                                                                                en sobres HUSA
+                                                                                            </p>
+                                                                                            <ul class="ft-list-block">
+                                                                                                <li
+                                                                                                    class="ft-list-block__item">
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+                                                                                                        <svg class="ft-list-block__icon"
+                                                                                                            width="18"
+                                                                                                            height="18"
+                                                                                                            viewBox="0 0 24 24"
+                                                                                                            fill="none"
+                                                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                                                            <path
+                                                                                                                fill-rule="evenodd"
+                                                                                                                clip-rule="evenodd"
+                                                                                                                d="M16.4236 2.53201C14.1571 1.71909 11.5187 1.61302 9.1977 2.11152C4.63029 3.09249 2.43896 6.1594 1.78492 9.39422C1.45469 11.0275 1.51949 12.7008 1.88128 14.1575C2.24549 15.6239 2.89469 16.8108 3.67576 17.5285L3.95251 17.7828L3.68697 21.8358L6.88722 20.117L7.208 20.2234C11.2717 21.5708 14.555 20.7795 15.7541 20.3632C19.9649 18.9014 21.6798 16.2705 22.2225 13.7132C22.7794 11.089 22.1126 8.47354 21.423 7.16021L21.4018 7.11979L21.3854 7.07718C20.5208 4.83042 18.6815 3.34183 16.4236 2.53201ZM22.8344 6.47108C21.7612 3.72368 19.5176 1.97367 16.9537 1.0541C14.3853 0.13291 11.4468 0.0225722 8.868 0.576433C3.61429 1.70481 1.00769 5.31568 0.245968 9.08307C-0.131683 10.9509 -0.058817 12.8598 0.357481 14.5359C0.734994 16.0559 1.40824 17.4346 2.33775 18.4133L2.08057 22.3386C2.01723 23.3053 3.0418 23.9645 3.89527 23.5061L7.0388 21.8178C11.3751 23.1593 14.8855 22.3267 16.2691 21.8464C20.9999 20.2041 23.1016 17.1338 23.7584 14.0392C24.3955 11.0371 23.6627 8.07488 22.8344 6.47108Z"
+                                                                                                                fill="black">
+                                                                                                            </path>
+                                                                                                        </svg>
+                                                                                                    </a>
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+                                                                                                        <span
+                                                                                                            class="ft-list-block__text ft-helper-fontSize-body-M--small">
+                                                                                                            Responder
+                                                                                                        </span>
+                                                                                                    </a>
+                                                                                                </li>
+                                                                                                <li
+                                                                                                    class="ft-list-block__item">
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+
+                                                                                                        <svg class="ft-list-block__icon"
+                                                                                                            width="22"
+                                                                                                            height="32"
+                                                                                                            viewBox="0 0 22 32"
+                                                                                                            fill="none"
+                                                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                                                            <g
+                                                                                                                clip-path="url(#clip0_547_25)">
+                                                                                                                <mask
+                                                                                                                    id="path-1-inside-1_547_25"
+                                                                                                                    fill="white">
+                                                                                                                    <path
+                                                                                                                        fill-rule="evenodd"
+                                                                                                                        clip-rule="evenodd"
+                                                                                                                        d="M3.68677 21.7324L3.68677 12.5164H1.17021L1.17021 21.7324H3.68677ZM4.85698 22.8916C4.82876 22.8929 4.80126 22.8945 4.77426 22.8961C4.71745 22.8994 4.66283 22.9027 4.6082 22.9027H0.861374C0.254616 22.9027 0 22.647 0 22.0398L0 12.1939C0 11.6007 0.2552 11.3462 0.848526 11.3462H4.85698L4.85698 22.8916Z">
+                                                                                                                    </path>
+                                                                                                                </mask>
+                                                                                                                <path
+                                                                                                                    d="M3.68677 12.5164H5.68677V10.5164H3.68677V12.5164ZM3.68677 21.7324V23.7324H5.68677L5.68677 21.7324H3.68677ZM1.17021 12.5164L1.17021 10.5164H-0.829787L-0.829787 12.5164H1.17021ZM1.17021 21.7324H-0.829787L-0.829787 23.7324H1.17021L1.17021 21.7324ZM4.85698 22.8916L4.9502 24.8894L6.85698 24.8004V22.8916H4.85698ZM4.77426 22.8961L4.65669 20.8996L4.65668 20.8996L4.77426 22.8961ZM4.85698 11.3462H6.85698V9.34619H4.85698V11.3462ZM1.68677 12.5164L1.68677 21.7324H5.68677L5.68677 12.5164H1.68677ZM1.17021 14.5164H3.68677L3.68677 10.5164H1.17021L1.17021 14.5164ZM3.17021 21.7324L3.17021 12.5164H-0.829787L-0.829787 21.7324H3.17021ZM4.76376 20.8937C4.72142 20.8957 4.68193 20.8981 4.65669 20.8996L4.89182 24.8926C4.92059 24.8909 4.93609 24.8901 4.9502 24.8894L4.76376 20.8937ZM4.65668 20.8996C4.64185 20.9004 4.63139 20.901 4.62161 20.9016C4.61224 20.9021 4.60609 20.9024 4.60187 20.9026C4.5931 20.903 4.59695 20.9027 4.6082 20.9027L4.6082 24.9027C4.73169 24.9027 4.8455 24.8954 4.89183 24.8926L4.65668 20.8996ZM4.6082 20.9027H0.861374L0.861374 24.9027H4.6082L4.6082 20.9027ZM0.861374 20.9027C0.780661 20.9027 1.21056 20.8769 1.619 21.2863C2.0264 21.6947 2 22.1228 2 22.0398H-2C-2 22.5639 -1.89909 23.4235 -1.2127 24.1115C-0.525261 24.8005 0.335329 24.9027 0.861374 24.9027L0.861374 20.9027ZM2 22.0398L2 12.1939H-2L-2 22.0398H2ZM2 12.1939C2 12.1303 2.02102 12.5573 1.61502 12.9628C1.20962 13.3676 0.783549 13.3462 0.848526 13.3462L0.848526 9.34619C0.320177 9.34619 -0.530156 9.45202 -1.21149 10.1324C-1.89342 10.8134 -2 11.6644 -2 12.1939H2ZM3.68677 19.7324H1.17021L1.17021 23.7324H3.68677L3.68677 19.7324ZM0.848526 13.3462H4.85698V9.34619H0.848526L0.848526 13.3462ZM2.85698 11.3462L2.85698 22.8916H6.85698L6.85698 11.3462H2.85698Z"
+                                                                                                                    fill="#00BD3E"
+                                                                                                                    mask="url(#path-1-inside-1_547_25)">
+                                                                                                                </path>
+                                                                                                                <path
+                                                                                                                    d="M21.2313 14.2263C21.1333 14.0621 21.0152 13.9144 20.8968 13.7764C20.8469 13.7181 20.7987 13.6636 20.7515 13.6103C20.6999 13.5519 20.6495 13.495 20.5994 13.436C20.6323 13.3727 20.6657 13.3061 20.6932 13.2408C21.353 11.6933 20.2032 10.0438 18.5612 10.0656C17.6396 10.0775 16.7185 10.0746 15.7959 10.0717C15.3868 10.0704 14.9775 10.0691 14.5676 10.0691H14.5238C14.5334 10.0209 14.5431 9.97289 14.5527 9.9251C14.5984 9.69708 14.6432 9.47399 14.682 9.25168C14.8972 8.0216 15.1118 6.76753 15.0525 5.48646L15.0524 5.48559C15.0313 5.0729 14.9677 4.66357 14.8626 4.2643C14.7605 3.87095 14.5654 3.56494 14.2931 3.34557C14.0223 3.12741 13.6854 3.00304 13.3107 2.95376C12.5753 2.85659 11.9819 3.16406 11.5626 3.75094L11.5612 3.75285L11.5599 3.75479C11.4019 3.98875 11.2732 4.24172 11.1768 4.50785M21.2313 14.2263L21.0823 14.3178M21.2313 14.2263C21.3148 14.3657 21.3665 14.5181 21.4076 14.6615C21.4251 14.7226 21.4401 14.7791 21.4544 14.8335C21.4761 14.9157 21.4965 14.9931 21.5228 15.0743L21.5315 15.1011V15.5049L21.5272 15.5239C21.5223 15.5464 21.5175 15.5674 21.5129 15.5875C21.5034 15.6288 21.4948 15.6666 21.4872 15.7065M21.4872 15.7065L21.4874 15.7052L21.3158 15.6742L21.487 15.7075L21.4872 15.7065ZM21.4872 15.7065C21.3883 16.2667 21.085 16.7686 20.6378 17.1125M20.6378 17.1125L20.6387 17.1118L20.5315 16.9724L20.6367 17.1133L20.6378 17.1125ZM20.6378 17.1125C20.6205 17.1261 20.6027 17.1398 20.5847 17.1534M20.5847 17.1534C20.5576 17.1044 20.5287 17.0564 20.4979 17.0095L20.3527 17.1072L20.4569 17.2489C20.4749 17.2353 20.4944 17.2208 20.5147 17.2058C20.5374 17.1889 20.5612 17.1713 20.5847 17.1534ZM20.5847 17.1534C21.1257 18.1308 20.9474 19.4987 19.7901 20.2472M19.7901 20.2472C19.7856 20.238 19.781 20.2288 19.7763 20.2195C19.7645 20.1962 19.7552 20.1757 19.7446 20.1526C19.7376 20.1374 19.7301 20.1209 19.721 20.1017L19.5639 20.1784L19.6488 20.3327C19.6974 20.3052 19.7445 20.2767 19.7901 20.2472ZM19.7901 20.2472C20.2636 21.2151 20.0244 22.3295 19.2029 23.0181C18.8732 23.2941 18.4939 23.4247 18.1254 23.5257L18.1031 23.5318H12.1691L12.1463 23.5254C12.1012 23.5127 12.0553 23.5034 12.009 23.4974M12.009 23.4974C12.011 23.4975 12.0131 23.4976 12.0152 23.4977L12.0244 23.3212L12.0033 23.4966C12.0052 23.4969 12.0071 23.4971 12.009 23.4974ZM12.009 23.4974C10.2489 23.4019 8.50975 23.0639 6.8395 22.4929L6.83866 22.4926L6.83783 22.4923C6.74777 22.4605 6.66247 22.4115 6.60865 22.3215C6.55811 22.237 6.55307 22.144 6.55307 22.073C6.55605 18.5883 6.55605 15.1038 6.55307 11.6195M6.55307 11.6195C6.55312 11.6209 6.55318 11.6224 6.55324 11.6238L6.72736 11.6158L6.55307 11.616C6.55307 11.6171 6.55307 11.6183 6.55307 11.6195ZM6.55307 11.6195C6.54992 11.5322 6.56902 11.4455 6.60857 11.3678C6.64752 11.2914 6.70496 11.2262 6.77548 11.1784M6.77548 11.1784C6.77374 11.1798 6.772 11.1812 6.77025 11.1825L6.87676 11.3224L6.78235 11.1739C6.78005 11.1754 6.77776 11.1769 6.77548 11.1784ZM6.77548 11.1784C7.54725 10.5741 8.28372 9.93967 8.92675 9.20731C9.45271 8.60844 9.88908 7.96912 10.1559 7.22022C10.4808 6.30943 10.8279 5.40667 11.1768 4.50785M11.1768 4.50785L11.1761 4.50981L11.3397 4.57068L11.1775 4.50595L11.1768 4.50785ZM6.90404 22.1348L6.90503 22.1358M11.5033 4.63154C11.5896 4.39298 11.7048 4.16621 11.8462 3.95644C12.1996 3.46302 12.6726 3.22587 13.2659 3.30429C13.5938 3.34742 13.8665 3.4533 14.0763 3.62231C14.2844 3.79005 14.4409 4.02801 14.5256 4.35455L14.5257 4.35519C14.6246 4.73057 14.6844 5.1154 14.7043 5.5034C14.7614 6.7389 14.5548 7.95505 14.3387 9.19005C14.3007 9.40814 14.2575 9.62329 14.2123 9.84828C14.1887 9.96612 14.1644 10.0867 14.1402 10.2117L14.0992 10.4226H14.5676C14.9751 10.4226 15.3832 10.4239 15.7915 10.4252C16.7156 10.4281 17.6413 10.431 18.5657 10.4191C19.9683 10.4004 20.9278 11.8006 20.373 13.1009L20.3728 13.1014L20.3726 13.1019C20.3418 13.1752 20.3069 13.2412 20.268 13.3146C20.2477 13.3529 20.2264 13.3932 20.204 13.4376C20.2456 13.4857 20.4577 13.8076 20.4994 13.8548C20.546 13.9075 20.5916 13.9591 20.6338 14.0083C20.7477 14.1411 20.8506 14.2712 20.9333 14.4095C20.9927 14.5089 21.0344 14.6258 21.0729 14.7602C21.0859 14.8057 21.0993 14.8561 21.1133 14.9086C21.135 14.9903 21.158 15.0769 21.1829 15.157V15.4655C21.1804 15.4766 21.1777 15.4881 21.1751 15.4998C21.1648 15.5447 21.1536 15.5938 21.1447 15.6408L21.1444 15.642L21.1442 15.6431C21.0609 16.1167 20.8045 16.541 20.4263 16.8315L20.4253 16.8322L20.4243 16.833C20.3879 16.8618 20.3526 16.888 20.3153 16.9157C20.2939 16.9316 20.2718 16.9479 20.2485 16.9655L20.1163 17.0656L20.2075 17.205C20.7732 18.0691 20.6306 19.3729 19.479 20.024L19.3357 20.105L19.4068 20.255C19.4118 20.2653 19.4175 20.2779 19.4239 20.2916C19.4367 20.3196 19.4518 20.3524 19.466 20.3806C19.8826 21.206 19.6852 22.1552 18.9808 22.7457C18.7165 22.9669 18.4052 23.0817 18.0567 23.1783H12.2156C12.1597 23.1637 12.1029 23.1529 12.0455 23.1458L12.0396 23.145L12.0337 23.1447C10.3034 23.0514 8.5937 22.7195 6.95175 22.1583C6.92396 22.1484 6.9114 22.1407 6.90659 22.137C6.90617 22.1355 6.90563 22.1332 6.90506 22.13C6.9031 22.1189 6.90166 22.1016 6.90166 22.0731C6.90464 18.5871 6.90464 15.1013 6.90166 11.6157L6.90165 11.6118L6.90148 11.6079C6.90028 11.5809 6.90608 11.554 6.91831 11.53C6.93054 11.506 6.94877 11.4856 6.97117 11.471L6.9774 11.4669L6.98326 11.4623C7.76431 10.851 8.52189 10.2 9.18711 9.44236C9.73082 8.82327 10.1968 8.14566 10.4838 7.34032C10.807 6.43393 11.1528 5.53459 11.5019 4.6354L11.5026 4.63348L11.5033 4.63154Z"
+                                                                                                                    stroke="#00BD3E"
+                                                                                                                    stroke-miterlimit="10">
+                                                                                                                </path>
+                                                                                                            </g>
+                                                                                                            <defs>
+                                                                                                                <clipPath
+                                                                                                                    id="clip0_547_25">
+                                                                                                                    <rect
+                                                                                                                        width="22"
+                                                                                                                        height="32"
+                                                                                                                        fill="white">
+                                                                                                                    </rect>
+                                                                                                                </clipPath>
+                                                                                                            </defs>
+                                                                                                        </svg>
+                                                                                                    </a>
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+                                                                                                        <span
+                                                                                                            class="ft-list-block__text ft-helper-fontSize-body-S--small">
+                                                                                                            0
+                                                                                                        </span>
+                                                                                                    </a>
+                                                                                                </li>
+                                                                                                <li
+                                                                                                    class="ft-list-block__item">
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+                                                                                                        <svg class="ft-list-block__icon"
+                                                                                                            width="22"
+                                                                                                            height="32"
+                                                                                                            viewBox="0 0 22 32"
+                                                                                                            fill="none"
+                                                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                                                            <g
+                                                                                                                clip-path="url(#clip0_547_11)">
+                                                                                                                <mask
+                                                                                                                    id="path-1-inside-1_547_11"
+                                                                                                                    fill="white">
+                                                                                                                    <path
+                                                                                                                        fill-rule="evenodd"
+                                                                                                                        clip-rule="evenodd"
+                                                                                                                        d="M18.3132 12.4355L18.3132 21.6516L20.8298 21.6516L20.8298 12.4355L18.3132 12.4355ZM17.143 11.2764C17.1712 11.2751 17.1987 11.2735 17.2257 11.2719C17.2826 11.2685 17.3372 11.2653 17.3918 11.2653L21.1386 11.2653C21.7454 11.2653 22 11.521 22 12.1282L22 21.9741C22 22.5672 21.7448 22.8218 21.1515 22.8218L17.143 22.8218L17.143 11.2764Z">
+                                                                                                                    </path>
+                                                                                                                </mask>
+                                                                                                                <path
+                                                                                                                    d="M18.3132 21.6516L16.3132 21.6516L16.3132 23.6516L18.3132 23.6516L18.3132 21.6516ZM18.3132 12.4355L18.3132 10.4355L16.3132 10.4355L16.3132 12.4355L18.3132 12.4355ZM20.8298 21.6516L20.8298 23.6516L22.8298 23.6516L22.8298 21.6516L20.8298 21.6516ZM20.8298 12.4355L22.8298 12.4355L22.8298 10.4355L20.8298 10.4355L20.8298 12.4355ZM17.143 11.2764L17.0498 9.27857L15.143 9.36754L15.143 11.2764L17.143 11.2764ZM17.2257 11.2719L17.3433 13.2684L17.3433 13.2684L17.2257 11.2719ZM17.143 22.8218L15.143 22.8218L15.143 24.8218L17.143 24.8218L17.143 22.8218ZM20.3132 21.6516L20.3132 12.4355L16.3132 12.4355L16.3132 21.6516L20.3132 21.6516ZM20.8298 19.6516L18.3132 19.6516L18.3132 23.6516L20.8298 23.6516L20.8298 19.6516ZM18.8298 12.4355L18.8298 21.6516L22.8298 21.6516L22.8298 12.4355L18.8298 12.4355ZM17.2362 13.2742C17.2786 13.2722 17.3181 13.2699 17.3433 13.2684L17.1082 9.27533C17.0794 9.27702 17.0639 9.27791 17.0498 9.27857L17.2362 13.2742ZM17.3433 13.2684C17.3582 13.2675 17.3686 13.2669 17.3784 13.2664C17.3878 13.2659 17.3939 13.2656 17.3981 13.2654C17.4069 13.265 17.4031 13.2653 17.3918 13.2653L17.3918 9.26531C17.2683 9.26531 17.1545 9.2726 17.1082 9.27533L17.3433 13.2684ZM17.3918 13.2653L21.1386 13.2653L21.1386 9.26531L17.3918 9.26531L17.3918 13.2653ZM21.1386 13.2653C21.2193 13.2653 20.7894 13.291 20.381 12.8816C19.9736 12.4733 20 12.0451 20 12.1282L24 12.1282C24 11.6041 23.8991 10.7445 23.2127 10.0565C22.5253 9.36745 21.6647 9.26531 21.1386 9.26531L21.1386 13.2653ZM20 12.1282L20 21.9741L24 21.9741L24 12.1282L20 12.1282ZM20 21.9741C20 22.0377 19.979 21.6106 20.385 21.2052C20.7904 20.8003 21.2165 20.8218 21.1515 20.8218L21.1515 24.8218C21.6798 24.8218 22.5302 24.7159 23.2115 24.0355C23.8934 23.3545 24 22.5036 24 21.9741L20 21.9741ZM18.3132 14.4355L20.8298 14.4355L20.8298 10.4355L18.3132 10.4355L18.3132 14.4355ZM21.1515 20.8218L17.143 20.8218L17.143 24.8218L21.1515 24.8218L21.1515 20.8218ZM19.143 22.8218L19.143 11.2764L15.143 11.2764L15.143 22.8218L19.143 22.8218Z"
+                                                                                                                    fill="#FD3700"
+                                                                                                                    mask="url(#path-1-inside-1_547_11)">
+                                                                                                                </path>
+                                                                                                                <path
+                                                                                                                    d="M0.768663 19.9417C0.86674 20.1058 0.984788 20.2536 1.10319 20.3916C1.15314 20.4498 1.20134 20.5043 1.24853 20.5577C1.3001 20.616 1.35047 20.673 1.40064 20.732C1.36768 20.7952 1.33427 20.8619 1.30683 20.9272C0.64699 22.4747 1.79683 24.1241 3.43882 24.1024C4.36045 24.0905 5.28146 24.0934 6.20415 24.0963C6.61316 24.0975 7.0225 24.0988 7.43237 24.0988L7.47621 24.0988C7.46658 24.1471 7.45694 24.1951 7.44735 24.2429C7.40156 24.4709 7.35677 24.694 7.31802 24.9163C7.10283 26.1464 6.88821 27.4004 6.94752 28.6815L6.94756 28.6824C6.96867 29.0951 7.0323 29.5044 7.1374 29.9037C7.23949 30.297 7.4346 30.603 7.70689 30.8224C7.97766 31.0406 8.31455 31.1649 8.68927 31.2142C9.42474 31.3114 10.0181 31.0039 10.4374 30.417L10.4388 30.4151L10.4401 30.4132C10.5981 30.1792 10.7268 29.9263 10.8232 29.6601M0.768663 19.9417L0.917722 19.8501M0.768663 19.9417C0.685228 19.8023 0.633498 19.6498 0.592376 19.5064C0.574855 19.4453 0.559945 19.3889 0.545594 19.3345C0.523888 19.2523 0.503459 19.1749 0.477215 19.0937L0.468545 19.0669L0.468545 18.6631L0.47276 18.644C0.477722 18.6216 0.482521 18.6006 0.487127 18.5805C0.496583 18.5392 0.50523 18.5014 0.51281 18.4615M0.51281 18.4615L0.512589 18.4628L0.684171 18.4938L0.513002 18.4605L0.51281 18.4615ZM0.51281 18.4615C0.611748 17.9013 0.914983 17.3994 1.36222 17.0555M1.36222 17.0555L1.36133 17.0562L1.4685 17.1956L1.36327 17.0547L1.36222 17.0555ZM1.36222 17.0555C1.37947 17.0419 1.39732 17.0282 1.41529 17.0146M1.41529 17.0146C1.44241 17.0636 1.47135 17.1116 1.50206 17.1585L1.64727 17.0607L1.54307 16.9191C1.52514 16.9326 1.50562 16.9471 1.48531 16.9622C1.46256 16.9791 1.43884 16.9967 1.41529 17.0146ZM1.41529 17.0146C0.874258 16.0372 1.05258 14.6693 2.20991 13.9207M2.20991 13.9207C2.21443 13.93 2.21901 13.9392 2.22366 13.9484C2.23547 13.9718 2.24485 13.9923 2.25543 14.0154C2.2624 14.0306 2.26991 14.047 2.27902 14.0662L2.43609 13.9896L2.3512 13.8353C2.30257 13.8627 2.25548 13.8913 2.20991 13.9207ZM2.20991 13.9207C1.73644 12.9528 1.97562 11.8384 2.79713 11.1499C3.12676 10.8739 3.50607 10.7433 3.87461 10.6423L3.89694 10.6362L9.83092 10.6362L9.85374 10.6426C9.89881 10.6552 9.94469 10.6646 9.99104 10.6706M9.99104 10.6706C9.98897 10.6705 9.9869 10.6704 9.98483 10.6703L9.97557 10.8468L9.99669 10.6713C9.9948 10.6711 9.99292 10.6709 9.99104 10.6706ZM9.99104 10.6706C11.7511 10.7661 13.4903 11.104 15.1605 11.6751L15.1613 11.6754L15.1622 11.6756C15.2522 11.7075 15.3375 11.7565 15.3913 11.8464C15.4419 11.9309 15.4469 12.024 15.4469 12.095C15.4439 15.5796 15.4439 19.0642 15.4469 22.5485M15.4469 22.5485C15.4469 22.5471 15.4468 22.5456 15.4468 22.5442L15.2726 22.5521L15.4469 22.552C15.4469 22.5508 15.4469 22.5497 15.4469 22.5485ZM15.4469 22.5485C15.4501 22.6358 15.431 22.7225 15.3914 22.8001C15.3525 22.8766 15.295 22.9418 15.2245 22.9895M15.2245 22.9895C15.2263 22.9882 15.228 22.9868 15.2297 22.9854L15.1232 22.8455L15.2177 22.9941C15.22 22.9926 15.2222 22.9911 15.2245 22.9895ZM15.2245 22.9895C14.4528 23.5939 13.7163 24.2283 13.0732 24.9607C12.5473 25.5595 12.1109 26.1988 11.8441 26.9478C11.5192 27.8585 11.1721 28.7613 10.8232 29.6601M10.8232 29.6601L10.8239 29.6582L10.6603 29.5973L10.8225 29.662L10.8232 29.6601ZM15.096 12.0332L15.095 12.0322M10.4967 29.5364C10.4104 29.775 10.2952 30.0018 10.1538 30.2115C9.80043 30.7049 9.32745 30.9421 8.7341 30.8637C8.40616 30.8206 8.13352 30.7147 7.92374 30.5457C7.71555 30.3779 7.55913 30.14 7.47444 29.8134L7.47427 29.8128C7.37544 29.4374 7.31559 29.0526 7.29571 28.6646C7.23856 27.4291 7.44522 26.2129 7.66127 24.9779C7.69928 24.7598 7.74249 24.5447 7.78768 24.3197C7.81135 24.2019 7.83555 24.0813 7.85984 23.9562L7.90079 23.7454L7.43237 23.7454C7.02486 23.7454 6.61682 23.7441 6.20848 23.7428C5.28441 23.7399 4.35875 23.737 3.43425 23.7489C2.03174 23.7675 1.07217 22.3674 1.62697 21.0671L1.62718 21.0666L1.62738 21.0661C1.65816 20.9927 1.69313 20.9267 1.73198 20.8534C1.75228 20.8151 1.77363 20.7748 1.79601 20.7304C1.7544 20.6823 1.54227 20.3604 1.50059 20.3132C1.45402 20.2605 1.40844 20.2089 1.36619 20.1596C1.25228 20.0268 1.14942 19.8968 1.06673 19.7584C1.00727 19.6591 0.965649 19.5422 0.927102 19.4077C0.914075 19.3623 0.900678 19.3119 0.886745 19.2594C0.865042 19.1777 0.842043 19.0911 0.817135 19.011L0.817135 18.7024C0.819636 18.6914 0.822258 18.6799 0.824943 18.6682C0.835218 18.6232 0.846426 18.5742 0.85534 18.5271L0.855554 18.526L0.855753 18.5249C0.939127 18.0513 1.19549 17.6269 1.57372 17.3365L1.5747 17.3357L1.57567 17.335C1.61206 17.3062 1.6474 17.28 1.68474 17.2523C1.70613 17.2364 1.72819 17.22 1.75147 17.2024L1.88374 17.1024L1.79249 16.963C1.22682 16.0989 1.36944 14.7951 2.52097 14.144L2.66428 14.0629L2.59315 13.913C2.58824 13.9026 2.58245 13.8901 2.57614 13.8763C2.56327 13.8483 2.54821 13.8156 2.53397 13.7874C2.11738 12.962 2.31478 12.0128 3.01922 11.4223C3.28354 11.2011 3.59485 11.0863 3.94335 10.9897L9.78443 10.9897C9.84033 11.0042 9.89713 11.0151 9.95446 11.0222L9.96037 11.0229L9.96632 11.0232C11.6966 11.1166 13.4063 11.4484 15.0482 12.0097C15.076 12.0196 15.0886 12.0273 15.0934 12.0309C15.0938 12.0324 15.0944 12.0347 15.0949 12.0379C15.0969 12.0491 15.0983 12.0664 15.0983 12.0949C15.0954 15.5808 15.0954 19.0667 15.0983 22.5523L15.0983 22.5562L15.0985 22.5601C15.0997 22.5871 15.0939 22.614 15.0817 22.638C15.0695 22.662 15.0512 22.6823 15.0288 22.697L15.0226 22.701L15.0167 22.7056C14.2357 23.317 13.4781 23.968 12.8129 24.7256C12.2692 25.3447 11.8032 26.0223 11.5162 26.8277C11.193 27.734 10.8472 28.6334 10.4981 29.5326L10.4974 29.5345L10.4967 29.5364Z"
+                                                                                                                    stroke="#FD3700"
+                                                                                                                    stroke-miterlimit="10">
+                                                                                                                </path>
+                                                                                                            </g>
+                                                                                                            <defs>
+                                                                                                                <clipPath
+                                                                                                                    id="clip0_547_11">
+                                                                                                                    <rect
+                                                                                                                        width="22"
+                                                                                                                        height="32"
+                                                                                                                        fill="white"
+                                                                                                                        transform="translate(22 32) rotate(-180)">
+                                                                                                                    </rect>
+                                                                                                                </clipPath>
+                                                                                                            </defs>
+                                                                                                        </svg>
+                                                                                                    </a>
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+                                                                                                        <span
+                                                                                                            class="ft-list-block__text ft-helper-fontSize-body-S--small">
+                                                                                                            0
+                                                                                                        </span>
+                                                                                                    </a>
+                                                                                                </li>
+                                                                                            </ul>
+                                                                                        </div>
+                                                                                    </article>
+                                                                                    <!--Fin Respuesta a la Respuesta del Comentario-->
+                                                                                    <!--Comentario-->
+                                                                                    <article class="ft-mol-comment">
+                                                                                        <div
+                                                                                            class="ft-mol-comment__left">
+                                                                                            <div class="ft-mol-writer">
+                                                                                                <div
+                                                                                                    class="ft-mol-writer__group">
+                                                                                                    <div
+                                                                                                        class="ft-mol-writer__item">
+                                                                                                        <img src="/cds-statics/assets/img/icons/icon-c-user.svg"
+                                                                                                            alt="avatar"
+                                                                                                            width="60"
+                                                                                                            height="60"
+                                                                                                            class="ft-helper-img-rd">
+                                                                                                        <div
+                                                                                                            class="ft-mol-writer__title">
+                                                                                                            <p
+                                                                                                                class="ft-mol-writer__titleOpinion ft-helper-fontSize-body-L--small">
+                                                                                                                <a href="#"
+                                                                                                                    class="ft-link ft-link--primary"
+                                                                                                                    title="link title"
+                                                                                                                    target="_self">
+                                                                                                                    Mariagg33B</a>
+                                                                                                            </p>
+                                                                                                            <div
+                                                                                                                class="ft-date">
+                                                                                                                <time
+                                                                                                                    class="ft-date__text"
+                                                                                                                    datetime="2011-11-18T14:54:39+00:00">05
+                                                                                                                    SEPT
+                                                                                                                    2022
+                                                                                                                    -
+                                                                                                                    13:04
+                                                                                                                    CET</time>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div
+                                                                                            class="ft-mol-comment__center">
+                                                                                            #10
+                                                                                        </div>
+                                                                                        <div
+                                                                                            class="ft-mol-comment__right">
+                                                                                            <p
+                                                                                                class="ft-mol-comment__rightText">
+                                                                                                jurisprudencia art 10
+                                                                                                CEDH : "es calidad
+                                                                                                democrática, es
+                                                                                                contraste de opiniones,
+                                                                                                es empoderamiento del
+                                                                                                criterio de los
+                                                                                                ciudadanos que es el
+                                                                                                único que sirve cuando
+                                                                                                se trata de la
+                                                                                                convocatoria electoral".
+                                                                                                volantes de pacientes
+                                                                                                para consultas externas
+                                                                                                en sobres HUSA
+                                                                                            </p>
+                                                                                            <ul class="ft-list-block">
+                                                                                                <li
+                                                                                                    class="ft-list-block__item">
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+                                                                                                        <svg class="ft-list-block__icon"
+                                                                                                            width="18"
+                                                                                                            height="18"
+                                                                                                            viewBox="0 0 24 24"
+                                                                                                            fill="none"
+                                                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                                                            <path
+                                                                                                                fill-rule="evenodd"
+                                                                                                                clip-rule="evenodd"
+                                                                                                                d="M16.4236 2.53201C14.1571 1.71909 11.5187 1.61302 9.1977 2.11152C4.63029 3.09249 2.43896 6.1594 1.78492 9.39422C1.45469 11.0275 1.51949 12.7008 1.88128 14.1575C2.24549 15.6239 2.89469 16.8108 3.67576 17.5285L3.95251 17.7828L3.68697 21.8358L6.88722 20.117L7.208 20.2234C11.2717 21.5708 14.555 20.7795 15.7541 20.3632C19.9649 18.9014 21.6798 16.2705 22.2225 13.7132C22.7794 11.089 22.1126 8.47354 21.423 7.16021L21.4018 7.11979L21.3854 7.07718C20.5208 4.83042 18.6815 3.34183 16.4236 2.53201ZM22.8344 6.47108C21.7612 3.72368 19.5176 1.97367 16.9537 1.0541C14.3853 0.13291 11.4468 0.0225722 8.868 0.576433C3.61429 1.70481 1.00769 5.31568 0.245968 9.08307C-0.131683 10.9509 -0.058817 12.8598 0.357481 14.5359C0.734994 16.0559 1.40824 17.4346 2.33775 18.4133L2.08057 22.3386C2.01723 23.3053 3.0418 23.9645 3.89527 23.5061L7.0388 21.8178C11.3751 23.1593 14.8855 22.3267 16.2691 21.8464C20.9999 20.2041 23.1016 17.1338 23.7584 14.0392C24.3955 11.0371 23.6627 8.07488 22.8344 6.47108Z"
+                                                                                                                fill="black">
+                                                                                                            </path>
+                                                                                                        </svg>
+                                                                                                    </a>
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+                                                                                                        <span
+                                                                                                            class="ft-list-block__text ft-helper-fontSize-body-M--small">
+                                                                                                            Responder
+                                                                                                        </span>
+                                                                                                    </a>
+                                                                                                </li>
+                                                                                                <li
+                                                                                                    class="ft-list-block__item">
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+                                                                                                        <svg class="ft-list-block__icon"
+                                                                                                            width="22"
+                                                                                                            height="32"
+                                                                                                            viewBox="0 0 22 32"
+                                                                                                            fill="none"
+                                                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                                                            <g
+                                                                                                                clip-path="url(#clip0_547_25)">
+                                                                                                                <mask
+                                                                                                                    id="path-1-inside-1_547_25"
+                                                                                                                    fill="white">
+                                                                                                                    <path
+                                                                                                                        fill-rule="evenodd"
+                                                                                                                        clip-rule="evenodd"
+                                                                                                                        d="M3.68677 21.7324L3.68677 12.5164H1.17021L1.17021 21.7324H3.68677ZM4.85698 22.8916C4.82876 22.8929 4.80126 22.8945 4.77426 22.8961C4.71745 22.8994 4.66283 22.9027 4.6082 22.9027H0.861374C0.254616 22.9027 0 22.647 0 22.0398L0 12.1939C0 11.6007 0.2552 11.3462 0.848526 11.3462H4.85698L4.85698 22.8916Z">
+                                                                                                                    </path>
+                                                                                                                </mask>
+                                                                                                                <path
+                                                                                                                    d="M3.68677 12.5164H5.68677V10.5164H3.68677V12.5164ZM3.68677 21.7324V23.7324H5.68677L5.68677 21.7324H3.68677ZM1.17021 12.5164L1.17021 10.5164H-0.829787L-0.829787 12.5164H1.17021ZM1.17021 21.7324H-0.829787L-0.829787 23.7324H1.17021L1.17021 21.7324ZM4.85698 22.8916L4.9502 24.8894L6.85698 24.8004V22.8916H4.85698ZM4.77426 22.8961L4.65669 20.8996L4.65668 20.8996L4.77426 22.8961ZM4.85698 11.3462H6.85698V9.34619H4.85698V11.3462ZM1.68677 12.5164L1.68677 21.7324H5.68677L5.68677 12.5164H1.68677ZM1.17021 14.5164H3.68677L3.68677 10.5164H1.17021L1.17021 14.5164ZM3.17021 21.7324L3.17021 12.5164H-0.829787L-0.829787 21.7324H3.17021ZM4.76376 20.8937C4.72142 20.8957 4.68193 20.8981 4.65669 20.8996L4.89182 24.8926C4.92059 24.8909 4.93609 24.8901 4.9502 24.8894L4.76376 20.8937ZM4.65668 20.8996C4.64185 20.9004 4.63139 20.901 4.62161 20.9016C4.61224 20.9021 4.60609 20.9024 4.60187 20.9026C4.5931 20.903 4.59695 20.9027 4.6082 20.9027L4.6082 24.9027C4.73169 24.9027 4.8455 24.8954 4.89183 24.8926L4.65668 20.8996ZM4.6082 20.9027H0.861374L0.861374 24.9027H4.6082L4.6082 20.9027ZM0.861374 20.9027C0.780661 20.9027 1.21056 20.8769 1.619 21.2863C2.0264 21.6947 2 22.1228 2 22.0398H-2C-2 22.5639 -1.89909 23.4235 -1.2127 24.1115C-0.525261 24.8005 0.335329 24.9027 0.861374 24.9027L0.861374 20.9027ZM2 22.0398L2 12.1939H-2L-2 22.0398H2ZM2 12.1939C2 12.1303 2.02102 12.5573 1.61502 12.9628C1.20962 13.3676 0.783549 13.3462 0.848526 13.3462L0.848526 9.34619C0.320177 9.34619 -0.530156 9.45202 -1.21149 10.1324C-1.89342 10.8134 -2 11.6644 -2 12.1939H2ZM3.68677 19.7324H1.17021L1.17021 23.7324H3.68677L3.68677 19.7324ZM0.848526 13.3462H4.85698V9.34619H0.848526L0.848526 13.3462ZM2.85698 11.3462L2.85698 22.8916H6.85698L6.85698 11.3462H2.85698Z"
+                                                                                                                    fill="#00BD3E"
+                                                                                                                    mask="url(#path-1-inside-1_547_25)">
+                                                                                                                </path>
+                                                                                                                <path
+                                                                                                                    d="M21.2313 14.2263C21.1333 14.0621 21.0152 13.9144 20.8968 13.7764C20.8469 13.7181 20.7987 13.6636 20.7515 13.6103C20.6999 13.5519 20.6495 13.495 20.5994 13.436C20.6323 13.3727 20.6657 13.3061 20.6932 13.2408C21.353 11.6933 20.2032 10.0438 18.5612 10.0656C17.6396 10.0775 16.7185 10.0746 15.7959 10.0717C15.3868 10.0704 14.9775 10.0691 14.5676 10.0691H14.5238C14.5334 10.0209 14.5431 9.97289 14.5527 9.9251C14.5984 9.69708 14.6432 9.47399 14.682 9.25168C14.8972 8.0216 15.1118 6.76753 15.0525 5.48646L15.0524 5.48559C15.0313 5.0729 14.9677 4.66357 14.8626 4.2643C14.7605 3.87095 14.5654 3.56494 14.2931 3.34557C14.0223 3.12741 13.6854 3.00304 13.3107 2.95376C12.5753 2.85659 11.9819 3.16406 11.5626 3.75094L11.5612 3.75285L11.5599 3.75479C11.4019 3.98875 11.2732 4.24172 11.1768 4.50785M21.2313 14.2263L21.0823 14.3178M21.2313 14.2263C21.3148 14.3657 21.3665 14.5181 21.4076 14.6615C21.4251 14.7226 21.4401 14.7791 21.4544 14.8335C21.4761 14.9157 21.4965 14.9931 21.5228 15.0743L21.5315 15.1011V15.5049L21.5272 15.5239C21.5223 15.5464 21.5175 15.5674 21.5129 15.5875C21.5034 15.6288 21.4948 15.6666 21.4872 15.7065M21.4872 15.7065L21.4874 15.7052L21.3158 15.6742L21.487 15.7075L21.4872 15.7065ZM21.4872 15.7065C21.3883 16.2667 21.085 16.7686 20.6378 17.1125M20.6378 17.1125L20.6387 17.1118L20.5315 16.9724L20.6367 17.1133L20.6378 17.1125ZM20.6378 17.1125C20.6205 17.1261 20.6027 17.1398 20.5847 17.1534M20.5847 17.1534C20.5576 17.1044 20.5287 17.0564 20.4979 17.0095L20.3527 17.1072L20.4569 17.2489C20.4749 17.2353 20.4944 17.2208 20.5147 17.2058C20.5374 17.1889 20.5612 17.1713 20.5847 17.1534ZM20.5847 17.1534C21.1257 18.1308 20.9474 19.4987 19.7901 20.2472M19.7901 20.2472C19.7856 20.238 19.781 20.2288 19.7763 20.2195C19.7645 20.1962 19.7552 20.1757 19.7446 20.1526C19.7376 20.1374 19.7301 20.1209 19.721 20.1017L19.5639 20.1784L19.6488 20.3327C19.6974 20.3052 19.7445 20.2767 19.7901 20.2472ZM19.7901 20.2472C20.2636 21.2151 20.0244 22.3295 19.2029 23.0181C18.8732 23.2941 18.4939 23.4247 18.1254 23.5257L18.1031 23.5318H12.1691L12.1463 23.5254C12.1012 23.5127 12.0553 23.5034 12.009 23.4974M12.009 23.4974C12.011 23.4975 12.0131 23.4976 12.0152 23.4977L12.0244 23.3212L12.0033 23.4966C12.0052 23.4969 12.0071 23.4971 12.009 23.4974ZM12.009 23.4974C10.2489 23.4019 8.50975 23.0639 6.8395 22.4929L6.83866 22.4926L6.83783 22.4923C6.74777 22.4605 6.66247 22.4115 6.60865 22.3215C6.55811 22.237 6.55307 22.144 6.55307 22.073C6.55605 18.5883 6.55605 15.1038 6.55307 11.6195M6.55307 11.6195C6.55312 11.6209 6.55318 11.6224 6.55324 11.6238L6.72736 11.6158L6.55307 11.616C6.55307 11.6171 6.55307 11.6183 6.55307 11.6195ZM6.55307 11.6195C6.54992 11.5322 6.56902 11.4455 6.60857 11.3678C6.64752 11.2914 6.70496 11.2262 6.77548 11.1784M6.77548 11.1784C6.77374 11.1798 6.772 11.1812 6.77025 11.1825L6.87676 11.3224L6.78235 11.1739C6.78005 11.1754 6.77776 11.1769 6.77548 11.1784ZM6.77548 11.1784C7.54725 10.5741 8.28372 9.93967 8.92675 9.20731C9.45271 8.60844 9.88908 7.96912 10.1559 7.22022C10.4808 6.30943 10.8279 5.40667 11.1768 4.50785M11.1768 4.50785L11.1761 4.50981L11.3397 4.57068L11.1775 4.50595L11.1768 4.50785ZM6.90404 22.1348L6.90503 22.1358M11.5033 4.63154C11.5896 4.39298 11.7048 4.16621 11.8462 3.95644C12.1996 3.46302 12.6726 3.22587 13.2659 3.30429C13.5938 3.34742 13.8665 3.4533 14.0763 3.62231C14.2844 3.79005 14.4409 4.02801 14.5256 4.35455L14.5257 4.35519C14.6246 4.73057 14.6844 5.1154 14.7043 5.5034C14.7614 6.7389 14.5548 7.95505 14.3387 9.19005C14.3007 9.40814 14.2575 9.62329 14.2123 9.84828C14.1887 9.96612 14.1644 10.0867 14.1402 10.2117L14.0992 10.4226H14.5676C14.9751 10.4226 15.3832 10.4239 15.7915 10.4252C16.7156 10.4281 17.6413 10.431 18.5657 10.4191C19.9683 10.4004 20.9278 11.8006 20.373 13.1009L20.3728 13.1014L20.3726 13.1019C20.3418 13.1752 20.3069 13.2412 20.268 13.3146C20.2477 13.3529 20.2264 13.3932 20.204 13.4376C20.2456 13.4857 20.4577 13.8076 20.4994 13.8548C20.546 13.9075 20.5916 13.9591 20.6338 14.0083C20.7477 14.1411 20.8506 14.2712 20.9333 14.4095C20.9927 14.5089 21.0344 14.6258 21.0729 14.7602C21.0859 14.8057 21.0993 14.8561 21.1133 14.9086C21.135 14.9903 21.158 15.0769 21.1829 15.157V15.4655C21.1804 15.4766 21.1777 15.4881 21.1751 15.4998C21.1648 15.5447 21.1536 15.5938 21.1447 15.6408L21.1444 15.642L21.1442 15.6431C21.0609 16.1167 20.8045 16.541 20.4263 16.8315L20.4253 16.8322L20.4243 16.833C20.3879 16.8618 20.3526 16.888 20.3153 16.9157C20.2939 16.9316 20.2718 16.9479 20.2485 16.9655L20.1163 17.0656L20.2075 17.205C20.7732 18.0691 20.6306 19.3729 19.479 20.024L19.3357 20.105L19.4068 20.255C19.4118 20.2653 19.4175 20.2779 19.4239 20.2916C19.4367 20.3196 19.4518 20.3524 19.466 20.3806C19.8826 21.206 19.6852 22.1552 18.9808 22.7457C18.7165 22.9669 18.4052 23.0817 18.0567 23.1783H12.2156C12.1597 23.1637 12.1029 23.1529 12.0455 23.1458L12.0396 23.145L12.0337 23.1447C10.3034 23.0514 8.5937 22.7195 6.95175 22.1583C6.92396 22.1484 6.9114 22.1407 6.90659 22.137C6.90617 22.1355 6.90563 22.1332 6.90506 22.13C6.9031 22.1189 6.90166 22.1016 6.90166 22.0731C6.90464 18.5871 6.90464 15.1013 6.90166 11.6157L6.90165 11.6118L6.90148 11.6079C6.90028 11.5809 6.90608 11.554 6.91831 11.53C6.93054 11.506 6.94877 11.4856 6.97117 11.471L6.9774 11.4669L6.98326 11.4623C7.76431 10.851 8.52189 10.2 9.18711 9.44236C9.73082 8.82327 10.1968 8.14566 10.4838 7.34032C10.807 6.43393 11.1528 5.53459 11.5019 4.6354L11.5026 4.63348L11.5033 4.63154Z"
+                                                                                                                    stroke="#00BD3E"
+                                                                                                                    stroke-miterlimit="10">
+                                                                                                                </path>
+                                                                                                            </g>
+                                                                                                            <defs>
+                                                                                                                <clipPath
+                                                                                                                    id="clip0_547_25">
+                                                                                                                    <rect
+                                                                                                                        width="22"
+                                                                                                                        height="32"
+                                                                                                                        fill="white">
+                                                                                                                    </rect>
+                                                                                                                </clipPath>
+                                                                                                            </defs>
+                                                                                                        </svg>
+                                                                                                    </a>
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+                                                                                                        <span
+                                                                                                            class="ft-list-block__text ft-helper-fontSize-body-S--small">
+                                                                                                            0
+                                                                                                        </span>
+                                                                                                    </a>
+                                                                                                </li>
+                                                                                                <li
+                                                                                                    class="ft-list-block__item">
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+                                                                                                        <svg class="ft-list-block__icon"
+                                                                                                            width="22"
+                                                                                                            height="32"
+                                                                                                            viewBox="0 0 22 32"
+                                                                                                            fill="none"
+                                                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                                                            <g
+                                                                                                                clip-path="url(#clip0_547_11)">
+                                                                                                                <mask
+                                                                                                                    id="path-1-inside-1_547_11"
+                                                                                                                    fill="white">
+                                                                                                                    <path
+                                                                                                                        fill-rule="evenodd"
+                                                                                                                        clip-rule="evenodd"
+                                                                                                                        d="M18.3132 12.4355L18.3132 21.6516L20.8298 21.6516L20.8298 12.4355L18.3132 12.4355ZM17.143 11.2764C17.1712 11.2751 17.1987 11.2735 17.2257 11.2719C17.2826 11.2685 17.3372 11.2653 17.3918 11.2653L21.1386 11.2653C21.7454 11.2653 22 11.521 22 12.1282L22 21.9741C22 22.5672 21.7448 22.8218 21.1515 22.8218L17.143 22.8218L17.143 11.2764Z">
+                                                                                                                    </path>
+                                                                                                                </mask>
+                                                                                                                <path
+                                                                                                                    d="M18.3132 21.6516L16.3132 21.6516L16.3132 23.6516L18.3132 23.6516L18.3132 21.6516ZM18.3132 12.4355L18.3132 10.4355L16.3132 10.4355L16.3132 12.4355L18.3132 12.4355ZM20.8298 21.6516L20.8298 23.6516L22.8298 23.6516L22.8298 21.6516L20.8298 21.6516ZM20.8298 12.4355L22.8298 12.4355L22.8298 10.4355L20.8298 10.4355L20.8298 12.4355ZM17.143 11.2764L17.0498 9.27857L15.143 9.36754L15.143 11.2764L17.143 11.2764ZM17.2257 11.2719L17.3433 13.2684L17.3433 13.2684L17.2257 11.2719ZM17.143 22.8218L15.143 22.8218L15.143 24.8218L17.143 24.8218L17.143 22.8218ZM20.3132 21.6516L20.3132 12.4355L16.3132 12.4355L16.3132 21.6516L20.3132 21.6516ZM20.8298 19.6516L18.3132 19.6516L18.3132 23.6516L20.8298 23.6516L20.8298 19.6516ZM18.8298 12.4355L18.8298 21.6516L22.8298 21.6516L22.8298 12.4355L18.8298 12.4355ZM17.2362 13.2742C17.2786 13.2722 17.3181 13.2699 17.3433 13.2684L17.1082 9.27533C17.0794 9.27702 17.0639 9.27791 17.0498 9.27857L17.2362 13.2742ZM17.3433 13.2684C17.3582 13.2675 17.3686 13.2669 17.3784 13.2664C17.3878 13.2659 17.3939 13.2656 17.3981 13.2654C17.4069 13.265 17.4031 13.2653 17.3918 13.2653L17.3918 9.26531C17.2683 9.26531 17.1545 9.2726 17.1082 9.27533L17.3433 13.2684ZM17.3918 13.2653L21.1386 13.2653L21.1386 9.26531L17.3918 9.26531L17.3918 13.2653ZM21.1386 13.2653C21.2193 13.2653 20.7894 13.291 20.381 12.8816C19.9736 12.4733 20 12.0451 20 12.1282L24 12.1282C24 11.6041 23.8991 10.7445 23.2127 10.0565C22.5253 9.36745 21.6647 9.26531 21.1386 9.26531L21.1386 13.2653ZM20 12.1282L20 21.9741L24 21.9741L24 12.1282L20 12.1282ZM20 21.9741C20 22.0377 19.979 21.6106 20.385 21.2052C20.7904 20.8003 21.2165 20.8218 21.1515 20.8218L21.1515 24.8218C21.6798 24.8218 22.5302 24.7159 23.2115 24.0355C23.8934 23.3545 24 22.5036 24 21.9741L20 21.9741ZM18.3132 14.4355L20.8298 14.4355L20.8298 10.4355L18.3132 10.4355L18.3132 14.4355ZM21.1515 20.8218L17.143 20.8218L17.143 24.8218L21.1515 24.8218L21.1515 20.8218ZM19.143 22.8218L19.143 11.2764L15.143 11.2764L15.143 22.8218L19.143 22.8218Z"
+                                                                                                                    fill="#FD3700"
+                                                                                                                    mask="url(#path-1-inside-1_547_11)">
+                                                                                                                </path>
+                                                                                                                <path
+                                                                                                                    d="M0.768663 19.9417C0.86674 20.1058 0.984788 20.2536 1.10319 20.3916C1.15314 20.4498 1.20134 20.5043 1.24853 20.5577C1.3001 20.616 1.35047 20.673 1.40064 20.732C1.36768 20.7952 1.33427 20.8619 1.30683 20.9272C0.64699 22.4747 1.79683 24.1241 3.43882 24.1024C4.36045 24.0905 5.28146 24.0934 6.20415 24.0963C6.61316 24.0975 7.0225 24.0988 7.43237 24.0988L7.47621 24.0988C7.46658 24.1471 7.45694 24.1951 7.44735 24.2429C7.40156 24.4709 7.35677 24.694 7.31802 24.9163C7.10283 26.1464 6.88821 27.4004 6.94752 28.6815L6.94756 28.6824C6.96867 29.0951 7.0323 29.5044 7.1374 29.9037C7.23949 30.297 7.4346 30.603 7.70689 30.8224C7.97766 31.0406 8.31455 31.1649 8.68927 31.2142C9.42474 31.3114 10.0181 31.0039 10.4374 30.417L10.4388 30.4151L10.4401 30.4132C10.5981 30.1792 10.7268 29.9263 10.8232 29.6601M0.768663 19.9417L0.917722 19.8501M0.768663 19.9417C0.685228 19.8023 0.633498 19.6498 0.592376 19.5064C0.574855 19.4453 0.559945 19.3889 0.545594 19.3345C0.523888 19.2523 0.503459 19.1749 0.477215 19.0937L0.468545 19.0669L0.468545 18.6631L0.47276 18.644C0.477722 18.6216 0.482521 18.6006 0.487127 18.5805C0.496583 18.5392 0.50523 18.5014 0.51281 18.4615M0.51281 18.4615L0.512589 18.4628L0.684171 18.4938L0.513002 18.4605L0.51281 18.4615ZM0.51281 18.4615C0.611748 17.9013 0.914983 17.3994 1.36222 17.0555M1.36222 17.0555L1.36133 17.0562L1.4685 17.1956L1.36327 17.0547L1.36222 17.0555ZM1.36222 17.0555C1.37947 17.0419 1.39732 17.0282 1.41529 17.0146M1.41529 17.0146C1.44241 17.0636 1.47135 17.1116 1.50206 17.1585L1.64727 17.0607L1.54307 16.9191C1.52514 16.9326 1.50562 16.9471 1.48531 16.9622C1.46256 16.9791 1.43884 16.9967 1.41529 17.0146ZM1.41529 17.0146C0.874258 16.0372 1.05258 14.6693 2.20991 13.9207M2.20991 13.9207C2.21443 13.93 2.21901 13.9392 2.22366 13.9484C2.23547 13.9718 2.24485 13.9923 2.25543 14.0154C2.2624 14.0306 2.26991 14.047 2.27902 14.0662L2.43609 13.9896L2.3512 13.8353C2.30257 13.8627 2.25548 13.8913 2.20991 13.9207ZM2.20991 13.9207C1.73644 12.9528 1.97562 11.8384 2.79713 11.1499C3.12676 10.8739 3.50607 10.7433 3.87461 10.6423L3.89694 10.6362L9.83092 10.6362L9.85374 10.6426C9.89881 10.6552 9.94469 10.6646 9.99104 10.6706M9.99104 10.6706C9.98897 10.6705 9.9869 10.6704 9.98483 10.6703L9.97557 10.8468L9.99669 10.6713C9.9948 10.6711 9.99292 10.6709 9.99104 10.6706ZM9.99104 10.6706C11.7511 10.7661 13.4903 11.104 15.1605 11.6751L15.1613 11.6754L15.1622 11.6756C15.2522 11.7075 15.3375 11.7565 15.3913 11.8464C15.4419 11.9309 15.4469 12.024 15.4469 12.095C15.4439 15.5796 15.4439 19.0642 15.4469 22.5485M15.4469 22.5485C15.4469 22.5471 15.4468 22.5456 15.4468 22.5442L15.2726 22.5521L15.4469 22.552C15.4469 22.5508 15.4469 22.5497 15.4469 22.5485ZM15.4469 22.5485C15.4501 22.6358 15.431 22.7225 15.3914 22.8001C15.3525 22.8766 15.295 22.9418 15.2245 22.9895M15.2245 22.9895C15.2263 22.9882 15.228 22.9868 15.2297 22.9854L15.1232 22.8455L15.2177 22.9941C15.22 22.9926 15.2222 22.9911 15.2245 22.9895ZM15.2245 22.9895C14.4528 23.5939 13.7163 24.2283 13.0732 24.9607C12.5473 25.5595 12.1109 26.1988 11.8441 26.9478C11.5192 27.8585 11.1721 28.7613 10.8232 29.6601M10.8232 29.6601L10.8239 29.6582L10.6603 29.5973L10.8225 29.662L10.8232 29.6601ZM15.096 12.0332L15.095 12.0322M10.4967 29.5364C10.4104 29.775 10.2952 30.0018 10.1538 30.2115C9.80043 30.7049 9.32745 30.9421 8.7341 30.8637C8.40616 30.8206 8.13352 30.7147 7.92374 30.5457C7.71555 30.3779 7.55913 30.14 7.47444 29.8134L7.47427 29.8128C7.37544 29.4374 7.31559 29.0526 7.29571 28.6646C7.23856 27.4291 7.44522 26.2129 7.66127 24.9779C7.69928 24.7598 7.74249 24.5447 7.78768 24.3197C7.81135 24.2019 7.83555 24.0813 7.85984 23.9562L7.90079 23.7454L7.43237 23.7454C7.02486 23.7454 6.61682 23.7441 6.20848 23.7428C5.28441 23.7399 4.35875 23.737 3.43425 23.7489C2.03174 23.7675 1.07217 22.3674 1.62697 21.0671L1.62718 21.0666L1.62738 21.0661C1.65816 20.9927 1.69313 20.9267 1.73198 20.8534C1.75228 20.8151 1.77363 20.7748 1.79601 20.7304C1.7544 20.6823 1.54227 20.3604 1.50059 20.3132C1.45402 20.2605 1.40844 20.2089 1.36619 20.1596C1.25228 20.0268 1.14942 19.8968 1.06673 19.7584C1.00727 19.6591 0.965649 19.5422 0.927102 19.4077C0.914075 19.3623 0.900678 19.3119 0.886745 19.2594C0.865042 19.1777 0.842043 19.0911 0.817135 19.011L0.817135 18.7024C0.819636 18.6914 0.822258 18.6799 0.824943 18.6682C0.835218 18.6232 0.846426 18.5742 0.85534 18.5271L0.855554 18.526L0.855753 18.5249C0.939127 18.0513 1.19549 17.6269 1.57372 17.3365L1.5747 17.3357L1.57567 17.335C1.61206 17.3062 1.6474 17.28 1.68474 17.2523C1.70613 17.2364 1.72819 17.22 1.75147 17.2024L1.88374 17.1024L1.79249 16.963C1.22682 16.0989 1.36944 14.7951 2.52097 14.144L2.66428 14.0629L2.59315 13.913C2.58824 13.9026 2.58245 13.8901 2.57614 13.8763C2.56327 13.8483 2.54821 13.8156 2.53397 13.7874C2.11738 12.962 2.31478 12.0128 3.01922 11.4223C3.28354 11.2011 3.59485 11.0863 3.94335 10.9897L9.78443 10.9897C9.84033 11.0042 9.89713 11.0151 9.95446 11.0222L9.96037 11.0229L9.96632 11.0232C11.6966 11.1166 13.4063 11.4484 15.0482 12.0097C15.076 12.0196 15.0886 12.0273 15.0934 12.0309C15.0938 12.0324 15.0944 12.0347 15.0949 12.0379C15.0969 12.0491 15.0983 12.0664 15.0983 12.0949C15.0954 15.5808 15.0954 19.0667 15.0983 22.5523L15.0983 22.5562L15.0985 22.5601C15.0997 22.5871 15.0939 22.614 15.0817 22.638C15.0695 22.662 15.0512 22.6823 15.0288 22.697L15.0226 22.701L15.0167 22.7056C14.2357 23.317 13.4781 23.968 12.8129 24.7256C12.2692 25.3447 11.8032 26.0223 11.5162 26.8277C11.193 27.734 10.8472 28.6334 10.4981 29.5326L10.4974 29.5345L10.4967 29.5364Z"
+                                                                                                                    stroke="#FD3700"
+                                                                                                                    stroke-miterlimit="10">
+                                                                                                                </path>
+                                                                                                            </g>
+                                                                                                            <defs>
+                                                                                                                <clipPath
+                                                                                                                    id="clip0_547_11">
+                                                                                                                    <rect
+                                                                                                                        width="22"
+                                                                                                                        height="32"
+                                                                                                                        fill="white"
+                                                                                                                        transform="translate(22 32) rotate(-180)">
+                                                                                                                    </rect>
+                                                                                                                </clipPath>
+                                                                                                            </defs>
+                                                                                                        </svg>
+                                                                                                    </a>
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+                                                                                                        <span
+                                                                                                            class="ft-list-block__text ft-helper-fontSize-body-S--small">
+                                                                                                            0
+                                                                                                        </span>
+                                                                                                    </a>
+                                                                                                </li>
+                                                                                            </ul>
+                                                                                        </div>
+                                                                                    </article>
+                                                                                    <!--Fin Comentario-->
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="ft-mol-tab__content" role="tabpanel"
+                                                                            aria-labelledby="tab2">
+                                                                            <div class="ft-helper-display-flex">
+                                                                                <div
+                                                                                    class="ft-layout-grid-flex__colXs-12">
+                                                                                    <article class="ft-mol-comment">
+                                                                                        <div
+                                                                                            class="ft-mol-comment__left">
+                                                                                            <div class="ft-mol-writer">
+                                                                                                <div
+                                                                                                    class="ft-mol-writer__group">
+                                                                                                    <div
+                                                                                                        class="ft-mol-writer__item">
+                                                                                                        <img src="/cds-statics/assets/img/icons/icon-c-user.svg"
+                                                                                                            alt="avatar"
+                                                                                                            width="60"
+                                                                                                            height="60"
+                                                                                                            class="ft-helper-img-rd">
+                                                                                                        <div
+                                                                                                            class="ft-mol-writer__title">
+                                                                                                            <p
+                                                                                                                class="ft-mol-writer__titleOpinion ft-helper-fontSize-body-L--small">
+                                                                                                                <a href="#"
+                                                                                                                    class="ft-link ft-link--primary"
+                                                                                                                    title="link title"
+                                                                                                                    target="_self">
+                                                                                                                    Mariagg33B</a>
+                                                                                                            </p>
+                                                                                                            <p
+                                                                                                                class="ft-mol-writer__titleOpinion ft-helper-fontSize-body-M--small ft-helper-fontColor-primary">
+                                                                                                                <a class="ft-link ft-link--secondary"
+                                                                                                                    href="#">
+                                                                                                                    Cambiar
+                                                                                                                    tu
+                                                                                                                    avatar
+                                                                                                                </a>
+                                                                                                            </p>
+                                                                                                            <div
+                                                                                                                class="ft-date">
+                                                                                                                <time
+                                                                                                                    class="ft-date__text"
+                                                                                                                    datetime="2011-11-18T14:54:39+00:00">05
+                                                                                                                    SEPT
+                                                                                                                    2022
+                                                                                                                    -
+                                                                                                                    13:04
+                                                                                                                    CET</time>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div
+                                                                                            class="ft-mol-comment__center">
+                                                                                            #10
+                                                                                        </div>
+                                                                                        <div
+                                                                                            class="ft-mol-comment__right">
+                                                                                            <p
+                                                                                                class="ft-mol-comment__rightText">
+                                                                                                jurisprudencia art 10
+                                                                                                CEDH : "es calidad
+                                                                                                democrática, es
+                                                                                                contraste de opiniones,
+                                                                                                es empoderamiento del
+                                                                                                criterio de los
+                                                                                                ciudadanos que es el
+                                                                                                único que sirve cuando
+                                                                                                se trata de la
+                                                                                                convocatoria electoral".
+                                                                                                volantes de pacientes
+                                                                                                para consultas externas
+                                                                                                en sobres HUSA
+                                                                                            </p>
+                                                                                            <ul class="ft-list-block">
+                                                                                                <li
+                                                                                                    class="ft-list-block__item">
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+                                                                                                        <svg class="ft-list-block__icon"
+                                                                                                            width="18"
+                                                                                                            height="18"
+                                                                                                            viewBox="0 0 24 24"
+                                                                                                            fill="none"
+                                                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                                                            <path
+                                                                                                                fill-rule="evenodd"
+                                                                                                                clip-rule="evenodd"
+                                                                                                                d="M16.4236 2.53201C14.1571 1.71909 11.5187 1.61302 9.1977 2.11152C4.63029 3.09249 2.43896 6.1594 1.78492 9.39422C1.45469 11.0275 1.51949 12.7008 1.88128 14.1575C2.24549 15.6239 2.89469 16.8108 3.67576 17.5285L3.95251 17.7828L3.68697 21.8358L6.88722 20.117L7.208 20.2234C11.2717 21.5708 14.555 20.7795 15.7541 20.3632C19.9649 18.9014 21.6798 16.2705 22.2225 13.7132C22.7794 11.089 22.1126 8.47354 21.423 7.16021L21.4018 7.11979L21.3854 7.07718C20.5208 4.83042 18.6815 3.34183 16.4236 2.53201ZM22.8344 6.47108C21.7612 3.72368 19.5176 1.97367 16.9537 1.0541C14.3853 0.13291 11.4468 0.0225722 8.868 0.576433C3.61429 1.70481 1.00769 5.31568 0.245968 9.08307C-0.131683 10.9509 -0.058817 12.8598 0.357481 14.5359C0.734994 16.0559 1.40824 17.4346 2.33775 18.4133L2.08057 22.3386C2.01723 23.3053 3.0418 23.9645 3.89527 23.5061L7.0388 21.8178C11.3751 23.1593 14.8855 22.3267 16.2691 21.8464C20.9999 20.2041 23.1016 17.1338 23.7584 14.0392C24.3955 11.0371 23.6627 8.07488 22.8344 6.47108Z"
+                                                                                                                fill="black">
+                                                                                                            </path>
+                                                                                                        </svg>
+                                                                                                    </a>
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+                                                                                                        <span
+                                                                                                            class="ft-list-block__text ft-helper-fontSize-body-M--small">
+                                                                                                            Responder
+                                                                                                        </span>
+                                                                                                    </a>
+                                                                                                </li>
+                                                                                                <li
+                                                                                                    class="ft-list-block__item">
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+
+                                                                                                        <svg class="ft-list-block__icon"
+                                                                                                            width="22"
+                                                                                                            height="32"
+                                                                                                            viewBox="0 0 22 32"
+                                                                                                            fill="none"
+                                                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                                                            <g
+                                                                                                                clip-path="url(#clip0_547_25)">
+                                                                                                                <mask
+                                                                                                                    id="path-1-inside-1_547_25"
+                                                                                                                    fill="white">
+                                                                                                                    <path
+                                                                                                                        fill-rule="evenodd"
+                                                                                                                        clip-rule="evenodd"
+                                                                                                                        d="M3.68677 21.7324L3.68677 12.5164H1.17021L1.17021 21.7324H3.68677ZM4.85698 22.8916C4.82876 22.8929 4.80126 22.8945 4.77426 22.8961C4.71745 22.8994 4.66283 22.9027 4.6082 22.9027H0.861374C0.254616 22.9027 0 22.647 0 22.0398L0 12.1939C0 11.6007 0.2552 11.3462 0.848526 11.3462H4.85698L4.85698 22.8916Z">
+                                                                                                                    </path>
+                                                                                                                </mask>
+                                                                                                                <path
+                                                                                                                    d="M3.68677 12.5164H5.68677V10.5164H3.68677V12.5164ZM3.68677 21.7324V23.7324H5.68677L5.68677 21.7324H3.68677ZM1.17021 12.5164L1.17021 10.5164H-0.829787L-0.829787 12.5164H1.17021ZM1.17021 21.7324H-0.829787L-0.829787 23.7324H1.17021L1.17021 21.7324ZM4.85698 22.8916L4.9502 24.8894L6.85698 24.8004V22.8916H4.85698ZM4.77426 22.8961L4.65669 20.8996L4.65668 20.8996L4.77426 22.8961ZM4.85698 11.3462H6.85698V9.34619H4.85698V11.3462ZM1.68677 12.5164L1.68677 21.7324H5.68677L5.68677 12.5164H1.68677ZM1.17021 14.5164H3.68677L3.68677 10.5164H1.17021L1.17021 14.5164ZM3.17021 21.7324L3.17021 12.5164H-0.829787L-0.829787 21.7324H3.17021ZM4.76376 20.8937C4.72142 20.8957 4.68193 20.8981 4.65669 20.8996L4.89182 24.8926C4.92059 24.8909 4.93609 24.8901 4.9502 24.8894L4.76376 20.8937ZM4.65668 20.8996C4.64185 20.9004 4.63139 20.901 4.62161 20.9016C4.61224 20.9021 4.60609 20.9024 4.60187 20.9026C4.5931 20.903 4.59695 20.9027 4.6082 20.9027L4.6082 24.9027C4.73169 24.9027 4.8455 24.8954 4.89183 24.8926L4.65668 20.8996ZM4.6082 20.9027H0.861374L0.861374 24.9027H4.6082L4.6082 20.9027ZM0.861374 20.9027C0.780661 20.9027 1.21056 20.8769 1.619 21.2863C2.0264 21.6947 2 22.1228 2 22.0398H-2C-2 22.5639 -1.89909 23.4235 -1.2127 24.1115C-0.525261 24.8005 0.335329 24.9027 0.861374 24.9027L0.861374 20.9027ZM2 22.0398L2 12.1939H-2L-2 22.0398H2ZM2 12.1939C2 12.1303 2.02102 12.5573 1.61502 12.9628C1.20962 13.3676 0.783549 13.3462 0.848526 13.3462L0.848526 9.34619C0.320177 9.34619 -0.530156 9.45202 -1.21149 10.1324C-1.89342 10.8134 -2 11.6644 -2 12.1939H2ZM3.68677 19.7324H1.17021L1.17021 23.7324H3.68677L3.68677 19.7324ZM0.848526 13.3462H4.85698V9.34619H0.848526L0.848526 13.3462ZM2.85698 11.3462L2.85698 22.8916H6.85698L6.85698 11.3462H2.85698Z"
+                                                                                                                    fill="#00BD3E"
+                                                                                                                    mask="url(#path-1-inside-1_547_25)">
+                                                                                                                </path>
+                                                                                                                <path
+                                                                                                                    d="M21.2313 14.2263C21.1333 14.0621 21.0152 13.9144 20.8968 13.7764C20.8469 13.7181 20.7987 13.6636 20.7515 13.6103C20.6999 13.5519 20.6495 13.495 20.5994 13.436C20.6323 13.3727 20.6657 13.3061 20.6932 13.2408C21.353 11.6933 20.2032 10.0438 18.5612 10.0656C17.6396 10.0775 16.7185 10.0746 15.7959 10.0717C15.3868 10.0704 14.9775 10.0691 14.5676 10.0691H14.5238C14.5334 10.0209 14.5431 9.97289 14.5527 9.9251C14.5984 9.69708 14.6432 9.47399 14.682 9.25168C14.8972 8.0216 15.1118 6.76753 15.0525 5.48646L15.0524 5.48559C15.0313 5.0729 14.9677 4.66357 14.8626 4.2643C14.7605 3.87095 14.5654 3.56494 14.2931 3.34557C14.0223 3.12741 13.6854 3.00304 13.3107 2.95376C12.5753 2.85659 11.9819 3.16406 11.5626 3.75094L11.5612 3.75285L11.5599 3.75479C11.4019 3.98875 11.2732 4.24172 11.1768 4.50785M21.2313 14.2263L21.0823 14.3178M21.2313 14.2263C21.3148 14.3657 21.3665 14.5181 21.4076 14.6615C21.4251 14.7226 21.4401 14.7791 21.4544 14.8335C21.4761 14.9157 21.4965 14.9931 21.5228 15.0743L21.5315 15.1011V15.5049L21.5272 15.5239C21.5223 15.5464 21.5175 15.5674 21.5129 15.5875C21.5034 15.6288 21.4948 15.6666 21.4872 15.7065M21.4872 15.7065L21.4874 15.7052L21.3158 15.6742L21.487 15.7075L21.4872 15.7065ZM21.4872 15.7065C21.3883 16.2667 21.085 16.7686 20.6378 17.1125M20.6378 17.1125L20.6387 17.1118L20.5315 16.9724L20.6367 17.1133L20.6378 17.1125ZM20.6378 17.1125C20.6205 17.1261 20.6027 17.1398 20.5847 17.1534M20.5847 17.1534C20.5576 17.1044 20.5287 17.0564 20.4979 17.0095L20.3527 17.1072L20.4569 17.2489C20.4749 17.2353 20.4944 17.2208 20.5147 17.2058C20.5374 17.1889 20.5612 17.1713 20.5847 17.1534ZM20.5847 17.1534C21.1257 18.1308 20.9474 19.4987 19.7901 20.2472M19.7901 20.2472C19.7856 20.238 19.781 20.2288 19.7763 20.2195C19.7645 20.1962 19.7552 20.1757 19.7446 20.1526C19.7376 20.1374 19.7301 20.1209 19.721 20.1017L19.5639 20.1784L19.6488 20.3327C19.6974 20.3052 19.7445 20.2767 19.7901 20.2472ZM19.7901 20.2472C20.2636 21.2151 20.0244 22.3295 19.2029 23.0181C18.8732 23.2941 18.4939 23.4247 18.1254 23.5257L18.1031 23.5318H12.1691L12.1463 23.5254C12.1012 23.5127 12.0553 23.5034 12.009 23.4974M12.009 23.4974C12.011 23.4975 12.0131 23.4976 12.0152 23.4977L12.0244 23.3212L12.0033 23.4966C12.0052 23.4969 12.0071 23.4971 12.009 23.4974ZM12.009 23.4974C10.2489 23.4019 8.50975 23.0639 6.8395 22.4929L6.83866 22.4926L6.83783 22.4923C6.74777 22.4605 6.66247 22.4115 6.60865 22.3215C6.55811 22.237 6.55307 22.144 6.55307 22.073C6.55605 18.5883 6.55605 15.1038 6.55307 11.6195M6.55307 11.6195C6.55312 11.6209 6.55318 11.6224 6.55324 11.6238L6.72736 11.6158L6.55307 11.616C6.55307 11.6171 6.55307 11.6183 6.55307 11.6195ZM6.55307 11.6195C6.54992 11.5322 6.56902 11.4455 6.60857 11.3678C6.64752 11.2914 6.70496 11.2262 6.77548 11.1784M6.77548 11.1784C6.77374 11.1798 6.772 11.1812 6.77025 11.1825L6.87676 11.3224L6.78235 11.1739C6.78005 11.1754 6.77776 11.1769 6.77548 11.1784ZM6.77548 11.1784C7.54725 10.5741 8.28372 9.93967 8.92675 9.20731C9.45271 8.60844 9.88908 7.96912 10.1559 7.22022C10.4808 6.30943 10.8279 5.40667 11.1768 4.50785M11.1768 4.50785L11.1761 4.50981L11.3397 4.57068L11.1775 4.50595L11.1768 4.50785ZM6.90404 22.1348L6.90503 22.1358M11.5033 4.63154C11.5896 4.39298 11.7048 4.16621 11.8462 3.95644C12.1996 3.46302 12.6726 3.22587 13.2659 3.30429C13.5938 3.34742 13.8665 3.4533 14.0763 3.62231C14.2844 3.79005 14.4409 4.02801 14.5256 4.35455L14.5257 4.35519C14.6246 4.73057 14.6844 5.1154 14.7043 5.5034C14.7614 6.7389 14.5548 7.95505 14.3387 9.19005C14.3007 9.40814 14.2575 9.62329 14.2123 9.84828C14.1887 9.96612 14.1644 10.0867 14.1402 10.2117L14.0992 10.4226H14.5676C14.9751 10.4226 15.3832 10.4239 15.7915 10.4252C16.7156 10.4281 17.6413 10.431 18.5657 10.4191C19.9683 10.4004 20.9278 11.8006 20.373 13.1009L20.3728 13.1014L20.3726 13.1019C20.3418 13.1752 20.3069 13.2412 20.268 13.3146C20.2477 13.3529 20.2264 13.3932 20.204 13.4376C20.2456 13.4857 20.4577 13.8076 20.4994 13.8548C20.546 13.9075 20.5916 13.9591 20.6338 14.0083C20.7477 14.1411 20.8506 14.2712 20.9333 14.4095C20.9927 14.5089 21.0344 14.6258 21.0729 14.7602C21.0859 14.8057 21.0993 14.8561 21.1133 14.9086C21.135 14.9903 21.158 15.0769 21.1829 15.157V15.4655C21.1804 15.4766 21.1777 15.4881 21.1751 15.4998C21.1648 15.5447 21.1536 15.5938 21.1447 15.6408L21.1444 15.642L21.1442 15.6431C21.0609 16.1167 20.8045 16.541 20.4263 16.8315L20.4253 16.8322L20.4243 16.833C20.3879 16.8618 20.3526 16.888 20.3153 16.9157C20.2939 16.9316 20.2718 16.9479 20.2485 16.9655L20.1163 17.0656L20.2075 17.205C20.7732 18.0691 20.6306 19.3729 19.479 20.024L19.3357 20.105L19.4068 20.255C19.4118 20.2653 19.4175 20.2779 19.4239 20.2916C19.4367 20.3196 19.4518 20.3524 19.466 20.3806C19.8826 21.206 19.6852 22.1552 18.9808 22.7457C18.7165 22.9669 18.4052 23.0817 18.0567 23.1783H12.2156C12.1597 23.1637 12.1029 23.1529 12.0455 23.1458L12.0396 23.145L12.0337 23.1447C10.3034 23.0514 8.5937 22.7195 6.95175 22.1583C6.92396 22.1484 6.9114 22.1407 6.90659 22.137C6.90617 22.1355 6.90563 22.1332 6.90506 22.13C6.9031 22.1189 6.90166 22.1016 6.90166 22.0731C6.90464 18.5871 6.90464 15.1013 6.90166 11.6157L6.90165 11.6118L6.90148 11.6079C6.90028 11.5809 6.90608 11.554 6.91831 11.53C6.93054 11.506 6.94877 11.4856 6.97117 11.471L6.9774 11.4669L6.98326 11.4623C7.76431 10.851 8.52189 10.2 9.18711 9.44236C9.73082 8.82327 10.1968 8.14566 10.4838 7.34032C10.807 6.43393 11.1528 5.53459 11.5019 4.6354L11.5026 4.63348L11.5033 4.63154Z"
+                                                                                                                    stroke="#00BD3E"
+                                                                                                                    stroke-miterlimit="10">
+                                                                                                                </path>
+                                                                                                            </g>
+                                                                                                            <defs>
+                                                                                                                <clipPath
+                                                                                                                    id="clip0_547_25">
+                                                                                                                    <rect
+                                                                                                                        width="22"
+                                                                                                                        height="32"
+                                                                                                                        fill="white">
+                                                                                                                    </rect>
+                                                                                                                </clipPath>
+                                                                                                            </defs>
+                                                                                                        </svg>
+                                                                                                    </a>
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+                                                                                                        <span
+                                                                                                            class="ft-list-block__text ft-helper-fontSize-body-S--small">
+                                                                                                            0
+                                                                                                        </span>
+                                                                                                    </a>
+                                                                                                </li>
+                                                                                                <li
+                                                                                                    class="ft-list-block__item">
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+                                                                                                        <svg class="ft-list-block__icon"
+                                                                                                            width="22"
+                                                                                                            height="32"
+                                                                                                            viewBox="0 0 22 32"
+                                                                                                            fill="none"
+                                                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                                                            <g
+                                                                                                                clip-path="url(#clip0_547_11)">
+                                                                                                                <mask
+                                                                                                                    id="path-1-inside-1_547_11"
+                                                                                                                    fill="white">
+                                                                                                                    <path
+                                                                                                                        fill-rule="evenodd"
+                                                                                                                        clip-rule="evenodd"
+                                                                                                                        d="M18.3132 12.4355L18.3132 21.6516L20.8298 21.6516L20.8298 12.4355L18.3132 12.4355ZM17.143 11.2764C17.1712 11.2751 17.1987 11.2735 17.2257 11.2719C17.2826 11.2685 17.3372 11.2653 17.3918 11.2653L21.1386 11.2653C21.7454 11.2653 22 11.521 22 12.1282L22 21.9741C22 22.5672 21.7448 22.8218 21.1515 22.8218L17.143 22.8218L17.143 11.2764Z">
+                                                                                                                    </path>
+                                                                                                                </mask>
+                                                                                                                <path
+                                                                                                                    d="M18.3132 21.6516L16.3132 21.6516L16.3132 23.6516L18.3132 23.6516L18.3132 21.6516ZM18.3132 12.4355L18.3132 10.4355L16.3132 10.4355L16.3132 12.4355L18.3132 12.4355ZM20.8298 21.6516L20.8298 23.6516L22.8298 23.6516L22.8298 21.6516L20.8298 21.6516ZM20.8298 12.4355L22.8298 12.4355L22.8298 10.4355L20.8298 10.4355L20.8298 12.4355ZM17.143 11.2764L17.0498 9.27857L15.143 9.36754L15.143 11.2764L17.143 11.2764ZM17.2257 11.2719L17.3433 13.2684L17.3433 13.2684L17.2257 11.2719ZM17.143 22.8218L15.143 22.8218L15.143 24.8218L17.143 24.8218L17.143 22.8218ZM20.3132 21.6516L20.3132 12.4355L16.3132 12.4355L16.3132 21.6516L20.3132 21.6516ZM20.8298 19.6516L18.3132 19.6516L18.3132 23.6516L20.8298 23.6516L20.8298 19.6516ZM18.8298 12.4355L18.8298 21.6516L22.8298 21.6516L22.8298 12.4355L18.8298 12.4355ZM17.2362 13.2742C17.2786 13.2722 17.3181 13.2699 17.3433 13.2684L17.1082 9.27533C17.0794 9.27702 17.0639 9.27791 17.0498 9.27857L17.2362 13.2742ZM17.3433 13.2684C17.3582 13.2675 17.3686 13.2669 17.3784 13.2664C17.3878 13.2659 17.3939 13.2656 17.3981 13.2654C17.4069 13.265 17.4031 13.2653 17.3918 13.2653L17.3918 9.26531C17.2683 9.26531 17.1545 9.2726 17.1082 9.27533L17.3433 13.2684ZM17.3918 13.2653L21.1386 13.2653L21.1386 9.26531L17.3918 9.26531L17.3918 13.2653ZM21.1386 13.2653C21.2193 13.2653 20.7894 13.291 20.381 12.8816C19.9736 12.4733 20 12.0451 20 12.1282L24 12.1282C24 11.6041 23.8991 10.7445 23.2127 10.0565C22.5253 9.36745 21.6647 9.26531 21.1386 9.26531L21.1386 13.2653ZM20 12.1282L20 21.9741L24 21.9741L24 12.1282L20 12.1282ZM20 21.9741C20 22.0377 19.979 21.6106 20.385 21.2052C20.7904 20.8003 21.2165 20.8218 21.1515 20.8218L21.1515 24.8218C21.6798 24.8218 22.5302 24.7159 23.2115 24.0355C23.8934 23.3545 24 22.5036 24 21.9741L20 21.9741ZM18.3132 14.4355L20.8298 14.4355L20.8298 10.4355L18.3132 10.4355L18.3132 14.4355ZM21.1515 20.8218L17.143 20.8218L17.143 24.8218L21.1515 24.8218L21.1515 20.8218ZM19.143 22.8218L19.143 11.2764L15.143 11.2764L15.143 22.8218L19.143 22.8218Z"
+                                                                                                                    fill="#FD3700"
+                                                                                                                    mask="url(#path-1-inside-1_547_11)">
+                                                                                                                </path>
+                                                                                                                <path
+                                                                                                                    d="M0.768663 19.9417C0.86674 20.1058 0.984788 20.2536 1.10319 20.3916C1.15314 20.4498 1.20134 20.5043 1.24853 20.5577C1.3001 20.616 1.35047 20.673 1.40064 20.732C1.36768 20.7952 1.33427 20.8619 1.30683 20.9272C0.64699 22.4747 1.79683 24.1241 3.43882 24.1024C4.36045 24.0905 5.28146 24.0934 6.20415 24.0963C6.61316 24.0975 7.0225 24.0988 7.43237 24.0988L7.47621 24.0988C7.46658 24.1471 7.45694 24.1951 7.44735 24.2429C7.40156 24.4709 7.35677 24.694 7.31802 24.9163C7.10283 26.1464 6.88821 27.4004 6.94752 28.6815L6.94756 28.6824C6.96867 29.0951 7.0323 29.5044 7.1374 29.9037C7.23949 30.297 7.4346 30.603 7.70689 30.8224C7.97766 31.0406 8.31455 31.1649 8.68927 31.2142C9.42474 31.3114 10.0181 31.0039 10.4374 30.417L10.4388 30.4151L10.4401 30.4132C10.5981 30.1792 10.7268 29.9263 10.8232 29.6601M0.768663 19.9417L0.917722 19.8501M0.768663 19.9417C0.685228 19.8023 0.633498 19.6498 0.592376 19.5064C0.574855 19.4453 0.559945 19.3889 0.545594 19.3345C0.523888 19.2523 0.503459 19.1749 0.477215 19.0937L0.468545 19.0669L0.468545 18.6631L0.47276 18.644C0.477722 18.6216 0.482521 18.6006 0.487127 18.5805C0.496583 18.5392 0.50523 18.5014 0.51281 18.4615M0.51281 18.4615L0.512589 18.4628L0.684171 18.4938L0.513002 18.4605L0.51281 18.4615ZM0.51281 18.4615C0.611748 17.9013 0.914983 17.3994 1.36222 17.0555M1.36222 17.0555L1.36133 17.0562L1.4685 17.1956L1.36327 17.0547L1.36222 17.0555ZM1.36222 17.0555C1.37947 17.0419 1.39732 17.0282 1.41529 17.0146M1.41529 17.0146C1.44241 17.0636 1.47135 17.1116 1.50206 17.1585L1.64727 17.0607L1.54307 16.9191C1.52514 16.9326 1.50562 16.9471 1.48531 16.9622C1.46256 16.9791 1.43884 16.9967 1.41529 17.0146ZM1.41529 17.0146C0.874258 16.0372 1.05258 14.6693 2.20991 13.9207M2.20991 13.9207C2.21443 13.93 2.21901 13.9392 2.22366 13.9484C2.23547 13.9718 2.24485 13.9923 2.25543 14.0154C2.2624 14.0306 2.26991 14.047 2.27902 14.0662L2.43609 13.9896L2.3512 13.8353C2.30257 13.8627 2.25548 13.8913 2.20991 13.9207ZM2.20991 13.9207C1.73644 12.9528 1.97562 11.8384 2.79713 11.1499C3.12676 10.8739 3.50607 10.7433 3.87461 10.6423L3.89694 10.6362L9.83092 10.6362L9.85374 10.6426C9.89881 10.6552 9.94469 10.6646 9.99104 10.6706M9.99104 10.6706C9.98897 10.6705 9.9869 10.6704 9.98483 10.6703L9.97557 10.8468L9.99669 10.6713C9.9948 10.6711 9.99292 10.6709 9.99104 10.6706ZM9.99104 10.6706C11.7511 10.7661 13.4903 11.104 15.1605 11.6751L15.1613 11.6754L15.1622 11.6756C15.2522 11.7075 15.3375 11.7565 15.3913 11.8464C15.4419 11.9309 15.4469 12.024 15.4469 12.095C15.4439 15.5796 15.4439 19.0642 15.4469 22.5485M15.4469 22.5485C15.4469 22.5471 15.4468 22.5456 15.4468 22.5442L15.2726 22.5521L15.4469 22.552C15.4469 22.5508 15.4469 22.5497 15.4469 22.5485ZM15.4469 22.5485C15.4501 22.6358 15.431 22.7225 15.3914 22.8001C15.3525 22.8766 15.295 22.9418 15.2245 22.9895M15.2245 22.9895C15.2263 22.9882 15.228 22.9868 15.2297 22.9854L15.1232 22.8455L15.2177 22.9941C15.22 22.9926 15.2222 22.9911 15.2245 22.9895ZM15.2245 22.9895C14.4528 23.5939 13.7163 24.2283 13.0732 24.9607C12.5473 25.5595 12.1109 26.1988 11.8441 26.9478C11.5192 27.8585 11.1721 28.7613 10.8232 29.6601M10.8232 29.6601L10.8239 29.6582L10.6603 29.5973L10.8225 29.662L10.8232 29.6601ZM15.096 12.0332L15.095 12.0322M10.4967 29.5364C10.4104 29.775 10.2952 30.0018 10.1538 30.2115C9.80043 30.7049 9.32745 30.9421 8.7341 30.8637C8.40616 30.8206 8.13352 30.7147 7.92374 30.5457C7.71555 30.3779 7.55913 30.14 7.47444 29.8134L7.47427 29.8128C7.37544 29.4374 7.31559 29.0526 7.29571 28.6646C7.23856 27.4291 7.44522 26.2129 7.66127 24.9779C7.69928 24.7598 7.74249 24.5447 7.78768 24.3197C7.81135 24.2019 7.83555 24.0813 7.85984 23.9562L7.90079 23.7454L7.43237 23.7454C7.02486 23.7454 6.61682 23.7441 6.20848 23.7428C5.28441 23.7399 4.35875 23.737 3.43425 23.7489C2.03174 23.7675 1.07217 22.3674 1.62697 21.0671L1.62718 21.0666L1.62738 21.0661C1.65816 20.9927 1.69313 20.9267 1.73198 20.8534C1.75228 20.8151 1.77363 20.7748 1.79601 20.7304C1.7544 20.6823 1.54227 20.3604 1.50059 20.3132C1.45402 20.2605 1.40844 20.2089 1.36619 20.1596C1.25228 20.0268 1.14942 19.8968 1.06673 19.7584C1.00727 19.6591 0.965649 19.5422 0.927102 19.4077C0.914075 19.3623 0.900678 19.3119 0.886745 19.2594C0.865042 19.1777 0.842043 19.0911 0.817135 19.011L0.817135 18.7024C0.819636 18.6914 0.822258 18.6799 0.824943 18.6682C0.835218 18.6232 0.846426 18.5742 0.85534 18.5271L0.855554 18.526L0.855753 18.5249C0.939127 18.0513 1.19549 17.6269 1.57372 17.3365L1.5747 17.3357L1.57567 17.335C1.61206 17.3062 1.6474 17.28 1.68474 17.2523C1.70613 17.2364 1.72819 17.22 1.75147 17.2024L1.88374 17.1024L1.79249 16.963C1.22682 16.0989 1.36944 14.7951 2.52097 14.144L2.66428 14.0629L2.59315 13.913C2.58824 13.9026 2.58245 13.8901 2.57614 13.8763C2.56327 13.8483 2.54821 13.8156 2.53397 13.7874C2.11738 12.962 2.31478 12.0128 3.01922 11.4223C3.28354 11.2011 3.59485 11.0863 3.94335 10.9897L9.78443 10.9897C9.84033 11.0042 9.89713 11.0151 9.95446 11.0222L9.96037 11.0229L9.96632 11.0232C11.6966 11.1166 13.4063 11.4484 15.0482 12.0097C15.076 12.0196 15.0886 12.0273 15.0934 12.0309C15.0938 12.0324 15.0944 12.0347 15.0949 12.0379C15.0969 12.0491 15.0983 12.0664 15.0983 12.0949C15.0954 15.5808 15.0954 19.0667 15.0983 22.5523L15.0983 22.5562L15.0985 22.5601C15.0997 22.5871 15.0939 22.614 15.0817 22.638C15.0695 22.662 15.0512 22.6823 15.0288 22.697L15.0226 22.701L15.0167 22.7056C14.2357 23.317 13.4781 23.968 12.8129 24.7256C12.2692 25.3447 11.8032 26.0223 11.5162 26.8277C11.193 27.734 10.8472 28.6334 10.4981 29.5326L10.4974 29.5345L10.4967 29.5364Z"
+                                                                                                                    stroke="#FD3700"
+                                                                                                                    stroke-miterlimit="10">
+                                                                                                                </path>
+                                                                                                            </g>
+                                                                                                            <defs>
+                                                                                                                <clipPath
+                                                                                                                    id="clip0_547_11">
+                                                                                                                    <rect
+                                                                                                                        width="22"
+                                                                                                                        height="32"
+                                                                                                                        fill="white"
+                                                                                                                        transform="translate(22 32) rotate(-180)">
+                                                                                                                    </rect>
+                                                                                                                </clipPath>
+                                                                                                            </defs>
+                                                                                                        </svg>
+                                                                                                    </a>
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+                                                                                                        <span
+                                                                                                            class="ft-list-block__text ft-helper-fontSize-body-S--small">
+                                                                                                            0
+                                                                                                        </span>
+                                                                                                    </a>
+                                                                                                </li>
+                                                                                            </ul>
+                                                                                        </div>
+                                                                                    </article>
+                                                                                    <article
+                                                                                        class="ft-mol-comment ft-mol-comment--answer">
+                                                                                        <div
+                                                                                            class="ft-mol-comment__left">
+                                                                                            <div class="ft-mol-writer">
+                                                                                                <div
+                                                                                                    class="ft-mol-writer__group">
+                                                                                                    <div
+                                                                                                        class="ft-mol-writer__item">
+                                                                                                        <img src="/cds-statics/assets/img/icons/icon-c-user.svg"
+                                                                                                            alt="avatar"
+                                                                                                            width="60"
+                                                                                                            height="60"
+                                                                                                            class="ft-helper-img-rd">
+                                                                                                        <div
+                                                                                                            class="ft-mol-writer__title">
+                                                                                                            <p
+                                                                                                                class="ft-mol-writer__titleOpinion ft-helper-fontSize-body-L--small ft-helper-fontColor-black">
+                                                                                                                nick_82c716
+                                                                                                            </p>
+                                                                                                            <div
+                                                                                                                class="ft-date">
+                                                                                                                <time
+                                                                                                                    class="ft-date__text"
+                                                                                                                    datetime="2011-11-18T14:54:39+00:00">05
+                                                                                                                    SEPT
+                                                                                                                    2022
+                                                                                                                    -
+                                                                                                                    13:04
+                                                                                                                    CET</time>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div
+                                                                                            class="ft-mol-comment__center">
+                                                                                            #10
+                                                                                        </div>
+                                                                                        <div
+                                                                                            class="ft-mol-comment__right">
+                                                                                            <p
+                                                                                                class="ft-mol-comment__rightTitle">
+                                                                                                <strong>En respuesta a
+                                                                                                    Mariagg33B</strong>
+                                                                                            </p>
+                                                                                            <p
+                                                                                                class="ft-mol-comment__rightText">
+                                                                                                jurisprudencia art 10
+                                                                                                CEDH : "es calidad
+                                                                                                democrática, es
+                                                                                                contraste de opiniones,
+                                                                                                es empoderamiento del
+                                                                                                criterio de los
+                                                                                                ciudadanos que es el
+                                                                                                único que sirve cuando
+                                                                                                se trata de la
+                                                                                                convocatoria electoral".
+                                                                                                volantes de pacientes
+                                                                                                para consultas externas
+                                                                                                en sobres HUSA
+                                                                                            </p>
+                                                                                            <ul class="ft-list-block">
+                                                                                                <li
+                                                                                                    class="ft-list-block__item">
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+                                                                                                        <svg class="ft-list-block__icon"
+                                                                                                            width="18"
+                                                                                                            height="18"
+                                                                                                            viewBox="0 0 24 24"
+                                                                                                            fill="none"
+                                                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                                                            <path
+                                                                                                                fill-rule="evenodd"
+                                                                                                                clip-rule="evenodd"
+                                                                                                                d="M16.4236 2.53201C14.1571 1.71909 11.5187 1.61302 9.1977 2.11152C4.63029 3.09249 2.43896 6.1594 1.78492 9.39422C1.45469 11.0275 1.51949 12.7008 1.88128 14.1575C2.24549 15.6239 2.89469 16.8108 3.67576 17.5285L3.95251 17.7828L3.68697 21.8358L6.88722 20.117L7.208 20.2234C11.2717 21.5708 14.555 20.7795 15.7541 20.3632C19.9649 18.9014 21.6798 16.2705 22.2225 13.7132C22.7794 11.089 22.1126 8.47354 21.423 7.16021L21.4018 7.11979L21.3854 7.07718C20.5208 4.83042 18.6815 3.34183 16.4236 2.53201ZM22.8344 6.47108C21.7612 3.72368 19.5176 1.97367 16.9537 1.0541C14.3853 0.13291 11.4468 0.0225722 8.868 0.576433C3.61429 1.70481 1.00769 5.31568 0.245968 9.08307C-0.131683 10.9509 -0.058817 12.8598 0.357481 14.5359C0.734994 16.0559 1.40824 17.4346 2.33775 18.4133L2.08057 22.3386C2.01723 23.3053 3.0418 23.9645 3.89527 23.5061L7.0388 21.8178C11.3751 23.1593 14.8855 22.3267 16.2691 21.8464C20.9999 20.2041 23.1016 17.1338 23.7584 14.0392C24.3955 11.0371 23.6627 8.07488 22.8344 6.47108Z"
+                                                                                                                fill="black">
+                                                                                                            </path>
+                                                                                                        </svg>
+                                                                                                    </a>
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+                                                                                                        <span
+                                                                                                            class="ft-list-block__text ft-helper-fontSize-body-M--small">
+                                                                                                            Responder
+                                                                                                        </span>
+                                                                                                    </a>
+                                                                                                </li>
+                                                                                                <li
+                                                                                                    class="ft-list-block__item">
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+
+                                                                                                        <svg class="ft-list-block__icon"
+                                                                                                            width="22"
+                                                                                                            height="32"
+                                                                                                            viewBox="0 0 22 32"
+                                                                                                            fill="none"
+                                                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                                                            <g
+                                                                                                                clip-path="url(#clip0_547_25)">
+                                                                                                                <mask
+                                                                                                                    id="path-1-inside-1_547_25"
+                                                                                                                    fill="white">
+                                                                                                                    <path
+                                                                                                                        fill-rule="evenodd"
+                                                                                                                        clip-rule="evenodd"
+                                                                                                                        d="M3.68677 21.7324L3.68677 12.5164H1.17021L1.17021 21.7324H3.68677ZM4.85698 22.8916C4.82876 22.8929 4.80126 22.8945 4.77426 22.8961C4.71745 22.8994 4.66283 22.9027 4.6082 22.9027H0.861374C0.254616 22.9027 0 22.647 0 22.0398L0 12.1939C0 11.6007 0.2552 11.3462 0.848526 11.3462H4.85698L4.85698 22.8916Z">
+                                                                                                                    </path>
+                                                                                                                </mask>
+                                                                                                                <path
+                                                                                                                    d="M3.68677 12.5164H5.68677V10.5164H3.68677V12.5164ZM3.68677 21.7324V23.7324H5.68677L5.68677 21.7324H3.68677ZM1.17021 12.5164L1.17021 10.5164H-0.829787L-0.829787 12.5164H1.17021ZM1.17021 21.7324H-0.829787L-0.829787 23.7324H1.17021L1.17021 21.7324ZM4.85698 22.8916L4.9502 24.8894L6.85698 24.8004V22.8916H4.85698ZM4.77426 22.8961L4.65669 20.8996L4.65668 20.8996L4.77426 22.8961ZM4.85698 11.3462H6.85698V9.34619H4.85698V11.3462ZM1.68677 12.5164L1.68677 21.7324H5.68677L5.68677 12.5164H1.68677ZM1.17021 14.5164H3.68677L3.68677 10.5164H1.17021L1.17021 14.5164ZM3.17021 21.7324L3.17021 12.5164H-0.829787L-0.829787 21.7324H3.17021ZM4.76376 20.8937C4.72142 20.8957 4.68193 20.8981 4.65669 20.8996L4.89182 24.8926C4.92059 24.8909 4.93609 24.8901 4.9502 24.8894L4.76376 20.8937ZM4.65668 20.8996C4.64185 20.9004 4.63139 20.901 4.62161 20.9016C4.61224 20.9021 4.60609 20.9024 4.60187 20.9026C4.5931 20.903 4.59695 20.9027 4.6082 20.9027L4.6082 24.9027C4.73169 24.9027 4.8455 24.8954 4.89183 24.8926L4.65668 20.8996ZM4.6082 20.9027H0.861374L0.861374 24.9027H4.6082L4.6082 20.9027ZM0.861374 20.9027C0.780661 20.9027 1.21056 20.8769 1.619 21.2863C2.0264 21.6947 2 22.1228 2 22.0398H-2C-2 22.5639 -1.89909 23.4235 -1.2127 24.1115C-0.525261 24.8005 0.335329 24.9027 0.861374 24.9027L0.861374 20.9027ZM2 22.0398L2 12.1939H-2L-2 22.0398H2ZM2 12.1939C2 12.1303 2.02102 12.5573 1.61502 12.9628C1.20962 13.3676 0.783549 13.3462 0.848526 13.3462L0.848526 9.34619C0.320177 9.34619 -0.530156 9.45202 -1.21149 10.1324C-1.89342 10.8134 -2 11.6644 -2 12.1939H2ZM3.68677 19.7324H1.17021L1.17021 23.7324H3.68677L3.68677 19.7324ZM0.848526 13.3462H4.85698V9.34619H0.848526L0.848526 13.3462ZM2.85698 11.3462L2.85698 22.8916H6.85698L6.85698 11.3462H2.85698Z"
+                                                                                                                    fill="#00BD3E"
+                                                                                                                    mask="url(#path-1-inside-1_547_25)">
+                                                                                                                </path>
+                                                                                                                <path
+                                                                                                                    d="M21.2313 14.2263C21.1333 14.0621 21.0152 13.9144 20.8968 13.7764C20.8469 13.7181 20.7987 13.6636 20.7515 13.6103C20.6999 13.5519 20.6495 13.495 20.5994 13.436C20.6323 13.3727 20.6657 13.3061 20.6932 13.2408C21.353 11.6933 20.2032 10.0438 18.5612 10.0656C17.6396 10.0775 16.7185 10.0746 15.7959 10.0717C15.3868 10.0704 14.9775 10.0691 14.5676 10.0691H14.5238C14.5334 10.0209 14.5431 9.97289 14.5527 9.9251C14.5984 9.69708 14.6432 9.47399 14.682 9.25168C14.8972 8.0216 15.1118 6.76753 15.0525 5.48646L15.0524 5.48559C15.0313 5.0729 14.9677 4.66357 14.8626 4.2643C14.7605 3.87095 14.5654 3.56494 14.2931 3.34557C14.0223 3.12741 13.6854 3.00304 13.3107 2.95376C12.5753 2.85659 11.9819 3.16406 11.5626 3.75094L11.5612 3.75285L11.5599 3.75479C11.4019 3.98875 11.2732 4.24172 11.1768 4.50785M21.2313 14.2263L21.0823 14.3178M21.2313 14.2263C21.3148 14.3657 21.3665 14.5181 21.4076 14.6615C21.4251 14.7226 21.4401 14.7791 21.4544 14.8335C21.4761 14.9157 21.4965 14.9931 21.5228 15.0743L21.5315 15.1011V15.5049L21.5272 15.5239C21.5223 15.5464 21.5175 15.5674 21.5129 15.5875C21.5034 15.6288 21.4948 15.6666 21.4872 15.7065M21.4872 15.7065L21.4874 15.7052L21.3158 15.6742L21.487 15.7075L21.4872 15.7065ZM21.4872 15.7065C21.3883 16.2667 21.085 16.7686 20.6378 17.1125M20.6378 17.1125L20.6387 17.1118L20.5315 16.9724L20.6367 17.1133L20.6378 17.1125ZM20.6378 17.1125C20.6205 17.1261 20.6027 17.1398 20.5847 17.1534M20.5847 17.1534C20.5576 17.1044 20.5287 17.0564 20.4979 17.0095L20.3527 17.1072L20.4569 17.2489C20.4749 17.2353 20.4944 17.2208 20.5147 17.2058C20.5374 17.1889 20.5612 17.1713 20.5847 17.1534ZM20.5847 17.1534C21.1257 18.1308 20.9474 19.4987 19.7901 20.2472M19.7901 20.2472C19.7856 20.238 19.781 20.2288 19.7763 20.2195C19.7645 20.1962 19.7552 20.1757 19.7446 20.1526C19.7376 20.1374 19.7301 20.1209 19.721 20.1017L19.5639 20.1784L19.6488 20.3327C19.6974 20.3052 19.7445 20.2767 19.7901 20.2472ZM19.7901 20.2472C20.2636 21.2151 20.0244 22.3295 19.2029 23.0181C18.8732 23.2941 18.4939 23.4247 18.1254 23.5257L18.1031 23.5318H12.1691L12.1463 23.5254C12.1012 23.5127 12.0553 23.5034 12.009 23.4974M12.009 23.4974C12.011 23.4975 12.0131 23.4976 12.0152 23.4977L12.0244 23.3212L12.0033 23.4966C12.0052 23.4969 12.0071 23.4971 12.009 23.4974ZM12.009 23.4974C10.2489 23.4019 8.50975 23.0639 6.8395 22.4929L6.83866 22.4926L6.83783 22.4923C6.74777 22.4605 6.66247 22.4115 6.60865 22.3215C6.55811 22.237 6.55307 22.144 6.55307 22.073C6.55605 18.5883 6.55605 15.1038 6.55307 11.6195M6.55307 11.6195C6.55312 11.6209 6.55318 11.6224 6.55324 11.6238L6.72736 11.6158L6.55307 11.616C6.55307 11.6171 6.55307 11.6183 6.55307 11.6195ZM6.55307 11.6195C6.54992 11.5322 6.56902 11.4455 6.60857 11.3678C6.64752 11.2914 6.70496 11.2262 6.77548 11.1784M6.77548 11.1784C6.77374 11.1798 6.772 11.1812 6.77025 11.1825L6.87676 11.3224L6.78235 11.1739C6.78005 11.1754 6.77776 11.1769 6.77548 11.1784ZM6.77548 11.1784C7.54725 10.5741 8.28372 9.93967 8.92675 9.20731C9.45271 8.60844 9.88908 7.96912 10.1559 7.22022C10.4808 6.30943 10.8279 5.40667 11.1768 4.50785M11.1768 4.50785L11.1761 4.50981L11.3397 4.57068L11.1775 4.50595L11.1768 4.50785ZM6.90404 22.1348L6.90503 22.1358M11.5033 4.63154C11.5896 4.39298 11.7048 4.16621 11.8462 3.95644C12.1996 3.46302 12.6726 3.22587 13.2659 3.30429C13.5938 3.34742 13.8665 3.4533 14.0763 3.62231C14.2844 3.79005 14.4409 4.02801 14.5256 4.35455L14.5257 4.35519C14.6246 4.73057 14.6844 5.1154 14.7043 5.5034C14.7614 6.7389 14.5548 7.95505 14.3387 9.19005C14.3007 9.40814 14.2575 9.62329 14.2123 9.84828C14.1887 9.96612 14.1644 10.0867 14.1402 10.2117L14.0992 10.4226H14.5676C14.9751 10.4226 15.3832 10.4239 15.7915 10.4252C16.7156 10.4281 17.6413 10.431 18.5657 10.4191C19.9683 10.4004 20.9278 11.8006 20.373 13.1009L20.3728 13.1014L20.3726 13.1019C20.3418 13.1752 20.3069 13.2412 20.268 13.3146C20.2477 13.3529 20.2264 13.3932 20.204 13.4376C20.2456 13.4857 20.4577 13.8076 20.4994 13.8548C20.546 13.9075 20.5916 13.9591 20.6338 14.0083C20.7477 14.1411 20.8506 14.2712 20.9333 14.4095C20.9927 14.5089 21.0344 14.6258 21.0729 14.7602C21.0859 14.8057 21.0993 14.8561 21.1133 14.9086C21.135 14.9903 21.158 15.0769 21.1829 15.157V15.4655C21.1804 15.4766 21.1777 15.4881 21.1751 15.4998C21.1648 15.5447 21.1536 15.5938 21.1447 15.6408L21.1444 15.642L21.1442 15.6431C21.0609 16.1167 20.8045 16.541 20.4263 16.8315L20.4253 16.8322L20.4243 16.833C20.3879 16.8618 20.3526 16.888 20.3153 16.9157C20.2939 16.9316 20.2718 16.9479 20.2485 16.9655L20.1163 17.0656L20.2075 17.205C20.7732 18.0691 20.6306 19.3729 19.479 20.024L19.3357 20.105L19.4068 20.255C19.4118 20.2653 19.4175 20.2779 19.4239 20.2916C19.4367 20.3196 19.4518 20.3524 19.466 20.3806C19.8826 21.206 19.6852 22.1552 18.9808 22.7457C18.7165 22.9669 18.4052 23.0817 18.0567 23.1783H12.2156C12.1597 23.1637 12.1029 23.1529 12.0455 23.1458L12.0396 23.145L12.0337 23.1447C10.3034 23.0514 8.5937 22.7195 6.95175 22.1583C6.92396 22.1484 6.9114 22.1407 6.90659 22.137C6.90617 22.1355 6.90563 22.1332 6.90506 22.13C6.9031 22.1189 6.90166 22.1016 6.90166 22.0731C6.90464 18.5871 6.90464 15.1013 6.90166 11.6157L6.90165 11.6118L6.90148 11.6079C6.90028 11.5809 6.90608 11.554 6.91831 11.53C6.93054 11.506 6.94877 11.4856 6.97117 11.471L6.9774 11.4669L6.98326 11.4623C7.76431 10.851 8.52189 10.2 9.18711 9.44236C9.73082 8.82327 10.1968 8.14566 10.4838 7.34032C10.807 6.43393 11.1528 5.53459 11.5019 4.6354L11.5026 4.63348L11.5033 4.63154Z"
+                                                                                                                    stroke="#00BD3E"
+                                                                                                                    stroke-miterlimit="10">
+                                                                                                                </path>
+                                                                                                            </g>
+                                                                                                            <defs>
+                                                                                                                <clipPath
+                                                                                                                    id="clip0_547_25">
+                                                                                                                    <rect
+                                                                                                                        width="22"
+                                                                                                                        height="32"
+                                                                                                                        fill="white">
+                                                                                                                    </rect>
+                                                                                                                </clipPath>
+                                                                                                            </defs>
+                                                                                                        </svg>
+                                                                                                    </a>
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+                                                                                                        <span
+                                                                                                            class="ft-list-block__text ft-helper-fontSize-body-S--small">
+                                                                                                            0
+                                                                                                        </span>
+                                                                                                    </a>
+                                                                                                </li>
+                                                                                                <li
+                                                                                                    class="ft-list-block__item">
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+                                                                                                        <svg class="ft-list-block__icon"
+                                                                                                            width="22"
+                                                                                                            height="32"
+                                                                                                            viewBox="0 0 22 32"
+                                                                                                            fill="none"
+                                                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                                                            <g
+                                                                                                                clip-path="url(#clip0_547_11)">
+                                                                                                                <mask
+                                                                                                                    id="path-1-inside-1_547_11"
+                                                                                                                    fill="white">
+                                                                                                                    <path
+                                                                                                                        fill-rule="evenodd"
+                                                                                                                        clip-rule="evenodd"
+                                                                                                                        d="M18.3132 12.4355L18.3132 21.6516L20.8298 21.6516L20.8298 12.4355L18.3132 12.4355ZM17.143 11.2764C17.1712 11.2751 17.1987 11.2735 17.2257 11.2719C17.2826 11.2685 17.3372 11.2653 17.3918 11.2653L21.1386 11.2653C21.7454 11.2653 22 11.521 22 12.1282L22 21.9741C22 22.5672 21.7448 22.8218 21.1515 22.8218L17.143 22.8218L17.143 11.2764Z">
+                                                                                                                    </path>
+                                                                                                                </mask>
+                                                                                                                <path
+                                                                                                                    d="M18.3132 21.6516L16.3132 21.6516L16.3132 23.6516L18.3132 23.6516L18.3132 21.6516ZM18.3132 12.4355L18.3132 10.4355L16.3132 10.4355L16.3132 12.4355L18.3132 12.4355ZM20.8298 21.6516L20.8298 23.6516L22.8298 23.6516L22.8298 21.6516L20.8298 21.6516ZM20.8298 12.4355L22.8298 12.4355L22.8298 10.4355L20.8298 10.4355L20.8298 12.4355ZM17.143 11.2764L17.0498 9.27857L15.143 9.36754L15.143 11.2764L17.143 11.2764ZM17.2257 11.2719L17.3433 13.2684L17.3433 13.2684L17.2257 11.2719ZM17.143 22.8218L15.143 22.8218L15.143 24.8218L17.143 24.8218L17.143 22.8218ZM20.3132 21.6516L20.3132 12.4355L16.3132 12.4355L16.3132 21.6516L20.3132 21.6516ZM20.8298 19.6516L18.3132 19.6516L18.3132 23.6516L20.8298 23.6516L20.8298 19.6516ZM18.8298 12.4355L18.8298 21.6516L22.8298 21.6516L22.8298 12.4355L18.8298 12.4355ZM17.2362 13.2742C17.2786 13.2722 17.3181 13.2699 17.3433 13.2684L17.1082 9.27533C17.0794 9.27702 17.0639 9.27791 17.0498 9.27857L17.2362 13.2742ZM17.3433 13.2684C17.3582 13.2675 17.3686 13.2669 17.3784 13.2664C17.3878 13.2659 17.3939 13.2656 17.3981 13.2654C17.4069 13.265 17.4031 13.2653 17.3918 13.2653L17.3918 9.26531C17.2683 9.26531 17.1545 9.2726 17.1082 9.27533L17.3433 13.2684ZM17.3918 13.2653L21.1386 13.2653L21.1386 9.26531L17.3918 9.26531L17.3918 13.2653ZM21.1386 13.2653C21.2193 13.2653 20.7894 13.291 20.381 12.8816C19.9736 12.4733 20 12.0451 20 12.1282L24 12.1282C24 11.6041 23.8991 10.7445 23.2127 10.0565C22.5253 9.36745 21.6647 9.26531 21.1386 9.26531L21.1386 13.2653ZM20 12.1282L20 21.9741L24 21.9741L24 12.1282L20 12.1282ZM20 21.9741C20 22.0377 19.979 21.6106 20.385 21.2052C20.7904 20.8003 21.2165 20.8218 21.1515 20.8218L21.1515 24.8218C21.6798 24.8218 22.5302 24.7159 23.2115 24.0355C23.8934 23.3545 24 22.5036 24 21.9741L20 21.9741ZM18.3132 14.4355L20.8298 14.4355L20.8298 10.4355L18.3132 10.4355L18.3132 14.4355ZM21.1515 20.8218L17.143 20.8218L17.143 24.8218L21.1515 24.8218L21.1515 20.8218ZM19.143 22.8218L19.143 11.2764L15.143 11.2764L15.143 22.8218L19.143 22.8218Z"
+                                                                                                                    fill="#FD3700"
+                                                                                                                    mask="url(#path-1-inside-1_547_11)">
+                                                                                                                </path>
+                                                                                                                <path
+                                                                                                                    d="M0.768663 19.9417C0.86674 20.1058 0.984788 20.2536 1.10319 20.3916C1.15314 20.4498 1.20134 20.5043 1.24853 20.5577C1.3001 20.616 1.35047 20.673 1.40064 20.732C1.36768 20.7952 1.33427 20.8619 1.30683 20.9272C0.64699 22.4747 1.79683 24.1241 3.43882 24.1024C4.36045 24.0905 5.28146 24.0934 6.20415 24.0963C6.61316 24.0975 7.0225 24.0988 7.43237 24.0988L7.47621 24.0988C7.46658 24.1471 7.45694 24.1951 7.44735 24.2429C7.40156 24.4709 7.35677 24.694 7.31802 24.9163C7.10283 26.1464 6.88821 27.4004 6.94752 28.6815L6.94756 28.6824C6.96867 29.0951 7.0323 29.5044 7.1374 29.9037C7.23949 30.297 7.4346 30.603 7.70689 30.8224C7.97766 31.0406 8.31455 31.1649 8.68927 31.2142C9.42474 31.3114 10.0181 31.0039 10.4374 30.417L10.4388 30.4151L10.4401 30.4132C10.5981 30.1792 10.7268 29.9263 10.8232 29.6601M0.768663 19.9417L0.917722 19.8501M0.768663 19.9417C0.685228 19.8023 0.633498 19.6498 0.592376 19.5064C0.574855 19.4453 0.559945 19.3889 0.545594 19.3345C0.523888 19.2523 0.503459 19.1749 0.477215 19.0937L0.468545 19.0669L0.468545 18.6631L0.47276 18.644C0.477722 18.6216 0.482521 18.6006 0.487127 18.5805C0.496583 18.5392 0.50523 18.5014 0.51281 18.4615M0.51281 18.4615L0.512589 18.4628L0.684171 18.4938L0.513002 18.4605L0.51281 18.4615ZM0.51281 18.4615C0.611748 17.9013 0.914983 17.3994 1.36222 17.0555M1.36222 17.0555L1.36133 17.0562L1.4685 17.1956L1.36327 17.0547L1.36222 17.0555ZM1.36222 17.0555C1.37947 17.0419 1.39732 17.0282 1.41529 17.0146M1.41529 17.0146C1.44241 17.0636 1.47135 17.1116 1.50206 17.1585L1.64727 17.0607L1.54307 16.9191C1.52514 16.9326 1.50562 16.9471 1.48531 16.9622C1.46256 16.9791 1.43884 16.9967 1.41529 17.0146ZM1.41529 17.0146C0.874258 16.0372 1.05258 14.6693 2.20991 13.9207M2.20991 13.9207C2.21443 13.93 2.21901 13.9392 2.22366 13.9484C2.23547 13.9718 2.24485 13.9923 2.25543 14.0154C2.2624 14.0306 2.26991 14.047 2.27902 14.0662L2.43609 13.9896L2.3512 13.8353C2.30257 13.8627 2.25548 13.8913 2.20991 13.9207ZM2.20991 13.9207C1.73644 12.9528 1.97562 11.8384 2.79713 11.1499C3.12676 10.8739 3.50607 10.7433 3.87461 10.6423L3.89694 10.6362L9.83092 10.6362L9.85374 10.6426C9.89881 10.6552 9.94469 10.6646 9.99104 10.6706M9.99104 10.6706C9.98897 10.6705 9.9869 10.6704 9.98483 10.6703L9.97557 10.8468L9.99669 10.6713C9.9948 10.6711 9.99292 10.6709 9.99104 10.6706ZM9.99104 10.6706C11.7511 10.7661 13.4903 11.104 15.1605 11.6751L15.1613 11.6754L15.1622 11.6756C15.2522 11.7075 15.3375 11.7565 15.3913 11.8464C15.4419 11.9309 15.4469 12.024 15.4469 12.095C15.4439 15.5796 15.4439 19.0642 15.4469 22.5485M15.4469 22.5485C15.4469 22.5471 15.4468 22.5456 15.4468 22.5442L15.2726 22.5521L15.4469 22.552C15.4469 22.5508 15.4469 22.5497 15.4469 22.5485ZM15.4469 22.5485C15.4501 22.6358 15.431 22.7225 15.3914 22.8001C15.3525 22.8766 15.295 22.9418 15.2245 22.9895M15.2245 22.9895C15.2263 22.9882 15.228 22.9868 15.2297 22.9854L15.1232 22.8455L15.2177 22.9941C15.22 22.9926 15.2222 22.9911 15.2245 22.9895ZM15.2245 22.9895C14.4528 23.5939 13.7163 24.2283 13.0732 24.9607C12.5473 25.5595 12.1109 26.1988 11.8441 26.9478C11.5192 27.8585 11.1721 28.7613 10.8232 29.6601M10.8232 29.6601L10.8239 29.6582L10.6603 29.5973L10.8225 29.662L10.8232 29.6601ZM15.096 12.0332L15.095 12.0322M10.4967 29.5364C10.4104 29.775 10.2952 30.0018 10.1538 30.2115C9.80043 30.7049 9.32745 30.9421 8.7341 30.8637C8.40616 30.8206 8.13352 30.7147 7.92374 30.5457C7.71555 30.3779 7.55913 30.14 7.47444 29.8134L7.47427 29.8128C7.37544 29.4374 7.31559 29.0526 7.29571 28.6646C7.23856 27.4291 7.44522 26.2129 7.66127 24.9779C7.69928 24.7598 7.74249 24.5447 7.78768 24.3197C7.81135 24.2019 7.83555 24.0813 7.85984 23.9562L7.90079 23.7454L7.43237 23.7454C7.02486 23.7454 6.61682 23.7441 6.20848 23.7428C5.28441 23.7399 4.35875 23.737 3.43425 23.7489C2.03174 23.7675 1.07217 22.3674 1.62697 21.0671L1.62718 21.0666L1.62738 21.0661C1.65816 20.9927 1.69313 20.9267 1.73198 20.8534C1.75228 20.8151 1.77363 20.7748 1.79601 20.7304C1.7544 20.6823 1.54227 20.3604 1.50059 20.3132C1.45402 20.2605 1.40844 20.2089 1.36619 20.1596C1.25228 20.0268 1.14942 19.8968 1.06673 19.7584C1.00727 19.6591 0.965649 19.5422 0.927102 19.4077C0.914075 19.3623 0.900678 19.3119 0.886745 19.2594C0.865042 19.1777 0.842043 19.0911 0.817135 19.011L0.817135 18.7024C0.819636 18.6914 0.822258 18.6799 0.824943 18.6682C0.835218 18.6232 0.846426 18.5742 0.85534 18.5271L0.855554 18.526L0.855753 18.5249C0.939127 18.0513 1.19549 17.6269 1.57372 17.3365L1.5747 17.3357L1.57567 17.335C1.61206 17.3062 1.6474 17.28 1.68474 17.2523C1.70613 17.2364 1.72819 17.22 1.75147 17.2024L1.88374 17.1024L1.79249 16.963C1.22682 16.0989 1.36944 14.7951 2.52097 14.144L2.66428 14.0629L2.59315 13.913C2.58824 13.9026 2.58245 13.8901 2.57614 13.8763C2.56327 13.8483 2.54821 13.8156 2.53397 13.7874C2.11738 12.962 2.31478 12.0128 3.01922 11.4223C3.28354 11.2011 3.59485 11.0863 3.94335 10.9897L9.78443 10.9897C9.84033 11.0042 9.89713 11.0151 9.95446 11.0222L9.96037 11.0229L9.96632 11.0232C11.6966 11.1166 13.4063 11.4484 15.0482 12.0097C15.076 12.0196 15.0886 12.0273 15.0934 12.0309C15.0938 12.0324 15.0944 12.0347 15.0949 12.0379C15.0969 12.0491 15.0983 12.0664 15.0983 12.0949C15.0954 15.5808 15.0954 19.0667 15.0983 22.5523L15.0983 22.5562L15.0985 22.5601C15.0997 22.5871 15.0939 22.614 15.0817 22.638C15.0695 22.662 15.0512 22.6823 15.0288 22.697L15.0226 22.701L15.0167 22.7056C14.2357 23.317 13.4781 23.968 12.8129 24.7256C12.2692 25.3447 11.8032 26.0223 11.5162 26.8277C11.193 27.734 10.8472 28.6334 10.4981 29.5326L10.4974 29.5345L10.4967 29.5364Z"
+                                                                                                                    stroke="#FD3700"
+                                                                                                                    stroke-miterlimit="10">
+                                                                                                                </path>
+                                                                                                            </g>
+                                                                                                            <defs>
+                                                                                                                <clipPath
+                                                                                                                    id="clip0_547_11">
+                                                                                                                    <rect
+                                                                                                                        width="22"
+                                                                                                                        height="32"
+                                                                                                                        fill="white"
+                                                                                                                        transform="translate(22 32) rotate(-180)">
+                                                                                                                    </rect>
+                                                                                                                </clipPath>
+                                                                                                            </defs>
+                                                                                                        </svg>
+                                                                                                    </a>
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+                                                                                                        <span
+                                                                                                            class="ft-list-block__text ft-helper-fontSize-body-S--small">
+                                                                                                            0
+                                                                                                        </span>
+                                                                                                    </a>
+                                                                                                </li>
+                                                                                            </ul>
+                                                                                        </div>
+                                                                                    </article>
+                                                                                    <article
+                                                                                        class="ft-mol-comment ft-mol-comment--answer ft-mol-comment--answer-hasAnswer">
+                                                                                        <div
+                                                                                            class="ft-mol-comment__left">
+                                                                                            <div class="ft-mol-writer">
+                                                                                                <div
+                                                                                                    class="ft-mol-writer__group">
+                                                                                                    <div
+                                                                                                        class="ft-mol-writer__item">
+                                                                                                        <img src="/cds-statics/assets/img/icons/icon-c-user.svg"
+                                                                                                            alt="avatar"
+                                                                                                            width="60"
+                                                                                                            height="60"
+                                                                                                            class="ft-helper-img-rd">
+                                                                                                        <div
+                                                                                                            class="ft-mol-writer__title">
+                                                                                                            <p
+                                                                                                                class="ft-mol-writer__titleOpinion ft-helper-fontSize-body-L--small   ft-helper-fontColor-black">
+                                                                                                                Mariagg33B
+                                                                                                            </p>
+                                                                                                            <div
+                                                                                                                class="ft-date">
+                                                                                                                <time
+                                                                                                                    class="ft-date__text"
+                                                                                                                    datetime="2011-11-18T14:54:39+00:00">05
+                                                                                                                    SEPT
+                                                                                                                    2022
+                                                                                                                    -
+                                                                                                                    13:04
+                                                                                                                    CET</time>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div
+                                                                                            class="ft-mol-comment__center">
+                                                                                            #10
+                                                                                        </div>
+                                                                                        <div
+                                                                                            class="ft-mol-comment__right">
+                                                                                            <p
+                                                                                                class="ft-mol-comment__rightTitle">
+                                                                                                <strong>En respuesta a
+                                                                                                    nick_82c716</strong>
+                                                                                            </p>
+                                                                                            <p
+                                                                                                class="ft-mol-comment__rightText">
+                                                                                                jurisprudencia art 10
+                                                                                                CEDH : "es calidad
+                                                                                                democrática, es
+                                                                                                contraste de opiniones,
+                                                                                                es empoderamiento del
+                                                                                                criterio de los
+                                                                                                ciudadanos que es el
+                                                                                                único que sirve cuando
+                                                                                                se trata de la
+                                                                                                convocatoria electoral".
+                                                                                                volantes de pacientes
+                                                                                                para consultas externas
+                                                                                                en sobres HUSA
+                                                                                            </p>
+                                                                                            <ul class="ft-list-block">
+                                                                                                <li
+                                                                                                    class="ft-list-block__item">
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+                                                                                                        <svg class="ft-list-block__icon"
+                                                                                                            width="18"
+                                                                                                            height="18"
+                                                                                                            viewBox="0 0 24 24"
+                                                                                                            fill="none"
+                                                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                                                            <path
+                                                                                                                fill-rule="evenodd"
+                                                                                                                clip-rule="evenodd"
+                                                                                                                d="M16.4236 2.53201C14.1571 1.71909 11.5187 1.61302 9.1977 2.11152C4.63029 3.09249 2.43896 6.1594 1.78492 9.39422C1.45469 11.0275 1.51949 12.7008 1.88128 14.1575C2.24549 15.6239 2.89469 16.8108 3.67576 17.5285L3.95251 17.7828L3.68697 21.8358L6.88722 20.117L7.208 20.2234C11.2717 21.5708 14.555 20.7795 15.7541 20.3632C19.9649 18.9014 21.6798 16.2705 22.2225 13.7132C22.7794 11.089 22.1126 8.47354 21.423 7.16021L21.4018 7.11979L21.3854 7.07718C20.5208 4.83042 18.6815 3.34183 16.4236 2.53201ZM22.8344 6.47108C21.7612 3.72368 19.5176 1.97367 16.9537 1.0541C14.3853 0.13291 11.4468 0.0225722 8.868 0.576433C3.61429 1.70481 1.00769 5.31568 0.245968 9.08307C-0.131683 10.9509 -0.058817 12.8598 0.357481 14.5359C0.734994 16.0559 1.40824 17.4346 2.33775 18.4133L2.08057 22.3386C2.01723 23.3053 3.0418 23.9645 3.89527 23.5061L7.0388 21.8178C11.3751 23.1593 14.8855 22.3267 16.2691 21.8464C20.9999 20.2041 23.1016 17.1338 23.7584 14.0392C24.3955 11.0371 23.6627 8.07488 22.8344 6.47108Z"
+                                                                                                                fill="black">
+                                                                                                            </path>
+                                                                                                        </svg>
+                                                                                                    </a>
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+                                                                                                        <span
+                                                                                                            class="ft-list-block__text ft-helper-fontSize-body-M--small">
+                                                                                                            Responder
+                                                                                                        </span>
+                                                                                                    </a>
+                                                                                                </li>
+                                                                                                <li
+                                                                                                    class="ft-list-block__item">
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+
+                                                                                                        <svg class="ft-list-block__icon"
+                                                                                                            width="22"
+                                                                                                            height="32"
+                                                                                                            viewBox="0 0 22 32"
+                                                                                                            fill="none"
+                                                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                                                            <g
+                                                                                                                clip-path="url(#clip0_547_25)">
+                                                                                                                <mask
+                                                                                                                    id="path-1-inside-1_547_25"
+                                                                                                                    fill="white">
+                                                                                                                    <path
+                                                                                                                        fill-rule="evenodd"
+                                                                                                                        clip-rule="evenodd"
+                                                                                                                        d="M3.68677 21.7324L3.68677 12.5164H1.17021L1.17021 21.7324H3.68677ZM4.85698 22.8916C4.82876 22.8929 4.80126 22.8945 4.77426 22.8961C4.71745 22.8994 4.66283 22.9027 4.6082 22.9027H0.861374C0.254616 22.9027 0 22.647 0 22.0398L0 12.1939C0 11.6007 0.2552 11.3462 0.848526 11.3462H4.85698L4.85698 22.8916Z">
+                                                                                                                    </path>
+                                                                                                                </mask>
+                                                                                                                <path
+                                                                                                                    d="M3.68677 12.5164H5.68677V10.5164H3.68677V12.5164ZM3.68677 21.7324V23.7324H5.68677L5.68677 21.7324H3.68677ZM1.17021 12.5164L1.17021 10.5164H-0.829787L-0.829787 12.5164H1.17021ZM1.17021 21.7324H-0.829787L-0.829787 23.7324H1.17021L1.17021 21.7324ZM4.85698 22.8916L4.9502 24.8894L6.85698 24.8004V22.8916H4.85698ZM4.77426 22.8961L4.65669 20.8996L4.65668 20.8996L4.77426 22.8961ZM4.85698 11.3462H6.85698V9.34619H4.85698V11.3462ZM1.68677 12.5164L1.68677 21.7324H5.68677L5.68677 12.5164H1.68677ZM1.17021 14.5164H3.68677L3.68677 10.5164H1.17021L1.17021 14.5164ZM3.17021 21.7324L3.17021 12.5164H-0.829787L-0.829787 21.7324H3.17021ZM4.76376 20.8937C4.72142 20.8957 4.68193 20.8981 4.65669 20.8996L4.89182 24.8926C4.92059 24.8909 4.93609 24.8901 4.9502 24.8894L4.76376 20.8937ZM4.65668 20.8996C4.64185 20.9004 4.63139 20.901 4.62161 20.9016C4.61224 20.9021 4.60609 20.9024 4.60187 20.9026C4.5931 20.903 4.59695 20.9027 4.6082 20.9027L4.6082 24.9027C4.73169 24.9027 4.8455 24.8954 4.89183 24.8926L4.65668 20.8996ZM4.6082 20.9027H0.861374L0.861374 24.9027H4.6082L4.6082 20.9027ZM0.861374 20.9027C0.780661 20.9027 1.21056 20.8769 1.619 21.2863C2.0264 21.6947 2 22.1228 2 22.0398H-2C-2 22.5639 -1.89909 23.4235 -1.2127 24.1115C-0.525261 24.8005 0.335329 24.9027 0.861374 24.9027L0.861374 20.9027ZM2 22.0398L2 12.1939H-2L-2 22.0398H2ZM2 12.1939C2 12.1303 2.02102 12.5573 1.61502 12.9628C1.20962 13.3676 0.783549 13.3462 0.848526 13.3462L0.848526 9.34619C0.320177 9.34619 -0.530156 9.45202 -1.21149 10.1324C-1.89342 10.8134 -2 11.6644 -2 12.1939H2ZM3.68677 19.7324H1.17021L1.17021 23.7324H3.68677L3.68677 19.7324ZM0.848526 13.3462H4.85698V9.34619H0.848526L0.848526 13.3462ZM2.85698 11.3462L2.85698 22.8916H6.85698L6.85698 11.3462H2.85698Z"
+                                                                                                                    fill="#00BD3E"
+                                                                                                                    mask="url(#path-1-inside-1_547_25)">
+                                                                                                                </path>
+                                                                                                                <path
+                                                                                                                    d="M21.2313 14.2263C21.1333 14.0621 21.0152 13.9144 20.8968 13.7764C20.8469 13.7181 20.7987 13.6636 20.7515 13.6103C20.6999 13.5519 20.6495 13.495 20.5994 13.436C20.6323 13.3727 20.6657 13.3061 20.6932 13.2408C21.353 11.6933 20.2032 10.0438 18.5612 10.0656C17.6396 10.0775 16.7185 10.0746 15.7959 10.0717C15.3868 10.0704 14.9775 10.0691 14.5676 10.0691H14.5238C14.5334 10.0209 14.5431 9.97289 14.5527 9.9251C14.5984 9.69708 14.6432 9.47399 14.682 9.25168C14.8972 8.0216 15.1118 6.76753 15.0525 5.48646L15.0524 5.48559C15.0313 5.0729 14.9677 4.66357 14.8626 4.2643C14.7605 3.87095 14.5654 3.56494 14.2931 3.34557C14.0223 3.12741 13.6854 3.00304 13.3107 2.95376C12.5753 2.85659 11.9819 3.16406 11.5626 3.75094L11.5612 3.75285L11.5599 3.75479C11.4019 3.98875 11.2732 4.24172 11.1768 4.50785M21.2313 14.2263L21.0823 14.3178M21.2313 14.2263C21.3148 14.3657 21.3665 14.5181 21.4076 14.6615C21.4251 14.7226 21.4401 14.7791 21.4544 14.8335C21.4761 14.9157 21.4965 14.9931 21.5228 15.0743L21.5315 15.1011V15.5049L21.5272 15.5239C21.5223 15.5464 21.5175 15.5674 21.5129 15.5875C21.5034 15.6288 21.4948 15.6666 21.4872 15.7065M21.4872 15.7065L21.4874 15.7052L21.3158 15.6742L21.487 15.7075L21.4872 15.7065ZM21.4872 15.7065C21.3883 16.2667 21.085 16.7686 20.6378 17.1125M20.6378 17.1125L20.6387 17.1118L20.5315 16.9724L20.6367 17.1133L20.6378 17.1125ZM20.6378 17.1125C20.6205 17.1261 20.6027 17.1398 20.5847 17.1534M20.5847 17.1534C20.5576 17.1044 20.5287 17.0564 20.4979 17.0095L20.3527 17.1072L20.4569 17.2489C20.4749 17.2353 20.4944 17.2208 20.5147 17.2058C20.5374 17.1889 20.5612 17.1713 20.5847 17.1534ZM20.5847 17.1534C21.1257 18.1308 20.9474 19.4987 19.7901 20.2472M19.7901 20.2472C19.7856 20.238 19.781 20.2288 19.7763 20.2195C19.7645 20.1962 19.7552 20.1757 19.7446 20.1526C19.7376 20.1374 19.7301 20.1209 19.721 20.1017L19.5639 20.1784L19.6488 20.3327C19.6974 20.3052 19.7445 20.2767 19.7901 20.2472ZM19.7901 20.2472C20.2636 21.2151 20.0244 22.3295 19.2029 23.0181C18.8732 23.2941 18.4939 23.4247 18.1254 23.5257L18.1031 23.5318H12.1691L12.1463 23.5254C12.1012 23.5127 12.0553 23.5034 12.009 23.4974M12.009 23.4974C12.011 23.4975 12.0131 23.4976 12.0152 23.4977L12.0244 23.3212L12.0033 23.4966C12.0052 23.4969 12.0071 23.4971 12.009 23.4974ZM12.009 23.4974C10.2489 23.4019 8.50975 23.0639 6.8395 22.4929L6.83866 22.4926L6.83783 22.4923C6.74777 22.4605 6.66247 22.4115 6.60865 22.3215C6.55811 22.237 6.55307 22.144 6.55307 22.073C6.55605 18.5883 6.55605 15.1038 6.55307 11.6195M6.55307 11.6195C6.55312 11.6209 6.55318 11.6224 6.55324 11.6238L6.72736 11.6158L6.55307 11.616C6.55307 11.6171 6.55307 11.6183 6.55307 11.6195ZM6.55307 11.6195C6.54992 11.5322 6.56902 11.4455 6.60857 11.3678C6.64752 11.2914 6.70496 11.2262 6.77548 11.1784M6.77548 11.1784C6.77374 11.1798 6.772 11.1812 6.77025 11.1825L6.87676 11.3224L6.78235 11.1739C6.78005 11.1754 6.77776 11.1769 6.77548 11.1784ZM6.77548 11.1784C7.54725 10.5741 8.28372 9.93967 8.92675 9.20731C9.45271 8.60844 9.88908 7.96912 10.1559 7.22022C10.4808 6.30943 10.8279 5.40667 11.1768 4.50785M11.1768 4.50785L11.1761 4.50981L11.3397 4.57068L11.1775 4.50595L11.1768 4.50785ZM6.90404 22.1348L6.90503 22.1358M11.5033 4.63154C11.5896 4.39298 11.7048 4.16621 11.8462 3.95644C12.1996 3.46302 12.6726 3.22587 13.2659 3.30429C13.5938 3.34742 13.8665 3.4533 14.0763 3.62231C14.2844 3.79005 14.4409 4.02801 14.5256 4.35455L14.5257 4.35519C14.6246 4.73057 14.6844 5.1154 14.7043 5.5034C14.7614 6.7389 14.5548 7.95505 14.3387 9.19005C14.3007 9.40814 14.2575 9.62329 14.2123 9.84828C14.1887 9.96612 14.1644 10.0867 14.1402 10.2117L14.0992 10.4226H14.5676C14.9751 10.4226 15.3832 10.4239 15.7915 10.4252C16.7156 10.4281 17.6413 10.431 18.5657 10.4191C19.9683 10.4004 20.9278 11.8006 20.373 13.1009L20.3728 13.1014L20.3726 13.1019C20.3418 13.1752 20.3069 13.2412 20.268 13.3146C20.2477 13.3529 20.2264 13.3932 20.204 13.4376C20.2456 13.4857 20.4577 13.8076 20.4994 13.8548C20.546 13.9075 20.5916 13.9591 20.6338 14.0083C20.7477 14.1411 20.8506 14.2712 20.9333 14.4095C20.9927 14.5089 21.0344 14.6258 21.0729 14.7602C21.0859 14.8057 21.0993 14.8561 21.1133 14.9086C21.135 14.9903 21.158 15.0769 21.1829 15.157V15.4655C21.1804 15.4766 21.1777 15.4881 21.1751 15.4998C21.1648 15.5447 21.1536 15.5938 21.1447 15.6408L21.1444 15.642L21.1442 15.6431C21.0609 16.1167 20.8045 16.541 20.4263 16.8315L20.4253 16.8322L20.4243 16.833C20.3879 16.8618 20.3526 16.888 20.3153 16.9157C20.2939 16.9316 20.2718 16.9479 20.2485 16.9655L20.1163 17.0656L20.2075 17.205C20.7732 18.0691 20.6306 19.3729 19.479 20.024L19.3357 20.105L19.4068 20.255C19.4118 20.2653 19.4175 20.2779 19.4239 20.2916C19.4367 20.3196 19.4518 20.3524 19.466 20.3806C19.8826 21.206 19.6852 22.1552 18.9808 22.7457C18.7165 22.9669 18.4052 23.0817 18.0567 23.1783H12.2156C12.1597 23.1637 12.1029 23.1529 12.0455 23.1458L12.0396 23.145L12.0337 23.1447C10.3034 23.0514 8.5937 22.7195 6.95175 22.1583C6.92396 22.1484 6.9114 22.1407 6.90659 22.137C6.90617 22.1355 6.90563 22.1332 6.90506 22.13C6.9031 22.1189 6.90166 22.1016 6.90166 22.0731C6.90464 18.5871 6.90464 15.1013 6.90166 11.6157L6.90165 11.6118L6.90148 11.6079C6.90028 11.5809 6.90608 11.554 6.91831 11.53C6.93054 11.506 6.94877 11.4856 6.97117 11.471L6.9774 11.4669L6.98326 11.4623C7.76431 10.851 8.52189 10.2 9.18711 9.44236C9.73082 8.82327 10.1968 8.14566 10.4838 7.34032C10.807 6.43393 11.1528 5.53459 11.5019 4.6354L11.5026 4.63348L11.5033 4.63154Z"
+                                                                                                                    stroke="#00BD3E"
+                                                                                                                    stroke-miterlimit="10">
+                                                                                                                </path>
+                                                                                                            </g>
+                                                                                                            <defs>
+                                                                                                                <clipPath
+                                                                                                                    id="clip0_547_25">
+                                                                                                                    <rect
+                                                                                                                        width="22"
+                                                                                                                        height="32"
+                                                                                                                        fill="white">
+                                                                                                                    </rect>
+                                                                                                                </clipPath>
+                                                                                                            </defs>
+                                                                                                        </svg>
+                                                                                                    </a>
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+                                                                                                        <span
+                                                                                                            class="ft-list-block__text ft-helper-fontSize-body-S--small">
+                                                                                                            0
+                                                                                                        </span>
+                                                                                                    </a>
+                                                                                                </li>
+                                                                                                <li
+                                                                                                    class="ft-list-block__item">
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+                                                                                                        <svg class="ft-list-block__icon"
+                                                                                                            width="22"
+                                                                                                            height="32"
+                                                                                                            viewBox="0 0 22 32"
+                                                                                                            fill="none"
+                                                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                                                            <g
+                                                                                                                clip-path="url(#clip0_547_11)">
+                                                                                                                <mask
+                                                                                                                    id="path-1-inside-1_547_11"
+                                                                                                                    fill="white">
+                                                                                                                    <path
+                                                                                                                        fill-rule="evenodd"
+                                                                                                                        clip-rule="evenodd"
+                                                                                                                        d="M18.3132 12.4355L18.3132 21.6516L20.8298 21.6516L20.8298 12.4355L18.3132 12.4355ZM17.143 11.2764C17.1712 11.2751 17.1987 11.2735 17.2257 11.2719C17.2826 11.2685 17.3372 11.2653 17.3918 11.2653L21.1386 11.2653C21.7454 11.2653 22 11.521 22 12.1282L22 21.9741C22 22.5672 21.7448 22.8218 21.1515 22.8218L17.143 22.8218L17.143 11.2764Z">
+                                                                                                                    </path>
+                                                                                                                </mask>
+                                                                                                                <path
+                                                                                                                    d="M18.3132 21.6516L16.3132 21.6516L16.3132 23.6516L18.3132 23.6516L18.3132 21.6516ZM18.3132 12.4355L18.3132 10.4355L16.3132 10.4355L16.3132 12.4355L18.3132 12.4355ZM20.8298 21.6516L20.8298 23.6516L22.8298 23.6516L22.8298 21.6516L20.8298 21.6516ZM20.8298 12.4355L22.8298 12.4355L22.8298 10.4355L20.8298 10.4355L20.8298 12.4355ZM17.143 11.2764L17.0498 9.27857L15.143 9.36754L15.143 11.2764L17.143 11.2764ZM17.2257 11.2719L17.3433 13.2684L17.3433 13.2684L17.2257 11.2719ZM17.143 22.8218L15.143 22.8218L15.143 24.8218L17.143 24.8218L17.143 22.8218ZM20.3132 21.6516L20.3132 12.4355L16.3132 12.4355L16.3132 21.6516L20.3132 21.6516ZM20.8298 19.6516L18.3132 19.6516L18.3132 23.6516L20.8298 23.6516L20.8298 19.6516ZM18.8298 12.4355L18.8298 21.6516L22.8298 21.6516L22.8298 12.4355L18.8298 12.4355ZM17.2362 13.2742C17.2786 13.2722 17.3181 13.2699 17.3433 13.2684L17.1082 9.27533C17.0794 9.27702 17.0639 9.27791 17.0498 9.27857L17.2362 13.2742ZM17.3433 13.2684C17.3582 13.2675 17.3686 13.2669 17.3784 13.2664C17.3878 13.2659 17.3939 13.2656 17.3981 13.2654C17.4069 13.265 17.4031 13.2653 17.3918 13.2653L17.3918 9.26531C17.2683 9.26531 17.1545 9.2726 17.1082 9.27533L17.3433 13.2684ZM17.3918 13.2653L21.1386 13.2653L21.1386 9.26531L17.3918 9.26531L17.3918 13.2653ZM21.1386 13.2653C21.2193 13.2653 20.7894 13.291 20.381 12.8816C19.9736 12.4733 20 12.0451 20 12.1282L24 12.1282C24 11.6041 23.8991 10.7445 23.2127 10.0565C22.5253 9.36745 21.6647 9.26531 21.1386 9.26531L21.1386 13.2653ZM20 12.1282L20 21.9741L24 21.9741L24 12.1282L20 12.1282ZM20 21.9741C20 22.0377 19.979 21.6106 20.385 21.2052C20.7904 20.8003 21.2165 20.8218 21.1515 20.8218L21.1515 24.8218C21.6798 24.8218 22.5302 24.7159 23.2115 24.0355C23.8934 23.3545 24 22.5036 24 21.9741L20 21.9741ZM18.3132 14.4355L20.8298 14.4355L20.8298 10.4355L18.3132 10.4355L18.3132 14.4355ZM21.1515 20.8218L17.143 20.8218L17.143 24.8218L21.1515 24.8218L21.1515 20.8218ZM19.143 22.8218L19.143 11.2764L15.143 11.2764L15.143 22.8218L19.143 22.8218Z"
+                                                                                                                    fill="#FD3700"
+                                                                                                                    mask="url(#path-1-inside-1_547_11)">
+                                                                                                                </path>
+                                                                                                                <path
+                                                                                                                    d="M0.768663 19.9417C0.86674 20.1058 0.984788 20.2536 1.10319 20.3916C1.15314 20.4498 1.20134 20.5043 1.24853 20.5577C1.3001 20.616 1.35047 20.673 1.40064 20.732C1.36768 20.7952 1.33427 20.8619 1.30683 20.9272C0.64699 22.4747 1.79683 24.1241 3.43882 24.1024C4.36045 24.0905 5.28146 24.0934 6.20415 24.0963C6.61316 24.0975 7.0225 24.0988 7.43237 24.0988L7.47621 24.0988C7.46658 24.1471 7.45694 24.1951 7.44735 24.2429C7.40156 24.4709 7.35677 24.694 7.31802 24.9163C7.10283 26.1464 6.88821 27.4004 6.94752 28.6815L6.94756 28.6824C6.96867 29.0951 7.0323 29.5044 7.1374 29.9037C7.23949 30.297 7.4346 30.603 7.70689 30.8224C7.97766 31.0406 8.31455 31.1649 8.68927 31.2142C9.42474 31.3114 10.0181 31.0039 10.4374 30.417L10.4388 30.4151L10.4401 30.4132C10.5981 30.1792 10.7268 29.9263 10.8232 29.6601M0.768663 19.9417L0.917722 19.8501M0.768663 19.9417C0.685228 19.8023 0.633498 19.6498 0.592376 19.5064C0.574855 19.4453 0.559945 19.3889 0.545594 19.3345C0.523888 19.2523 0.503459 19.1749 0.477215 19.0937L0.468545 19.0669L0.468545 18.6631L0.47276 18.644C0.477722 18.6216 0.482521 18.6006 0.487127 18.5805C0.496583 18.5392 0.50523 18.5014 0.51281 18.4615M0.51281 18.4615L0.512589 18.4628L0.684171 18.4938L0.513002 18.4605L0.51281 18.4615ZM0.51281 18.4615C0.611748 17.9013 0.914983 17.3994 1.36222 17.0555M1.36222 17.0555L1.36133 17.0562L1.4685 17.1956L1.36327 17.0547L1.36222 17.0555ZM1.36222 17.0555C1.37947 17.0419 1.39732 17.0282 1.41529 17.0146M1.41529 17.0146C1.44241 17.0636 1.47135 17.1116 1.50206 17.1585L1.64727 17.0607L1.54307 16.9191C1.52514 16.9326 1.50562 16.9471 1.48531 16.9622C1.46256 16.9791 1.43884 16.9967 1.41529 17.0146ZM1.41529 17.0146C0.874258 16.0372 1.05258 14.6693 2.20991 13.9207M2.20991 13.9207C2.21443 13.93 2.21901 13.9392 2.22366 13.9484C2.23547 13.9718 2.24485 13.9923 2.25543 14.0154C2.2624 14.0306 2.26991 14.047 2.27902 14.0662L2.43609 13.9896L2.3512 13.8353C2.30257 13.8627 2.25548 13.8913 2.20991 13.9207ZM2.20991 13.9207C1.73644 12.9528 1.97562 11.8384 2.79713 11.1499C3.12676 10.8739 3.50607 10.7433 3.87461 10.6423L3.89694 10.6362L9.83092 10.6362L9.85374 10.6426C9.89881 10.6552 9.94469 10.6646 9.99104 10.6706M9.99104 10.6706C9.98897 10.6705 9.9869 10.6704 9.98483 10.6703L9.97557 10.8468L9.99669 10.6713C9.9948 10.6711 9.99292 10.6709 9.99104 10.6706ZM9.99104 10.6706C11.7511 10.7661 13.4903 11.104 15.1605 11.6751L15.1613 11.6754L15.1622 11.6756C15.2522 11.7075 15.3375 11.7565 15.3913 11.8464C15.4419 11.9309 15.4469 12.024 15.4469 12.095C15.4439 15.5796 15.4439 19.0642 15.4469 22.5485M15.4469 22.5485C15.4469 22.5471 15.4468 22.5456 15.4468 22.5442L15.2726 22.5521L15.4469 22.552C15.4469 22.5508 15.4469 22.5497 15.4469 22.5485ZM15.4469 22.5485C15.4501 22.6358 15.431 22.7225 15.3914 22.8001C15.3525 22.8766 15.295 22.9418 15.2245 22.9895M15.2245 22.9895C15.2263 22.9882 15.228 22.9868 15.2297 22.9854L15.1232 22.8455L15.2177 22.9941C15.22 22.9926 15.2222 22.9911 15.2245 22.9895ZM15.2245 22.9895C14.4528 23.5939 13.7163 24.2283 13.0732 24.9607C12.5473 25.5595 12.1109 26.1988 11.8441 26.9478C11.5192 27.8585 11.1721 28.7613 10.8232 29.6601M10.8232 29.6601L10.8239 29.6582L10.6603 29.5973L10.8225 29.662L10.8232 29.6601ZM15.096 12.0332L15.095 12.0322M10.4967 29.5364C10.4104 29.775 10.2952 30.0018 10.1538 30.2115C9.80043 30.7049 9.32745 30.9421 8.7341 30.8637C8.40616 30.8206 8.13352 30.7147 7.92374 30.5457C7.71555 30.3779 7.55913 30.14 7.47444 29.8134L7.47427 29.8128C7.37544 29.4374 7.31559 29.0526 7.29571 28.6646C7.23856 27.4291 7.44522 26.2129 7.66127 24.9779C7.69928 24.7598 7.74249 24.5447 7.78768 24.3197C7.81135 24.2019 7.83555 24.0813 7.85984 23.9562L7.90079 23.7454L7.43237 23.7454C7.02486 23.7454 6.61682 23.7441 6.20848 23.7428C5.28441 23.7399 4.35875 23.737 3.43425 23.7489C2.03174 23.7675 1.07217 22.3674 1.62697 21.0671L1.62718 21.0666L1.62738 21.0661C1.65816 20.9927 1.69313 20.9267 1.73198 20.8534C1.75228 20.8151 1.77363 20.7748 1.79601 20.7304C1.7544 20.6823 1.54227 20.3604 1.50059 20.3132C1.45402 20.2605 1.40844 20.2089 1.36619 20.1596C1.25228 20.0268 1.14942 19.8968 1.06673 19.7584C1.00727 19.6591 0.965649 19.5422 0.927102 19.4077C0.914075 19.3623 0.900678 19.3119 0.886745 19.2594C0.865042 19.1777 0.842043 19.0911 0.817135 19.011L0.817135 18.7024C0.819636 18.6914 0.822258 18.6799 0.824943 18.6682C0.835218 18.6232 0.846426 18.5742 0.85534 18.5271L0.855554 18.526L0.855753 18.5249C0.939127 18.0513 1.19549 17.6269 1.57372 17.3365L1.5747 17.3357L1.57567 17.335C1.61206 17.3062 1.6474 17.28 1.68474 17.2523C1.70613 17.2364 1.72819 17.22 1.75147 17.2024L1.88374 17.1024L1.79249 16.963C1.22682 16.0989 1.36944 14.7951 2.52097 14.144L2.66428 14.0629L2.59315 13.913C2.58824 13.9026 2.58245 13.8901 2.57614 13.8763C2.56327 13.8483 2.54821 13.8156 2.53397 13.7874C2.11738 12.962 2.31478 12.0128 3.01922 11.4223C3.28354 11.2011 3.59485 11.0863 3.94335 10.9897L9.78443 10.9897C9.84033 11.0042 9.89713 11.0151 9.95446 11.0222L9.96037 11.0229L9.96632 11.0232C11.6966 11.1166 13.4063 11.4484 15.0482 12.0097C15.076 12.0196 15.0886 12.0273 15.0934 12.0309C15.0938 12.0324 15.0944 12.0347 15.0949 12.0379C15.0969 12.0491 15.0983 12.0664 15.0983 12.0949C15.0954 15.5808 15.0954 19.0667 15.0983 22.5523L15.0983 22.5562L15.0985 22.5601C15.0997 22.5871 15.0939 22.614 15.0817 22.638C15.0695 22.662 15.0512 22.6823 15.0288 22.697L15.0226 22.701L15.0167 22.7056C14.2357 23.317 13.4781 23.968 12.8129 24.7256C12.2692 25.3447 11.8032 26.0223 11.5162 26.8277C11.193 27.734 10.8472 28.6334 10.4981 29.5326L10.4974 29.5345L10.4967 29.5364Z"
+                                                                                                                    stroke="#FD3700"
+                                                                                                                    stroke-miterlimit="10">
+                                                                                                                </path>
+                                                                                                            </g>
+                                                                                                            <defs>
+                                                                                                                <clipPath
+                                                                                                                    id="clip0_547_11">
+                                                                                                                    <rect
+                                                                                                                        width="22"
+                                                                                                                        height="32"
+                                                                                                                        fill="white"
+                                                                                                                        transform="translate(22 32) rotate(-180)">
+                                                                                                                    </rect>
+                                                                                                                </clipPath>
+                                                                                                            </defs>
+                                                                                                        </svg>
+                                                                                                    </a>
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+                                                                                                        <span
+                                                                                                            class="ft-list-block__text ft-helper-fontSize-body-S--small">
+                                                                                                            0
+                                                                                                        </span>
+                                                                                                    </a>
+                                                                                                </li>
+                                                                                            </ul>
+                                                                                        </div>
+                                                                                    </article>
+                                                                                    <article class="ft-mol-comment">
+                                                                                        <div
+                                                                                            class="ft-mol-comment__left">
+                                                                                            <div class="ft-mol-writer">
+                                                                                                <div
+                                                                                                    class="ft-mol-writer__group">
+                                                                                                    <div
+                                                                                                        class="ft-mol-writer__item">
+                                                                                                        <img src="/cds-statics/assets/img/icons/icon-c-user.svg"
+                                                                                                            alt="avatar"
+                                                                                                            width="60"
+                                                                                                            height="60"
+                                                                                                            class="ft-helper-img-rd">
+                                                                                                        <div
+                                                                                                            class="ft-mol-writer__title">
+                                                                                                            <p
+                                                                                                                class="ft-mol-writer__titleOpinion ft-helper-fontSize-body-L--small">
+                                                                                                                <a href="#"
+                                                                                                                    class="ft-link ft-link--primary"
+                                                                                                                    title="link title"
+                                                                                                                    target="_self">
+                                                                                                                    Mariagg33B</a>
+                                                                                                            </p>
+                                                                                                            <p
+                                                                                                                class="ft-mol-writer__titleOpinion ft-helper-fontSize-body-M--small ft-helper-fontColor-primary">
+                                                                                                                <a class="ft-link ft-link--secondary"
+                                                                                                                    href="#">
+                                                                                                                    Cambiar
+                                                                                                                    tu
+                                                                                                                    avatar
+                                                                                                                </a>
+                                                                                                            </p>
+                                                                                                            <div
+                                                                                                                class="ft-date">
+                                                                                                                <time
+                                                                                                                    class="ft-date__text"
+                                                                                                                    datetime="2011-11-18T14:54:39+00:00">05
+                                                                                                                    SEPT
+                                                                                                                    2022
+                                                                                                                    -
+                                                                                                                    13:04
+                                                                                                                    CET</time>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div
+                                                                                            class="ft-mol-comment__center">
+                                                                                            #10
+                                                                                        </div>
+                                                                                        <div
+                                                                                            class="ft-mol-comment__right">
+                                                                                            <p
+                                                                                                class="ft-mol-comment__rightText">
+                                                                                                jurisprudencia art 10
+                                                                                                CEDH : "es calidad
+                                                                                                democrática, es
+                                                                                                contraste de opiniones,
+                                                                                                es empoderamiento del
+                                                                                                criterio de los
+                                                                                                ciudadanos que es el
+                                                                                                único que sirve cuando
+                                                                                                se trata de la
+                                                                                                convocatoria electoral".
+                                                                                                volantes de pacientes
+                                                                                                para consultas externas
+                                                                                                en sobres HUSA
+                                                                                            </p>
+                                                                                            <ul class="ft-list-block">
+                                                                                                <li
+                                                                                                    class="ft-list-block__item">
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+                                                                                                        <svg class="ft-list-block__icon"
+                                                                                                            width="18"
+                                                                                                            height="18"
+                                                                                                            viewBox="0 0 24 24"
+                                                                                                            fill="none"
+                                                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                                                            <path
+                                                                                                                fill-rule="evenodd"
+                                                                                                                clip-rule="evenodd"
+                                                                                                                d="M16.4236 2.53201C14.1571 1.71909 11.5187 1.61302 9.1977 2.11152C4.63029 3.09249 2.43896 6.1594 1.78492 9.39422C1.45469 11.0275 1.51949 12.7008 1.88128 14.1575C2.24549 15.6239 2.89469 16.8108 3.67576 17.5285L3.95251 17.7828L3.68697 21.8358L6.88722 20.117L7.208 20.2234C11.2717 21.5708 14.555 20.7795 15.7541 20.3632C19.9649 18.9014 21.6798 16.2705 22.2225 13.7132C22.7794 11.089 22.1126 8.47354 21.423 7.16021L21.4018 7.11979L21.3854 7.07718C20.5208 4.83042 18.6815 3.34183 16.4236 2.53201ZM22.8344 6.47108C21.7612 3.72368 19.5176 1.97367 16.9537 1.0541C14.3853 0.13291 11.4468 0.0225722 8.868 0.576433C3.61429 1.70481 1.00769 5.31568 0.245968 9.08307C-0.131683 10.9509 -0.058817 12.8598 0.357481 14.5359C0.734994 16.0559 1.40824 17.4346 2.33775 18.4133L2.08057 22.3386C2.01723 23.3053 3.0418 23.9645 3.89527 23.5061L7.0388 21.8178C11.3751 23.1593 14.8855 22.3267 16.2691 21.8464C20.9999 20.2041 23.1016 17.1338 23.7584 14.0392C24.3955 11.0371 23.6627 8.07488 22.8344 6.47108Z"
+                                                                                                                fill="black">
+                                                                                                            </path>
+                                                                                                        </svg>
+                                                                                                    </a>
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+                                                                                                        <span
+                                                                                                            class="ft-list-block__text ft-helper-fontSize-body-M--small">
+                                                                                                            Responder
+                                                                                                        </span>
+                                                                                                    </a>
+                                                                                                </li>
+                                                                                                <li
+                                                                                                    class="ft-list-block__item">
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+                                                                                                        <svg class="ft-list-block__icon"
+                                                                                                            width="22"
+                                                                                                            height="32"
+                                                                                                            viewBox="0 0 22 32"
+                                                                                                            fill="none"
+                                                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                                                            <g
+                                                                                                                clip-path="url(#clip0_547_25)">
+                                                                                                                <mask
+                                                                                                                    id="path-1-inside-1_547_25"
+                                                                                                                    fill="white">
+                                                                                                                    <path
+                                                                                                                        fill-rule="evenodd"
+                                                                                                                        clip-rule="evenodd"
+                                                                                                                        d="M3.68677 21.7324L3.68677 12.5164H1.17021L1.17021 21.7324H3.68677ZM4.85698 22.8916C4.82876 22.8929 4.80126 22.8945 4.77426 22.8961C4.71745 22.8994 4.66283 22.9027 4.6082 22.9027H0.861374C0.254616 22.9027 0 22.647 0 22.0398L0 12.1939C0 11.6007 0.2552 11.3462 0.848526 11.3462H4.85698L4.85698 22.8916Z">
+                                                                                                                    </path>
+                                                                                                                </mask>
+                                                                                                                <path
+                                                                                                                    d="M3.68677 12.5164H5.68677V10.5164H3.68677V12.5164ZM3.68677 21.7324V23.7324H5.68677L5.68677 21.7324H3.68677ZM1.17021 12.5164L1.17021 10.5164H-0.829787L-0.829787 12.5164H1.17021ZM1.17021 21.7324H-0.829787L-0.829787 23.7324H1.17021L1.17021 21.7324ZM4.85698 22.8916L4.9502 24.8894L6.85698 24.8004V22.8916H4.85698ZM4.77426 22.8961L4.65669 20.8996L4.65668 20.8996L4.77426 22.8961ZM4.85698 11.3462H6.85698V9.34619H4.85698V11.3462ZM1.68677 12.5164L1.68677 21.7324H5.68677L5.68677 12.5164H1.68677ZM1.17021 14.5164H3.68677L3.68677 10.5164H1.17021L1.17021 14.5164ZM3.17021 21.7324L3.17021 12.5164H-0.829787L-0.829787 21.7324H3.17021ZM4.76376 20.8937C4.72142 20.8957 4.68193 20.8981 4.65669 20.8996L4.89182 24.8926C4.92059 24.8909 4.93609 24.8901 4.9502 24.8894L4.76376 20.8937ZM4.65668 20.8996C4.64185 20.9004 4.63139 20.901 4.62161 20.9016C4.61224 20.9021 4.60609 20.9024 4.60187 20.9026C4.5931 20.903 4.59695 20.9027 4.6082 20.9027L4.6082 24.9027C4.73169 24.9027 4.8455 24.8954 4.89183 24.8926L4.65668 20.8996ZM4.6082 20.9027H0.861374L0.861374 24.9027H4.6082L4.6082 20.9027ZM0.861374 20.9027C0.780661 20.9027 1.21056 20.8769 1.619 21.2863C2.0264 21.6947 2 22.1228 2 22.0398H-2C-2 22.5639 -1.89909 23.4235 -1.2127 24.1115C-0.525261 24.8005 0.335329 24.9027 0.861374 24.9027L0.861374 20.9027ZM2 22.0398L2 12.1939H-2L-2 22.0398H2ZM2 12.1939C2 12.1303 2.02102 12.5573 1.61502 12.9628C1.20962 13.3676 0.783549 13.3462 0.848526 13.3462L0.848526 9.34619C0.320177 9.34619 -0.530156 9.45202 -1.21149 10.1324C-1.89342 10.8134 -2 11.6644 -2 12.1939H2ZM3.68677 19.7324H1.17021L1.17021 23.7324H3.68677L3.68677 19.7324ZM0.848526 13.3462H4.85698V9.34619H0.848526L0.848526 13.3462ZM2.85698 11.3462L2.85698 22.8916H6.85698L6.85698 11.3462H2.85698Z"
+                                                                                                                    fill="#00BD3E"
+                                                                                                                    mask="url(#path-1-inside-1_547_25)">
+                                                                                                                </path>
+                                                                                                                <path
+                                                                                                                    d="M21.2313 14.2263C21.1333 14.0621 21.0152 13.9144 20.8968 13.7764C20.8469 13.7181 20.7987 13.6636 20.7515 13.6103C20.6999 13.5519 20.6495 13.495 20.5994 13.436C20.6323 13.3727 20.6657 13.3061 20.6932 13.2408C21.353 11.6933 20.2032 10.0438 18.5612 10.0656C17.6396 10.0775 16.7185 10.0746 15.7959 10.0717C15.3868 10.0704 14.9775 10.0691 14.5676 10.0691H14.5238C14.5334 10.0209 14.5431 9.97289 14.5527 9.9251C14.5984 9.69708 14.6432 9.47399 14.682 9.25168C14.8972 8.0216 15.1118 6.76753 15.0525 5.48646L15.0524 5.48559C15.0313 5.0729 14.9677 4.66357 14.8626 4.2643C14.7605 3.87095 14.5654 3.56494 14.2931 3.34557C14.0223 3.12741 13.6854 3.00304 13.3107 2.95376C12.5753 2.85659 11.9819 3.16406 11.5626 3.75094L11.5612 3.75285L11.5599 3.75479C11.4019 3.98875 11.2732 4.24172 11.1768 4.50785M21.2313 14.2263L21.0823 14.3178M21.2313 14.2263C21.3148 14.3657 21.3665 14.5181 21.4076 14.6615C21.4251 14.7226 21.4401 14.7791 21.4544 14.8335C21.4761 14.9157 21.4965 14.9931 21.5228 15.0743L21.5315 15.1011V15.5049L21.5272 15.5239C21.5223 15.5464 21.5175 15.5674 21.5129 15.5875C21.5034 15.6288 21.4948 15.6666 21.4872 15.7065M21.4872 15.7065L21.4874 15.7052L21.3158 15.6742L21.487 15.7075L21.4872 15.7065ZM21.4872 15.7065C21.3883 16.2667 21.085 16.7686 20.6378 17.1125M20.6378 17.1125L20.6387 17.1118L20.5315 16.9724L20.6367 17.1133L20.6378 17.1125ZM20.6378 17.1125C20.6205 17.1261 20.6027 17.1398 20.5847 17.1534M20.5847 17.1534C20.5576 17.1044 20.5287 17.0564 20.4979 17.0095L20.3527 17.1072L20.4569 17.2489C20.4749 17.2353 20.4944 17.2208 20.5147 17.2058C20.5374 17.1889 20.5612 17.1713 20.5847 17.1534ZM20.5847 17.1534C21.1257 18.1308 20.9474 19.4987 19.7901 20.2472M19.7901 20.2472C19.7856 20.238 19.781 20.2288 19.7763 20.2195C19.7645 20.1962 19.7552 20.1757 19.7446 20.1526C19.7376 20.1374 19.7301 20.1209 19.721 20.1017L19.5639 20.1784L19.6488 20.3327C19.6974 20.3052 19.7445 20.2767 19.7901 20.2472ZM19.7901 20.2472C20.2636 21.2151 20.0244 22.3295 19.2029 23.0181C18.8732 23.2941 18.4939 23.4247 18.1254 23.5257L18.1031 23.5318H12.1691L12.1463 23.5254C12.1012 23.5127 12.0553 23.5034 12.009 23.4974M12.009 23.4974C12.011 23.4975 12.0131 23.4976 12.0152 23.4977L12.0244 23.3212L12.0033 23.4966C12.0052 23.4969 12.0071 23.4971 12.009 23.4974ZM12.009 23.4974C10.2489 23.4019 8.50975 23.0639 6.8395 22.4929L6.83866 22.4926L6.83783 22.4923C6.74777 22.4605 6.66247 22.4115 6.60865 22.3215C6.55811 22.237 6.55307 22.144 6.55307 22.073C6.55605 18.5883 6.55605 15.1038 6.55307 11.6195M6.55307 11.6195C6.55312 11.6209 6.55318 11.6224 6.55324 11.6238L6.72736 11.6158L6.55307 11.616C6.55307 11.6171 6.55307 11.6183 6.55307 11.6195ZM6.55307 11.6195C6.54992 11.5322 6.56902 11.4455 6.60857 11.3678C6.64752 11.2914 6.70496 11.2262 6.77548 11.1784M6.77548 11.1784C6.77374 11.1798 6.772 11.1812 6.77025 11.1825L6.87676 11.3224L6.78235 11.1739C6.78005 11.1754 6.77776 11.1769 6.77548 11.1784ZM6.77548 11.1784C7.54725 10.5741 8.28372 9.93967 8.92675 9.20731C9.45271 8.60844 9.88908 7.96912 10.1559 7.22022C10.4808 6.30943 10.8279 5.40667 11.1768 4.50785M11.1768 4.50785L11.1761 4.50981L11.3397 4.57068L11.1775 4.50595L11.1768 4.50785ZM6.90404 22.1348L6.90503 22.1358M11.5033 4.63154C11.5896 4.39298 11.7048 4.16621 11.8462 3.95644C12.1996 3.46302 12.6726 3.22587 13.2659 3.30429C13.5938 3.34742 13.8665 3.4533 14.0763 3.62231C14.2844 3.79005 14.4409 4.02801 14.5256 4.35455L14.5257 4.35519C14.6246 4.73057 14.6844 5.1154 14.7043 5.5034C14.7614 6.7389 14.5548 7.95505 14.3387 9.19005C14.3007 9.40814 14.2575 9.62329 14.2123 9.84828C14.1887 9.96612 14.1644 10.0867 14.1402 10.2117L14.0992 10.4226H14.5676C14.9751 10.4226 15.3832 10.4239 15.7915 10.4252C16.7156 10.4281 17.6413 10.431 18.5657 10.4191C19.9683 10.4004 20.9278 11.8006 20.373 13.1009L20.3728 13.1014L20.3726 13.1019C20.3418 13.1752 20.3069 13.2412 20.268 13.3146C20.2477 13.3529 20.2264 13.3932 20.204 13.4376C20.2456 13.4857 20.4577 13.8076 20.4994 13.8548C20.546 13.9075 20.5916 13.9591 20.6338 14.0083C20.7477 14.1411 20.8506 14.2712 20.9333 14.4095C20.9927 14.5089 21.0344 14.6258 21.0729 14.7602C21.0859 14.8057 21.0993 14.8561 21.1133 14.9086C21.135 14.9903 21.158 15.0769 21.1829 15.157V15.4655C21.1804 15.4766 21.1777 15.4881 21.1751 15.4998C21.1648 15.5447 21.1536 15.5938 21.1447 15.6408L21.1444 15.642L21.1442 15.6431C21.0609 16.1167 20.8045 16.541 20.4263 16.8315L20.4253 16.8322L20.4243 16.833C20.3879 16.8618 20.3526 16.888 20.3153 16.9157C20.2939 16.9316 20.2718 16.9479 20.2485 16.9655L20.1163 17.0656L20.2075 17.205C20.7732 18.0691 20.6306 19.3729 19.479 20.024L19.3357 20.105L19.4068 20.255C19.4118 20.2653 19.4175 20.2779 19.4239 20.2916C19.4367 20.3196 19.4518 20.3524 19.466 20.3806C19.8826 21.206 19.6852 22.1552 18.9808 22.7457C18.7165 22.9669 18.4052 23.0817 18.0567 23.1783H12.2156C12.1597 23.1637 12.1029 23.1529 12.0455 23.1458L12.0396 23.145L12.0337 23.1447C10.3034 23.0514 8.5937 22.7195 6.95175 22.1583C6.92396 22.1484 6.9114 22.1407 6.90659 22.137C6.90617 22.1355 6.90563 22.1332 6.90506 22.13C6.9031 22.1189 6.90166 22.1016 6.90166 22.0731C6.90464 18.5871 6.90464 15.1013 6.90166 11.6157L6.90165 11.6118L6.90148 11.6079C6.90028 11.5809 6.90608 11.554 6.91831 11.53C6.93054 11.506 6.94877 11.4856 6.97117 11.471L6.9774 11.4669L6.98326 11.4623C7.76431 10.851 8.52189 10.2 9.18711 9.44236C9.73082 8.82327 10.1968 8.14566 10.4838 7.34032C10.807 6.43393 11.1528 5.53459 11.5019 4.6354L11.5026 4.63348L11.5033 4.63154Z"
+                                                                                                                    stroke="#00BD3E"
+                                                                                                                    stroke-miterlimit="10">
+                                                                                                                </path>
+                                                                                                            </g>
+                                                                                                            <defs>
+                                                                                                                <clipPath
+                                                                                                                    id="clip0_547_25">
+                                                                                                                    <rect
+                                                                                                                        width="22"
+                                                                                                                        height="32"
+                                                                                                                        fill="white">
+                                                                                                                    </rect>
+                                                                                                                </clipPath>
+                                                                                                            </defs>
+                                                                                                        </svg>
+                                                                                                    </a>
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+                                                                                                        <span
+                                                                                                            class="ft-list-block__text ft-helper-fontSize-body-S--small">
+                                                                                                            0
+                                                                                                        </span>
+                                                                                                    </a>
+                                                                                                </li>
+                                                                                                <li
+                                                                                                    class="ft-list-block__item">
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+                                                                                                        <svg class="ft-list-block__icon"
+                                                                                                            width="22"
+                                                                                                            height="32"
+                                                                                                            viewBox="0 0 22 32"
+                                                                                                            fill="none"
+                                                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                                                            <g
+                                                                                                                clip-path="url(#clip0_547_11)">
+                                                                                                                <mask
+                                                                                                                    id="path-1-inside-1_547_11"
+                                                                                                                    fill="white">
+                                                                                                                    <path
+                                                                                                                        fill-rule="evenodd"
+                                                                                                                        clip-rule="evenodd"
+                                                                                                                        d="M18.3132 12.4355L18.3132 21.6516L20.8298 21.6516L20.8298 12.4355L18.3132 12.4355ZM17.143 11.2764C17.1712 11.2751 17.1987 11.2735 17.2257 11.2719C17.2826 11.2685 17.3372 11.2653 17.3918 11.2653L21.1386 11.2653C21.7454 11.2653 22 11.521 22 12.1282L22 21.9741C22 22.5672 21.7448 22.8218 21.1515 22.8218L17.143 22.8218L17.143 11.2764Z">
+                                                                                                                    </path>
+                                                                                                                </mask>
+                                                                                                                <path
+                                                                                                                    d="M18.3132 21.6516L16.3132 21.6516L16.3132 23.6516L18.3132 23.6516L18.3132 21.6516ZM18.3132 12.4355L18.3132 10.4355L16.3132 10.4355L16.3132 12.4355L18.3132 12.4355ZM20.8298 21.6516L20.8298 23.6516L22.8298 23.6516L22.8298 21.6516L20.8298 21.6516ZM20.8298 12.4355L22.8298 12.4355L22.8298 10.4355L20.8298 10.4355L20.8298 12.4355ZM17.143 11.2764L17.0498 9.27857L15.143 9.36754L15.143 11.2764L17.143 11.2764ZM17.2257 11.2719L17.3433 13.2684L17.3433 13.2684L17.2257 11.2719ZM17.143 22.8218L15.143 22.8218L15.143 24.8218L17.143 24.8218L17.143 22.8218ZM20.3132 21.6516L20.3132 12.4355L16.3132 12.4355L16.3132 21.6516L20.3132 21.6516ZM20.8298 19.6516L18.3132 19.6516L18.3132 23.6516L20.8298 23.6516L20.8298 19.6516ZM18.8298 12.4355L18.8298 21.6516L22.8298 21.6516L22.8298 12.4355L18.8298 12.4355ZM17.2362 13.2742C17.2786 13.2722 17.3181 13.2699 17.3433 13.2684L17.1082 9.27533C17.0794 9.27702 17.0639 9.27791 17.0498 9.27857L17.2362 13.2742ZM17.3433 13.2684C17.3582 13.2675 17.3686 13.2669 17.3784 13.2664C17.3878 13.2659 17.3939 13.2656 17.3981 13.2654C17.4069 13.265 17.4031 13.2653 17.3918 13.2653L17.3918 9.26531C17.2683 9.26531 17.1545 9.2726 17.1082 9.27533L17.3433 13.2684ZM17.3918 13.2653L21.1386 13.2653L21.1386 9.26531L17.3918 9.26531L17.3918 13.2653ZM21.1386 13.2653C21.2193 13.2653 20.7894 13.291 20.381 12.8816C19.9736 12.4733 20 12.0451 20 12.1282L24 12.1282C24 11.6041 23.8991 10.7445 23.2127 10.0565C22.5253 9.36745 21.6647 9.26531 21.1386 9.26531L21.1386 13.2653ZM20 12.1282L20 21.9741L24 21.9741L24 12.1282L20 12.1282ZM20 21.9741C20 22.0377 19.979 21.6106 20.385 21.2052C20.7904 20.8003 21.2165 20.8218 21.1515 20.8218L21.1515 24.8218C21.6798 24.8218 22.5302 24.7159 23.2115 24.0355C23.8934 23.3545 24 22.5036 24 21.9741L20 21.9741ZM18.3132 14.4355L20.8298 14.4355L20.8298 10.4355L18.3132 10.4355L18.3132 14.4355ZM21.1515 20.8218L17.143 20.8218L17.143 24.8218L21.1515 24.8218L21.1515 20.8218ZM19.143 22.8218L19.143 11.2764L15.143 11.2764L15.143 22.8218L19.143 22.8218Z"
+                                                                                                                    fill="#FD3700"
+                                                                                                                    mask="url(#path-1-inside-1_547_11)">
+                                                                                                                </path>
+                                                                                                                <path
+                                                                                                                    d="M0.768663 19.9417C0.86674 20.1058 0.984788 20.2536 1.10319 20.3916C1.15314 20.4498 1.20134 20.5043 1.24853 20.5577C1.3001 20.616 1.35047 20.673 1.40064 20.732C1.36768 20.7952 1.33427 20.8619 1.30683 20.9272C0.64699 22.4747 1.79683 24.1241 3.43882 24.1024C4.36045 24.0905 5.28146 24.0934 6.20415 24.0963C6.61316 24.0975 7.0225 24.0988 7.43237 24.0988L7.47621 24.0988C7.46658 24.1471 7.45694 24.1951 7.44735 24.2429C7.40156 24.4709 7.35677 24.694 7.31802 24.9163C7.10283 26.1464 6.88821 27.4004 6.94752 28.6815L6.94756 28.6824C6.96867 29.0951 7.0323 29.5044 7.1374 29.9037C7.23949 30.297 7.4346 30.603 7.70689 30.8224C7.97766 31.0406 8.31455 31.1649 8.68927 31.2142C9.42474 31.3114 10.0181 31.0039 10.4374 30.417L10.4388 30.4151L10.4401 30.4132C10.5981 30.1792 10.7268 29.9263 10.8232 29.6601M0.768663 19.9417L0.917722 19.8501M0.768663 19.9417C0.685228 19.8023 0.633498 19.6498 0.592376 19.5064C0.574855 19.4453 0.559945 19.3889 0.545594 19.3345C0.523888 19.2523 0.503459 19.1749 0.477215 19.0937L0.468545 19.0669L0.468545 18.6631L0.47276 18.644C0.477722 18.6216 0.482521 18.6006 0.487127 18.5805C0.496583 18.5392 0.50523 18.5014 0.51281 18.4615M0.51281 18.4615L0.512589 18.4628L0.684171 18.4938L0.513002 18.4605L0.51281 18.4615ZM0.51281 18.4615C0.611748 17.9013 0.914983 17.3994 1.36222 17.0555M1.36222 17.0555L1.36133 17.0562L1.4685 17.1956L1.36327 17.0547L1.36222 17.0555ZM1.36222 17.0555C1.37947 17.0419 1.39732 17.0282 1.41529 17.0146M1.41529 17.0146C1.44241 17.0636 1.47135 17.1116 1.50206 17.1585L1.64727 17.0607L1.54307 16.9191C1.52514 16.9326 1.50562 16.9471 1.48531 16.9622C1.46256 16.9791 1.43884 16.9967 1.41529 17.0146ZM1.41529 17.0146C0.874258 16.0372 1.05258 14.6693 2.20991 13.9207M2.20991 13.9207C2.21443 13.93 2.21901 13.9392 2.22366 13.9484C2.23547 13.9718 2.24485 13.9923 2.25543 14.0154C2.2624 14.0306 2.26991 14.047 2.27902 14.0662L2.43609 13.9896L2.3512 13.8353C2.30257 13.8627 2.25548 13.8913 2.20991 13.9207ZM2.20991 13.9207C1.73644 12.9528 1.97562 11.8384 2.79713 11.1499C3.12676 10.8739 3.50607 10.7433 3.87461 10.6423L3.89694 10.6362L9.83092 10.6362L9.85374 10.6426C9.89881 10.6552 9.94469 10.6646 9.99104 10.6706M9.99104 10.6706C9.98897 10.6705 9.9869 10.6704 9.98483 10.6703L9.97557 10.8468L9.99669 10.6713C9.9948 10.6711 9.99292 10.6709 9.99104 10.6706ZM9.99104 10.6706C11.7511 10.7661 13.4903 11.104 15.1605 11.6751L15.1613 11.6754L15.1622 11.6756C15.2522 11.7075 15.3375 11.7565 15.3913 11.8464C15.4419 11.9309 15.4469 12.024 15.4469 12.095C15.4439 15.5796 15.4439 19.0642 15.4469 22.5485M15.4469 22.5485C15.4469 22.5471 15.4468 22.5456 15.4468 22.5442L15.2726 22.5521L15.4469 22.552C15.4469 22.5508 15.4469 22.5497 15.4469 22.5485ZM15.4469 22.5485C15.4501 22.6358 15.431 22.7225 15.3914 22.8001C15.3525 22.8766 15.295 22.9418 15.2245 22.9895M15.2245 22.9895C15.2263 22.9882 15.228 22.9868 15.2297 22.9854L15.1232 22.8455L15.2177 22.9941C15.22 22.9926 15.2222 22.9911 15.2245 22.9895ZM15.2245 22.9895C14.4528 23.5939 13.7163 24.2283 13.0732 24.9607C12.5473 25.5595 12.1109 26.1988 11.8441 26.9478C11.5192 27.8585 11.1721 28.7613 10.8232 29.6601M10.8232 29.6601L10.8239 29.6582L10.6603 29.5973L10.8225 29.662L10.8232 29.6601ZM15.096 12.0332L15.095 12.0322M10.4967 29.5364C10.4104 29.775 10.2952 30.0018 10.1538 30.2115C9.80043 30.7049 9.32745 30.9421 8.7341 30.8637C8.40616 30.8206 8.13352 30.7147 7.92374 30.5457C7.71555 30.3779 7.55913 30.14 7.47444 29.8134L7.47427 29.8128C7.37544 29.4374 7.31559 29.0526 7.29571 28.6646C7.23856 27.4291 7.44522 26.2129 7.66127 24.9779C7.69928 24.7598 7.74249 24.5447 7.78768 24.3197C7.81135 24.2019 7.83555 24.0813 7.85984 23.9562L7.90079 23.7454L7.43237 23.7454C7.02486 23.7454 6.61682 23.7441 6.20848 23.7428C5.28441 23.7399 4.35875 23.737 3.43425 23.7489C2.03174 23.7675 1.07217 22.3674 1.62697 21.0671L1.62718 21.0666L1.62738 21.0661C1.65816 20.9927 1.69313 20.9267 1.73198 20.8534C1.75228 20.8151 1.77363 20.7748 1.79601 20.7304C1.7544 20.6823 1.54227 20.3604 1.50059 20.3132C1.45402 20.2605 1.40844 20.2089 1.36619 20.1596C1.25228 20.0268 1.14942 19.8968 1.06673 19.7584C1.00727 19.6591 0.965649 19.5422 0.927102 19.4077C0.914075 19.3623 0.900678 19.3119 0.886745 19.2594C0.865042 19.1777 0.842043 19.0911 0.817135 19.011L0.817135 18.7024C0.819636 18.6914 0.822258 18.6799 0.824943 18.6682C0.835218 18.6232 0.846426 18.5742 0.85534 18.5271L0.855554 18.526L0.855753 18.5249C0.939127 18.0513 1.19549 17.6269 1.57372 17.3365L1.5747 17.3357L1.57567 17.335C1.61206 17.3062 1.6474 17.28 1.68474 17.2523C1.70613 17.2364 1.72819 17.22 1.75147 17.2024L1.88374 17.1024L1.79249 16.963C1.22682 16.0989 1.36944 14.7951 2.52097 14.144L2.66428 14.0629L2.59315 13.913C2.58824 13.9026 2.58245 13.8901 2.57614 13.8763C2.56327 13.8483 2.54821 13.8156 2.53397 13.7874C2.11738 12.962 2.31478 12.0128 3.01922 11.4223C3.28354 11.2011 3.59485 11.0863 3.94335 10.9897L9.78443 10.9897C9.84033 11.0042 9.89713 11.0151 9.95446 11.0222L9.96037 11.0229L9.96632 11.0232C11.6966 11.1166 13.4063 11.4484 15.0482 12.0097C15.076 12.0196 15.0886 12.0273 15.0934 12.0309C15.0938 12.0324 15.0944 12.0347 15.0949 12.0379C15.0969 12.0491 15.0983 12.0664 15.0983 12.0949C15.0954 15.5808 15.0954 19.0667 15.0983 22.5523L15.0983 22.5562L15.0985 22.5601C15.0997 22.5871 15.0939 22.614 15.0817 22.638C15.0695 22.662 15.0512 22.6823 15.0288 22.697L15.0226 22.701L15.0167 22.7056C14.2357 23.317 13.4781 23.968 12.8129 24.7256C12.2692 25.3447 11.8032 26.0223 11.5162 26.8277C11.193 27.734 10.8472 28.6334 10.4981 29.5326L10.4974 29.5345L10.4967 29.5364Z"
+                                                                                                                    stroke="#FD3700"
+                                                                                                                    stroke-miterlimit="10">
+                                                                                                                </path>
+                                                                                                            </g>
+                                                                                                            <defs>
+                                                                                                                <clipPath
+                                                                                                                    id="clip0_547_11">
+                                                                                                                    <rect
+                                                                                                                        width="22"
+                                                                                                                        height="32"
+                                                                                                                        fill="white"
+                                                                                                                        transform="translate(22 32) rotate(-180)">
+                                                                                                                    </rect>
+                                                                                                                </clipPath>
+                                                                                                            </defs>
+                                                                                                        </svg>
+                                                                                                    </a>
+                                                                                                    <a href="#"
+                                                                                                        class="ft-link"
+                                                                                                        title="link title"
+                                                                                                        target="_self">
+                                                                                                        <span
+                                                                                                            class="ft-list-block__text ft-helper-fontSize-body-S--small">
+                                                                                                            0
+                                                                                                        </span>
+                                                                                                    </a>
+                                                                                                </li>
+                                                                                            </ul>
+                                                                                        </div>
+                                                                                    </article>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!--Paginacion Tabs-->
+                                                                    <nav aria-label="Paginación" class="ft-mol-pagination ft-mol-pagination-is--cnt">
+                                                                        <ul class="ft-mol-pagination__content">
+                                                                            <li class="ft-mol-pagination__item ft-mol-pagination__itemIsDisabled ft-mol-pagination__itemIsIconized ft-mol-pagination__itemIsNavPrev">
+                                                                                <a href="/page/**" rel="prev" class="ft-mol-pagination__trigger" aria-disabled="true" tabindex="-1" title="Anterior">
+                                                                                    <span class="ft-helper-hide">Anterior</span>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li class="ft-mol-pagination__item">
+                                                                                <a href="/page/**" class="ft-mol-pagination__trigger" title="Ir a la página 1">1</a>
+                                                                            </li>
+                                                                            <li class="ft-mol-pagination__item">
+                                                                                <a href="/page/**" class="ft-mol-pagination__trigger" title="Ir a la página 2">2</a>
+                                                                            </li>
+                                                                            <li class="ft-mol-pagination__item ft-mol-pagination__itemIsActive">
+                                                                                <a href="/page/**" class="ft-mol-pagination__trigger" title="Página actual" aria-current="page">3</a>
+                                                                            </li>
+                                                                            <li class="ft-mol-pagination__item ft-mol-pagination__itemIsDisabled">
+                                                                                <a href="/page/**" class="ft-mol-pagination__trigger" title="Página deshabilitada" aria-disabled="true"
+                                                                                    tabindex="-1">4</a>
+                                                                            </li>
+                                                                            <li class="ft-mol-pagination__item">
+                                                                                <span class="ft-mol-pagination__trigger" aria-hidden="true">...</span>
+                                                                            </li>
+                                                                            <li class="ft-mol-pagination__item">
+                                                                                <a href="/page/**" class="ft-mol-pagination__trigger" title="Ir a la página 20">20</a>
+                                                                            </li>
+                                                                            <li class="ft-mol-pagination__item ft-mol-pagination__itemIsIconized ft-mol-pagination__itemIsNavNext">
+                                                                                <a href="/page/**" rel="next" class="ft-mol-pagination__trigger" title="Siguiente">
+                                                                                    <span class="ft-helper-hide">Siguiente</span>
+                                                                                </a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </nav>
+                                                                    <!--Fin Paginacion Tabs-->
+                                                                </div>
+                                                                <!--Fin Tabs-->
+                                                            </div>
+                                                        </details>
+                                                    </div>
+                                                    <!-- Fin Molecula Acordeon-->
+                                                </div>
+                                                <!-- Fin Main -->
+                                            </div>`
+    };
+
+    const baseArgTypes = [];
+    const baseArgs = {};
+
+    function live() {
+        return VARIANTS["base"];
+    }
+
+    const overview = `<div class="cb-docs__inner">
+        <h1>Comments</h1>
+        <p class="cb-docs__lead">Organismo del 42DS (<code>.ft-org-comments</code>): hilo de comentarios completo — cabecera, formulario de envío, ordenación y lista de comentarios con respuestas.</p>
+
+        <h2>Dependencias</h2>
+        <div class="cb-deps">
+        <table class="cb-table">
+            <thead><tr><th>Dependencia</th><th>Tipo</th><th>Cuándo</th></tr></thead>
+            <tbody>
+                <tr><td><code>brands/[marca]/setting.css</code></td><td>CSS · variables de la marca</td><td>Siempre · <strong>primero</strong></td></tr>
+                <tr><td><code>brands/[marca]/organism/comments.css</code></td><td>CSS del organismo</td><td>Siempre (o el bundle <code>[marca]-core.css</code>)</td></tr>
+                <tr><td><code>molecules/form · sorting · author</code></td><td>CSS de las piezas internas</td><td>Siempre</td></tr>
+                <tr><td>JS de comentarios</td><td>JavaScript</td><td>En producción (enviar, votar, responder). Aquí estático.</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <div class="cb-callout">Se muestra el <strong>estado estático honesto</strong>: las interacciones (enviar, votar, desplegar respuestas) las gobierna el JS del consumidor; aquí no se ejecuta JS de componente.</div>
+
+        <h2>Anatomía</h2>
+        <table class="cb-table">
+            <thead><tr><th>Pieza</th><th>Clase</th></tr></thead>
+            <tbody>
+                <tr><td>Bloque</td><td><code>.ft-org-comments</code></td></tr>
+                <tr><td>Contenido</td><td><code>.ft-org-comments__content</code></td></tr>
+                <tr><td>Cabecera</td><td><code>.ft-org-comments__contentHeader</code></td></tr>
+            </tbody>
+        </table>
+
+        <h2>Variantes por marca</h2>
+        <p>Compilado para todas las marcas (<code>comments-[marca].scss</code>). Cambia la marca con la <strong>toolbar Brand</strong>.</p>
+
+        <p class="cb-src">Fuente: <code>scss/fourties/organism/comments/_comments.scss</code> · markup: <code>fourty/organisms/organism-comments.html</code></p>
+    </div>`;
+
+    const DEF = {
+        id: "comments",
+        name: "Comments",
+        group: "Organisms",
+        overview,
+        stories: [
+            { id: "base", name: "Base", kind: "interactive", full: true, argTypes: baseArgTypes, args: baseArgs, render: live }
+        ]
+    };
+    window.SB.register(DEF);
+    window.SB.loadMarkup(DEF, document.currentScript && document.currentScript.src, { full: true });
+})();

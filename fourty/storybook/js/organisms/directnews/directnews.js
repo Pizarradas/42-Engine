@@ -1,0 +1,362 @@
+/* ════════════════════════════════════════════════════════════════════════
+   organisms/directnews/directnews.js — Organisms / Direct News
+   Casuística REAL de scss/fourties/organism/directNews/_directNews.scss (.ft-org-directNews).
+   Markup VERBATIM de fourty/organisms/organism-directNews.html. Cero invención de API.
+
+   Criterio ORGANISMOS: controles MÍNIMOS (un solo select de variante). La fidelidad la
+   aporta el MARKUP — cada variante es la construcción literal del showroom, no se
+   parametriza pieza a pieza. Rutas normalizadas (../../cds-statics → /cds-statics).
+   ════════════════════════════════════════════════════════════════════════ */
+(function () {
+    "use strict";
+
+    /* ▼ SINGLE SOURCE OF TRUTH — markup verbatim por variante ▼ */
+    const VARIANTS = {
+        "base": `<div class="ft-org-directNews">
+                                                <div class="ft-org-directNews__header">
+                                                    <div class="ft-mol-writer">
+                                                        <div class="ft-mol-writer__group">
+                                                            <div class="ft-mol-writer__item">
+                                                                <figure>
+                                                                    <img alt="Francisco de Sert"
+                                                                        class="ft-helper-img-rd" height="60"
+                                                                        src="https://estaticos-cdn.sport.es/clip/0b5533b8-6132-4020-b701-aa8cfa02a883_source-aspect-ratio_default_0.jpeg"
+                                                                        width="60">
+                                                                </figure>
+                                                                <div class="ft-mol-writer__title">
+                                                                    <p
+                                                                        class="ft-mol-writer__titleOpinion ft-helper-fontSize-body-M--small ft-helper-fontColor-black">
+                                                                        Daniel Guillén</p>
+                                                                    <p
+                                                                        class="ft-mol-writer__titleOpinion ft-helper-fontSize-body-S--small ft-helper-fontColor-quaternary">
+                                                                        Redactor</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="ft-helper-divider-spacer-xxs ft-helper-divider-line ft-helper-divider-line--thin ft-helper-divider-line--mediumGrey">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="ft-org-directNews__opening">
+                                                    <figure class="ft-img">
+                                                        <picture>
+                                                            <source media="(min-width: 768px)"
+                                                                srcset="https://estaticos-cdn.sport.es/clip/6689d662-9dcb-4fee-8434-0f85e78b43c1_media-libre-aspect-ratio_default_0.jpg">
+                                                            <source media="(min-width: 250px)"
+                                                                srcset="https://estaticos-cdn.sport.es/clip/6689d662-9dcb-4fee-8434-0f85e78b43c1_media-libre-aspect-ratio_default_0.jpg, https://estaticos-cdn.sport.es/clip/6689d662-9dcb-4fee-8434-0f85e78b43c1_media-libre-aspect-ratio_default_0.jpg">
+                                                            <img alt="alt text" class="ft-helper-img-rd" height="381"
+                                                                src="https://estaticos-cdn.sport.es/clip/6689d662-9dcb-4fee-8434-0f85e78b43c1_media-libre-aspect-ratio_default_0.jpg"
+                                                                title="title text" width="656">
+                                                        </picture>
+                                                        <figcaption>
+                                                            <p
+                                                                class="ft-helper-fontColor-quaternary ft-helper-fontSize-body-S ft-helper-spacer-t-xxs">
+                                                                Lautaro Martínez, en la agenda del Real Madrid <span
+                                                                    class="ft-helper-fontWeight-800">/ AFP.</span></p>
+                                                        </figcaption>
+                                                    </figure>
+                                                </div>
+                                                <div class="ft-org-directNews__main">
+                                                    <div class="ft-date ft-date--lurid">
+                                                        <div class="ft-date__text">
+                                                            <time class="ft-date__textTime" itemprop="datePublished"
+                                                                datetime="2011-11-18T14:54:39+00:00">05 SEPT 2022 -
+                                                                13:04</time>
+
+                                                        </div>
+
+                                                    </div>
+                                                    <p
+                                                        class="ft-helper-fontSize-body-S ft-helper-fontColor-quaternary ft-helper-spacer-y-0">
+                                                        OPINIÓN DEL AUTOR</p>
+                                                    <h3 class="ft-org-directNews__headerTitle">Lillard decidirá tras la
+                                                        agencia libre</h3>
+                                                    <p class="ft-text">Según apunta Brian Windhorst, Portland Trail
+                                                        Blazers y Damian Lillard se han reunido este martes para decidir
+                                                        sobre el futuro de la franquicia. El jugador quiere ser
+                                                        aspirante al título para la temproada que viene y esperará a ver
+                                                        qué movimientos se hacen en la agencia libre para tomar una
+                                                        decisión. 'Dame', a sus 32 años, quiere comepetir por todo, y
+                                                        ahora mismo los de Oregon no poseen demasiado talento en su
+                                                        quinteto inicial.</p>
+                                                    <blockquote class="ft-mol-quote ft-mol-quote--basic">
+                                                        <h3 class="ft-mol-quote__text">Neque porro quisquam est qui
+                                                            dolorem ipsum quia dolor sit amet, consectetur, adipisci
+                                                            velit...</h3>
+                                                        <div class="ft-mol-quote__author">
+                                                            <p class="ft-mol-quote__author--name">Lorem ipsum</p>
+                                                            <p class="ft-mol-quote__author--status">— Director de Lorem
+                                                                ipsum</p>
+                                                        </div>
+                                                    </blockquote>
+                                                    <p class="ft-text">Han sumado a Scoot Henderson en el Draft, quizás
+                                                        el mejor 'prospect' tras Wembanyama, pero necesitará sumar
+                                                        perfiles con experiencia en playoff si quieren triunfar en la
+                                                        temporada 2023-24. La contratación de jugadores vía agencia
+                                                        libre empezará a partir del 6 de julio, pero a partir del 30 de
+                                                        junio ya arrancará el periodo de tanteo.</p>
+                                                    <div class="ft-mol-multimedia">
+                                                        <div class="ft-mol-multimedia__container">
+                                                            <div class="ft-mol-multimedia__video ft-helper-img-rd"
+                                                                data-id="162135239" data-vars-video-origen="propios"
+                                                                data-vars-video-tipo="propio"
+                                                                data-vars-video-titulo="Russell Westbrook, en un partido con los Clippers"
+                                                                data-vars-video-upload="lne" data-video-play="true">
+                                                                <script id="adSchedule_162135239"
+                                                                    type="application/json">
+                                                                {"admessage":"xx","adscheduleid":"WCsW6FRA","bids":{"bidders":[{"id":"682556","name":"IndexExchange","type":"OpenRTB"},{"id":"20328843","name":"AppNexus","publisherId":1326717},{"id":"3937544","name":"PubMatic","pubid":"160801","type":"OpenRTB"},{"name":"Rubicon","pubid":"15782","siteId":"381664","zoneId":"2230232"},{"name":"criteo","networkId":5100,"zoneId":1683253}],"bidOnBreaks":1,"settings":{"bidTimeout":3000,"buckets":[{"increment":0.1,"max":30,"min":0.1},{"increment":0.5,"max":50,"min":30}],"consentManagement":{"gdpr":{"cmpApi":"iab","defaultGdprScope":true,"rules":[{"enforcePurpose":true,"enforceVendor":true,"purpose":"storage"},{"enforcePurpose":true,"enforceVendor":true,"purpose":"basicAds","vendorExceptions":["MediaGrid","SpotX"]},{"enforcePurpose":true,"enforceVendor":true,"purpose":"measurement"}],"timeout":10000}},"floorPriceCents":0,"mediationLayerAdServer":"dfp"}},"client":"googima","creativeTimeout":22500,"loadVideoTimeout":22500,"maxRedirects":6,"requestTimeout":15000,"vastLoadTimeout":15000,"cuetext":"Advertisement","outstream":false,"preloadAds":false,"rules":{"startOnSeek":"pre","timeBetweenAds":0},"schedule":[{"offset":"pre","tag":"https:\/\/pubads.g.doubleclick.net\/gampad\/ads?sz=640x360|640x480|480x360|480x361&iu=\/138855687\/nacional-lne\/lne-generico_vc&ciu_szs=1x1,728x90,970x90,980x90,970x250,980x250,620x72,300x250,300x600,980x45,320x50,320x100&impl=s&cust_params=p%3Dcpm_preroll%26page%3D84193050%26tagepi%3Darmas%2Cseguridad%2Cparticipacion%2Casturias%2Cdomingo%2Cdetenciones%2Cocio&gdfp_req=1&env=vp&ad_rule=1&output=vast&vpos=preroll&unviewed_position_start=1&url=https:\/\/www.lne.es\/videos\/oviedo\/2023\/03\/06\/video-macrooperacion-policial-bares-oviedo-84193050.html&description_url=https:\/\/www.lne.es\/videos\/oviedo\/2023\/03\/06\/video-macrooperacion-policial-bares-oviedo-84193050.html&gdpr=__gdpr__&gdpr_consent=__gdpr_consent__&correlator=__random-number__","type":"linear"},{"offset":"post","tag":"https:\/\/pubads.g.doubleclick.net\/gampad\/ads?sz=640x360|640x480|480x360|480x361&iu=\/138855687\/nacional-lne\/lne-generico_vc&ciu_szs=1x1,728x90,970x90,980x90,970x250,980x250,620x72,300x250,300x600,980x45,320x50,320x100&impl=s&cust_params=p%3Dcpm_preroll%26page%3D84193050%26tagepi%3Darmas%2Cseguridad%2Cparticipacion%2Casturias%2Cdomingo%2Cdetenciones%2Cocio&gdfp_req=1&env=vp&ad_rule=1&output=vast&vpos=postroll&unviewed_position_start=1&url=https:\/\/www.lne.es\/videos\/oviedo\/2023\/03\/06\/video-macrooperacion-policial-bares-oviedo-84193050.html&description_url=https:\/\/www.lne.es\/videos\/oviedo\/2023\/03\/06\/video-macrooperacion-policial-bares-oviedo-84193050.html&gdpr=__gdpr__&gdpr_consent=__gdpr_consent__&correlator=__random-number__","type":"linear"}],"skipmessage":"Saltar anuncio en xx segundos","skipoffset":10,"vpaidcontrols":true,"vpaidmode":"insecure"}
+                                                                </script>
+                                                                <div data-content-id="162135239"
+                                                                    data-file-id="https://estaticos-cdn.prensaiberica.es/epi/private/content/video/original/2023/0306/15/okokok-mp4.mp4?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=SU0RKT3QI0LRWS9RQUV8%2F20230425%2Feu-west-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230425T105320Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=600&amp;X-Amz-Signature=45fc68364cf60b3566e343fce38fc197928a03334012855befa60a168cfbfc0c"
+                                                                    data-image-src="https://estaticos-cdn.prensaiberica.es/clip/98ab8b58-04f6-4034-8781-3e79cac828f5_16-9-discover-aspect-ratio_default_0.jpg"
+                                                                    data-player-id="162135239"
+                                                                    data-title="VÍDEO: Así fue la macrooperación policial en los bares de Oviedo: 13 detenidos, 26 actas por droga y 3 por portar armas prohibidas"
+                                                                    id="162135239">
+                                                                    <source
+                                                                        src="https://estaticos-cdn.prensaiberica.es/epi/public/videoquality/2023/0306/15/asi-fue-la-macrooperacion-policial-en-los-bares-de-oviedo-13-detenidos-26-actas-por-droga-y-3-por-po.mp4"
+                                                                        type="video/mp4">
+                                                                    <source
+                                                                        src="https://estaticos-cdn.prensaiberica.es/epi/public/videoquality/2023/0306/15/asi-fue-la-macrooperacion-policial-en-los-bares-de-oviedo-13-detenidos-26-actas-por-droga-y-3-por-po-2.mp4"
+                                                                        type="video/mp4">
+                                                                    <source
+                                                                        src="https://estaticos-cdn.prensaiberica.es/epi/public/videoquality/2023/0306/15/asi-fue-la-macrooperacion-policial-en-los-bares-de-oviedo-13-detenidos-26-actas-por-droga-y-3-por-po-3.mp4"
+                                                                        type="video/mp4">
+                                                                </div>
+                                                                <picture class="ft-helper-img-rd ft-helper-show-block"
+                                                                    media="(max-width: 1240px)"><img
+                                                                        alt="VÍDEO: Russell Westbrook, en un partido con los Clippers"
+                                                                        class="ft-helper-img-rd"
+                                                                        src="https://estaticos-cdn.sport.es/clip/0345ca5d-5eaa-4944-989f-c0ccbe8130a3_16-9-aspect-ratio_default_0.jpg">
+                                                                </picture>
+                                                                <div class="ft-mol-multimedia__footer">
+                                                                    <div class="ft-mol-multimedia__footerIcon">
+                                                                        <svg class="ft-btn__icon" height="32"
+                                                                            viewbox="0 0 32 32" width="32"
+                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                            <path
+                                                                                d="M24.7211 17.922L10.4635 26.833C9.73935 27.2856 8.8 26.765 8.8 25.911V8.08901C8.8 7.23503 9.73935 6.7144 10.4635 7.16701L24.7211 16.078C25.4025 16.5038 25.4025 17.4962 24.7211 17.922Z"
+                                                                                fill="white"></path>
+                                                                        </svg>
+                                                                    </div>
+                                                                    <h4 class="ft-mol-multimedia__footerText">Russell
+                                                                        Westbrook, en un partido con los Clippers</h4>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <figure>
+                                                            <figcaption>
+                                                                <p
+                                                                    class="ft-helper-fontColor-quaternary ft-helper-fontSize-body-S ft-helper-spacer-t-xxs">
+                                                                    Momento en el cual es derribado el globo chino sobre
+                                                                    el océano Atlántico. <span
+                                                                        class="ft-helper-fontWeight-800">/ RANDALL HILL
+                                                                        / REUTERS</span></p>
+                                                            </figcaption>
+                                                        </figure>
+                                                    </div>
+                                                    <div class="ft-mol-related ft-mol-related--Hasimage">
+                                                        <img alt="alt text" class="ft-mol-related__img" height="90"
+                                                            src="https://estaticos-cdn.sport.es/clip/83974004-7d11-4131-9f18-22a7469b5719_thumb-sp-aspect-ratio_default_0.jpg"
+                                                            title="title text" width="160">
+                                                        <div class="ft-mol-related__group">
+                                                            <p class="ft-mol-related__item"><a class="ft-link" href="#"
+                                                                    target="_self" title="title text">El Inter quiere
+                                                                    abordar el fichaje de Kessié con el Barça la próxima
+                                                                    semana</a></p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ft-mol-boxInfo ft-mol-boxInfo--richtext">
+                                                        <div class="ft-img"><img alt="alt text" class="ft-helper-img-rd"
+                                                                height="159"
+                                                                src="/cds-statics/assets/img/templates/ft-mol-boxinfo111x159.svg"
+                                                                title="title text" width="111"></div>
+                                                        <div class="ft-mol-boxInfo__content">
+                                                            <h2
+                                                                class="ft-helper-fontSize-heading-XXS ft-helper-spacer-t-0">
+                                                                A chorus line</h2>
+                                                            <p class="ft-text"><strong>¿Donde?</strong> Teatro Tívoli
+                                                            </p>
+                                                            <p class="ft-text"><strong>¿Cuándo?</strong> Miércoles y
+                                                                Jueves (20.30h), Viernes, Sábado y Domingo (21:30)</p>
+                                                            <p class="ft-text"><strong>Precio</strong> de 21 a 65
+                                                                euros30</p><a
+                                                                class="ft-btn ft-btn--secondary ft-btn--sm" href="#"
+                                                                target="_self" title="title text">Más información</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ft-embed">
+                                                        <div class="ft-embed__item">
+                                                            <blockquote class="twitter-tweet">
+                                                                <p dir="ltr" lang="es">Chema ha vuelto de su misión con
+                                                                    los marines coloniales.<br>
+                                                                    Ya estamos con el tercero... ^__^ <a
+                                                                        href="https://twitter.com/DevirIberia?ref_src=twsrc%5Etfw">@DevirIberia</a>
+                                                                    <a
+                                                                        href="https://t.co/Cdbf4bgbH1">https://t.co/Cdbf4bgbH1</a><a
+                                                                        href="https://twitter.com/hashtag/Fanhunter?src=hash&amp;ref_src=twsrc%5Etfw">#Fanhunter</a>
+                                                                    <a
+                                                                        href="https://t.co/gZkC2wm6VK">pic.twitter.com/gZkC2wm6VK</a>
+                                                                </p>&mdash; Cels Piñol
+                                                                (@celspinol) <a
+                                                                    href="https://twitter.com/celspinol/status/1630860593761599490?ref_src=twsrc%5Etfw">March
+                                                                    1, 2023</a>
+                                                            </blockquote>
+                                                            <script async charset="utf-8"
+                                                                src="https://platform.twitter.com/widgets.js">
+                                                                </script>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="ft-org-directNews__footer">
+                                                    <a data-share-button="facebook" rel="nofollow" target="_blank"
+                                                        title="Facebook"><i
+                                                            class="ft-mol-rrss ft-mol-rrssFacebook--default ft-mol-rrssFacebook--blue-500"></i></a>
+                                                    <a data-share-button="twitter" rel="nofollow" target="_blank"
+                                                        title="Twitter"><i
+                                                            class="ft-mol-rrss ft-mol-rrssTwitter--default ft-mol-rrssTwitter--blue-500"></i></a>
+                                                    <a href="#" rel="nofollow" target="_blank" title="Whatsapp"><i
+                                                            class="ft-mol-rrss ft-mol-rrssWhatsapp--default ft-mol-rrssWhatsapp--green-500"></i></a>
+                                                </div>
+                                            </div>`,
+        "updates": `<!-- Organismo DirectNews -->
+                                            <div class="ft-org-directNews ft-org-directNews--updates">
+                                                <div class="ft-org-directNews__header">
+                                                    <div class="ft-date ft-date--lurid">
+                                                        <div class="ft-date__text">
+                                                            <time class="ft-date__textTime" itemprop="datePublished"
+                                                                datetime="2011-11-18T14:54:39+00:00">87'</time>
+                                                            <time class="ft-date__extra"
+                                                                datetime="2011-11-18T14:54:39+00:00">
+                                                                87'
+                                                            </time>
+                                                        </div>
+                                                    </div>
+                                                    <img src="/cds-statics/assets/img/icons/icon-ball-soccer.svg"
+                                                        alt="alt img" title="title text">
+                                                </div>
+                                                <div class="ft-org-directNews__main">
+                                                    <p class="ft-text">
+                                                        Remate fallado por Catherine Bott (Nieuw-Zeeland) remate con la
+                                                        derecha desde el centro del área que se pierde por la izquierda.
+                                                        Asistencia de Rebekah Stott con un centro al área tras un saque
+                                                        de esquina.
+                                                    </p>
+                                                </div>
+                                                <div class="ft-org-directNews__footer">
+                                                    <a title="Facebook" target="_blank" rel="nofollow"
+                                                        data-share-button="facebook">
+                                                        <i
+                                                            class="ft-mol-rrss ft-mol-rrssFacebook--default ft-mol-rrssFacebook--blue-500"></i>
+                                                    </a>
+                                                    <a title="Twitter" target="_blank" rel="nofollow"
+                                                        data-share-button="twitter">
+                                                        <i
+                                                            class="ft-mol-rrss ft-mol-rrssTwitter--default ft-mol-rrssTwitter--blue-500"></i>
+                                                    </a>
+                                                    <a title="Whatsapp" target="_blank" rel="nofollow" href="#">
+                                                        <i
+                                                            class="ft-mol-rrss ft-mol-rrssWhatsapp--default ft-mol-rrssWhatsapp--green-500"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <!-- Fin // Organismo DirectNews -->
+                                            <!-- Comienzo Organismo DirectNews -->
+                                            <div
+                                                class="ft-org-directNews ft-org-directNews--updates ft-org-directNews--is-highlighted">
+                                                <div class="ft-org-directNews__header">
+                                                    <div class="ft-date ft-date--lurid">
+                                                        <div class="ft-date__text">
+                                                            <time class="ft-date__textTime" itemprop="datePublished"
+                                                                datetime="2011-11-18T14:54:39+00:00">87'</time>
+                                                        </div>
+
+                                                    </div>
+                                                    <img src="/cds-statics/assets/img/icons/icon-card-yellow-soccer.svg"
+                                                        alt="alt img" title="title text">
+                                                </div>
+                                                <div class="ft-org-directNews__main">
+                                                    <p class="ft-text">
+                                                        Remate fallado por Catherine Bott (Nieuw-Zeeland) remate con la
+                                                        derecha desde el centro del área que se pierde por la izquierda.
+                                                        Asistencia de Rebekah Stott con un centro al área tras un saque
+                                                        de esquina.
+                                                    </p>
+                                                </div>
+                                                <div class="ft-org-directNews__footer">
+                                                    <a title="Facebook" target="_blank" rel="nofollow"
+                                                        data-share-button="facebook">
+                                                        <i
+                                                            class="ft-mol-rrss ft-mol-rrssFacebook--default ft-mol-rrssFacebook--blue-500"></i>
+                                                    </a>
+                                                    <a title="Twitter" target="_blank" rel="nofollow"
+                                                        data-share-button="twitter">
+                                                        <i
+                                                            class="ft-mol-rrss ft-mol-rrssTwitter--default ft-mol-rrssTwitter--blue-500"></i>
+                                                    </a>
+                                                    <a title="Whatsapp" target="_blank" rel="nofollow" href="#">
+                                                        <i
+                                                            class="ft-mol-rrss ft-mol-rrssWhatsapp--default ft-mol-rrssWhatsapp--green-500"></i>
+                                                    </a>
+                                                </div>
+                                            </div>`
+    };
+
+    const baseArgTypes = [
+        { key: "variant", control: "select", desc: "Variante del organismo (markup verbatim del showroom).", options: [
+            ["base", "Base"],
+            ["updates", "Updates (--updates)"]
+        ] }
+    ];
+    const baseArgs = { variant: "base" };
+
+    function live(a) {
+        return VARIANTS[a.variant] || VARIANTS["base"];
+    }
+
+    const overview = `<div class="cb-docs__inner">
+        <h1>Direct News</h1>
+        <p class="cb-docs__lead">Organismo del 42DS (<code>.ft-org-directNews</code>): noticia en directo — cabecera con sello «en directo», apertura, cuerpo con titular/relacionadas y pie de firma; variante <code>--updates</code> para tira de actualizaciones.</p>
+
+        <h2>Dependencias</h2>
+        <div class="cb-deps">
+        <table class="cb-table">
+            <thead><tr><th>Dependencia</th><th>Tipo</th><th>Cuándo</th></tr></thead>
+            <tbody>
+                <tr><td><code>brands/[marca]/setting.css</code></td><td>CSS · variables de la marca</td><td>Siempre · <strong>primero</strong></td></tr>
+                <tr><td><code>brands/[marca]/organism/directnews.css</code></td><td>CSS del organismo</td><td>Siempre (o el bundle <code>[marca]-core.css</code>)</td></tr>
+                <tr><td><code>molecules/label · writer · figcaption</code></td><td>CSS de las piezas internas</td><td>Según contenido</td></tr>
+                <tr><td>JS de directo (refresco)</td><td>JavaScript</td><td>En producción (auto-update). Aquí estático.</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <div class="cb-callout">Estado <strong>estático honesto</strong>: en producción el feed refresca el bloque; aquí se muestra el markup tal cual el showroom (incl. los dos ejemplos apilados de <code>--updates</code> / <code>--is-highlighted</code>).</div>
+
+        <h2>Modificadores</h2>
+        <table class="cb-table">
+            <thead><tr><th>Clase</th><th>Efecto</th></tr></thead>
+            <tbody>
+                <tr><td><code>(base)</code></td><td>noticia en directo completa</td></tr>
+                <tr><td><code>--updates</code></td><td>tira compacta de actualizaciones</td></tr>
+                <tr><td><code>--is-highlighted</code></td><td>actualización destacada</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Variantes por marca</h2>
+        <p>Compilado para todas las marcas (<code>directNews-[marca].scss</code>). Cambia la marca con la <strong>toolbar Brand</strong>.</p>
+
+        <p class="cb-src">Fuente: <code>scss/fourties/organism/directNews/_directNews.scss</code> · markup: <code>fourty/organisms/organism-directNews.html</code></p>
+    </div>`;
+
+    const DEF = {
+        id: "directnews",
+        name: "Direct News",
+        group: "Organisms",
+        overview,
+        stories: [
+            { id: "base", name: "Base", kind: "interactive", full: true, argTypes: baseArgTypes, args: baseArgs, render: live }
+        ]
+    };
+    window.SB.register(DEF);
+    window.SB.loadMarkup(DEF, document.currentScript && document.currentScript.src, { full: true });
+})();
