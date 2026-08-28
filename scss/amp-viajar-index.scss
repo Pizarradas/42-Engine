@@ -1,0 +1,97 @@
+// Sass Document
+
+// ABSTRACTS
+// ================================================
+@import "abstracts/amp-abstracts";
+@import "vendors/bourbon/bourbon";
+// ================================================
+
+// BASE
+// ================================================
+@import "base/amp-base";
+// ================================================
+
+// BRAND SETUP 
+// ================================================
+@import "brands/amp-viajar-setup";
+// ================================================
+
+// BRAND GRID
+// ================================================ 
+@import "layout/amp-grid";
+//@import "layout/grid_legacy";
+// ================================================
+
+// FOURTYS CORE 
+// ================================================
+@import "fourties/amp-ad";
+@import "fourties/amp-btn";
+@import "fourties/amp-img";
+@import "fourties/amp-link";
+@import "fourties/amp-list";
+@import "fourties/amp-text"; 
+
+
+// FOURTYS 
+// ================================================
+// @import "fourties/anchor";
+// @import "fourties/check";
+@import "fourties/amp-date";
+//@import "fourties/embed";
+// @import "fourties/radio";
+// @import "fourties/svgMap";
+@import "fourties/amp-tag";
+// @import "fourties/tooltip";
+@import "fourties/amp-trust";
+@import "fourties/amp-title";
+// @import "fourties/molecules/accordion";
+// @import "fourties/molecules/author";
+// @import "fourties/molecules/bar";
+@import "fourties/molecules/amp-advice";
+@import "fourties/molecules/amp-boxInfo";
+@import "fourties/molecules/amp-breadcrumb";
+@import "fourties/molecules/amp-btnGroup";
+// @import "fourties/molecules/countdown";
+// @import "fourties/molecules/dataSheed";
+// @import "fourties/molecules/figcaption";
+// @import "fourties/molecules/form";
+// @import "fourties/molecules/gallery";
+// @import "fourties/molecules/graphLegend";
+@import "fourties/molecules/amp-headband";
+@import "fourties/molecules/amp-header";
+// @import "fourties/molecules/header-custom";
+@import "fourties/molecules/amp-label";
+// @import "fourties/molecules/lnkbox";
+// @import "fourties/molecules/marker";
+// @import "fourties/molecules/masonry";
+// @import "fourties/molecules/modal";
+@import "fourties/molecules/amp-modNews";
+@import "fourties/molecules/amp-multimedia";
+// @import "fourties/molecules/number-highlighted";
+// @import "fourties/molecules/overlay-live";
+// @import "fourties/molecules/paper";
+//@import "fourties/molecules/pagination";
+// @import "fourties/molecules/pollbox";
+// @import "fourties/molecules/promoHeader";
+@import "fourties/molecules/amp-quote";
+@import "fourties/molecules/amp-rankingNews"; 
+@import "fourties/molecules/amp-related";
+// @import "fourties/molecules/relatedSlider";
+// @import "fourties/molecules/rrss";
+// @import "fourties/molecules/score";
+// @import "fourties/molecules/scoreboard";
+@import "fourties/molecules/amp-subtitle";
+@import "fourties/molecules/amp-tab";
+// @import "fourties/molecules/table";
+@import "fourties/molecules/amp-tagsNews";
+@import "fourties/molecules/amp-ticker";
+// @import "fourties/molecules/toc";
+//@import "fourties/molecules/tracking";
+@import "fourties/molecules/amp-writer";
+@import "fourties/molecules/amp-tapbar";
+// @import "fourties/organism/author";
+@import "fourties/organism/amp-breadcrumb";
+// @import "fourties/organism/cardHome";
+@import "fourties/organism/amp-directNews"; 
+@import "fourties/organism/amp-object";
+// @import "fourties/organism/scoreboard";

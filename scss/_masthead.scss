@@ -1,0 +1,3360 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+
+// MIXINS
+// ===============================================
+@mixin hide() {
+  display: none;
+}
+
+@mixin show-flex {
+  display: flex;
+}
+
+@mixin show-block {
+  display: block;
+}
+
+@keyframes fadeinlive {
+  0% {
+    opacity: 0.2;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.2;
+  }
+}
+
+// VARIABLES
+// ===============================================
+$transition-speed: 0.1s;
+$header-height-web: 160px;
+$header-height-web--minimal-header: 80px;
+$header-height-web--minimal-header--pasatiempos: 60px;
+$header-height-web--regionales: 180px;
+$header-height-mobile--minimal-header: 70px;
+$header-height-mobile: 110px;
+$fixed-header-height-web: 41px;
+$header-full-height: 100vh;
+
+// ===============================================
+// ===============================================
+// BRANDS CONFIG
+// ===============================================
+$brand-defaults: (
+  side-background: var(--color-lightGrey),
+  side-height: $header-full-height,
+  masthead-height: (default: $header-height-mobile,
+    desktop: $header-height-web,
+    minimal-header: $header-height-mobile--minimal-header,
+    "minimal-header.desktop": $header-height-web--minimal-header,
+  ),
+  masthead-height-fix: (default: $header-height-mobile,
+    desktop: $fixed-header-height-web,
+    minimal-header: $header-height-mobile,
+    "minimal-header.desktop": $fixed-header-height-web,
+  ),
+  behaviors: (),
+);
+$behavior-defaults: (
+  cerca: (background-desktop: var(--color-white),
+    background-mobile-top: var(--color-primary),
+    logo: "#{$images-path}/logos/logo-cerca.svg"),
+
+  pasatiempos: (background-desktop: var(--color-white),
+    background-mobile-top: var(--color-black),
+    logo: "#{$images-path}/logos/logo-pasatiempos.svg",
+    txt: var(--color-black),
+    masthead-height: (minimal-header: $header-height-web--minimal-header--pasatiempos,
+
+    ),
+  )
+);
+
+$brands-overrides: (
+  sport: (background-desktop: var(--color-primary),
+    background-mobile-top: var(--color-black),
+    logo: "#{$images-path}/logos/logo-sport-negativo.svg",
+    logo-top-left: "#{$images-path}/logos/logo-sport-negativo.svg",
+    txt: var(--color-white),
+    logo-user: "#{$images-path}/icons/icon-user-dark.svg",
+    logo-search: "#{$images-path}/icons/icon-search-light.svg",
+    behaviors: (
+      aniversario: (
+        logo-top-left: "#{$images-path}/logos/logo-sport-negativo.svg",
+       logo: "#{$images-path}/logos/logo-sport-aniversario.svg",
+        background-desktop: var(--color-black),
+        background-mobile-top: var(--color-black),
+        txt: var(--color-white)),
+
+      shopping: (logo: "#{$images-path}/logos/logo-sport-esncial.svg",
+      logo-top-left: "#{$images-path}/logos/logo-sport-negativo.svg"
+      ),
+      pasatiempos: (logo-top-left: "#{$images-path}/logos/logo-sport-negativo.svg",
+      ),
+    )),
+
+  ep: (background-desktop: var(--color-primary),
+    background-mobile-top: var(--color-white),
+    logo: "#{$images-path}/logos/logo-ep-negativo.svg",
+    logo-top-left: "#{$images-path}/logos/logo-ep-negativo.svg",
+    txt: var(--color-white),
+    logo-user: "#{$images-path}/icons/icon-user-dark.svg",
+    logo-search: "#{$images-path}/icons/icon-search-light.svg",
+    behaviors: (cerca:(logo: "#{$images-path}/logos/logo-cerca.svg",
+        logo-top-left: "#{$images-path}/logos/logo-ep.svg",
+        "logo-top-left.desktop": "#{$images-path}/logos/logo-ep-negativo.svg",
+      ),
+      pasatiempos: (logo-top-left: "#{$images-path}/logos/logo-ep-negativo.svg",
+        background-mobile-top: var(--color-black),
+      ),
+      castelldefels:(logo: "#{$images-path}/logos/logo-ep-castelldefels.svg",
+      ),
+      badalona: (logo: "#{$images-path}/logos/logo-ep-badalona.svg",
+      ),
+      cornella: (logo: "#{$images-path}/logos/logo-ep-cornella.svg",
+      ),
+      economia: (logo: "#{$images-path}/logos/logo-ep-economia.svg",
+      ),
+      esplugues: (logo: "#{$images-path}/logos/logo-ep-esplugues.svg",
+      ),
+      gastronomia: (logo: "#{$images-path}/logos/logo-ep-gastronomia.svg",
+      ),
+      gava: (logo: "#{$images-path}/logos/logo-ep-gava.svg",
+      ),
+      granollers: (logo: "#{$images-path}/logos/logo-ep-granollers.svg",
+      ),
+      hospitalet: (logo: "#{$images-path}/logos/logo-ep-hospitalet.svg",
+      ),
+      libros: (logo: "#{$images-path}/logos/logo-ep-libros.svg",
+      ),
+      martorell: (logo: "#{$images-path}/logos/logo-ep-martorell.svg",
+      ),
+      mataro: (logo: "#{$images-path}/logos/logo-ep-mataro.svg",
+      ),
+      molletdelvalles: (logo: "#{$images-path}/logos/logo-ep-molletdelvalles.svg",
+      ),
+      motor: (logo: "#{$images-path}/logos/logo-ep-motor.svg",
+      ),
+      parets: (logo: "#{$images-path}/logos/logo-ep-parets.svg",
+      ),
+      rubi: (logo: "#{$images-path}/logos/logo-ep-rubi.svg",
+      ),
+      sabadell: (logo: "#{$images-path}/logos/logo-ep-sabadell.svg",
+      ),
+      santacoloma: (logo: "#{$images-path}/logos/logo-ep-santacoloma.svg",
+      ),
+      santboi: (logo: "#{$images-path}/logos/logo-ep-santboi.svg",
+      ),
+      santcugat: (logo: "#{$images-path}/logos/logo-ep-santcugat.svg",
+      ),
+      shopping: (logo: "#{$images-path}/logos/logo-ep-shopping.svg",
+      ),
+      tarragona: (logo: "#{$images-path}/logos/logo-ep-tarragona.svg",
+      ),
+      terrassa: (logo: "#{$images-path}/logos/logo-ep-terrassa.svg",
+      ),
+      viladecans: (logo: "#{$images-path}/logos/logo-ep-viladecans.svg",
+      ),
+      vilanovailageltru: (logo: "#{$images-path}/logos/logo-ep-vilanovailageltru.svg",
+      ),
+    )),
+
+  epe: (background-desktop: var(--color-white),
+    background-mobile-top: var(--color-primary),
+    logo: "#{$images-path}/logos/logo-epe.svg",
+    logo-top-left: "#{$images-path}/logos/logo-epe.svg",
+    txt: var(--color-black),
+
+    logo-user: "#{$images-path}/icons/icon-user-light.svg",
+    logo-search: "#{$images-path}/icons/icon-search-light.svg",
+    behaviors: (cerca:(logo-top-left: "#{$images-path}/logos/logo-epe.svg"
+      ),
+      pasatiempos: (logo-top-left: "#{$images-path}/logos/logo-epe-negativo.svg",
+        background-mobile-top: var(--color-black),
+      ),
+      alcaladehenares: (logo: "#{$images-path}/logos/logo-epe-alcaladehenares.svg",
+      ),
+      arganzuela: (logo: "#{$images-path}/logos/logo-epe-arganzuela.svg",
+      ),
+      carabanchel: (logo: "#{$images-path}/logos/logo-epe-carabanchel.svg",
+      ),
+      latina: (logo: "#{$images-path}/logos/logo-epe-latina.svg",
+      ),
+      pozuelodealarcon: (logo: "#{$images-path}/logos/logo-epe-pozuelodealarcon.svg",
+      ),
+      toledo: (logo: "#{$images-path}/logos/logo-epe-toledo.svg",
+      ),
+      mostoles: (logo: "#{$images-path}/logos/logo-epe-mostoles.svg",
+      ),
+    )),
+
+  regionales: (background-desktop: var(--color-white),
+    background-mobile-top: var(--color-primary),
+    logo: "#{$images-path}/logos/logo-regionales-la-nueva-espana.svg",
+    logo-top-left: "#{$images-path}/logos/logo-regionales-la-nueva-espana.svg",
+    txt: var(--color-black),
+
+    logo-user: "#{$images-path}/icons/icon-user-light.svg",
+    logo-search: "#{$images-path}/icons/icon-search-light.svg",
+    masthead-height: (desktop: $header-height-web--regionales ),
+    behaviors: (pasatiempos: (background-mobile-top: var(--color-black),
+        logo: "#{$images-path}/logos/logo-pasatiempos.svg",
+      ),
+      la-nueva-espana: (logo: "#{$images-path}/logos/logo-regionales-la-nueva-espana.svg",
+       logo-top-left: "#{$images-path}/logos/logo-regionales-la-nueva-espana.svg",
+        behaviors: (cerca: (logo: "#{$images-path}/logos/logo-cerca.svg",
+          ),
+          pasatiempos: (logo: "#{$images-path}/logos/logo-pasatiempos.svg",
+            background-mobile-top: var(--color-black),
+          ),
+          siero: (logo: "#{$images-path}/logos/logo-regionales-siero.svg",
+          ),
+          tineo: (logo: "#{$images-path}/logos/logo-regionales-tineo.svg",
+          ), 
+          corvera: (logo: "#{$images-path}/logos/logo-regionales-corvera.svg",
+          ),
+          elllano: (logo: "#{$images-path}/logos/logo-regionales-elllano.svg",
+          ),
+          gijonoeste: (logo: "#{$images-path}/logos/logo-regionales-gijonoeste.svg",
+          ),
+          grado: (logo: "#{$images-path}/logos/logo-regionales-grado.svg",
+          ),
+          lacorredoria: (logo: "#{$images-path}/logos/logo-regionales-lacorredoria.svg",
+          ),
+          laviana: (logo: "#{$images-path}/logos/logo-regionales-laviana.svg",
+          ),
+          llanera: (logo: "#{$images-path}/logos/logo-regionales-llanera.svg",
+          ),
+          riberadearriba: (logo: "#{$images-path}/logos/logo-regionales-riberadearriba.svg",
+          ),
+          luarcavaldes: (logo: "#{$images-path}/logos/logo-regionales-luarcavaldes.svg",
+          ),
+          salas: (logo: "#{$images-path}/logos/logo-regionales-salas.svg",
+          ),
+          castrillon: (logo: "#{$images-path}/logos/logo-regionales-castrillon.svg",
+          ),
+          villaviciosa: (logo: "#{$images-path}/logos/logo-regionales-villaviciosa.svg",
+            logo-top-left: "#{$images-path}/logos/logo-regionales-la-nueva-espana.svg",
+          ),
+          asturiasexterior: (logo: "#{$images-path}/logos/logo-regionales-asturiasexterior.svg",
+          ),
+          canalparlamento: (logo: "#{$images-path}/logos/logo-regionales-canalparlamento.svg",
+          ),
+          adelantados: (logo: "#{$images-path}/logos/logo-regionales-adelantados.svg",
+          ),
+          premiosprincesa: (logo: "#{$images-path}/logos/logo-regionales-premiosprincesa.svg",
+          ),
+          clublanuevaespana: (logo: "#{$images-path}/logos/logo-regionales-clublanuevaespana.svg",
+          ),
+          oviedo: (logo: "#{$images-path}/logos/logo-regionales-oviedo.svg",
+          ),
+          cangasdelnarcea: (logo: "#{$images-path}/logos/logo-regionales-cangasdelnarcea.svg",
+          ),
+        )),
+
+      faro-de-vigo: (background-desktop: var(--color-white),
+        background-mobile-top: var(--color-faro-de-vigo),
+        logo: "#{$images-path}/logos/logo-regionales-faro-de-vigo.svg",
+        logo-top-left: "#{$images-path}/logos/logo-regionales-faro-de-vigo.svg",
+        behaviors: (cerca: (logo: "#{$images-path}/logos/logo-cerca.svg",
+          ),
+          pasatiempos: (logo: "#{$images-path}/logos/logo-pasatiempos.svg",
+          ),
+
+        ),
+      ),
+
+      diario-cordoba: (background-desktop: var(--color-white),
+        background-mobile-top: var(--color-diario-cordoba),
+        logo: "#{$images-path}/logos/logo-regionales-diario-cordoba.svg",
+        logo-top-left: "#{$images-path}/logos/logo-regionales-diario-cordoba.svg",
+        behaviors: (cerca: (logo: "#{$images-path}/logos/logo-cerca.svg",
+          ),
+          pasatiempos: (logo: "#{$images-path}/logos/logo-pasatiempos.svg",
+            background-mobile-top: var(--color-black),
+          ),
+          altoguadalquivir: (logo: "#{$images-path}/logos/logo-regionales-altoguadalquivir.svg",
+          ),
+        )),
+
+      la-provincia-diario-de-las-palmas: (
+        logo: "#{$images-path}/logos/logo-regionales-laprovinciadiariodelaspalmas.svg",
+        logo-top-left: "#{$images-path}/logos/logo-regionales-laprovinciadiariodelaspalmas.svg",
+        behaviors: (
+          cerca: (
+            logo: "#{$images-path}/logos/logo-cerca.svg",
+          ),
+          pasatiempos: (
+            logo: "#{$images-path}/logos/logo-pasatiempos.svg",
+          ),
+        ),
+      ),
+
+      deia: (logo: "#{$images-path}/logos/logo-regionales-deia.svg",
+        logo-top-left: "#{$images-path}/logos/logo-regionales-deia.svg",
+      ),
+
+      diari-de-girona: (logo: "#{$images-path}/logos/logo-regionales-diari-de-girona.svg",
+        logo-top-left: "#{$images-path}/logos/logo-regionales-diari-de-girona.svg",
+        behaviors: (cerca: (logo: "#{$images-path}/logos/logo-cerca-catalan.svg",
+          ),
+          pasatiempos: (logo: "#{$images-path}/logos/logo-pasatiempos.svg",
+          ),
+          economia: (logo: "#{$images-path}/logos/logo-regionales-economia.svg",
+          ),
+          elbaixemporda: (logo: "#{$images-path}/logos/logo-regionales-elbaixemporda.svg",
+          ),
+          gironadelicia: (logo: "#{$images-path}/logos/logo-regionales-gironadelicia.svg",
+          ),
+        ),
+      ),
+
+      diario-de-ibiza: (logo: "#{$images-path}/logos/logo-regionales-diario-de-ibiza.svg",
+        logo-top-left: "#{$images-path}/logos/logo-regionales-diario-de-ibiza.svg",
+        behaviors: (cerca: (logo: "#{$images-path}/logos/logo-cerca.svg",
+          ),
+          pasatiempos: (logo: "#{$images-path}/logos/logo-pasatiempos.svg",
+            background-mobile-top: var(--color-black),
+          ),
+          diariodeformentera: (logo: "#{$images-path}/logos/logo-regionales-diariodeformentera.svg",
+          ),
+          diariodesantaeularia: (logo: "#{$images-path}/logos/logo-regionales-diariodesantaeularia.svg",
+          ),
+          livingibiza: (logo: "#{$images-path}/logos/logo-regionales-livingibiza.svg",
+          ),
+        ),
+      ),
+
+      diario-de-mallorca: (logo: "#{$images-path}/logos/logo-regionales-diario-de-mallorca.svg",
+        logo-top-left: "#{$images-path}/logos/logo-regionales-diario-de-mallorca.svg",
+        behaviors: (cerca: (logo: "#{$images-path}/logos/logo-cerca.svg",
+          ),
+          pasatiempos: (logo: "#{$images-path}/logos/logo-pasatiempos.svg",
+          ),
+          cronicadepalma: (logo: "#{$images-path}/logos/logo-regionales-cronicadepalma.svg",
+          ),
+          cronicauib: (logo: "#{$images-path}/logos/logo-regionales-cronicauib.svg",
+          ),
+          diariodeandratx: (logo: "#{$images-path}/logos/logo-regionales-diariodeandratx.svg",
+          ),
+          ido: (logo: "#{$images-path}/logos/logo-regionales-ido.svg",
+          ),
+          mallorcadelicia: (logo: "#{$images-path}/logos/logo-regionales-mallorcadelicia.svg",
+          ),
+        ),
+      ),
+
+      diario-informacion: (logo: "#{$images-path}/logos/logo-regionales-diario-informacion.svg",
+        logo-top-left: "#{$images-path}/logos/logo-regionales-diario-informacion.svg",
+        behaviors: (cerca: (logo: "#{$images-path}/logos/logo-cerca.svg",
+          ),
+          pasatiempos: (logo: "#{$images-path}/logos/logo-pasatiempos.svg",
+          ),
+          cronicadelaprovinciadealicante: (logo: "#{$images-path}/logos/logo-regionales-cronicadelaprovinciadealicante.svg",
+          ),
+           lacronicadeorihuela: (logo: "#{$images-path}/logos/logo-regionales-lacronicadeorihuela.svg",
+          ),
+          informaciontv: (logo: "#{$images-path}/logos/logo-regionales-informaciontv.svg",
+          ),
+          lacronicadecalp: (logo: "#{$images-path}/logos/logo-regionales-lacronicadecalp.svg",
+          ),
+          lacronicadeelda: (logo: "#{$images-path}/logos/logo-regionales-lacronicadeelda.svg",
+          ),
+          lacronicadeelche: (logo: "#{$images-path}/logos/logo-regionales-lacronicadeelche.svg",
+          ),
+          lacronicadelalacanti: (logo: "#{$images-path}/logos/logo-regionales-lacronicadelalacanti.svg",
+          ),
+          lacronicadelanucia: (logo: "#{$images-path}/logos/logo-regionales-lacronicadelanucia.svg",
+          ),
+        ),
+      ),
+
+      el-correo-de-andalucia: (logo: "#{$images-path}/logos/logo-regionales-el-correo-de-andalucia.svg",
+        logo-top-left: "#{$images-path}/logos/logo-regionales-el-correo-de-andalucia.svg",
+        behaviors: (cerca: (logo: "#{$images-path}/logos/logo-cerca.svg",
+          ),
+          pasatiempos: (logo: "#{$images-path}/logos/logo-pasatiempos.svg",
+          ),
+          larecogia: (logo: "#{$images-path}/logos/logo-regionales-larecogia.svg",
+          ),
+        ),
+      ),
+
+      el-correo-gallego: (logo: "#{$images-path}/logos/logo-regionales-el-correo-gallego.svg",
+        logo-top-left: "#{$images-path}/logos/logo-regionales-el-correo-gallego.svg",
+        behaviors: (cerca: (logo: "#{$images-path}/logos/logo-cerca.svg",
+          ),
+          pasatiempos: (logo: "#{$images-path}/logos/logo-pasatiempos.svg",
+          ),
+        ),
+      ),
+
+      el-dia-la-opinion-de-tenerife: (logo: "#{$images-path}/logos/logo-regionales-el-dia-la-opinion-de-tenerife.svg",
+        logo-top-left: "#{$images-path}/logos/logo-regionales-el-dia-la-opinion-de-tenerife.svg",
+        behaviors: (cerca: (logo: "#{$images-path}/logos/logo-cerca.svg",
+          ),
+          pasatiempos: (logo: "#{$images-path}/logos/logo-pasatiempos.svg",
+          ),
+        ),
+      ),
+
+      el-periodico-de-aragon: (logo: "#{$images-path}/logos/logo-regionales-el-periodico-de-aragon.svg",
+        logo-top-left: "#{$images-path}/logos/logo-regionales-el-periodico-de-aragon.svg",
+        behaviors: (cerca: (logo: "#{$images-path}/logos/logo-cerca.svg",
+          ),
+          pasatiempos: (logo: "#{$images-path}/logos/logo-pasatiempos.svg",
+          ),
+          campodebelchite: (logo: "#{$images-path}/logos/logo-regionales-campodebelchite.svg",
+          ),
+          campodeborja: (logo: "#{$images-path}/logos/logo-regionales-campodeborja.svg",
+          ),
+          campodecarinena: (logo: "#{$images-path}/logos/logo-regionales-campodecarinena.svg",
+          ),
+          cuencasmineras: (logo: "#{$images-path}/logos/logo-regionales-cuencasmineras.svg",
+          ),
+          ejeaysuspueblos: (logo: "#{$images-path}/logos/logo-regionales-ejeaysuspueblos.svg",
+          ),
+          huesca: (logo: "#{$images-path}/logos/logo-regionales-huesca.svg",
+          ),
+          lacronicadevaldejalon: (logo: "#{$images-path}/logos/logo-regionales-lacronicadevaldejalon.svg",
+          ),
+          riberaaltadelebro: (logo: "#{$images-path}/logos/logo-regionales-riberaaltadelebro.svg",
+          ),
+          riberadenavarra: (logo: "#{$images-path}/logos/logo-regionales-riberadenavarra.svg",
+          ),
+        ),
+      ),
+
+      el-periodico-extremadura: (logo: "#{$images-path}/logos/logo-regionales-el-periodico-extremadura.svg",
+        logo-top-left: "#{$images-path}/logos/logo-regionales-el-periodico-extremadura.svg",
+        behaviors: (cerca: (logo: "#{$images-path}/logos/logo-cerca.svg",
+          ),
+          pasatiempos: (logo: "#{$images-path}/logos/logo-pasatiempos.svg",
+          ),
+          cronicadeltajosalor: (logo: "#{$images-path}/logos/logo-regionales-cronicadeltajosalor.svg",
+          ),
+        ),
+      ),
+
+      el-periodico-mediterraneo: (logo: "#{$images-path}/logos/logo-regionales-el-periodico-mediterraneo.svg",
+        logo-top-left: "#{$images-path}/logos/logo-regionales-el-periodico-mediterraneo.svg",
+        behaviors: (cerca: (logo: "#{$images-path}/logos/logo-cerca.svg",
+          ),
+          pasatiempos: (logo: "#{$images-path}/logos/logo-pasatiempos.svg",
+          ),
+          altopalancia: (logo: "#{$images-path}/logos/logo-regionales-altopalancia.svg",
+          ),
+        ),
+      ),
+
+      emporda: (logo: "#{$images-path}/logos/logo-regionales-emporda.svg",
+        logo-top-left: "#{$images-path}/logos/logo-regionales-emporda.svg",
+        behaviors: (cerca: (logo: "#{$images-path}/logos/logo-cerca.svg",
+          ),
+          pasatiempos: (logo: "#{$images-path}/logos/logo-pasatiempos.svg",
+          ),
+        ),
+      ),
+
+      la-cronica-de-badajoz: (logo: "#{$images-path}/logos/logo-regionales-la-cronica-de-badajoz-aniversario20.svg",
+        logo-top-left: "#{$images-path}/logos/logo-regionales-la-cronica-de-badajoz-aniversario20.svg",
+        behaviors: (cerca: (logo: "#{$images-path}/logos/logo-cerca.svg",
+          ),
+          pasatiempos: (logo: "#{$images-path}/logos/logo-pasatiempos.svg",
+          ),
+          almendralejo: (logo: "#{$images-path}/logos/logo-regionales-almendralejo.svg",
+          ),
+          cronicadelaprovinciadebadajoz: (logo: "#{$images-path}/logos/logo-regionales-cronicadelaprovinciadebadajoz.svg",
+          ),
+          cronicapuebladelacalzada: (logo: "#{$images-path}/logos/logo-regionales-cronicapuebladelacalzada.svg",
+          ),
+          villafrancadelosbarros: (logo: "#{$images-path}/logos/logo-regionales-villafrancadelosbarros.svg",
+          ),
+        ),
+      ),
+
+      la-opinion-a-coruna: (logo: "#{$images-path}/logos/logo-regionales-la-opinion-a-coruna.svg",
+        logo-top-left: "#{$images-path}/logos/logo-regionales-la-opinion-a-coruna.svg",
+        behaviors: (cerca: (logo: "#{$images-path}/logos/logo-cerca.svg",
+          ),
+          pasatiempos: (logo: "#{$images-path}/logos/logo-pasatiempos.svg",
+          ),
+        ),
+      ),
+
+      la-opinion-correo-de-zamora: (logo: "#{$images-path}/logos/logo-regionales-la-opinion-correo-de-zamora.svg",
+        logo-top-left: "#{$images-path}/logos/logo-regionales-la-opinion-correo-de-zamora.svg",
+        behaviors: (cerca: (logo: "#{$images-path}/logos/logo-cerca.svg",
+          ),
+          pasatiempos: (logo: "#{$images-path}/logos/logo-pasatiempos.svg",
+          ),
+          aliste: (logo: "#{$images-path}/logos/logo-regionales-aliste.svg",
+          ),
+          benavente: (logo: "#{$images-path}/logos/logo-regionales-benavente.svg",
+          ),
+          sanabria: (logo: "#{$images-path}/logos/logo-regionales-sanabria.svg",
+          ),
+          toro: (logo: "#{$images-path}/logos/logo-regionales-toro.svg",
+          ),
+        ),
+      ),
+
+      la-opinion-de-malaga: (logo: "#{$images-path}/logos/logo-regionales-la-opinion-de-malaga.svg",
+        logo-top-left: "#{$images-path}/logos/logo-regionales-la-opinion-de-malaga.svg",
+        behaviors: (cerca: (logo: "#{$images-path}/logos/logo-cerca.svg",
+            logo-top-left: "#{$images-path}/logos/logo-regionales-la-opinion-de-malaga.svg",
+          ),
+          pasatiempos: (logo: "#{$images-path}/logos/logo-pasatiempos.svg",
+          ),
+          alhaurindelatorre: (logo: "#{$images-path}/logos/logo-regionales-alhaurindelatorre.svg",
+          ),
+          cangasdelnarcea: (logo: "#{$images-path}/logos/logo-regionales-cangasdelnarcea.svg",
+          ),
+          coin: (logo: "#{$images-path}/logos/logo-regionales-coin.svg",
+          ),
+          torremolinos: (logo: "#{$images-path}/logos/logo-regionales-torremolinos.svg",
+          ),
+        ),
+      ),
+
+      la-opinion-de-murcia: (logo: "#{$images-path}/logos/logo-regionales-la-opinion-de-murcia.svg",
+        logo-top-left: "#{$images-path}/logos/logo-regionales-la-opinion-de-murcia.svg",
+        behaviors: (cerca: (logo: "#{$images-path}/logos/logo-cerca.svg",
+            logo-top-left: "#{$images-path}/logos/logo-regionales-la-opinion-de-murcia.svg",
+          ),
+          pasatiempos: (logo: "#{$images-path}/logos/logo-pasatiempos.svg",
+            logo-top-left: "#{$images-path}/logos/logo-regionales-la-opinion-de-murcia.svg",
+          ),
+        ),
+      ),
+
+      levante-el-mercantil-valenciano: (logo: "#{$images-path}/logos/logo-regionales-levante-el-mercantil-valenciano.svg",
+        logo-top-left: "#{$images-path}/logos/logo-regionales-levante-el-mercantil-valenciano.svg",
+        behaviors: (
+          cerca: (logo: "#{$images-path}/logos/logo-cerca.svg",
+            logo-top-left: "#{$images-path}/logos/logo-regionales-levante-el-mercantil-valenciano.svg",
+          ),
+          pasatiempos: (logo: "#{$images-path}/logos/logo-pasatiempos.svg",
+            logo-top-left: "#{$images-path}/logos/logo-regionales-levante-el-mercantil-valenciano.svg",
+          ),
+          lacronicadalbal: (logo: "#{$images-path}/logos/logo-regionales-lacronicadalbal.svg",
+
+          ),
+          lacronicadealdaia: (logo: "#{$images-path}/logos/logo-regionales-lacronicadealdaia.svg",
+
+          ),
+          lacronicadealfafar: (logo: "#{$images-path}/logos/logo-regionales-lacronicadealfafar.svg",
+
+          ),
+          lacronicadealzira: (logo: "#{$images-path}/logos/logo-regionales-lacronicadealzira.svg",
+
+          ),
+          lacronicadebenifairodelesvalls: (logo: "#{$images-path}/logos/logo-regionales-lacronicadebenifairodelesvalls.svg",
+
+          ),
+          lacronicadebenissa: (logo: "#{$images-path}/logos/logo-regionales-lacronicadebenissa.svg",
+          ),
+          lacronicadebenitatxell: (logo: "#{$images-path}/logos/logo-regionales-lacronicadebenitatxell.svg",
+          ),
+          lacronicadebetera: (logo: "#{$images-path}/logos/logo-regionales-lacronicadebetera.svg",
+          ),
+          lacronicadeburjassot: (logo: "#{$images-path}/logos/logo-regionales-lacronicadeburjassot.svg",
+          ),
+          lacronicadecalp: (logo: "#{$images-path}/logos/logo-regionales-levante-lacronicadecalp.svg",
+          ),
+          lacronicadecatarroja: (logo: "#{$images-path}/logos/logo-regionales-lacronicadecatarroja.svg",
+          ),
+          lacronicadegodella: (logo: "#{$images-path}/logos/logo-regionales-lacronicadegodella.svg",
+          ),
+          lacronicadelaprovinciadevalencia: (logo: "#{$images-path}/logos/logo-regionales-lacronicadelaprovinciadevalencia.svg",
+          ),
+          lacronicadelliria: (logo: "#{$images-path}/logos/logo-regionales-lacronicadelliria.svg",
+          ),
+          lacronicadepaiporta: (logo: "#{$images-path}/logos/logo-regionales-lacronicadepaiporta.svg",
+          ),
+          lacronicadepaterna: (logo: "#{$images-path}/logos/logo-regionales-lacronicadepaterna.svg",
+          ),
+          lacronicadepego: (logo: "#{$images-path}/logos/logo-regionales-lacronicadepego.svg",
+          ),
+          lacronicadepicassent: (logo: "#{$images-path}/logos/logo-regionales-lacronicadepicassent.svg",
+          ),
+          lacronicadepucol: (logo: "#{$images-path}/logos/logo-regionales-lacronicadepucol.svg",
+          ),
+          lacronicaderibarojadeturia: (logo: "#{$images-path}/logos/logo-regionales-lacronicaderibarojadeturia.svg",
+          ),
+          lacronicadetorrent: (logo: "#{$images-path}/logos/logo-regionales-lacronicadetorrent.svg",
+          ),
+          lacronicadevillamarchante: (logo: "#{$images-path}/logos/logo-regionales-lacronicadevilamarxant.svg",
+          ),
+        ),
+      ),
+
+      mallorca-zeitung: (logo: "#{$images-path}/logos/logo-regionales-mallorca-zeitung.svg",
+        logo-top-left: "#{$images-path}/logos/logo-regionales-mallorca-zeitung.svg",
+        behaviors: (cerca: (logo: "#{$images-path}/logos/logo-cerca-aleman.svg",
+            logo-top-left: "#{$images-path}/logos/logo-regionales-mallorca-zeitung.svg",
+          ),
+          pasatiempos: (logo: "#{$images-path}/logos/logo-pasatiempos.svg",
+            logo-top-left: "#{$images-path}/logos/logo-regionales-mallorca-zeitung.svg",
+          ),
+        ),
+      ),
+
+      regio7: (logo: "#{$images-path}/logos/logo-regionales-regio7.svg",
+        logo-top-left: "#{$images-path}/logos/logo-regionales-regio7.svg",
+        behaviors: (cerca: (logo: "#{$images-path}/logos/logo-cerca.svg",
+            logo-top-left: "#{$images-path}/logos/logo-regionales-regio7.svg",
+          ),
+          pasatiempos: (logo: "#{$images-path}/logos/logo-pasatiempos.svg",
+          ),
+          anoia: (logo: "#{$images-path}/logos/logo-regionales-anoia.svg",
+          ),
+          diaridigualada: (logo: "#{$images-path}/logos/logo-regionales-diaridigualada.svg",
+          ),
+          salut: (logo: "#{$images-path}/logos/logo-regionales-salut.svg",
+          ),
+        ),
+      ),
+
+      superdeporte: (logo: "#{$images-path}/logos/logo-regionales-superdeporte.svg",
+        logo-top-left: "#{$images-path}/logos/logo-regionales-superdeporte.svg",
+        behaviors: (cerca: (logo: "#{$images-path}/logos/logo-cerca.svg",
+            logo-top-left: "#{$images-path}/logos/logo-regionales-superdeporte.svg",
+          ),
+          pasatiempos: (logo: "#{$images-path}/logos/logo-pasatiempos.svg",
+            logo-top-left: "#{$images-path}/logos/logo-regionales-superdeporte.svg",
+          ),
+        ),
+      ),
+    )),
+
+  revistas: (background-desktop: var(--color-white),
+    background-mobile-top: var(--color-black),
+    logo: "#{$images-path}/logos/logo-woman.svg",
+    logo-top-left: "#{$images-path}/logos/logo-woman-negativo.svg",
+    txt: var(--color-black),
+
+    logo-user: "#{$images-path}/icons/icon-user-light.svg",
+    logo-search: "#{$images-path}/icons/icon-search-light.svg",
+    behaviors: (
+      cuore: (logo: "#{$images-path}/logos/logo-cuore.svg",
+        logo-top-left: "#{$images-path}/logos/logo-cuore.svg",
+        behaviors: (
+          pasatiempos: (logo-top-left: "#{$images-path}/logos/logo-cuore.svg",
+          logo: "#{$images-path}/logos/logo-pasatiempos.svg",
+          ),
+          compras: (
+          logo: "#{$images-path}/logos/logo-revistas-compras.svg",  
+          ),
+        ),
+      ),
+      stilo: (logo: "#{$images-path}/logos/logo-stilo.svg",
+        logo-top-left: "#{$images-path}/logos/logo-stilo.svg",
+        behaviors: (
+          pasatiempos: (logo-top-left: "#{$images-path}/logos/logo-stilo.svg",
+          logo: "#{$images-path}/logos/logo-pasatiempos.svg",
+          ),
+           compras: (
+          logo: "#{$images-path}/logos/logo-revistas-compras.svg",  
+          ),
+        ),
+      ),
+      woman: (logo: "#{$images-path}/logos/logo-woman.svg",
+        logo-top-left: "#{$images-path}/logos/logo-woman.svg",
+        behaviors: (
+          pasatiempos: (logo-top-left: "#{$images-path}/logos/logo-woman.svg",
+           logo: "#{$images-path}/logos/logo-pasatiempos.svg",
+          ),
+           shopping: (logo: "#{$images-path}/logos/logo-revistas-shopping.svg",  
+          ),
+        ),
+      ),
+      viajar: (logo: "#{$images-path}/logos/logo-viajar.svg",
+        logo-top-left: "#{$images-path}/logos/logo-viajar.svg",
+        behaviors: (
+          pasatiempos: (
+            logo-top-left: "#{$images-path}/logos/logo-viajar.svg",
+          logo: "#{$images-path}/logos/logo-pasatiempos.svg",
+          ),
+        ),
+      ),
+      
+      pasatiempos: (logo-top-left: "#{$images-path}/logos/logo-woman.svg",
+      )))
+);
+
+$brands: (
+);
+
+@each $brand-name, $brand-config in $brands-overrides {
+  $brands: map-merge($brands,
+      ($brand-name: build-brand-config($brand-config)));
+}
+
+// VARIABLES
+// ===============================================
+$transition-speed: 0.1s;
+
+$ep-brands: (
+  economia,
+  shopping,
+  gastronomia,
+  libros,
+  cerca,
+  motor,
+  badalona,
+  cornella,
+  castelldefels,
+  martorell,
+  santcugat,
+  santacoloma,
+  esplugues,
+  gava,
+  granollers,
+  hospitalet,
+  mataro,
+  molletdelvalles,
+  parets,
+  rubi,
+  sabadell,
+  santboi,
+  tarragona,
+  terrassa,
+  vilanovailageltru,
+  viladecans
+);
+
+$epe-brands: (
+  alcaladehenares,
+  arganzuela,
+  carabanchel,
+  latina,
+  mostoles,
+  pozuelodealarcon,
+  toledo,
+  cerca
+);
+
+$revistas-brands: (
+  cuore,
+  stilo,
+  viajar,
+  woman
+);
+
+$regionales-brands: (
+  la-provincia-diario-de-las-palmas,
+  deia,
+  diari-de-girona,
+  diario-cordoba,
+  diario-de-ibiza,
+  diario-de-mallorca,
+  diario-informacion,
+  el-correo-de-andalucia,
+  el-correo-gallego,
+  el-dia-la-opinion-de-tenerife,
+  el-periodico-de-aragon,
+  el-periodico-extremadura,
+  el-periodico-mediterraneo,
+  emporda,
+  faro-de-vigo,
+  la-cronica-de-badajoz,
+  la-nueva-espana,
+  la-opinion-a-coruna,
+  la-opinion-correo-de-zamora,
+  la-opinion-de-malaga,
+  la-opinion-de-murcia,
+  lla-provincia-diario-de-las-palmas,
+  levante-el-mercantil-valenciano,
+  mallorca-zeitung,
+  regio7,
+  superdeporte,
+  cerca
+);
+$regionales-subbrands: (
+  economia,
+  elbaixemporda,
+  gironadelicia,
+  altoguadalquivir,
+  diariodeformentera,
+  diariodesantaeularia,
+  livingibiza,
+  cronicadepalma,
+  cronicauib,
+  diariodeandratx,
+  ido,
+  mallorcadelicia,
+  cronicadelaprovinciadealicante,
+  informaciontv,
+  lacronicadecalp,
+  lacronicadeelda,
+  lacronicadelanucia,
+  lacronicadeelche,
+  lacronicadelalacanti,
+  larecogia,
+  campodebelchite,
+  campodeborja,
+  campodecarinena,
+  cuencasmineras,
+  ejeaysuspueblos,
+  huesca,
+  lacronicadevaldejalon,
+  riberaaltadelebro,
+  riberadenavarra,
+  altopalancia,
+  almendralejo,
+  cronicadelaprovinciadebadajoz,
+  cronicapuebladelacalzada,
+  villafrancadelosbarros,
+  adelantados,
+  asturiasexterior,
+  canalparlamento,
+  cangasdelnarcea,
+  castrillon,
+  clublanuevaespana,
+  cronicadeltajosalor,
+  corvera,
+  elllano,
+  gijonoeste,
+  grado,
+  lacorredoria,
+  laviana,
+  llanera,
+  luarcavaldes,
+  oviedo,
+  premiosprincesa,
+  riberadearriba,
+  salas,
+  siero,
+  tineo,
+  villaviciosa,
+  aliste,
+  benavente,
+  sanabria,
+  toro,
+  alhaurindelatorre,
+  coin,
+  torremolinos,
+  lacronicadalbal,
+  lacronicadealdaia,
+  lacronicadealfafar,
+  lacronicadealzira,
+  lacronicadebenifairodelesvalls,
+  lacronicadebenissa,
+  lacronicadebenitatxell,
+  lacronicadebetera,
+  lacronicadeburjassot,
+  lacronicadecatarroja,
+  lacronicadegodella,
+  lacronicadelaprovinciadevalencia,
+  lacronicadelliria,
+  lacronicadepaiporta,
+  lacronicadepaterna,
+  lacronicadepego,
+  lacronicadepicassent,
+  lacronicadepucol,
+  lacronicaderibarojadeturia,
+  lacronicadetorrent,
+  lacronicadevillamarchante,
+  anoia,
+  diaridigualada,
+  salut
+);
+$regionales-subbrands-la-nueva-espana: (
+  adelantados,
+  asturiasexterior,
+  canalparlamento,
+  cangasdelnarcea,
+  castrillon,
+  cerca,
+  clublanuevaespana,
+  corvera,
+  elllano,
+  gijonoeste,
+  grado,
+  lacorredoria,
+  laviana,
+  llanera,
+  luarcavaldes,
+  oviedo,
+  premiosprincesa,
+  riberadearriba,
+  salas,
+  siero,
+  tineo,
+  villaviciosa
+);
+$regionales-subbrands-la-provincia-diario-de-las-palmas: (
+  cerca
+);
+
+$regionales-subbrands-diari-de-girona: (
+  cerca,
+  economia,
+  elbaixemporda,
+  gironadelicia
+);
+
+$regionales-subbrands-diario-cordoba: (
+  altoguadalquivir,
+  cerca
+);
+
+$regionales-subbrands-diario-de-ibiza: (
+  cerca,
+  diariodeformentera,
+  diariodesantaeularia,
+  livingibiza
+);
+
+$regionales-subbrands-diario-de-mallorca: (
+  cerca,
+  cronicadepalma,
+  cronicauib,
+  diariodeandratx,
+  ido,
+  mallorcadelicia
+);
+
+$regionales-subbrands-diario-informacion: (
+  cerca,
+  cronicadelaprovinciadealicante,
+  informaciontv,
+  lacronicadecalp,
+  lacronicadeelda,
+  lacronicadeelche,
+  lacronicadelalacanti,
+  lacronicadelanucia
+);
+
+$regionales-subbrands-el-correo-de-andalucia: (
+  cerca,
+  larecogia
+);
+
+$regionales-subbrands-el-correo-gallego: (
+  cerca
+);
+
+$regionales-subbrands-el-dia-la-opinion-de-tenerife: (
+  cerca
+);
+
+$regionales-subbrands-el-periodico-de-aragon: (
+  campodebelchite,
+  campodeborja,
+  campodecarinena,
+  cerca,
+  cuencasmineras,
+  ejeaysuspueblos,
+  huesca,
+  lacronicadevaldejalon,
+  riberaaltadelebro,
+  riberadenavarra
+);
+
+$regionales-subbrands-el-periodico-extremadura: (
+  cerca
+  cronicadeltajosalor
+);
+
+$regionales-subbrands-el-periodico-mediterraneo: (
+  altopalancia,
+  cerca
+);
+
+$regionales-subbrands-emporda: (
+  cerca
+);
+
+$regionales-subbrands-faro-de-vigo: (
+  cerca
+);
+
+$regionales-subbrands-la-cronica-de-badajoz: (
+  almendralejo,
+  cerca,
+  cronicadelaprovinciadebadajoz,
+  villafrancadelosbarros,
+  cronicapuebladelacalzada
+);
+
+$regionales-subbrands-la-opinion-a-coruna: (
+  cerca
+);
+
+$regionales-subbrands-la-opinion-correo-de-zamora: (
+  aliste,
+  benavente,
+  sanabria,
+  cerca,
+  toro
+);
+
+$regionales-subbrands-la-opinion-de-malaga: (
+  alhaurindelatorre,
+  cangasdelnarcea,
+  cerca,
+  coin,
+  torremolinos
+);
+
+$regionales-subbrands-la-opinion-de-murcia: (
+  cerca
+);
+
+$regionales-subbrands-lla-provincia-diario-de-las-palmas: (
+  cerca
+);
+
+$regionales-subbrands-levante-el-mercantil-valenciano: (
+  cerca,
+  lacronicadalbal,
+  lacronicadealdaia,
+  lacronicadealfafar,
+  lacronicadealzira,
+  lacronicadebenifairodelesvalls,
+  lacronicadebenissa,
+  lacronicadebenitatxell,
+  lacronicadebetera,
+  lacronicadeburjassot,
+  lacronicadecalp,
+  lacronicadecatarroja,
+  lacronicadegodella,
+  lacronicadelaprovinciadevalencia,
+  lacronicadelliria,
+  lacronicadepaiporta,
+  lacronicadepaterna,
+  lacronicadepego,
+  lacronicadepicassent,
+  lacronicadepucol,
+  lacronicaderibarojadeturia,
+  lacronicadetorrent,
+  lacronicadevillamarchante
+);
+
+$regionales-subbrands-mallorca-zeitung: (
+  cerca
+);
+
+$regionales-subbrands-regio7: (
+  anoia,
+  cerca,
+  diaridigualada,
+  salut
+);
+
+$regionales-subbrands-superdeporte: (
+  cerca
+);
+
+// .ft-org-masthead
+// ===============================================
+.ft-org-masthead {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-family: var(--font-primary);
+  position: relative;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  @include brand-by-body-mode(masthead-height, height);
+  @include brand-by-body(background-desktop, background-color);
+
+  // cabecera fija
+  &--fix {
+    @include position(initial, 0 0 0 0);
+    position: fixed;
+    pointer-events: none;
+    z-index: 2500;
+    will-change: opacity, transform;
+    border-bottom: 1px solid var(--color-lightGrey);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    @include hide;
+
+    // cuando se hace visible
+    &.visible {
+      @include hide;
+
+      // @include min-screen(768px)
+      @include min-screen(768px) {
+        @include show-flex;
+        visibility: visible;
+        opacity: 1;
+        pointer-events: all;
+        // Sombra sutil al mostrarse
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        @include brand-by-body-mode(masthead-height-fix, height);
+      }
+    }
+  }
+
+  // MENÚ LATERAL
+  &--side {
+    @include position(fixed, 0 null null 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+
+    // Estado inicial oculto
+    transform: translateX(-100%);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    box-shadow: none;
+    will-change: transform, opacity;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    transition:
+      transform 0.5s ease,
+      opacity 0.3s ease,
+      visibility 0s linear 0.5s;
+    @include brand-by-body(side-background, background-color);
+
+
+    @include behavior-parent(minimal-header) {
+      height: 100vh;
+      @include brand-by-body(side-height, height);
+      @include brand-by-body(side-background, background-color);
+    }
+
+    @include min-screen(768px) {
+      width: 400px;
+    }
+
+    // Cuando se activa
+    &.active {
+      transform: translateX(0);
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      box-shadow: 2px 0 20px rgba(0, 0, 0, 0.1);
+      transition:
+        transform 0.5s ease,
+        opacity 0.3s ease,
+        visibility 0s linear 0s;
+      z-index: 30000000000;
+      background-color: var(--color-lightGrey);
+      color: var(--color-black);
+      @include brand-by-body(side-height, height);
+      @include brand-by-body(side-background, background-color);
+    }
+
+    .ft-mol-form {
+      @include margin(0);
+    }
+
+    .ft-mol-form .ft-mol-form__label {
+      @include font--body-S;
+    }
+
+    .ft-mol-radio__title{
+        color:var(--color-primary);
+        @include margin(0 1rem 0 0);
+        @include font--body-S;
+        @include fontBold;
+     
+    }
+
+    @if $brand==sport {
+      @include behavior-parent(shopping) {
+        .ft-org-masthead__area--logged {
+          color: var(--color-white);
+        }
+      }
+    }
+
+    @if $brand==epe {
+
+      //submarcas
+      @include behavior-parent($epe-brands...) {
+        .ft-org-masthead__area--logged {
+          color: var(--color-black);
+        }
+      }
+    }
+
+    @if $brand==ep {
+
+      //submarcas
+      @include behavior-parent($ep-brands...) {
+        .ft-org-masthead__area--logged {
+          color: var(--color-white);
+        }
+
+        .ft-org-masthead__area--logged:before {
+          filter: invert(0);
+        }
+      }
+    }
+
+    @if $brand==regionales {
+      @include behavior-parent-nested(ds-logged) {
+        .ft-org-masthead__area--logged {
+          color: var(--color-premium);
+        }
+      }
+    }
+
+    // Bloque legacy de overrides cerca.* eliminado:
+    // ahora se resuelve con reglas transversales de cerca y configuración de marca.
+  }
+
+
+
+
+  // &--mediareport: adaptación de estilos para reportajes multimedia
+  &--mediareport {
+
+    // Ocultar si no es .--fix
+    &:not(.ft-org-masthead--fix) {
+      display: none;
+    }
+
+    // .ft-org-masthead
+    .ft-org-masthead {
+
+      // &__area--share
+      &__area--share {
+        display: none;
+
+        @include min-screen(361px) {
+          display: block;
+        }
+
+        // &::before
+        &::before {
+          mask-size: 2.2rem;
+        }
+      }
+    }
+  }
+
+
+  // &__top barra de color superior piano
+  &__top {
+    @include position(relative, null null null null);
+    @include padding(0);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    @include brand-by-body(background-mobile-top, background-color);
+    color: var(--color-white);
+
+    @include behavior-parent(ft-org-masthead--fix, ft-org-masthead--side) {
+      @include margin(0);
+    }
+
+    @include behavior-parent(pasatiempos) {
+      max-width: 100%;
+      justify-content: center;
+      @include margin(null null null 0);
+      height: 2.5rem;
+    }
+
+    @include min-screen(768px) {
+      @include brand-by-body(background-desktop, background-color);
+      justify-content: space-between;
+      max-width: 1280px;
+      height: 3rem;
+      @include margin(null null null 1rem);
+
+      @include behavior-parent(pasatiempos) {
+        height: 3rem;
+      }
+    }
+
+    // &:before
+    &:before {
+      content: "";
+      @include position(absolute, null 20% -33% null);
+      width: 0;
+      height: 0;
+      border-right: 17px solid transparent;
+      border-top: 10px solid #{brand(background-mobile-top)};
+      z-index: 2000;
+
+
+      //Pasatiempos
+      @include behavior-parent(pasatiempos, cerca) {
+        content: none;
+      }
+
+      @include min-screen(768px) {
+        content: none;
+      }
+    }
+
+    // &-left
+    &-left {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-end;
+
+      //Pasatiempos
+      @include behavior-parent(pasatiempos) {
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      // .ft-date
+      .ft-date {
+        @include hide;
+        color: #{brand(txt)};
+
+        @include behavior-parent(pasatiempos) {
+          @include hide;
+        }
+
+        // min-screen(768px)
+        @include min-screen(768px) {
+          @include show-flex;
+          @include margin(0);
+
+          // .ft-date__reload:last-child
+          &__reload:last-child {
+            border: 0 none;
+            @include fontBold;
+          }
+        }
+      }
+
+      // &-logo
+      &-logo {
+        @include padding(0);
+        display: flex;
+        flex: 1;
+        width: 10rem;
+        @include hide;
+
+        // @include min-screen(768px)
+        @include min-screen(768px) {
+          width: 16rem;
+        }
+
+        // marcas ancho del enlace
+        @if $brand ==sport {
+
+          // submarcas
+          @include behavior-parent(shopping) {
+            @include show-flex;
+
+          }
+        }
+
+        // @if $brand ==revistas
+        @if $brand ==revistas {
+
+          @include behavior-parent(woman) {
+            @include behavior-parent-nested(shopping) {
+              @include show-flex;
+              width: 67px;
+            }
+          }
+
+          @include behavior-parent(viajar) {
+            @include behavior-parent-nested(escapatecerca-lorem) {
+              @include show-flex;
+              width: 67px;
+            }
+          }
+
+          @include behavior-parent(stilo) {
+            @include behavior-parent-nested(compras) {
+              @include show-flex;
+              width: 67px;
+              @include margin(0 0.5rem 0 0);
+            }
+          }
+
+          @include behavior-parent(cuore) {
+            @include behavior-parent-nested(compras) {
+              @include show-flex;
+              width: 67px;
+              @include margin(0 0.5rem 0 0);
+            }
+          }
+
+        }
+
+        // marcas ancho del enlace
+        @if $brand ==epe {
+
+
+          // submarcas
+          @include behavior-parent($epe-brands...) {
+            @include margin(0 0 0 0.5rem);
+            @include show-flex;
+          }
+        }
+
+        // marcas ancho del enlace
+        @if $brand ==ep {
+
+          // submarcas
+          @include behavior-parent($ep-brands...) {
+            @include show-flex;
+          }
+        }
+
+        // marcas ancho del enlace
+        @if $brand ==regionales {
+          @include behavior-parent($regionales-subbrands...) {
+            @include show-flex;
+          }
+
+          // Activos en Diari de Girona
+          @include behavior-parent(diari-de-girona) {
+            @include behavior-parent-nested(economia) {
+              @include show-flex;
+            }
+          }
+        }
+
+        //Pasatiempos ancho del enlace
+        @include behavior-parent (pasatiempos) {
+          @include show-flex;
+        }
+
+        //Cerca ancho del enlace
+        @include behavior-parent-selector('[class*="cerca"]') {
+          @include show-flex;
+          width: 100px;
+          align-items: center;
+          justify-content: left;
+          height: 100%;
+
+          // @include min-screen(768px)
+          @include min-screen(768px) {
+            width: 120px;
+
+            @if $brand ==epe {
+              width: 152px;
+            }
+          }
+        }
+
+        &:before {
+          content: "";
+          @include margin(auto null);
+          @include position(absolute, 0 0 0 .5rem);
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: left;
+          background-color: transparent;
+          background-position: left;
+          height: 13px;
+          @include brand-by-body(logo-top-left, background-image, $as-url: true);
+          filter: brightness(0) invert(1);
+
+          //Pasatiempos centrado del logo
+          @include behavior-parent (pasatiempos) {
+            background-position: center;
+             filter: brightness(0) invert(1);
+          }
+
+          // @if $brand ==epe
+          @if $brand ==epe {
+            height: 10px;
+          }
+
+          // @if $brand ==ep
+          @if $brand ==ep {
+            filter: brightness(0) saturate(100%) invert(31%) sepia(95%) saturate(3516%) hue-rotate(342deg) brightness(101%) contrast(92%);
+
+            //Pasatiempos centrado del logo
+            @include behavior-parent (cerca, pasatiempos) {
+              filter: brightness(0) invert(1);
+            }
+          }
+
+          @include min-screen(768px) {
+            @include position(absolute, 0);
+            filter: none;
+            height: 15px;
+            // @if $brand ==ep
+            @if $brand ==ep {
+              //Pasatiempos centrado del logo
+              @include behavior-parent (cerca) {
+                filter: brightness(0) saturate(100%) invert(31%) sepia(95%) saturate(3516%) hue-rotate(342deg) brightness(101%) contrast(92%);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // &-right
+    &-right {
+      // estilos generales
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+      align-items: center;
+
+      // en sección pasatiempos este elemento desaparece
+      @include behavior-parent(pasatiempos) {
+        @include hide;
+      }
+
+      //  @include min-screen(768px)
+      @include min-screen(768px) {
+        width: fit-content;
+
+        // en sección minimal-header y pasatiempos este elemento desaparece
+        @include behavior-parent(minimal-header) {
+
+          //Pasatiempos
+          @include behavior-parent-nested(pasatiempos) {
+            @include hide;
+          }
+        }
+      }
+
+      .sticky {
+        // estilos generales
+
+        font-size: 1.1rem;
+        line-height: 1.4rem;
+        font-weight: bold;
+        @include margin(0 0.3rem 0 0);
+        display: flex;
+        flex-direction: row;
+        height: 25px;
+        max-height: 25px;
+        align-items: center;
+        width: 100%;
+        justify-content: flex-end;
+        @include brand-by-body(txt, color);
+
+        //  @include min-screen(768px)
+        @include min-screen(768px) {
+          @include font--body-M--small;
+          @include padding(0.2rem 1.5rem 0 1.5rem);
+          @include margin(0);
+          font-weight: normal;
+          color: var(--color-white);
+          background-color: var(--color-primary);
+          border-radius: 5rem;
+
+        }
+      }
+    }
+  }
+
+  // & parte central de la cabecera
+  &__main {
+    @include position(relative, null);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 5rem;
+    @include brand-by-body(background-desktop, background-color);
+
+    // main sticky
+    @include behavior-parent(ft-org-masthead--fix) {
+      height: 41px;
+      @include margin(0 0 0 1rem);
+    }
+
+    // menú lateral
+    @include behavior-parent(ft-org-masthead--side) {
+      @include brand-by-body(background-desktop, background-color);
+      height: 4rem;
+      @include margin(0);
+      @include padding(0 1rem);
+    }
+
+
+    // Tablet/Desktop
+    @include min-screen(768px) {
+      max-width: 1280px;
+      height: 7rem;
+      @include margin(null null null 1rem);
+    }
+
+    &--secondary {
+      height: 4rem;
+
+      &:before {
+        content: none;
+      }
+    }
+  }
+
+  // &Menú ppal
+  &__menu {
+    @include position(relative, null);
+
+    // &icono del Menú
+    &-button {
+      @include margin(0);
+      @include padding(0 0 0 0.6rem);
+      @include position(relative, null null null 0.6rem);
+      width: 4rem;
+      height: 4rem;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      outline: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      @include min-click-area();
+
+      @include behavior-parent(ft-org-masthead--side) {
+          @include padding(0);
+           @include position(relative, null null null 0);
+        }
+
+      // Tablet/Desktop
+      @include min-screen(768px) {
+        @include padding(0);
+        @include position(relative, null null null 0);
+        width: 4rem; // Aumentamos el ancho para abarcar más área
+        height: 5rem; // Aumentamos la altura para abarcar más área
+
+        @include behavior-parent(ft-org-masthead--side) {
+          height: 4rem;
+        }
+      }
+
+      // Icono de Menú (hamburguesa) y de cierre (--side)
+      &Icon {
+        position: relative;
+        width: 2rem;
+        height: 0.3rem;
+        border-radius: 3px;
+        transition:
+          background 0.5s,
+          top 0.5s,
+          transform 0.5s;
+
+        // Colores del icono de Menú hamburguesa
+        @include brand-by-body(txt, background-color);
+
+       @include behavior-parent-selector(".ft-brand-#{$brand} .ft-org-masthead--side") {
+        background-color: transparent;
+        }
+
+        // Icono de Menú de cierre (--side)
+        @include behavior-parent(ft-org-masthead--side) {
+          width: 2.8rem;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+
+        // Icono de Menú de volver (--main--secondary)
+        @include behavior-parent(ft-org-masthead__main--secondary) {
+          width: 2.8rem;
+          height: 2.8rem;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+
+        &:after,
+        &:before {
+          @include position(absolute, 0.8rem null null 0);
+          content: "";
+          height: 0.3rem;
+          width: 2.3rem;
+          transition:
+            background 0.5s,
+            top 0.5s,
+            transform 0.5s;
+          border-radius: 3px;
+          @include brand-by-body(txt, background-color);
+
+          //La Marca ep está en :before y :after por separado
+          // Tablet/Desktop
+          @include min-screen(768px) {
+            width: 2.5rem;
+          }
+
+          // Modificaciones para el icono de Menú de cierre (--side)
+          @include behavior-parent(ft-org-masthead--side) {
+            transform-origin: center;
+            transition: none;
+          }
+        }
+
+        // Icono de Menú hamburguesa
+        &:before {
+          @include position(absolute, -0.8rem null null null);
+
+          // Modificaciones para el icono de Menú de cierre (--side)
+          @include behavior-parent(ft-org-masthead--side) {
+            @include position(absolute, 50% 50%);
+            transform: translate(-50%, -50%) rotate(45deg);
+          }
+
+          @include brand-by-body(txt, background-color);
+
+          // Modificaciones para el icono de volver en menú secundario (--secondary)
+          @include behavior-parent(ft-org-masthead__main--secondary) {
+            content: "";
+            @include position(absolute, 3px 0 0 3px);
+            height: 2.3rem;
+            width: 2.3rem;
+            background-color: transparent;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 2rem;
+            background-image: url("#{$images-path}/icons/nav-solid-light-back.svg");
+            transform: none;
+            filter: map-filters(whites, brand--all);
+
+            // Modificaciones para el icono de volver en menú secundario en color negro para epe y regionales (--secondary)
+            @if $brand ==epe or $brand ==regionales or $brand ==ep {
+              filter: brightness(0) saturate(100%) invert(0%) sepia(20%) saturate(3%) hue-rotate(322deg) brightness(91%) contrast(87%);
+            }
+          }
+        }
+
+        // Icono de Menú hamburguesa
+        &:after {
+          @include brand-by-body(txt, background-color);
+
+          // Modificaciones para el icono de Menú de cierre (--side)
+          @include behavior-parent(ft-org-masthead--side) {
+            @include position(absolute, 50% 50%);
+            transform: translate(-50%, -50%) rotate(-45deg);
+          }
+
+          // Modificaciones para el icono de volver en menú secundario (--secondary)
+          @include behavior-parent(ft-org-masthead__main--secondary) {
+            content: none;
+          }
+        }
+
+        // EP + Cerca/Pasatiempos: forzar negro en las 3 líneas del icono
+        // Lo dejamos al final para que gane por cascada frente a reglas base.
+
+          @include behavior-parent(cerca, pasatiempos) {
+
+            &,
+            &:before,
+            &:after {
+              background-color: var(--color-black);
+            }
+
+          }
+
+          @include behavior-parent-selector(
+            ".ft-brand-#{$brand}.cerca .ft-org-masthead--side",
+            ".ft-brand-#{$brand}.pasatiempos .ft-org-masthead--side"
+          ) {
+              background-color: transparent;
+          }
+
+            @include behavior-parent-selector(".ft-brand-#{$brand}.pasatiempos .ft-org-masthead__main.ft-org-masthead__main--secondary") {
+              &:before {
+                background-color: transparent;
+              }
+            }
+             @include behavior-parent-selector(".ft-brand-#{$brand}.cerca .ft-org-masthead__main.ft-org-masthead__main--secondary") {
+              &:before {
+                background-color: transparent;
+              }
+            }
+  
+        
+      }
+    }
+  }
+
+  // cajas del menú side para mobile
+  &__box {
+    @include margin(2% 2% 0.5% 2%);
+    @include padding(1rem);
+    display: flex;
+    width: 96%;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: row;
+
+    // cajas del menú side para web
+    @include min-screen(768px) {
+      @include margin(1rem 1rem 0 1rem);
+      width: 380px;
+    }
+
+    // cajas blancas
+    &--white {
+      background: var(--color-white);
+      flex-direction: column;
+    }
+
+    // cajas sin margenes
+    &--minimal {
+      @include margin(1rem 2% 0.5rem 2%);
+      @include padding(0.5rem 0 0);
+    }
+
+    // interior de las cajas en columna
+    &--column {
+      flex-direction: column;
+    }
+
+    // interior de las cajas en row
+    &--row {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    // Titular genérico de las cajas
+    &Title {
+      @include font--body-M--small;
+      @include fontBold;
+      @include margin(0);
+    }
+
+    // Texto genérico de las cajas
+    &Text {
+      @include font--body-S--small;
+      @include margin(1rem null 0 null);
+      display: flex;
+      align-items: center;
+
+      @include behavior-parent(ft-org-masthead__box--row) {
+        @include margin(0);
+      }
+    }
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  // Titulares de las cajas del menú side
+  &__title {
+    @include font--body-L;
+    @include fontBold;
+    @include margin(0 null 1rem null);
+    color: var(--color-primary);
+
+    // Titulares centrados de las cajas del menú side
+    &--center {
+      @include margin(0.5rem auto);
+      text-align: center;
+    }
+  }
+
+  // Subtitulos de las cajas del menú side
+  &__subtitle {
+    @include font--body-M;
+    @include fontBold;
+
+    // Subtitulos centrados de las cajas del menú side
+    &--center {
+      @include margin(0.5rem auto);
+      text-align: center;
+    }
+  }
+
+  // Textos de las cajas del menú side
+  &__text {
+    @include font--body-M;
+
+    // Textos centrados de las cajas del menú side
+    &--center {
+      @include margin(0.5rem auto);
+      text-align: center;
+    }
+  }
+
+  // Menú acordeón
+  &__acordeon {
+    display: flex;
+    flex-direction: column;
+
+    // Reset general de listas
+    &-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      // Nivel 1 acordeon
+      &--nivel-1 {
+        @include margin(0);
+      }
+
+      // Nivel 2 y 3 acordeon
+      &--nivel-2,
+      &--nivel-3 {
+        @include margin(null null null 1.5rem);
+      }
+    }
+
+    // LI items acordeon
+    &-item {
+      @include position(relative, null null null null);
+      @include padding(0);
+      @include border-style(null null solid null);
+      @include border-width(0 0 0.1rem 0);
+      @include border-color(null null var(--color-lightGrey) null);
+      @include font--body-M;
+      @include fontBold;
+      cursor: pointer;
+      width: 100%;
+      list-style-type: none;
+
+      // Modificaciones para el nivel 3
+      @include behavior-parent(ft-org-masthead__acordeon-list--nivel-3) {
+        @include fontStack;
+      }
+
+      // La última celda no tiene borde
+      &:last-child {
+        @include border-style(null null none null);
+        @include border-width(0);
+        @include border-color(null null null null);
+      }
+    }
+
+    // El toogle es el texto de cada una de las secciones del Listado <button>
+    &-toggle {
+      @include font--body-M;
+      @include fontBold;
+      @include padding(1rem 2rem 1rem 0);
+      @include position(relative, null);
+      display: flex;
+      align-items: center;
+      background: none;
+      border: none;
+      width: 100%;
+      text-align: left;
+      cursor: pointer;
+      color: var(--color-black);
+
+      // Color negro sin bold para segundo nivel
+      @include behavior-parent(ft-org-masthead__acordeon-list--nivel-2) {
+        color: var(--color-black);
+        @include font--weight-500;
+      }
+
+      // Flecha acordeon
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 1rem;
+        width: 1rem;
+        height: 1rem;
+        border-left: 2px solid currentColor;
+        border-bottom: 2px solid currentColor;
+        transform: translateY(-50%) rotate(-45deg);
+        transition:
+          transform 0.3s ease,
+          color 0.2s ease;
+        pointer-events: none;
+      }
+
+      // Cuando aria-expanded es true → rotar flecha hacia arriba
+      &[aria-expanded="true"] {
+        color: var(--color-primary);
+
+        &::after {
+          transform: translateY(-50%) rotate(135deg);
+          color: var(--color-primary);
+        }
+      }
+
+      // Cuando lleva una imagen
+      &Img {
+        @include margin(null 0.5rem);
+      }
+    }
+
+    //enlaces dentro de los li
+    &-link {
+      @include padding(1rem 2rem 1rem 0);
+      display: block;
+      text-decoration: none;
+      color: var(--color-black);
+
+
+      // Color negro sin bold para segundo nivel
+      @include behavior-parent(ft-org-masthead__acordeon-list--nivel-2,
+        ft-org-masthead__acordeon-list--nivel-3) {
+        @include font--weight-500;
+      }
+
+      &:hover,
+      &:focus {
+        color: var(--color-primary);
+      }
+    }
+  }
+
+  // &area del Logo
+  &__logo {
+    @include position(relative, null);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+    width: 100%;
+
+    @include behavior-parent(ft-org-masthead__main--secondary) {
+      width: 70%;
+    }
+
+
+    // area de imagen del logo
+    // area de imagen del logo
+    &-img {
+      @include position(relative, null);
+      @include margin(0);
+
+      display: flex;
+      width: 90%;
+      height: 70%;
+
+      // para la marca ep
+      @if $brand ==ep {
+        width: 170px;
+
+        @include min-screen(768px) {
+          width: 200px;
+        }
+
+        @include behavior-parent($ep-brands...) {
+          width: 90%;
+        }
+
+        @include behavior-parent(ft-org-masthead--side) {
+          width: 130px;
+
+          @include min-screen(768px) {
+            width: 150px;
+          }
+        }
+
+        @include behavior-parent(ft-org-masthead--fix) {
+          width: 160px;
+        }
+      }
+
+      @include min-screen(768px) {
+        height: 90%;
+
+        @include behavior-parent(ft-org-masthead--side) {
+          height: 80%;
+        }
+
+        @if $brand ==epe {
+          height: 80%;
+        }
+      }
+    }
+
+&-link {
+  --logo-visible-height: 92%;
+
+  @include position(absolute, 0);
+  @include font--heading-XXS;
+
+  color: var(--color-white);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: var(--logo-visible-height);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @include brand-by-body(logo, background-image, $as-url: true);
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    pointer-events: none;
+  }
+
+  @include behavior-parent(ft-org-masthead--side) {
+    --logo-visible-height: 70%;
+
+    &::before {
+      @include brand-by-body(
+        logo-top-left,
+        background-image,
+        $as-url: true
+      );
+    }
+  }
+
+  @include behavior-parent(ft-org-masthead--fix) {
+    --logo-visible-height: 70%;
+
+    @if $brand == revistas {
+      --logo-visible-height: 80%;
+    }
+  }
+}
+
+    // area de idioma del logo
+    &-lang {
+      @include hide;
+      width: 2.8rem;
+
+      // area de selección de idioma solo para ep
+      @if $brand ==ep {
+        @include show-flex;
+        @include position(relative, null);
+
+        // area de selección de idioma oculta para submarcas ep
+        @include behavior-parent(economia,
+          shopping,
+          gastronomia,
+          libros,
+          cerca,
+          motor,
+          badalona,
+          cornella,
+          castelldefels,
+          martorell,
+          santcugat,
+          santacoloma,
+          esplugues,
+          gava,
+          granollers,
+          hospitalet,
+          mataro,
+          molletdelvalles,
+          parets,
+          rubi,
+          sabadell,
+          santboi,
+          tarragona,
+          terrassa,
+          vilanovailageltru,
+          viladecans) {
+          @include hide;
+        }
+
+        //  &:focus-within
+        &:focus-within .ft-org-masthead__dropdown {
+          @include show-flex;
+        }
+
+        //Colores del icono de Menú hamburguesa en Pasatiempos
+        @include behavior-parent-selector('[class*="pasatiempos"]') {
+          @include hide;
+        }
+
+      }
+    }
+
+    // dropdown de idioma solo para ep
+    @if $brand ==ep {
+
+      // link del .com .cat
+      &-button {
+        @include margin(1rem null null null);
+        @include padding(0);
+        @include font--body-S;
+        @include fontBold;
+        color: var(--color-white);
+        outline: none;
+        background: none;
+        border: none;
+        min-width: 4.4rem;
+        text-align: left;
+        @include min-click-area();
+
+        // Tablet/Desktop
+        @include min-screen(768px) {
+          @include margin(1.3rem null null null);
+
+          // posicion del link .com .cat cuando está la cabecera sticky
+          @include behavior-parent(ft-org-masthead--fix,
+            ft-org-masthead--side) {
+            @include margin(1rem null null null);
+          }
+        }
+
+        // flechita del .com .cat
+        &:before {
+          content: "";
+          @include position(absolute, null 0px 0px null);
+          width: 0px;
+          height: 0px;
+          border-style: solid;
+          border-width: 5px;
+          border-bottom-width: 0px;
+          border-color: var(--color-white) transparent transparent transparent;
+          @if $brand ==ep {
+            @include position(absolute, null 0px 5px null);
+          }
+          
+        }
+      }
+    }
+  }
+
+  // dropdown de idioma solo para ep
+  @if $brand ==ep {
+
+    // dropdown del .com .cat
+    &__dropdown {
+      @include hide;
+      @include position(absolute, 30px null null 0);
+      @include margin(0);
+      width: 44px;
+      background-color: var(--color-white);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      z-index: 10;
+
+      // link del dropdown del .com .cat
+      &-link {
+        @include font--body-S;
+        @include margin(null null null 0.8rem);
+        @include fontBold;
+        color: var(--color-black);
+        width: 100%;
+        display: block;
+        @include min-click-area();
+
+        &:hover {
+          color: var(--color-primary);
+        }
+      }
+    }
+  }
+
+  // &area del icono del Login y buscador
+  &__area {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    @include position(relative, null 0.5rem null null);
+
+    // Tablet/Desktop
+    @include min-screen(768px) {
+      @include position(relative, null 0 null 0);
+      height: 4rem;
+    }
+
+    // icono del Login
+    &--login {
+      @include position(relative, null);
+      order: 1;
+      display: flex;
+      width: 4rem;
+      height: 4rem;
+      border: none;
+      outline: none;
+      background: none;
+      @include min-click-area();
+
+      // icono del Login en el :before
+      &:before {
+        content: "";
+        @include position(absolute, 0 0 0 0);
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 2.3rem;
+        @include brand-by-body(logo-user, background-image, $as-url: true);
+
+        @include behavior-parent-nested(ft-org-masthead__area--logged) {
+          background-image: none;
+        }
+      }
+
+      // Tablet/Desktop
+      @include min-screen(768px) {
+        width: 4rem;
+
+        &:before {
+          background-size: 2.5rem;
+        }
+      }
+    }
+
+    // // icono del Search solo para regionales
+    &--search {
+      @include hide;
+      @include min-click-area();
+
+      @if $brand ==regionales {
+        @include show-flex;
+        @include position(relative, null);
+        width: 4rem;
+        height: 3.5rem;
+        border: none;
+        outline: none;
+        background: none;
+
+        // icono del Search solo para regionales
+        &:before {
+          content: "";
+          @include position(absolute, 0 0 0 0);
+          background-color: transparent;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 2.3rem;
+          @include brand-by-body(logo-search, background-image, $as-url: true);
+
+        }
+
+        // Tablet/Desktop
+        @include min-screen(768px) {
+          &:before {
+            background-size: 2.5rem;
+          }
+        }
+      }
+    }
+
+    // icono del logado
+    &--logged {
+      @include position(relative, null);
+      @include margin(null null null 0.5rem);
+      @include font--body-M--small;
+      @include fontBold;
+      justify-content: center;
+      align-items: center;
+      order: 1;
+      display: flex;
+      width: 3rem;
+      height: 3rem;
+      @include brand-by-body(txt, color);
+
+      // icono del Login en el :before
+      &:before {
+        content: "";
+        @include position(absolute, 0 0 0 0);
+        @include border-style(solid);
+        @include border-width(0.2rem);
+        @include font--body-L--small;
+        border-radius: 50%;
+        filter: none;
+        @include brand-by-body(txt, border-color);
+
+        @include behavior-parent(ds-logged) {
+          --color-primary: var(--color-premium);
+        }
+
+      }
+    }
+
+    // icono de share
+    &--share {
+      @include hide;
+      @include min-click-area();
+      @include show-flex;
+      @include position(relative, null);
+      width: 4rem;
+      height: 3.5rem;
+      border: none;
+      outline: none;
+      background: none;
+
+      // &:before
+      &:before {
+        content: "";
+        @include position(absolute, 0 0 0 0);
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 2.3rem;
+        background-image: url("#{$images-path}/icons/nav-solid-light-share.svg");
+        filter: brightness(0) saturate(100%) invert(0%) sepia(20%) saturate(3%) hue-rotate(322deg) brightness(91%) contrast(87%);
+
+        // Sport
+        @if $brand ==sport {
+          filter: map-filters(whites, brand--all);
+        }
+
+        // El Periódico de Catalunya
+        @include behavior-parent(ft-brand-ep) {
+          filter: map-filters(whites, brand--all);
+        }
+      }
+
+      // Tablet/Desktop
+      @include min-screen(768px) {
+        &:before {
+          background-size: 2.5rem;
+        }
+      }
+    }
+  }
+
+  // Estilos del branded del nav
+  &__branded {
+    @include position(absolute, null 0 null null);
+    @include font--body-S--small;
+    @include padding(0 1rem);
+    @include hide;
+    text-transform: lowercase;
+    z-index: 10000;
+    right: 0;
+    height: 100%;
+    align-items: center;
+    width: 240px;
+    @include brand-by-body(txt, color);
+
+    // Sombra de color a transparente
+    &:before {
+      content: "";
+      position: absolute;
+      top: 1px;
+      left: -24px;
+      bottom: 0;
+      pointer-events: none;
+      z-index: 1;
+      width: 25px;
+    }
+
+    //muestra la capa
+    @include behavior-parent(ft-org-masthead--branded) {
+      @include show-flex;
+      display: flex;
+    }
+  }
+
+  // Estilos del ul del nav
+  &__list {
+    @include margin(0);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    max-width: 1280px;
+    overflow: auto;
+    scrollbar-width: none;
+
+    @include min-screen(768px) {
+      justify-content: center;
+    }
+
+    //estilos para los ul del subnav de regionales
+    @if $brand ==regionales {
+      @include behavior-parent(ft-org-masthead__subnav) {
+        // Móvil: siempre a la izquierda
+        justify-content: flex-start;
+
+        // Estilos específicos para La Nueva España
+        @include behavior-parent(la-nueva-espana) {
+          width: 1280px;
+          justify-content: flex-start; // redundante pero lo dejo por si la marca exige override
+        }
+
+        // Tablet en adelante: centrado (solo si no es La Nueva España)
+        @include min-screen(768px) {
+          justify-content: center;
+
+          @include behavior-parent(la-nueva-espana) {
+            // LNE mantiene left en todas las resoluciones
+            justify-content: flex-start;
+
+            // asturiasexterior
+            @include behavior-parent-nested(asturiasexterior) {
+              justify-content: center;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Estilos del enlace del nav
+  &__link {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease;
+    /*     color: #{brand(txt)}; */
+    @include brand-by-body(txt, color);
+
+    @if $brand ==revistas {
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+
+    // Estilos de la caja de directos
+    @include behavior-parent(ft-org-masthead__item--live) {
+      @include padding(1rem 0 1rem 0.7rem);
+
+      @if $brand ==sport {
+
+        //45 aniversario
+        @include behavior-parent-selector('[class*="aniversario"]') {
+          color: var(--color-white);
+        }
+      }
+    }
+
+    @include behavior-parent(ft-org-masthead__nav--mobile) {
+
+      // Estilos del borde en mobile cuando el botón está activo
+      &--active {
+        @include position(relative, null);
+        @include font--weight-600;
+
+        // Excepciones de marca al color base
+        @if $brand ==revistas {
+          @include font--weight-500;
+        }
+
+        // Excepciones de marca al color base
+        @if $brand ==epe {
+          color: var(--color-primary);
+        }
+
+        // Excepciones de marca al color base
+        @if $brand ==regionales {
+          color: var(--color-primary);
+        }
+
+        // &:before
+        &:before {
+          content: "";
+          @include position(absolute, null null 0 0);
+          width: 100%;
+          display: flex;
+
+          // Excepciones de marca al color base
+          @if $brand ==ep {
+            border-bottom: 0.3rem solid var(--color-white);
+          }
+
+          // Excepciones de marca al color base
+          @if $brand ==sport {
+            border-bottom: 0.3rem solid var(--color-white);
+
+            //45 aniversario
+            @include behavior-parent-selector('[class*="aniversario"]') {
+              border-bottom: 0.3rem solid var(--color-premium-aniversario);
+            }
+          }
+
+          // Excepciones de marca al color base
+          @if $brand ==epe {
+            border-bottom: 0.3rem solid var(--color-primary);
+            color: var(--color-primary);
+          }
+
+          // Excepciones de marca al color base
+          @if $brand ==revistas {
+            border-bottom: 0.3rem solid var(--color-primary);
+            color: var(--color-primary);
+          }
+
+          // Excepciones de marca al color base
+          @if $brand ==regionales {
+            border-bottom: 0.3rem solid var(--color-primary);
+
+            // Asturiasexterior
+            @include behavior-parent(la-nueva-espana) {
+              @include behavior-parent-nested(asturiasexterior) {
+                border-bottom: 0.3rem solid var(--color-asturiasexterior-green);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__esi {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+  @include behavior-parent(fourty) {
+
+    // Estilos cuando lleva la imagen de patrocinado por del NAV
+    &--branded {
+      @include min-screen(768px) {
+        .ft-org-masthead__nav {
+          justify-content: space-between;
+          max-width: 1280px;
+        }
+
+        .ft-org-masthead__nav .ft-org-masthead__list {
+          justify-content: flex-start;
+          max-width: 72%;
+          overflow-x: auto;
+          white-space: nowrap;
+          -webkit-overflow-scrolling: touch; // Desplazamiento suave en iOS
+        }
+      }
+    }
+
+    // Estilos de la barra nav ppal WEB
+    &__nav {
+      @include hide;
+      @include position(relative, null);
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+      height: 3.5rem;
+      max-width: 1280px;
+      -webkit-overflow-scrolling: touch; // Desplazamiento suave en iOS
+      scrollbar-width: none; // Ocultar scrollbar en Firefox
+      border-top: 1px solid var(--color-lightGrey);
+
+      @if $brand ==sport {
+        @include min-screen(768px) {
+          border-top: 1px solid var(--color-white);
+        }
+
+        // shopping
+        @include behavior-parent-nested(shopping) {
+          border-top: 1px solid var(--color-lightGrey);
+        }
+      }
+
+      @if $brand ==ep {
+        @include min-screen(768px) {
+          border-top: 1px solid var(--color-white);
+
+          //economia
+          @include behavior-parent-nested(economia, shopping, motor, libros, cerca) {
+            border-top: 1px solid var(--color-lightGrey);
+          }
+        }
+      }
+
+
+      &::-webkit-scrollbar {
+        display: none; // Ocultar scrollbar en navegadores WebKit
+      }
+
+      // SECCIÓN minimal-header
+      @include behavior-parent-nested(minimal-header) {
+        @include hide;
+      }
+
+      // Tablet y desktop
+      @include min-screen(768px) {
+        @include show-flex;
+        justify-content: center;
+        height: 5rem;
+        max-width: 1280px;
+        overflow-x: hidden;
+      }
+
+      &--mobile {
+        @include show-flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        max-width: 100%;
+
+        .ft-org-masthead__list {
+          overflow: unset;
+        }
+
+        @include min-screen(768px) {
+          @include hide;
+        }
+      }
+    }
+
+    // Estilos del li del nav
+    &__item {
+      @include margin(0);
+      @include padding(0 1.5rem);
+      height: 100%;
+      border-radius: 0.4rem;
+      white-space: nowrap;
+      list-style: none;
+
+      @if $brand ==epe or $brand ==ep or $brand ==regionales or $brand ==sport {
+        @include font--body-M--small;
+      }
+
+      @if $brand ==revistas {
+        @include font--body-XL--small;
+        font-family: var(--font-primary);
+        @include font--weight-500;
+
+        //distinta fuente para Viajar
+        @include behavior-parent-nested(viajar) {
+          @include font--body-L--small;
+          font-family: var(--font-secondary);
+        }
+      }
+
+      //cambios de fuente del nav para Sport
+      @if $brand ==sport {
+        font-family: var(--font-stack);
+
+        //distinta fuente para mobile que para desktop
+        @include min-screen(768px) {
+          @include font--body-XL--small;
+          font-family: var(--font-secondary);
+          letter-spacing: 0.1rem;
+        }
+      }
+
+      //En bold siempre para desktop
+      @include min-screen(768px) {
+        @include font--weight-600;
+
+        @if $brand ==revistas {
+          @include font--weight-500;
+        }
+      }
+
+      &:first-of-type {
+        @include padding(0 1.5rem 0 0);
+      }
+
+      // &--live
+      &--live {
+        @include position(relative, null);
+        @include margin(null null null 1.5rem);
+        @include font--body-S--small;
+        @include font--weight-600;
+        border-radius: 20px;
+        order: 2;
+        max-width: 100px;
+        height: 20px;
+        text-transform: capitalize;
+        background-color: var(--color-white);
+
+        @include min-screen(768px) {
+          height: 25px;
+        }
+
+        //cambios de fuente del nav para Sport
+        @if $brand ==sport {
+          background-color: #c7000d;
+          font-family: var(--font-primary);
+        }
+
+        @if $brand ==ep {
+          background-color: #c7000d;
+        }
+
+        // &:before
+        &:before {
+          content: "";
+          @include position(absolute, 0 null 0 0.5rem);
+          @include margin(auto);
+          border-radius: 50%;
+          height: 12px;
+          opacity: 1;
+          pointer-events: none;
+          width: 12px;
+
+          @if $brand ==sport {
+            background-color: #c7000d;
+            border: 2px solid #da0816;
+          }
+
+          @if $brand ==regionales {
+            background-color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+
+            @include behavior-parent-nested(asturiasexterior) {
+              background-color: var(--color-asturiasexterior-green);
+              border-color: var(--color-asturiasexterior-green);
+            }
+          }
+
+          @if $brand ==epe {
+            background-color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+          }
+
+          @if $brand ==ep {
+            background-color: #c7000d;
+            border: 2px solid #da0816;
+          }
+
+          @if $brand ==revistas {
+            background-color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+          }
+        }
+
+        &:after {
+          content: "";
+          @include position(absolute, 0 null 0 0.8rem);
+          animation: fadeinlive 1.5s infinite;
+          background-color: var(--color-white);
+          border: 2px solid var(--color-white);
+          border-radius: 50%;
+          bottom: 0;
+          height: 6px;
+          margin: auto;
+          opacity: 1;
+          pointer-events: none;
+          position: absolute;
+          width: 6px;
+        }
+      }
+    }
+
+    // &__subnav: Estilos menú secundario regionales
+    &__subnav {
+      @include hide;
+
+      // Estilos de regionales
+      @if $brand ==regionales {
+        color: var(--color-black);
+        background-color: var(--color-lightGrey);
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        height: 3rem;
+        border-top: 1px solid var(--color-white);
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch; // Desplazamiento suave en iOS
+        scrollbar-width: none; // Ocultar scrollbar en Firefox
+
+        //ocultar para cabecera sección minimal-header
+        @include behavior-parent-nested(minimal-header) {
+          @include hide;
+        }
+
+        &::-webkit-scrollbar {
+          display: none; // Ocultar scrollbar en navegadores WebKit
+        }
+
+        @include min-screen(768px) {
+          @include show-flex;
+          overflow-x: visible;
+          white-space: normal;
+          justify-content: center;
+          height: 3.5rem;
+        }
+
+        .ft-org-masthead__item {
+          @include font--body-S--small;
+
+          .ft-org-masthead__link {
+            @include font--weight-500;
+          }
+
+          &:first-child {
+            .ft-org-masthead__link {
+              @include font--weight-800;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &--hide {
+    @include hide;
+  }
+
+  &__progress-bar {
+    position: fixed;
+    top: 40px;
+    left: 0;
+    height: 2px;
+    width: 0%;
+
+    z-index: 9999;
+    transition: width 0.1s ease-out;
+
+    @if $brand ==ep {
+      background-color: #a70005;
+
+      @include behavior-parent(shopping, gastronomia, motor, libros, cerca) {
+        background-color: var(--color-primary, #fff);
+      }
+    }
+
+    @if $brand ==sport {
+      background-color: #a70005;
+
+      @include behavior-parent(shopping, gastronomia, libros) {
+        background-color: var(--color-primary, #fff);
+      }
+    }
+
+    @if $brand ==epe {
+      background-color: var(--color-primary, #fff);
+    }
+
+    // borde bottom para cabeceras claras
+    @if $brand ==regionales {
+      background-color: var(--color-primary, #fff);
+    }
+  }
+
+
+  .form-field {
+    @include margin(0.5rem 0);
+    position: relative;
+    width: 100%;
+    font-family: inherit;
+
+    .select-wrapper {
+      position: relative;
+      display: block;
+
+      select {
+        appearance: none;
+        width: 100%;
+        padding: 1rem;
+        font-size: 1.2rem;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        background-color: #fff;
+        color: #333;
+        outline: none;
+        transition: border-color 0.3s ease;
+
+        &:focus {
+          border-color: var(--color-primary);
+
+          border-style: solid;
+          border-width: 0.13rem;
+          border-color: var(--color-form);
+          -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        &:focus+label,
+        &:valid+label {
+          top: -11px;
+          left: 5px;
+          font-size: 1.2rem;
+          color: var(--color-primary);
+        }
+
+        &:disabled {
+          background-color: #f5f5f5;
+          color: #aaa;
+        }
+      }
+
+      label {
+        position: absolute;
+        top: 7px;
+        left: 5px;
+        font-size: 1.2rem;
+        color: #777;
+        background-color: #fff;
+        padding: 0 4px;
+        pointer-events: none;
+        transition: all 0.2s ease;
+      }
+
+      .select-arrow {
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        width: 0;
+        height: 0;
+        pointer-events: none;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 6px solid #777;
+        transform: translateY(-50%);
+      }
+    }
+
+    select {
+      background-color: #fff;
+
+      option {
+        background-color: #fff;
+        color: #333;
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  // Modificadores de otras moléculas
+  // Authors
+  .ft-mol-authors--horizontal .ft-mol-authors__content {
+    align-items: flex-start;
+  }
+
+  .ft-mol-authors--reduced.ft-mol-authors--horizontal.ft-mol-authors {
+    flex-direction: row;
+    align-items: center;
+    @include margin(0);
+  }
+
+   .ft-mol-authors--reduced.ft-mol-authors--horizontal.ft-mol-authors:not(:last-child) {
+    margin-bottom: 1rem;
+  } 
+
+
+  .ft-mol-authors__photo {
+    @include margin(null 1rem null null);
+  }
+
+  .ft-mol-authors__photo .ft-helper-img-rd {
+    border-radius: 50%;
+    height: 7rem;
+    width: 7rem;
+    min-width: 7rem;
+    object-fit: cover;
+    border-radius: 50%;
+    @include border-style(solid);
+    @include border-width(0.1rem);
+    @include border-color(var(--color-mediumGrey));
+  }
+
+  .ft-mol-authors__contentName {
+    @include font--body-L;
+    @include fontBold;
+    @include margin(0);
+  }
+
+  .ft-mol-authors__contentCategory {
+    @include font--body-M;
+    @include fontBold;
+    @include margin(0);
+  }
+
+  .ft-mol-authors--reduced .ft-mol-authors__contentText {
+    @include margin(0);
+    text-align: left;
+  }
+
+  .ft-mol-authors--reduced .ft-mol-authors__contentText .ft-link{
+    color: var(--color-secondary);
+    text-decoration: none;
+  }
+
+  // RRSS
+  .ft-mol-rrss-inline {
+    @include margin(0);
+  }
+
+
+  // SWITCH
+  /*  .ft-switch{
+    height: 2.5rem;
+    width: 5.4rem;
+
+ &--darkmode [class*=__inner]{
+      background-color: var(--color-white);
+      border: 2px solid var(--color-mediumGrey);
+      }
+      
+    &__switch{
+      left: 0.4rem;
+      width: 1.8rem;
+      height: 1.8rem;
+    }
+
+    &--darkmode [class*=__switch]{
+      background-color: var(--color-primary);
+      &:after{
+        transition: transform 0.25s ease;
+        mask-image: url("#{$images-path}/icons/icons-modes--showroom-light.svg");
+        mask-size: 1.3rem;
+        background-color: var(--color-white);
+        mask-repeat: no-repeat;
+        mask-position: center;
+        background-image: none;
+      }
+  
+
+  }  } */
+  // Modificadores de otras moléculas
+  // HEADBAND
+  .ft-mol-headband {
+    @include margin(0);
+  }
+
+  // ATOM LIST
+
+  // ft-mol-dropdown__trigger
+  .ft-list {
+    &-functions {
+      &__txt {
+        @include font--body-M;
+        @include fontBold;
+      }
+    }
+
+    &--chevron {
+      &-rgt {
+        .ft-list__item {
+          &:only-child {
+            @include padding(0);
+          }
+        }
+      }
+    }
+
+    &--has {
+      &-icon {
+        .ft-list__item {
+          @include padding(null null null 0);
+        }
+      }
+    }
+  }
+
+  .ft-list-functions--has-icon-and-txt:only-child {
+    @include margin(0);
+  }
+
+  .ft-list--has-icon .ft-list__link:focus-within img,
+  .ft-list--has-icon .ft-list__link:hover img {
+    filter: none;
+  }
+
+  // Modificadores de otras moléculas
+  // ft-mol-dropdown
+  .ft-mol-dropdown {
+
+    // ft-mol-dropdown__trigger
+    &__trigger {
+
+      // behavior: parent(fourty)
+      @include behavior-parent(fourty) {
+        overflow: visible;
+      }
+    }
+
+    // ft-mol-dropdown__list
+    &__list {
+      @include position(absolute, 4.5rem 0.4rem null null);
+      width: 21rem;
+      z-index: 100000;
+    }
+
+    // ft-mol-dropdown__link
+    &__link {
+      text-align: left;
+    }
+
+    // ft-mol-dropdown__listIs-active
+    &__listIs-active {
+
+      // &:before
+      &:before,
+      &:after {
+        @include position(absolute, null null null 92%);
+      }
+
+      .ft-mol-dropdown__item--active {
+        background-color: var(--color-primary);
+
+        @include behavior-parent(ds-logged) {
+          --color-primary: var(--color-premium);
+        }
+
+        .ft-mol-dropdown__link {
+          color: var(--color-white);
+          font-weight: 800;
+        }
+
+        .ft-mol-dropdown__icon {
+          filter: invert(1);
+        }
+      }
+    }
+  }
+   .ft-mol-radio{
+    display:none;
+    @include behavior-parent-nested(ft-org-masthead--side){
+      display:flex;
+    }
+    @include min-screen(768px) {
+      display:flex;
+      @include margin(.2rem null null 1rem);
+
+
+        // dentro del --side
+       @include behavior-parent-nested(ft-org-masthead--side){
+        @include margin(0);
+        }
+
+        &__title{
+            //sport
+              @if $brand ==sport {
+                color:var(--color-white);
+                @include fontBold;
+              }
+
+              //ep
+              @if $brand ==ep {
+                color:var(--color-white);
+                @include fontBold;
+              }
+
+                // dentro del --side
+       @include behavior-parent-nested(ft-org-masthead--side){
+       //sport
+              @if $brand ==sport {
+                color:var(--color-black);
+              }
+
+              //ep
+              @if $brand ==ep {
+                color:var(--color-black);
+              }
+        }
+        }
+    }
+  }
+
+  .ft-radio{
+     @include min-screen(768px) {
+    &__label{
+       //sport
+              @if $brand ==sport {
+                color:var(--color-white);
+                @include fontBold;
+              }
+
+              //ep
+              @if $brand ==ep {
+                color:var(--color-white);
+                @include fontBold;
+              }
+
+                // dentro del --side
+       @include behavior-parent-nested(ft-org-masthead--side){
+       //sport
+              @if $brand ==sport {
+                color:var(--color-black);
+              }
+
+              //ep
+              @if $brand ==ep {
+                color:var(--color-black);
+              }
+        }
+
+        &:before{
+           //sport
+              @if $brand ==sport {
+                border-color:var(--color-white);
+              }
+
+              //ep
+              @if $brand ==ep {
+                border-color:var(--color-white);
+              }
+
+                // dentro del --side
+       @include behavior-parent-nested(ft-org-masthead--side){
+       //sport
+              @if $brand ==sport {
+                border-color:var(--color-black);
+              }
+
+              //ep
+              @if $brand ==ep {
+                border-color:var(--color-black);
+              }
+        }
+        }
+      }
+    }
+  }
+}
+
+// =====================================================
+// CAPA TRANSVERSAL CERCA (ADITIVA)
+// Solo aplica cuando body tiene .cerca
+// =====================================================
+
+.ft-brand-#{$brand}.cerca {
+
+  .ft-org-masthead:not(.ft-org-masthead--side),
+  .ft-org-masthead:not(.ft-org-masthead--side) .ft-org-masthead__main {
+    background-color: var(--color-white);
+  }
+
+  // Iconos login/logged en negro en contexto cerca
+  .ft-org-masthead__area--login:before {
+    filter: brightness(0) saturate(100%) invert(0%) sepia(20%) saturate(3%) hue-rotate(322deg) brightness(91%) contrast(87%);
+  }
+
+  .ft-org-masthead__area--logged {
+    color: var(--color-black);
+  }
+
+  .ft-org-masthead__area--logged:before {
+    border-color: var(--color-black);
+    filter: none;
+  }
+
+  // En desktop, la franja superior también es blanca para todas las cabeceras cerca
+  @include min-screen(768px) {
+    .ft-org-masthead:not(.ft-org-masthead--side) .ft-org-masthead__top {
+      background-color: var(--color-white);
+    }
+
+    .ft-org-masthead:not(.ft-org-masthead--side) .ft-org-masthead__logo-img {
+      height: 100%;
+    }
+  }
+
+  .ft-org-masthead:not(.ft-org-masthead--side) .ft-org-masthead__logo-link {
+    background-size: auto 100%;
+  }
+
+  .ft-org-masthead--fix:not(.ft-org-masthead--side) .ft-org-masthead__logo-link {
+    background-size: auto 80%;
+  }
+}
+
+.ft-brand-#{$brand}.pasatiempos {
+
+  .ft-org-masthead:not(.ft-org-masthead--side) .ft-org-masthead__top {
+    background-color: var(--color-black);
+    width: 100%;
+    max-width: 100%;
+  }
+ // Iconos login/logged en negro en contexto cerca
+  .ft-org-masthead__area--login:before {
+    filter: brightness(0) saturate(100%) invert(0%) sepia(20%) saturate(3%) hue-rotate(322deg) brightness(91%) contrast(87%);
+  }
+
+  .ft-org-masthead__area--logged {
+    color: var(--color-black);
+  }
+
+  .ft-org-masthead__area--logged:before {
+    border-color: var(--color-black);
+    filter: none;
+  }
+}
+
+// En modo cerca no forzamos logos por marca/submarca aquí para evitar
+// generar CSS masivo: se usan las reglas base ya existentes del masthead.

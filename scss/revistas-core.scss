@@ -1,0 +1,36 @@
+// Sass Document
+$brand:revistas;
+// ABSTRACTS
+// ================================================
+@import "abstracts/abstracts";
+@import "vendors/bourbon/bourbon";
+// ================================================
+
+// BASE
+// ================================================
+@import "base/base";
+// ================================================
+
+// BRAND SETUP
+// ================================================
+@import "brands/revistas-setup";
+// ================================================
+
+// BRAND GRID
+// ================================================ 
+@import "layout/grid";
+@import "layout/grid_legacy";
+// ================================================
+
+// FOURTYS CORE
+// ================================================
+@import "fourties/atoms/ad/ad";
+@import "fourties/atoms/btn/btn";
+@import "fourties/atoms/link/link";
+@import "fourties/atoms/list/list";
+@import "fourties/atoms/skiplink/skiplink";
+@import "fourties/atoms/text/text";
+@import "fourties/atoms/img/img";
+@import "fourties/atoms/title/title";
+@import "fourties/molecules/btnGroup/btnGroup";
+

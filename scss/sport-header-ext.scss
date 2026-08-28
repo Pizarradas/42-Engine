@@ -1,0 +1,58 @@
+// Sass Document
+$brand: sport;
+
+// ================================================
+@use "../cds-statics/css/brands/sport/setting" as *;
+// ================================================
+
+// ABSTRACTS
+// ================================================
+@import "abstracts/abstracts";
+@import "vendors/bourbon/bourbon";
+// ================================================
+
+// BASE
+// ================================================
+@import "base/base";
+// ================================================
+
+// BRAND SETUP
+// ================================================
+@import "brands/sport-setup";
+// ================================================
+
+// BRAND GRID
+// ================================================ 
+@import "layout/grid";
+@import "layout/grid_legacy";
+// ================================================
+
+// FOURTYS CORE
+// ================================================
+@import "fourties/atoms/ad/ad";
+@import "fourties/atoms/btn/btn";
+@import "fourties/atoms/link/link";
+@import "fourties/atoms/list/list";
+@import "fourties/atoms/skiplink/skiplink";
+@import "fourties/atoms/text/text";
+@import "fourties/atoms/img/img";
+@import "fourties/atoms/title/title";
+@import "fourties/molecules/btnGroup/btnGroup";
+// ================================================
+
+// ATOMS
+// ================================================
+@import "fourties/atoms/date/date";
+// ================================================
+
+// MOLECULES
+// ================================================
+@import "fourties/molecules/authors/authors";
+@import "fourties/molecules/dropdown/dropdown";
+@import "fourties/molecules/radio/radio";
+@import "fourties/molecules/rrss/rrss";
+@import "fourties/molecules/ticker/ticker";
+
+// ORGANISMS
+// ================================================
+@import "fourties/organism/masthead/masthead";
