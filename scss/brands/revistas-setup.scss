@@ -1,0 +1,291 @@
+// CORE SETUP // BRAND: DEFAULT
+// ===============================================
+
+// RESETS-GLOBAL
+@include resets-global( // FONT STYLE
+  normal,
+  // FONT VARIANT
+  normal,
+  // FONT WEIGHT
+  normal,
+  // FONT FAMILY
+  var(--font-stack),
+  // FONT SIZE
+  var(--font-size-basis),
+  // LINE HEIGHT
+  var(--font-height-basis),
+  // FONT COLOR
+  var(--color-black),
+  // LETTER SPACING
+  0,
+  // BACKGROUND COLOR
+  var(--color-white));
+// ===============================================
+
+// RESETS-CUSTOM
+// ===============================================
+
+// RESET-CUSTOM: REVISTAS
+@include resets-custom( // BRAND NAME
+  revistas,
+  // FONT FAMILY PRIMARY
+  var(--font-primary),
+  // FONT FAMILY PRIMARY REGULAR
+  null,
+  // FONT FAMILY SECONDARY
+  var(--font-secondary),
+  // FONT FAMILY Tertiatry
+  null,
+  // FONT WEIGHT BRAND
+  500,
+  // RESET FONT COLOR PRIMARY
+  var(--color-primary),
+  // RESET FONT COLOR SEPTENARY
+  var(--color-white),
+  // RESET FONT COLOR OCTONARY
+  var(--color-black),
+  // RESET TEXT SELECTION COLOR
+  var(--color-black),
+  // RESET TEXT SELECTION BACKGROUND COLOR
+  var(--color-darkGrey),
+  // RESET LINK SELECTION COLOR
+  var(--color-white),
+  // RESET LINK SELECTION BACKGROUND COLOR
+  var(--color-primary),
+  // SCROLL BAR WIDTH
+  initial,
+  // SCROLL BAR VERTICAL
+  10px,
+  // SCROLL BAR HORIZONTAL
+  10px,
+  // SCROLL BAR TRACK BORDER-RADIUS TOP
+  10px,
+  // SCROLL BAR TRACK BORDER-RADIUS BOTTOM
+  10px,
+  // SCROLL BAR TRACK BACKGROUND COLOR
+  var(--color-lightGrey),
+  // SCROLL BAR THUMB BORDER-RADIUS TOP
+  20px,
+  // SCROLL BAR THUMB BORDER-RADIUS BOTTOM
+  20px,
+  // SCROLL BAR THUMB BACKGROUND COLOR
+  var(--color-mediumGrey),
+  // SCROLL BAR THUMB BORDER STYLE
+  solid,
+  // SCROLL BAR THUMB BORDER WIDTH
+  0,
+  // SCROLL BAR THUMB BORDER COLOR
+  var(--color-lightGrey),
+  // SCROLL BAR THUMB HOVER
+  var(--color-black));
+
+// ===============================================
+
+// BACKGROUNDS
+// ===============================================
+
+// BACKGROUNDS: REVISTAS
+@include ft-helper-backgrounds( // BRAND NAME
+  revistas,
+  // &--primary
+  var(--color-primary),
+  // &--secondary
+  var(--color-secondary),
+  // &--tertiary
+  var(--color-tertiary),
+  // &--quaternary
+  var(--color-quaternary),
+  // &--quinary
+  var(--color-quinary),
+  // &--senary
+  var(--color-senary),
+  // &--septenary
+  var(--color-septenary),
+  // &-- var(--color-darkGrey)
+  var(--color-darkGrey),
+  //  var(--color-mediumGrey)
+  var(--color-mediumGrey),
+  //  var(--color-lightGrey)
+  var(--color-lightGrey),
+  // &-- var(--color-degraded1)
+  var(--color-degraded1),
+  //  var(--color-degraded2)
+  var(--color-degraded2),
+  //  var(--color-degraded3)
+  var(--color-degraded3));
+
+// ===============================================
+
+// FONTS
+// ===============================================
+
+// FONTS: REVISTAS
+@include ft-helper-fonts( // BRAND NAME
+  revistas,
+  // &--primary
+  var(--color-primary),
+  // &--secondary
+  var(--color-secondary),
+  // &--tertiary
+  var(--color-tertiary),
+  // &--quaternary
+  var(--color-quaternary),
+  // &--400
+  null,
+  // &--500
+  null,
+  // &--700
+  var(--font-stack));
+
+// ===============================================
+
+// ALIGN
+// ===============================================
+@include ft-helper-align();
+// ===============================================
+
+// ANCHORS
+// ===============================================
+@include ft-helperAnchors();
+// ===============================================
+
+// ANIMATIONS
+// ===============================================
+@include ft-helperAnimations();
+// ===============================================
+
+// COLLAPSES
+// ===============================================
+@include ft-helper-collapses();
+// ===============================================
+
+// BRANDED
+// ===============================================
+@include ft-helper-branded();
+// ===============================================
+
+// DISPLAY
+// ===============================================
+@include ft-helper-display();
+// ===============================================
+
+// DIVIDERS
+// ===============================================
+@include ft-helper-divider();
+// ===============================================
+
+// GRIDS
+// ===============================================
+@include ft-helperGrids();
+// ===============================================
+
+// HIDES
+// ===============================================
+@include ft-helper-hides();
+// ===============================================
+
+// IMAGES
+// ===============================================
+@include ft-helper-images();
+// ===============================================
+
+// OVERLAYS
+// ===============================================
+@include ft-helper-overlays();
+// ===============================================
+
+// AFFIXES
+// ===============================================
+@include ft-helper-affixes();
+// ===============================================
+
+// POSITION
+// ===============================================
+@include ft-helper-position();
+// ===============================================
+
+// PROPERTIES
+// ===============================================
+@include ft-helper-properties();
+// ===============================================
+
+// SCROLL
+// ===============================================
+@include ft-helper-scroll();
+// ===============================================
+
+// SHOWS
+// ===============================================
+@include ft-helper-shows();
+// ===============================================
+
+// SIZE
+// ===============================================
+@include ft-helper-size();
+// ===============================================
+
+// SPACERS
+// ===============================================
+@include ft-helper-spacers();
+// ===============================================
+
+// TEXTS
+// ===============================================
+@include ft-helper-texts();
+// ===============================================
+
+// CLOSENEWS
+// ===============================================
+@include ft-helper-closenews();
+// ===============================================
+
+// .UI-HELPER-HIDDEN-ACCESIBLE
+// ===============================================
+@include helper-ui-helper-hidden-accesible();
+// ===============================================
+
+// PERSONALIZACION POR SECCIONES
+// ===============================================
+
+$brands-type: "woman" woman 0 100% 73% 44% 5898% 320deg 93% 91%,
+  "viajar" viajar 0 100% 64% 72% 4730% 181deg 90% 84%,
+  "cuore" cuore 0 100% 11% 100% 6311% 319deg 88% 101%,
+  "stilo" stilo 0 100% 73% 44% 6200% 293deg 95% 92%;
+
+@each $name, $altcolor, $brightness, $saturate, $invert, $sepia, $saturate2,
+$hue-rotate, $brightness2, $contrast in $brands-type
+{
+
+  .ft-brand-revistas.#{$name} .ft-mol-subtitle:not(:only-of-type):before,
+  .ft-brand-revistas.#{$name} .ft-list--primary .ft-list__item:before,
+  .ft-brand-revistas.#{$name} .ft-mol-subtitle:before,
+  .ft-brand-revistas.#{$name} .ft-mol-subtitle--listSimple:before,
+  .ft-brand-revistas.#{$name} .ft-mol-accordion__summary:hover:after,
+  .ft-brand-revistas.#{$name} .ft-btn--primary-has--icon:hover .ft-btn__icon,
+  .ft-brand-revistas.#{$name} .ft-btn--primary-has--icon:focus-visible .ft-btn__icon,
+  .#{$name} .ft-mol-multimedia--podcast .ft-mol-multimedia__footerIcon .ft-helper-img-rd:hover,
+  .ft-brand-revistas.#{$name} .ft-org-cardHome__mainRelated:before
+  {
+    filter: brightness+"(#{$brightness})"
+    saturate+"(#{$saturate})"
+    invert+"(#{$invert})"
+    sepia+"(#{$sepia})"
+    saturate+"(#{$saturate2})"
+    hue-rotate+"(#{$hue-rotate})"
+    brightness+"(#{$brightness2})"
+    contrast+"(#{$contrast})";
+  }
+
+  .ft-brand-revistas.#{$name} .ft-btn--primary-has--icon:hover .ft-btn__icon,
+  .ft-brand-revistas.#{$name} .ft-btn--primary-has--icon:focus-visible .ft-btn__icon
+  {
+    filter: brightness(0) saturate(100%) invert(0%) sepia(100%) saturate(0%) hue-rotate(21deg) brightness(97%) contrast(103%);
+  }
+
+  .#{$name} .ft-mol-multimedia--podcast .ft-mol-multimedia__footerIcon
+  {
+    background-color: transparent;
+  }
+
+}
+// ===============================================

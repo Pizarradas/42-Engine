@@ -1,0 +1,245 @@
+// CORE SETUP // BRAND: DEFAULT
+// ===============================================
+
+// RESETS-GLOBAL
+@include resets-global( // FONT STYLE
+  normal,
+  // FONT VARIANT
+  normal,
+  // FONT WEIGHT
+  normal,
+  // FONT FAMILY
+  var(--font-stack),
+  // FONT SIZE
+  var(--font-size-basis),
+  // LINE HEIGHT
+  var(--font-height-basis),
+  // FONT COLOR
+  var(--color-black),
+  // LETTER SPACING
+  0,
+  // BACKGROUND COLOR
+  var(--color-white));
+// ===============================================
+
+// RESETS-CUSTOM
+// ===============================================
+
+// RESET-CUSTOM: UX
+@include resets-custom( // BRAND NAME
+  ux,
+  // FONT FAMILY PRIMARY
+  var(--font-primary),
+  // FONT FAMILY PRIMARY REGULAR
+  null,
+  // FONT FAMILY SECONDARY
+  var(--font-stack),
+  // FONT FAMILY Tertiatry
+  null,
+  // FONT WEIGHT BRAND
+  500,
+  // RESET FONT COLOR PRIMARY
+  var(--color-primary),
+  // RESET FONT COLOR SEPTENARY
+  var(--color-white),
+  // RESET FONT COLOR OCTONARY
+  var(--color-black),
+  // RESET TEXT SELECTION COLOR
+  var(--color-black),
+  // RESET TEXT SELECTION BACKGROUND COLOR
+  var(--color-darkGrey),
+  // RESET LINK SELECTION COLOR
+  var(--color-white),
+  // RESET LINK SELECTION BACKGROUND COLOR
+  var(--color-primary),
+  // SCROLL BAR WIDTH
+  initial,
+  // SCROLL BAR VERTICAL
+  10px,
+  // SCROLL BAR HORIZONTAL
+  10px,
+  // SCROLL BAR TRACK BORDER-RADIUS TOP
+  10px,
+  // SCROLL BAR TRACK BORDER-RADIUS BOTTOM
+  10px,
+  // SCROLL BAR TRACK BACKGROUND COLOR
+  var(--color-lightGrey),
+  // SCROLL BAR THUMB BORDER-RADIUS TOP
+  20px,
+  // SCROLL BAR THUMB BORDER-RADIUS BOTTOM
+  20px,
+  // SCROLL BAR THUMB BACKGROUND COLOR
+  var(--color-mediumGrey),
+  // SCROLL BAR THUMB BORDER STYLE
+  solid,
+  // SCROLL BAR THUMB BORDER WIDTH
+  0,
+  // SCROLL BAR THUMB BORDER COLOR
+  var(--color-lightGrey),
+  // SCROLL BAR THUMB HOVER
+  var(--color-black));
+// ===============================================
+
+// BACKGROUNDS
+// ===============================================
+
+// BACKGROUNDS: UX
+@include ft-helper-backgrounds( // BRAND NAME
+  ux,
+  // &--primary
+  var(--color-primary),
+  // &--secondary
+  var(--color-secondary),
+  // &--tertiary
+  var(--color-tertiary),
+  // &--quaternary
+  var(--color-quaternary),
+  // &--quinary
+  var(--color-quinary),
+  // &--senary
+  var(--color-senary),
+  // &--septenary
+  var(--color-septenary),
+  // &-- var(--color-darkGrey)
+  var(--color-darkGrey),
+  //  var(--color-mediumGrey)
+  var(--color-mediumGrey),
+  //  var(--color-lightGrey)
+  var(--color-lightGrey),
+  // &-- var(--color-degraded1)
+  var(--color-degraded1),
+  //  var(--color-degraded2)
+  var(--color-degraded2),
+  //  var(--color-degraded3)
+  var(--color-degraded3));
+// ===============================================
+
+// FONTS
+// ===============================================
+
+// FONTS: UX
+@include ft-helper-fonts( // BRAND NAME
+  ux,
+  // &--primary
+  var(--color-primary),
+  // &--secondary
+  var(--color-secondary),
+  // &--tertiary
+  var(--color-tertiary),
+  // &--quaternary
+  var(--color-quaternary),
+  // &--300
+  null,
+  // &--500
+  null,
+  // &--600
+  null,
+  // &--700
+  var(--font-primary));
+// ===============================================
+
+// ALIGN
+// ===============================================
+@include ft-helper-align();
+// ===============================================
+
+// ANCHORS
+// ===============================================
+@include ft-helperAnchors();
+// ===============================================
+
+// ANIMATIONS
+// ===============================================
+@include ft-helperAnimations();
+// ===============================================
+
+// COLLAPSES
+// ===============================================
+@include ft-helper-collapses();
+// ===============================================
+
+// BRANDED
+// ===============================================
+@include ft-helper-branded();
+// ===============================================
+
+// DISPLAY
+// ===============================================
+@include ft-helper-display();
+// ===============================================
+
+// DIVIDERS
+// ===============================================
+@include ft-helper-divider();
+// ===============================================
+
+// GRIDS
+// ===============================================
+@include ft-helperGrids();
+// ===============================================
+
+// HIDES
+// ===============================================
+@include ft-helper-hides();
+// ===============================================
+
+// IMAGES
+// ===============================================
+@include ft-helper-images();
+// ===============================================
+
+// OVERLAYS
+// ===============================================
+@include ft-helper-overlays();
+// ===============================================
+
+// AFFIXES
+// ===============================================
+@include ft-helper-affixes();
+// ===============================================
+
+// POSITION
+// ===============================================
+@include ft-helper-position();
+// ===============================================
+
+// PROPERTIES
+// ===============================================
+@include ft-helper-properties();
+// ===============================================
+
+// SCROLL
+// ===============================================
+@include ft-helper-scroll();
+// ===============================================
+
+// SHOWS
+// ===============================================
+@include ft-helper-shows();
+// ===============================================
+
+// SIZE
+// ===============================================
+@include ft-helper-size();
+// ===============================================
+
+// SPACERS
+// ===============================================
+@include ft-helper-spacers();
+// ===============================================
+
+// TEXTS
+// ===============================================
+@include ft-helper-texts();
+// ===============================================
+
+// CLOSENEWS
+// ===============================================
+@include ft-helper-closenews();
+// ===============================================
+
+// .UI-HELPER-HIDDEN-ACCESIBLE
+// ===============================================
+@include helper-ui-helper-hidden-accesible();
+// ===============================================
+

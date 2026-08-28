@@ -1,0 +1,208 @@
+// CORE SETUP // BRAND: DEFAULT
+// ===============================================
+
+// RESETS-GLOBAL
+@include resets-global( // FONT STYLE
+  normal,
+  // FONT VARIANT
+  normal,
+  // FONT WEIGHT
+  normal,
+  // FONT FAMILY
+  var(--font-stack),
+  // FONT SIZE
+  var(--font-size-basis),
+  // LINE HEIGHT
+  var(--font-height-basis),
+  // FONT COLOR
+  var(--color-black),
+  // LETTER SPACING
+  0,
+  // BACKGROUND COLOR
+  var(--color-white));
+// ===============================================
+
+// RESET-CUSTOM: REGIONALES
+@include resets-custom( // BRAND NAME
+  regionales,
+  // FONT FAMILY PRIMARY
+  var(--font-primary),
+  // FONT FAMILY PRIMARY REGULAR
+  null,
+  // FONT FAMILY SECONDARY
+  var(--font-stack),
+  // FONT FAMILY Tertiatry
+  null,
+  // FONT WEIGHT BRAND
+  500,
+  // RESET FONT COLOR PRIMARY
+  var(--color-primary),
+  // RESET FONT COLOR SEPTENARY
+  var(--color-white),
+  // RESET FONT COLOR OCTONARY
+  var(--color-black),
+  // RESET TEXT SELECTION COLOR
+  var(--color-black),
+  // RESET TEXT SELECTION BACKGROUND COLOR
+  var(--color-darkGrey),
+  // RESET LINK SELECTION COLOR
+  var(--color-white),
+  // RESET LINK SELECTION BACKGROUND COLOR
+  var(--color-primary),
+  // SCROLL BAR WIDTH
+  initial,
+  // SCROLL BAR VERTICAL
+  10px,
+  // SCROLL BAR HORIZONTAL
+  10px,
+  // SCROLL BAR TRACK BORDER-RADIUS TOP
+  10px,
+  // SCROLL BAR TRACK BORDER-RADIUS BOTTOM
+  10px,
+  // SCROLL BAR TRACK BACKGROUND COLOR
+  var(--color-lightGrey),
+  // SCROLL BAR THUMB BORDER-RADIUS TOP
+  20px,
+  // SCROLL BAR THUMB BORDER-RADIUS BOTTOM
+  20px,
+  // SCROLL BAR THUMB BACKGROUND COLOR
+  var(--color-mediumGrey),
+  // SCROLL BAR THUMB BORDER STYLE
+  solid,
+  // SCROLL BAR THUMB BORDER WIDTH
+  0,
+  // SCROLL BAR THUMB BORDER COLOR
+  var(--color-lightGrey),
+  // SCROLL BAR THUMB HOVER
+  var(--color-black));
+
+// FONTS: REGIONALES
+@include ft-helper-fonts( // BRAND NAME
+  regionales,
+  // &--primary
+  var(--color-primary),
+  // &--secondary
+  var(--color-secondary),
+  // &--tertiary
+  var(--color-tertiary),
+  // &--quaternary
+  var(--color-quaternary),
+  // &--300
+  null,
+  // &--500
+  null,
+  // &--600
+  null,
+  // &--700
+  var(--font-primary));
+
+// ===============================================
+
+// BACKGROUNDS: REGIONALES
+@include ft-helper-backgrounds( // BRAND NAME
+  regionales,
+  // &--primary
+  var(--color-primary),
+  // &--secondary
+  var(--color-secondary),
+  // &--tertiary
+  var(--color-tertiary),
+  // &--quaternary
+  var(--color-quaternary),
+  // &--quinary
+  var(--color-quinary),
+  // &--senary
+  var(--color-senary),
+  // &--septenary
+  var(--color-septenary),
+  // &-- var(--color-darkGrey)
+  var(--color-darkGrey),
+  //  var(--color-mediumGrey)
+  var(--color-mediumGrey),
+  //  var(--color-lightGrey)
+  var(--color-lightGrey));
+
+// ALIGN
+// ===============================================
+@include ft-helper-align();
+// ===============================================
+
+
+// BRANDED
+// ===============================================
+@include ft-helper-branded();
+// ===============================================
+
+// CLOSENEWS
+// ===============================================
+@include ft-helper-closenews();
+// ===============================================
+
+
+// HIDES
+// ===============================================
+@include ft-helper-hides();
+// ===============================================
+
+// IMAGES
+// ===============================================
+@include ft-helper-images();
+// ===============================================
+
+// PROPERTIES
+// ===============================================
+@include ft-helper-properties();
+// ===============================================
+
+// SPACERS
+// ===============================================
+@include ft-helper-shows();
+// ===============================================
+
+// SPACERS
+// ===============================================
+@include ft-helper-spacers();
+// ===============================================
+
+// TEXTS
+// ===============================================
+@include ft-helper-texts();
+// ===============================================
+// ===============================================
+
+
+:root
+{
+  --font-stack: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+  --font-branded: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  --font-primary: var(--font-stack);
+  --font-secondary: var(--font-stack);
+  --font-size-basis: 1.8rem;
+  --font-height-basis: 2.2rem;
+  --color-black: black;
+  --color-white: white;
+  --color-darkGrey: #999999;
+  --color-mediumGrey: #cccccc;
+  --color-lightGrey: #f2f2f2;
+  --color-instagram: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+  --color-instagram-purple: #833ab4;
+  --color-linkedin: #0072b1;
+  --color-twitter: #000000;
+  --color-whatsapp: #41c75d;
+  --color-pinterest: #e60023;
+  --color-snapchat: #fffc00;
+  --color-facebook: #3a5795;
+  --color-youtube: #cc181e;
+  --color-telegram: #2aabee;
+  --color-tiktok: #000000;
+  --color-functional-success: #00bd3e;
+  --color-functional-info: #03a9f4;
+  --color-functional-warning: #eeb218;
+  --color-functional-error: #fd3700;
+  --color-primary: #136496;
+  --color-secondary: black;
+  --color-tertiary: #333333;
+  --color-quaternary: #666666;
+  --color-premium: #936f06;
+  --color-subscription-septenary: #936f06;
+}
