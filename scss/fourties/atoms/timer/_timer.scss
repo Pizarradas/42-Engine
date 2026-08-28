@@ -1,0 +1,167 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// .ft-timer
+// ===============================================
+.ft-timer {
+  $self: &;
+  @include margin(0);
+  @include font--body-L;
+  @include fontBold;
+  color: var(--color-black);
+
+  // &__container
+  &__container {
+    @include padding(1rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    //  @include behavior-parent(ft-timer--inline)
+    @include behavior-parent(ft-timer--inline) {
+      flex-direction: row-reverse;
+      @include padding(0);
+    }
+  }
+
+  // &__display
+  &__display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    //  @include behavior-parent(ft-timer--inline)
+    @include behavior-parent(ft-timer--inline) {
+      color: var(--color-white);
+    }
+  }
+
+  // &__title
+  &__title {
+    @include position(absolute, null);
+    @include padding(0);
+    @include margin(-.1rem);
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+
+    // @include behavior-parent(ft-timer--inline)
+    @include behavior-parent(ft-timer--inline) {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  // &__controls
+  &__controls {
+    @include margin(0);
+    @include padding(.5rem 1rem);
+    @include position(relative, null);
+    display: flex;
+    gap: 10px;
+    border-style:solid;
+    border-color: var(--color-primary);
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    border-radius: 10rem;
+
+
+    // @include behavior-parent(ft-timer--inline)
+    @include behavior-parent(ft-timer--inline) {
+      @include position(relative, null);
+      @include padding(.2rem);
+      border-color: transparent;
+      color: transparent;
+      background-color: transparent;
+      border-radius: 0;
+      width: 3rem;
+      height: 3rem;
+
+      //  &:before 
+      &:before {
+        content: "";
+        @include position(absolute, 0 0 0 0);
+            @include margin(auto);
+        filter: invert(1);
+        width: 1.1rem;
+        height: 1.3rem;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+
+    //  &Init
+    &Init {
+
+      // @include behavior-parent(ft-timer--inline)
+      @include behavior-parent(ft-timer--inline) {
+        &:before {
+          background-image: url("data:image/svg+xml,%3Csvg width='10' height='13' viewBox='0 0 10 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.000862631 1.46555C0.0366446 0.324288 1.17001 -0.366894 2.06848 0.204655L2.11172 0.23325L9.35135 5.21217C10.2162 5.80701 10.2162 7.19298 9.35135 7.78783L2.11172 12.7667C1.19244 13.3989 0 12.6716 0 11.4788V1.5212L0.000862631 1.46555ZM1.65625 10.9306L8.09892 6.5L1.65625 2.06924V10.9306Z' fill='currentColor'/%3E%3C/svg%3E");
+        }
+      }
+    }
+          // &Pause
+      &Pause {
+
+        //  @include behavior-parent(ft-timer--inline)
+        @include behavior-parent(ft-timer--inline) {
+          &:before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='13' viewBox='0 0 11 13' fill='none' style='%26%2310%3B fill: black%3B%26%2310%3B'%3E%3Cg clip-path='url(%23clip0_7468_381)'%3E%3Cpath d='M4.08366 0.125C4.47486 0.125 4.79199 0.442132 4.79199 0.833333V12.1667C4.79199 12.5579 4.47486 12.875 4.08366 12.875H1.25033C0.859124 12.875 0.541992 12.5579 0.541992 12.1667V0.833333C0.541992 0.442132 0.859124 0.125 1.25033 0.125H4.08366ZM1.95866 11.4583H3.37533V1.54167H1.95866V11.4583Z' fill='currentColor'/%3E%3Cpath d='M9.74967 0.125C10.1409 0.125 10.458 0.442132 10.458 0.833333V12.1667C10.458 12.5579 10.1409 12.875 9.74967 12.875H6.91634C6.52514 12.875 6.20801 12.5579 6.20801 12.1667V0.833333C6.20801 0.442132 6.52514 0.125 6.91634 0.125H9.74967ZM7.62467 11.4583H9.04134V1.54167H7.62467V11.4583Z' fill='currentColor'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_7468_381'%3E%3Crect width='11' height='13' fill='currentColor'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+          }
+        }
+      }
+
+    /*     // &Reload
+    &Reload {
+      border-color: var(--color-primary);
+      color: var(--color-white);
+      background-color: var(--color-primary);
+      border-radius: 10rem;
+      @include padding(.5rem 1rem);
+
+      //  @include behavior-parent(ft-timer--inline)
+      @include behavior-parent(ft-timer--inline) {
+        @include position(relative, null);
+        border-color: transparent;
+        color: transparent;
+        background-color: transparent;
+        border-radius: 0;
+        @include padding(.2rem);
+        width: 2rem;
+        height: 2rem;
+
+        &:before {
+          content: "";
+          @include position(absolute, 0 null null 0);
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='13' viewBox='0 0 11 13' fill='none' style='%26%2310%3B fill: black%3B%26%2310%3B'%3E%3Cg clip-path='url(%23clip0_7468_381)'%3E%3Cpath d='M4.08366 0.125C4.47486 0.125 4.79199 0.442132 4.79199 0.833333V12.1667C4.79199 12.5579 4.47486 12.875 4.08366 12.875H1.25033C0.859124 12.875 0.541992 12.5579 0.541992 12.1667V0.833333C0.541992 0.442132 0.859124 0.125 1.25033 0.125H4.08366ZM1.95866 11.4583H3.37533V1.54167H1.95866V11.4583Z' fill='currentColor'/%3E%3Cpath d='M9.74967 0.125C10.1409 0.125 10.458 0.442132 10.458 0.833333V12.1667C10.458 12.5579 10.1409 12.875 9.74967 12.875H6.91634C6.52514 12.875 6.20801 12.5579 6.20801 12.1667V0.833333C6.20801 0.442132 6.52514 0.125 6.91634 0.125H9.74967ZM7.62467 11.4583H9.04134V1.54167H7.62467V11.4583Z' fill='currentColor'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_7468_381'%3E%3Crect width='11' height='13' fill='currentColor'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+          filter: invert(1);
+          width: 1.1rem;
+          height: 1.3rem;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+      }
+    } */
+  }
+
+  // &__txt
+  &__txt {
+    @include position(absolute, null);
+    @include padding(0);
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  &--inline {}
+}

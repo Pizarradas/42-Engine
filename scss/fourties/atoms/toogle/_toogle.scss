@@ -1,0 +1,107 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// ft-toogle
+// ===============================================
+.ft-toogle {
+    @include border-color(var(--color-mediumGrey));
+    @include border-style(solid);
+    @include border-width(0.10em);
+    @include border-top-radius(5rem);
+    @include border-bottom-radius(5rem);
+     @include margin(1rem 0);
+   display: inline-flex;
+    overflow: hidden;
+    width: fit-content;
+    align-items: center;
+
+  &__option {
+    @include position(relative, null);
+    @include font--body-S--small;
+
+    input {
+      display: none;
+
+      &:checked + .ft-toogle__button {
+        background-color: var(--color-primary);
+        color: var(--color-white);
+        @include border-color(var(--color-primary));
+        @include fontBold;
+      }
+         &:checked + .ft-toogle__button .ft-toogle__iconLight{
+        filter: map-filters(whites, brand--all);
+      }
+       &:checked + .ft-toogle__button .ft-toogle__iconSystem{
+        filter: map-filters(whites, brand--all);
+      }
+    }
+
+    &:not(:last-child) .ft-toogle__button {
+      border-right: 1px solid var(--color-mediumGrey);
+    }
+  }
+      &__button {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      @include padding(1.3rem 1.5rem);
+      @include font--body-S--small;
+      @include position(relative, null);
+      color: var(--color-black);
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      white-space: nowrap;
+    }
+    &__icon {
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+      width: 1.4rem;
+      height: 1.4rem;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      background-image: none;
+      filter: map-filters(blacks, brand--all);
+
+      //Light
+      &Light {
+        transition: transform 0.25s ease;
+        background-image: url("#{$images-path}/icons/icons-modes--showroom-light.svg");
+        background-size: 1.3rem;
+      }
+
+      //Dark
+      &Dark {
+        transition: transform 0.25s ease;
+        background-image: url("#{$images-path}/icons/icons-modes--showroom-dark.svg");
+        background-size: 1.3rem;
+      }
+
+      //System
+      &System {
+        transition: transform 0.25s ease;
+        background-image: url("#{$images-path}/icons/icons-modes--showroom-system.svg");
+        background-size: 1.3rem;
+      }
+
+    }
+}
+// DARK MODE: manual
+// ===============================================
+      [data-theme=dark]{
+        .ft-toogle__iconLight{
+          filter: map-filters(whites, brand--all);
+        }
+        .ft-toogle__iconDark{
+          filter: map-filters(blacks, brand--all);
+        }
+        .ft-toogle__iconSystem{
+          filter: map-filters(whites, brand--all);
+        }
+      }

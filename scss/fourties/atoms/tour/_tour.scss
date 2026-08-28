@@ -1,0 +1,313 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+/* Estilo para el elemento resaltado */
+.ft-tour {
+  
+  /* Contenedor de overlays */
+  &__dark {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 100000;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    
+    /* Overlays hijos */
+    & > div {
+      position: absolute;
+      background: rgba(0,0,0,0.85);
+      pointer-events: none;
+    }
+  }
+
+  /* Estilo del mensaje del tour */
+  &__message {
+    position: absolute;
+    background: var(--color-white);
+    border-bottom: 4px solid var(--color-primary);
+    @include padding(2rem 2rem 2.5rem 2rem);
+    min-width: 300px;
+    max-width: 480px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 100001;
+    text-align: center;
+    pointer-events: auto;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+     // Desktop
+       @include min-screen(768px) {
+       @include padding(3rem 3rem 2rem 3rem);
+    }
+    
+    // &--title
+    &--title {
+      @include margin(0 null 1rem null);
+      @include font--body-L--small;
+      @include fontBold;
+    }
+
+    // &--text
+    &--text {
+      @include font--body-L--small;
+      @include margin(0 null null null);
+    }
+
+    /* Pseudo-elemento para el triángulo en el mensaje */
+    &:before {
+      content: "";
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-left: 9px solid transparent;
+      border-right: 9px solid transparent;
+      border-bottom: 9px solid var(--color-white);
+
+      @include behavior-parent-nested(ft-tour--bottom){
+        top: auto;
+        bottom: -8px;
+        border-bottom: none;
+        border-top: 9px solid var(--color-white);
+      }
+    }
+
+    // &:after
+    &:after {
+      content: "";
+      @include position(absolute, null 0 -0.4rem null);
+    background-position: 1.3rem 1.3rem;
+      background-repeat: no-repeat;
+    background-size: 1.6rem 1.6rem;
+    height: 3.5rem;
+    width: 3.5rem;
+      border-radius: 100% 0 5px 0;
+      background-color: var(--color-primary);
+
+      // Desktop
+       @include min-screen(768px) {
+         @include position(absolute, null 0 -0.4rem null);
+          background-position: 2rem 2rem;
+          background-repeat: no-repeat;
+          background-size: 2rem 2rem;
+          height: 5rem;
+          width: 5rem;
+      }
+            
+      // @if $brand ==ux
+      @if $brand ==ux {
+        background-image: url("#{$images-path}/logos/logo-favicon-prensa-iberica.svg");
+      }
+      
+      // @if $brand ==ep
+      @if $brand ==ep {
+        background-image: url("#{$images-path}/logos/logo-favicon-ep.svg");
+      }
+      
+      // @if $brand ==epe
+      @if $brand ==epe {
+        background-image: url("#{$images-path}/logos/logo-favicon-epe.svg");
+      }
+      
+      //  @if $brand ==sport
+      @if $brand ==sport {
+        background-image: url("#{$images-path}/logos/logo-favicon-sport.svg");
+      }
+      
+      
+      // @if $brand ==regionales
+      @if $brand ==regionales {
+        background-image: url("#{$images-path}/logos/logo-favicon-prensa-iberica.svg");
+        
+        // behavior-brand: diari-de-girona
+        @include behavior-parent(diari-de-girona) {
+          background-image: url("#{$images-path}/logos/logo-favicon-regionales-diari-de-girona.svg");
+        }
+        
+        // behavior-brand: diario-cordoba
+        @include behavior-parent(diario-cordoba) {
+          background-image: url("#{$images-path}/logos/logo-favicon-regionales-diario-cordoba.svg");
+        }
+        
+        // behavior-brand: diario-de-ibiza
+        @include behavior-parent(diario-de-ibiza) {
+          background-image: url("#{$images-path}/logos/logo-favicon-regionales-diario-de-ibiza.svg");
+        }
+        
+        // behavior-brand: diario-de-mallorca
+        @include behavior-parent(diario-de-mallorca) {
+          background-image: url("#{$images-path}/logos/logo-favicon-regionales-diario-de-mallorca.svg");
+        }
+        
+        // behavior-brand: diario-informacion
+        @include behavior-parent(diario-informacion) {
+          background-image: url("#{$images-path}/logos/logo-favicon-regionales-diario-informacion.svg");
+        }
+        
+        // behavior-brand: el-correo-de-andalucia
+        @include behavior-parent(el-correo-de-andalucia) {
+          background-image: url("#{$images-path}/logos/logo-favicon-regionales-el-correo-de-andalucia.svg");
+        }
+        
+        // behavior-brand: el-correo-gallego
+        @include behavior-parent(el-correo-gallego) {
+          background-image: url("#{$images-path}/logos/logo-favicon-regionales-el-correo-gallego.svg");
+        }
+        
+        // behavior-brand: el-dia-la-opinion-de-tenerife
+        @include behavior-parent(el-dia-la-opinion-de-tenerife) {
+          background-image: url("#{$images-path}/logos/logo-favicon-regionales-el-dia-la-opinion-de-tenerife.svg");
+        }
+        
+        // behavior-brand: el-periodico-de-aragon
+        @include behavior-parent(el-periodico-de-aragon) {
+          background-image: url("#{$images-path}/logos/logo-favicon-regionales-el-periodico-de-aragon.svg");
+        }
+        
+        // behavior-brand: el-periodico-extremadura
+        @include behavior-parent(el-periodico-extremadura) {
+          background-image: url("#{$images-path}/logos/logo-favicon-regionales-el-periodico-extremadura.svg");
+        }
+        
+        // behavior-brand: el-periodico-mediterraneo
+        @include behavior-parent(el-periodico-mediterraneo) {
+          background-image: url("#{$images-path}/logos/logo-favicon-regionales-el-periodico-mediterraneo.svg");
+        }
+        
+        // behavior-brand: emporda
+        @include behavior-parent(emporda) {
+          background-image: url("#{$images-path}/logos/logo-favicon-regionales-emporda.svg");
+        }
+        
+        // behavior-brand: faro-de-vigo
+        @include behavior-parent(faro-de-vigo) {
+          background-image: url("#{$images-path}/logos/logo-favicon-regionales-faro-de-vigo.svg");
+        }
+        
+        // behavior-brand: la-cronica-de-badajoz
+        @include behavior-parent(la-cronica-de-badajoz) {
+          background-image: url("#{$images-path}/logos/logo-favicon-regionales-la-cronica-de-badajoz.svg");
+        }
+        
+        // behavior-brand: la-nueva-espana
+        @include behavior-parent(la-nueva-espana) {
+          background-image: url("#{$images-path}/logos/logo-favicon-regionales-la-nueva-espana.svg");
+        }
+        
+        // behavior-brand: la-opinion-a-coruna
+        @include behavior-parent(la-opinion-a-coruna) {
+          background-image: url("#{$images-path}/logos/logo-favicon-regionales-la-opinion-a-coruna.svg");
+        }
+        
+        // behavior-brand: la-opinion-correo-de-zamora
+        @include behavior-parent(la-opinion-correo-de-zamora) {
+          background-image: url("#{$images-path}/logos/logo-favicon-regionales-la-opinion-correo-de-zamora.svg");
+        }
+        
+        // behavior-brand: la-opinion-de-malaga
+        @include behavior-parent(la-opinion-de-malaga) {
+          background-image: url("#{$images-path}/logos/logo-favicon-regionales-la-opinion-de-malaga.svg");
+        }
+        
+        // behavior-brand: la-opinion-de-murcia
+        @include behavior-parent(la-opinion-de-murcia) {
+          background-image: url("#{$images-path}/logos/logo-favicon-regionales-la-opinion-de-murcia.svg");
+        }
+        
+        // behavior-brand: la-provincia-diario-de-las-palmas
+        @include behavior-parent(la-provincia-diario-de-las-palmas) {
+          background-image: url("#{$images-path}/logos/logo-favicon-regionales-la-provincia-diario-de-las-palmas.svg");
+        }
+        
+        // behavior-brand: levante-el-mercantil-valenciano
+        @include behavior-parent(levante-el-mercantil-valenciano) {
+          background-image: url("#{$images-path}/logos/logo-favicon-regionales-levante-el-mercantil-valenciano.svg");
+        }
+        
+        // behavior-brand: mallorca-zeitung
+        @include behavior-parent(mallorca-zeitung) {
+          background-image: url("#{$images-path}/logos/logo-favicon-regionales-mallorca-zeitung.svg");
+        }
+        
+        // behavior-brand: regio7
+        @include behavior-parent(regio7) {
+          background-image: url("#{$images-path}/logos/logo-favicon-regionales-regio7.svg");
+        }
+        
+        // behavior-brand: superdeporte
+        @include behavior-parent(superdeporte) {
+          background-image: url("#{$images-path}/logos/logo-favicon-regionales-superdeporte.svg");
+        }
+      }
+      
+      // @if $brand ==revistas
+      @if $brand ==revistas {
+  
+        // behavior-brand: cuore
+        @include behavior-parent(cuore) {
+          background-image: url("#{$images-path}/logos/logo-favicon-revistas-cuore.svg");
+        }
+  
+        // behavior-brand: viajar
+        @include behavior-parent(viajar) {
+          background-image: url("#{$images-path}/logos/logo-favicon-revistas-viajar.svg");
+        }
+        
+        // behavior-brand: woman
+        @include behavior-parent(woman) {
+          background-image: url("#{$images-path}/logos/logo-favicon-revistas-woman.svg");
+        }
+
+           // behavior-brand: stilo
+        @include behavior-parent(stilo) {
+          background-image: url("#{$images-path}/logos/logo-favicon-revistas-stilo.svg");
+        }
+      }
+    }
+
+    // .ft-btn-nav--close
+    .ft-btn-nav {
+      @include position(absolute, 0 0 null null);
+      @include margin(0);
+
+      &:focus-within{
+        outline-width: 0.2rem;
+        outline-style: solid;
+        outline-offset: 0.2rem;
+        outline-color: var(--color-white);
+      }
+
+      &:focus-visible{
+        outline-width: 0;
+        outline-style: none;
+      }
+
+      &--close{
+          .ft-btn-nav__icon{
+            &:after{
+              height: 1.2rem;
+              width: 1.2rem;
+              filter: opacity(0.8);
+            }
+          }
+      }
+
+
+    }
+     .ft-mol-btnGroup{
+      gap:1rem;
+      // Desktop
+       @include min-screen(768px) {
+      gap:2rem;
+    }
+    }
+  }
+}

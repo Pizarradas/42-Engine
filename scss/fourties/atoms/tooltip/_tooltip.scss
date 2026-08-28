@@ -1,0 +1,852 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// ft-tooltip
+// ===============================================
+.ft-tooltip {
+  display: inline-flex;
+  // variables
+  $xy-border: (
+    top: t,
+    bottom: b,
+    left: l,
+    right: r,
+  );
+
+&has {
+  &Space {
+    @include margin(0 1rem);
+  }
+}
+
+// [data-tooltip]
+[data-tooltip] {
+  @include padding(0.5rem null 0.5rem null);
+  $triangle: 0.8rem;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+
+  // &:after
+  &:after {
+    @include font--body-S--small;
+    background-color: var(--color-lightGrey);
+    border-radius: $triangle;
+    color: var(--color-black);
+    content: attr(data-tooltip);
+    opacity: 0;
+    padding: 1rem;
+    position: absolute;
+    text-align: center;
+    text-transform: none;
+    transition: opacity 0.2s;
+    visibility: hidden;
+    min-width: 180px;
+    z-index: 11;
+  }
+
+  @include behavior-parent-nested(ft-tooltip--dark) {
+    &:after {
+      background-color: var(--color-black);
+      color: var(--color-white);
+    }
+  }
+
+  @each $direction, $d in $xy-border {
+
+    // &.tooltip-#{$direction}
+    &.ft-tooltip--#{$direction} {
+
+      // &:before
+      &::before {
+        border-style: solid;
+        border-width: $triangle;
+        content: "";
+        opacity: 0;
+        position: absolute;
+        transition: opacity 0.2s;
+        visibility: hidden;
+
+        @if $direction ==top {
+          border-color: var(--color-lightGrey) transparent transparent transparent;
+          top: 0;
+          left: 50%;
+          margin-left: -$triangle;
+        }
+
+        @else if $direction ==bottom {
+          border-color: transparent transparent var(--color-lightGrey) transparent;
+          bottom: 0;
+          left: 50%;
+          margin-left: -$triangle;
+        }
+
+        @else if $direction ==left {
+          border-color: transparent transparent transparent var(--color-lightGrey);
+          top: 50%;
+          right: calc(105% - #{$triangle});
+          margin-top: -$triangle;
+        }
+
+        @else if $direction ==right {
+          border-color: transparent var(--color-lightGrey) transparent transparent;
+          top: 50%;
+          left: calc(105% - #{$triangle});
+          margin-top: -$triangle;
+        }
+
+        // end // &:before
+      }
+
+      // &:after
+      &::after {
+        @if $direction ==top {
+          bottom: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        @else if $direction ==bottom {
+          top: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        @else if $direction ==left {
+          top: 50%;
+          right: calc(105% + #{$triangle});
+          transform: translateY(-50%);
+        }
+
+        @else if $direction ==right {
+          top: 50%;
+          left: calc(105% + #{$triangle});
+          transform: translateY(-50%);
+        }
+      }
+
+      // Modo dark
+      @include behavior-parent-nested(ft-tooltip--dark) {
+        &::before {
+          @if $direction ==top {
+            border-color: var(--color-black) transparent transparent transparent;
+          }
+
+          @else if $direction ==bottom {
+            border-color: transparent transparent var(--color-black) transparent;
+          }
+
+          @else if $direction ==left {
+            border-color: transparent transparent transparent var(--color-black);
+          }
+
+          @else if $direction ==right {
+            border-color: transparent var(--color-black) transparent transparent;
+          }
+        }
+      }
+    }
+  }
+
+  // Modificadores de offset horizontal
+  // ------------------------------------------------
+  // Se combinan con --top o --bottom para desplazar el cuerpo a un lateral,
+  // dejando el "pico" anclado cerca de la esquina apuntando al trigger.
+  // No alteran el HTML base: se añaden como clase adicional al mismo elemento.
+  // Ej.: <div class="ft-tooltip--top ft-tooltip--offsetLeft" data-tooltip="…">
+  &.ft-tooltip--offsetLeft {
+    &.ft-tooltip--top,
+    &.ft-tooltip--bottom {
+      // Pico: anclado a la derecha, $triangle hacia adentro (alineado con border-radius)
+      &::before {
+        right: $triangle;
+        left: auto;
+        margin-left: 0;
+      }
+      // Cuerpo: alineado por la derecha, extiende hacia la izquierda
+      &::after {
+        right: 0;
+        left: auto;
+        transform: none;
+      }
+    }
+  }
+
+  &.ft-tooltip--offsetRight {
+    &.ft-tooltip--top,
+    &.ft-tooltip--bottom {
+      // Pico: anclado a la izquierda, $triangle hacia adentro
+      &::before {
+        left: $triangle;
+        right: auto;
+        margin-left: 0;
+      }
+      // Cuerpo: alineado por la izquierda, extiende hacia la derecha
+      &::after {
+        left: 0;
+        right: auto;
+        transform: none;
+      }
+    }
+  }
+
+  // &.tooltip--mobile
+  &.ft-tooltip--mobile {
+    @media (max-width: 1023px) {
+
+      // &:before
+      &::before {
+        display: none;
+      }
+
+      // &:after
+      &:after {
+        font-size: 1rem;
+        max-width: 20rem;
+        position: fixed;
+        bottom: auto;
+        top: 50%;
+        left: 50%;
+        text-align: left;
+        transform: translate(-50%);
+        white-space: normal;
+      }
+    }
+
+    // end  // &.tooltip-mobile
+  }
+
+  // &:hover::after
+  &:hover::after,
+  &[class*="ft-tooltip--"]:hover::before {
+    visibility: visible;
+    opacity: 1;
+    display: inline-block;
+  }
+}
+
+&--advice {
+  @include position(relative, null);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0rem;
+  flex-basis: 100%;
+}
+
+&__checkbox {
+  display: none;
+}
+
+&__trigger {
+  @include padding(0);
+  @include margin(0);
+  @include fontBold;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  display: inline-block;
+}
+
+&__content {
+  @include position(absolute, null);
+  @include padding(1rem 2rem 2rem 2rem);
+  @include border-color(var(--color-mediumGrey));
+  @include border-style(solid);
+  @include border-width(0.1rem);
+  max-width: 90vw;
+  min-width: 70vw;
+  border-radius: 1rem;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  z-index: 222222222222;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s;
+
+  @include min-screen(768px) {
+    max-width: 350px;
+    min-width: 250px;
+  }
+
+  @include behavior-parent(ft-tooltip--dark) {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    @include border-style(none);
+  }
+
+  @include behavior-parent(ft-tooltip--center) {
+    text-align: center;
+  }
+
+  @include behavior-parent(ft-tooltip--top) {
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 1.1rem;
+    z-index: 22222222222;
+  }
+
+  &:after,
+  &:before {
+    content: "";
+    @include position(absolute, 100% null null 50%);
+    border: solid transparent;
+    height: 0;
+    width: 0;
+    pointer-events: none;
+  }
+
+  &:after {
+    @include margin(null null null -7px);
+
+    border-color: transparent;
+    border-top-color: var(--color-white);
+    border-width: 7px;
+
+    @include behavior-parent(ft-tooltip--dark) {
+      border-top-color: var(--color-black);
+    }
+  }
+
+  &:before {
+    @include margin(null null null -8px);
+    border-color: transparent;
+    border-top-color: var(--color-mediumGrey);
+    border-width: 8px;
+
+    @include behavior-parent(ft-tooltip--dark) {
+      border-top-color: var(--color-white);
+    }
+  }
+}
+
+&__checkbox {
+  &:checked+.ft-tooltip__trigger+.ft-tooltip__content {
+    opacity: 1;
+    visibility: visible;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
+}
+
+&__close {
+  @include min-click-area();
+  @include position(absolute, 0.8rem 0.8rem null null);
+  z-index: 1000000;
+  @include padding(0);
+  background: none;
+  border: 0;
+  cursor: pointer;
+  color: var(--color-black);
+  @include size(1.1rem, 1.1rem);
+  @include background-setup(map-icons(alerts, brand--errorDefault),
+    // img path
+    "0 0 / contain",
+    // position and size
+    no-repeat,
+    // repeat
+    null,
+    // attachment
+    null,
+    // origin
+    null,
+    // clip
+    transparent // color
+  );
+
+  @include min-screen(1024px) {
+    &:focus-visible {
+      outline: none;
+
+      &::after {
+        outline: 0.2rem solid var(--color-black);
+        outline-offset: 0.2rem;
+      }
+    }
+  }
+
+  @include behavior-parent(ft-tooltip--dark) {
+    filter: invert(1);
+
+    @include min-screen(1024px) {
+      &:focus-visible::after {
+        outline-color: var(--color-black);
+      }
+    }
+  }
+
+  &Text {
+    @include position(absolute, null);
+    @include padding(0);
+    @include margin(-0.1rem);
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+}
+
+&__close:hover {
+  opacity: 0.7;
+}
+
+&__action {
+  & .ft-btn {
+    margin-top: 1.5rem;
+  }
+
+  &Link {
+    @include position(absolute, 0 null null 0);
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+}
+
+&__title {
+  @include font--body-M--small;
+  @include fontBold;
+  color: var(--color-black);
+
+  @include behavior-parent(ft-tooltip--dark) {
+    color: var(--color-white);
+  }
+}
+
+&__txt {
+  @include margin(null null 0 null);
+  @include font--body-S--small;
+  color: var(--color-black);
+
+  @include behavior-parent(ft-tooltip--dark) {
+    color: var(--color-white);
+    @include fontBold;
+  }
+}
+
+// &--top
+&--top {
+  @include behavior-parent(ft-tooltip--positionRight) {
+    .ft-tooltip {
+      &__content {
+        right: -15px;
+        transform: none;
+        left: auto;
+
+        @include min-screen(768px) {
+          right: 25px;
+        }
+
+        &:after,
+        &:before {
+          content: "";
+          @include position(absolute, 100% null null 50%);
+          right: 25%;
+          left: auto;
+        }
+      }
+
+    }
+  }
+
+  // ft-tooltip--positionLeft — ESPEJO de --positionRight (swap left↔right).
+  // Para un aviso en el PRIMER ítem (borde izquierdo): el globo se ancla a la izquierda
+  // y abre hacia la DERECHA (así no desborda por el borde izquierdo), y el pico se alinea
+  // a la izquierda. Misma lógica que --positionRight, invertida.
+  @include behavior-parent(ft-tooltip--positionLeft) {
+    .ft-tooltip {
+      &__content {
+        left: -15px;
+        transform: none;
+        right: auto;
+
+        @include min-screen(768px) {
+          left: 25px;
+        }
+
+        &:after,
+        &:before {
+          content: "";
+          @include position(absolute, 100% null null 50%);
+          left: 25%;
+          right: auto;
+        }
+      }
+
+    }
+  }
+}
+
+// &--sticky
+&--sticky {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0rem;
+  flex-basis: 100%;
+
+  // &:after
+  &:after {
+    content: "";
+    @include position(absolute, -0.3rem 0 null 0);
+    @include margin(auto);
+    @include size(6rem, 6rem);
+    border-radius: 7rem;
+    pointer-events: none;
+
+    // @if $brand ==ep
+    @if $brand ==ep {
+      background-color: #c82227;
+    }
+
+    // @if $brand ==epe
+    @if $brand ==epe {
+      background-color: #002290;
+    }
+
+    // @if $brand ==regionales
+    @if $brand ==regionales {
+      background-color: #dedede;
+    }
+
+    // @if $brand ==sport
+    @if $brand ==sport {
+      background-color: #c8000d;
+    }
+  }
+
+  // .ft-tooltip
+  .ft-tooltip {
+
+    // &--top
+    &--top {
+      width: 100%;
+      @include behavior-parent-nested(ft-tooltip--positionRight) {
+        .ft-tooltip__content {
+          left: -3.5rem;
+          right: inherit;
+
+          &::before,
+          &::after {
+            right: -6px;
+            left: auto;
+            transform: rotate(180deg);
+            top: 0;
+          }
+        }
+      }
+    }
+
+    // &__content
+    &__content {
+      @include margin(auto 0 auto 0);
+      @include padding(0.2rem 0.1rem);
+      top: 0;
+      right: -3.5rem;
+      bottom: initial;
+      left: inherit;
+      max-width: none;
+      min-width: initial;
+      transform: none;
+      border: none;
+      pointer-events: none;
+
+      // &::before
+      &::before {
+        display: none;
+      }
+
+      // &::after
+      &::after {
+        @include margin(auto null auto null);
+        @include size(0.6rem, 0.8rem);
+        top: 0;
+        right: 0px;
+        left: 0.2rem;
+        bottom: 0;
+        border-style: solid;
+        border-width: 4px 6px 4px 0;
+        border-color: transparent var(--color-black) transparent transparent;
+        transform: rotate(0deg);
+      }
+
+
+    }
+
+    // &__close
+    &__close {
+      display: none;
+    }
+
+    // &__action
+    &__action {
+      display: none;
+    }
+
+    // &__title — la píldora sticky es un mensaje compacto de una sola pieza; el
+    // titular se oculta igual que el cierre y la acción para mantenerla limpia.
+    &__title {
+      display: none;
+    }
+
+    // &__txt
+    &__txt {
+      @include padding(0.2rem 0.4rem);
+      @include margin(0 null null null);
+      max-width: 7rem;
+      font-weight: 500;
+      font-size: 0.95rem;
+      line-height: 1.1;
+
+      @include min-screen(480px) {
+        max-width: 9rem;
+      }
+
+      @include min-screen(680px) {
+        @include padding(0.4rem);
+        max-width: 11rem;
+        font-weight: normal;
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+&--dark{
+  .ft-link {
+    color: var(--color-white);
+}
+}
+
+}
+
+// AMP
+// ===============================================
+.ft-tooltip-amp {
+  @include position(relative, null null null null);
+  cursor: pointer;
+  z-index: 1050;
+
+  // &:before
+  &:before {
+    content: "";
+    @include position(absolute, null null null null);
+    @include size(0);
+    pointer-events: none;
+    transition:
+      opacity 0.3s ease 0ms,
+      transform 0.3s ease 0ms;
+    transform-style: preserve-3d;
+    opacity: 0;
+    z-index: -1;
+  }
+
+  // :after
+  &:after {
+    content: attr(data-tooltip-title);
+    @include position(absolute, null null null null);
+    @include padding(1rem);
+    @include border-top-radius(0.8rem);
+    @include border-bottom-radius(0.8rem);
+    z-index: -1;
+    opacity: 0;
+    pointer-events: none;
+    min-width: 180px;
+    transition:
+      opacity 0.3s ease 0ms,
+      transform 0.3s ease 0ms;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    color: var(--color-black);
+    text-align: center;
+    background-color: var(--color-lightGrey);
+    transform-style: preserve-3d;
+  }
+
+  // &:hover, &:focus
+  &:hover {
+
+    // &::before
+    &:before {
+      opacity: 1;
+      z-index: 100;
+    }
+
+    // &::after
+    &:after {
+      opacity: 1;
+      z-index: 100;
+    }
+  }
+
+  // &[data-tooltip-position="top"]
+  &[data-tooltip-position="top"] {
+
+    // &:before
+    &:before {
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      left: 50%;
+      transform: translate3d(-50%, 10px, 0);
+      border-top: 7px solid var(--color-lightGrey);
+      bottom: calc(100% + 3px);
+    }
+
+    // &:hover
+    &:hover {
+
+      // &:before
+      &:before {
+        transform: translate3d(-50%, 0, 0);
+      }
+    }
+
+    // &::after
+    &:after {
+      left: 50%;
+      transform: translate3d(-50%, 10px, 0);
+      bottom: calc(100% + 10px);
+    }
+
+    // &:hover
+    &:hover {
+
+      // &:before
+      &:after {
+        transform: translate3d(-50%, 0, 0);
+      }
+    }
+  }
+
+  // &[data-tooltip-position="bottom"]
+  &[data-tooltip-position="bottom"] {
+
+    // &:before
+    &:before {
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      left: 50%;
+      transform: translate3d(-50%, -10px, 0);
+      border-bottom: 7px solid var(--color-lightGrey);
+      top: calc(100% + 3px);
+    }
+
+    // &:hover
+    &:hover {
+
+      // &:before
+      &:before {
+        transform: translate3d(-50%, 0, 0);
+      }
+    }
+
+    // &::after
+    &:after {
+      left: 50%;
+      transform: translate3d(-50%, -10px, 0);
+      top: calc(100% + 10px);
+    }
+
+    // &:hover
+    &:hover {
+
+      // &:before
+      &:after {
+        transform: translate3d(-50%, 0, 0);
+      }
+    }
+  }
+
+  // &[data-tooltip-position="left"]
+  &[data-tooltip-position="left"] {
+
+    // &:before
+    &:before {
+      transform: translate3d(10px, -50%, 0);
+      border-left: 7px solid var(--color-lightGrey);
+      right: calc(100% + 3px);
+      border-top: 7px solid transparent;
+      border-bottom: 7px solid transparent;
+      top: 50%;
+    }
+
+    // &:hover
+    &:hover {
+
+      // &:before
+      &:before {
+        transform: translate3d(0, -50%, 0);
+      }
+    }
+
+    // &::after
+    &:after {
+      top: 50%;
+      transform: translate3d(10px, -50%, 0);
+      right: calc(100% + 10px);
+      right: calc(100% + 10px);
+    }
+
+    // &:hover
+    &:hover {
+
+      // &:before
+      &:after {
+        transform: translate3d(0px, -50%, 0);
+      }
+    }
+  }
+
+  // &[data-tooltip-position="right"]
+  &[data-tooltip-position="right"] {
+
+    // &:before
+    &:before {
+      transform: translate3d(-10px, -50%, 0);
+      border-right: 7px solid var(--color-lightGrey);
+      left: calc(100% + 3px);
+      border-top: 7px solid transparent;
+      border-bottom: 7px solid transparent;
+      top: 50%;
+    }
+
+    // &:hover
+    &:hover {
+
+      // &:before
+      &:before {
+        transform: translate3d(0, -50%, 0);
+      }
+    }
+
+    // &::after
+    &:after {
+      top: 50%;
+      transform: translate3d(-10px, -50%, 0);
+      left: calc(100% + 10px);
+    }
+
+    // &:hover
+    &:hover {
+
+      // &:before
+      &:after {
+        transform: translate3d(0, -50%, 0);
+      }
+    }
+  }
+
+  // &:disabled
+  &:disabled {
+
+    // &::after
+    &:after {
+      content: attr(data-disabled-tooltip-title);
+    }
+  }
+}

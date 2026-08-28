@@ -1,0 +1,231 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// .ft-switch
+// ===============================================
+.ft-switch {
+  @include position(relative, null null null null);
+  display: inline-block;
+  width: 5.8rem;
+  height: 2.8rem;
+
+  // &__label
+  &__label {
+    cursor: pointer;
+    @include position(relative, null null null null);
+    display: block;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    height: 100%;
+    border-radius: 6rem;
+    background-color: var(--color-mediumGrey);
+    @include min-click-area();
+  }
+
+  // &__innner
+  &__inner {
+    display: block;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    height: 100%;
+    border-radius: 6rem;
+    background-color: var(--color-mediumGrey);
+  }
+
+  // &__switch
+  &__switch {
+    @include position(absolute, 0 null 0 0.6rem);
+    @include margin(auto null auto null);
+    transition: transform 0.3s ease;
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--color-white);
+    border-radius: 50%;
+
+    // &:after
+    &:after {
+      content: "";
+      @include position(absolute, 0 0 0 0);
+      @include margin(auto);
+      width: 1rem;
+      height: 1rem;
+      background-image: url("#{$images-path}/icons/icon-alerts--ko.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+
+
+    }
+  }
+
+  // &__checkbox
+  &__checkbox {
+    @include position(absolute, null null null null);
+    opacity: 0;
+    width: 0;
+    height: 0;
+
+    // &:checked
+    &:checked {
+      // + [class*="__label"]
+      + [class*="__label"] {
+        // [class*="__inner"]
+        [class*="__inner"] {
+          background-color: var(--color-functional-success);
+        }
+
+        // [class*="__switch"]
+        [class*="__switch"] {
+          transform: translateX(26px);
+
+          // &::after
+          &::after {
+           background-image: url("#{$images-path}/icons/icon-alerts--ok.svg");
+            filter: brightness(0) saturate(100%) invert(52%) sepia(59%) saturate(2334%) hue-rotate(102deg) brightness(93%) contrast(101%);
+          }
+        }
+      }
+    }
+
+    // &:focus
+    &:focus {
+      // + [class*="__label"]
+      + [class*="__label"] {
+        box-shadow: 0 0 0.3rem 0.3rem rgba(21, 156, 228, 0.4);
+      }
+    }
+
+    // &:focus-visible
+    &:focus-visible {
+      // + [class*="__label"]
+      + [class*="__label"] {
+        outline: 0.2rem solid var(--color-functional-success);
+      }
+    }
+
+    // &:disabled
+    &:disabled {
+      cursor: not-allowed; 
+    }
+  }
+
+  // &--darkmode
+  &--darkmode {
+    // [class*="__switch"]
+    [class*="__switch"] {
+      // &::after
+      &:after {
+        width: 1.4rem;
+        height: 1.4rem;
+        transition: transform 0.25s ease;
+        background-color: transparent;
+        background-image: url("#{$images-path}/icons/icons-modes--showroom-light.svg");
+        background-size: 1.3rem;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+
+    // [class*="ft-switch__checkbox"]
+    [class*="ft-switch__checkbox"] {
+      // &:checked
+      &:checked {
+        // + [class*="__label"]
+        + [class*="__label"] {
+          // [class*="__switch"]
+          [class*="__switch"] {
+            // &::after
+            &::after {
+              transform: rotate(360deg);
+              background-image: url("#{$images-path}/icons/icons-modes--showroom-dark.svg");
+              filter: brightness(0) saturate(100%) invert(52%) sepia(59%) saturate(2334%) hue-rotate(102deg) brightness(93%) contrast(101%);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // &--has-text
+  &--has-text {
+    width: auto;
+    height: 100%;
+    
+    // [class*="__switch"]
+    [class*="__switch"] {
+      left: .8rem;
+      width: 3rem;
+      height: 3rem;
+
+      // &::after
+      &:after {
+        content: "OFF";
+        top: 50%;
+        right: unset;
+        bottom: unset;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: auto;
+        width: auto;
+        font-size: 14px;
+        background: none;
+      }
+    }
+    
+    // [class*="__inner"]
+    [class*="__inner"] {
+      padding: 1.08rem 2rem 1.08rem 5rem;
+      font-family: var(--font-stack);
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+      letter-spacing: 0;
+      font-weight: bold;
+    }
+
+    // [class*="ft-switch__checkbox"]
+    [class*="ft-switch__checkbox"] {
+      // &:checked
+      &:checked {
+        // + [class*="__label"]
+        + [class*="__label"] {
+          // [class*="__switch"]
+          [class*="__switch"] {
+            right: .8rem;
+            left: unset;
+            transform: unset;
+
+            // &::after
+            &::after {
+              content: "ON";
+              background: none;
+              filter: brightness(0) saturate(100%) invert(52%) sepia(59%) saturate(2334%) hue-rotate(102deg) brightness(93%) contrast(101%);
+            }
+          }
+    
+          // [class*="__inner"]
+          [class*="__inner"] {
+            padding: 1.08rem 5rem 1.08rem 2rem;
+          }
+        }
+      }
+    }
+  }
+
+  // &--is
+  &--is {
+    // &-disabled
+    &-disabled {
+      opacity: 0.4;
+      filter: grayscale(1);
+
+      // [class*="__label"]
+      [class*="__label"] {
+        cursor: not-allowed;
+      }
+    }
+  }
+}

@@ -1,0 +1,257 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// ft-TITLE
+// ===============================================
+.ft-title {
+  @include position(relative, null null null null);
+
+    @if $brand ==revistas{
+    font-family: var(--font-primary); 
+    @include font--weight-500;
+  }
+
+  // behavior-ft-helper-bg: Color-black
+  @include behavior-ft-helper-bg(Color-black) {
+    color: var(--color-white);
+  }
+
+  // behavior-parent: premium
+  @include behavior-parent(premium) {
+    // &::before
+    &:before {
+      content: "";
+      @include position(relative, 0.4rem null null 0);
+      @include margin(null 0.8rem null null);
+      z-index: 10;
+      display: inline-block;
+      min-width: 3rem;
+      height: 2.8rem;
+      background-size: contain;
+      @include min-screen(768px) {
+        top: 0;
+        left: 0;
+      }
+
+      // @if $brand ==: ep
+         @if $brand ==ep
+      {
+        background-image: url(#{$images-path}/logos/logoEPplus2.svg);
+        background-repeat: no-repeat;
+        background-position: 50%;
+      }
+
+      // end // @if $brand: ep
+
+
+      // @if $brand ==:epe
+          @if $brand ==epe
+      {
+        background-color: var(--color-premium);
+        background-image: url(#{$images-path}/logos/logoEPEplus2.svg);
+        background-repeat: no-repeat;
+        background-position: 50%;
+      }
+
+      // @if $brand ==:regionales
+          @if $brand ==regionales
+      {
+        background-image: url(#{$images-path}/logos/logo-regionalesPlus2.svg);
+        background-repeat: no-repeat;
+        background-position: 50%;
+      }
+
+      // @if $brand ==:sport
+          @if $brand ==sport
+      {
+        background-color: var(--color-primary);
+        background-image: url(#{$images-path}/logos/logo-SportPlus2.svg);
+        background-repeat: no-repeat;
+        background-position: 50%;
+      }
+
+      // @if $brand ==:ux
+          @if $brand ==ux
+      {
+
+        background-image: url(#{$images-path}/logos/logo-regionalesPlus2.svg);
+        background-repeat: no-repeat;
+        background-position: 50%;
+      }
+    }
+  }
+
+  // behavior-parent: loggedPremium
+  @include behavior-parent(loggedPremium) {
+    // &::before
+    &:before {
+      content: "";
+      @include position(relative, 0.4rem null null 0);
+      @include margin(null 0.8rem null null);
+      z-index: 10;
+      display: inline-block;
+      min-width: 3rem;
+      height: 2.8rem;
+      background-size: contain;
+      @include min-screen(768px) {
+        top: 0;
+        left: 0;
+      }
+
+      // @if $brand ==: ep
+         @if $brand ==ep
+      {
+        background-image: url(#{$images-path}/logos/logoEPplus2.svg);
+        background-repeat: no-repeat;
+        background-position: 50%;
+      }
+
+      // end // @if $brand: ep
+
+
+      // @if $brand ==:epe
+          @if $brand ==epe
+      {
+        background-color: var(--color-premium);
+        background-image: url(#{$images-path}/logos/logoEPEplus2.svg);
+        background-repeat: no-repeat;
+        background-position: 50%;
+      }
+
+      // @if $brand ==:regionales
+          @if $brand ==regionales
+      {
+        background-image: url(#{$images-path}/logos/logo-regionalesPlus2.svg);
+        background-repeat: no-repeat;
+        background-position: 50%;
+      }
+
+      // @if $brand ==:sport
+          @if $brand ==sport
+      {
+        background-color: var(--color-primary);
+        background-image: url(#{$images-path}/logos/logo-SportPlus2.svg);
+        background-repeat: no-repeat;
+        background-position: 50%;
+      }
+
+      // @if $brand ==:ux
+          @if $brand ==ux
+      {
+
+        background-image: url(#{$images-path}/logos/logo-regionalesPlus2.svg);
+        background-repeat: no-repeat;
+        background-position: 50%;
+      }
+    }
+  }
+
+  // &__category
+  &__category {
+    display: block;
+    color: var(--color-white);
+  }
+
+  // &__subcategory
+  &__subcategory {
+    display: block;
+
+    // behavior: bg(Color-black)
+    @include behavior-ft-helper-bg(Color-black) {
+      color: var(--color-white);
+    }
+
+    // &::selection
+    &::selection {
+      color: var(--color-white);
+      background-color: var(--color-primary);
+    }
+  }
+
+  // &__item
+  &__item {
+    @include position(absolute, 0 null 0 0);
+    fill: var(--color-black);
+
+    // behavior-ft-helper-bg: Color-black
+    @include behavior-ft-helper-bg(Color-black) {
+      fill: var(--color-white);
+    }
+  }
+
+  // &__text
+  &__text {
+    @include margin(null null null 3rem);
+
+    // behavior-parent: ft-modal--tag
+    @include behavior-parent(ft-modal--tag) {
+      @include margin(null null null 0);
+    }
+
+    // behavior-parent: ft-wrapper-carousel-property
+    @include behavior-parent(ft-wrapper-carousel-property) {
+      @include margin(null null null 0);
+    }
+  }
+
+  // &--fourty
+  &--fourty {
+    @include margin(1.5rem null 1.5rem null);
+    @include min-screen(1280px) {
+      @include margin(2.5rem null 2.5rem null);
+    }
+
+    // behavior-ft-helper-bg: FucsiaFourty-500
+    @include behavior-ft-helper-bg(FucsiaFourty-500) {
+      color: var(--color-primary);
+    }
+  }
+
+  // &--link
+  &--link {
+    @include padding(null 5rem null null);
+
+    // .ft
+    .ft {
+      // &-btn-nav
+      &-btn-nav {
+        @include position(absolute, 0 0 0 null);
+        @include margin(auto null auto null);
+        z-index: 1;
+      }
+    }
+  }
+
+  // &--has
+  &--has {
+    // &-dropdown
+    &-dropdown {
+      @include padding(null 5.5rem null null);
+      // .ft
+      .ft {
+        // &-title
+        &-title {
+          // &__text
+          &__text {
+            @include margin(null null null 0);
+          }
+        }
+
+        // &-dropdown
+        &-dropdown {
+          @include position(absolute, -0.5rem 0 null null);
+        }
+      }
+    }
+
+    // &-icon 
+    &-icon {
+      display: flex;
+      gap: 1.5rem;
+      align-items: baseline;
+    }
+  }
+}

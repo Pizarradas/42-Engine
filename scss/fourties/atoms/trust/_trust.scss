@@ -1,0 +1,37 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// ft-trust
+// ===============================================
+.ft-trust {
+  @include padding(null);
+  @include margin(0 null 1rem null);
+  @include position(relative, 0 null null 0);
+  @include font--body-S--small;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include min-screen(768px) {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  // .ft-helper-img-rd
+  .ft-helper-img-rd {
+    @include margin(null 0.5rem null null);
+  }
+
+  // &--center
+  &--center {
+    align-items: center;
+    justify-content: center;
+  }
+
+  // &--right
+  &--right {
+    justify-content: flex-end;
+  }
+}

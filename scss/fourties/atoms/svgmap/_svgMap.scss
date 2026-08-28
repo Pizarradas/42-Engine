@@ -1,0 +1,123 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+.ft-svgmap
+		{
+			//generals
+			fill: var(--color-lightGrey);
+			border-radius: 12px;
+			overflow: visible;
+
+			//[onclick]/[data-url]
+			circle[onclick],
+			g[onclick],
+			path[onclick],
+			circle[data-url],
+			g[data-url],
+			path[data-url]
+			{
+				cursor: pointer;
+			}
+
+			//.enabled
+			g.enabled,
+			circle.enabled,
+			path.enabled
+			{
+				cursor: pointer;
+				stroke-width: 1px;
+				stroke: var(--color-black);
+				filter: drop-shadow(0px 4px 8px rgb(0 0 0 / 0.3));
+			}
+
+			//.disabled
+			g.disabled,
+			circle.disabled,
+			path.disabled
+			{
+				stroke: var(--color-white);
+				stroke-width: 1px;
+				stroke-linejoin: round;
+			}
+
+			.provincial_limits
+			{
+				stroke: var(--color-white);
+				stroke-width: 0.5px;
+				stroke-linejoin: round;
+				fill: var(--color-lightGrey);
+			}
+
+			.community_line
+			{
+				fill: none;
+				stroke: var(--color-white);
+				stroke-width: 1.5px;
+				stroke-linejoin: round;
+			}
+
+
+			// end // generals
+			// ---------------------------------------------
+
+			//&--communities_map
+			&--communities_map
+			{
+				stroke: var(--color-white);
+				stroke-width: 1px;
+				stroke-linejoin: round;
+
+
+			}
+
+			// ---------------------------------------------
+
+			//&--provinces_map 
+			&--provinces_map
+			{
+				stroke: var(--color-white);
+				stroke-linejoin: round;
+				stroke-width: 0.5px;
+				fill: var(--color-lightGrey);
+
+
+			}
+
+			// ---------------------------------------------
+
+			//&--capitals_map
+			&--capitals_map
+			{
+				stroke: var(--color-white);
+				stroke-linejoin: round;
+				stroke-width: 0.5px;
+				fill: var(--color-lightGrey);
+
+				circle
+				{
+					stroke-width: 0;
+					fill: transparent;
+					stroke: transparent;
+				}
+
+
+
+				// ---------------------------------------------
+			}
+
+			//&--community_map
+			&--community_map
+			{
+				stroke: var(--color-white);
+				stroke-width: 0.5px;
+				stroke-linejoin: round;
+
+
+			}
+
+			// ---------------------------------------------
+
+		}
