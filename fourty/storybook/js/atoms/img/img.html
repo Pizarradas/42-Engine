@@ -1,0 +1,41 @@
+<!--
+  img.html — códigos HTML originales de Img (.ft-img)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS.
+  El storybook (atoms/img/img.js) los muestra en el subgrupo "Markup".
+  ─────────────────────────────────────────────────────────────────────────
+-->
+
+<!-- ════════════════ BASE · .ft-img (ancho completo) ════════════════ -->
+<template data-story="Base">
+  <figure class="ft-img">
+    <picture>
+      <source media="(min-width:640.1px)" srcset="https://estaticos-cdn.prensaiberica.es/clip/7a2874d8-365c-49a2-9dad-b5c2f92bd5d6_16-9-discover-aspect-ratio_default_0.jpg" type="image/webp" width="1200" height="675">
+      <img src="https://estaticos-cdn.prensaiberica.es/clip/7a2874d8-365c-49a2-9dad-b5c2f92bd5d6_16-9-discover-aspect-ratio_default_0.jpg" alt="" width="1200" height="675" loading="lazy" class="ft-helper-img-rd">
+    </picture>
+  </figure>
+</template>
+
+<!-- ════════════════ Con pie de foto ════════════════ -->
+<template data-story="Con figcaption">
+  <figure class="ft-img">
+    <picture>
+      <img src="https://estaticos-cdn.prensaiberica.es/clip/7a2874d8-365c-49a2-9dad-b5c2f92bd5d6_16-9-discover-aspect-ratio_default_0.jpg" alt="" width="1200" height="675" loading="lazy" class="ft-helper-img-rd">
+    </picture>
+    <figcaption>
+      <p class="ft-helper-fontColor-quaternary ft-helper-fontSize-body-S ft-helper-spacer-t-xxs">Pie de foto · autor / fuente</p>
+    </figcaption>
+  </figure>
+</template>
+
+<!-- ════════════════ Max-width (--mw) ════════════════ -->
+<template data-story="Max-width (--mw)">
+  <figure class="ft-img ft-img--mw">
+    <picture>
+      <img src="https://estaticos-cdn.prensaiberica.es/clip/7a2874d8-365c-49a2-9dad-b5c2f92bd5d6_16-9-discover-aspect-ratio_default_0.jpg" alt="" width="1200" height="675" loading="lazy" class="ft-helper-img-rd">
+    </picture>
+    <figcaption>
+      <p class="ft-helper-fontColor-quaternary ft-helper-fontSize-body-S ft-helper-spacer-t-xxs">Imagen centrada, no se estira más allá de su tamaño natural</p>
+    </figcaption>
+  </figure>
+</template>

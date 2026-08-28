@@ -1,0 +1,696 @@
+<!--
+  list.html — códigos HTML originales de List (.ft-list)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS.
+  Familias tomadas VERBATIM de fourty/atoms/atom-list.html (textuales + compuestas),
+  para tener paridad con el showroom. Rutas de imagen pasadas a absolutas
+  (/cds-statics/…) → requieren servidor; onclick de showroom omitidos.
+  ─────────────────────────────────────────────────────────────────────────
+-->
+
+<!-- ════════════════ Base ════════════════ -->
+<template data-story="Base">
+<ul class="ft-list">
+                                                <li class="ft-list__item">Lorem ipsum dolor est</li>
+                                                <li class="ft-list__item">Lorem ipsum dolor est</li>
+                                                <li class="ft-list__item">
+                                                  <a href="#" class="ft-list__link" title="title text" target="_self">
+                                                    Lorem ipsum dolor est
+                                                  </a>
+                                                </li>
+                                              </ul>
+</template>
+
+<!-- ════════════════ Has icon ════════════════ -->
+<template data-story="Has icon">
+<ul class="ft-list ft-list--has-icon">
+                                                <li class="ft-list__item">
+                                                  <img src="/cds-statics/assets/img/icons/ft-list-icon-rrss-whatsapp.svg" loading="lazy" width="34" height="34" class="ft-list-photoinfo__img" alt="alt text" title="title text">Lorem ipsum dolor est
+                                                </li>
+                                                <li class="ft-list__item">
+                                                  <img src="/cds-statics/assets/img/icons/ft-list-icon-rrss-whatsapp.svg" loading="lazy" width="34" height="34" class="ft-list-photoinfo__img" alt="alt text" title="title text">Lorem ipsum dolor est
+                                                </li>
+                                                <li class="ft-list__item">
+                                                  <a href="#" class="ft-list__link" title="title text" target="self">
+                                                    <img src="/cds-statics/assets/img/icons/ft-list-icon-rrss-whatsapp.svg" loading="lazy" width="34" height="34" class="ft-list-photoinfo__img" alt="alt text" title="title text">Lorem ipsum dolor est
+                                                  </a>
+                                                </li>
+                                              </ul>
+</template>
+
+<!-- ════════════════ Primary (bullet) ════════════════ -->
+<template data-story="Primary (bullet)">
+<ul class="ft-list ft-list--primary">
+                                                <li class="ft-list__item">Lorem ipsum dolor est</li>
+                                                <li class="ft-list__item">Lorem ipsum dolor est</li>
+                                                <li class="ft-list__item">
+                                                  <a href="#" class="ft-list__link" title="title text" target="_self">
+                                                    Lorem ipsum dolor est
+                                                  </a>
+                                                </li>
+                                              </ul>
+</template>
+
+<!-- ════════════════ Primary + Chevron ════════════════ -->
+<template data-story="Primary + Chevron">
+<ul class="ft-list ft-list--primary ft-list--chevron">
+                                                <li class="ft-list__item">Lorem ipsum dolor est</li>
+                                                <li class="ft-list__item">Lorem ipsum dolor est</li>
+                                                <li class="ft-list__item">
+                                                  <a href="#" class="ft-list__link" title="title text" target="_self">
+                                                    Lorem ipsum dolor est
+                                                  </a>
+                                                </li>
+                                            </ul>
+</template>
+
+<!-- ════════════════ Chevron derecha + icono ════════════════ -->
+<template data-story="Chevron derecha + icono">
+<ul class="ft-list ft-list--primary ft-list--chevron ft-list--chevron-rgt ft-list--has-icon">
+                                                <li class="ft-list__item">
+                                                  <img src="/cds-statics/assets/img/icons/ft-list-icon-rrss-whatsapp.svg" loading="lazy" width="34" height="34" class="ft-list-photoinfo__img" alt="alt text" title="title text">Lorem ipsum dolor est
+                                                </li>
+                                                <li class="ft-list__item">
+                                                  <img src="/cds-statics/assets/img/icons/ft-list-icon-rrss-whatsapp.svg" loading="lazy" width="34" height="34" class="ft-list-photoinfo__img" alt="alt text" title="title text">Lorem ipsum dolor est
+                                                </li>
+                                                <li class="ft-list__item">
+                                                  <a href="#" class="ft-list__link" title="title text" target="self">
+                                                    <img src="/cds-statics/assets/img/icons/ft-list-icon-rrss-whatsapp.svg" loading="lazy" width="34" height="34" class="ft-list-photoinfo__img" alt="alt text" title="title text">Lorem ipsum dolor est
+                                                  </a>
+                                                </li>
+                                              </ul>
+</template>
+
+<!-- ════════════════ Inline ════════════════ -->
+<template data-story="Inline">
+<ul class="ft-list ft-list--inline">
+                                                <li class="ft-list__item">Lorem ipsum dolor est</li>
+                                                <li class="ft-list__item">Lorem ipsum dolor est</li>
+                                                <li class="ft-list__item">
+                                                  <a href="#" class="ft-list__link" title="title text" target="_self">
+                                                    Lorem ipsum dolor est
+                                                  </a>
+                                                </li>
+                                              </ul>
+</template>
+
+<!-- ════════════════ Numbered ════════════════ -->
+<template data-story="Numbered">
+<ol class="ft-list ft-list--numbered">
+                                                <li class="ft-list__item"><a href="#" class="ft-list__link ft-link--secondary" title="">Lorem ipsum dolor est</a></li>
+                                                <li class="ft-list__item">Lorem ipsum dolor est</li>
+                                                <li class="ft-list__item">
+                                                  <a href="#" class="ft-list__link ft-link--primary" title="title text" target="_self">
+                                                    Lorem ipsum dolor est
+                                                  </a>
+                                                </li>
+                                            </ol>
+</template>
+
+<!-- ════════════════ Numbered Big ════════════════ -->
+<template data-story="Numbered Big">
+<ol class="ft-list ft-list--numbered ft-list--numberedBig">
+                                                <li class="ft-list__item">
+                                                    <h3 class="ft-list__title">Madrid</h3>
+                                                </li>
+                                            </ol>
+</template>
+
+<!-- ════════════════ Path ════════════════ -->
+<template data-story="Path">
+<ol class="ft-list ft-list--path">
+                                                <li class="ft-list__item">
+                                                    .fourty
+                                                </li>
+                                                <li class="ft-list__item">
+                                                    &-category
+                                                </li>
+                                                <li class="ft-list__item">
+                                                    &-group</li>
+                                                <li class="ft-list__item">
+                                                    &Type
+                                                </li>
+                                                <li class="ft-list__item">
+                                                    &SubType
+                                                </li>
+                                            </ol>
+</template>
+
+<!-- ════════════════ Photoinfo ════════════════ -->
+<template data-story="Photoinfo">
+<ul class="ft-list ft-list-photoinfo">
+                                                <li class="ft-list-photoinfo__item ft-helper-fontSize-standard">
+                                                    <img src="/cds-statics/assets/img/templates/ft-user-brief--template.svg" loading="lazy" width="90"
+                                                        height="90" class="ft-list-photoinfo__img" alt="alt text" title="title text">
+                                                    <span class="ft-list-photoinfo__content">
+                                                        <span class="ft-list-photoinfo__title">
+                                                            Titular
+                                                        </span>
+                                                        Suscríbete al servicio de Newsletter de LA NUEVA ESPAÑA y recibe los boletines con las principales
+                                                        noticias y novedades
+                                                        <a href="#" class="ft-link ft-link--primary" title="title text">
+                                                            CTA de la sección
+                                                        </a>
+                                                    </span>
+                                                </li>
+                                                <li class="ft-list-photoinfo__item ft-helper-fontSize-standard">
+                                                    <img src="/cds-statics/assets/img/templates/ft-user-brief--template.svg" loading="lazy" width="90"
+                                                        height="90" class="ft-list-photoinfo__img" alt="alt text" title="title text">
+                                                    <span class="ft-list-photoinfo__content">
+                                                        <span class="ft-list-photoinfo__title">
+                                                            Titular
+                                                        </span>
+                                                        Suscríbete al servicio de Newsletter de LA NUEVA ESPAÑA y recibe los boletines con las principales
+                                                        noticias y novedades
+                                                        <a href="#" class="ft-link ft-link--primary" title="title text">
+                                                            CTA de la sección
+                                                        </a>
+                                                    </span>
+                                                </li>
+                                                <li class="ft-list-photoinfo__item ft-helper-fontSize-standard">
+                                                    <img src="/cds-statics/assets/img/templates/ft-user-brief--template.svg" loading="lazy" width="90"
+                                                        height="90" class="ft-list-photoinfo__img" alt="alt text" title="title text">
+                                                    <span class="ft-list-photoinfo__content">
+                                                        <span class="ft-list-photoinfo__title">
+                                                            Titular
+                                                        </span>
+                                                        Suscríbete al servicio de Newsletter de LA NUEVA ESPAÑA y recibe los boletines con las principales
+                                                        noticias y novedades
+                                                        <a href="#" class="ft-link ft-link--primary" title="title text">
+                                                            CTA de la sección
+                                                        </a>
+                                                    </span>
+                                                </li>
+                                            </ul>
+</template>
+
+<!-- ════════════════ Counter ════════════════ -->
+<template data-story="Counter">
+<ul class="ft-list ft-list-counter ft-helper-fontWeight-500">
+                                                <li class="ft-list-counter__item ft-helper-fontSize-body-M">
+                                                    Días
+                                                    <strong class="ft-list-counter__number ft-helper-fontWeight-800">
+                                                        1
+                                                    </strong>
+                                                    <a href="#" class="ft-link ft-link--block" title="link title" target="_self">
+                                                        Más información
+                                                    </a>
+                                                </li>
+                                                <li class="ft-list-counter__item ft-helper-fontSize-body-M">
+                                                    Horas
+                                                    <strong class="ft-list-counter__number ft-helper-fontWeight-800">
+                                                        5
+                                                    </strong>
+                                                    <a href="#" class="ft-link ft-link--block" title="link title" target="_self">
+                                                        Más información
+                                                    </a>
+                                                </li>
+                                                <li class="ft-list-counter__item ft-helper-fontSize-body-M">
+                                                    Minutos
+                                                    <strong class="ft-list-counter__number ft-helper-fontWeight-800">
+                                                        34
+                                                    </strong>
+                                                    <a href="#" class="ft-link ft-link--block" title="link title" target="_self">
+                                                        Más información
+                                                    </a>
+                                                </li>
+                                            </ul>
+</template>
+
+<!-- ════════════════ Functions · thumbnail ════════════════ -->
+<template data-story="Functions · thumbnail">
+<ul class="ft-list ft-list-functions ft-list-functions--has-thumbnail">
+                                                <li class="ft-list-functions__item">
+                                                    <span class="ft-list-functions__txt">
+                                                        nombre-del-archivo.jpg
+                                                    </span>
+                                                    <div class="ft-list-functions__actions">
+                                                        <button type="button" name="edit-file" class="ft-btn-nav ft-btn-nav--edit" title="Editar archivo">
+                                                            <span class="ft-btn-nav__text">
+                                                                Editar
+                                                            </span>
+                                                            <span class="ft-btn-nav__icon"></span>
+                                                        </button>
+                                                        <button type="button" name="delete-file" class="ft-btn-nav ft-btn-nav--delete" title="Borrar archivo">
+                                                            <span class="ft-btn-nav__text">
+                                                                Borrar
+                                                            </span>
+                                                            <span class="ft-btn-nav__icon"></span>
+                                                        </button>
+                                                    </div>
+                                                </li>
+                                                <li class="ft-list-functions__item">
+                                                    <span class="ft-list-functions__txt">
+                                                        nombre-del-archivo.jpg
+                                                    </span>
+                                                    <div class="ft-list-functions__actions">
+                                                        <button type="button" name="edit-file" class="ft-btn-nav ft-btn-nav--edit" title="Editar archivo">
+                                                            <span class="ft-btn-nav__text">
+                                                                Editar
+                                                            </span>
+                                                            <span class="ft-btn-nav__icon"></span>
+                                                        </button>
+                                                        <button type="button" name="delete-file" class="ft-btn-nav ft-btn-nav--delete" title="Borrar archivo">
+                                                            <span class="ft-btn-nav__text">
+                                                                Borrar
+                                                            </span>
+                                                            <span class="ft-btn-nav__icon"></span>
+                                                        </button>
+                                                    </div>
+                                                </li>
+                                            </ul>
+</template>
+
+<!-- ════════════════ Functions · icon-and-txt ════════════════ -->
+<template data-story="Functions · icon-and-txt">
+<ul class="ft-list ft-list-functions ft-list-functions--has-icon-and-txt">
+                                                <li class="ft-list-functions__item">
+                                                    <div class="ft-list-functions__col-lft">
+                                                        <img src="/cds-statics/assets/img/icons/ft-list-functions-icon-template.svg" alt="" width="18"
+                                                            height="13" class="ft-helper-img-rd">
+                                                        <h3 class="ft-list-functions__txt ft-helper-fontWeight-800">
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                                        </h3>
+                                                    </div>
+                                                    <div class="ft-list-functions__col-rgt">
+                                                        <span class="ft-helper-fontSize-heading-XXS">
+                                                            XX,XX
+                                                        </span>
+                                                    </div>
+                                                </li>
+                                                <li class="ft-list-functions__item">
+                                                    <div class="ft-list-functions__col-lft">
+                                                        <img src="/cds-statics/assets/img/icons/ft-list-functions-icon-grade-max.svg" alt="" width="18"
+                                                            height="13" class="ft-helper-img-rd">
+                                                        <span class="ft-list-functions__txt ft-helper-text-transform-uppercase ft-helper-fontColor-quaternary">
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                                            <span class="ft-list-functions__subtxt ft-helper-text-transform-capitalize">
+                                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                    <div class="ft-list-functions__col-rgt">
+                                                        <button type="button" name="edit-file" class="ft-btn-nav ft-btn-nav--edit" title="Editar archivo">
+                                                            <span class="ft-btn-nav__text">
+                                                                Editar
+                                                            </span>
+                                                            <span class="ft-btn-nav__icon"></span>
+                                                        </button>
+                                                        <button type="button" name="delete-file" class="ft-btn-nav ft-btn-nav--delete" title="Borrar archivo">
+                                                            <span class="ft-btn-nav__text">
+                                                                Borrar
+                                                            </span>
+                                                            <span class="ft-btn-nav__icon"></span>
+                                                        </button>
+                                                    </div>
+                                                </li>
+                                            </ul>
+</template>
+
+<!-- ════════════════ Box ════════════════ -->
+<template data-story="Box">
+<ul class="ft-list ft-list-box ft-helper-fontWeight-700">
+                                                <li class="ft-list-box__item ft-list-box__itemIs-active">
+                                                    <svg class="ft-list-box__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M19 21H5C4.73478 21 4.48043 20.8947 4.29289 20.7071C4.10536 20.5196 4 20.2653 4 20V11H1L11.327 1.61204C11.5111 1.44452 11.7511 1.35168 12 1.35168C12.2489 1.35168 12.4889 1.44452 12.673 1.61204L23 11H20V20C20 20.2653 19.8946 20.5196 19.7071 20.7071C19.5196 20.8947 19.2652 21 19 21ZM6 19H18V9.15704L12 3.70304L6 9.15704V19ZM8 15H16V17H8V15Z">
+                                                        </path>
+                                                    </svg>
+                                                    <span class="ft-list-box__text ft-helper-fontSize-body ft-helper-fontColor-black ft-helper-fontWeight-500">
+                                                        Lorem ipsum dolor est
+                                                    </span>
+                                                    <a href="#" class="ft-link ft-link--block" title="link title" target="_self">
+                                                        Más información
+                                                    </a>
+                                                </li>
+                                                <li class="ft-list-box__item">
+                                                    <svg class="ft-list-box__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M19 21H5C4.73478 21 4.48043 20.8947 4.29289 20.7071C4.10536 20.5196 4 20.2653 4 20V11H1L11.327 1.61204C11.5111 1.44452 11.7511 1.35168 12 1.35168C12.2489 1.35168 12.4889 1.44452 12.673 1.61204L23 11H20V20C20 20.2653 19.8946 20.5196 19.7071 20.7071C19.5196 20.8947 19.2652 21 19 21ZM6 19H18V9.15704L12 3.70304L6 9.15704V19ZM8 15H16V17H8V15Z">
+                                                        </path>
+                                                    </svg>
+                                                    <span class="ft-list-box__text ft-helper-fontSize-body ft-helper-fontColor-black ft-helper-fontWeight-500">
+                                                        Lorem ipsum dolor est
+                                                    </span>
+                                                    <a href="#" class="ft-link ft-link--block" title="link title" target="_self">
+                                                        Más información
+                                                    </a>
+                                                </li>
+                                                <li class="ft-list-box__item">
+                                                    <svg class="ft-list-box__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M19 21H5C4.73478 21 4.48043 20.8947 4.29289 20.7071C4.10536 20.5196 4 20.2653 4 20V11H1L11.327 1.61204C11.5111 1.44452 11.7511 1.35168 12 1.35168C12.2489 1.35168 12.4889 1.44452 12.673 1.61204L23 11H20V20C20 20.2653 19.8946 20.5196 19.7071 20.7071C19.5196 20.8947 19.2652 21 19 21ZM6 19H18V9.15704L12 3.70304L6 9.15704V19ZM8 15H16V17H8V15Z">
+                                                        </path>
+                                                    </svg>
+                                                    <span class="ft-list-box__text ft-helper-fontSize-body ft-helper-fontColor-black ft-helper-fontWeight-500">
+                                                        Lorem ipsum dolor est
+                                                    </span>
+                                                    <a href="#" class="ft-link ft-link--block" title="link title" target="_self">
+                                                        Más información
+                                                    </a>
+                                                </li>
+                                            </ul>
+</template>
+
+<!-- ════════════════ Box tight ════════════════ -->
+<template data-story="Box tight">
+<ul class="ft-list ft-list-box ft-list-box--tight ft-helper-fontWeight-700">
+                                                <li class="ft-list-box__item">
+                                                    <svg class="ft-list-box__icon" width="72" height="72" viewBox="0 0 72 72" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M12 58.5V13.5C12 11.5109 12.7902 9.60322 14.1967 8.1967C15.6032 6.79018 17.5109 6 19.5 6H57C57.7956 6 58.5587 6.31607 59.1213 6.87868C59.6839 7.44129 60 8.20435 60 9V63C60 63.7956 59.6839 64.5587 59.1213 65.1213C58.5587 65.6839 57.7956 66 57 66H19.5C17.5109 66 15.6032 65.2098 14.1967 63.8033C12.7902 62.3968 12 60.4891 12 58.5ZM12 58.5C12 56.5109 12.7902 54.6032 14.1967 53.1967C15.6032 51.7902 17.5109 51 19.5 51H60"
+                                                            stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path d="M24 33H48" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                                        </path>
+                                                        <path d="M24 21H42" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                                        </path>
+                                                    </svg>
+                                                    <span class="ft-list-box__text ft-helper-fontSize-body-XL ft-helper-fontWeight-800">
+                                                        Documentación
+                                                    </span>
+                                                    <a href="#" class="ft-link ft-link--block" title="Haz clic para ver la documentación del 42DS"
+                                                        target="_self">
+                                                        Más información
+                                                    </a>
+                                                </li>
+                                                <li class="ft-list-box__item">
+                                                    <svg class="ft-list-box__icon" width="73" height="72" viewBox="0 0 73 72" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M27.5137 35.7L51.7237 11.52C52.5128 10.7053 53.4562 10.0558 54.4989 9.60932C55.5415 9.16282 56.6626 8.92822 57.7968 8.91922C58.931 8.91021 60.0556 9.12696 61.1053 9.55684C62.1549 9.98673 63.1085 10.6212 63.9105 11.4232C64.7125 12.2252 65.3469 13.1788 65.7768 14.2284C66.2067 15.278 66.4235 16.4027 66.4144 17.5369C66.4054 18.6711 66.1708 19.7921 65.7243 20.8348C65.2778 21.8774 64.6283 22.8208 63.8137 23.61L39.6337 47.85"
+                                                            stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path
+                                                            d="M21.5436 44.8203C16.5636 44.8203 12.5436 48.8703 12.5436 53.8803C12.5436 57.8703 5.04356 58.4403 6.54356 59.9403C9.78356 63.2403 14.0136 66.0003 18.5436 66.0003C25.1436 66.0003 30.5436 60.6003 30.5436 53.8803C30.5475 52.6945 30.3178 51.5195 29.8677 50.4224C29.4175 49.3253 28.7557 48.3276 27.92 47.4863C27.0842 46.645 26.091 45.9766 24.9969 45.5191C23.9029 45.0617 22.7294 44.8242 21.5436 44.8203Z"
+                                                            stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                    <span class="ft-list-box__text ft-helper-fontSize-body-XL ft-helper-fontWeight-800">
+                                                        Diseño
+                                                    </span>
+                                                    <a href="#" class="ft-link ft-link--block"
+                                                        title="Haz clic para ver la información relativa al apartado diseño" target="_self">
+                                                        Más información
+                                                    </a>
+                                                </li>
+                                                <li class="ft-list-box__item">
+                                                    <svg class="ft-list-box__icon" width="73" height="72" viewBox="0 0 73 72" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M45.6665 6H18.6665C17.0752 6 15.5491 6.63214 14.4239 7.75736C13.2986 8.88258 12.6665 10.4087 12.6665 12V60C12.6665 61.5913 13.2986 63.1174 14.4239 64.2426C15.5491 65.3679 17.0752 66 18.6665 66H54.6665C56.2578 66 57.7839 65.3679 58.9091 64.2426C60.0344 63.1174 60.6665 61.5913 60.6665 60V21L45.6665 6Z"
+                                                            stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path
+                                                            d="M42.6665 6V18C42.6665 19.5913 43.2986 21.1174 44.4239 22.2426C45.5491 23.3679 47.0752 24 48.6665 24H60.6665"
+                                                            stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path
+                                                            d="M30.6665 36C29.8709 36 29.1078 36.3161 28.5452 36.8787C27.9826 37.4413 27.6665 38.2044 27.6665 39V42C27.6665 42.7956 27.3504 43.5587 26.7878 44.1213C26.2252 44.6839 25.4622 45 24.6665 45C25.4622 45 26.2252 45.3161 26.7878 45.8787C27.3504 46.4413 27.6665 47.2044 27.6665 48V51C27.6665 51.7956 27.9826 52.5587 28.5452 53.1213C29.1078 53.6839 29.8709 54 30.6665 54"
+                                                            stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path
+                                                            d="M42.6665 54C43.4622 54 44.2252 53.6839 44.7878 53.1213C45.3504 52.5587 45.6665 51.7956 45.6665 51V48C45.6665 47.2044 45.9826 46.4413 46.5452 45.8787C47.1078 45.3161 47.8709 45 48.6665 45C47.8709 45 47.1078 44.6839 46.5452 44.1213C45.9826 43.5587 45.6665 42.7956 45.6665 42V39C45.6665 38.2044 45.3504 37.4413 44.7878 36.8787C44.2252 36.3161 43.4622 36 42.6665 36"
+                                                            stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                    <span class="ft-list-box__text ft-helper-fontSize-body-XL ft-helper-fontWeight-800">
+                                                        Desarrollo
+                                                    </span>
+                                                    <a href="#" class="ft-link ft-link--block"
+                                                        title="Haz clic para ver la información relativa al apartado desarrollo" target="_self">
+                                                        Más información
+                                                    </a>
+                                                </li>
+                                            </ul>
+</template>
+
+<!-- ════════════════ Block ════════════════ -->
+<template data-story="Block">
+<ul class="ft-list ft-list-block ft-helper-fontWeight-700">
+                                                <li class="ft-list-block__item">
+                                                    <svg class="ft-list-block__icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                            d="M16.4236 2.53201C14.1571 1.71909 11.5187 1.61302 9.1977 2.11152C4.63029 3.09249 2.43896 6.1594 1.78492 9.39422C1.45469 11.0275 1.51949 12.7008 1.88128 14.1575C2.24549 15.6239 2.89469 16.8108 3.67576 17.5285L3.95251 17.7828L3.68697 21.8358L6.88722 20.117L7.208 20.2234C11.2717 21.5708 14.555 20.7795 15.7541 20.3632C19.9649 18.9014 21.6798 16.2705 22.2225 13.7132C22.7794 11.089 22.1126 8.47354 21.423 7.16021L21.4018 7.11979L21.3854 7.07718C20.5208 4.83042 18.6815 3.34183 16.4236 2.53201ZM22.8344 6.47108C21.7612 3.72368 19.5176 1.97367 16.9537 1.0541C14.3853 0.13291 11.4468 0.0225722 8.868 0.576433C3.61429 1.70481 1.00769 5.31568 0.245968 9.08307C-0.131683 10.9509 -0.058817 12.8598 0.357481 14.5359C0.734994 16.0559 1.40824 17.4346 2.33775 18.4133L2.08057 22.3386C2.01723 23.3053 3.0418 23.9645 3.89527 23.5061L7.0388 21.8178C11.3751 23.1593 14.8855 22.3267 16.2691 21.8464C20.9999 20.2041 23.1016 17.1338 23.7584 14.0392C24.3955 11.0371 23.6627 8.07488 22.8344 6.47108Z"
+                                                            fill="black"></path>
+                                                    </svg>
+                                                    <span class="ft-list-block__text ft-helper-fontSize-body ft-helper-fontWeight-500">
+                                                        Lorem ipsum dolor est
+                                                    </span>
+                                                    <a href="#" class="ft-link ft-link--block" title="link title" target="_self">
+                                                        Más información
+                                                    </a>
+                                                </li>
+                                                <li class="ft-list-block__item">
+                                                    <svg class="ft-list-block__icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                            d="M16.4236 2.53201C14.1571 1.71909 11.5187 1.61302 9.1977 2.11152C4.63029 3.09249 2.43896 6.1594 1.78492 9.39422C1.45469 11.0275 1.51949 12.7008 1.88128 14.1575C2.24549 15.6239 2.89469 16.8108 3.67576 17.5285L3.95251 17.7828L3.68697 21.8358L6.88722 20.117L7.208 20.2234C11.2717 21.5708 14.555 20.7795 15.7541 20.3632C19.9649 18.9014 21.6798 16.2705 22.2225 13.7132C22.7794 11.089 22.1126 8.47354 21.423 7.16021L21.4018 7.11979L21.3854 7.07718C20.5208 4.83042 18.6815 3.34183 16.4236 2.53201ZM22.8344 6.47108C21.7612 3.72368 19.5176 1.97367 16.9537 1.0541C14.3853 0.13291 11.4468 0.0225722 8.868 0.576433C3.61429 1.70481 1.00769 5.31568 0.245968 9.08307C-0.131683 10.9509 -0.058817 12.8598 0.357481 14.5359C0.734994 16.0559 1.40824 17.4346 2.33775 18.4133L2.08057 22.3386C2.01723 23.3053 3.0418 23.9645 3.89527 23.5061L7.0388 21.8178C11.3751 23.1593 14.8855 22.3267 16.2691 21.8464C20.9999 20.2041 23.1016 17.1338 23.7584 14.0392C24.3955 11.0371 23.6627 8.07488 22.8344 6.47108Z"
+                                                            fill="black"></path>
+                                                    </svg>
+                                                    <span class="ft-list-block__text ft-helper-fontSize-body ft-helper-fontWeight-500">
+                                                        Lorem ipsum dolor est
+                                                    </span>
+                                                    <a href="#" class="ft-link ft-link--block" title="link title" target="_self">
+                                                        Más información
+                                                    </a>
+                                                </li>
+                                            </ul>
+</template>
+
+<!-- ════════════════ Block col ════════════════ -->
+<template data-story="Block col">
+<ul class="ft-list ft-list-block ft-list-block--col ft-helper-fontWeight-700">
+                                                <li class="ft-list-block__item">
+                                                    <svg class="ft-list-block__icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                            d="M16.4236 2.53201C14.1571 1.71909 11.5187 1.61302 9.1977 2.11152C4.63029 3.09249 2.43896 6.1594 1.78492 9.39422C1.45469 11.0275 1.51949 12.7008 1.88128 14.1575C2.24549 15.6239 2.89469 16.8108 3.67576 17.5285L3.95251 17.7828L3.68697 21.8358L6.88722 20.117L7.208 20.2234C11.2717 21.5708 14.555 20.7795 15.7541 20.3632C19.9649 18.9014 21.6798 16.2705 22.2225 13.7132C22.7794 11.089 22.1126 8.47354 21.423 7.16021L21.4018 7.11979L21.3854 7.07718C20.5208 4.83042 18.6815 3.34183 16.4236 2.53201ZM22.8344 6.47108C21.7612 3.72368 19.5176 1.97367 16.9537 1.0541C14.3853 0.13291 11.4468 0.0225722 8.868 0.576433C3.61429 1.70481 1.00769 5.31568 0.245968 9.08307C-0.131683 10.9509 -0.058817 12.8598 0.357481 14.5359C0.734994 16.0559 1.40824 17.4346 2.33775 18.4133L2.08057 22.3386C2.01723 23.3053 3.0418 23.9645 3.89527 23.5061L7.0388 21.8178C11.3751 23.1593 14.8855 22.3267 16.2691 21.8464C20.9999 20.2041 23.1016 17.1338 23.7584 14.0392C24.3955 11.0371 23.6627 8.07488 22.8344 6.47108Z"
+                                                            fill="black"></path>
+                                                    </svg>
+                                                    <span class="ft-list-block__text ft-helper-fontSize-body ft-helper-fontWeight-500">
+                                                        Lorem ipsum dolor est
+                                                    </span>
+                                                    <a href="#" class="ft-link ft-link--block" title="link title" target="_self">
+                                                        Más información
+                                                    </a>
+                                                </li>
+                                                <li class="ft-list-block__item">
+                                                    <svg class="ft-list-block__icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                            d="M16.4236 2.53201C14.1571 1.71909 11.5187 1.61302 9.1977 2.11152C4.63029 3.09249 2.43896 6.1594 1.78492 9.39422C1.45469 11.0275 1.51949 12.7008 1.88128 14.1575C2.24549 15.6239 2.89469 16.8108 3.67576 17.5285L3.95251 17.7828L3.68697 21.8358L6.88722 20.117L7.208 20.2234C11.2717 21.5708 14.555 20.7795 15.7541 20.3632C19.9649 18.9014 21.6798 16.2705 22.2225 13.7132C22.7794 11.089 22.1126 8.47354 21.423 7.16021L21.4018 7.11979L21.3854 7.07718C20.5208 4.83042 18.6815 3.34183 16.4236 2.53201ZM22.8344 6.47108C21.7612 3.72368 19.5176 1.97367 16.9537 1.0541C14.3853 0.13291 11.4468 0.0225722 8.868 0.576433C3.61429 1.70481 1.00769 5.31568 0.245968 9.08307C-0.131683 10.9509 -0.058817 12.8598 0.357481 14.5359C0.734994 16.0559 1.40824 17.4346 2.33775 18.4133L2.08057 22.3386C2.01723 23.3053 3.0418 23.9645 3.89527 23.5061L7.0388 21.8178C11.3751 23.1593 14.8855 22.3267 16.2691 21.8464C20.9999 20.2041 23.1016 17.1338 23.7584 14.0392C24.3955 11.0371 23.6627 8.07488 22.8344 6.47108Z"
+                                                            fill="black"></path>
+                                                    </svg>
+                                                    <span class="ft-list-block__text ft-helper-fontSize-body ft-helper-fontWeight-500">
+                                                        Lorem ipsum dolor est
+                                                    </span>
+                                                    <a href="#" class="ft-link ft-link--block" title="link title" target="_self">
+                                                        Más información
+                                                    </a>
+                                                </li>
+                                            </ul>
+</template>
+
+<!-- ════════════════ Gridded ════════════════ -->
+<template data-story="Gridded">
+<ul class="ft-list ft-list-gridded ft-helper-fontWeight-700">
+                                                <li class="ft-list__item">
+                                                    <svg class="ft-list-block__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M21 15.9999V7.9999C20.9996 7.64918 20.9071 7.30471 20.7315 7.00106C20.556 6.69742 20.3037 6.44526 20 6.2699L13 2.2699C12.696 2.09437 12.3511 2.00195 12 2.00195C11.6489 2.00195 11.304 2.09437 11 2.2699L4 6.2699C3.69626 6.44526 3.44398 6.69742 3.26846 7.00106C3.09294 7.30471 3.00036 7.64918 3 7.9999V15.9999C3.00036 16.3506 3.09294 16.6951 3.26846 16.9987C3.44398 17.3024 3.69626 17.5545 4 17.7299L11 21.7299C11.304 21.9054 11.6489 21.9979 12 21.9979C12.3511 21.9979 12.696 21.9054 13 21.7299L20 17.7299C20.3037 17.5545 20.556 17.3024 20.7315 16.9987C20.9071 16.6951 20.9996 16.3506 21 15.9999Z" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                    <span class="ft-list-block__text ft-helper-fontSize-body ft-helper-fontWeight-700">
+                                                        Base
+                                                    </span>
+                                                    <a href="#" class="ft-link ft-link--block" title="Haz clic para ver visitar el apartado BASE del DS" target="_self">
+                                                        Más información
+                                                    </a>
+                                                </li>
+                                                <li class="ft-list__item">
+                                                    <svg class="ft-list-block__icon" width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M22.3335 6H2.3335" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path d="M22.3335 18H2.3335" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path d="M6.3335 2V22" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path d="M18.3335 2V22" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                    <span class="ft-list-block__text ft-helper-fontSize-body ft-helper-fontWeight-700">
+                                                        Layout
+                                                    </span>
+                                                    <a href="#" class="ft-link ft-link--block" title="Haz clic para ver visitar el apartado LAYOUT del DS" target="_self">
+                                                        Más información
+                                                    </a>
+                                                </li>
+                                                <li class="ft-list__item">
+                                                    <svg class="ft-list-block__icon" width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M13.6567 6.74023L15.5867 10.1802" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path d="M19.8027 12C18.8719 12.948 17.7615 13.7011 16.5363 14.2151C15.3112 14.7292 13.9959 14.994 12.6672 14.994C11.3386 14.994 10.0233 14.7292 8.79816 14.2151C7.57301 13.7011 6.46258 12.948 5.53174 12" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path d="M21.6663 21.0002L19.5063 17.1602" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path d="M3.6665 21.0002L11.6865 6.74023" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path d="M12.6665 7C13.7711 7 14.6665 6.10457 14.6665 5C14.6665 3.89543 13.7711 3 12.6665 3C11.5619 3 10.6665 3.89543 10.6665 5C10.6665 6.10457 11.5619 7 12.6665 7Z" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                    <span class="ft-list-block__text ft-helper-fontSize-body ft-helper-fontWeight-700">
+                                                        Helpers
+                                                    </span>
+                                                    <a href="#" class="ft-link ft-link--block" title="Haz clic para ver visitar el apartado HELPERS del DS" target="_self">
+                                                        Más información
+                                                    </a>
+                                                </li>
+                                                <li class="ft-list__item">
+                                                    <svg class="ft-list-block__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <g clip-path="url(#clip0_1704_919)">
+                                                            <path d="M10 11C10.5523 11 11 10.5523 11 10C11 9.44772 10.5523 9 10 9C9.44772 9 9 9.44772 9 10C9 10.5523 9.44772 11 10 11Z" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                            <path d="M18.1999 18.2004C20.2399 16.1704 18.2199 10.8404 13.6999 6.30037C9.15989 1.78037 3.82989 -0.239626 1.79989 1.80037C-0.240114 3.83037 1.77989 9.16037 6.29989 13.7004C10.8399 18.2204 16.1699 20.2404 18.1999 18.2004Z" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                            <path d="M13.6999 13.7004C18.2199 9.16037 20.2399 3.83037 18.1999 1.80037C16.1699 -0.239626 10.8399 1.78037 6.29989 6.30037C1.77989 10.8404 -0.240114 16.1704 1.79989 18.2004C3.82989 20.2404 9.15989 18.2204 13.6999 13.7004Z" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_1704_919">
+                                                                <rect width="20" height="20" fill="white"></rect>
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                    <span class="ft-list-block__text ft-helper-fontSize-body ft-helper-fontWeight-700">
+                                                        Atoms
+                                                    </span>
+                                                    <a href="#" class="ft-link ft-link--block" title="Haz clic para ver visitar el apartado ATOMS del DS" target="_self">
+                                                        Más información
+                                                    </a>
+                                                </li>
+                                                <li class="ft-list__item">
+                                                    <svg class="ft-list-block__icon" width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M9.3335 16C13.1995 16 16.3335 12.866 16.3335 9C16.3335 5.13401 13.1995 2 9.3335 2C5.4675 2 2.3335 5.13401 2.3335 9C2.3335 12.866 5.4675 16 9.3335 16Z" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path d="M15.3335 22C19.1995 22 22.3335 18.866 22.3335 15C22.3335 11.134 19.1995 8 15.3335 8C11.4675 8 8.3335 11.134 8.3335 15C8.3335 18.866 11.4675 22 15.3335 22Z" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                    <span class="ft-list-block__text ft-helper-fontSize-body ft-helper-fontWeight-700">
+                                                        Molecules
+                                                    </span>
+                                                    <a href="#" class="ft-link ft-link--block" title="Haz clic para ver visitar el apartado MOLECULES del DS" target="_self">
+                                                        Más información
+                                                    </a>
+                                                </li>
+                                                <li class="ft-list__item">
+                                                    <svg class="ft-list-block__icon" width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M3.6365 12.92C3.34126 13.0974 3.09683 13.348 2.92689 13.6476C2.75695 13.9472 2.66726 14.2856 2.6665 14.63V17.87C2.66726 18.2144 2.75695 18.5528 2.92689 18.8524C3.09683 19.152 3.34126 19.4026 3.6365 19.58L6.6365 21.38C6.94757 21.5669 7.30362 21.6656 7.6665 21.6656C8.02939 21.6656 8.38544 21.5669 8.6965 21.38L12.6665 19V13.5L7.6665 10.5L3.6365 12.92Z" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path d="M7.66627 16.5004L2.92627 13.6504" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path d="M7.6665 16.5L12.6665 13.5" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path d="M7.6665 16.5V21.67" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path d="M12.6665 13.5V19L16.6365 21.38C16.9476 21.5669 17.3036 21.6656 17.6665 21.6656C18.0294 21.6656 18.3854 21.5669 18.6965 21.38L21.6965 19.58C21.9917 19.4026 22.2362 19.152 22.4061 18.8524C22.5761 18.5528 22.6657 18.2144 22.6665 17.87V14.63C22.6657 14.2856 22.5761 13.9472 22.4061 13.6476C22.2362 13.348 21.9917 13.0974 21.6965 12.92L17.6665 10.5L12.6665 13.5Z" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path d="M17.6665 16.5L12.6665 13.5" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path d="M17.6665 16.5004L22.4065 13.6504" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path d="M17.6665 16.5V21.67" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path d="M8.6365 4.4196C8.34126 4.59698 8.09683 4.84761 7.92689 5.14719C7.75695 5.44678 7.66726 5.78518 7.6665 6.1296V10.4996L12.6665 13.4996L17.6665 10.4996V6.1296C17.6657 5.78518 17.5761 5.44678 17.4061 5.14719C17.2362 4.84761 16.9917 4.59698 16.6965 4.4196L13.6965 2.6196C13.3854 2.43272 13.0294 2.33398 12.6665 2.33398C12.3036 2.33398 11.9476 2.43272 11.6365 2.6196L8.6365 4.4196Z" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path d="M12.6663 8.00039L7.92627 5.15039" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path d="M12.6665 8.00039L17.4065 5.15039" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path d="M12.6665 13.5V8" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                    <span class="ft-list-block__text ft-helper-fontSize-body ft-helper-fontWeight-700">
+                                                        Organisms
+                                                    </span>
+                                                    <a href="#" class="ft-link ft-link--block" title="Haz clic para ver visitar el apartado ORGANISMS del DS" target="_self">
+                                                        Más información
+                                                    </a>
+                                                </li>
+                                                <li class="ft-list__item">
+                                                    <svg class="ft-list-block__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M20 3H4C3.44772 3 3 3.44772 3 4V9C3 9.55228 3.44772 10 4 10H20C20.5523 10 21 9.55228 21 9V4C21 3.44772 20.5523 3 20 3Z" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path d="M11 14H4C3.44772 14 3 14.4477 3 15V20C3 20.5523 3.44772 21 4 21H11C11.5523 21 12 20.5523 12 20V15C12 14.4477 11.5523 14 11 14Z" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path d="M20 14H17C16.4477 14 16 14.4477 16 15V20C16 20.5523 16.4477 21 17 21H20C20.5523 21 21 20.5523 21 20V15C21 14.4477 20.5523 14 20 14Z" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                    <span class="ft-list-block__text ft-helper-fontSize-body ft-helper-fontWeight-700">
+                                                        Templates
+                                                    </span>
+                                                    <a href="#" class="ft-link ft-link--block" title="Haz clic para ver visitar el apartado TEMPLATES del DS" target="_self">
+                                                        Más información
+                                                    </a>
+                                                </li>
+                                                <li class="ft-list__item">
+                                                    <svg class="ft-list-block__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M4 22C3.46957 22 2.96086 21.7893 2.58579 21.4142C2.21071 21.0391 2 20.5304 2 20V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H20C20.5304 2 21.0391 2.21071 21.4142 2.58579C21.7893 2.96086 22 3.46957 22 4V20C22 20.5304 21.7893 21.0391 21.4142 21.4142C21.0391 21.7893 20.5304 22 20 22" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path d="M10 22H8" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path d="M16 22H14" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path d="M8 10C9.10457 10 10 9.10457 10 8C10 6.89543 9.10457 6 8 6C6.89543 6 6 6.89543 6 8C6 9.10457 6.89543 10 8 10Z" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path d="M9.41406 9.41406L12.0001 12.0001" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path d="M14.7998 14.7998L17.9998 17.9998" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path d="M8 18C9.10457 18 10 17.1046 10 16C10 14.8954 9.10457 14 8 14C6.89543 14 6 14.8954 6 16C6 17.1046 6.89543 18 8 18Z" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path d="M18.0001 6L9.41406 14.586" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                    <span class="ft-list-block__text ft-helper-fontSize-body ft-helper-fontWeight-700">
+                                                        Widgets
+                                                    </span>
+                                                    <a href="#" class="ft-link ft-link--block" title="Haz clic para ver visitar el apartado WIDGETS del DS" target="_self">
+                                                        Más información
+                                                    </a>
+                                                </li>
+                                                <li class="ft-list__item">
+                                                    <svg class="ft-list-block__icon" width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M15.3337 12L6.96068 20.373C6.56285 20.7708 6.02328 20.9943 5.46068 20.9943C4.89807 20.9943 4.3585 20.7708 3.96068 20.373C3.56285 19.9752 3.33936 19.4356 3.33936 18.873C3.33936 18.3104 3.56285 17.7708 3.96068 17.373L12.3337 9" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path d="M18.3335 15L22.3335 11" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path d="M21.8335 11.5L19.9195 9.58596C19.5444 9.21098 19.3336 8.70235 19.3335 8.17196V6.99996L17.0735 4.73996C15.958 3.62515 14.4485 2.99432 12.8715 2.98396L9.3335 2.95996L10.2535 3.77996C10.907 4.35935 11.4302 5.07066 11.7887 5.867C12.1472 6.66335 12.3329 7.52663 12.3335 8.39996V9.99996L14.3335 12H15.5055C16.0359 12.0001 16.5445 12.2109 16.9195 12.586L18.8335 14.5" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                    <span class="ft-list-block__text ft-helper-fontSize-body ft-helper-fontWeight-700">
+                                                        Recursos
+                                                    </span>
+                                                    <a href="#" class="ft-link ft-link--block" title="Haz clic para ver visitar el apartado RECURSOS del DS" target="_self">
+                                                        Más información
+                                                    </a>
+                                                </li>
+                                                <li class="ft-list__item">
+                                                    <svg class="ft-list-block__icon" width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <rect x="1.4165" y="0.75" width="22.5" height="22.5" rx="11.25" stroke="#333333" stroke-width="1.5"></rect>
+                                                        <path d="M13.4165 5L9.6665 13.4375L12.479 13.5031L11.5415 20L15.2915 11.5625L12.479 11.4969L13.4165 5Z" fill="#333333"></path>
+                                                    </svg>
+                                                    <span class="ft-list-block__text ft-helper-fontSize-body ft-helper-fontWeight-700">
+                                                        AMP
+                                                    </span>
+                                                    <a href="#" class="ft-link ft-link--block" title="Haz clic para ver visitar el apartado AMP del DS" target="_self">
+                                                        Más información
+                                                    </a>
+                                                </li>
+                                            </ul>
+</template>
+
+<!-- ════════════════ Add ════════════════ -->
+<template data-story="Add">
+<ul class="ft-list ft-list--primary ft-list--add ft-list--has-icon"
+                                                role="list">
+                                                <li class="ft-list__item" tabindex="0">
+                                                    <img class="ft-list-photoinfo__img"
+                                                        src="/cds-statics/assets/img/icons/tag-pin--grey.svg"
+                                                        width="34" height="34" alt="" loading="lazy">
+                                                    <span>Item por defecto</span>
+                                                    <span class="ft-btn-nav ft-btn-nav--plus ft-btn-nav--bordered"
+                                                        aria-hidden="true">
+                                                        <span class="ft-btn-nav__icon"></span>
+                                                    </span>
+                                                </li>
+                                                <li class="ft-list__item ft-list__item--is-active" tabindex="0">
+                                                    <img class="ft-list-photoinfo__img"
+                                                        src="/cds-statics/assets/img/icons/tag-pin--grey.svg"
+                                                        width="34" height="34" alt="" loading="lazy">
+                                                    <span>Item activo (--is-active)</span>
+                                                    <span class="ft-btn-nav ft-btn-nav--plus ft-btn-nav--bordered"
+                                                        aria-hidden="true">
+                                                        <span class="ft-btn-nav__icon"></span>
+                                                    </span>
+                                                </li>
+                                                <li class="ft-list__item ft-list__item--is-selected" tabindex="0">
+                                                    <img class="ft-list-photoinfo__img"
+                                                        src="/cds-statics/assets/img/icons/tag-pin--grey.svg"
+                                                        width="34" height="34" alt="" loading="lazy">
+                                                    <span>Item seleccionado (--is-selected)</span>
+                                                    <span class="ft-btn-nav ft-btn-nav--plus ft-btn-nav--bordered"
+                                                        aria-hidden="true">
+                                                        <span class="ft-btn-nav__icon"></span>
+                                                    </span>
+                                                </li>
+                                                <li class="ft-list__item ft-list__item--is-selected ft-list__item--is-active"
+                                                    tabindex="0">
+                                                    <img class="ft-list-photoinfo__img"
+                                                        src="/cds-statics/assets/img/icons/tag-pin--grey.svg"
+                                                        width="34" height="34" alt="" loading="lazy">
+                                                    <span>Seleccionado + activo (quitar)</span>
+                                                    <span class="ft-btn-nav ft-btn-nav--plus ft-btn-nav--bordered"
+                                                        aria-hidden="true">
+                                                        <span class="ft-btn-nav__icon"></span>
+                                                    </span>
+                                                </li>
+                                            </ul>
+</template>

@@ -1,0 +1,137 @@
+<!--
+  tag.html - markup editable de Tag
+  Fuente de snippets copiable para Storybook. Solo variantes reales del SCSS:
+  .ft-tag, .ft-tag--link, .ft-tag--linkBasis, .ft-tag--chip y .ft-tag--chip-tiny.
+  Referencia funcional: fourty/__old-showroom/atoms/atom-tag.html
+-->
+
+<template data-story="Base">
+  <ul role="list" aria-label="Listado de tags">
+    <li class="ft-tag"><span class="ft-tag__marker"></span><span class="ft-tag__name">Name</span><span class="ft-tag__value">50</span></li>
+    <li class="ft-tag"><span class="ft-tag__name">Name</span><span class="ft-tag__value">50</span></li>
+    <li class="ft-tag"><span class="ft-tag__name">Name</span></li>
+  </ul>
+</template>
+
+<template data-story="Secondary">
+  <ul role="list" aria-label="Listado de tags secundarios">
+    <li class="ft-tag ft-tag--secondary"><span class="ft-tag__marker"></span><span class="ft-tag__name">Name</span><span class="ft-tag__value">50</span></li>
+    <li class="ft-tag ft-tag--secondary"><span class="ft-tag__name">Name</span></li>
+  </ul>
+</template>
+
+<template data-story="Sizes">
+  <ul role="list" aria-label="Tag sizes">
+    <li class="ft-tag ft-tag--sm"><span class="ft-tag__name">sm</span></li>
+    <li class="ft-tag ft-tag--md"><span class="ft-tag__name">md</span></li>
+    <li class="ft-tag ft-tag--lg"><span class="ft-tag__name">lg</span></li>
+  </ul>
+</template>
+
+<template data-story="Status">
+  <ul role="list" aria-label="Tag status">
+    <li class="ft-tag ft-tag--status-primary"><span class="ft-tag__name">Primary</span></li>
+    <li class="ft-tag ft-tag--status-secondary"><span class="ft-tag__name">Secondary</span></li>
+  </ul>
+</template>
+
+<template data-story="Link">
+  <ul role="list" aria-label="Tag clickable variants">
+    <li class="ft-tag ft-tag--link"><span class="ft-tag__marker"></span><span class="ft-tag__name">Name</span><span class="ft-tag__value">50</span></li>
+    <li class="ft-tag ft-tag--link"><span class="ft-tag__name">Name</span><span class="ft-tag__value">50</span></li>
+    <li class="ft-tag ft-tag--link"><span class="ft-tag__name">Name</span></li>
+  </ul>
+</template>
+
+<template data-story="Link basis">
+  <ul role="list" aria-label="Tag link basis">
+    <li class="ft-tag ft-tag--sm ft-tag--linkBasis"><a href="#" class="ft-link ft-link--secondary" title="Name">Name</a></li>
+    <li class="ft-tag ft-tag--sm ft-tag--linkBasis"><a href="#" class="ft-link ft-link--secondary" title="More">More</a></li>
+  </ul>
+</template>
+
+<template data-story="Chip · button states">
+  <ul role="list" aria-label="Tag chip button states">
+    <li class="ft-tag ft-tag--chip ft-tag--sm" data-tag-state="unset" data-tag-context="storybook-demo" data-tag-slug="unset">
+      <button type="button" class="ft-btn" aria-pressed="false" title="Unset">Unset</button>
+    </li>
+    <li class="ft-tag ft-tag--chip ft-tag--sm" data-tag-state="unselected" data-tag-context="storybook-demo" data-tag-slug="unselected">
+      <button type="button" class="ft-btn" aria-pressed="false" title="Unselected">Unselected</button>
+    </li>
+    <li class="ft-tag ft-tag--chip ft-tag--sm" data-tag-state="active" data-tag-context="storybook-demo" data-tag-slug="active">
+      <button type="button" class="ft-btn" aria-pressed="true" title="Active">Active</button>
+    </li>
+    <li class="ft-tag ft-tag--chip ft-tag--md" data-tag-state="selected" data-tag-context="storybook-demo" data-tag-slug="selected">
+      <button type="button" class="ft-btn" aria-pressed="true" title="Selected">Selected</button>
+    </li>
+    <li class="ft-tag ft-tag--chip ft-tag--sm" data-tag-state="deletable" data-tag-context="storybook-demo" data-tag-slug="deletable">
+      <button type="button" class="ft-btn" aria-pressed="true" title="Deletable">Deletable</button>
+    </li>
+    <li class="ft-tag ft-tag--chip ft-tag--sm" data-tag-state="loading" data-tag-context="storybook-demo" data-tag-slug="loading">
+      <button type="button" class="ft-btn" aria-pressed="false" aria-disabled="true" title="Loading">Loading</button>
+    </li>
+    <li class="ft-tag ft-tag--chip ft-tag--sm" data-tag-state="error" data-tag-context="storybook-demo" data-tag-slug="error">
+      <button type="button" class="ft-btn" aria-pressed="false" aria-disabled="true" title="Error">Error</button>
+    </li>
+    <li class="ft-tag ft-tag--chip ft-tag--sm" data-tag-state="disabled" data-tag-context="storybook-demo" data-tag-slug="disabled">
+      <button type="button" class="ft-btn" aria-pressed="false" aria-disabled="true" title="Disabled">Disabled</button>
+    </li>
+  </ul>
+</template>
+
+<template data-story="Chip · link">
+  <ul role="list" aria-label="Tag chip link variant">
+    <li class="ft-tag ft-tag--chip ft-tag--md" data-tag-state="unselected" data-tag-context="storybook-demo" data-tag-slug="barcelona">
+      <a href="#" class="ft-link" title="Barcelona">Barcelona</a>
+    </li>
+    <li class="ft-tag ft-tag--chip ft-tag--md" data-tag-state="selected" data-tag-context="storybook-demo" data-tag-slug="tarragona">
+      <a href="#" class="ft-link" title="Tarragona" aria-disabled="false">Tarragona</a>
+    </li>
+  </ul>
+</template>
+
+<template data-story="Chip · pulse hook">
+  <ul role="list" aria-label="Tag chip pulse hook">
+    <li class="ft-tag ft-tag--chip ft-tag--md" data-tag-state="selected" data-tag-context="storybook-demo" data-tag-slug="pulse">
+      <button type="button" class="ft-btn ft-btn--pulse" aria-pressed="true" title="Pulse">Pulse</button>
+    </li>
+  </ul>
+</template>
+
+<template data-story="Chip tiny (Cerca)">
+  <ul role="list" aria-label="Chip tiny pattern">
+    <li class="ft-tag ft-tag--chip-tiny ft-tag--md" data-tag-state="selected" data-tag-slug="todos">
+      <button type="button" class="ft-btn" data-chip-label="Todos" aria-pressed="true">Todos</button>
+    </li>
+    <li class="ft-tag ft-tag--chip-tiny ft-tag--md" data-tag-state="unselected" data-tag-slug="barcelona">
+      <button type="button" class="ft-btn" data-chip-label="Barcelona" aria-pressed="false">Barcelona</button>
+    </li>
+    <li class="ft-tag ft-tag--chip-tiny ft-tag--md" data-tag-state="selected" data-tag-slug="tarragona">
+      <button type="button" class="ft-btn" data-chip-label="Tarragona" aria-pressed="true">Tarragona</button>
+    </li>
+  </ul>
+</template>
+
+<template data-story="Chip tiny + helper-scroll">
+  <div class="ft-org-suggestions-chips" data-suggestions-container="true" data-suggestions-count="4" data-suggestions-loaded="true">
+    <div class="ft-org-suggestions-chips__content">
+      <section role="region" aria-label="Listado de localidades disponibles" data-suggestions-section="true">
+        <h4 class="ft-helper-hide">Localidades disponibles</h4>
+        <ul role="list" aria-label="Chip tiny helper-scroll" class="ft-helper-scroll" data-suggestions-list="true" data-suggestions-total="4">
+          <li class="ft-tag ft-tag--chip-tiny ft-tag--md" data-tag-state="selected" data-tag-slug="todos">
+            <button type="button" class="ft-btn" data-chip-label="Todos" aria-pressed="true">Todos</button>
+          </li>
+          <li class="ft-tag ft-tag--chip-tiny ft-tag--md" data-tag-state="unselected" data-tag-slug="badalona">
+            <button type="button" class="ft-btn" data-chip-label="Badalona" aria-pressed="false">Badalona</button>
+          </li>
+          <li class="ft-tag ft-tag--chip-tiny ft-tag--md" data-tag-state="unselected" data-tag-slug="barcelona">
+            <button type="button" class="ft-btn" data-chip-label="Barcelona" aria-pressed="false">Barcelona</button>
+          </li>
+          <li class="ft-tag ft-tag--chip-tiny ft-tag--md" data-tag-state="selected" data-tag-slug="tarragona">
+            <button type="button" class="ft-btn" data-chip-label="Tarragona" aria-pressed="true">Tarragona</button>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</template>

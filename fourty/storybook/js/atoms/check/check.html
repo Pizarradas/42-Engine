@@ -1,0 +1,57 @@
+<!--
+  check.html — códigos HTML originales de Check (.ft-check)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS:
+  añade / edita / quita bloques <template data-story="Nombre"> con HTML PLANO
+  (clases .ft-* reales). El storybook (atoms/check/check.js) los muestra en el
+  subgrupo "Markup" del componente Check.
+
+  REGLAS del markup:
+  · El <input> va ANTES del <label> (el SCSS usa el selector adyacente +).
+  · label[for] debe casar con input[id] → usa IDs únicos por bloque.
+  · El tick (:after) es un background-image con ruta absoluta /cds-statics/… →
+    solo se ve servido por un servidor.
+  ─────────────────────────────────────────────────────────────────────────
+-->
+
+<!-- ════════════════ BASE · .ft-check ════════════════ -->
+<template data-story="Base">
+  <div class="ft-check">
+    <input id="check-base" type="checkbox" class="ft-check__input">
+    <label for="check-base" class="ft-check__label ft-helper-fontWeight-500">Acepto los términos</label>
+  </div>
+</template>
+
+<!-- ════════════════ CHECKED ════════════════ -->
+<template data-story="Checked">
+  <div class="ft-check">
+    <input id="check-checked" type="checkbox" class="ft-check__input" checked>
+    <label for="check-checked" class="ft-check__label ft-helper-fontWeight-500">Marcado</label>
+  </div>
+</template>
+
+<!-- ════════════════ DISABLED ════════════════ -->
+<template data-story="Disabled">
+  <div class="ft-check">
+    <input id="check-disabled" type="checkbox" class="ft-check__input" disabled>
+    <label for="check-disabled" class="ft-check__label ft-helper-fontWeight-500">Deshabilitado</label>
+  </div>
+</template>
+
+<!-- ════════════════ CHECKED + DISABLED ════════════════ -->
+<template data-story="Checked + Disabled">
+  <div class="ft-check">
+    <input id="check-checked-disabled" type="checkbox" class="ft-check__input" checked disabled>
+    <label for="check-checked-disabled" class="ft-check__label ft-helper-fontWeight-500">Marcado y deshabilitado</label>
+  </div>
+</template>
+
+<!-- ════════════════ SOBRE FONDO OSCURO (behavior on-dark) ════════════════ -->
+<template data-story="Sobre fondo oscuro">
+  <div class="ft-helper-bgColor-black" style="padding:1.5rem 2rem;border-radius:4px;">
+    <div class="ft-check">
+      <input id="check-dark" type="checkbox" class="ft-check__input" checked>
+      <label for="check-dark" class="ft-check__label ft-helper-fontWeight-500">Marcado en oscuro</label>
+    </div>
+  </div>
+</template>

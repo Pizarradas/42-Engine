@@ -1,0 +1,46 @@
+<!--
+  animation.html — códigos HTML originales de Animation (.ft-animation-*)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS:
+  añade / edita / quita bloques <template data-story="Nombre"> con HTML PLANO
+  (clases .ft-* reales). El storybook (atoms/animation/animation.js) los muestra
+  en el subgrupo "Markup" del componente Animation.
+
+  Las clases .ft-animation-* son UTILIDADES de movimiento: se componen junto a
+  las clases propias del elemento. La animación se reproduce al renderizar el
+  bloque (una sola vez, `forwards`).
+  ─────────────────────────────────────────────────────────────────────────
+-->
+
+<!-- ════════════════ ENTRADA · fundido sobre texto ════════════════ -->
+<template data-story="Fade In sobre texto">
+  <p class="ft-animation-fade-in">Este párrafo aparece con un fundido suave.</p>
+</template>
+
+<!-- ════════════════ ENTRADA · subida sobre título ════════════════ -->
+<template data-story="Fade Up sobre título">
+  <h3 class="ft-title ft-title--md ft-animation-fade-up">Título que sube al aparecer</h3>
+</template>
+
+<!-- ════════════════ ENTRADA · zoom sobre botón ════════════════ -->
+<template data-story="Zoom In sobre botón">
+  <button type="button" class="ft-btn ft-btn--primary ft-btn--md ft-animation-zoom-in">Botón</button>
+</template>
+
+<!-- ════════════════ ÉNFASIS · shake sobre aviso ════════════════ -->
+<template data-story="Shake sobre advice">
+  <span class="ft-advice ft-advice--primary ft-animation-shake">Aviso</span>
+</template>
+
+<!-- ════════════════ ENTRADA · liquify sobre imagen ════════════════ -->
+<template data-story="Liquify Melt In sobre imagen">
+  <figure class="ft-img ft-animation-liquify-melt-in">
+    <img src="https://estaticos-cdn.prensaiberica.es/clip/7a2874d8-365c-49a2-9dad-b5c2f92bd5d6_16-9-discover-aspect-ratio_default_0.jpg"
+         alt="" width="320" height="180" loading="lazy" class="ft-helper-img-rd">
+  </figure>
+</template>
+
+<!-- ════════════════ SALIDA · fundido de salida (acaba oculto) ════════════════ -->
+<template data-story="Fade Out sobre texto">
+  <p class="ft-animation-fade-out">Este texto se desvanece (acaba invisible).</p>
+</template>

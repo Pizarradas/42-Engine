@@ -1,0 +1,27 @@
+<!--
+  toogle.html — códigos HTML originales de Toogle (.ft-toogle)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS.
+  El storybook (atoms/toogle/toogle.js) los muestra en el subgrupo "Markup".
+  OJO: el nombre conserva el typo histórico "toogle". Los iconos son background
+  con ruta absoluta /cds-statics/… → solo se ven servidos por un servidor.
+  ─────────────────────────────────────────────────────────────────────────
+-->
+
+<!-- ════════════════ BASE · .ft-toogle (claro/oscuro/sistema) ════════════════ -->
+<template data-story="Base">
+  <div class="ft-toogle" role="group" aria-label="Apariencia">
+    <label class="ft-toogle__option">
+      <input type="radio" name="theme-demo" checked>
+      <span class="ft-toogle__button"><i class="ft-toogle__icon ft-toogle__iconLight"></i> Claro</span>
+    </label>
+    <label class="ft-toogle__option">
+      <input type="radio" name="theme-demo">
+      <span class="ft-toogle__button"><i class="ft-toogle__icon ft-toogle__iconDark"></i> Oscuro</span>
+    </label>
+    <label class="ft-toogle__option">
+      <input type="radio" name="theme-demo">
+      <span class="ft-toogle__button"><i class="ft-toogle__icon ft-toogle__iconSystem"></i> Por sistema</span>
+    </label>
+  </div>
+</template>

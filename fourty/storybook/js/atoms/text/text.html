@@ -1,0 +1,50 @@
+<!--
+  text.html — códigos HTML originales de Text (.ft-text)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS.
+  El storybook (atoms/text/text.js) los muestra en el subgrupo "Markup".
+  Los iconos de .ft-text-alert--is-[tipo] son background con ruta absoluta
+  /cds-statics/… → solo se ven servidos por un servidor.
+  ─────────────────────────────────────────────────────────────────────────
+-->
+
+<!-- ════════════════ BASE · .ft-text ════════════════ -->
+<template data-story="Base">
+  <p class="ft-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac elementum velit, nec hendrerit neque. Nulla sed sapien at tortor faucibus tincidunt.</p>
+</template>
+
+<!-- ════════════════ Linethrough ════════════════ -->
+<template data-story="Linethrough">
+  <p class="ft-text ft-text--linethrough">Texto tachado de cuerpo.</p>
+</template>
+
+<!-- ════════════════ Dropcap ════════════════ -->
+<template data-story="Dropcap">
+  <p class="ft-text ft-text--dropcap">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac elementum velit, nec hendrerit neque. Nulla sed sapien at tortor faucibus tincidunt.</p>
+</template>
+
+<!-- ════════════════ Mark (destacado + grey) ════════════════ -->
+<template data-story="Mark">
+  <p class="ft-text">Texto con un <mark class="ft-text__mark ft-text__mark--grey">fragmento destacado</mark> dentro del párrafo.</p>
+</template>
+
+<!-- ════════════════ Mark con tooltip ════════════════ -->
+<template data-story="Mark tooltip">
+  <p class="ft-text">Un término con <mark class="ft-text__mark" data-tooltip="Aclaración del término" tabindex="0">tooltip explicativo</mark> al pasar el cursor.</p>
+</template>
+
+<!-- ════════════════ Alert (info, bordered) ════════════════ -->
+<template data-story="Alert info">
+  <span class="ft-text-alert ft-text-alert--is-bordered ft-text-alert--is-info">
+    Mensaje informativo
+    <span class="ft-text-alert__subtext ft-helper-fontSize-body-M ft-helper-fontWeight-500">Detalle complementario del aviso.</span>
+  </span>
+</template>
+
+<!-- ════════════════ Alert (error) ════════════════ -->
+<template data-story="Alert error">
+  <span class="ft-text-alert ft-text-alert--is-error">
+    Ha ocurrido un error
+    <span class="ft-text-alert__subtext ft-helper-fontSize-body-M ft-helper-fontWeight-500">Revisa los datos e inténtalo de nuevo.</span>
+  </span>
+</template>

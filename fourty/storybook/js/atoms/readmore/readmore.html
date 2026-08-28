@@ -1,0 +1,57 @@
+<!--
+  readmore.html — códigos HTML originales de ReadMore (.ft-readMore)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS.
+  El storybook (atoms/readmore/readmore.js) los muestra en el subgrupo "Markup".
+  Usa <details>/<summary> nativos: el toggle es del navegador. El texto del
+  botón lo pone el CSS por :before, por eso el <a> va vacío.
+  ─────────────────────────────────────────────────────────────────────────
+-->
+
+<!-- ════════════════ BASE · .ft-readMore (3 líneas) ════════════════ -->
+<template data-story="Base">
+  <details class="ft-readMore">
+    <summary>
+      <div class="ft-readMore__content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac elementum velit, nec hendrerit neque. Nulla sed sapien at tortor faucibus tincidunt. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+      </div>
+      <span class="ft-readMore__btn">(<a class="ft-link"></a>)</span>
+    </summary>
+  </details>
+</template>
+
+<!-- ════════════════ --higher (recorte por altura) ════════════════ -->
+<template data-story="Higher">
+  <details class="ft-readMore ft-readMore--higher">
+    <summary>
+      <div class="ft-readMore__content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac elementum velit, nec hendrerit neque. Nulla sed sapien at tortor faucibus tincidunt. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+      </div>
+      <span class="ft-readMore__btn">(<a class="ft-link"></a>)</span>
+    </summary>
+  </details>
+</template>
+
+<!-- ════════════════ --has-button (botón centrado con .ft-btn) ════════════════ -->
+<template data-story="Has-button">
+  <details class="ft-readMore ft-readMore--has-button">
+    <summary>
+      <div class="ft-readMore__content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac elementum velit, nec hendrerit neque. Nulla sed sapien at tortor faucibus tincidunt. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+      </div>
+      <span class="ft-readMore__btn"><a class="ft-btn ft-btn--primary ft-btn--sm"></a></span>
+    </summary>
+  </details>
+</template>
+
+<!-- ════════════════ --not-less (oculta el botón al abrir) ════════════════ -->
+<template data-story="Not-less">
+  <details class="ft-readMore ft-readMore--not-less">
+    <summary>
+      <div class="ft-readMore__content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac elementum velit, nec hendrerit neque. Nulla sed sapien at tortor faucibus tincidunt. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+      </div>
+      <span class="ft-readMore__btn">(<a class="ft-link"></a>)</span>
+    </summary>
+  </details>
+</template>

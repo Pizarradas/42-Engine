@@ -1,0 +1,57 @@
+<!--
+  link.html — códigos HTML originales de Link (.ft-link)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS.
+  El storybook (atoms/link/link.js) los muestra en el subgrupo "Markup".
+  OJO: los iconos de --hasIcon / --nav son background/mask con ruta absoluta
+  /cds-statics/… → solo se ven servidos por un servidor.
+  ─────────────────────────────────────────────────────────────────────────
+-->
+
+<!-- ════════════════ BASE · .ft-link (primary) ════════════════ -->
+<template data-story="Base">
+  <a href="#" class="ft-link" title="title text" target="_self">consectetur adipiscing elit</a>
+</template>
+
+<!-- ════════════════ Secondary ════════════════ -->
+<template data-story="Secondary">
+  <a href="#" class="ft-link ft-link--secondary" title="title text" target="_self">consectetur adipiscing elit</a>
+</template>
+
+<!-- ════════════════ Tertiary ════════════════ -->
+<template data-story="Tertiary">
+  <a href="#" class="ft-link ft-link--tertiary" title="title text" target="_self">consectetur adipiscing elit</a>
+</template>
+
+<!-- ════════════════ Decoration (punteado) ════════════════ -->
+<template data-story="Decoration">
+  <a href="#" class="ft-link ft-link--decoration ft-link--primary" title="title text" target="_self">consectetur adipiscing elit</a>
+</template>
+
+<!-- ════════════════ HasIcon (chevron) ════════════════ -->
+<template data-story="HasIcon">
+  <a href="#" class="ft-link ft-link--hasIcon ft-helper-fontSize-body-M" title="title text" target="_self">Mostrar más información</a>
+</template>
+
+<!-- ════════════════ HasIcon + plus ════════════════ -->
+<template data-story="HasIcon plus">
+  <a href="#" class="ft-link ft-link--hasIcon ft-link--hasIcon-plus ft-helper-fontSize-body-M" title="title text" target="_self">Mostrar más información</a>
+</template>
+
+<!-- ════════════════ Nav · Prev ════════════════ -->
+<template data-story="Nav Prev">
+  <a href="#" class="ft-link ft-link--nav ft-link--navPrev ft-helper-fontSize-body-M" title="title text" target="_self">Anterior</a>
+</template>
+
+<!-- ════════════════ Nav · Next ════════════════ -->
+<template data-story="Nav Next">
+  <a href="#" class="ft-link ft-link--nav ft-link--navNext ft-helper-fontSize-body-M" title="title text" target="_self">Siguiente</a>
+</template>
+
+<!-- ════════════════ Block (overlay invisible · necesita parent relative) ════════════════ -->
+<template data-story="Block (overlay)">
+  <div style="position:relative;padding:1.5rem;border:1px dashed #b3b3b3;border-radius:4px;">
+    <p style="margin:0;">Área clicable completa (la tarjeta). El enlace invisible la cubre.</p>
+    <a href="#" class="ft-link ft-link--block" title="Ir al artículo">Ir al artículo</a>
+  </div>
+</template>

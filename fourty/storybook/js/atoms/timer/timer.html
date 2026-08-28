@@ -1,0 +1,40 @@
+<!--
+  timer.html — códigos HTML originales de Timer (.ft-timer)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS.
+  El storybook (atoms/timer/timer.js) los muestra en el subgrupo "Markup".
+  El conteo real lo mueve el JS del proyecto; aquí el display es estático.
+  ─────────────────────────────────────────────────────────────────────────
+-->
+
+<!-- ════════════════ BASE · .ft-timer (apilado) ════════════════ -->
+<template data-story="Base">
+  <div class="ft-timer" data-id="timer-demo">
+    <div class="ft-timer__container">
+      <h2 class="ft-timer__title">Contador de tiempo</h2>
+      <div class="ft-timer__display" role="status" aria-live="polite" aria-label="Tiempo restante">
+        <span class="ft-timer__counter" aria-label="Minutos">10</span><span class="ft-timer__counter">:</span><span class="ft-timer__counter" aria-label="Segundos">00</span>
+      </div>
+      <button class="ft-timer__controls ft-timer__controlsInit" type="button">Iniciar</button>
+      <button class="ft-timer__controls ft-timer__controlsPause" type="button">Pausar</button>
+      <div class="ft-timer__txt" id="timer-demo-sr" role="status" aria-live="polite"></div>
+    </div>
+  </div>
+</template>
+
+<!-- ════════════════ --inline (fila, icon-only · sobre fondo oscuro) ════════════════ -->
+<template data-story="Inline">
+  <div class="ft-helper-bgColor-black" style="display:inline-block;padding:1rem 1.5rem;border-radius:8px;">
+    <div class="ft-timer ft-timer--inline" data-id="timer-inline">
+      <div class="ft-timer__container">
+        <h2 class="ft-timer__title">Contador de tiempo</h2>
+        <div class="ft-timer__display" role="status" aria-live="polite" aria-label="Tiempo restante">
+          <span class="ft-timer__counter" aria-label="Minutos">10</span><span class="ft-timer__counter">:</span><span class="ft-timer__counter" aria-label="Segundos">00</span>
+        </div>
+        <button class="ft-timer__controls ft-timer__controlsInit" type="button">Iniciar</button>
+        <button class="ft-timer__controls ft-timer__controlsPause" type="button">Pausar</button>
+        <div class="ft-timer__txt" id="timer-inline-sr" role="status" aria-live="polite"></div>
+      </div>
+    </div>
+  </div>
+</template>

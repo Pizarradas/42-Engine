@@ -1,0 +1,59 @@
+<!--
+  embed.html — códigos HTML originales de Embed (.ft-embed)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS.
+  El storybook (atoms/embed/embed.js) los muestra en el subgrupo "Markup".
+
+  OJO: las redes basadas en SDK (Twitter/X, Instagram, TikTok, Facebook)
+  necesitan el script del proveedor para renderizar; su markup canónico es el
+  <blockquote>/<div> + <script> del proveedor (ver atom-embed.html del showroom).
+  Aquí se incluyen los casos basados en <iframe>, que renderizan sin SDK.
+  ─────────────────────────────────────────────────────────────────────────
+-->
+
+<!-- ════════════════ YouTube (data-rrss-id) ════════════════ -->
+<template data-story="YouTube">
+  <div class="ft-embed" data-rrss-id="youtube">
+    <div class="ft-embed__item">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/beY9rSxv_qw"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
+  </div>
+</template>
+
+<!-- ════════════════ Aspect-ratio 16/9 forzado ════════════════ -->
+<template data-story="--ar-16-9">
+  <div class="ft-embed ft-embed--ar-16-9">
+    <div class="ft-embed__item">
+      <iframe loading="lazy" width="560" height="315" frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+        src="https://www.youtube.com/embed/beY9rSxv_qw" title="Embed 16/9"></iframe>
+    </div>
+  </div>
+</template>
+
+<!-- ════════════════ Genérico (iframe de player) ════════════════ -->
+<template data-story="Genérico">
+  <div class="ft-embed">
+    <div class="ft-embed__item">
+      <iframe frameborder="0" allowfullscreen scrolling="no" height="200"
+        style="width:100%; min-height: 220px;"
+        src="https://www.ivoox.com/player_ej_103939290_6_1.html?c1" loading="lazy"></iframe>
+    </div>
+  </div>
+</template>
+
+<!-- ════════════════ Poster de vídeo (icono play) ════════════════ -->
+<template data-story="Poster vídeo (__icon)">
+  <div class="ft-embed">
+    <div class="ft-embed__item">
+      <picture class="ft-embed__icon">
+        <div class="ft-embed__icon-details"></div>
+        <img src="https://estaticos-cdn.prensaiberica.es/clip/7a2874d8-365c-49a2-9dad-b5c2f92bd5d6_16-9-discover-aspect-ratio_default_0.jpg"
+          alt="" width="1200" height="675" loading="lazy" class="ft-helper-img-rd">
+      </picture>
+    </div>
+  </div>
+</template>

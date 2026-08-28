@@ -1,0 +1,23 @@
+<!--
+  skiplink.html — códigos HTML originales de Skiplink (.ft-skiplink)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS.
+  El storybook (atoms/skiplink/skiplink.js) los muestra en el subgrupo "Markup".
+  El skiplink está oculto hasta recibir foco (Tab); colócalo como PRIMER
+  elemento enfocable del <body>. Se compone con .ft-btn para el estilo visible.
+  ─────────────────────────────────────────────────────────────────────────
+-->
+
+<!-- ════════════════ Saltar al contenido principal ════════════════ -->
+<template data-story="Contenido principal">
+  <a href="#main-content" class="ft-skiplink ft-btn ft-btn--md" title="Saltar al contenido principal" tabindex="0">
+    Saltar al contenido principal
+  </a>
+</template>
+
+<!-- ════════════════ Saltar al pie de página ════════════════ -->
+<template data-story="Pie de página">
+  <a href="#footer-content" class="ft-skiplink ft-btn ft-btn--md" title="Saltar al pie de página" tabindex="0">
+    Saltar al pie de página
+  </a>
+</template>

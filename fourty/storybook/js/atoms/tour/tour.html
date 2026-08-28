@@ -1,0 +1,42 @@
+<!--
+  tour.html — códigos HTML originales de Tour (.ft-tour)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS.
+  El storybook (atoms/tour/tour.js) los muestra en el subgrupo "Markup".
+
+  OJO: el tour real es JS-driven. El MARCADOR canónico es un elemento con
+  data-tour-* (el JS lee esos datos y genera overlay + tarjeta). Abajo, además,
+  la TARJETA .ft-tour__message forzada visible para documentar su estilo.
+  El favicon de la esquina depende de la marca y se sirve desde /cds-statics/.
+  ─────────────────────────────────────────────────────────────────────────
+-->
+
+<!-- ════════════════ Marcador canónico (lo lee el JS del tour) ════════════════ -->
+<template data-story="Marcador (data-tour-*)">
+  <p class="ft-tour"
+     data-tour-order="1"
+     data-tour-title="¡Bienvenido!"
+     data-tour-text="Desde hoy, la sección Economía se transforma. Te lo contamos en unos pasos.">
+    Contenido a destacar por el tour.
+  </p>
+</template>
+
+<!-- ════════════════ Tarjeta del mensaje (forzada visible para doc) ════════════════ -->
+<template data-story="Tarjeta (top)">
+  <div class="ft-tour" style="position:relative;display:inline-block;">
+    <div class="ft-tour__message" style="position:relative;opacity:1;display:inline-block;">
+      <h3 class="ft-tour__message--title">¡Bienvenido!</h3>
+      <p class="ft-tour__message--text">Desde hoy, la sección Economía se transforma. Te lo contamos en unos pasos.</p>
+    </div>
+  </div>
+</template>
+
+<!-- ════════════════ Tarjeta con pico abajo (--bottom) ════════════════ -->
+<template data-story="Tarjeta (bottom)">
+  <div class="ft-tour ft-tour--bottom" style="position:relative;display:inline-block;">
+    <div class="ft-tour__message" style="position:relative;opacity:1;display:inline-block;">
+      <h3 class="ft-tour__message--title">Paso 2</h3>
+      <p class="ft-tour__message--text">Mensaje de ayuda con el pico apuntando hacia abajo.</p>
+    </div>
+  </div>
+</template>

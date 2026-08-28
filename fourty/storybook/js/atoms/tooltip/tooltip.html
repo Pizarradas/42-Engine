@@ -1,0 +1,45 @@
+<!--
+  tooltip.html — códigos HTML originales de Tooltip (.ft-tooltip)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS.
+  El storybook (atoms/tooltip/tooltip.js) los muestra en el subgrupo "Markup".
+  El icono de .ft-tooltip__close es background con ruta absoluta /cds-statics/…
+  → solo se ve servido por un servidor.
+  ─────────────────────────────────────────────────────────────────────────
+-->
+
+<!-- ════════════════ Hover · Top ════════════════ -->
+<template data-story="Hover top">
+  <div class="ft-tooltip">
+    <div class="ft-tooltip--top" focusable="false" tabindex="0" data-tooltip="Texto del tooltip">Pasa el cursor</div>
+  </div>
+</template>
+
+<!-- ════════════════ Hover · Bottom ════════════════ -->
+<template data-story="Hover bottom">
+  <div class="ft-tooltip">
+    <div class="ft-tooltip--bottom" focusable="false" tabindex="0" data-tooltip="Texto del tooltip">Pasa el cursor</div>
+  </div>
+</template>
+
+<!-- ════════════════ Hover · Dark ════════════════ -->
+<template data-story="Hover dark">
+  <div class="ft-tooltip ft-tooltip--dark">
+    <div class="ft-tooltip--top" focusable="false" tabindex="0" data-tooltip="Tooltip en modo oscuro">Pasa el cursor</div>
+  </div>
+</template>
+
+<!-- ════════════════ Popover (--advice, checkbox) ════════════════ -->
+<template data-story="Popover advice">
+  <div class="ft-tooltip ft-tooltip--advice">
+    <div class="ft-tooltip--top">
+      <input type="checkbox" id="tooltip-toggle-demo" class="ft-tooltip__checkbox" checked />
+      <a class="ft-tooltip__trigger" aria-describedby="tooltip-content-demo">Trigger del aviso</a>
+      <div id="tooltip-content-demo" class="ft-tooltip__content" role="tooltip">
+        <label class="ft-tooltip__close" for="tooltip-toggle-demo" tabindex="0"><span class="ft-tooltip__closeText">Cerrar</span></label>
+        <h3 class="ft-tooltip__title">¿Sabías que…?</h3>
+        <p class="ft-tooltip__txt">Aviso contextual que se ancla a un disparador y se cierra con la X.</p>
+      </div>
+    </div>
+  </div>
+</template>

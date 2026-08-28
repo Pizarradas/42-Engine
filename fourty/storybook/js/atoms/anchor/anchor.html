@@ -1,0 +1,37 @@
+<!--
+  anchor.html — códigos HTML originales de Anchor (.ft-anchor)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS.
+  OJO: este es el ÁTOMO .ft-anchor (contenedor de destino de salto), NO el
+  helper .ft-helper-anchor-spacer.
+  ─────────────────────────────────────────────────────────────────────────
+-->
+
+<!-- ════════════════ BASE · .ft-anchor ════════════════ -->
+<template data-story="Base">
+  <div class="ft-anchor">
+    <a href="#ft-mol-quote" class="ft-link ft-link--secondary" title="anchor title" target="_self">Destino del ancla</a>
+  </div>
+</template>
+
+<!-- ════════════════ Con espaciador (offset cabecera fija) ════════════════ -->
+<template data-story="Spacer t-xxlg">
+  <div class="ft-anchor ft-helper-spacer-t-xxlg">
+    <a href="#" class="ft-link ft-link--secondary" title="anchor title" target="_self">Destino con offset</a>
+  </div>
+</template>
+
+<!-- ════════════════ Absolute (ancla invisible) ════════════════ -->
+<template data-story="Absolute + spacer">
+  <div class="ft-anchor ft-anchor--absolute ft-helper-spacer-t-xxlg">
+    <a href="#" class="ft-link ft-link--secondary" title="anchor title" target="_self">Ancla invisible</a>
+  </div>
+</template>
+
+<!-- ════════════════ Envolviendo contenido (p. ej. una tabla) ════════════════ -->
+<template data-story="Envolviendo contenido">
+  <div class="ft-anchor">
+    <h3 id="seccion-destino" class="ft-title ft-title--md">Sección de destino</h3>
+    <p>Contenido al que apunta un enlace <code>#seccion-destino</code>.</p>
+  </div>
+</template>

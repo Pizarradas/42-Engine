@@ -1,0 +1,58 @@
+<!--
+  radio.html — códigos HTML originales de Radio (.ft-radio)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS.
+  El storybook (atoms/radio/radio.js) los muestra en el subgrupo "Markup".
+
+  REGLAS del markup:
+  · El <input> va ANTES del <label> (selector adyacente +).
+  · label[for] debe casar con input[id] → usa IDs únicos por bloque.
+  · Los radios de un mismo grupo comparten el atributo name.
+  ─────────────────────────────────────────────────────────────────────────
+-->
+
+<!-- ════════════════ Grupo base (2 opciones) ════════════════ -->
+<template data-story="Grupo base">
+  <div class="ft-radio">
+    <input id="radio-a" type="radio" name="grupo-demo" class="ft-radio__input" checked>
+    <label for="radio-a" class="ft-radio__label ft-helper-fontWeight-500">Opción A</label>
+  </div>
+  <div class="ft-radio">
+    <input id="radio-b" type="radio" name="grupo-demo" class="ft-radio__input">
+    <label for="radio-b" class="ft-radio__label ft-helper-fontWeight-500">Opción B</label>
+  </div>
+</template>
+
+<!-- ════════════════ Checked ════════════════ -->
+<template data-story="Checked">
+  <div class="ft-radio">
+    <input id="radio-checked" type="radio" name="grupo-checked" class="ft-radio__input" checked>
+    <label for="radio-checked" class="ft-radio__label ft-helper-fontWeight-500">Marcado</label>
+  </div>
+</template>
+
+<!-- ════════════════ Disabled ════════════════ -->
+<template data-story="Disabled">
+  <div class="ft-radio">
+    <input id="radio-disabled" type="radio" name="grupo-disabled" class="ft-radio__input" disabled>
+    <label for="radio-disabled" class="ft-radio__label ft-helper-fontWeight-500">Deshabilitado</label>
+  </div>
+</template>
+
+<!-- ════════════════ Checked + Disabled ════════════════ -->
+<template data-story="Checked + Disabled">
+  <div class="ft-radio">
+    <input id="radio-checked-disabled" type="radio" name="grupo-cd" class="ft-radio__input" checked disabled>
+    <label for="radio-checked-disabled" class="ft-radio__label ft-helper-fontWeight-500">Marcado y deshabilitado</label>
+  </div>
+</template>
+
+<!-- ════════════════ Sobre fondo oscuro (behavior on-dark) ════════════════ -->
+<template data-story="Sobre fondo oscuro">
+  <div class="ft-helper-bgColor-black" style="padding:1.5rem 2rem;border-radius:4px;">
+    <div class="ft-radio">
+      <input id="radio-dark" type="radio" name="grupo-dark" class="ft-radio__input" checked>
+      <label for="radio-dark" class="ft-radio__label ft-helper-fontWeight-500">Marcado en oscuro</label>
+    </div>
+  </div>
+</template>

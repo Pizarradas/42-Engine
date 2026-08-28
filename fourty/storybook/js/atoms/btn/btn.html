@@ -1,0 +1,180 @@
+<!--
+  btn.html - markup editable de Btn
+  Fuente de snippets copiable para Storybook. Solo variantes reales del DS:
+  .ft-btn, .ft-btn-nav, .ft-btn-rrss, .ft-btn-txt y .ft-btn-help.
+  Referencia funcional: fourty/__old-showroom/atoms/atom-btn.html
+-->
+
+<template data-story="Base">
+  <a href="#" class="ft-btn" title="Anchor">Anchor</a>
+  <button type="button" class="ft-btn">Button</button>
+</template>
+
+<template data-story="Kinds">
+  <button type="button" class="ft-btn ft-btn--primary ft-btn--md">Primary</button>
+  <button type="button" class="ft-btn ft-btn--secondary ft-btn--md">Secondary</button>
+  <button type="button" class="ft-btn ft-btn--tertiary ft-btn--md">Tertiary</button>
+</template>
+
+<template data-story="Sizes">
+  <button type="button" class="ft-btn ft-btn--primary ft-btn--xs">xs</button>
+  <button type="button" class="ft-btn ft-btn--primary ft-btn--sm">sm</button>
+  <button type="button" class="ft-btn ft-btn--primary ft-btn--md">md</button>
+  <button type="button" class="ft-btn ft-btn--primary ft-btn--lg">lg</button>
+  <button type="button" class="ft-btn ft-btn--primary ft-btn--sm-md">sm-md</button>
+  <button type="button" class="ft-btn ft-btn--primary ft-btn--md-lg">md-lg</button>
+</template>
+
+<template data-story="With icon">
+  <button type="button" class="ft-btn ft-btn--primary ft-btn--md ft-btn--primary-has--icon">
+    <svg class="ft-btn__icon" viewBox="0 0 32 32" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M26 24v4H6v-4H4v4a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-4zm0-10-1.41-1.41L17 20.17V2h-2v18.17l-7.59-7.58L6 14l10 10z"/></svg>
+    Icon left
+  </button>
+  <button type="button" class="ft-btn ft-btn--primary ft-btn--md ft-btn--primary-has--icon ft-btn-has--icon-rgt">
+    Icon right
+    <svg class="ft-btn__icon" viewBox="0 0 32 32" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M26 24v4H6v-4H4v4a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-4zm0-10-1.41-1.41L17 20.17V2h-2v18.17l-7.59-7.58L6 14l10 10z"/></svg>
+  </button>
+</template>
+
+<template data-story="Primal and badge">
+  <button type="button" class="ft-btn ft-btn--secondary ft-btn--md ft-btn--secondary-has--icon">
+    <svg class="ft-btn__icon ft-btn__icon--primal" viewBox="0 0 32 32" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M26 24v4H6v-4H4v4a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-4zm0-10-1.41-1.41L17 20.17V2h-2v18.17l-7.59-7.58L6 14l10 10z"/></svg>
+    Primal
+  </button>
+  <button type="button" class="ft-btn ft-btn--primary ft-btn--md">
+    Mensajes<span class="ft-btn__badge" aria-label="3">3</span>
+  </button>
+</template>
+
+<template data-story="Squared">
+  <button type="button" class="ft-btn ft-btn--secondary ft-btn--md ft-btn--secondary-has--icon ft-btn-is--squared" title="Accion">
+    <svg class="ft-btn__icon" viewBox="0 0 32 32" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M26 24v4H6v-4H4v4a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-4zm0-10-1.41-1.41L17 20.17V2h-2v18.17l-7.59-7.58L6 14l10 10z"/></svg>
+  </button>
+</template>
+
+<template data-story="Disabled">
+  <button type="button" class="ft-btn ft-btn--primary ft-btn--md" disabled>Primary disabled</button>
+  <button type="button" class="ft-btn ft-btn--secondary ft-btn--md" disabled>Secondary disabled</button>
+  <button type="button" class="ft-btn ft-btn--tertiary ft-btn--md" disabled>Tertiary disabled</button>
+  <a href="#" class="ft-btn ft-btn--primary ft-btn--md ft-btn-is--disabled ft-btn-is--disabledPrimary" title="Primary disabled">Primary anchor</a>
+  <a href="#" class="ft-btn ft-btn--secondary ft-btn--md ft-btn-is--disabled ft-btn-is--disabledSecondary" title="Secondary disabled">Secondary anchor</a>
+  <a href="#" class="ft-btn ft-btn--tertiary ft-btn--md ft-btn-is--disabled ft-btn-is--disabledTertiary" title="Tertiary disabled">Tertiary anchor</a>
+</template>
+
+<template data-story="On dark">
+  <div class="ft-helper-bgColor-black" style="padding:2.5rem 3rem;display:flex;flex-wrap:wrap;gap:1.5rem;">
+    <button type="button" class="ft-btn ft-btn--primary ft-btn--md">Primary</button>
+    <button type="button" class="ft-btn ft-btn--secondary ft-btn--md">Secondary</button>
+    <button type="button" class="ft-btn ft-btn--tertiary ft-btn--md">Tertiary</button>
+  </div>
+</template>
+
+<template data-story="Hue grey modifier">
+  <div style="display:flex;flex-wrap:wrap;gap:1.5rem;">
+    <button type="button" class="ft-btn ft-btn--secondary ft-btn--md ft-btn--secondary-has--icon ft-btn--hue-grey">
+      <svg class="ft-btn__icon" viewBox="0 0 32 32" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M26 24v4H6v-4H4v4a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-4zm0-10-1.41-1.41L17 20.17V2h-2v18.17l-7.59-7.58L6 14l10 10z"/></svg>
+      Recibir newsletter
+    </button>
+    <button type="button" class="ft-btn ft-btn--primary ft-btn--md ft-btn--hue-grey">Suscribirse</button>
+  </div>
+</template>
+
+<template data-story="ScrollUp">
+  <div style="min-height:8rem;display:flex;align-items:center;padding:2rem;">
+    <button type="button" class="ft-btn ft-btn--scrollUp" aria-label="Volver arriba" title="Volver arriba" style="display:inline-block;position:relative;right:auto;bottom:auto"></button>
+  </div>
+</template>
+
+<template data-story="Nav · icons (28)">
+  <button type="button" class="ft-btn-nav ft-btn-nav--back ft-btn-nav--bordered" title="Back"><span class="ft-btn-nav__text">Back</span><span class="ft-btn-nav__icon"></span></button>
+  <button type="button" class="ft-btn-nav ft-btn-nav--close ft-btn-nav--bordered" title="Close"><span class="ft-btn-nav__text">Close</span><span class="ft-btn-nav__icon"></span></button>
+  <button type="button" class="ft-btn-nav ft-btn-nav--check ft-btn-nav--bordered" title="Check"><span class="ft-btn-nav__text">Check</span><span class="ft-btn-nav__icon"></span></button>
+  <button type="button" class="ft-btn-nav ft-btn-nav--send ft-btn-nav--bordered" title="Send"><span class="ft-btn-nav__text">Send</span><span class="ft-btn-nav__icon"></span></button>
+  <button type="button" class="ft-btn-nav ft-btn-nav--remove ft-btn-nav--bordered" title="Remove"><span class="ft-btn-nav__text">Remove</span><span class="ft-btn-nav__icon"></span></button>
+  <button type="button" class="ft-btn-nav ft-btn-nav--right ft-btn-nav--bordered" title="Right"><span class="ft-btn-nav__text">Right</span><span class="ft-btn-nav__icon"></span></button>
+  <button type="button" class="ft-btn-nav ft-btn-nav--down ft-btn-nav--bordered" title="Down"><span class="ft-btn-nav__text">Down</span><span class="ft-btn-nav__icon"></span></button>
+  <button type="button" class="ft-btn-nav ft-btn-nav--left ft-btn-nav--bordered" title="Left"><span class="ft-btn-nav__text">Left</span><span class="ft-btn-nav__icon"></span></button>
+  <button type="button" class="ft-btn-nav ft-btn-nav--viewfull ft-btn-nav--bordered" title="Viewfull"><span class="ft-btn-nav__text">Viewfull</span><span class="ft-btn-nav__icon"></span></button>
+  <button type="button" class="ft-btn-nav ft-btn-nav--viewgrid ft-btn-nav--bordered" title="Viewgrid"><span class="ft-btn-nav__text">Viewgrid</span><span class="ft-btn-nav__icon"></span></button>
+  <button type="button" class="ft-btn-nav ft-btn-nav--info ft-btn-nav--bordered" title="Info"><span class="ft-btn-nav__text">Info</span><span class="ft-btn-nav__icon"></span></button>
+  <button type="button" class="ft-btn-nav ft-btn-nav--user ft-btn-nav--bordered" title="User"><span class="ft-btn-nav__text">User</span><span class="ft-btn-nav__icon"></span></button>
+  <button type="button" class="ft-btn-nav ft-btn-nav--users ft-btn-nav--bordered" title="Users"><span class="ft-btn-nav__text">Users</span><span class="ft-btn-nav__icon"></span></button>
+  <button type="button" class="ft-btn-nav ft-btn-nav--edit ft-btn-nav--bordered" title="Edit"><span class="ft-btn-nav__text">Edit</span><span class="ft-btn-nav__icon"></span></button>
+  <button type="button" class="ft-btn-nav ft-btn-nav--delete ft-btn-nav--bordered" title="Delete"><span class="ft-btn-nav__text">Delete</span><span class="ft-btn-nav__icon"></span></button>
+  <button type="button" class="ft-btn-nav ft-btn-nav--query ft-btn-nav--bordered" title="Query"><span class="ft-btn-nav__text">Query</span><span class="ft-btn-nav__icon"></span></button>
+  <button type="button" class="ft-btn-nav ft-btn-nav--copy ft-btn-nav--bordered" title="Copy"><span class="ft-btn-nav__text">Copy</span><span class="ft-btn-nav__icon"></span></button>
+  <button type="button" class="ft-btn-nav ft-btn-nav--arrow ft-btn-nav--bordered" title="Arrow"><span class="ft-btn-nav__text">Arrow</span><span class="ft-btn-nav__icon"></span></button>
+  <button type="button" class="ft-btn-nav ft-btn-nav--favorite ft-btn-nav--bordered" title="Favorite"><span class="ft-btn-nav__text">Favorite</span><span class="ft-btn-nav__icon"></span></button>
+  <button type="button" class="ft-btn-nav ft-btn-nav--gift ft-btn-nav--bordered" title="Gift"><span class="ft-btn-nav__text">Gift</span><span class="ft-btn-nav__icon"></span></button>
+  <button type="button" class="ft-btn-nav ft-btn-nav--like ft-btn-nav--bordered" title="Like"><span class="ft-btn-nav__text">Like</span><span class="ft-btn-nav__icon"></span></button>
+  <button type="button" class="ft-btn-nav ft-btn-nav--dislike ft-btn-nav--bordered" title="Dislike"><span class="ft-btn-nav__text">Dislike</span><span class="ft-btn-nav__icon"></span></button>
+  <button type="button" class="ft-btn-nav ft-btn-nav--bookmark ft-btn-nav--bordered" title="Bookmark"><span class="ft-btn-nav__text">Bookmark</span><span class="ft-btn-nav__icon"></span></button>
+  <button type="button" class="ft-btn-nav ft-btn-nav--share ft-btn-nav--bordered" title="Share"><span class="ft-btn-nav__text">Share</span><span class="ft-btn-nav__icon"></span></button>
+  <button type="button" class="ft-btn-nav ft-btn-nav--reload ft-btn-nav--bordered" title="Reload"><span class="ft-btn-nav__text">Reload</span><span class="ft-btn-nav__icon"></span></button>
+  <button type="button" class="ft-btn-nav ft-btn-nav--more-v ft-btn-nav--bordered" title="More v"><span class="ft-btn-nav__text">More v</span><span class="ft-btn-nav__icon"></span></button>
+  <button type="button" class="ft-btn-nav ft-btn-nav--plus ft-btn-nav--bordered" title="Plus"><span class="ft-btn-nav__text">Plus</span><span class="ft-btn-nav__icon"></span></button>
+  <button type="button" class="ft-btn-nav ft-btn-nav--minus ft-btn-nav--bordered" title="Minus"><span class="ft-btn-nav__text">Minus</span><span class="ft-btn-nav__icon"></span></button>
+</template>
+
+<template data-story="Nav · shapes and sizes">
+  <button type="button" class="ft-btn-nav ft-btn-nav--back ft-btn-nav--md ft-btn-nav--bordered" title="Default md"><span class="ft-btn-nav__text">Default md</span><span class="ft-btn-nav__icon"></span></button>
+  <button type="button" class="ft-btn-nav ft-btn-nav--edit ft-btn-nav--circle ft-btn-nav--circle--sm-md ft-btn-nav--shadow" title="Circle sm-md"><span class="ft-btn-nav__text">Circle sm-md</span><span class="ft-btn-nav__icon"></span></button>
+  <button type="button" class="ft-btn-nav ft-btn-nav--edit ft-btn-nav--circle ft-btn-nav--circle--md ft-btn-nav--shadow" title="Circle md"><span class="ft-btn-nav__text">Circle md</span><span class="ft-btn-nav__icon"></span></button>
+  <button type="button" class="ft-btn-nav ft-btn-nav--edit ft-btn-nav--circle ft-btn-nav--circle--lg ft-btn-nav--shadow" title="Circle lg"><span class="ft-btn-nav__text">Circle lg</span><span class="ft-btn-nav__icon"></span></button>
+  <button type="button" class="ft-btn-nav ft-btn-nav--plus ft-btn-nav--square ft-btn-nav--square--md ft-btn-nav--shadow" title="Square md"><span class="ft-btn-nav__text">Square md</span><span class="ft-btn-nav__icon"></span></button>
+  <button type="button" class="ft-btn-nav ft-btn-nav--plus ft-btn-nav--square ft-btn-nav--square--lg ft-btn-nav--shadow" title="Square lg"><span class="ft-btn-nav__text">Square lg</span><span class="ft-btn-nav__icon"></span></button>
+</template>
+
+<template data-story="Nav · states">
+  <button type="button" class="ft-btn-nav ft-btn-nav--edit ft-btn-nav--bordered" title="Bordered"><span class="ft-btn-nav__text">Bordered</span><span class="ft-btn-nav__icon"></span></button>
+  <button type="button" class="ft-btn-nav ft-btn-nav--edit ft-btn-nav--shadow" title="Shadow"><span class="ft-btn-nav__text">Shadow</span><span class="ft-btn-nav__icon"></span></button>
+  <button type="button" class="ft-btn-nav ft-btn-nav--copy ft-btn-nav--primary" title="Primary"><span class="ft-btn-nav__text">Primary</span><span class="ft-btn-nav__icon"></span></button>
+  <button type="button" class="ft-btn-nav ft-btn-nav--favorite ft-btn-nav--active ft-btn-nav--bordered" title="Active"><span class="ft-btn-nav__text">Active</span><span class="ft-btn-nav__icon"></span></button>
+  <button type="button" class="ft-btn-nav ft-btn-nav--bookmark ft-btn-nav--checked ft-btn-nav--bordered" title="Checked"><span class="ft-btn-nav__text">Checked</span><span class="ft-btn-nav__icon"></span></button>
+  <button type="button" class="ft-btn-nav ft-btn-nav--edit ft-btn-nav--bordered" title="Disabled" disabled><span class="ft-btn-nav__text">Disabled</span><span class="ft-btn-nav__icon"></span></button>
+</template>
+
+<template data-story="RRSS · networks (15)">
+  <a href="#" class="ft-btn-rrss ft-btn-rrss--email" title="Email"><span class="ft-mol-rrss ft-mol-rrssEmail--default ft-btn-rrss__icon"></span><span class="ft-btn-rrss__text">Email</span></a>
+  <a href="#" class="ft-btn-rrss ft-btn-rrss--facebook" title="Facebook"><span class="ft-mol-rrss ft-mol-rrssFacebook--default ft-btn-rrss__icon"></span><span class="ft-btn-rrss__text">Facebook</span></a>
+  <a href="#" class="ft-btn-rrss ft-btn-rrss--instagram" title="Instagram"><span class="ft-mol-rrss ft-mol-rrssInstagram--default ft-btn-rrss__icon"></span><span class="ft-btn-rrss__text">Instagram</span></a>
+  <a href="#" class="ft-btn-rrss ft-btn-rrss--linkedin" title="Linkedin"><span class="ft-mol-rrss ft-mol-rrssLinkedin--default ft-btn-rrss__icon"></span><span class="ft-btn-rrss__text">Linkedin</span></a>
+  <a href="#" class="ft-btn-rrss ft-btn-rrss--pinterest" title="Pinterest"><span class="ft-mol-rrss ft-mol-rrssPinterest--default ft-btn-rrss__icon"></span><span class="ft-btn-rrss__text">Pinterest</span></a>
+  <a href="#" class="ft-btn-rrss ft-btn-rrss--snapchat" title="Snapchat"><span class="ft-mol-rrss ft-mol-rrssSnapchat--default ft-btn-rrss__icon"></span><span class="ft-btn-rrss__text">Snapchat</span></a>
+  <a href="#" class="ft-btn-rrss ft-btn-rrss--twitter" title="Twitter"><span class="ft-mol-rrss ft-mol-rrssTwitter--default ft-btn-rrss__icon"></span><span class="ft-btn-rrss__text">Twitter</span></a>
+  <a href="#" class="ft-btn-rrss ft-btn-rrss--telegram" title="Telegram"><span class="ft-mol-rrss ft-mol-rrssTelegram--default ft-btn-rrss__icon"></span><span class="ft-btn-rrss__text">Telegram</span></a>
+  <a href="#" class="ft-btn-rrss ft-btn-rrss--whatsapp" title="Whatsapp"><span class="ft-mol-rrss ft-mol-rrssWhatsapp--default ft-btn-rrss__icon"></span><span class="ft-btn-rrss__text">Whatsapp</span></a>
+  <a href="#" class="ft-btn-rrss ft-btn-rrss--youtube" title="Youtube"><span class="ft-mol-rrss ft-mol-rrssYoutube--default ft-btn-rrss__icon"></span><span class="ft-btn-rrss__text">Youtube</span></a>
+  <a href="#" class="ft-btn-rrss ft-btn-rrss--tiktok" title="Tiktok"><span class="ft-mol-rrss ft-mol-rrssTiktok--default ft-btn-rrss__icon"></span><span class="ft-btn-rrss__text">Tiktok</span></a>
+  <a href="#" class="ft-btn-rrss ft-btn-rrss--threads" title="Threads"><span class="ft-mol-rrss ft-mol-rrssThreads--default ft-btn-rrss__icon"></span><span class="ft-btn-rrss__text">Threads</span></a>
+  <a href="#" class="ft-btn-rrss ft-btn-rrss--bluesky" title="Bluesky"><span class="ft-mol-rrss ft-mol-rrssBluesky--default ft-btn-rrss__icon"></span><span class="ft-btn-rrss__text">Bluesky</span></a>
+  <a href="#" class="ft-btn-rrss ft-btn-rrss--bookmark" title="Bookmark"><span class="ft-mol-rrss ft-mol-rrssBookmark--default ft-btn-rrss__icon"></span><span class="ft-btn-rrss__text">Bookmark</span></a>
+  <a href="#" class="ft-btn-rrss ft-btn-rrss--share" title="Share"><span class="ft-mol-rrss ft-mol-rrssShare--default ft-btn-rrss__icon"></span><span class="ft-btn-rrss__text">Share</span></a>
+</template>
+
+<template data-story="RRSS · outline">
+  <a href="#" class="ft-btn-rrss ft-btn-rrss--email ft-btn-rrss--primary" title="Email"><span class="ft-mol-rrss ft-mol-rrssEmail--default ft-btn-rrss__icon"></span><span class="ft-btn-rrss__text">Email</span></a>
+  <a href="#" class="ft-btn-rrss ft-btn-rrss--facebook ft-btn-rrss--primary" title="Facebook"><span class="ft-mol-rrss ft-mol-rrssFacebook--default ft-btn-rrss__icon"></span><span class="ft-btn-rrss__text">Facebook</span></a>
+  <a href="#" class="ft-btn-rrss ft-btn-rrss--instagram ft-btn-rrss--primary" title="Instagram"><span class="ft-mol-rrss ft-mol-rrssInstagram--default ft-btn-rrss__icon"></span><span class="ft-btn-rrss__text">Instagram</span></a>
+  <a href="#" class="ft-btn-rrss ft-btn-rrss--linkedin ft-btn-rrss--primary" title="Linkedin"><span class="ft-mol-rrss ft-mol-rrssLinkedin--default ft-btn-rrss__icon"></span><span class="ft-btn-rrss__text">Linkedin</span></a>
+  <a href="#" class="ft-btn-rrss ft-btn-rrss--pinterest ft-btn-rrss--primary" title="Pinterest"><span class="ft-mol-rrss ft-mol-rrssPinterest--default ft-btn-rrss__icon"></span><span class="ft-btn-rrss__text">Pinterest</span></a>
+  <a href="#" class="ft-btn-rrss ft-btn-rrss--snapchat ft-btn-rrss--primary" title="Snapchat"><span class="ft-mol-rrss ft-mol-rrssSnapchat--default ft-btn-rrss__icon"></span><span class="ft-btn-rrss__text">Snapchat</span></a>
+  <a href="#" class="ft-btn-rrss ft-btn-rrss--twitter ft-btn-rrss--primary" title="Twitter"><span class="ft-mol-rrss ft-mol-rrssTwitter--default ft-btn-rrss__icon"></span><span class="ft-btn-rrss__text">Twitter</span></a>
+  <a href="#" class="ft-btn-rrss ft-btn-rrss--telegram ft-btn-rrss--primary" title="Telegram"><span class="ft-mol-rrss ft-mol-rrssTelegram--default ft-btn-rrss__icon"></span><span class="ft-btn-rrss__text">Telegram</span></a>
+  <a href="#" class="ft-btn-rrss ft-btn-rrss--whatsapp ft-btn-rrss--primary" title="Whatsapp"><span class="ft-mol-rrss ft-mol-rrssWhatsapp--default ft-btn-rrss__icon"></span><span class="ft-btn-rrss__text">Whatsapp</span></a>
+  <a href="#" class="ft-btn-rrss ft-btn-rrss--youtube ft-btn-rrss--primary" title="Youtube"><span class="ft-mol-rrss ft-mol-rrssYoutube--default ft-btn-rrss__icon"></span><span class="ft-btn-rrss__text">Youtube</span></a>
+  <a href="#" class="ft-btn-rrss ft-btn-rrss--tiktok ft-btn-rrss--primary" title="Tiktok"><span class="ft-mol-rrss ft-mol-rrssTiktok--default ft-btn-rrss__icon"></span><span class="ft-btn-rrss__text">Tiktok</span></a>
+  <a href="#" class="ft-btn-rrss ft-btn-rrss--threads ft-btn-rrss--primary" title="Threads"><span class="ft-mol-rrss ft-mol-rrssThreads--default ft-btn-rrss__icon"></span><span class="ft-btn-rrss__text">Threads</span></a>
+  <a href="#" class="ft-btn-rrss ft-btn-rrss--bluesky ft-btn-rrss--primary" title="Bluesky"><span class="ft-mol-rrss ft-mol-rrssBluesky--default ft-btn-rrss__icon"></span><span class="ft-btn-rrss__text">Bluesky</span></a>
+  <a href="#" class="ft-btn-rrss ft-btn-rrss--bookmark ft-btn-rrss--primary" title="Bookmark"><span class="ft-mol-rrss ft-mol-rrssBookmark--default ft-btn-rrss__icon"></span><span class="ft-btn-rrss__text">Bookmark</span></a>
+  <a href="#" class="ft-btn-rrss ft-btn-rrss--share ft-btn-rrss--primary" title="Share"><span class="ft-mol-rrss ft-mol-rrssShare--default ft-btn-rrss__icon"></span><span class="ft-btn-rrss__text">Share</span></a>
+</template>
+
+<template data-story="Txt">
+  <button type="button" class="ft-btn-txt"><span class="ft-btn-txt__text">Boton de texto</span></button>
+  <button type="button" class="ft-btn-txt ft-btn-txt--close" title="Cerrar"><span class="ft-btn-txt__text">Cerrar</span><span class="ft-btn-txt__icon"></span></button>
+</template>
+
+<template data-story="Help">
+  <button type="button" class="ft-btn-help" title="Ayuda">Ayuda</button>
+</template>

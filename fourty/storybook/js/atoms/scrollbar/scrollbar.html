@@ -1,0 +1,26 @@
+<!--
+  scrollbar.html — códigos HTML originales de Scrollbar ([data-scrollbar])
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS.
+  El storybook (atoms/scrollbar/scrollbar.js) los muestra en el subgrupo "Markup".
+
+  OJO: el skin custom (carril + thumb) lo genera la librería smooth-scrollbar
+  (cds-statics/js/scroll/smooth-scrollbar/smooth-scrollbar-library.js +
+  smooth-scrollbar-functions.js), que inyecta .scrollbar-track / .scrollbar-thumb.
+  Sin esa librería, [data-scrollbar] usa scroll nativo (overflow-x:auto).
+  ─────────────────────────────────────────────────────────────────────────
+-->
+
+<!-- ════════════════ Contenedor [data-scrollbar] (eje X) ════════════════ -->
+<template data-story="Base (eje X)">
+  <div data-scrollbar data-scrollbar-axis="x" data-scrollbar-wheel-to-x="true" data-scrollbar-announce-scroll="true"
+       role="scrollbar" aria-label="Barra de desplazamiento horizontal" tabindex="0">
+    <div style="display:flex;gap:1rem;padding:1rem;width:max-content;">
+      <div style="flex:0 0 auto;width:200px;">Bloque de contenido 1 más ancho que el contenedor.</div>
+      <div style="flex:0 0 auto;width:200px;">Bloque de contenido 2.</div>
+      <div style="flex:0 0 auto;width:200px;">Bloque de contenido 3.</div>
+      <div style="flex:0 0 auto;width:200px;">Bloque de contenido 4.</div>
+      <div style="flex:0 0 auto;width:200px;">Bloque de contenido 5.</div>
+    </div>
+  </div>
+</template>

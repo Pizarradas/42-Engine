@@ -1,0 +1,68 @@
+<!--
+  switch.html — códigos HTML originales de Switch (.ft-switch)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS.
+  El storybook (atoms/switch/switch.js) los muestra en el subgrupo "Markup".
+
+  REGLAS del markup:
+  · El <input> va ANTES del <label> (selector adyacente +).
+  · label[for] debe casar con input[id] → usa IDs únicos por bloque.
+  · El icono de la perilla (y los de --darkmode) son background con ruta
+    absoluta /cds-statics/… → solo se ven servidos por un servidor.
+  ─────────────────────────────────────────────────────────────────────────
+-->
+
+<!-- ════════════════ BASE · .ft-switch ════════════════ -->
+<template data-story="Base">
+  <div class="ft-switch">
+    <input type="checkbox" id="switch-base" class="ft-switch__checkbox">
+    <label for="switch-base" class="ft-switch__label">
+      <span class="ft-switch__inner"></span>
+      <span class="ft-switch__switch"></span>
+    </label>
+  </div>
+</template>
+
+<!-- ════════════════ Checked ════════════════ -->
+<template data-story="Checked">
+  <div class="ft-switch">
+    <input type="checkbox" id="switch-checked" class="ft-switch__checkbox" checked>
+    <label for="switch-checked" class="ft-switch__label">
+      <span class="ft-switch__inner"></span>
+      <span class="ft-switch__switch"></span>
+    </label>
+  </div>
+</template>
+
+<!-- ════════════════ --darkmode (sol/luna) ════════════════ -->
+<template data-story="Darkmode">
+  <div class="ft-switch ft-switch--darkmode">
+    <input type="checkbox" id="switch-darkmode" class="ft-switch__checkbox">
+    <label for="switch-darkmode" class="ft-switch__label">
+      <span class="ft-switch__inner"></span>
+      <span class="ft-switch__switch"></span>
+    </label>
+  </div>
+</template>
+
+<!-- ════════════════ --has-text (ON/OFF) ════════════════ -->
+<template data-story="Has-text">
+  <div class="ft-switch ft-switch--has-text">
+    <input type="checkbox" id="switch-hastext" class="ft-switch__checkbox">
+    <label for="switch-hastext" class="ft-switch__label">
+      <span class="ft-switch__inner"></span>
+      <span class="ft-switch__switch"></span>
+    </label>
+  </div>
+</template>
+
+<!-- ════════════════ --is-disabled ════════════════ -->
+<template data-story="Disabled">
+  <div class="ft-switch ft-switch--is-disabled">
+    <input type="checkbox" id="switch-disabled" class="ft-switch__checkbox" disabled>
+    <label for="switch-disabled" class="ft-switch__label">
+      <span class="ft-switch__inner"></span>
+      <span class="ft-switch__switch"></span>
+    </label>
+  </div>
+</template>

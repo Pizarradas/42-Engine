@@ -1,0 +1,108 @@
+<!--
+  ad.html — códigos HTML originales de Ad (.ft-ad)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS:
+  añade / edita / quita bloques <template data-story="Nombre"> con HTML PLANO
+  (clases .ft-* reales). El storybook (atoms/ad/ad.js) los muestra en el
+  subgrupo "Markup" del componente Ad.
+
+  Las rutas de imagen son ROOT-relativas (/cds-statics/…) → requieren servidor
+  local, igual que el resto del storybook. El creativo real lo inyecta el
+  ad-server; aquí van placeholders/banners de muestra.
+  ─────────────────────────────────────────────────────────────────────────
+-->
+
+<!-- ════════════════ BASE · .ft-ad ════════════════ -->
+<template data-story="Base">
+  <aside class="ft-ad">
+    <img src="/cds-statics/assets/img/banners/ad-footer.png" alt="banner" class="ft-helper-img-rd">
+  </aside>
+</template>
+
+<!-- ════════════════ MEGA · .ft-ad--mega ════════════════ -->
+<template data-story="Mega">
+  <aside class="ft-ad ft-ad--mega">
+    <img src="/cds-statics/assets/img/banners/ad-990x250.gif" alt="megabanner" class="ft-helper-img-rd">
+  </aside>
+</template>
+
+<template data-story="Mega · sin texto">
+  <aside class="ft-ad ft-ad--mega ft-ad--megaNotext">
+    <img src="/cds-statics/assets/img/banners/ad-990x250.gif" alt="megabanner" class="ft-helper-img-rd">
+  </aside>
+</template>
+
+<!-- ════════════════ ROBA · .ft-ad--roba ════════════════ -->
+<template data-story="Roba">
+  <aside class="ft-ad ft-ad--roba">
+    <img src="/cds-statics/assets/img/banners/ad-300x250.png" alt="robapáginas">
+  </aside>
+</template>
+
+<template data-story="Roba · sin texto">
+  <aside class="ft-ad ft-ad--roba ft-ad--robaNotext">
+    <img src="/cds-statics/assets/img/banners/ad-300x250.png" alt="robapáginas">
+  </aside>
+</template>
+
+<!-- Roba sticky: el creativo acompaña al scroll. Requiere body id="header-sticky"
+     + js sticking/fourty-header-sticky.js en una página real. -->
+<template data-story="Roba · sticky">
+  <aside class="ft-ad ft-ad--roba ft-ad--robaNotext">
+    <div class="ft-ad--sticky">
+      <img src="/cds-statics/assets/img/banners/ad-300x250.png" alt="robapáginas sticky">
+    </div>
+  </aside>
+</template>
+
+<!-- ════════════════ INTEXT · .ft-ad--intext ════════════════ -->
+<template data-story="Intext">
+  <aside class="ft-ad ft-ad--intext">
+    <img src="/cds-statics/assets/img/banners/ad-300x250.png" alt="Ejemplo 300x250" width="300" height="250">
+  </aside>
+</template>
+
+<template data-story="Intext · sin texto">
+  <aside class="ft-ad ft-ad--intext ft-ad--intextNotext">
+    <img src="/cds-statics/assets/img/banners/ad-300x600.jpeg" alt="Ejemplo 300x600">
+  </aside>
+</template>
+
+<!-- ════════════════ VISIBILIDAD (helpers de hides) ════════════════ -->
+<template data-story="No visible en móvil">
+  <aside class="ft-ad ft-helper-hide-xs">
+    <img src="/cds-statics/assets/img/banners/ad-300x250.png" alt="Ejemplo 300x250" width="300" height="250">
+  </aside>
+</template>
+
+<template data-story="Solo visible en móvil">
+  <aside class="ft-ad ft-helper-hide-md">
+    <img src="/cds-statics/assets/img/banners/ad-300x600.jpeg" alt="Ejemplo 300x600" width="300" height="600">
+  </aside>
+</template>
+
+<!-- ════════════════ FOOTER · .ft-ad--footer (position:fixed) ════════════════
+     Se ancla al pie del viewport; en una página real lleva botón de cerrar y
+     puede ajustar bottom con cds-statics/js/sticking/fourty-ads_skys-sticky.js. -->
+<template data-story="Footer">
+  <aside class="ft-ad ft-ad--footer">
+    <div class="ft-ad--footer__content">
+      <div class="ft-ad--footer__embed">
+        <aside class="ft-helper-hide-mo">
+          <img src="/cds-statics/assets/img/banners/ad-footer.png" width="728" height="87" alt="banner" class="ft-helper-img-rd">
+        </aside>
+      </div>
+      <button type="button" name="close-button" class="ft-btn-nav ft-btn-nav--close ft-popover-close-trigger" title="Cerrar publicidad">
+        <span class="ft-btn-nav__text">Cerrar</span>
+        <span class="ft-btn-nav__icon"></span>
+      </button>
+    </div>
+  </aside>
+</template>
+
+<!-- ════════════════ TABOOLA · .ft-ad--taboola ════════════════ -->
+<template data-story="Taboola">
+  <aside class="ft-ad ft-ad--taboola">
+    <img src="/cds-statics/assets/img/banners/ad-300x250.png" alt="Feed Taboola">
+  </aside>
+</template>
