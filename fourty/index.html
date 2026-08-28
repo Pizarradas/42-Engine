@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>42DS · Storybook</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS REAL DEL 42DS — setting.css PRIMERO (variables de marca) + bundle multibrand.
+         El motor de Storybook deriva de este <link> la base para el swap de marca. -->
+    <link id="brandStyles-root" rel="stylesheet" href="../cds-statics/css/brands/ux/setting.css" type="text/css">
+    <link id="brandStyles" rel="stylesheet" href="../cds-statics/css/ux-index.css" type="text/css">
+    <link rel="icon" href="favicon.png" type="image/png">
+
+    <!-- Tipografía del chrome enfocada en legibilidad: Inter (UI/lectura) + JetBrains Mono
+         (código). Solo afecta al chrome del Storybook; los componentes usan las fuentes de
+         la marca. Degrada a las fuentes del sistema si no hay red. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Chrome del Storybook (aislado en /storybook) -->
+    <link rel="stylesheet" href="storybook/css/storybook.css">
+</head>
+
+<!--
+  ─────────────────────────────────────────────────────────────────────────
+  42DS Storybook · [MODE: STORYBOOK] · arquitectura IBM Carbon
+  ─────────────────────────────────────────────────────────────────────────
+  Shell mínimo. Toda la lógica vive aislada en /storybook:
+    • storybook/css/storybook.css        → chrome (prefijo .cb-)
+    • storybook/js/core/storybook.js     → motor reutilizable (agnóstico de componente)
+    • storybook/js/atoms/btn/btn.js      → casuística real de .ft-btn
+    • storybook/js/atoms/btn/btn.html    → markup HTML editable por el front (subgrupo "Markup")
+  Cada componente vive en su subcarpeta (atoms/<x>/), espejando /fourty; el motor vive en
+  core/. Para documentar otro componente: añade storybook/js/<nivel>/<x>/<x>.js con
+  SB.register(...) y enlázalo aquí. El componente usa SOLO clases .ft-* reales.
+  ─────────────────────────────────────────────────────────────────────────
+-->
+
+<body class="cb-host fourty ft-brand-ux ft-skin ft-skin--showroom">
+
+    <div id="sb-root"></div>
+
+    <!-- Boot mínimo: assets + data + motor + landing inmediata. El resto del catálogo
+         se carga de forma diferida por fases desde bootstrap-lazy.js para rebajar el
+         coste del arranque sin cambiar el contenido final del Storybook. -->
+    <script src="storybook/assets/icons.js" defer></script>
+    <script src="storybook/data/brand-data.js" defer></script>
+    <script src="storybook/data/changelog-data.js" defer></script>
+    <script src="storybook/data/icon-gallery-data.js" defer></script>
+    <script src="storybook/js/meta.js" defer></script>
+    <script src="storybook/js/core/storybook.js" defer></script>
+    <script src="storybook/js/changelog.js" defer></script>
+    <script src="storybook/js/bootstrap-lazy.js" defer></script>
+
+</body>
+
+</html>
