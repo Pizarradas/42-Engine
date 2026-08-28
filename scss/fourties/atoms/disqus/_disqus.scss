@@ -1,0 +1,159 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// HIPERLOCALISMOS (mapa global)
+// ================================================
+$hiperlocalismos: (
+  activos: #4c7175,
+  altopalancia: #104277,
+  altura: #104277,
+  avilesycomarca: #567290,
+  baix-emporda: #1b6598,
+  betera: #1b6598,
+  campdeturia: #1b6598,
+  cangasdelnarcea: #0092df,
+  clublanuevaespana: #009fe3,
+  cuencas: #aaa199,
+  deia: #3856a3,
+  diari-d-igualada: #1b6598,
+  diari-de-girona: #d0021b,
+  diario-cordoba: #e22931,
+  diario-de-ibiza: #0059a2,
+  diario-de-mallorca: #1567ac,
+  diario-de-mallorca-ido: #005174,
+  diario-informacion: #006f9f,
+  el-correo-de-andalucia: #cb184f,
+  el-correo-gallego: #1b6598,
+  el-dia-la-opinion-de-tenerife: #1d64af,
+  el-periodico-de-aragon: #0b6c95,
+  el-periodico-extremadura: #007977,
+  el-periodico-mediterraneo: #184479,
+  emporda: #00597a,
+  faro-de-vigo: #1b6598,
+  gijon: #bf0811,
+  grado: #60682d,
+  informaciontv: #1b6598,
+  jerica: #104277,
+  l-eliana: #1b6598,
+  lacronicadelosbarriosdealicanti: #1b6598,
+  la-cronica-de-badajoz: #e2312d,
+  lacronicadelosbarriosdealicante: #1b6598,
+  la-nueva-espana: #136496,
+  la-opinion-a-coruna: #0077ba,
+  la-opinion-correo-de-zamora: #1b6598,
+  la-opinion-de-malaga: #00653e,
+  la-opinion-de-murcia: #c32e1d,
+  la-pobla-de-vallbona: #1b6598,
+  la-provincia-diario-de-las-palmas: #004884,
+  levante-el-mercantil-valenciano: #1b6598,
+  llanera: #60682d,
+  lliria: #1b6598,
+  mallorca-zeitung: #00638e,
+  navajas: #104277,
+  noticias-de-alava: #3856a3,
+  noticias-de-gipuzkoa: #3856a3,
+  noticias-de-navarra: #3856a3,
+  oviedo: #60a7dc,
+  realoviedo: #60a7dc,
+  regio7: #3856a3,
+  ribarojadeturia: #1b6598,
+  riberadearriba: #60682d,
+  salas: #60682d,
+  segorbe: #104277,
+  siero: #60682d,
+  soneja: #104277,
+  sport: #ec0918,
+  sportingdegijon: #bf0811,
+  superdeporte: #1b6598,
+  vilamarxant: #1b6598,
+  villaviciosa: #60682d,
+  viver: #104277,
+);
+// ================================================
+
+// ===============================================
+// DIQUS: plataforma de comentarios
+// ================================================
+
+// MEDIA: EP
+@if $brand == ep {
+  .disqus_thread {
+    a {
+      color: #f53036;
+    }
+  }
+
+  // hiperlocalismos
+  $ep-locales: activos;
+
+  @each $hiperlocalismo in $ep-locales {
+    .#{$hiperlocalismo} .disqus_thread {
+      a {
+        color: map-get($hiperlocalismos, $hiperlocalismo);
+      }
+    }
+  }
+}
+
+// MEDIA: EPE (solo "activos")
+@if $brand == epe {
+  .disqus_thread {
+    a {
+      color: #0034dd;
+    }
+  }
+
+  // hiperlocalismos
+  $epe-locales: activos;
+
+  @each $hiperlocalismo in $epe-locales {
+    .#{$hiperlocalismo} .disqus_thread {
+      a {
+        color: map-get($hiperlocalismos, $hiperlocalismo);
+      }
+    }
+  }
+}
+
+// MEDIA: REGIONALES (todos)
+@if $brand == regionales {
+  .disqus_thread {
+    a {
+      color: #136496;
+    }
+  }
+
+  // hiperlocalismos
+  $excluir: (activos);
+
+  @each $hiperlocalismo, $color in $hiperlocalismos {
+    @if not index($excluir, $hiperlocalismo) {
+      .#{$hiperlocalismo} .disqus_thread {
+        a {
+          color: #{$color};
+        }
+      }
+    }
+  }
+}
+
+// MEDIA: REVISTAS
+@if $brand == revistas {
+  .disqus_thread {
+    a {
+      color: #000;
+    }
+  }
+}
+
+// MEDIA: SPORT
+@if $brand == sport {
+  .disqus_thread {
+    a {
+      color: #ec0918;
+    }
+  }
+}

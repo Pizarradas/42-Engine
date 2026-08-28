@@ -1,0 +1,148 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// ft-EMBED
+// ===============================================
+.ft-embed {
+  @include margin(null null 2.5rem null);
+  display: block;
+
+  iframe[src*="playerclips.laliga.com"]{
+    width:100%;
+      max-width:100%; 
+      height:auto;
+      min-height: auto;
+      aspect-ratio:16/9;
+  }
+&[data-rrss-id="youtube"] {
+    // &__item
+   iframe{
+      width:100%;
+      max-width:100%; 
+      height:auto;
+      min-height: auto;
+      aspect-ratio:16/9;
+    }
+  }
+  &[data-rrss-id="twitter"] {
+
+    // &__item
+   iframe{
+      min-height: 700px;
+      aspect-ratio: 1/1.025;
+      background-color: var(--color-lightGrey);
+      padding: 1rem;
+    } 
+  }
+  &[data-rrss-id="tiktok"] {
+        // &__item
+       iframe{ 
+          width:100%;
+          max-width:100%; 
+          height:auto;
+          min-height: auto;
+          aspect-ratio:9/16; 
+        }
+  }
+
+  &[data-rrss-id="instagram"] {
+        // &__item
+      iframe{
+          width:100%;
+          max-width:100%; 
+          height:auto; 
+          min-height: auto;
+          aspect-ratio:4/5.5;
+        }
+  }
+  &[data-rrss-id="facebook"] {
+    // &__item
+   iframe{
+      width:100%;
+      max-width:100%; 
+      height:auto; 
+      min-height: auto;
+      aspect-ratio:9/16;
+    }
+  }
+
+
+
+  // &__item
+  &__item {
+    @include border-width(0 0 0 0);
+    width: 100%;
+    @include behavior-parent("videos.vertical"){
+            display: flex;
+            justify-content: center;
+            background-color: var(--color-black);
+    }
+    * {
+      max-width: 100%;
+    }
+
+  
+
+    // iframe
+    iframe {
+      min-height: 315px;
+      width: 100%;
+      border:0;
+      @include min-screen(768px) {
+        min-height: 365px;
+      } 
+
+      @include behavior-parent(ft-embed--video){
+         height:auto; 
+      min-height: auto;
+        width: 100%;
+        @include min-screen(768px) {
+           height:auto; 
+      min-height: auto;
+        }
+      }
+    }
+
+    // #fb-root
+    #fb-root {
+      display: none;
+    }
+  }
+
+  // &__icon
+  &__icon {
+    display: flex;
+    justify-content: center;
+    @include position(relative, null);
+
+    // &-details
+    &-details {
+      @include position(absolute, 50% null null 50%);
+      background-color: red;
+      z-index: 1;
+      border-radius: 50%;
+      width: 6.3rem;
+      height: 6.3rem;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  // &--ar
+  &--ar {
+    // &-16-9
+    &-16-9 {
+      // iframes
+      iframe {
+        @include size(100%);
+        aspect-ratio: 16 / 9;
+        min-height: auto;
+        @include min-screen(768px) {
+          min-height: auto;
+        }
+      }
+    }
+  }
+}

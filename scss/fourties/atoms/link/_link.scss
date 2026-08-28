@@ -1,0 +1,411 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// .ft-link
+// ===============================================
+.ft-link {
+  @include position(relative, null null null null);
+  @include padding(0);
+  align-items: center;
+  word-wrap: break-word;
+  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  color: var(--color-primary);
+  background-color: transparent;
+  text-decoration: none;
+  border: none;
+  -webkit-appearance: none;
+
+  // behavior: bg(Color-black)
+  @include behavior-ft-helper-bg(Color-black) {
+    color: var(--color-white);
+  }
+
+  // &:hover
+  &:hover {
+    text-decoration: none;
+    color: var(--color-secondary);
+
+    // behavior: bg(Color-black)
+    @include behavior-ft-helper-bg(Color-black) {
+      color: var(--color-white);
+    }
+  }
+
+  // &:focus
+  &:focus {
+    color: var(--color-secondary);
+    text-decoration: none;
+  }
+
+  // &--block
+  &--block {
+    @include hide-text;
+    @include position(absolute, 0 0 0 0);
+    @include margin(auto);
+    @include size(100%, 100%);
+    @include border-width(0 0 0 0);
+    opacity: 0;
+    z-index: 1;
+  }
+
+  // &--decoration
+  &--decoration {
+    @include padding(0);
+    border-bottom: 1px dashed var(--color-primary);
+    overflow: hidden;
+    word-wrap: break-word;
+    transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    color: var(--color-primary);
+    background-color: transparent;
+    
+    // behavior: fourty
+    @include behavior-parent(fourty) {
+      &.ft-link--primary{
+        border-bottom: 1px dashed var(--color-primary);
+      }
+      &.ft-link--secondary{
+        border-bottom: 1px dashed var(--color-black);
+      }
+      &.ft-link--tertiary{
+        border-bottom: 1px dashed var(--color-quaternary);
+      }
+     }
+
+     
+
+   .fourty h2 & {
+    border-bottom: 0;
+  }
+    // behavior: bg(Color-black)
+    @include behavior-ft-helper-bg(Color-black) {
+      color: var(--color-white);
+    }
+     
+    // &:hover, &:focus
+    &:hover,
+    &:focus {
+      // &::after
+      &:after {
+        text-decoration: none;
+        background-color: var(--color-secondary);
+      }
+    }
+
+    // &:hover, &:focus
+    &:hover {
+      text-decoration: none;
+      color: var(--color-primary);
+    }
+
+    // &:focus
+    &:focus {
+      text-decoration: none;
+    }
+  }
+
+  // &--secondary
+  &--secondary {
+    color: var(--color-black);
+
+    // behavior: bg(Color-black)
+    @include behavior-ft-helper-bg(Color-black) {
+      color: var(--color-white);
+    }
+
+    // &:hover, &:focus
+    &:hover,
+    &:focus {
+      color: var(--color-primary);
+
+      @if $brand ==revistas {
+        // behavior-parent(woman)
+        @include behavior-parent(woman) {
+          color: var(--color-tertiary);
+        }
+      }
+
+      // &:after
+      &:after {
+        background-color: var(--color-primary);
+        text-decoration: none;
+
+        // behavior-parent(ft-brand-revistas)
+        @if $brand ==revistas {
+          color: var(--color-secondary);
+          // behavior-parent(woman)
+          @include behavior-parent(woman) {
+            background-color: var(--color-tertiary);
+          }
+        }
+      }
+    }
+  }
+
+  // &--tertiary
+  &--tertiary {
+    color: var(--color-quaternary);
+
+    // behavior: bg(Color-black)
+    @include behavior-ft-helper-bg(Color-black) {
+      color: var(--color-white);
+    }
+
+    // &:hover
+    &:hover,
+    &:focus {
+      color: var(--color-primary);
+      // behavior-parent(ft-brand-revistas)
+      @if $brand ==revistas {
+        color: var(--color-secondary);
+      }
+
+      // &:after
+      &:after {
+        background-color: var(--color-primary);
+        text-decoration: none;
+        // behavior-parent(ft-brand-revistas)
+        @if $brand ==revistas {
+          color: var(--color-secondary);
+        }
+      }
+    }
+  }
+
+  // &:active
+  &:active {
+    color: var(--color-primary);
+
+    // behavior: bg(Color-black)
+    @include behavior-ft-helper-bg(Color-black) {
+      color: var(--color-white);
+    }
+
+    // &:after
+    &:after {
+      background-color: var(--color-secondary);
+      text-decoration: none;
+    }
+  }
+
+  // &--has
+  &--has {
+    // &Icon
+    &Icon {
+      @include padding(null null null 2rem);
+      @include border-width(0);
+      display: inline-flex;
+      word-wrap: break-word;
+      transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      color: var(--color-primary);
+      background-color: transparent;
+      @include min-click-area();
+
+      // @if $brand ==revistas
+      @if $brand ==revistas {
+        color: var(--color-secondary);
+      }
+
+      // behavior: bg(Color-black)
+      @include behavior-ft-helper-bg(Color-black) {
+        color: var(--color-white);
+      }
+
+      // &:before
+      &:before {
+        content: "";
+        @include position(absolute, 0 null 0 0);
+        @include margin(auto null auto null);
+        @include size(1.3rem);
+        pointer-events: none;
+        @include background-setup(
+          // img path
+          map-icons(chevrons, brand--default),
+          // position and size
+          "center left / contain",
+          // repeat
+          no-repeat,
+          // attachment
+          null,
+          // origin
+          null,
+          // clip
+          null,
+          // color
+          transparent
+        );
+        transform: rotate(360deg);
+
+        // @if $brand ==sport
+        @if $brand ==sport {
+          filter: map-filters(reds, brand--sport);
+        }
+
+        // @if $brand ==epe
+        @if $brand ==epe {
+          filter: map-filters(blues, brand--epe);
+        }
+
+        // @if $brand ==ux
+        @if $brand ==ux {
+          filter: map-filters(greys, brand--500);
+        }
+
+        // @if $brand ==ep
+        @if $brand ==ep {
+          filter: map-filters(reds, brand--ep);
+        }
+
+        // @if $brand ==regionales
+        @if $brand ==regionales {
+          filter: map-filters(blues, brand--regionales);
+        }
+
+        // @if $brand ==revistas
+        @if $brand ==revistas {
+          // behavior-brand: woman
+          @include behavior-parent(woman) {
+            filter: map-filters(reds, brand--woman);
+          }
+
+          // behavior-brand: cuore
+          @include behavior-parent(cuore) {
+            filter: map-filters(reds, brand--cuore);
+          }
+
+          // behavior-brand: viajar
+          @include behavior-parent(viajar) {
+            filter: map-filters(blues, brand--viajar);
+          }
+
+                    // behavior-brand: stilo
+          @include behavior-parent(stilo) {
+            filter: map-filters(reds, brand--stilo);
+          }
+        }
+
+        // behavior: bg(Color-black)
+        @include behavior-ft-helper-bg(Color-black) {
+          filter: map-filters(whites, brand--all);
+        }
+      }
+
+      // &-plus
+      &-plus {
+        @include padding(1rem null 1rem 3rem);
+        font-weight: 600;
+
+        // &::before
+        &:before {
+          content: "";
+          @include position(absolute, 0 null 0 0);
+          @include margin(auto null auto null);
+          @include size(2.5rem, 2.5rem);
+          background-image: url("#{$images-path}/icons/circle-plus.svg"); 
+          background-repeat: no-repeat;
+          background-size: auto;
+        }
+      }
+
+      // &-plus
+      &-mail {
+        @include padding(1rem null 1rem 3rem);
+        font-weight: 600;
+
+        // &::before
+        &:before {
+          content: "";
+          @include position(absolute, 0 null 0 0);
+          @include margin(auto null auto null);
+          @include size(2rem, 2rem);
+          background-image: url("#{$images-path}/icons/icons-mail.svg"); 
+          background-repeat: no-repeat;
+          background-size:contain;
+        }
+      }
+    }
+  }
+
+  // &--nav
+  &--nav {
+    @include border-width(0);
+    @include font--body-M--small;
+    @include fontBold;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: fit-content;
+    word-wrap: break-word;
+    transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    color: var(--color-primary);
+    background-color: transparent;
+    @include min-click-area();
+
+    // @if $brand ==revistas
+    @if $brand ==revistas {
+      color: var(--color-secondary);
+    }
+
+    // &:before
+    &::before {
+      @include size(1.3rem);
+      display: block;
+      background-color: var(--color-primary);
+
+      // @if $brand ==revistas
+      @if $brand ==revistas {
+        background-color: var(--color-secondary);
+      }
+
+      @include mask-setup(
+        // img path
+        map-icons(chevrons, brand--default),
+        // position
+        center bottom,
+        // size
+        contain,
+        // repeat
+        no-repeat,
+        // origin
+        null,
+        // clip
+        null,
+        // mode
+        null,
+        // composite
+        null
+      );
+    }
+
+    // &Prev
+    &Prev {
+      // behavior: bg(Color-black)
+      @include behavior-ft-helper-bg(Color-black) {
+        color: var(--color-white);
+      }
+      // &:before
+      &::before {
+        content: "";
+        transform: rotate(90deg);
+      }
+    }
+
+    // &Next
+    &Next {
+      flex-direction: row-reverse;
+      justify-self: flex-end;
+      // behavior: bg(Color-black)
+      @include behavior-ft-helper-bg(Color-black) {
+        color: var(--color-white);
+      }
+      // &:before
+      &::before {
+        content: "";
+        transform: rotate(-90deg);
+      }
+    }
+  }
+}

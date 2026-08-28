@@ -1,0 +1,109 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+.ft-readMore {
+  // GENERALS
+  pointer-events: none;
+  @include margin(null null 2rem null);
+  display: flex;
+  flex-direction: column;
+
+  // &__content
+  &__content {
+    @include margin(0);
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* 3 líneas de texto */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    position: relative;
+
+    // behavior-parent(ft-readMore--higher)
+    @include behavior-parent(ft-readMore--higher) {
+      -webkit-line-clamp: unset;
+      max-height: 20rem;
+    }
+
+    // &>*
+    &>* {
+      position: relative;
+      z-index: 0;
+    }
+
+    // a
+    a {
+      pointer-events: auto;
+    }
+
+    // &:after
+    &:after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      max-height: 20rem;
+      position: absolute;
+      bottom: 0;
+      background: linear-gradient(to bottom, transparent, var(--color-white)99%);
+      pointer-events: none;
+    }
+  }
+  
+  // &__btn
+  &__btn {
+    position: relative;
+    @include margin(1rem 0 1rem 0);
+    display: inline-block;
+    width: fit-content;
+    cursor: pointer;
+    pointer-events: auto;
+    @include font--body-S;
+    
+    .ft-link, .ft-btn {
+      @include min-click-area();
+      
+      //&:before
+      &:before {
+        content: "Leer más ⏷";
+      }
+    }
+
+
+    // behavior-parent(ft-readMore--has-button)
+    @include behavior-parent(ft-readMore--has-button) {
+      left: 50%;
+      transform: translatex(-50%);
+    }
+  }
+    
+  &[open] {
+    .ft-readMore__btn {
+      // behavior-parent(ft-readMore--not-less)
+      @include behavior-parent-nested(ft-readMore--not-less) {
+        display: none;
+      }
+
+      // .ft-link
+      .ft-link, .ft-btn {
+        // &:before
+        &:before {
+          content: "Leer menos ⏶";
+        }
+      }
+    }
+    
+    .ft-readMore__content {
+      -webkit-line-clamp: unset;
+      max-height: unset;
+      overflow: visible;
+      
+      &:after {
+        content: none;
+      }
+    }
+  }
+}
+  

@@ -1,0 +1,240 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// ft-RADIO
+// ===============================================
+.ft-radio
+{
+  // generals
+  // ---------------------------------------------
+  @include position(relative, null null null null);
+   @include margin(null 2rem null null);
+  // ---------------------------------------------
+
+  // &__label
+  // ---------------------------------------------
+  &__label
+  {
+    // generals
+    @include padding(null null null 3rem);
+    @include font--body-XXL;
+    color: var(--color-black);
+    display: flex;
+    line-height: 2rem;
+
+
+    // behavior: bg(Color-black)
+    @include behavior-ft-helper-bg(Color-black)
+    {
+      color: var(--color-white);
+    }
+
+    // &:before
+    &:before
+    {
+      // generals
+      content: "";
+      @include position(absolute, 0 null null 0);
+      @include size(2rem, 2rem);
+      @include border-style(solid);
+      @include border-width(0.2rem);
+      @include border-top-radius(100%);
+      @include border-bottom-radius(100%);
+      transition: all 250ms ease;
+      @include border-color(var(--color-quaternary));
+
+
+      // behavior: bg(Color-black)
+      @include behavior-ft-helper-bg(Color-black)
+      {
+        @include border-color(var(--color-mediumGrey));
+      }
+
+      // end // &:before
+    }
+
+    // &:hover
+    &:hover
+    {
+
+      // &:before
+      &:before
+      {
+        box-shadow: 0 0 0.4rem 0 rgba(0, 0, 0, 0.25);
+      }
+
+      // end // &:hover
+    }
+
+    // end // &__label
+  }
+
+  // ---------------------------------------------
+
+  // &__input
+  // ---------------------------------------------
+  &__input
+  {
+    // generals
+    @include position(absolute, null null null null);
+    opacity: 0;
+    pointer-events: none;
+
+    // + .ft-radio__label
+    +.ft-radio__label
+    {
+
+      // &:hover
+      &:hover
+      {
+        cursor: pointer;
+      }
+
+      // end + .ft-radio__label
+    }
+
+    // &:checked
+    &:checked
+    {
+
+      // ft-radio__label
+      +.ft-radio__label
+      {
+
+        // &:before
+        &:before
+        {
+          // generals
+          @include border-width(0.5rem);
+          @include border-color(var(--color-primary));
+          background-color: var(--color-white);
+
+          // behavior: bg(Color-black)
+          @include behavior-ft-helper-bg(Color-black)
+          {
+            @include border-color(var(--color-white));
+            background-color: var(--color-black);
+            // end // behavior: bg(Color-black)
+          }
+
+          // end // &:before
+        }
+
+        // end // ft-radio__label
+      }
+
+      // end // &:checked
+    }
+
+    // &:focus-visible
+    &:focus-visible
+    {
+
+      // ft-radio__label
+      +.ft-radio__label
+      {
+
+        // &:before
+        &:before
+        {
+          @include focus--custom(var(--color-primary));
+          // end // &:before
+        }
+
+        // end // ft-radio__label
+      }
+
+      // end // &:focus-visible
+    }
+
+    // &:disabled
+    &:disabled
+    {
+
+      // ft-radio__label
+      +.ft-radio__label
+      {
+        // generals
+        color: var(--color-darkGrey);
+
+        // &:before
+        &:before
+        {
+          @include border-color(var(--color-mediumGrey));
+          background-color: var(--color-lightGrey);
+          box-shadow: inset 0 0 0 0.4rem var(--color-lightGrey);
+
+          // behavior: bg(Color-black)
+          @include behavior-ft-helper-bg(Color-black)
+          {
+            background-color: var(--color-darkGrey);
+            box-shadow: inset 0 0 0 0.4rem var(--color-darkGrey);
+            // end // behavior: bg(Color-black)
+          }
+
+          // end // &:before
+        }
+
+        // end // ft-radio__label
+      }
+
+      // &:checked
+      &:checked
+      {
+
+        // ft-radio__label
+        +.ft-radio__label
+        {
+
+          // &:before
+          &:before
+          {
+            background-color: var(--color-white);
+            box-shadow: inset 0 0 0 0.4rem var(--color-white);
+
+            // behavior: bg(Color-black)
+            @include behavior-ft-helper-bg(Color-black)
+            {
+              background-color: var(--color-black);
+              box-shadow: inset 0 0 0 0.4rem var(--color-black);
+              @include border-color(var(--color-darkGrey));
+              // end // behavior: bg(Color-black)
+            }
+
+            // end // &:before
+          }
+
+          // end // ft-radio__label
+        }
+
+        // end // &:checked
+      }
+
+      // &:hover
+      &:hover
+      {
+
+        // ft-radio__label
+        +.ft-radio__label
+        {
+          cursor: not-allowed;
+        }
+
+        // end // &:hover
+      }
+
+      // end // &:disabled
+    }
+
+    // end // &__input
+  }
+
+  // ---------------------------------------------
+
+  // END // ft-RADIO
+}
+
+// ===============================================

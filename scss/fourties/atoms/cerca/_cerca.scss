@@ -1,0 +1,85 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// ft-check
+// ===============================================
+.cerca
+{
+  $self: &;
+
+  // &__label
+  &.onboarding{
+    background-color: #F6F4EF;
+     // ft-layout-grid-flex__row
+    .ft-layout-grid-flex__row{
+      max-width: none;
+      padding:0;
+      width: 100%;
+    }
+    // ft-layout-grid-flex__col-addsContent
+    .ft-layout-grid-flex__col-addsContent{
+        min-width: 0;
+        max-width: none;
+        flex-basis: 99.4%;
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+          @include min-screen(1024px) {
+               min-width: 1002px;
+            }
+    }
+    .ft-layout-grid-flex__colSm-6.ft-helper-display-block.ft-helper-align-left img.ft-helper-img-rd{
+        @include min-screen(1024px) {
+          width:auto;
+          height:650px;
+       }
+    }
+     .ft-layout-grid-flex__colSm-6.ft-helper-display-flex.ft-helper-align-right img.ft-helper-img-rd{
+        @include min-screen(1024px) {
+          width:auto;
+          height:650px;
+       }
+    }
+    .mod-h1{
+      text-align: center;
+      margin: 0 2rem ;
+      max-width:100%;
+
+       @include min-screen(1024px) {
+        text-align: left;
+        margin-left: 0 0 0 2rem;
+        max-width: 650px;
+       }
+    }
+    .ft-list {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .ft-list--has-icon .ft-list__item{
+      display:flex;
+      flex-direction:column;
+        @include min-screen(1024px) {
+        display:block;
+       }
+    }
+    .ft-mol-tapbar{
+          display: none;
+    }
+    .ft-org-breadcrumb{
+    display: none;
+    }
+    .ft-mol-ticker{
+      display:none;
+    }
+    #footer-media{
+      display:none;
+    }
+
+  }
+
+}
+
+// ======================

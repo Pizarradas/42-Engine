@@ -1,0 +1,81 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// .ft-img
+// ===============================================
+.ft-img {
+  // picture
+  picture {
+    @include position(relative, null null null null);
+    display: block;
+  }
+
+  // figcaption
+  figcaption {
+    @include margin(null null 0 null);
+
+    // min-screen(768px)
+    @include min-screen(768px) {
+      @include margin(null null 2rem null);
+    }
+ /* // @if $brand(revistas)
+ @if $brand ==revistas
+ {
+    // behavior-parent(woman)
+    @include behavior-parent(woman) {
+      @include margin(null null 1rem null);
+    @include padding(null null 1rem null);
+      @include border-style(null null solid null);
+      @include border-width(0.1rem);
+      @include border-color(var(--color-mediumGrey));
+    }
+ } */
+    
+  }
+
+  // .ft
+  .ft {
+    // &-helper
+    &-helper {
+      // &-img
+      &-img {
+        // &-rd
+        &-rd {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  // &--mw
+  &--mw {
+    // picture
+    picture {
+      display: flex;
+      justify-content: center;
+    }
+
+    // figcaption
+    figcaption {
+      text-align: center;
+    }
+
+    // .ft
+    .ft {
+      // &-helper
+      &-helper {
+        // &-img
+        &-img {
+          // &-rd
+          &-rd {
+            @include size(auto);
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

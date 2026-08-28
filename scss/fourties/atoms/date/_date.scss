@@ -1,0 +1,197 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// ft-date
+// ===============================================
+.ft-date
+{
+  @include margin(null null 0.5rem null);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-quaternary);
+
+    // @if $brand(revistas)
+   @if $brand ==revistas
+    {
+       @include margin(0);
+    }
+
+  // ft-org-cardHome--Vfeatured
+  @include behavior-parent(ft-org-cardHome--Vfeatured,ft-org-cardHome--Hfeatured ){
+   display:none;
+  }
+  @include min-screen(768px)
+  {
+    justify-content: flex-start;
+  }
+
+  // &__text
+  // ---------------------------------------------
+  &__text
+  {
+    @include margin(0 null 0 null);
+    @include font--body-S--small;
+     // behavior parent: ft-org-cardHome--xs
+    @include behavior-parent(ft-org-cardHome--xs){
+      @include font--body-XS--small;
+    }
+     &:has(> .ft-helper-hide-screenReader:only-child) {
+      width: 0;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+  }
+    // behavior parent: ft-date--lurid
+    @include behavior-parent(ft-date--lurid)
+    {
+      @include font--body-M--small;
+      font-weight:bold;
+    }
+
+  
+    /* Inicio Cambios 6305 */
+    &Place{
+        // ft-date--lurid
+      @include behavior-parent(ft-date--lurid){
+       display:none;
+      }
+      // ft-org-cardHome
+      @include behavior-parent(ft-org-cardHome){
+        display: flex;
+        position:relative;
+        @include margin(null null null 1rem); 
+        @include padding(null null null 0);
+        // &:before
+          &:before{
+            content:"|";
+            @include position(absolute, 0 0 0 -10px);
+            color: var(--color-mediumGrey);
+          }
+        }
+        // ft-org-cardHome--xs
+      @include behavior-parent(ft-org-cardHome--xs){
+        position:relative;
+        display: flex;
+        @include margin(.2rem null null 0);
+        @include padding(null null null 0);
+        // &:before
+          &:before{
+            content:none;
+          }
+        }
+        // ft-org-cardHome--textonly
+        @include behavior-parent(ft-org-cardHome--textonly){
+          @include margin(null null null 0); 
+          @include padding(null null null 0);
+          // &:before
+          &:before{
+            content:"";
+          }
+         }
+      }
+    &Time{
+      @include behavior-parent(ft-mol-writer--cardHome){
+        display:none;
+      }
+     
+      
+    }
+  }
+    // &__reload
+    // ---------------------------------------------
+    &__reload 
+    {
+      @include font--body-S--small;
+     
+      @include behavior-parent(ft-mol-tracking){
+        display:none;
+      }
+      @include behavior-parent(ft-org-cardHome){
+        display:none;
+      }
+      @include behavior-parent(ft-mol-writer--cardHome){
+        display:none;
+      }
+     
+      @include behavior-parent(ft-org-directNews){
+        display:none;
+      }
+      @include behavior-parent(ft-date--lurid){
+        display:none;
+      }
+      @include behavior-parent(ft-date--inline){
+        position:relative;
+        display: flex;
+        @include margin(0 null null 0.5rem);
+        @include padding(null null null 1rem);
+        // &:last-of-type
+      &:last-child
+      {
+        @include margin(null null null 0);
+        @include padding(null null null 0);
+        @include border-style(null null null null);
+        @include border-width(null null null 0);
+
+        @include min-screen(768px)
+        {
+          @include margin(null null null 0.5rem);
+          @include padding(null null null 0.5rem);
+          @include border-style(null null null solid);
+          @include border-width(null null null 0.1rem);
+          @include border-color(null null null var(--color-quaternary));
+        }
+      }
+      }
+    }
+    /* Fin Cambios 6305 */
+
+  // &__extra
+  // ---------------------------------------------
+  &__extra
+  {
+    @include margin(.5rem null null null);
+    color: var(--color-darkGrey);
+    white-space: pre-line;
+  }
+
+  // &--lurid
+  // ---------------------------------------------
+  &--lurid
+  {
+    color: var(--color-black);
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  // &--center
+  // ---------------------------------------------
+  &--center
+  {
+    align-items: center;
+    justify-content: center;
+  }
+
+  // &--right
+  // ---------------------------------------------
+  &--right
+  {
+    align-items: flex-end;
+  }
+
+  // &--inline
+  // ---------------------------------------------
+  &--inline
+  {
+    flex-direction: column;
+
+    @include min-screen(768px)
+    {
+      flex-direction: row;
+    }
+  }
+}

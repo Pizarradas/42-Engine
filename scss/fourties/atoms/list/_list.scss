@@ -1,0 +1,1020 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// ft-LIST
+// ===============================================
+.ft-list {
+  @include margin(1rem null 2rem null);
+  list-style: none;
+  @include font--body-XXL;
+
+  // &__item
+  &__item {
+    @include position(relative, null null null null);
+
+    //cabecera
+    @include behavior-parent(ft-org-masthead) {
+      @include font--body-M;
+      @include fontBold;
+    }
+  }
+
+  // &--primary
+  &--primary {
+    // .ft
+    .ft {
+      // &-list
+      &-list {
+        // &__item
+        &__item {
+          @include padding(null null null 1.5rem);
+
+          // &:not(:last-of-type)
+          &:not(:last-of-type) {
+            @include margin(null null 0.5rem null);
+          }
+
+          // &:before
+          &:before {
+            content: "";
+            @include position(absolute, 1.2rem null null 0);
+            @include size(0.6rem, 0.6rem);
+            @include background-setup(
+              // img path
+              map-icons(bullets, brand--default),
+              // position and size
+              "0 0 / 100%",
+              // repeat
+              no-repeat,
+              // attachment
+              null,
+              // origin
+              null,
+              // clip
+              null,
+              // color
+              transparent
+            );
+            // behavior: nested
+            @include behavior-parent-nested(ft-list--nested) {
+              content: none;
+            }
+            filter: map-filters(blacks, brand--all);
+
+            // @if $brand ==sport
+            @if $brand ==sport {
+              filter: map-filters(reds, brand--sport);
+            }
+
+            // @if $brand ==epe
+            @if $brand ==epe {
+              filter: map-filters(blues, brand--epe);
+            }
+
+            // @if $brand ==ux
+            @if $brand ==ux {
+              filter: map-filters(greys, brand--500);
+            }
+
+            // @if $brand ==ep
+            @if $brand ==ep {
+              filter: map-filters(reds, brand--ep);
+            }
+
+            // @if $brand ==regionales
+            @if $brand ==regionales {
+              filter: map-filters(blues, brand--regionales);
+            }
+
+            // behavior: bg(Color-black)
+            @include behavior-ft-helper-bg(Color-black) {
+              filter: map-filters(whites, brand--all);
+            }
+          }
+        }
+
+        // &__link
+        &__link {
+          border-width: 0;
+          color: var(--color-black);
+          background-color: transparent;
+
+          // behavior: bg(Color-black)
+          @include behavior-ft-helper-bg(Color-black) {
+            color: var(--color-white);
+          }
+
+          // &:hover, &:focus-within
+          &:hover,
+          &:focus-within {
+            text-decoration: none;
+            color: var(--color-primary);
+          }
+        }
+      }
+    }
+  }
+
+  // &--inline
+  &--inline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  // &--chevron
+  &--chevron {
+    @include margin(0 null 0 null);
+
+    // .ft
+    .ft {
+      // &-list
+      &-list {
+        // &__item
+        &__item {
+          // &:not(:last-of-type)
+          &:not(:last-of-type) {
+            @include margin(null null 2rem null);
+          }
+
+          // &::before
+          &:before {
+            @include size(1.4rem, 1.2rem);
+            @include background-setup(
+              // img path
+              map-icons(chevrons, brand--default),
+              // position and size
+              "0 0 / contain",
+              // repeat
+              no-repeat,
+              // attachment
+              null,
+              // origin
+              null,
+              // clip
+              null,
+              // color
+              transparent
+            );
+            top: 0.8rem;
+            transform: rotate(-90deg);
+          }
+        }
+      }
+    }
+
+    // &-rgt
+    &-rgt {
+      // .ft
+      .ft {
+        // &-list
+        &-list {
+          // &__item
+          &__item {
+            @include margin(0 null 0 null);
+            @include padding(null 3rem null 0.5rem);
+
+            // &:not(:last-of-type)
+            &:not(:last-of-type) {
+              border-bottom-style: solid;
+              border-width: 0 0 0.1rem;
+              border-bottom-color: var(--color-lightGrey);
+            }
+            // &::before
+            &:before {
+              top: 50%;
+              bottom: 50%;
+              right: 0.7rem;
+              left: auto;
+              margin: auto 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // &--path
+  &--path {
+    @include margin(0 null 0 null);
+    @include padding(null null null 0);
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    list-style-type: none;
+
+    // .ft
+    .ft {
+      // &-list
+      &-list {
+        // &__item
+        &__item {
+          @include padding(1rem);
+          @include border-style(solid);
+          @include border-width(0.2rem);
+          @include border-color(var(--color-primary));
+          @include border-top-radius(0.6rem);
+          @include border-bottom-radius(0.6rem);
+          @include margin(null 0 0 null);
+          background-color: var(--color-white);
+          color: var(--color-black);
+
+          // behavior: bg(Color-black)
+          @include behavior-ft-helper-bg(Color-black) {
+            @include border-color(var(--color-white));
+            color: var(--color-white);
+            background-color: var(--color-black);
+          }
+
+          // &:not(:last-of-type)
+          &:not(:last-of-type) {
+            @include margin(null 1rem 0 null);
+          }
+
+          // &:before
+          &:before {
+            content: none;
+          }
+        }
+      }
+    }
+  }
+
+  // &--numbered
+  &--numbered {
+    list-style: auto;
+    @include margin(null null null 1.5rem);
+
+    // .ft
+    .ft {
+      // &-list
+      &-list {
+        // &__item
+        &__item {
+          // generals
+          @include margin(null null 1rem null);
+
+          // &::marker
+          &::marker {
+            color: var(--color-primary);
+            // @if $brand(revistas)
+            @if $brand ==revistas {
+              color: var(--color-black);
+            }
+          }
+        }
+
+        // &__link
+        &__link {
+          color: var(--color-primary);
+
+          // behavior: bg(Color-black)
+          @include behavior-ft-helper-bg(Color-black) {
+            color: var(--color-white);
+          }
+
+          // &:hover, &:focus-within
+          &:hover,
+          &:focus-within {
+            text-decoration: none;
+            color: var(--color-black);
+          }
+        }
+      }
+    }
+
+    // &Big
+    &Big {
+      counter-increment: inst;
+      list-style: none;
+      @include margin(null null null 0);
+
+      // .ft
+      .ft {
+        // &-list
+        &-list {
+          // &__item
+          &__item {
+            @include padding(0 null 0 4.5rem);
+
+            // &:before
+            &:before {
+              content: none;
+            }
+          }
+
+          // &__title
+          &__title {
+            @include font--heading-XS;
+            // @if $brand ==revistas
+            @if $brand ==revistas {
+              font-family: var(--font-primary--bold);
+            }
+
+            // &:before
+            &:before {
+              @include position(absolute, 0 null null 0);
+              @include size(3.1rem, 2.5rem);
+              @include font--heading-XS;
+              @include padding(null 0.8rem null null);
+              @include border-style(null solid null null);
+              @include border-width(null 0.2rem null null);
+              @include border-color(null var(--color-black) null null);
+              content: counter(inst);
+              color: var(--color-black);
+              border-radius: 0%;
+              background-color: transparent;
+              // @if $brand ==revistas
+              @if $brand ==revistas {
+                @include size(fit-content);
+                min-width: 3.1rem;
+              }
+            }
+          }
+        }
+
+        //  &-text
+        &-text {
+          @include padding(null null null 4.5rem);
+        }
+      }
+
+      // .ft-text:first-of-type
+      .ft-text:first-of-type {
+        font-style: initial;
+        @include margin(2.5rem null null null);
+      }
+    }
+  }
+
+  // &-photoinfo
+  &-photoinfo {
+    @include padding(null null null 0);
+    @include margin(0);
+
+    // &__item
+    &__item {
+      @include position(relative, null null null null);
+      @include margin(null null 1.5rem null);
+      @include padding(null null 1.5rem null);
+      @include border-style(null null solid null);
+      @include border-width(null null 0.1rem null);
+      @include border-color(null null var(--color-mediumGrey) null);
+      display: flex;
+      align-items: flex-start;
+      flex-direction: row;
+
+      @include behavior-parent(ft-list-photoinfo--reverse) {
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+      }
+
+      // &:last-of-type
+      &:last-of-type {
+        @include margin(null null 0 null);
+        @include border-style(null null none null);
+      }
+    }
+
+    // &__img
+    &__img {
+      @include margin(null 2rem null null);
+      max-width: 100%;
+      height: auto;
+
+      //
+      &--alert {
+        @include size(2rem);
+        border-radius: 50%;
+
+        //  @include min-screen(768px)
+        @include min-screen(768px) {
+          @include size(2.6rem);
+        }
+      }
+    }
+
+    // &__content
+    &__content {
+      @include font--body-M;
+      display: flex;
+      flex-direction: column;
+
+      .ft-link {
+        @include margin(0.5rem null null null);
+      }
+    }
+
+    // &__title
+    &__title {
+      @include font--body-L--small;
+      @include fontBold;
+      @include margin(null null 0.5rem null);
+      display: block;
+    }
+  }
+
+  // &-counter
+  &-counter {
+    @include padding(null null null 0);
+    display: flex;
+    flex-wrap: wrap;
+
+    // &__item
+    &__item {
+      @include margin(null 0.5rem null null);
+      @include padding(1rem);
+      @include position(relative, null);
+      flex: 1;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+
+      // &:last-of-type
+      &:last-of-type {
+        @include margin(null 0 null null);
+      }
+    }
+
+    // &__number
+    &__number {
+      @include margin(0rem null null null);
+      display: block;
+    }
+  }
+
+  // &-functions
+  &-functions {
+    @include padding(null null null 0);
+
+    // &__txt
+    &__txt {
+      @include margin(0 null 0 null);
+    }
+
+    // &__item
+    &__item {
+      @include margin(null null 2.5rem null);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+
+      // &:last-of-type
+      &:last-of-type {
+        @include margin(null null 0 null);
+      }
+    }
+
+    // &__actions
+    &__actions {
+      @include margin(null null null auto);
+      display: inline-flex;
+      gap: 1.4rem;
+    }
+
+    // &--has
+    &--has {
+      // &-thumbnail
+      &-thumbnail {
+        // .ft
+        .ft {
+          // &-helper-img-rd
+          &-helper-img-rd {
+            @include margin(null 1.5rem null null);
+            flex-basis: calc(5.4rem - 1.5rem);
+          }
+
+          // &-list-functions
+          &-list-functions {
+            // &__txt
+            &__txt {
+              @include position(relative, null null null null);
+              @include padding(null null null 2.5rem);
+              flex-basis: calc(100% - 13.3rem);
+
+              // &:before
+              &:before {
+                content: "";
+                @include position(absolute, 0 null null 0);
+                @include size(2rem, 2rem);
+                // generals
+                @include background-setup(
+                  // img path
+                  map-icons(alerts, brand--okDefault),
+                  // position and size
+                  "0 0 / contain",
+                  // repeat
+                  no-repeat,
+                  // attachment
+                  null,
+                  // origin
+                  null,
+                  // clip
+                  null,
+                  // color
+                  transparent
+                );
+                filter: map-filters(greens, brand--success);
+              }
+            }
+          }
+        }
+      }
+
+      // &-icon-and-txt
+      &-icon-and-txt {
+        // [class*="__subtxt"]
+        [class*="__subtxt"] {
+          @include margin(0.4rem null null null);
+          display: block;
+          color: var(--color-black);
+
+          // behavior: bg(Color-black)
+          @include behavior-ft-helper-bg(Color-black) {
+            color: var(--color-white);
+          }
+        }
+
+        // [class*="__col-rgt"]
+        [class*="__col-rgt"] {
+          flex: auto;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          gap: 1.4rem;
+        }
+
+        // [class*="__col-lft"]
+        [class*="__col-lft"] {
+          @include font--body-M--small;
+          flex: auto;
+          flex-basis: calc(100% - 11rem);
+          display: flex;
+          align-items: flex-start;
+          justify-content: flex-start;
+
+          // [class*="ft-helper-img-rd"]
+          [class*="ft-helper-img-rd"] {
+            @include margin(null 0.8rem null null);
+          }
+        }
+
+        // [class*="__item"]
+        [class*="__item"] {
+          align-items: center;
+          justify-content: space-around;
+
+          // &:not(:last-child)
+          &:not(:last-child) {
+            @include margin(null null 1.5rem null);
+          }
+        }
+      }
+    }
+  }
+
+  // &-box
+  &-box {
+    @include padding(null null null 0);
+    display: table;
+
+    // &__icon
+    &__icon {
+      fill: var(--color-quaternary);
+    }
+
+    // &__text
+    &__text {
+      @include margin(0);
+      display: block;
+    }
+
+    // &__item
+    &__item {
+      @include position(relative, null);
+      @include margin(null 1rem 1rem null);
+      @include padding(1rem);
+      @include border-style(solid);
+      @include border-width(0.2rem);
+      @include border-color(var(--color-darkGrey));
+      @include border-top-radius(0.5rem);
+      @include border-bottom-radius(0.5rem);
+      display: inline-table;
+      width: auto;
+      text-align: center;
+      background-color: var(--color-white);
+      @include min-screen(768px) {
+        min-width: 11rem;
+      }
+
+      // &:last-of-type
+      &:last-of-type {
+        @include margin(null 0 null null);
+      }
+
+      // &Is
+      &Is {
+        // &-active
+        &-active {
+          @include border-color(var(--color-primary));
+
+          // .ft
+          .ft {
+            // &-list-boxes
+            &-list-boxes {
+              // &__icon
+              &__icon {
+                fill: var(--color-primary);
+              }
+
+              // &__text
+              &__text {
+                color: var(--color-primary);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // &--tight
+    &--tight {
+      @include margin(0 null 0 null);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+      width: 100%;
+
+      // [class*="__icon"]
+      [class*="__icon"] {
+        max-width: 4.8rem;
+        fill: none;
+        @include min-screen(1000px) {
+          max-width: none;
+        }
+      }
+
+      // [class*="__item"]
+      [class*="__item"] {
+        @include margin(null 0 0 null);
+        @include padding(0);
+        flex: 1;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        justify-content: center;
+        min-width: none;
+        text-align: left;
+        border-width: 0;
+        border-radius: 0;
+        @include min-screen(1000px) {
+          @include padding(1.5rem);
+          justify-content: flex-start;
+        }
+
+        // &::not(:first-of-type)
+        &:not(:first-of-type) {
+          // &:before
+          &:before {
+            content: "";
+            @include position(absolute, 0 null 0 0);
+            @include margin(auto null auto null);
+            width: 0.1rem;
+            height: calc(100% - 3rem);
+            background-color: var(--color-darkGrey);
+            @include min-screen(1000px) {
+              display: none;
+            }
+          }
+        }
+      }
+
+      // [class*="__text"]
+      [class*="__text"] {
+        display: none;
+        @include min-screen(1000px) {
+          display: flex;
+          flex-basis: 100%;
+        }
+      }
+    }
+  }
+
+  // &-box
+  &-block {
+    @include padding(null null null 0);
+    @include margin(1rem 0 0 0);
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+
+    @include min-screen(768px) {
+      flex-direction: row;
+    }
+    //behavior: bg(Color-black)
+    @include behavior-ft-helper-bg(Color-black) {
+      color: var(--color-white);
+    }
+
+    // &__icon
+    &__icon {
+      @include margin(null 0.5rem null null);
+
+      // behavior: bg(Color-black)
+      @include behavior-ft-helper-bg(Color-black) {
+        filter: map-filters(whites, brand--all);
+      }
+    }
+
+    // &__text
+    &__text {
+      @include margin(0);
+      display: block;
+    }
+
+    // &__item
+    &__item {
+      @include position(relative, null);
+      @include margin(null 2rem 0rem null);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 44px;
+      min-width: 44px;
+
+      // &:last-of-type
+      &:last-of-type {
+        @include margin(null 0 null null);
+      }
+      @include behavior-parent(ft-list-block--col) {
+        flex-direction: column;
+        @include margin(null 0 2rem null);
+        flex-wrap: wrap;
+        white-space: normal;
+      }
+    }
+  }
+
+  // &-gridded
+  &-gridded {
+    @include margin(0 null 0 null);
+    border-top: solid 0.4rem;
+    border-bottom: solid 0.4rem;
+    border-color: var(--color-black);
+    @include min-screen(1000px) {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4rem;
+      border-width: 0;
+    }
+
+    // [class*="__item"]
+    [class*="__item"] {
+      @include padding(1.8rem null 1.8rem null);
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      @include min-screen(1000px) {
+        @include padding(3rem null 3rem null);
+        flex: 1 1 25%;
+        border-top: solid 0.4rem;
+        border-color: var(--color-black);
+      }
+
+      // &:not(:last-of-type)
+      &:not(:last-of-type) {
+        border-bottom: 0.1rem solid var(--color-darkGrey);
+        // @include min-screen(1000px)
+        @include min-screen(1000px) {
+          border-bottom-width: 0;
+        }
+      }
+    }
+  }
+
+  // &--has
+  &--has {
+    // &-icon
+    &-icon {
+      width: 100%;
+      // @include min-screen(768px)
+      @include min-screen(768px) {
+        width: auto;
+      }
+      // .ft
+      .ft {
+        // &-list
+        &-list {
+          // &__link
+          &__link {
+            display: flex;
+            align-items: center;
+
+            // &:hover, &:focus-within
+            &:hover,
+            &:focus-within {
+              img {
+                // behavior: brand-sport
+                @if $brand ==sport {
+                  filter: map-filters(reds, brand--sport);
+                }
+
+                // behavior: brand-epe
+                @if $brand ==epe {
+                  filter: map-filters(blues, brand--epe);
+                }
+
+                // behavior: brand-ux
+                @if $brand ==ux {
+                  filter: map-filters(greys, brand--500);
+                }
+
+                // behavior: brand-ep
+                @if $brand ==ep {
+                  filter: map-filters(reds, brand--ep);
+                }
+
+                // behavior: brand-regionales
+                @if $brand ==regionales {
+                  filter: map-filters(blues, brand--regionales);
+                }
+
+                // behavior: brand-revistas
+                @if $brand ==revistas {
+                  // behavior behavior-brand: woman
+                  @include behavior-parent-nested(woman) {
+                    filter: map-filters(reds, brand--woman);
+                  }
+
+                  // behavior behavior-brand: cuore
+                  @include behavior-parent-nested(cuore) {
+                    filter: map-filters(reds, brand--cuore);
+                  }
+
+                  // behavior behavior-brand: viajar
+                  @include behavior-parent-nested(viajar) {
+                    filter: map-filters(blues, brand--viajar);
+                  }
+                  // behavior-brand: stilo
+                  @include behavior-parent-nested(stilo) {
+                    filter: map-filters(reds, brand--stilo);
+                  }
+                }
+
+                // behavior: bg(Color-black)
+                @include behavior-ft-helper-bg(Color-black) {
+                  filter: map-filters(whites, brand--all);
+                }
+
+                // EXCEPCIÓN ALERT
+                &.ft-list-photoinfo__img--alert {
+                  filter: none;
+                }
+              }
+            }
+
+            // span:nth-of-type(2)
+            span:nth-of-type(2) {
+              margin-left: auto;
+              padding-left: 2rem;
+            }
+          }
+
+          // &__item
+          &__item {
+            @include padding(1rem null 1rem null);
+            text-align: left;
+            display: flex;
+            align-items: center;
+            // &:not(:last-of-type)
+            &:not(:last-of-type) {
+              @include margin(null null 0 null);
+            }
+          }
+
+          // &-photoinfo
+          &-photoinfo {
+            // &__img
+            &__img {
+              @include margin(null 1rem null null);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // &--add  (lista para anadir/quitar items: cada __item es una FILA
+  &--add {
+    // .ft-list__item
+    .ft-list__item {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      @include padding(1.2rem 1.6rem);
+      background: var(--color-white);
+      text-align: left;
+      cursor: pointer;
+
+      // @include min-screen(768px)
+      @include min-screen(768px) {
+        @include padding(1.2rem 2rem);
+      }
+
+      // &::before  (anula el bullet que aporta --primary)
+      &::before {
+        content: none;
+      }
+
+      // &+&  (separador entre filas)
+      & + .ft-list__item {
+        @include border-style(solid null null null);
+        @include border-width(0.1rem null null null);
+        @include border-color(#edf1f5 null null null);
+      }
+
+      // .ft-list-photoinfo__img  (icono pin)
+      .ft-list-photoinfo__img {
+        flex: 0 0 auto;
+        @include margin(null 0 null null);
+        @include size(2.4rem);
+      }
+
+      // .ft-btn-nav  (control redondo +/-; click capturado por el <li>)
+      .ft-btn-nav {
+        flex: 0 0 auto;
+        @include margin(null null null auto);
+        @include border-width(0.1rem);
+        @include border-color(#e3e7ee);
+        background-color: var(--color-white);
+        pointer-events: none;
+        transition: background-color 0.2s ease, border-color 0.2s ease;
+
+        // &__icon::after  (glifo "plus" por defecto)
+        &__icon::after {
+          @include size(1.2rem);
+          background-image: url("#{$images-path}/icons/nav-solid-light-actions-plus.svg");
+        }
+      }
+
+      // &--is-active  (hover / foco / activo via JS)
+      &:hover,
+      &:focus-visible,
+      &--is-active {
+        background: #f7f9fc;
+        outline: none;
+
+        // el control se rellena de verde con el icono en blanco
+        .ft-btn-nav {
+          @include border-color(var(--color-functional-success));
+          background-color: var(--color-functional-success);
+        }
+
+        .ft-btn-nav__icon::after {
+          filter: brightness(0) invert(1);
+        }
+      }
+
+      // &--is-selected
+      &--is-selected {
+        background: linear-gradient(180deg, #f6fcf7 0%, #edf8ef 100%);
+
+        // el control pasa a oscuro y el icono a "delete" blanco
+        .ft-btn-nav {
+          @include border-color(#111827);
+          background-color: #111827;
+        }
+
+        .ft-btn-nav__icon::after {
+          background-image: url("#{$images-path}/icons/nav-stroke-bold-delete.svg");
+          filter: brightness(0) invert(1);
+        }
+
+        // hover sobre item seleccionado: el control vira a rojo
+        // (anticipa la accion de quitar)
+        &:hover,
+        &:focus-visible,
+        &.ft-list__item--is-active {
+          .ft-btn-nav {
+            @include border-color(var(--color-functional-error));
+            background-color: var(--color-functional-error);
+          }
+        }
+      }
+    }
+
+    // a11y: respeta preferencia del usuario
+    @media (prefers-reduced-motion: reduce) {
+      .ft-list__item,
+      .ft-btn-nav,
+      .ft-btn-nav__icon::after {
+        transition: none;
+      }
+    }
+  }
+}

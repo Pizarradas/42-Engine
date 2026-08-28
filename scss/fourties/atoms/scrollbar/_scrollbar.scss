@@ -1,0 +1,84 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// SCROLLBAR
+// ================================================
+[data-scrollbar] {
+  @include position(relative, null null null null);
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  // ====== TRACKS (los carriles donde se mueve el thumb) ======
+  .scrollbar-track {
+    background: rgba(0, 0, 0, 0.08); // color del carril
+    border-radius: 0;                // esquinas cuadradas
+
+    &.scrollbar-track-y {
+      width: 6px;  // grosor vertical (ancho del carril)
+      right: 2px;  // separación opcional del borde derecho
+    }
+
+    &.scrollbar-track-x {
+      height: 6px; // grosor horizontal (alto del carril)
+      bottom: 2px; // separación opcional del borde inferior
+      background-color: transparent;
+
+      // &:before
+      &:before {
+        content: "";
+        @include position(absolute, .2rem null 0 null);
+        @include margin(auto null auto null);
+        @include size(100%, .2rem);
+        background-color: var(--color-lightGrey);
+      }
+    }
+  }
+
+  // ====== THUMBS (la parte que se mueve sobre el track) ======
+  .scrollbar-thumb {
+    background: transparent; // ocultamos el fondo original del thumb
+    position: relative;      // necesario para posicionar ::after
+    height: .6rem;
+
+    // Thumb vertical
+    &.scrollbar-thumb-y {
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;        // ocupa toda la altura del track
+        left: 1px;
+        right: 1px;       // lo hace más estrecho (más fino)
+        background: linear-gradient(180deg, #555, #222); // degradado vertical
+        border-radius: 0; // esquinas cuadradas
+        transition: background 0.3s ease;
+      }
+
+      &:hover::after {
+        background: linear-gradient(180deg, #777, #333); // efecto al pasar el ratón
+      }
+    }
+
+    // Thumb horizontal
+    &.scrollbar-thumb-x {
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;         // ocupa todo el largo del track
+        top: 1px;
+        bottom: 1px;      // lo hace más delgado (menos alto)
+        background: var(--color-mediumGrey); // degradado horizontal
+        border-radius: 5rem; // esquinas cuadradas
+        transition: background 0.3s ease;
+      }
+
+      &:hover::after {
+        background: linear-gradient(90deg, #777, #333); // efecto al pasar el ratón
+      }
+    }
+  }
+}
