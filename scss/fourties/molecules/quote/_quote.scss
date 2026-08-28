@@ -1,0 +1,220 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// .ft-mol-quote
+// ===============================================
+.ft-mol-quote {
+  @include position(relative, null null null null);
+  @include margin(4rem null 4rem null);
+  @include padding(3.4rem);
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  background-color: var(--color-lightGrey);
+
+  // @if $brand ==revistas
+  @if $brand ==revistas {
+    @include margin(6rem auto 6rem auto);
+    @include padding(6rem 5rem);
+    @include border-color(var(--color-secondary));
+    @include border-style(solid);
+    @include border-width(0.1rem 0);
+    background-color: transparent;
+    align-items: center;
+    text-align: center;
+    // @include min-screen(768px)
+    @include min-screen(768px) {
+      @include padding(7rem 10%);
+    }
+  }
+  // &:before
+  &:before {
+    content: "";
+    @include position(absolute, -20px null null 2rem);
+    @include margin(auto);
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 42px;
+
+    // @if $brand ==ux
+    @if $brand ==ux {
+      background-image: url("#{$images-path}/icons/bloquote_black.svg");
+    }
+
+    // @if $brand ==sport
+    @if $brand ==sport {
+      background-image: url("#{$images-path}/icons/bloquote_sport.svg");
+    }
+
+    // @if $brand ==ep
+    @if $brand ==ep {
+      background-image: url("#{$images-path}/icons/bloquote_ep.svg");
+    }
+
+    // @if $brand ==epe
+    @if $brand ==epe {
+      background-image: url("#{$images-path}/icons/bloquote_epe.svg");
+    }
+
+    // @if $brand ==regionales
+    @if $brand ==regionales {
+      background-image: url("#{$images-path}/icons/bloquote_black.svg");
+    }
+
+    // @if $brand ==revistas
+    @if $brand ==revistas {
+      @include position(absolute, 10px null null 10%);
+      background-image: url("#{$images-path}/icons/bloquote_revistas.svg");
+
+      // @include min-screen(768px)
+      @include min-screen(768px) {
+        @include position(absolute, 20px null null 10%);
+      }
+    }
+  }
+
+  // &:after
+  &:after {
+    // @if $brand ==revistas
+    @if $brand ==revistas {
+      content: "";
+      @include position(absolute, null 10% 10px null);
+      @include margin(auto);
+      background-repeat: no-repeat;
+      background-image: url("#{$images-path}/icons/bloquote_revistas.svg");
+      transform: rotate(180deg);
+      width: 50px;
+      height: 42px;
+      @include min-screen(768px) {
+        @include position(absolute, null 10% 20px null);
+      }
+    }
+  }
+
+  // .ft
+  .ft {
+    // &-helper
+    &-helper {
+      // &-hoffset
+      &-hoffset {
+        // &-xs
+        &-xs {
+          @include margin(null null null 0);
+          @include min-screen(768px) {
+            @include margin(null null null -1rem);
+          }
+        }
+
+        // &-sm
+        &-sm {
+          @include margin(null null null 0);
+          @include min-screen(768px) {
+            @include margin(null null null -3rem);
+          }
+        }
+
+        // &-md
+        &-md {
+          @include margin(null null null 0);
+          @include min-screen(768px) {
+            @include margin(null null null -5rem);
+          }
+        }
+
+        // &-lg
+        &-lg {
+          @include margin(null null null 0);
+          @include min-screen(768px) {
+            @include margin(null null null -7rem);
+          }
+        }
+
+        // &-xlg
+        &-xlg {
+          @include margin(null null null 0);
+          @include min-screen(768px) {
+            @include margin(null null null -9rem);
+          }
+        }
+      }
+    }
+  }
+
+  // &__text
+  &__text {
+    @include margin(0);
+    @include font--heading-XXS;
+
+    // @if $brand ==revistas
+    @if $brand ==revistas {
+      font-family: var(--font-primary);
+      @include font--heading-M;
+      font-style: italic;
+    }
+  }
+
+  &__author {
+    @include margin(0.5rem 0 0 0);
+    @include font--body-M;
+    display: flex;
+    flex-wrap: wrap;
+
+    // @if $brand ==revistas
+    @if $brand ==revistas {
+      justify-content: center;
+    }
+
+    // behavior-parent: ft-mol-quote--basic
+    @include behavior-parent(ft-mol-quote--basic) {
+      justify-content: center;
+    }
+
+    // &--name
+    &--name {
+      @include margin(0);
+      color: var(--color-primary);
+    }
+
+    // &--status
+    &--status {
+      @include margin(0);
+      color: var(--color-quaternary);
+    }
+  }
+
+  // &--basic
+  &--basic {
+    @include padding(2.5rem);
+    @include border-color(var(--color-mediumGrey));
+    @include border-style(solid);
+    @include border-width(0.1rem 0);
+    background-color: transparent;
+    align-items: center;
+    text-align: center;
+
+    // @if $brand ==revistas
+    @if $brand ==revistas {
+      @include padding(3rem 5rem);
+      @include border-color(var(--color-secondary));
+      @include min-screen(768px) {
+        @include padding(4rem 10%);
+      }
+    }
+
+    // &.ft-mol-quote :before
+    &.ft-mol-quote {
+      // &:before
+      &:before {
+        content: none;
+      }
+
+      // &:after
+      &:after {
+        content: none;
+      }
+    }
+  }
+}

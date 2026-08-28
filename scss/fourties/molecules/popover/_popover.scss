@@ -1,0 +1,164 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// ft-mol-popover
+// ===============================================
+.ft-mol-popover
+{
+    // variables
+    $xy-border: (
+        top: t,
+        bottom: b,
+        left: l,
+        right: r
+    );
+
+// generals
+@include position (relative, null null null null);
+// display: inline-flex; Habilitar cuando se implemente la funcionalidad
+display: none;
+
+// &__content
+&__content
+{
+    @include padding(1rem 1rem 1.5rem 1rem);
+    @include font--body-M--small;
+    @include position (absolute, null null null null);
+    z-index: 200;
+    background: var(--color-lightGrey);
+    min-width: max-content;
+    min-height: fit-content;
+
+
+    @each $direction,
+    $d in $xy-border
+    {
+
+        // &.tooltip-#{$direction}
+        &.ft-mol-popover__content--#{$direction}
+        {
+            @if $direction ==top
+            {
+                bottom: 120%;
+                right: 0;
+                transform: translate(50%);
+
+                //min-screen(768px)
+                @include min-screen(768px)
+                {
+                    left: 0;
+                    transform: translate(0);
+                }
+            }
+
+            @else if $direction ==bottom
+            {
+                top: 120%;
+                right: 0;
+                transform: translate(0);
+
+                //min-screen(768px)
+                @include min-screen(768px)
+                {
+                    left: 0;
+                }
+
+            }
+
+            @else if $direction ==left
+            {
+                top: -10px;
+                right: 105%;
+            }
+
+            @else if $direction ==right
+            {
+                top: -10px;
+                left: 105%;
+            }
+
+            // &:before
+            &::before
+            {
+
+                border: solid transparent;
+                content: "";
+                height: 0;
+                width: 0;
+                @include position (absolute, null null null null);
+                @include border-color(null null var(--color-lightGrey) null);
+                @include border-width(10px);
+                @include margin (null null null -10px);
+                z-index: 2;
+
+                @if $direction ==top
+                {
+                    rotate: 180deg;
+                    bottom: -18px;
+                    right: calc(8% - #{3px});
+
+                    //min-screen(768px)
+                    @include min-screen(768px)
+                    {
+                        left: calc(8% - #{3px});
+                    }
+                }
+
+                @else if $direction ==bottom
+                {
+                    bottom: 100%;
+                    right: calc(8% - #{3px});
+
+                    //min-screen(768px)
+                    @include min-screen(768px)
+                    {
+                        left: calc(8% - #{3px});
+                    }
+
+                }
+
+                @else if $direction ==left
+                {
+                    @include margin (-10px null null null);
+                    top: 30%;
+                    left: calc(105% - #{3px});
+                    rotate: 90deg;
+                }
+
+                @else if $direction ==right
+                {
+
+                    @include margin (-10px null null null);
+                    top: 30%;
+                    left: calc(0% - #{10px});
+                    margin-top: -10px;
+                    rotate: 270deg;
+                }
+
+                // end // &:before
+            }
+
+            // end  // &.ft-tooltip--#{$direction}                                                                                   
+        }
+    }
+
+    // end  //  &:after
+}
+
+// &__text
+&__text
+{
+    @include margin(0.5rem);
+}
+
+.ft-btn-nav--close
+{
+    @include position (absolute, -14px -8px null null);
+    background: var(--color-lightGrey);
+}
+
+// end  // &__content
+}

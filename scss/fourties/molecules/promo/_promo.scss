@@ -1,0 +1,227 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// FT-MOL-PROMO
+// ===============================================
+.ft-mol-promo {
+  @include position(relative, null null null null);
+  @include padding(2rem 1.5rem 3rem 1.5rem);
+  @include margin(4rem 0);
+  border-radius:.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color-lightGrey);
+  overflow: visible;
+
+  //TABLET Y WEB
+  @include min-screen(1080px) {
+      flex-direction: row;
+      align-items: flex-start;
+
+    }
+
+
+
+&--dark{
+    background-color: var(--color-secondary);
+    color: #fff; 
+    * { color: #fff; }
+}
+    
+// caja contenedora imagen
+  &__media {
+    @include position(relative, null null null null);
+    @include margin(null 0 null null);
+    max-width: 100%;
+    width: auto;  
+    flex-shrink: 0;
+    aspect-ratio: unset;
+    display: flex;
+    overflow: visible; 
+
+    //TABLET Y WEB
+    @include min-screen(1080px) {
+       @include margin(null 1rem null null);
+       max-width: 50%;
+         aspect-ratio: 2 / 1;
+          display: block;
+         //espacio más grande para revistas
+          @if $brand ==revistas {
+              max-width: 55%;
+          }
+    }
+
+    .ft-helper-img-rd {
+      @include position(relative, null null null null);
+       @include margin(-60px null null null);
+        width: 100%;
+        height: auto;    
+        z-index: 10;
+
+        //TABLET Y WEB
+        @include min-screen(1080px) {
+          width: 570px;     
+        }
+    }
+  }
+// caja contenedora texto
+  &__content {
+    align-items: flex-start;
+    width: 100%;
+     //TABLET Y WEB
+        @include min-screen(1080px) {
+           flex: 1; // ocupa el resto del espacio
+           width:auto;
+        }
+  }
+
+// pretitulo
+&__pretitle{
+   @include font--body-S;
+   text-transform: uppercase;
+
+      //fuente para revistas
+            @if $brand ==revistas {
+              @include behavior-parent(cuore, stilo, woman){
+                 @include font--body-M;
+                  font-family: var(--font-primary--bold);
+              }
+              @include behavior-parent(viajar){
+               @include font--body-S;
+              }
+            
+            }
+}
+// titulo
+&__title{
+   @include font--heading-XS;
+   @include margin(0 0 1.5rem 0);
+   font-weight: 600;
+            //fuente para revistas
+            @if $brand ==revistas {
+              @include behavior-parent(cuore, stilo, woman){
+                @include font--heading-S;
+              }
+              @include behavior-parent(viajar){
+                @include font--heading-XS;
+                 font-weight: 600;
+              }
+            
+            }
+
+     //TABLET Y WEB
+        @include min-screen(1080px) {
+            //fuente para revistas
+            @if $brand ==revistas {
+            
+            @include behavior-parent(cuore, stilo, woman){
+                @include font--heading-L;
+              }
+              @include behavior-parent(viajar){
+                @include font--heading-S;
+                 font-weight: 600;
+              }
+            }
+        }
+}
+// texto
+&__txt{
+    @include font--body-XL;
+    @include margin(0 0 1.5rem 0);
+    font-weight: 500;
+
+      //fuente para revistas
+       @if $brand ==revistas {
+          @include behavior-parent(cuore, stilo, woman){
+                @include font--heading-XXS;
+                font-weight: 600;
+              }
+              @include behavior-parent(viajar){
+                @include font--body-XL;
+                 font-weight: 500;
+              }
+      
+       }
+     &Precio{
+      @include font--body-M--small;
+      white-space: nowrap;
+   
+      //TABLET Y WEB
+        @include min-screen(1080px) {
+         @include font--body-L--small;
+        }
+  }
+    &Destacado{
+      color:var(--color-primary);
+      @include font--heading-XS;
+      
+      //TABLET Y WEB
+        @include min-screen(1080px) {
+            //fuente para revistas
+       @if $brand ==revistas {
+          @include behavior-parent(cuore, stilo, woman){
+                @include font--heading-S;
+              }
+              @include behavior-parent(viajar){
+               @include font--heading-XS;
+              }
+      
+       }
+          
+        }
+    }
+
+}
+// listado
+&__item{
+  @include font--body-L--small;
+  @include margin(0 0 .3rem 0);
+  display: flex;
+  align-items: center;
+      //TABLET Y WEB
+        @include min-screen(1080px) {
+         @include font--body-XXL--small;
+        }
+}
+//icono del listado
+&__icon{
+  @include margin(null .3rem null null);
+  color: var(--color-primary);
+  width: 24px;
+  height: 24px;
+
+  //reseteo anterior del color blanco o negro para todo 
+  path{
+    color: var(--color-primary);
+  }
+}
+  // &--grey
+  &--grey {
+    @include padding(0);
+    @include margin(0 0.5rem 0 0);
+    text-align: right;
+  }
+
+.ft-mol-btnGroup{
+    top:1rem;
+}
+
+}
+// ===============================================
+
+// AMP
+// ===============================================
+.ft-mol-promo {
+    // .ft
+  .ft {
+    // &-img
+    &-img {
+      @include size(8.6rem);
+    }
+  }
+}
+// ===============================================

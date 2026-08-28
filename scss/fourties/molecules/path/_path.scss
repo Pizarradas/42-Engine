@@ -1,0 +1,956 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// =====================================================
+// Utils (átomos). Convierte cualquier string en url(...)
+// (SIN CAMBIOS)
+// =====================================================
+@function ensure-url($val) {
+  @if $val == null {
+    @return null;
+  }
+  $s: if(type-of($val) == "string", $val, "#{$val}");
+  @if str-index($s, "url(") == 1 {
+    @return unquote($s);
+  } // ya viene con url(...)
+  @return url(#{$s});
+}
+
+// =====================================================
+// AÑADIDO: Encadenar clases en el CONTENEDOR de marca
+// =====================================================
+// ¿Para qué sirve?
+// - Cuando necesitas que dos (o más) clases estén en el MISMO nodo contenedor,
+//   p. ej. `.faro-de-vigo.clubfaro .ft-mol-path { ... }`
+// - Evita tener que usar `&.clubfaro` dentro de un wrapper que deja el `&` en `.ft-mol-path`.
+//
+// ¿Cómo funciona?
+// - Construye `.brand.mod1.mod2...` en el contenedor con `@at-root` (evita prefijos indeseados).
+// - Dentro, abre el contexto de `.ft-mol-path` para que tus mixins (como `behavior-path-rail`) funcionen igual.
+//
+// API:
+//   @include behavior-parent-chain($brand, $mods...)
+//   - $brand:  string sin punto (ej. faro-de-vigo)
+//   - $mods:   uno o varios modificadores de clase sin punto (ej. clubfaro, navidad, etc.)
+//
+@function _dot-classes($mods...) {
+  $out: "";
+  @each $m in $mods {
+    $out: $out + "." + $m;
+  }
+  @return $out;
+}
+
+@mixin behavior-parent-chain($brand, $mods...) {
+  $mods_str: _dot-classes($mods...);
+
+  // Emite el contenedor con clases encadenadas al nivel raíz:
+  // ej. `.faro-de-vigo.clubfaro`
+  @at-root .#{$brand}#{$mods_str} {
+    // A partir de aquí, descendemos a `.ft-mol-path`
+    .ft-mol-path {
+      @content; // aquí el `&` === `.ft-mol-path`
+    }
+  }
+}
+
+// =====================================================
+// Molécula: comportamiento rail + imagen de promo opcional
+// (SIN CAMBIOS en su API ni comportamiento por defecto)
+// =====================================================
+// - Genera el comportamiento de rail para móvil/desktop y aplica imagen de promo si se pasa.
+// - Debe usarse dentro de un contexto donde `&` === `.ft-mol-path`
+//   (como ya haces con tu `behavior-parent(...)` o ahora también con `behavior-parent-chain(...)`)
+//
+@mixin behavior-path-rail(
+  $promo-image: null,
+  $promo-w-mobile: 14rem,
+  $promo-w-desktop: 25rem,
+  $bp: 768px
+) {
+  // Usa el selector actual (ej. .ft-mol-path) gracias a behavior-parent(...) o behavior-parent-chain(...)
+  & {
+    /* móvil */
+    --promo-w: #{$promo-w-mobile};
+
+    .ft-mol-path__rail-mobile {
+      visibility: visible;
+      @include position(relative, null null null null);
+    }
+    .ft-mol-path__rail-desktop {
+      visibility: hidden;
+      @include position(absolute, null null null null);
+    }
+    .ft-mol-path__promo {
+      visibility: visible;
+      @include position(relative, null null null null);
+    }
+
+    // Imagen de promo, si se pasa
+    @if $promo-image != null {
+      .ft-mol-path__promo::after {
+        background-image: ensure-url($promo-image);
+      }
+    }
+
+    /* desktop */
+    @include min-screen($bp) {
+      --promo-w: #{$promo-w-desktop};
+
+      .ft-mol-path__rail-mobile {
+        visibility: hidden; // <—
+        @include position(absolute, null null null null); // <—
+      }
+
+      .ft-mol-path__rail-mobile .ft-mol-path__trigger {
+        visibility: hidden;
+        @include position(absolute, null null null null);
+      }
+
+      .ft-mol-path__rail-desktop {
+        visibility: visible;
+        @include position(relative, null null null null);
+      }
+    }
+  }
+}
+// ================================================
+
+:root {
+  --gutter: 0.8rem;
+  --maxw: 1280px;
+}
+
+@include min-screen(768px) {
+  :root {
+    --gutter: 1.1rem;
+  }
+}
+
+// ft-mol-path
+// ================================================
+.ft-mol-path {
+  @include position(relative, null null null null);
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 1rem;
+
+  /* anchura y contención */
+  margin-inline: auto;
+  max-inline-size: var(--maxw);
+  inline-size: min(100%, var(--maxw));
+  box-sizing: border-box;
+  padding-inline: var(--gutter);
+
+  /* altura + overflow */
+  block-size: 4.4rem;
+  overflow-x: clip;
+
+  @include min-screen(768px) {
+    block-size: 5.5rem;
+  }
+
+  // &__heading
+  &__heading {
+    @include margin(0 null 0 null);
+    display: flex;
+    align-items: center;
+    block-size: 100%;
+    font-weight: bold;
+    font-size: 1.4rem;
+    line-height: 1;
+
+    @include min-screen(768px) {
+      font-size: 1.6rem;
+    }
+  }
+
+  // &__trail
+  &__trail {
+    @include position(relative, null null null null);
+    padding-inline-start: 0;
+    margin-inline-start: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    flex: 0 0 auto;
+    gap: 0.8rem;
+    margin-block: 0;
+    block-size: 100%;
+    min-inline-size: 0;
+
+    // &::after
+    &::after {
+      content: "";
+      @include position(absolute, 0 -1rem 0 null);
+      margin-block: auto;
+      inline-size: 0.1rem;
+      max-block-size: 2.5rem;
+      background-color: var(--color-mediumGrey);
+    }
+
+    /* __trail > __link */
+    .ft-mol-path__link {
+      display: flex;
+      align-items: center;
+      block-size: 100%;
+      color: var(--color-tertiary);
+
+      // &:hover, &:focus-visible
+      &:hover,
+      &:focus-visible {
+        @include min-screen(768px) {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    // .ft-mol-path__item
+    .ft-mol-path__item {
+      block-size: 100%;
+      white-space: nowrap;
+      font-size: 1.6rem;
+      line-height: 1;
+
+      @include min-screen(768px) {
+        @include position(relative, null null null null);
+        @include margin(0);
+        inline-size: auto;
+        block-size: auto;
+        overflow: visible;
+        clip-path: none;
+        clip: auto;
+      }
+    }
+
+    /* MÓVIL: ocultar SOLO los items que no contienen heading (sr-only) */
+    :where(.ft-mol-path__item:not(:has(.ft-mol-path__heading))) {
+      @include position(absolute, null null null null);
+      @include margin(0 null 0 null);
+      @include padding(0);
+      inline-size: 1px;
+      block-size: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
+
+    .ft-mol-path__item:not(:last-child) {
+      padding-inline-end: 1.5rem;
+    }
+
+    .ft-mol-path__item:not(:last-child)::after {
+      content: "";
+      @include position(absolute, 0.1rem 0 0 0);
+      @include margin(auto);
+      pointer-events: none;
+      inline-size: 1.2rem;
+      block-size: 1.2rem;
+      transform: rotate(180deg);
+      background: url("#{$images-path}/icons/nav-chevron.svg") center / contain
+        no-repeat;
+    }
+
+    .ft-mol-path__item:first-child .ft-mol-path__link::before {
+      content: "";
+      @include position(absolute, 0 0 0 0);
+      @include margin(auto);
+      opacity: 0;
+      transition: opacity 0.25s ease-in-out;
+      inline-size: 2.5rem;
+      block-size: 2.5rem;
+      border: 2px solid var(--color-tertiary);
+      border-radius: 50%;
+    }
+
+    .ft-mol-path__item:first-child:hover .ft-mol-path__link::before,
+    .ft-mol-path__item:first-child:focus-visible .ft-mol-path__link::before {
+      opacity: 1;
+    }
+
+    // sublevels
+    &:has(.ft-mol-path__item:nth-child(2)) {
+      gap: 0;
+
+      @include min-screen(768px) {
+        gap: 0.8rem;
+      }
+
+      .ft-mol-path__item:first-child {
+        margin-inline-start: -0.8rem;
+        inline-size: 3rem;
+
+        @include min-screen(768px) {
+          inline-size: 4rem;
+        }
+
+        @include min-screen(768px) {
+          &::before {
+            content: "\2026";
+            @include position(absolute, 0.4rem 0 0 0);
+            @include margin(auto);
+            inline-size: auto;
+            block-size: 3rem;
+            text-align: center;
+          }
+        }
+
+        .ft-mol-path__link {
+          @include position(absolute, 0 0 0 0);
+          inline-size: 100%;
+          block-size: 100%;
+          text-indent: -9999px;
+        }
+      }
+
+      @include min-screen(768px) {
+        .ft-mol-path__item:not(:last-child)::after {
+          top: 0;
+          right: -0.4rem;
+          left: auto;
+          transform: rotate(0deg);
+        }
+      }
+
+      :where(.ft-mol-path__item:not(:has(.ft-mol-path__heading))) {
+        @include position(relative, null null null null);
+        @include margin(0);
+        @include padding(0);
+        inline-size: auto;
+        block-size: auto;
+        overflow: visible;
+        clip-path: none;
+        clip: auto;
+        border: initial;
+      }
+
+      /* Patrón sr-only para intermedios cuando hay múltiples items */
+      > .ft-mol-path__item:nth-child(n + 2):not(:last-child) {
+        visibility: hidden;
+        @include position(absolute, null null null null);
+      }
+
+      /* Desktop: volver a mostrar los intermedios */
+      @include min-screen(768px) {
+        > .ft-mol-path__item:nth-child(n + 2):not(:last-child) {
+          @include position(relative, null null null null);
+          visibility: visible;
+          padding-inline-end: 1.5rem;
+        }
+      }
+    }
+  }
+
+  // &__rail-mobile
+  &__rail-mobile {
+    @include position(absolute, null null null null);
+    visibility: hidden;
+
+    // .ft-mol-path__trigger
+    .ft-mol-path__trigger {
+      @include position(relative, null null null null);
+      @include padding(null 1rem null null);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      inline-size: 6rem;
+      block-size: 4rem;
+      font-size: 1.4rem;
+      line-height: 1;
+      color: var(--color-quaternary);
+
+      // &::after
+      &::after {
+        content: "";
+        @include position(absolute, 0.3rem 0.5rem 0 null);
+        pointer-events: none;
+        margin-block: auto;
+        inline-size: 1.2rem;
+        block-size: 1.2rem;
+        transform: rotate(90deg);
+        background: url("#{$images-path}/icons/nav-chevron.svg") center /
+          contain no-repeat;
+      }
+    }
+
+    // &[open] .ft-mol-path__trigger
+    &[open] .ft-mol-path__trigger {
+      color: var(--color-white);
+      background-color: var(--color-black);
+
+      // &::after
+      &::after {
+        transform: rotate(-90deg);
+        filter: brightness(0) invert(1);
+      }
+    }
+
+    // .ft-mol-path__link
+    .ft-mol-path__link {
+      display: block;
+      padding: 1.5rem 1rem;
+      color: var(--color-quaternary);
+    }
+
+    // .ft-mol-path__item
+    .ft-mol-path__item {
+      border-block-end-style: solid;
+      border-width: 0.1rem;
+      border-color: var(--color-mediumGrey);
+    }
+
+    // .ft-mol-path__list
+    .ft-mol-path__list {
+      @include position(absolute, auto null null auto);
+      z-index: 500;
+      pointer-events: auto;
+      list-style: none;
+      overflow-x: hidden;
+      overflow-y: auto;
+      margin-block: 0;
+      max-block-size: 40rem;
+      min-inline-size: 20rem;
+      font-size: 1.4rem;
+      line-height: 1;
+      background-color: var(--color-white);
+      border-style: solid;
+      border-width: 0.1rem;
+      border-color: var(--color-mediumGrey);
+      border-end-end-radius: 0.5rem;
+      border-end-start-radius: 0.5rem;
+
+      // &::before
+      &::before {
+        content: "";
+        @include position(absolute, -1rem 0 null 0);
+        margin-inline: auto;
+        border-style: solid;
+        block-size: 0;
+        inline-size: 0;
+        border-color: transparent transparent var(--color-mediumGrey);
+        border-width: 0 1rem 1rem;
+      }
+    }
+
+    @include min-screen(768px) {
+      .ft-mol-path__trigger {
+        visibility: hidden;
+        @include position(absolute, null null null null);
+      }
+    }
+  }
+
+  // &__rail-desktop
+  &__rail-desktop {
+    display: flex;
+    flex: 1 1 auto;
+    flex-wrap: nowrap;
+    gap: 0.2rem;
+    min-inline-size: 0;
+    margin-block: 0;
+    padding-inline: 1.5rem;
+    margin-inline-end: 0;
+    block-size: 100%;
+    min-width: 0;
+    max-height: 4rem;
+
+    // .ft-mol-path__link
+    .ft-mol-path__link {
+      @include padding(null 0.5rem null 0.5rem);
+      display: flex;
+      align-items: center;
+      block-size: 100%;
+      white-space: nowrap;
+      color: var(--color-quaternary);
+
+      // &:hover, &:focus-visible
+      &:hover,
+      &:focus-visible {
+        text-decoration: underline;
+      }
+    }
+
+    // .ft-mol-path__item
+    .ft-mol-path__item {
+      flex: 0 0 auto;
+      white-space: nowrap;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      min-inline-size: max(44px, fit-content);
+      font-size: 1.2rem;
+      line-height: 3.9;
+
+      @include min-screen(768px) {
+        font-size: 1.6rem;
+        line-height: 1;
+      }
+    }
+  }
+
+  /* scrollbar del rail desktop */
+  &__rail-desktop-scroll {
+    overflow-x: visible;
+    overflow-y: visible;
+    white-space: normal;
+    width: 100%;
+    max-inline-size: 100%;
+    box-sizing: border-box;
+    scrollbar-gutter: stable both-edges;
+    -webkit-overflow-scrolling: touch;
+    color-scheme: light dark;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+
+    // behavior-parent: fourty
+    @include behavior-parent(fourty) {
+      padding-inline: 2rem;
+    }
+
+    /* Fades en bordes - ajustado para el padding */
+    --fade: 2.4rem;
+    mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      #000 var(--fade),
+      #000 calc(100% - var(--fade)),
+      transparent 100%
+    );
+
+    /* foco del contenedor (accesible) */
+    &:focus-visible {
+      outline: 2px solid var(--ft-focus, #0a66ff);
+      outline-offset: 2px;
+    }
+  }
+
+  // contenedor del scrollbar
+  [data-scrollbar] {
+    height: 100%;
+    align-content: center;
+
+    &[data-scrollbar-axis="x"] {
+      --fade-color: var(--color-white);
+    }
+    &[data-scrollbar-axis="x"]::before,
+    &[data-scrollbar-axis="x"]::after {
+      content: "";
+      @include position(absolute, 0 null 0 null);
+      z-index: 3;
+      opacity: 0.4;
+      width: 4.4rem;
+      pointer-events: none;
+      transition: opacity 160ms ease;
+    }
+    &[data-scrollbar-axis="x"]::before {
+      left: 0;
+      background: linear-gradient(
+        to right,
+        var(--fade-color),
+        rgba(255, 255, 255, 0)
+      );
+    }
+    &[data-scrollbar-axis="x"]::after {
+      right: 0;
+      background: linear-gradient(
+        to left,
+        var(--fade-color),
+        rgba(255, 255, 255, 0)
+      );
+    }
+    &[data-scrollbar-axis="x"].has-left::before {
+      opacity: 1;
+    }
+    &[data-scrollbar-axis="x"].has-right::after {
+      opacity: 1;
+    }
+  }
+
+  // &__promo
+  &__promo {
+    visibility: hidden;
+    margin-inline-start: auto;
+    block-size: 100%;
+    flex: 0 0 var(--promo-w);
+
+    // &::after
+    &::after {
+      content: "";
+      @include position(absolute, null null null null);
+      @include padding(0.2rem);
+      pointer-events: none;
+      margin-block: auto;
+      inline-size: 100%;
+      block-size: 100%;
+      inset: 0;
+      box-sizing: border-box;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      background-origin: content-box;
+      background-clip: content-box;
+    }
+
+    // &-link
+    &-link {
+      @include position(absolute, 0 0 0 0);
+      z-index: 5;
+      inline-size: 100%;
+      block-size: 100%;
+
+      // span
+      span {
+        @include position(absolute, null null null null);
+        visibility: hidden;
+        opacity: 0;
+      }
+    }
+  }
+
+  // EP
+  @if $brand == ep {
+    // consorcizonafranca
+    @include behavior-parent(consorcizonafranca) {
+      @include behavior-path-rail(
+        "#{$images-path}/bgs/logo-zf-consorci-barcelona.png"
+      );
+    }
+
+    // economia:not(.consorcizonafranca)
+    @include behavior-parent(economia) {
+      &:not(.consorcizonafranca) {
+        @include behavior-path-rail(
+          "#{$images-path}/logos/logo-multibrand-el-periodico-de-espana-activos.svg"
+        );
+      }
+    }
+
+    // eixample
+    @include behavior-parent(eixample) {
+      @include behavior-path-rail(
+        "#{$images-path}/bgs/logo-periodico-eixample.png"
+      );
+    }
+
+    // empresa-de-l-any
+    @include behavior-parent(empresa-de-l-any) {
+      @include behavior-path-rail(
+        "#{$images-path}/bgs/logo-sabadell-empresa-de-lany.png"
+      );
+    }
+
+    // empresa-del-ano
+    @include behavior-parent(empresa-del-ano) {
+      @include behavior-path-rail(
+        "#{$images-path}/bgs/logo-sabadell-empresa-de-lany.png"
+      );
+    }
+
+    // hospitalet
+    @include behavior-parent(hospitalet) {
+      @include behavior-path-rail("#{$images-path}/bgs/logo-Hospitalet.svg");
+    }
+
+    // gastronomia
+    @include behavior-parent(gastronomia) {
+      @include behavior-path-rail(
+        "#{$images-path}/logos/logo-multibrand-breadcrumb--gastronomia.svg"
+      );
+    }
+
+    // libros
+    @include behavior-parent(libros) {
+      @include behavior-path-rail(
+        "#{$images-path}/logos/logo-multibrand-breadcrumb--ocioycultura.svg"
+      );
+    }
+
+    // lamerce
+    @include behavior-parent(lamerce) {
+      @include behavior-path-rail("#{$images-path}/bgs/logo-masbarcelona.svg");
+    }
+
+    // metropolisbarcelona
+    @include behavior-parent(metropolisbarcelona) {
+      @include behavior-path-rail("#{$images-path}/bgs/logo-amb.png");
+    }
+
+    // mobileworldcapital
+    @include behavior-parent(mobileworldcapital) {
+      @include behavior-path-rail(
+        "#{$images-path}/bgs/logo-mobile-worldcapital-barcelona.png"
+      );
+    }
+
+    // motor
+    @include behavior-parent(motor) {
+      @include behavior-path-rail(
+        "#{$images-path}/logos/logo-multibrand-el-periodico-de-espana-neomotor.svg"
+      );
+    }
+
+    // sanamente (1)
+    @include behavior-parent(sanamente) {
+      @include behavior-path-rail("#{$images-path}/bgs/logo-Sanamente.svg");
+    }
+    // sanamente (2) — prevalece
+    @include behavior-parent(sanamente) {
+      @include behavior-path-rail("#{$images-path}/bgs/logo-masbarcelona.svg");
+    }
+
+    // tarragona
+    @include behavior-parent(tarragona) {
+      @include behavior-path-rail("#{$images-path}/bgs/logo-Tarragona.svg");
+    }
+
+    // unanuevaformadevivir
+    @include behavior-parent(unanuevaformadevivir) {
+      @include behavior-path-rail("#{$images-path}/logos/logo-endesa.png");
+    }
+  }
+
+  // EPE
+  @if $brand == epe {
+    // economia
+    @include behavior-parent(economia) {
+      @include behavior-path-rail(
+        "#{$images-path}/logos/logo-multibrand-el-periodico-de-espana-activos.svg"
+      );
+    }
+  }
+
+  // REGIONALES
+  @if $brand == regionales {
+    // asturianos
+    @include behavior-parent(asturianos) {
+      @include behavior-path-rail(
+        "#{$images-path}/bgs/asturianos-promo-breadcrumb.png"
+      );
+    }
+
+    // ayuntamiento-santiago-del-teide
+    @include behavior-parent(ayuntamiento-santiago-del-teide) {
+      @include behavior-path-rail(
+        "#{$images-path}/bgs/ayuntamiento-santiago-del-teide-promo-breadcrumb.png"
+      );
+    }
+
+    // bellver
+    @include behavior-parent(bellver) {
+      @include behavior-path-rail(
+        "#{$images-path}/bgs/bellver-promo-breadcrumb.png"
+      );
+    }
+
+    // bisbarras
+    @include behavior-parent(bisbarras) {
+      @include behavior-path-rail(
+        "#{$images-path}/bgs/bisbarras-promo-breadcrumb.png"
+      );
+    }
+
+    // buenahuella
+    @include behavior-parent(buenahuella) {
+      @include behavior-path-rail(
+        "#{$images-path}/bgs/buenahuella-promo-breadcrumb.png"
+      );
+    }
+
+    // diario-de-mallorca
+    @include behavior-parent(diario-de-mallorca) {
+      @include behavior-path-rail(
+        "#{$images-path}/bgs/ft-mol-breadcrumb-is-sectioned--ido.svg"
+      );
+    }
+
+    // (duplicado intencionado; el último prevalece en cascada)
+    @include behavior-parent(diario-de-mallorca) {
+      @include behavior-path-rail(
+        "#{$images-path}/bgs/ft-mol-breadcrumb-is-sectioned--ido.svg"
+      );
+    }
+
+    // el-periodico-de-aragon
+    @include behavior-parent(el-periodico-de-aragon) {
+      @include behavior-path-rail(
+        "#{$images-path}/logos/logo-el-periodico-estudiante.png"
+      );
+    }
+
+    // espacio3
+    @include behavior-parent(espacio3) {
+      @include behavior-path-rail("#{$images-path}/logos/logo-espacio3.png");
+    }
+
+    // faro-de-vigo: clubfaro
+    @include behavior-parent-chain(faro-de-vigo, clubfaro) {
+      @include behavior-path-rail(
+        "#{$images-path}/bgs/ft-mol-path--clubfaro.svg"
+      );
+    }
+
+    // faro-de-vigo: escolaencamino
+    @include behavior-parent-chain(faro-de-vigo, escolaencamino) {
+      @include behavior-path-rail(
+        "#{$images-path}/bgs/ft-mol-path--escolaencamino.svg"
+      );
+    }
+
+    // faroeduca
+    @include behavior-parent(faroeduca) {
+      @include behavior-path-rail(
+        "#{$images-path}/bgs/faroeduca-promo-breadcrumb.png"
+      );
+    }
+
+    // fnd
+    @include behavior-parent(fnd) {
+      @include behavior-path-rail(
+        "#{$images-path}/bgs/fnd-promo-breadcrumb.png"
+      );
+    }
+
+    // integracion
+    @include behavior-parent(integracion) {
+      @include behavior-path-rail(
+        "#{$images-path}/bgs/ft-mol-breadcrumb-is-sectioned--integracion.png"
+      );
+    }
+
+    // lavida-buena
+    @include behavior-parent(lavidabuena) {
+      @include behavior-path-rail(
+        "#{$images-path}/bgs/lavidabuena-promo-breadcrumb.png"
+      );
+    }
+
+    // visado
+    @include behavior-parent(visado) {
+      @include behavior-path-rail(
+        "#{$images-path}/bgs/visado-promo-breadcrumb.png"
+      );
+    }
+  }
+
+  // SPORT
+  @if $brand == sport {
+    // areajugones
+    @include behavior-parent(areajugones) {
+      @include behavior-path-rail("#{$images-path}/logos/logo-areajugones.svg");
+    }
+
+    // aniversario
+    @include behavior-parent(aniversario) {
+      @include behavior-path-rail(
+        "#{$images-path}/bgs/ft-mol-breadcrumb-is-sectioned--45aniversario.svg"
+      );
+    }
+
+    // euroliga
+    @include behavior-parent(euroliga) {
+      @include behavior-path-rail(
+        "#{$images-path}/bgs/ft-mol-breadcrumb-is-sectioned--olybet-desktop.svg"
+      );
+    }
+  }
+
+  // &--has
+  &--has {
+    // &-promo
+    &-promo {
+      // .ft-mol-path
+      .ft-mol-path {
+        // &__promo
+        &__promo {
+          @include position(relative, null null null null);
+          @include padding(0.4rem);
+          visibility: visible;
+          --promo-w: 14rem;
+          --promo-aspect: 4 / 1;
+          block-size: 100%;
+          inline-size: auto;
+          max-inline-size: var(--promo-w);
+          aspect-ratio: var(--promo-aspect);
+          flex: 0 0 auto;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          @include min-screen(768px) {
+            @include margin(null null null 1rem);
+            --promo-w: 25rem;
+          }
+
+          // &::after
+          &::after {
+            content: none;
+          }
+
+          // .ft-helper-img-rd
+          .ft-helper-img-rd {
+            @include margin(null null null auto);
+            @include size(auto, 100%);
+            display: block;
+            max-inline-size: 100%;
+            object-fit: contain;
+            object-position: right center;
+            aspect-ratio: var(--promo-img-aspect, var(--promo-aspect));
+          }
+
+          // &-link
+          &-link {
+            @include position(absolute, 0 0 0 0);
+            z-index: 5;
+            inline-size: 100%;
+            block-size: 100%;
+          }
+        }
+
+        // &__rail
+        &__rail {
+          // móvil
+          &-mobile {
+            @include position(relative, null null null null);
+            visibility: visible;
+
+            // .ft-mol-path__trigger
+            .ft-mol-path__trigger {
+              @include min-screen(768px) {
+                visibility: hidden;
+                @include position(absolute, null null null null);
+              }
+            }
+
+            // ocultar rail móvil en desktop
+            @include min-screen(768px) {
+              @include position(absolute, null null null null);
+              visibility: hidden;
+            }
+          }
+
+          // &-desktop
+          &-desktop {
+            @include position(absolute, null null null null);
+            visibility: hidden;
+
+            @include min-screen(768px) {
+              @include position(relative, null null null null);
+              visibility: visible;
+            }
+
+            // .ft-mol-path__trigger
+            .ft-mol-path__trigger {
+              @include min-screen(768px) {
+                @include position(relative, null null null null);
+                visibility: visible;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

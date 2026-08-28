@@ -1,0 +1,250 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// ANIMATION
+// ===============================================
+@keyframes animation-poll-bar {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 50px 50px;
+  }
+}
+
+// ===============================================
+
+// ft-mol-pollbox
+// ===============================================
+.ft-mol-pollbox {
+  $self: &;
+  @include padding(2.4rem 1.6rem);
+  @include border-style(solid);
+  @include border-color(var(--color-lightGrey));
+  @include border-width(0.2rem);
+  @include border-top-radius(1rem);
+  @include border-bottom-radius(1rem);
+  color: var(--color-black);
+
+  // &__title
+  &__title {
+    @include margin(0 null null null);
+    color: var(--color-black);
+
+    // .ft
+    .ft {
+      // &-helper
+      &-helper {
+        // &-fontWeight
+        &-fontWeight {
+          // &-700
+          &-700 {
+            @include fontBold;
+          }
+        }
+      }
+    }
+  }
+
+  // &__list
+  &__list {
+    @include margin(2.4rem null 2.4rem null);
+  }
+
+  // &__meter
+  &__meter {
+    @include position(relative, null null null null);
+    @include border-top-radius(6rem);
+    @include border-bottom-radius(6rem);
+    height: 2.5rem;
+    background-color: var(--color-lightGrey);
+
+    // .ft
+    .ft {
+      // &-helper
+      &-helper {
+        // &-fontWeight
+        &-fontWeight {
+          // &-700
+          &-700 {
+            @include fontBold;
+          }
+        }
+      }
+    }
+  }
+
+  // &__bar
+  &__bar {
+    @include position(relative, null null null null);
+    @include border-top-radius(6rem);
+    @include border-bottom-radius(6rem);
+    display: block;
+    height: 100%;
+    background-color: var(--color-primary);
+    overflow: hidden;
+
+    // &:after
+    &:after {
+      content: "";
+      @include position(absolute, 0 0 0 0);
+      @include border-top-radius(6rem);
+      @include border-bottom-radius(6rem);
+      z-index: 1;
+      animation: animation-poll-bar 2s linear infinite;
+      overflow: hidden;
+
+      // behavior-parent (animate)
+      @include behavior-parent(animate) {
+        @include hide-visually;
+      }
+    }
+  }
+
+  // &__percentage
+  &__percentage {
+    @include position(absolute, 0 1.2rem 0 null);
+    @include margin(auto null auto null);
+    z-index: 2;
+    height: 1.5rem;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  // &__totalvotes
+  &__totalvotes {
+    @include margin(1.2rem null null null);
+    @include padding(null 1.2rem null null);
+  }
+
+  // &__sum
+  &__sum {
+    @include padding(1.2rem 1.2rem 1.2rem null);
+    @include border-style(solid);
+    @include border-color(var(--color-mediumGrey));
+    @include border-width(0.1rem 0 0 0);
+
+    // .ft
+    .ft {
+      // &-helper
+      &-helper {
+        // &-fontWeight
+        &-fontWeight {
+          // &-700
+          &-700 {
+            @include fontBold;
+          }
+        }
+      }
+    }
+  }
+
+  // &__answer
+  &__answer {
+    &:not(:last-child) {
+      @include margin(null null 1.2rem null);
+    }
+
+    // &--is
+    &--is {
+      // &-voted
+      &-voted {
+        // .ft-mol-pollbox
+        .ft-mol-pollbox {
+          // &__meter
+          &__meter {
+            box-shadow: 0 0 0.4rem 0.2rem rgba(64, 153, 255, 0.5);
+
+            // &:before
+            &:before {
+              content: "";
+              @include position(absolute, 0 0 0 0);
+              @include size(100%, 100%);
+              @include border-style(solid);
+              @include border-color(var(--color-white));
+              @include border-width(0.1rem);
+              @include border-top-radius(6rem);
+              @include border-bottom-radius(6rem);
+              z-index: 2;
+            }
+          }
+
+          // &__percentage
+          &__percentage {
+            // &::before
+            &:before {
+              content: "";
+              @include margin(null null null 0.5rem);
+              @include size(1.2rem, 1.2rem);
+              display: block;
+              @include background-setup(
+                map-icons(alerts, brand--okCircle),
+                // img path
+                "center center / contain",
+                // position and size
+                no-repeat,
+                // repeat
+                null,
+                // attachment
+                null,
+                // origin
+                null,
+                // clip
+                transparent,
+                // color
+              );
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // &-amp
+  &-amp {
+    @include padding(2.4rem 1.6rem);
+    @include border-style(solid);
+    @include border-color(var(--color-lightGrey));
+    @include border-width(0.2rem);
+    @include border-top-radius(1rem);
+    @include border-bottom-radius(1rem);
+
+    // &__label 
+    &__label {
+      @include position(relative, null null null null);
+      @include margin(null null 1rem null);  
+      @include padding(.5rem null .5rem 3rem);
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    // &__input
+    &__input {
+      // &:before
+      &:before {
+        content: "";
+        @include position(absolute, 0 null 0 0);
+        @include margin(auto null auto null);
+        @include size(2rem);
+        @include border-style(solid);
+        @include border-width(0.2rem);
+        @include border-color(var(--color-quaternary));
+        @include border-top-radius(100%);
+        @include border-bottom-radius(100%);
+        transition: all 250ms ease;
+      }
+
+      // &:checked
+      &:checked {
+        // &:before
+        &:before {
+          @include border-width(0.6rem);
+        }
+      }
+    }
+  }
+}

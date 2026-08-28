@@ -1,0 +1,66 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+
+// .ft-mol-radio
+// ===============================================
+.ft-mol-radio {
+  $self: &;
+  // Override local de primary solo para advice
+  --color-primary: var(--color-black);
+  flex-direction:row;
+  align-items: center;
+  display:flex; 
+ &--xs{
+    height: 1.5rem;
+
+    .ft-radio{
+       @include margin(null 1.5rem null null);
+
+       &__label{
+          @include padding(null null null 2rem);
+          @include font--body-S;
+          line-height: 1.4rem;
+
+          &:before{
+            @include size(1.4rem, 1.4rem);
+          }
+       }
+    }
+ }
+ &--sm{
+    height: 2rem;
+
+    .ft-radio{
+       @include margin(null 2.3rem null null);
+
+       &__label{
+          @include padding(null null null 2rem);
+          @include font--body-M;
+          line-height: 1.6rem;
+
+          &:before{
+            @include size(1.6rem, 1.6rem);
+          }
+       }
+    }
+ }
+ &--center{
+    justify-content: center;
+ }
+ &__title{
+   
+      color:var(--color-black);
+      @include behavior-parent(ft-mol-radio--xs){
+        @include margin(0 1rem 0 0);
+        @include font--body-S;
+      }
+ }
+ &__content{
+        display:flex; 
+        justify-content: space-between;  
+ }
+}
