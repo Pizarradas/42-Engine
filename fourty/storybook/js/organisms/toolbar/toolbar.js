@@ -1,0 +1,315 @@
+/* ════════════════════════════════════════════════════════════════════════
+   organisms/toolbar/toolbar.js — Organisms / Toolbar
+   Casuística REAL de scss/fourties/organism/toolbar/_toolbar.scss (.ft-org-toolbar).
+   Markup VERBATIM de fourty/organisms/organism-toolbar.html. Cero invención de API.
+
+   Criterio ORGANISMOS: controles MÍNIMOS (aquí ninguno — 1 sola construcción). La
+   fidelidad la aporta el MARKUP. Rutas normalizadas (../../cds-statics → /cds-statics).
+   ════════════════════════════════════════════════════════════════════════ */
+(function () {
+    "use strict";
+
+    /* ▼ SINGLE SOURCE OF TRUTH — markup verbatim ▼ */
+    const VARIANTS = {
+        "base": `<!-- ORG: toolbar -->
+                                            <div class="ft-org-toolbar">
+                                                <!-- MOL: toolbar -->
+                                                <div class="ft-mol-toolbar" role="toolbar"
+                                                    aria-label="Opciones del juego">
+                                                    <div class="ft-mol-toolbar__inner">
+                                                        <ul class="ft-mol-toolbar__list">
+                                                            <!-- Ayuda (botón simple) -->
+                                                            <li class="ft-mol-toolbar__item">
+                                                                <button type="button" class="ft-mol-toolbar__button"
+                                                                    aria-label="Ayuda">
+                                                                    <svg width="18" height="18" viewBox="0 0 18 18"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg"
+                                                                        class="ft-mol-toolbar__icon" aria-hidden="true"
+                                                                        focusable="false">
+                                                                        <path
+                                                                            d="M8.95499 14.4C9.26999 14.4 9.53639 14.2911 9.75419 14.0733C9.97199 13.8555 10.0806 13.5894 10.08 13.275C10.0794 12.9606 9.97079 12.6942 9.75419 12.4758C9.53759 12.2574 9.27119 12.1488 8.95499 12.15C8.63879 12.1512 8.37269 12.2601 8.15669 12.4767C7.94069 12.6933 7.83179 12.9594 7.82999 13.275C7.82819 13.5906 7.93709 13.857 8.15669 14.0742C8.37629 14.2914 8.64239 14.4 8.95499 14.4ZM8.14499 10.935H9.80999C9.80999 10.44 9.86639 10.05 9.97919 9.76499C10.092 9.47999 10.4106 9.08999 10.935 8.59499C11.325 8.20499 11.6325 7.83359 11.8575 7.4808C12.0825 7.128 12.195 6.7044 12.195 6.21C12.195 5.37 11.8875 4.725 11.2725 4.275C10.6575 3.825 9.92999 3.6 9.08999 3.6C8.23499 3.6 7.54139 3.825 7.00919 4.275C6.47699 4.725 6.10559 5.265 5.89499 5.895L7.37999 6.48C7.45499 6.21 7.62389 5.9175 7.88669 5.6025C8.14949 5.2875 8.55059 5.13 9.08999 5.13C9.56999 5.13 9.92999 5.2614 10.17 5.5242C10.41 5.787 10.53 6.0756 10.53 6.39C10.53 6.69 10.44 6.9714 10.26 7.2342C10.08 7.497 9.85499 7.7406 9.58499 7.96499C8.92499 8.54999 8.51999 8.99249 8.36999 9.29249C8.21999 9.59249 8.14499 10.14 8.14499 10.935ZM8.99999 18C7.75499 18 6.58499 17.7639 5.49 17.2917C4.395 16.8195 3.4425 16.1781 2.6325 15.3675C1.8225 14.5569 1.1814 13.6044 0.7092 12.51C0.237001 11.4156 0.000601139 10.2456 1.13924e-06 8.99999C-0.00059886 7.7544 0.235801 6.5844 0.7092 5.49C1.1826 4.3956 1.8237 3.4431 2.6325 2.6325C3.4413 1.8219 4.3938 1.1808 5.49 0.709204C6.58619 0.237604 7.75619 0.00120454 8.99999 4.54545e-06C10.2438 -0.00119545 11.4138 0.235204 12.51 0.709204C13.6062 1.1832 14.5587 1.8243 15.3675 2.6325C16.1763 3.4407 16.8177 4.3932 17.2917 5.49C17.7657 6.5868 18.0018 7.75679 18 8.99999C17.9982 10.2432 17.7618 11.4132 17.2908 12.51C16.8198 13.6068 16.1787 14.5593 15.3675 15.3675C14.5563 16.1757 13.6038 16.8171 12.51 17.2917C11.4162 17.7663 10.2462 18.0024 8.99999 18ZM8.99999 16.2C11.01 16.2 12.7125 15.5025 14.1075 14.1075C15.5025 12.7125 16.2 11.01 16.2 8.99999C16.2 6.99 15.5025 5.2875 14.1075 3.8925C12.7125 2.4975 11.01 1.8 8.99999 1.8C6.98999 1.8 5.28749 2.4975 3.8925 3.8925C2.4975 5.2875 1.8 6.99 1.8 8.99999C1.8 11.01 2.4975 12.7125 3.8925 14.1075C5.28749 15.5025 6.98999 16.2 8.99999 16.2Z"
+                                                                            fill="currentColor" />
+                                                                    </svg>
+                                                                    <span class="ft-mol-toolbar__label">Ayuda</span>
+                                                                </button>
+                                                            </li>
+
+                                                            <!-- Pista (menu button con acciones) -->
+                                                            <li class="ft-mol-toolbar__item">
+                                                                <div
+                                                                    class="ft-mol-dropdown ft-mol-dropdown--is-list-rgt ft-mol-dropdown--has-btn-nav">
+                                                                    <button type="button"
+                                                                        class="ft-btn-nav ft-btn-nav--more-v ft-mol-dropdown__trigger"
+                                                                        onclick="toggleDropdown(event)"
+                                                                        aria-haspopup="menu" aria-expanded="false"
+                                                                        id="help-actions-trigger"
+                                                                        aria-controls="help-actions-list">
+                                                                        <svg width="16" height="20" viewBox="0 0 16 20"
+                                                                            fill="none"
+                                                                            xmlns="http://www.w3.org/2000/svg"
+                                                                            class="ft-mol-toolbar__icon"
+                                                                            aria-hidden="true" focusable="false">
+                                                                            <path
+                                                                                d="M14.1198 7.858C14.1198 10.18 13.009 11.9665 11.3192 13.1428C10.9256 13.4164 10.7288 13.5532 10.6317 13.7098C10.5355 13.8646 10.5014 14.0698 10.4358 14.4784L10.3833 14.7961C10.2678 15.5143 10.2092 15.8734 9.96433 16.0867C9.71943 16.3 9.36607 16.3 8.65847 16.3H6.37388C5.66628 16.3 5.31292 16.3 5.06802 16.0867C4.82311 15.8734 4.76539 15.5143 4.64818 14.7961L4.59745 14.4784C4.53098 14.0707 4.49862 13.8664 4.4024 13.7116C4.30619 13.5568 4.10852 13.4182 3.71405 13.141C2.04259 11.9647 1 10.1791 1 7.858C1 4.0717 3.93709 1 7.55991 1C8.00062 0.999524 8.44023 1.04536 8.87189 1.1368M9.31475 16.3V17.2C9.31475 18.0487 9.31475 18.4726 9.05847 18.7363C8.8022 19 8.39024 19 7.56544 19C6.74064 19 6.32868 19 6.0724 18.7363C5.81613 18.4726 5.81613 18.0487 5.81613 17.2V16.3M11.9387 1L12.1644 1.6273C12.46 2.4499 12.6078 2.8612 12.8991 3.1609C13.1912 3.4615 13.5909 3.6136 14.3904 3.9178L15 4.15L14.3904 4.3822C13.5909 4.6864 13.1912 4.8385 12.9 5.1382C12.6078 5.4388 12.46 5.8501 12.1644 6.6727L11.9387 7.3L11.713 6.6727C11.4174 5.8501 11.2696 5.4388 10.9783 5.1391C10.6862 4.8385 10.2865 4.6864 9.48705 4.3822L8.87742 4.15L9.48705 3.9178C10.2865 3.6136 10.6862 3.4615 10.9775 3.1618C11.2696 2.8612 11.4174 2.4499 11.713 1.6273L11.9387 1Z"
+                                                                                stroke="currentColor" stroke-width="1.5"
+                                                                                stroke-linecap="round"
+                                                                                stroke-linejoin="round" />
+                                                                        </svg>
+                                                                        <span class="ft-btn-nav__text">Pista</span>
+                                                                        <span class="ft-btn-nav__icon"
+                                                                            aria-hidden="true"></span>
+                                                                    </button>
+
+                                                                    <ul class="ft-mol-dropdown__list" role="menu" hidden
+                                                                        id="help-actions-list"
+                                                                        aria-labelledby="help-actions-trigger">
+                                                                        <li class="ft-mol-dropdown__item" role="none">
+                                                                            <button type="button"
+                                                                                class="ft-mol-dropdown__link"
+                                                                                role="menuitem">
+                                                                                Revelar letra
+                                                                                <span class="ft-tag ft-tag--sm">3/3
+                                                                                    disponibles</span>
+                                                                            </button>
+                                                                        </li>
+                                                                        <li class="ft-mol-dropdown__item" role="none">
+                                                                            <button type="button"
+                                                                                class="ft-mol-dropdown__link"
+                                                                                role="menuitem" disabled>
+                                                                                Revelar palabra
+                                                                                <span class="ft-tag ft-tag--sm">3/3
+                                                                                    disponibles</span>
+                                                                            </button>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </li>
+
+                                                            <!-- Reiniciar (botón simple) -->
+                                                            <li class="ft-mol-toolbar__item">
+                                                                <button type="button" class="ft-mol-toolbar__button">
+                                                                    <svg width="18" height="18" viewBox="0 0 18 18"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg"
+                                                                        class="ft-mol-toolbar__icon" aria-hidden="true"
+                                                                        focusable="false">
+                                                                        <path
+                                                                            d="M17.7878 6.76506H15.7113C15.2777 5.34762 14.4521 4.18789 13.2345 3.28588C12.017 2.38388 10.6076 1.93287 9.00648 1.93287C7.05508 1.93287 5.39956 2.58941 4.03991 3.90247C2.68026 5.21554 2.00077 6.81402 2.00144 8.69793C2.00144 9.85765 2.27264 10.9207 2.81503 11.8872C3.35742 12.8536 4.08694 13.6429 5.0036 14.2549V11.5972H7.00504V17.3959H1.00072V15.463H3.35241C2.31834 14.6576 1.50108 13.6712 0.900649 12.5038C0.300216 11.3363 0 10.0677 0 8.69793C0 7.48988 0.237838 6.35851 0.713514 5.3038C1.18919 4.2491 1.83098 3.33098 2.6389 2.54946C3.44682 1.76793 4.3975 1.1478 5.49095 0.689069C6.58441 0.230334 7.75625 0.000644291 9.00648 0C11.158 0 13.0471 0.640425 14.6736 1.92128C16.3001 3.20213 17.3382 4.81672 17.7878 6.76506Z"
+                                                                            fill="currentColor" />
+                                                                        <path d="M10.1374 8.33587V18L18 13.1679"
+                                                                            fill="currentColor" />
+                                                                    </svg>
+                                                                    <span class="ft-mol-toolbar__label">Reiniciar</span>
+                                                                </button>
+                                                            </li>
+
+                                                            <!-- Resolver (botón simple) -->
+                                                            <li class="ft-mol-toolbar__item">
+                                                                <button type="button" class="ft-mol-toolbar__button">
+                                                                    <svg width="16" height="18" viewBox="0 0 16 18"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg"
+                                                                        class="ft-mol-toolbar__icon" aria-hidden="true"
+                                                                        focusable="false">
+                                                                        <path
+                                                                            d="M10.0267 2.11765H16V12.7059H8.53333L8.10667 10.5882H2.13333V18H0V0H9.6L10.0267 2.11765ZM9.6 10.5882H11.7333V8.47059H13.8667V6.35294H11.7333V4.23529H9.6V6.35294L8.53333 4.23529V2.11765H6.4V4.23529H4.26667V2.11765H2.13333V4.23529H4.26667V6.35294H2.13333V8.47059H4.26667V6.35294H6.4V8.47059H8.53333V6.35294L9.6 8.47059V10.5882ZM6.4 6.35294V4.23529H8.53333V6.35294H6.4ZM9.6 6.35294H11.7333V8.47059H9.6V6.35294Z"
+                                                                            fill="currentColor" />
+                                                                    </svg>
+                                                                    <span class="ft-mol-toolbar__label">Resolver</span>
+                                                                </button>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+
+
+                                                    <!-- Más opciones -->
+                                                    <div class="ft-mol-toolbar__right">
+                                                        <div class="ft-mol-toolbar__more-options">
+                                                            <div
+                                                                class="ft-mol-dropdown ft-mol-dropdown--is-list-lft ft-mol-dropdown--has-btn-nav ft-mol-dropdown--has-icons">
+                                                                <button type="button"
+                                                                    class="ft-btn-nav ft-btn-nav--more-v ft-mol-dropdown__trigger"
+                                                                    onclick="toggleDropdown(event)"
+                                                                    aria-haspopup="listbox" aria-expanded="false"
+                                                                    id="more-nav-trigger" aria-controls="more-nav-list">
+                                                                    <span class="ft-btn-nav__text">Desplegar más
+                                                                        opciones</span>
+                                                                    <span class="ft-btn-nav__icon"
+                                                                        aria-hidden="true"></span>
+                                                                </button>
+
+                                                                <ul class="ft-mol-dropdown__list" hidden
+                                                                    id="more-nav-list"
+                                                                    aria-labelledby="more-nav-trigger">
+                                                                    <li class="ft-mol-dropdown__item">
+                                                                        <a class="ft-mol-dropdown__link" href="#"
+                                                                            target="_self" title="Archivo">
+                                                                            <svg width="18" height="19"
+                                                                                viewBox="0 0 18 19" fill="none"
+                                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                                class="ft-mol-dropdown__icon"
+                                                                                aria-hidden="true" focusable="false">
+                                                                                <path
+                                                                                    d="M3.24 13.64C3.24 13.5406 3.32059 13.46 3.42 13.46H4.86C4.95941 13.46 5.04 13.5406 5.04 13.64V15.08C5.04 15.1794 4.95941 15.26 4.86 15.26H3.42C3.32059 15.26 3.24 15.1794 3.24 15.08V13.64Z"
+                                                                                    fill="currentColor" />
+                                                                                <path
+                                                                                    d="M6.48 13.64C6.48 13.5406 6.56059 13.46 6.66 13.46H8.1C8.19941 13.46 8.28 13.5406 8.28 13.64V15.08C8.28 15.1794 8.19941 15.26 8.1 15.26H6.66C6.56059 15.26 6.48 15.1794 6.48 15.08V13.64Z"
+                                                                                    fill="currentColor" />
+                                                                                <path
+                                                                                    d="M9.72 13.64C9.72 13.5406 9.80059 13.46 9.9 13.46H11.34C11.4394 13.46 11.52 13.5406 11.52 13.64V15.08C11.52 15.1794 11.4394 15.26 11.34 15.26H9.9C9.80059 15.26 9.72 15.1794 9.72 15.08V13.64Z"
+                                                                                    fill="currentColor" />
+                                                                                <path
+                                                                                    d="M12.96 13.64C12.96 13.5406 13.0406 13.46 13.14 13.46H14.58C14.6794 13.46 14.76 13.5406 14.76 13.64V15.08C14.76 15.1794 14.6794 15.26 14.58 15.26H13.14C13.0406 15.26 12.96 15.1794 12.96 15.08V13.64Z"
+                                                                                    fill="currentColor" />
+                                                                                <path
+                                                                                    d="M6.48 10.4C6.48 10.3006 6.56059 10.22 6.66 10.22H8.1C8.19941 10.22 8.28 10.3006 8.28 10.4V11.84C8.28 11.9394 8.19941 12.02 8.1 12.02H6.66C6.56059 12.02 6.48 11.9394 6.48 11.84V10.4Z"
+                                                                                    fill="currentColor" />
+                                                                                <path
+                                                                                    d="M9.72 10.4C9.72 10.3006 9.80059 10.22 9.9 10.22H11.34C11.4394 10.22 11.52 10.3006 11.52 10.4V11.84C11.52 11.9394 11.4394 12.02 11.34 12.02H9.9C9.80059 12.02 9.72 11.9394 9.72 11.84V10.4Z"
+                                                                                    fill="currentColor" />
+                                                                                <path
+                                                                                    d="M12.96 10.4C12.96 10.3006 13.0406 10.22 13.14 10.22H14.58C14.6794 10.22 14.76 10.3006 14.76 10.4V11.84C14.76 11.9394 14.6794 12.02 14.58 12.02H13.14C13.0406 12.02 12.96 11.9394 12.96 11.84V10.4Z"
+                                                                                    fill="currentColor" />
+                                                                                <path fill-rule="evenodd"
+                                                                                    clip-rule="evenodd"
+                                                                                    d="M5.22 0.5C5.81647 0.5 6.3 0.983533 6.3 1.58V3.92C6.3 3.93156 6.29982 3.94307 6.29946 3.95454H11.5205C11.5202 3.94307 11.52 3.93156 11.52 3.92V1.58C11.52 0.983533 12.0035 0.5 12.6 0.5C13.1965 0.5 13.68 0.983533 13.68 1.58V3.92C13.68 3.93156 13.6798 3.94307 13.6795 3.95454H17.1C17.5971 3.95454 18 4.35749 18 4.85454V17.6C18 18.0971 17.5971 18.5 17.1 18.5H0.9C0.402944 18.5 0 18.0971 0 17.6V4.85454C0 4.35749 0.402944 3.95454 0.9 3.95454H4.14054C4.14018 3.94307 4.14 3.93156 4.14 3.92V1.58C4.14 0.983533 4.62353 0.5 5.22 0.5ZM1.26 5.21454V7.16H16.74V5.21454H1.26ZM1.26 17.24V8.6H16.74V17.24H1.26Z"
+                                                                                    fill="currentColor" />
+                                                                            </svg>
+                                                                            Archivo
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="ft-mol-dropdown__item">
+                                                                        <details class="ft-mol-dropdown__details">
+                                                                            <summary class="ft-mol-dropdown__summary">
+                                                                                <span
+                                                                                    class="ft-mol-dropdown__title"></span>
+                                                                                <svg width="18" height="19"
+                                                                                    viewBox="0 0 18 19" fill="none"
+                                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                                    class="ft-mol-dropdown__icon"
+                                                                                    aria-hidden="true"
+                                                                                    focusable="false">
+                                                                                    <path fill-rule="evenodd"
+                                                                                        clip-rule="evenodd"
+                                                                                        d="M8.74732 1.67757L8.21794 3.71857C8.14737 3.99066 7.95694 4.2159 7.70039 4.33075L6.41295 4.90709C6.11849 5.03891 5.77662 5.00782 5.51076 4.82506L3.94614 3.74944L3.39204 4.28449L4.32386 5.96246C4.45339 6.1957 4.47593 6.47351 4.38569 6.72458L3.87939 8.13331C3.77196 8.43222 3.51872 8.65513 3.20859 8.72376L1.17757 9.17319V9.79961L3.27381 10.439C3.55176 10.5238 3.77373 10.7342 3.87321 11.0072L4.41539 12.4953C4.50773 12.7488 4.48486 13.0299 4.35277 13.2651L3.3975 14.9661L3.85168 15.3903L5.55054 14.2765C5.82107 14.0992 6.16458 14.076 6.45649 14.2154L7.75664 14.8362C7.99509 14.9501 8.17347 15.1605 8.24682 15.4143L8.79817 17.3224H9.46382L9.82951 15.4853C9.88718 15.1956 10.0797 14.9508 10.3477 14.8266L11.6807 14.2084C11.967 14.0756 12.3012 14.098 12.5673 14.2676L14.3202 15.385L14.7153 14.9881L13.7063 13.2782C13.5657 13.0399 13.5391 12.7512 13.6339 12.4912L14.1745 11.0073C14.274 10.7341 14.4962 10.5236 14.7743 10.439L16.8224 9.81537V9.13185L14.847 8.72285C14.5368 8.65863 14.281 8.44018 14.169 8.14385L13.6377 6.73759C13.5405 6.48025 13.5628 6.193 13.6986 5.95377L14.6873 4.21224L14.2132 3.7426L12.5039 4.84324C12.241 5.01252 11.9103 5.03756 11.6249 4.9098L10.3436 4.33618C10.0683 4.21293 9.87031 3.96322 9.81314 3.66705L9.42912 1.67757H8.74732ZM7.65649 1.19294C7.76232 0.784915 8.13056 0.5 8.55209 0.5H9.63741C10.0808 0.5 10.4618 0.814537 10.5459 1.24988L10.9445 3.31501L11.9813 3.77915L13.746 2.64287C14.1108 2.40798 14.5898 2.45813 14.898 2.76347L15.6532 3.51156C15.9501 3.80566 16.013 4.26226 15.8067 4.62568L14.7811 6.43216L15.2216 7.59786L17.2624 8.02039C17.6919 8.10933 18 8.48772 18 8.92641V10.0023C18 10.4095 17.7338 10.7688 17.3443 10.8874L15.2378 11.5288L14.7811 12.7824L15.8286 14.5576C16.0426 14.9204 15.9846 15.382 15.6875 15.6805L15.0116 16.3597C14.7049 16.6678 14.225 16.7209 13.8584 16.4872L12.0508 15.3348L10.9594 15.8409L10.5783 17.7554C10.4921 18.1883 10.1122 18.5 9.67088 18.5H8.60843C8.19636 18.5 7.83395 18.2275 7.71956 17.8316L7.14698 15.85L6.07731 15.3393L4.33156 16.4837C3.97484 16.7176 3.50447 16.6773 3.19274 16.3861L2.44893 15.6914C2.13729 15.4004 2.06495 14.934 2.27376 14.5622L3.26929 12.7896L2.80987 11.5286L0.655302 10.8714C0.265989 10.7527 0 10.3935 0 9.98645V8.97059C0 8.53663 0.301614 8.16097 0.725329 8.06721L2.81829 7.60407L3.2388 6.43406L2.26847 4.68677C2.06503 4.32042 2.13321 3.86308 2.43466 3.57199L3.27649 2.75911C3.59296 2.45353 4.08082 2.41304 4.44334 2.66225L6.06112 3.77441L7.10854 3.30552L7.65649 1.19294Z"
+                                                                                        fill="currentColor" />
+                                                                                    <path fill-rule="evenodd"
+                                                                                        clip-rule="evenodd"
+                                                                                        d="M9 11.6869C10.2078 11.6869 11.1869 10.7078 11.1869 9.5C11.1869 8.2922 10.2078 7.31308 9 7.31308C7.7922 7.31308 6.81308 8.2922 6.81308 9.5C6.81308 10.7078 7.7922 11.6869 9 11.6869ZM9 12.8645C10.8582 12.8645 12.3645 11.3582 12.3645 9.5C12.3645 7.64185 10.8582 6.13551 9 6.13551C7.14185 6.13551 5.63551 7.64185 5.63551 9.5C5.63551 11.3582 7.14185 12.8645 9 12.8645Z"
+                                                                                        fill="currentColor" />
+                                                                                </svg>
+
+                                                                                Configuración
+                                                                                </span>
+                                                                                <span class="ft-mol-dropdown__icon"
+                                                                                    aria-hidden="true"></span>
+                                                                            </summary>
+
+                                                                            <ul class="ft-mol-dropdown__details-list"
+                                                                                role="list">
+                                                                                <li
+                                                                                    class="ft-mol-dropdown__details-item">
+                                                                                    Modo oscuro
+                                                                                    <div
+                                                                                        class="ft-switch ft-switch--darkmode">
+                                                                                        <input type="checkbox"
+                                                                                            id="toggleDarkmode"
+                                                                                            class="ft-switch__checkbox">
+                                                                                        <label for="toggleDarkmode"
+                                                                                            class="ft-switch__label">
+                                                                                            <span
+                                                                                                class="ft-switch__inner"></span>
+                                                                                            <span
+                                                                                                class="ft-switch__switch"></span>
+                                                                                        </label>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li
+                                                                                    class="ft-mol-dropdown__details-item">
+                                                                                    Modo contraste
+                                                                                    <div
+                                                                                        class="ft-switch ft-switch--contrastmode">
+                                                                                        <input type="checkbox"
+                                                                                            id="toggleContrastmode"
+                                                                                            class="ft-switch__checkbox">
+                                                                                        <label for="toggleContrastmode"
+                                                                                            class="ft-switch__label">
+                                                                                            <span
+                                                                                                class="ft-switch__inner"></span>
+                                                                                            <span
+                                                                                                class="ft-switch__switch"></span>
+                                                                                        </label>
+                                                                                    </div>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </details>
+                                                                    </li>
+                                                                    <li class="ft-mol-dropdown__item">
+                                                                        <a class="ft-mol-dropdown__link" href="#"
+                                                                            target="_self" title="Compartir">
+                                                                            <svg width="18" height="19"
+                                                                                viewBox="0 0 18 19" fill="none"
+                                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                                class="ft-mol-dropdown__icon"
+                                                                                aria-hidden="true" focusable="false">
+                                                                                <path fill-rule="evenodd"
+                                                                                    clip-rule="evenodd"
+                                                                                    d="M13.9619 1.713C12.9012 1.713 12.0413 2.57287 12.0413 3.63357C12.0413 3.93832 12.1123 4.2265 12.2386 4.48246C12.2695 4.51555 12.2972 4.55266 12.3209 4.59356C12.3436 4.63278 12.3613 4.67348 12.3744 4.71496C12.7202 5.22158 13.3022 5.55415 13.9619 5.55415C15.0226 5.55415 15.8825 4.69428 15.8825 3.63357C15.8825 2.57287 15.0226 1.713 13.9619 1.713ZM11.6104 5.70485C12.1846 6.35623 13.0253 6.76715 13.9619 6.76715C15.6925 6.76715 17.0955 5.3642 17.0955 3.63357C17.0955 1.90295 15.6925 0.5 13.9619 0.5C12.2313 0.5 10.8283 1.90295 10.8283 3.63357C10.8283 3.99197 10.8885 4.33632 10.9993 4.65706L6.20503 7.42873C5.63082 6.77734 4.79018 6.36643 3.85357 6.36643C2.12295 6.36643 0.72 7.76937 0.72 9.5C0.72 11.2306 2.12295 12.6336 3.85357 12.6336C4.79018 12.6336 5.63082 12.2227 6.20503 11.5713L10.9993 14.3429C10.8885 14.6637 10.8283 15.008 10.8283 15.3664C10.8283 17.0971 12.2313 18.5 13.9619 18.5C15.6925 18.5 17.0955 17.0971 17.0955 15.3664C17.0955 13.6358 15.6925 12.2329 13.9619 12.2329C13.0253 12.2329 12.1846 12.6438 11.6104 13.2952L6.81619 10.5235C6.92698 10.2027 6.98715 9.8584 6.98715 9.5C6.98715 9.1416 6.92698 8.79726 6.81619 8.47651L11.6104 5.70485ZM5.441 8.41861C5.45411 8.46009 5.4719 8.5008 5.49457 8.54002C5.51822 8.58092 5.54591 8.61802 5.57684 8.65111C5.70317 8.90708 5.77415 9.19525 5.77415 9.5C5.77415 9.80475 5.70317 10.0929 5.57684 10.3489C5.54591 10.382 5.51822 10.4191 5.49457 10.46C5.4719 10.4992 5.45411 10.5399 5.44101 10.5814C5.09522 11.088 4.51323 11.4206 3.85357 11.4206C2.79287 11.4206 1.933 10.5607 1.933 9.5C1.933 8.43929 2.79287 7.57942 3.85357 7.57942C4.51323 7.57942 5.09522 7.91199 5.441 8.41861ZM12.2386 14.5175C12.2695 14.4844 12.2972 14.4473 12.3209 14.4064C12.3436 14.3672 12.3613 14.3265 12.3744 14.285C12.7202 13.7784 13.3022 13.4458 13.9619 13.4458C15.0226 13.4458 15.8825 14.3057 15.8825 15.3664C15.8825 16.4271 15.0226 17.287 13.9619 17.287C12.9012 17.287 12.0413 16.4271 12.0413 15.3664C12.0413 15.0617 12.1123 14.7735 12.2386 14.5175Z"
+                                                                                    fill="currentColor" />
+                                                                            </svg>
+                                                                            Compartir
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                    <!-- end // MOL: toolbar -->
+                                                </div>
+                                            </div>
+                                            <!-- end // ORG: toolbar -->`
+    };
+
+    const baseArgTypes = [];
+    const baseArgs = {};
+
+    function live() {
+        return VARIANTS["base"];
+    }
+
+    const overview = `<div class="cb-docs__inner">
+        <h1>Toolbar</h1>
+        <p class="cb-docs__lead">Organismo del 42DS (<code>.ft-org-toolbar</code>): barra de herramientas de sección/artículo — agrupa acciones (compartir, guardar, ajustes…) en una franja. id único <code>toolbar-org</code> (colisiona con la molécula homónima <code>.ft-mol-toolbar</code>, barra de pasatiempos).</p>
+
+        <h2>Dependencias</h2>
+        <div class="cb-deps">
+        <table class="cb-table">
+            <thead><tr><th>Dependencia</th><th>Tipo</th><th>Cuándo</th></tr></thead>
+            <tbody>
+                <tr><td><code>brands/[marca]/setting.css</code></td><td>CSS · variables de la marca</td><td>Siempre · <strong>primero</strong></td></tr>
+                <tr><td><code>brands/[marca]/organism/toolbar.css</code></td><td>CSS del organismo</td><td>Siempre</td></tr>
+                <tr><td><code>molecules/rrss</code> · <code>atoms/btn</code></td><td>CSS de las piezas internas</td><td>Según acciones</td></tr>
+                <tr><td>JS (acciones: compartir, guardar)</td><td>JavaScript</td><td>En producción. Aquí estático.</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <div class="cb-callout">No confundir con la <strong>molécula</strong> <code>.ft-mol-toolbar</code> (barra de pasatiempos, ya migrada): este es el organismo de sección <code>.ft-org-toolbar</code>. Las acciones las gobierna el JS del consumidor; aquí, estático.</div>
+
+        <h2>Variantes por marca</h2>
+        <p>Compilado para todas las marcas. Cambia la marca con la <strong>toolbar Brand</strong>.</p>
+
+        <p class="cb-src">Fuente: <code>scss/fourties/organism/toolbar/_toolbar.scss</code> · markup: <code>fourty/organisms/organism-toolbar.html</code></p>
+    </div>`;
+
+    const DEF = {
+        id: "toolbar-org",
+        name: "Toolbar",
+        group: "Organisms",
+        overview,
+        stories: [
+            { id: "base", name: "Base", kind: "interactive", full: true, argTypes: baseArgTypes, args: baseArgs, render: live }
+        ]
+    };
+    window.SB.register(DEF);
+    window.SB.loadMarkup(DEF, document.currentScript && document.currentScript.src, { full: true });
+})();

@@ -1,0 +1,114 @@
+<!--
+  suggestions-chips.html — markup de Organisms / Suggestions Chips (.ft-org-suggestions-chips)
+  Verbatim de fourty/organisms/organism-suggestions-chips.html. Rutas normalizadas a /cds-statics.
+  El motor lo publica en el subgrupo "Markup".
+-->
+<template data-story="Base">
+<div class="ft-org-suggestions-chips" id="suggestions-chips-example" 
+                                                 data-suggestions-container="true"
+                                                 data-suggestions-count="3" data-suggestions-loaded="true">
+                                                <div class="ft-org-suggestions-chips__content">
+                                                    <h3 class="ft-helper-fontSize-heading-XS ft-helper-text-align-center">
+                                                        Te sugerimos
+                                                    </h3>
+                                                    <section role="region"
+                                                        aria-label="Listado de localidades disponibles" data-suggestions-section="true">
+                                                        <h4 class="ft-helper-hide">
+                                                            Localidades disponibles
+                                                        </h4>
+                                                        <ul role="list" aria-label="Listado de localidades" class="ft-cerca-localidades-list__tags"
+                                                            id="suggestions-list-example" itemscope itemtype="https://schema.org/ItemList"
+                                                            data-localidades-list="true" data-suggestions-list="true" data-suggestions-total="3">
+                                                            <li class="ft-tag ft-tag--chip ft-tag--md" data-tag-id="loc-example-1"
+                                                                data-tag-type="city" data-tag-region="Cataluña"
+                                                                data-tag-context="favorites-selector" data-tag-state="unselected"
+                                                                data-tag-slug="barcelona" data-analytics-category="ciudades"
+                                                                data-analytics-action="fav_toggle" data-analytics-label="Barcelona"
+                                                                itemprop="itemListElement" itemscope itemtype="https://schema.org/City">
+                                                                <meta itemprop="name" content="Barcelona">
+                                                                <meta itemprop="addressRegion" content="Cataluña">
+                                                                <meta itemprop="addressCountry" content="ES">
+                                                                <meta itemprop="addressLocality" content="Barcelona">
+                                                                <button type="button" class="ft-btn" aria-pressed="false"
+                                                                    aria-label="Marcar Barcelona como ciudad favorita"
+                                                                    title="Marcar Barcelona como ciudad favorita">
+                                                                    Barcelona
+                                                                </button>
+                                                            </li>
+                                                            <li class="ft-tag ft-tag--chip ft-tag--md" data-tag-id="loc-example-2"
+                                                                data-tag-type="city" data-tag-region="Cataluña"
+                                                                data-tag-context="favorites-selector" data-tag-state="unselected"
+                                                                data-tag-slug="badalona" data-analytics-category="ciudades"
+                                                                data-analytics-action="fav_toggle" data-analytics-label="Badalona"
+                                                                itemprop="itemListElement" itemscope itemtype="https://schema.org/City">
+                                                                <meta itemprop="name" content="Badalona">
+                                                                <meta itemprop="addressRegion" content="Cataluña">
+                                                                <meta itemprop="addressCountry" content="ES">
+                                                                <meta itemprop="addressLocality" content="Badalona">
+                                                                <button type="button" class="ft-btn" aria-pressed="false"
+                                                                    aria-label="Marcar Badalona como ciudad favorita"
+                                                                    title="Marcar Badalona como ciudad favorita">
+                                                                    Badalona
+                                                                </button>
+                                                            </li>
+                                                            <li class="ft-tag ft-tag--chip ft-tag--md" data-tag-id="loc-example-3"
+                                                                data-tag-type="location" data-tag-region="Cataluña"
+                                                                data-tag-context="favorites-selector" data-tag-state="selected"
+                                                                data-tag-slug="castelldefels" data-analytics-category="localidades"
+                                                                data-analytics-action="fav_toggle" data-analytics-label="Castelldefels"
+                                                                itemprop="itemListElement" itemscope itemtype="https://schema.org/Place">
+                                                                <meta itemprop="name" content="Castelldefels">
+                                                                <meta itemprop="addressRegion" content="Cataluña">
+                                                                <meta itemprop="addressCountry" content="ES">
+                                                                <meta itemprop="addressLocality" content="Castelldefels">
+                                                                <button type="button" class="ft-btn" aria-pressed="true"
+                                                                    aria-label="Quitar Castelldefels de tus localidades favoritas"
+                                                                    title="Quitar Castelldefels de tus localidades favoritas">
+                                                                    Castelldefels
+                                                                </button>
+                                                            </li>
+                                                        </ul>
+                                                    </section>
+                                                </div>
+                                            </div>
+</template>
+
+<template data-story="Chip tiny + helper-scroll">
+<div class="ft-org-suggestions-chips"
+     data-suggestions-container="true"
+     data-suggestions-count="4"
+     data-suggestions-loaded="true">
+  <div class="ft-org-suggestions-chips__content">
+    <section role="region" aria-label="Listado de localidades disponibles" data-suggestions-section="true">
+      <h4 class="ft-helper-hide">Localidades disponibles</h4>
+      <ul role="list"
+          aria-label="Listado de localidades"
+          class="ft-helper-scroll"
+          data-localidades-list="true"
+          data-suggestions-list="true"
+          data-suggestions-total="4">
+        <li class="ft-tag ft-tag--chip-tiny ft-tag--md" data-tag-state="selected" data-tag-slug="todos">
+          <button type="button" class="ft-btn" data-chip-label="Todos" aria-pressed="true" title="Mostrar todas las localidades">
+            Todos
+          </button>
+        </li>
+        <li class="ft-tag ft-tag--chip-tiny ft-tag--md" data-tag-state="unselected" data-tag-slug="badalona">
+          <button type="button" class="ft-btn" data-chip-label="Badalona" aria-pressed="false" title="Marcar Badalona como ciudad favorita">
+            Badalona
+          </button>
+        </li>
+        <li class="ft-tag ft-tag--chip-tiny ft-tag--md" data-tag-state="unselected" data-tag-slug="barcelona">
+          <button type="button" class="ft-btn" data-chip-label="Barcelona" aria-pressed="false" title="Marcar Barcelona como ciudad favorita">
+            Barcelona
+          </button>
+        </li>
+        <li class="ft-tag ft-tag--chip-tiny ft-tag--md" data-tag-state="selected" data-tag-slug="tarragona">
+          <button type="button" class="ft-btn" data-chip-label="Tarragona" aria-pressed="true" title="Quitar Tarragona de tus localidades favoritas">
+            Tarragona
+          </button>
+        </li>
+      </ul>
+    </section>
+  </div>
+</div>
+</template>

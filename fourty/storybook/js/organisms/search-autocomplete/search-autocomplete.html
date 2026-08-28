@@ -1,0 +1,68 @@
+<!--
+  search-autocomplete.html — markup de Organisms / Search Autocomplete (.ft-org-search-autocomplete)
+  Verbatim de fourty/organisms/organism-search-autocomplete.html. Rutas normalizadas a /cds-statics.
+  El motor lo publica en el subgrupo "Markup".
+-->
+<template data-story="Base">
+<div class="ft-org-search-autocomplete">
+                                                <div class="ft-org-search-autocomplete__content">
+                                                    <p class="ft-helper-fontSize-body-XL--small ft-helper-fontColor-tertiary ft-helper-text-align-center">
+                                                        <strong>Busca y selecciona tus localidades favoritas</strong>
+                                                        para acceder a las noticias que más te importan
+                                                    </p>
+                                                    <form action="/cerca/" method="get" role="search" aria-label="Búsqueda de localidades"
+                                                        data-search-min-length="2" data-search-debounce="300" data-search-context="localidades"
+                                                        data-search-id="search-form-example" data-search-state="idle" novalidate>
+                                                        <div class="ft-mol-form ft-mol-form--has-label ft-mol-form--has-supporting-text ft-mol-form-search ft-mol-form-search--has-search-icon"
+                                                            data-search-wrapper="true">
+                                                            <input type="search" id="search-input-example" class="ft-mol-form__input" name="localidad"
+                                                                placeholder=" " autocomplete="address-level2" spellcheck="false"
+                                                                aria-label="Busca tu localidad"
+                                                                aria-describedby="search-help search-results-status search-error-msg"
+                                                                aria-required="false" aria-invalid="false" aria-expanded="false"
+                                                                aria-controls="search-results-list" aria-autocomplete="list" aria-haspopup="listbox"
+                                                                data-search-input="true" data-search-id="search-input-example"
+                                                                title="Busca tu localidad escribiendo el nombre de tu ciudad o pueblo"
+                                                                maxlength="50" inputmode="text" value="">
+                                                            <label for="search-input-example" class="ft-mol-form__label">Busca tu localidad</label>
+                                                            <div id="search-error-msg" class="ft-mol-form__error-msg" aria-live="polite">
+                                                                <span id="search-error-msg__text">
+                                                                    Por favor, introduce un término de búsqueda válido.
+                                                                </span>
+                                                            </div>
+                                                            <button type="submit" class="ft-mol-form__submit ft-helper-hide"
+                                                                aria-label="Buscar localidad" data-search-submit="true">
+                                                                Buscar
+                                                            </button>
+                                                            <div id="search-results-wrapper" class="ft-mol-form__results-wrapper ft-helper-hide"
+                                                                data-search-results-wrapper="true">
+                                                                <div id="search-results-container" class="ft-mol-form__results-container"
+                                                                    data-search-results-container="true">
+                                                                    <div class="ft-mol-form__results-loading ft-helper-hide"
+                                                                        id="search-results-loading" role="status" aria-live="polite"
+                                                                        aria-label="Buscando localidades">
+                                                                        <p class="ft-helper-fontSize-body-S">Buscando...</p>
+                                                                    </div>
+                                                                    <div class="ft-mol-form__results-empty ft-helper-hide"
+                                                                        id="search-results-empty" role="status" aria-live="polite">
+                                                                        <p class="ft-helper-fontSize-body-S">No se encontraron localidades</p>
+                                                                    </div>
+                                                                    <div class="ft-mol-form__results-error ft-helper-hide"
+                                                                        id="search-results-error" role="alert" aria-live="assertive">
+                                                                        <p class="ft-helper-fontSize-body-S">Error en la búsqueda</p>
+                                                                    </div>
+                                                                    <ul id="search-results-list" class="ft-mol-form__results-list" role="listbox"
+                                                                        aria-label="Resultados de búsqueda" data-search-results-list="true"
+                                                                        data-results-count="0">
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div id="search-results-status" class="ft-helper-hide" role="status" aria-live="polite"
+                                                                aria-atomic="true">
+                                                                <span id="search-results-status-text" data-results-status-text=""></span>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+</template>
