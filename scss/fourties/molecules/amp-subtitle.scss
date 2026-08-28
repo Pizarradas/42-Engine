@@ -1,0 +1,64 @@
+// ABSTRACTS
+// ================================================
+@import "../../abstracts/amp-abstracts";
+@import "../../vendors/bourbon/bourbon";
+// ================================================================================================
+
+// .ft-mol-subtitle
+// ===============================================
+.ft-mol-subtitle
+{
+  @include position(relative, null null null null);
+  @include font--body-XXL;
+  text-align: left;
+  @include padding(null null null 0);
+
+    // &::marker
+    &::marker
+    {
+      color: var(--color-primary);
+    }
+
+  // &:not(:only-of-type)
+  &:not(:only-of-type)
+  {
+    display: list-item;
+    unicode-bidi: isolate;
+    @include margin(null null null 2rem);
+    // &:before
+    &::marker
+    { 
+
+      color: var(--color-primary);
+
+      // behavior-parent(premium)
+      @include behavior-parent(premium)
+      {
+        color: var(--color-premium);
+      }
+    }
+  }
+
+  // &--is
+  &--is         
+  {
+
+    // &Center
+    &Center
+    {
+      text-align: center;
+
+    // &::marker
+    &::marker
+    {
+        content: none;
+    }
+       // &:first-of-type
+  &:last-of-type
+  {
+    @include padding(null null 1rem null);
+
+  }
+    }
+  }
+}

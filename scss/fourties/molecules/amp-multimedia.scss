@@ -1,0 +1,267 @@
+// ABSTRACTS
+// ================================================
+@import "../../abstracts/amp-abstracts";
+@import "../../vendors/bourbon/bourbon";
+// ================================================================================================
+
+// FOURTY-MOL: MODAL
+// ===============================================
+.ft-mol-multimedia
+{
+
+    // generales
+    @include padding(null null 1rem null);
+    display: block;
+
+
+    // figcaption
+    figcaption
+    {
+        @include margin(null null 2rem null);
+    }
+
+    // &__container 
+    // ---------------------------------------------
+    &__container
+    {
+        // generales
+        @include position(relative, null);
+
+
+
+        // behavior: parent(ft-mol-multimedia--gallery)
+        @include behavior-parent(ft-mol-multimedia--gallery)
+        {
+            // generals
+            @include padding(null null 50px null);
+
+        }
+
+        // .ft-link
+        .ft-link
+        {
+            width: 100%
+        }
+
+        // .ft-helper-img-rd
+        .ft-helper-img-rd
+        {
+            width: 100%;
+
+            // &:after
+            &:after
+            {
+                    // generals
+                    background: none;
+            }
+
+            // behavior: parent(ft-mol-multimedia--gallery)
+            @include behavior-parent(ft-mol-multimedia--gallery)
+            {
+
+                // &:after
+                &:after
+                {
+                    // generals
+                    @include position(absolute, null null 0 0);
+                    content: "";
+                    z-index: 1;
+                    height: 100%;
+                    width: 100%;
+                    display: block;
+                    background: var(--color-black);
+                    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 34%, rgba(0, 0, 0, 0) 56%);
+
+                    // end //  &:after
+                }
+
+                // end // behavior: parent(ft-mol-multimedia--gallery)
+            }
+
+
+            // end // .ft-helper-img-rd
+        }
+
+        // end // &__container
+    }
+
+    // &__video
+    &__video
+    {
+        // generales
+        cursor: pointer;
+        // END  // &__video
+    }
+
+    // &__footer
+    &__footer
+    {
+        // generales
+        @include position(absolute, null null 0 0);
+        @include font--body-L--small;
+        @include font--weight-800;
+        @include padding(1rem);
+        display: flex;
+        align-items: center;
+        width: 100%;
+        z-index: 10;
+
+
+        //&Center
+        &Center
+        {
+            // generales
+            @include position(absolute, 0 0 0 0);
+            @include margin(auto);
+            justify-content: center;
+        }
+
+        // behavior: parent(ft-mol-multimedia--gallery)
+        @include behavior-parent(ft-mol-multimedia--gallery)
+        {
+            // generales
+            @include position(absolute, null null 2rem 0);
+            flex-direction: column;
+            justify-content: center;
+
+            // end  // behavior: parent(ft-mol-multimedia--gallery) 
+
+        }
+
+        //.ft-helper-img-rd
+        .ft-helper-img-rd
+        {
+            width: auto;
+            // end // .ft-helper-img-rd
+        }
+
+        //&Icon
+        &Icon
+        {
+            // generales
+            @include margin(0 1rem 0 null);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--color-primary);
+            z-index: 10;
+            border-radius: 50%;
+            min-width: 4.5rem;
+            min-height: 4.5rem;
+
+
+
+            .ft-helper-img-rd
+            {
+
+                filter: map-filters(blacks, brand--all);
+
+            }
+
+
+            // end // &Icon
+        }
+
+        // &Text
+        &Text
+        {
+            // generales
+            @include margin(0);
+            color: var(--color-white);
+            text-overflow: ellipsis;
+            max-width: 90%;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+
+            // behavior: parent(ft-mol-multimedia--gallery)
+            @include behavior-parent(ft-mol-multimedia--gallery)
+            {
+                // generales
+                @include margin(null null 1rem null);
+                text-align: center;
+                max-width: 55rem;
+
+            }
+
+
+            // .ft-link
+            .ft-lnk
+            {
+                color: var(--color-white);
+                // end // .ft-link
+            }
+
+            // end // &Text
+        }
+
+        // END  // &__footer
+    }
+
+    // &__layer
+    &__layer
+    {
+        @include position(absolute, 0 0 0 0);
+        display: none;
+        position: absolute;
+        z-index: 111;
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
+
+        // &--is
+        &--is
+        {
+
+            // &-active
+            &-active
+            {
+                display: block;
+                // end // &-active
+            }
+ 
+            // end // &--is
+        }
+
+        // &Content
+        &Content
+        {
+            @include fontBold;
+            @include margin(0 2rem);
+            display: flex;
+            align-items: center;
+            align-content: center;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: center;
+
+            height: 100%;
+            text-align: center;
+            color: #fff;
+            color: var(--color-white);
+
+            // .ft-link
+            .ft-link
+            {
+                width: auto;
+            }
+
+            // .ft-text
+            .ft-text
+            {
+                @include font--body-XL--small;
+            }
+
+            // &:before
+
+            // end // &Content
+        }
+    }
+
+    // ---------------------------------------------
+
+    // END // ft-mol-multimedia
+}
+.click-to-play-overlay{position: absolute;    z-index: 11;    bottom: 0;    left: 0;    right: 0; top: 0;}
+// ===============================================

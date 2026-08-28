@@ -1,0 +1,89 @@
+// ABSTRACTS
+// ================================================
+@import "../../abstracts/amp-abstracts";
+@import "../../vendors/bourbon/bourbon";
+// ================================================================================================
+
+// .ft-mol-tab
+// ===============================================
+.ft-mol-tab {
+
+  // .ft-mol-tab-amp
+  &-amp {
+    // &__trigger
+    &__trigger {
+      @include padding(null null 0.4rem null);
+      text-align: center;
+    }
+  
+    // &__content
+    &__content {
+      @include border-style(solid null null null);
+      @include border-width(0.2rem);
+      @include border-color(var(--color-lightGrey));
+    }
+  }
+
+} 
+
+// AMP
+// ===============================================
+/* Styles for the flex layout based tabs */
+amp-selector[role="tablist"].tabs-with-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+amp-selector[role="tablist"].tabs-with-flex [role="tab"] {
+  flex-grow: 1;
+  color: var(--color-quaternary);
+}
+
+amp-selector[role="tablist"].tabs-with-flex [role="tab"][selected] {
+  @include border-style(null null solid null);
+  @include border-width(0.4rem);
+  @include border-color(var(--color-primary));
+  color: var(--color-primary);
+  outline: none;
+}
+
+amp-selector[role="tablist"].tabs-with-flex [role="tabpanel"] {
+  display: none;
+  width: 100%;
+  order: 1;
+}
+
+amp-selector[role="tablist"].tabs-with-flex
+  [role="tab"][selected]
+  + [role="tabpanel"] {
+  display: block;
+}
+
+/* Styles for the selector based tabs */
+amp-selector[role="tablist"].tabs-with-selector {
+  display: flex;
+}
+
+amp-selector[role="tablist"].tabs-with-selector [role="tab"][selected] {
+  outline: none;
+}
+
+amp-selector[role="tablist"].tabs-with-selector {
+  display: flex;
+}
+
+amp-selector[role="tablist"].tabs-with-selector [role="tab"] {
+  width: 100%;
+  text-align: center;
+}
+
+amp-selector.tabpanels [role="tabpanel"] {
+  display: none;
+}
+
+amp-selector.tabpanels [role="tabpanel"][selected] {
+  outline: none;
+  display: block;
+}
+
+

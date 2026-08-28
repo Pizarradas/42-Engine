@@ -1,0 +1,118 @@
+// ABSTRACTS
+// ================================================
+@import "../../abstracts/amp-abstracts";
+@import "../../vendors/bourbon/bourbon";
+// ================================================================================================
+
+// .headerbar
+// ===============================================
+.headerbar {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-primary);
+  color:  var(--color-white);
+@include padding(0 1rem 0 0);
+  @include behavior-brand(regionales)
+  {
+    background-color: var(--color-white);
+    color:  var(--color-black);
+  } 
+    @include behavior-brand(revistas)
+  {
+    background-color: var(--color-white);
+    color:  var(--color-black);
+  } 
+}
+  // .site-name
+  .site-name {
+  margin:auto; 
+}
+ // .hamburger
+.hamburger {
+  @include padding(null null null .5rem);
+  @include font--heading-XL;
+  color:  var(--color-white);
+  height: 4rem;
+  @include behavior-brand(regionales)
+  {
+    color:  var(--color-black);
+  }
+    @include behavior-brand(revistas)
+  {
+    color:  var(--color-black);
+  } 
+}
+// .sidebar
+.sidebar {
+  @include margin(0);
+  @include padding(0);
+  background-color: var(--color-white);
+  width: 100%;
+
+  
+  //  &>li
+    &>li {
+      @include padding(1rem);
+      @include  font--body-L--small;
+      list-style: none;
+      border-bottom: 1px solid var(--color-lightGrey);
+    }
+    // a
+    a {
+      text-decoration: none;
+      color:  var(--color-black);
+  }
+}
+// .close-sidebar
+.close-sidebar {
+  @include font--heading-XS;
+  @include padding(.5rem 1rem .5rem null);
+  color:  var(--color-black);
+  text-align: right;
+}
+.header-button{
+@include margin(.5rem null null null);
+}
+// amp-sidebar[side][open]
+amp-sidebar[side][open] {
+  background-color:  var(--color-white);
+  width: 50%;
+}
+
+amp-social-share{
+@include margin(0 .3rem)}
+
+.ft-accordion--header
+  {
+      background-color: var(--color-white);
+      @include border-style(none);
+@include padding(.2rem 0 0 0);
+      color: var(--color-black);
+font-weight:normal;
+    font-size: 14px;
+  }
+
+.ft-accordion--header[aria-expanded="false"]:after 
+  {
+      font-size: 18px;
+      content: "+";
+      @include position(absolute, 0 0 null null);
+  }
+
+.ft-accordion--header[aria-expanded="true"]:after
+  {
+      font-size: 22px;
+      content: "-";
+@include position(absolute, 0 0 null null);
+  }
+
+.ft-accordion--content li a
+  {
+@include padding(1.2rem 0 0 0);
+      font-size: 12px;
+      font-weight: normal;
+      display: flex;
+        color:var(--color-quaternary)
+  }

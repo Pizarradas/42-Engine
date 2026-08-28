@@ -1,0 +1,148 @@
+// ABSTRACTS
+// ================================================
+@import "../../abstracts/amp-abstracts";
+@import "../../vendors/bourbon/bourbon";
+// ================================================================================================
+
+// FOURTY-MOL: RANKINGNEWS
+// ===============================================
+.ft-mol-rankingNews
+{
+
+    // generals
+    // ---------------------------------------------
+    @include margin(0 auto 2.5rem auto);
+    display: block;
+    max-width: 93%;
+
+
+
+    // .ft-list--numbered
+    .ft-list--numbered
+    {
+        // generals
+        @include margin(null null 1rem null);
+        list-style: auto;
+
+        .ft-list__item 
+        {
+
+            &::marker
+            {
+                // generals
+                font-size: 2rem;
+                color: var(--color-primary);
+
+            }
+
+            // end // .ft-list--numbered .ft-list__item:before
+
+        }
+    }
+
+    // .ft-list__item
+    // ---------------------------------------------
+    .ft-list__item
+    {
+        // generals
+        @include border-style(null null solid null);
+        @include border-width(null null 0.1rem null);
+        @include border-color(null null var(--color-mediumGrey) null);
+        @include margin(1.5rem 0);
+        @include padding(null null 1.5rem 0);
+        width: 100%;
+
+        // &:last-child
+        &:last-child
+        {
+            @include border-width(null null 0 null);
+        }
+
+        // end // .ft-list__item
+    }
+
+    // .ft-mol-headband
+    .ft-mol-headband
+    {
+        @include margin(0 null);
+        display: block;
+    }
+
+    // &__title
+
+    &__title
+    {
+        // generals
+        @include font--body-M--small;
+        @include margin(0);
+        color: var(--color-black);
+        text-transform: uppercase;
+        display: block;
+        width: 100%;
+        // end // &__title
+    }
+
+    // &__text
+    // ---------------------------------------------
+    &__text
+    {
+        @include font--body-L--small;
+        @include margin (.5rem 1rem .5rem 0);
+        display: flex;
+        align-items: flex-start;
+
+        @include behavior-parent(ft-mol-rankingNews--2column)
+        {
+            @include margin (1.5rem 1rem 1.5rem 0);
+        }
+
+        .ft-helper-img-rd
+        {
+            @include margin(0 0.8rem 0 0);
+            max-width: 17px;
+            max-height: 17px;
+
+        }
+    }
+
+    // &__data
+    // ---------------------------------------------
+    &__data
+    {
+        @include font--body-M--small;
+        @include margin(0);
+        @include padding(0 0 0.5rem 0);
+        width: 100%;
+        display: block;
+        color: var(--color-primary);
+        // end // &__data
+    }
+
+    // &__premium
+    // ---------------------------------------------
+    &__premium
+    {
+        @include font--body-M;
+        @include margin(0);
+        @include padding(0 0 0.5rem 0);
+        display: flex;
+        align-items: center;
+        text-transform: uppercase;
+        color: var(--color-primary);
+
+        .ft-helper-img-rd
+        {
+            @include margin(0 0.8rem 0 0);
+            max-width: 17px;
+            max-height: 17px;
+
+        }
+
+        // end // &__premium
+    }
+
+    // ---------------------------------------------
+    // END // ft-mol-rankingNews
+}
+
+// ===============================================

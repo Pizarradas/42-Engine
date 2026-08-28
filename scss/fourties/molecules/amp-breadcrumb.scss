@@ -1,0 +1,223 @@
+// ABSTRACTS
+// ================================================
+@import "../../abstracts/amp-abstracts";
+@import "../../vendors/bourbon/bourbon";
+// ================================================================================================
+
+// .ft-mol-breadcrumb
+// ===============================================
+.ft-mol-breadcrumb
+{
+  $self: &;
+  @include position(relative, null null null null);
+  @include margin(1rem null null null);
+  @include padding(null null null 0);
+  list-style-type: none;
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: flex;
+  width: 100%;
+  white-space: nowrap;
+  color: var(--color-quaternary);
+
+  // &__link  
+  &__link
+  {
+    @include font--body-M;
+    color: var(--color-quaternary);
+
+    // behavior: parent(ft-mol-breadcrumb-has--lvl)
+    @include behavior-parent(ft-mol-breadcrumb-has--lvl)
+    {
+      @include margin(null null 0.5rem null);
+      align-items: baseline;
+      color: var(--color-black);
+    }
+  }
+
+  // &__item
+  &__item
+  {
+    @include position(relative, null null null null);
+    @include margin(0 0 1rem 0);
+    @include font--body-M;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    color: var(--color-black);
+
+    // &:not(:last-child)
+    &:not(:last-child)
+    {
+      #{$self}__link
+      {
+        @include padding(null 2.5rem null null);
+      }
+    }
+
+    // &:not(::last-child)
+    &:not(:last-child)
+    {
+      &:after
+      {
+        content: "";
+                    @include margin(auto null auto null);
+                        @include position(absolute, 0 10px 0 null);
+                        @include size(1rem, 1rem);
+                        clip-path: polygon(47% 0,
+                            100% 47%,
+                            52% 100%,
+                            30% 100%,
+                            78% 47%,
+                            30% 0);
+                        background: var(--color-darkGrey);
+      }
+    }
+
+    // behavior: parent(ft-mol-breadcrumb-has--lvl)
+    @include behavior-parent(ft-mol-breadcrumb-has--lvl)
+    {
+      @include margin(0);
+      @include fontBold;
+      align-items: baseline;
+    }
+  }
+
+  // &-links-support
+  &-links-support
+  {
+    @include margin(1.2rem auto 0 auto);
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-basis: 100%;
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-start;
+
+    // &__link
+    &__link
+    {
+      @include font--body-M--small;
+      color: var(--color-quaternary);
+        white-space: nowrap;
+    }
+
+    // &__item
+    &__item
+    {
+
+      // &:not(:last-child)
+      &:not(:last-child)
+      {
+        @include margin(null 1.5rem null null);
+      }
+    }
+  }
+
+  // &-has
+  &-has
+  {
+
+    // &--lvl
+    &--lvl
+    {
+      @include margin(0 null null null);
+      @include padding(null null 1.2rem null);
+      @include border-style(null null solid null);
+      @include border-width(null null 0.1rem null);
+      @include border-color(null null var(--color-mediumGrey) null);
+      overflow-x: hidden;
+      flex-wrap: wrap;
+      white-space: initial;
+
+
+
+      // #{ $self }__lvl
+      #{ $self }__lvl
+      {
+        @include position(relative, null null null null);
+        @include margin(0);
+        font-size: 2rem;
+        line-height: 2.4rem;
+
+      }
+
+      // #{ $self }__link
+      #{ $self }__link
+      {
+        @include margin(null null 0 null);
+        @include padding(null 2.5rem null null);
+        @include fontBold;
+
+        // &:after
+        &:after
+        {
+        content: "";
+            @include margin(auto null auto null);
+            @include position(absolute, 0 10px 0 null);
+            @include size(1rem, 1rem);
+            clip-path: polygon(47% 0,
+                100% 47%,
+                52% 100%,
+                30% 100%,
+                78% 47%,
+                30% 0);
+            background: var(--color-darkGrey);
+        }
+
+        // #{ $self }__lvl
+        #{ $self }__lvl
+        {
+          font-size: 1.4rem;
+          line-height: 2.4rem;
+          color: var(--color-quaternary);
+        }
+      }
+
+      // #{ $self }__item
+      #{ $self }__list
+      {
+        @include margin(0 null 0 null);
+        @include padding(1rem null 0 null);
+        flex-basis: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      // #{ $self }-links-support
+      #{ $self }-links-support
+      {
+        @include margin(0.5rem auto 0 auto);
+        overflow-x: auto;
+        overflow-y: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        // &__item
+        &__item
+        {
+
+          // &:not(:last-child)
+          &:not(:last-child)
+          {
+            @include margin(null 1.5rem null null);
+          }
+        }
+      }
+    }
+
+    // &-1-lvl
+    &--1-lvl
+    {
+
+      // #{ $self }__itemIs-not-link
+      #{ $self }__itemIs-not-link
+      {
+        @include padding(null null 0.5rem null);
+        width: 100%;
+      }
+    }
+  }
+}

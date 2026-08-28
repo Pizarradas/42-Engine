@@ -1,0 +1,158 @@
+// ABSTRACTS
+// ================================================
+@import "../../abstracts/amp-abstracts";
+@import "../../vendors/bourbon/bourbon";
+// ================================================================================================
+
+// .ft-mol-headband
+// ===============================================
+.ft-mol-headband
+{
+  $self: &;
+  @include position(relative, null null null null);
+  @include margin(3rem auto 3rem null);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  // &__title
+  &__title
+  {
+    @include margin(null);
+
+ 
+    // behavior-parent: ft-mol-headband--branded
+    @include behavior-parent(ft-mol-headband--branded)
+    {
+      @include margin(null auto null null);
+      color: var(--color-black);
+      text-transform: uppercase;
+    }
+
+    // .ft-link
+    .ft-link
+    {
+      color: var(--color-black);
+    }
+
+    // end // &__title
+  }
+
+  // &__logo
+  &__logo
+  {
+    display: flex;
+    align-items: center;
+    @include margin(null);
+
+    // behavior parent: ft-mol-headband--branded
+    @include behavior-parent(ft-mol-headband--branded)
+    {
+      color: var(--color-quaternary);
+      @include Branded;
+      @include font--body-S;
+      @include margin(null null null auto);
+      justify-content: flex-end;
+    }
+
+    // behavior parent: ft-mol-headband--brandedTrust
+    @include behavior-parent(ft-mol-headband--brandedTrust)
+    {
+      color: var(--color-primary);
+    }
+
+    // behavior parent: ft-mol-modNews
+    @include behavior-parent(ft-mol-modNews)
+    {
+      justify-content: flex-start;
+    }
+  }
+
+  // &__img
+  &__img
+  {
+    // general
+    @include margin(null null null 1.5rem);
+
+    // behavior parent: ft-mol-headband--branded
+    @include behavior-parent(ft-mol-headband--branded)
+    {
+      max-height: 30px;
+    }
+
+    // behavior parent: ft-mol-headband--reverse
+    @include behavior-parent(ft-mol-headband--reverse)
+    {
+      @include margin(null null null 0);
+    }
+  }
+
+
+  // &--heading
+  &--heading
+  {
+    @include padding(1rem 1.5rem);
+    @include fontBold;
+    background: var(--color-black);
+    color: var(--color-white);
+
+
+    // .ft-date
+    .ft-date
+    {
+      @include margin(0);
+    }
+
+    // .ft-date__text
+    .ft-date__text
+    {
+      @include font--body-M;
+      @include fontBold;
+      color: var(--color-white);
+    }
+  }
+
+  // &--reverse
+  &--reverse
+  {
+    flex-direction: row-reverse;
+  }
+
+  // &--branded
+  &--branded
+  {
+    @include Branded;
+  }
+
+  .ft-link--navNext
+  {
+    color: var(--color-black);
+  }
+
+   // &--section
+  &--section {
+    @include border-style(null null solid null);
+    @include border-width(0.1rem);
+    @include border-color(var(--color-mediumGrey));
+    flex-wrap: nowrap;
+    align-items: flex-end;
+     .ft-mol-headband__title {
+        @include position(relative, null null null null);
+        @include margin(0 1rem 0 null);
+        @include padding(1rem 0 1rem null);
+        flex: initial;
+        font-size: 2.4rem;
+        line-height: 2.6rem;
+        
+        // &::after
+        &:after {
+          content: "";
+          @include position(absolute, null null 0 0);
+          @include size(100%, 0.2rem);
+          background-color: var(--color-black);
+        }
+     }
+  }
+}

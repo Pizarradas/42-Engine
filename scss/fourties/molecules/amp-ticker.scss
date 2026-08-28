@@ -1,0 +1,59 @@
+// ABSTRACTS
+// ================================================
+@import "../../abstracts/amp-abstracts";
+@import "../../vendors/bourbon/bourbon";
+// ================================================================================================
+
+
+// .ft-mol-ticker
+// ===============================================
+.ft-mol-ticker
+{
+  $self: &;
+  @include margin(1rem 0);
+  @include position(relative, null);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  @include font--body-S--small;
+
+  // &__heading
+  &__heading
+  {
+    @include padding(.6rem 1rem);
+    @include border-bottom-radius(2rem);
+    @include border-top-radius(2rem);
+    @include position (relative, null null null null);
+@include fontBold;
+    z-index: 2;
+    min-width: fit-content;
+    color: var(--color-white);
+    text-transform: uppercase;
+    background-color: var(--color-functional-error);
+
+  }
+
+  // &__txt
+  &__txt
+  {
+    font-weight: normal;
+    color: var(--color-black);
+  }
+
+  // &__item
+  &__item
+  {
+    white-space: nowrap;
+  }
+
+  // &__scroll
+  &__scroll
+  {
+    display: flex;
+    flex-basis: 100%;
+    padding-left: 10px;
+    overflow-x: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}

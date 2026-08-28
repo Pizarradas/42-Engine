@@ -1,0 +1,92 @@
+// ABSTRACTS
+// ================================================
+@import "../../abstracts/amp-abstracts";
+@import "../../vendors/bourbon/bourbon";
+// ================================================================================================
+
+// .ft-mol-quote
+// ===============================================
+.ft-mol-quote
+{
+  @include position(relative, null null null null);
+  @include margin(4rem null 4rem null);
+  @include padding(3.4rem);
+  display: flex;
+  flex: 1 1 100%;
+  flex-direction: column;
+  background-color: var(--color-lightGrey);
+
+  // &:before
+  &:before
+  {
+    content: "";
+    @include position(absolute, -20px 0 0 2rem);
+    @include margin(auto);
+    background-position: left top; 
+    background-repeat: no-repeat;
+    background-image: url("#{$images-path}/icons/bloquote_black.svg");
+
+
+  }
+
+  // &__text
+  &__text
+  {
+    @include margin(0);
+    @include font--heading-XXS;
+
+    //  behavior-brand(revistas)
+     @include behavior-brand(revistas)
+    {
+      font-family: var(--font-secondary);
+    }
+  }
+
+  &__author
+  {
+    @include margin(0.5rem 0 0 0);
+    @include font--body-M;
+    display: flex;
+    flex-wrap: wrap;
+
+    // behavior: parent(ft-mol-quote--basic)
+    @include behavior-parent(ft-mol-quote--basic)
+    {
+      justify-content: center;
+    }
+
+    // &--name
+    &--name
+    {
+      @include margin(0);
+      color: var(--color-primary);
+    }
+
+    &--status
+    {
+      @include margin(0);
+      color: var(--color-quaternary);
+    }
+  }
+
+  // &--basic
+  &--basic
+  {
+    @include padding(2.5rem);
+    @include border-color(var(--color-mediumGrey));
+    @include border-style(solid);
+    @include border-width(0.1rem 0);
+    background-color: transparent;
+    align-items: center;
+    text-align: center;
+
+    // &.ft-mol-quote :before
+    &.ft-mol-quote
+    {
+      &:before
+      {
+        content: none;
+      }
+    }
+  }
+}

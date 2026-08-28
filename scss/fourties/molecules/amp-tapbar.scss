@@ -1,0 +1,59 @@
+// ABSTRACTS
+// ================================================
+@import "../../abstracts/amp-abstracts";
+@import "../../vendors/bourbon/bourbon";
+// ================================================================================================
+
+// ft-mol-tapbar
+// ===============================================
+.ft-mol-tapbar {
+  @include position(fixed, null 0 0 0);
+  z-index: 1000;
+  height: 6rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 0.07rem solid var(--color-mediumGrey);
+  box-shadow: 0px 0px 9px 0 rgba(0, 0, 0, 0.15);
+  background-color: var(--color-white);
+
+  // &__icon
+  &__icon {
+    @include margin(null null 0.2rem null);
+    @include size(3rem);
+    stroke: currentColor;
+  }
+
+  // &__item
+  &__item {
+    @include padding(0.4rem 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    font-size: 1rem;
+    line-height: 1rem;
+    text-decoration: none;
+    color: var(--color-black);
+    background: none;
+    border: none;
+
+    // &--active
+    &--active {
+      // .ft-mol-tapbar__icon
+      .ft-mol-tapbar__icon {
+        @include padding(0.4rem);
+        border-radius: 4rem;
+        background-color: var(--color-black);
+        stroke: var(--color-white);
+      }
+    }
+  }
+}
+
+// ft-ad--footer
+// ===============================================
+.ft-ad--footer {
+  bottom: 6rem;
+}

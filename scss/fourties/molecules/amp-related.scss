@@ -1,0 +1,141 @@
+// ABSTRACTS
+// ================================================
+@import "../../abstracts/amp-abstracts";
+@import "../../vendors/bourbon/bourbon";
+// ================================================================================================
+
+// .ft-mol-related
+// ===============================================
+.ft-mol-related
+{
+  $self: &;
+  @include font--body-L;
+  @include margin(4rem 0 4rem null);
+  display: flex;
+  flex: 1 1 100%;
+  flex-direction: column;
+
+  // .ft
+  .ft
+  {
+
+    // &-list
+    &-list
+    {
+      @include margin(0);
+    }
+  }
+
+  // &__title
+  &__title
+  {
+    @include font--heading-XXS;
+    color: var(--color-primary);
+  }
+
+  // &__header
+  &__header
+  {
+    @include margin(0 null 0.5rem null);
+    @include font--body-L--small;
+    color: var(--color-quaternary);
+
+    // behavior: parent(ft-mol-related--opinion)
+    @include behavior-parent(ft-mol-related--opinion)
+    {
+      @include margin(1rem null 0 null);
+      @include font--body-M;
+    }
+
+  }
+
+  // &__item
+  &__item
+  {
+    @include margin(0);
+    @include padding(0.5rem 0);
+    @include border-style(null null solid null);
+    @include border-width(0.1rem);
+    @include border-color(var(--color-mediumGrey));
+    color: var(--color-black);
+
+    // behavior: parent(ft-mol-related--opinion)
+    @include behavior-parent(ft-mol-related--opinion)
+    {
+      @include font--body-L;
+      @include fontBold;
+      @include padding(.5rem 0);
+    }
+
+ // behavior: parent(ft-mol-related--Hasimage)
+ @include behavior-parent(ft-mol-related--Hasimage)
+ {
+   @include font--body-L--small;
+   @include border-width(0rem);
+   @include margin(0 1rem 0 0);
+   @include padding(0 null);
+
+ }
+    //  &:last-child
+    &:last-child
+    {
+      @include border-width(0);
+    }
+
+    // .ft
+    .ft
+    {
+
+      // &-link
+      &-link
+      {
+        color: var(--color-black);
+        @include fontBold;
+      }
+    }
+
+
+  }
+
+  // &__group
+  &__group
+  {
+    @include margin(null null null 0);
+    @include padding(null);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  // &__img
+  &__img
+  {
+    @include margin(null null null 0);
+    max-width: 45%;
+    aspect-ratio: 15/9;
+    display:table;
+
+  }
+
+    // &--Has
+    &--Has
+    {
+  
+      // &image
+      &image
+      {
+        @include padding(1rem);
+        @include border-style(solid);
+        @include border-width(0.1rem);
+        @include border-color(var(--color-mediumGrey));
+        @include border-top-radius(0.5rem);
+        @include border-bottom-radius(0.5rem);
+        background-color: var(--color-white);
+        box-shadow: 2px 2px 25px -6px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+
+      }
+    }
+}

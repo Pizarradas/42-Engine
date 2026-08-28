@@ -1,0 +1,232 @@
+// ABSTRACTS
+// ================================================
+@import "../../abstracts/amp-abstracts";
+@import "../../vendors/bourbon/bourbon";
+// ================================================================================================
+
+// .ft-mol-modNews
+// ===============================================
+.ft-mol-modNews
+{
+  @include margin(0 auto 2.5rem auto);
+  display: block;
+  max-width: 93%;
+
+  // &__title
+  &__title
+  {
+    @include font--heading-XXS;
+    @include border-style(null null solid null);
+    @include border-width(null null 0.2rem null);
+    @include border-color(null null var(--color-primary) null);
+    @include padding(null null 0.5rem null);
+    @include margin(2.5rem 0 0 0); 
+    display: block;
+    width: 100%;
+
+    // behavior: parent(ft-mol-modNews--recirculationn)
+    @include behavior-parent(ft-mol-modNews--recirculation)
+    {
+      @include border-width(null null 0.1rem null);
+      @include border-color(null null var(--color-mediumGrey) null);
+      @include margin(1rem 0 0 0);
+      @include padding(null null 1rem null);
+      display: flex;
+
+      // &:first-child
+      &:first-child
+      {
+        @include margin(0);
+      }
+    }
+  }
+
+  // &__article
+  &__article
+  {
+    @include border-style(null null solid null);
+    @include border-width(null null 0.1rem null);
+    @include border-color(null null var(--color-mediumGrey) null);
+    @include padding(1.5rem 0);
+    @include position(relative, null null null null);
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    // behavior: parent(ft-mol-modNews--recirculation)
+    @include behavior-parent(ft-mol-modNews--recirculation)
+    {
+      @include border-width(null null 0 null);
+    }
+
+
+
+    // .ft-mol-headband
+    .ft-mol-headband
+    {
+      display: block;
+    }
+  }
+
+
+
+  // &__content
+  &__content
+  {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+
+    // &Text
+    &Text
+    {
+      @include font--body-L--small;
+      @include margin(0 1rem 0.5rem 0);
+
+
+      // .ft-helper-img-rd
+      .ft-helper-img-rd
+      {
+        @include margin(0 0.8rem 0 0);
+        width: 37px;
+      }
+
+      // .ft-link
+      .ft-link
+      {
+        display: flex;
+        align-items: flex-start;
+      }
+    }
+
+    // &Image
+    &Image
+    {
+      @include size(120px, auto);
+
+      &--logo
+      {
+        @include position(absolute, 2.5rem 0 null null);
+        @include padding(0.2rem 1rem);
+        background-color: rgba(255, 255, 255, 0.8);
+        max-height: 30px;
+      }
+    }
+
+    // &Title
+    &Title
+    {
+      @include font--body-M--small;
+      @include margin(0 0.5rem 0.5rem 0);
+      text-transform: uppercase;
+      color: var(--color-primary);
+      display: flex;
+      align-items: flex-start;
+
+      // .ft-helper-img-rd
+      .ft-helper-img-rd
+      {
+        @include margin(0 0.8rem 0 0);
+        max-width: 17px;
+      }
+
+    }
+  }
+
+  // &__data
+  &__data
+  {
+    @include font--body-M--small;
+    @include margin(0);
+    width: 100%;
+    color: var(--color-quaternary);
+
+    //  &--primary
+    &--primary
+    {
+      color: var(--color-primary);
+    }
+  }
+
+  // &__footer
+  &__footer
+  {
+    @include margin(2.5rem auto 1rem auto);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  // &--last
+  &--last
+  {
+
+    // .ft-mol-modNews
+    .ft-mol-modNews
+    {
+      @include margin(0 null 2.5rem null);
+
+      // &__data
+      &__data
+      {
+
+        // &Primary
+        &Primary
+        {
+          color: var(--color-primary);
+        }
+      }
+
+      // &__content
+      &__content
+      {
+
+        // &Image
+        &Image
+        {
+          @include size(90px, auto);
+        }
+      }
+    }
+  }
+
+  // &--taboola
+  &--taboola
+  {
+
+    // .ft-helper-branded
+    .ft-helper-branded
+    {
+      flex-direction: column-reverse;
+
+      // .ft-mol-modNews__contentImage
+      .ft-mol-modNews__contentImage
+      {
+        width: 100%;
+
+        &--logo
+        {
+          max-height: 55px;
+        }
+      }
+
+      //  .ft-mol-modNews__contentText
+      .ft-mol-modNews__contentText
+      {
+        @include margin(1rem 1rem 0.5rem 0);
+      }
+    }
+
+
+  }
+
+  // .ft-mol-headband
+  .ft-mol-headband
+  {
+    @include margin(1rem 0);
+  }
+
+
+}

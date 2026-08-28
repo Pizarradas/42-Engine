@@ -1,0 +1,201 @@
+
+// ABSTRACTS
+// ================================================
+@import "../../abstracts/amp-abstracts";
+@import "../../vendors/bourbon/bourbon";
+// ================================================================================================
+
+// ft-mol-writer
+// ===============================================
+.ft-mol-writer {
+  @include margin(2.5rem null);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  color: var(--color-quaternary);
+
+  // behavior parent: ft-mol-comment
+  @include behavior-parent(ft-mol-comment) {
+    @include margin(0);
+  }
+@include behavior-parent(ep){
+  // .ft-trust .ft-helper-img-rd
+  .ft-trust .ft-helper-img-rd {
+    @include margin(null 0.6rem null null);
+    @include border-style(none);
+    @include border-width(0);
+    @include border-top-radius(0%);
+    @include border-left-radius(0%);
+    @include border-bottom-radius(0%);
+    @include border-right-radius(0%);
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+  // &__group
+  &__group {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  // &__item
+  &__item {
+    @include margin(0.2rem 1rem 0.2rem 0);
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+
+    // behavior parent: ft-mol-writer--basis
+    @include behavior-parent(ft-mol-writer--basis) {
+      flex-direction: column;
+    }
+
+    // behavior parent: ft-mol-writer--side
+    @include behavior-parent(ft-mol-writer--side) {
+      @include position(relative, null null null null);
+      @include margin(0);
+
+      // &:before
+      &:before {
+        content: "|";
+        padding: 0 0.9rem;
+        display: inline-block;
+      }
+
+      // &:first-child: after
+      &:first-child:before {
+        content: none;
+      }
+    }
+
+    // behavior parent: ft-mol-writer--sideHasimage
+    @include behavior-parent(ft-mol-writer--sideHasimage) {
+        flex-direction: row;
+        align-items: center;
+
+      // &:before
+      &:before {
+        content: none;
+      }
+    }
+
+    // &:hover, &:focus-within
+    &:hover,
+    &:focus-within {
+      // [class*="ft-helper-img-rd"]
+      [class*="ft-helper-img-rd"] {
+        filter: none;
+      }
+    }
+  }
+
+  // &__title
+  &__title {
+    // generals
+    @include margin(0.5rem null 0.5rem null);
+    @include fontBold;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+
+    // behavior parent: ft-mol-writer--basis
+    @include behavior-parent(ft-mol-writer--basis) {
+      align-items: center;
+    }
+
+    // behavior parent: ft-mol-writer--side
+    @include behavior-parent(ft-mol-writer--side) {
+      @include margin(0);
+      @include padding(0.2rem null null null);
+      align-items: flex-start;
+       justify-content: center;
+
+    }
+
+    // behavior parent: ft-mol-writer--sideHasimage
+    @include behavior-parent(ft-mol-writer--sideHasimage) {
+      @include margin(0rem 1rem 0.5rem 1rem);
+
+    }
+
+
+    // &Opinion
+    &Opinion {
+      @include margin(0 0 0.2rem 0);
+
+      // behavior parent: ft-mol-writer--side
+      @include behavior-parent(ft-mol-writer--side) {
+        @include fontBold;
+      }
+    }
+  }
+
+  // &--side
+  &--side {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    @include margin(2.25rem null 0 null);
+
+    // .ft-date
+    .ft-date {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: flex-start;
+    align-items: flex-start;
+      @include margin(0.25rem null null null);
+
+      // @if $brand ==sport
+      &__reload {
+        @include margin(null null null 0);
+      }
+
+      &__textPlace {
+        @include margin(null 0.3rem null null);
+      }
+
+      &__text {
+        @include margin(null null 0.2rem null);
+      }
+    }
+ // &Has
+    &Has {
+      //authors
+      &-authors{
+        .ft-mol-writer__titleOpinion{
+          .ft-link{
+                &:before{
+                  content: "|";
+                    padding: 0 0.9rem;
+                    display: inline-block;
+                    color: var(--color-darkGrey);
+                    font-weight: 400;
+                }
+                &:first-child:before{
+                  content: none;
+                }
+        }
+        }
+      }
+    }
+ 
+@include behavior-parent(ep){
+    // .ft-trust
+    .ft-trust {
+      width: 100%;
+      text-align: left;
+      align-items: flex-start;
+      justify-content: flex-start;
+      @include margin(null null 0.5rem null);
+    }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+// ABSTRACTS
+// ================================================
+@import "../../abstracts/amp-abstracts";
+@import "../../vendors/bourbon/bourbon";
+// ================================================================================================
+
+// ft-mol-tagsNews
+// ===============================================
+.ft-mol-tagsNews {
+  @include margin(2rem 0);
+  @include padding(0);
+  display: flex;
+  gap: 1.5rem;
+
+
+  &--last{
+    @include border-style(none);
+    @include margin(.5rem 0 0 0);
+
+   // [class*="__title"]
+   [class*="__title"] {
+    @include font--body-S;
+  }
+
+   // .ft
+   .ft {
+    // &-tag
+    &-tag {
+      @include margin(null null .3rem null);
+    }
+     // &-link
+     &-link {
+      white-space: nowrap;
+    }
+  }
+
+  }
+// [class*="__tags"]
+[class*="__tags"]
+{
+    @include margin(0);
+@include padding(null null null 0);
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: calc(100vw - 105px);
+    text-transform: none;
+}
+ // [class*="__title"]
+ [class*="__title"]
+ {
+     @include font--body-M;
+     @include fontBold;
+     @include margin(0);
+     color: var(--color-quaternary);
+ }
+.ft-tag--sm{white-space:nowrap}
+}
+
