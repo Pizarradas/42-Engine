@@ -1,0 +1,71 @@
+// ABSTRACTS
+// ================================================
+@import "../../abstracts/amp-abstracts";
+@import "../../vendors/bourbon/bourbon";
+// ================================================================================================
+
+// ft-org-breadcrumb
+// ===============================================
+.ft-org-breadcrumb
+{
+  $self: &;
+  @include margin(null 0 1.5rem 0);
+  background-color: var(--color-white);
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  @include behavior-brand(sport)
+  {
+    box-shadow: 1px 9px 10px -8px rgba(0, 0, 0, 0.16);
+  }
+
+  // behavior in ancestor: .sport.aniversario'
+  @include behavior-in-ancestors('.sport.aniversario')
+  {
+    @include border-width(0);
+    background-color: var(--color-black);
+  }
+
+  // .ft
+  .ft
+  {
+
+
+    // &-mol
+    &-mol
+    {
+
+      // &-breadcrumb
+      &-breadcrumb
+      {
+        @include margin(null auto null auto);
+        @include padding(null 1.1rem);
+        max-width: 1280px;
+
+
+        // &-has--lvl
+        &-has--lvl
+        {
+
+          // .ft
+          .ft
+          {
+
+            // &-mol-breadcrumb
+            &-mol-breadcrumb
+            {
+
+              // &__item
+              &__item
+              {
+                width: auto;
+                align-items: flex-start;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
