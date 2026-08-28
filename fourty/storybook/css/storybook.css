@@ -1,0 +1,1927 @@
+/* ════════════════════════════════════════════════════════════════════════
+   42DS Storybook — chrome estilo IBM Carbon
+   Prefijo .cb- (Carbon) para no colisionar nunca con .ft- del Design System.
+   El componente documentado usa SOLO clases .ft-* reales.
+   ════════════════════════════════════════════════════════════════════════ */
+
+/* ═══ Carbon design tokens (tema White / g10) ═══ */
+:root {
+    --cb-bg: #ffffff;
+    --cb-side-bg: #f5f8fd;   /* panel lateral: azul muy pálido y sutil para diferenciarlo del canvas */
+    --cb-layer: #f4f4f4;
+    --cb-layer-hover: #e8e8e8;
+    --cb-field: #f4f4f4;
+    --cb-border-subtle: #e0e0e0;
+    --cb-border-strong: #8d8d8d;
+    --cb-text: #161616;
+    --cb-text-secondary: #525252;
+    --cb-text-placeholder: #a8a8a8;
+    --cb-interactive: #0f62fe;
+    --cb-interactive-hover: #0353e9;
+    --cb-focus: #0f62fe;
+    --cb-error: #da1e28;
+    --cb-success: #24a148;
+    --cb-warning: #f1c21b;
+    --cb-docs-ico: #a87900;   /* icono "Overview": oro legible sobre el sidebar claro */
+    --cb-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --cb-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+
+/* ═══ Modo oscuro del chrome (tema Carbon Gray 100 / g100) ═══
+   Reasigna los tokens --cb-* del chrome (sidebar, toolbar, paneles, docs) y
+   oscurece el fondo del canvas. NO toca las clases .ft-* del DS: el dark mode
+   REAL de los componentes lo aporta el atributo data-theme="dark" en <html>
+   (reglas de _dark.scss), que el switch activa a la vez que esta clase. */
+body.cb-host.cb-dark {
+    --cb-bg: #161616;
+    --cb-side-bg: #1b2434;   /* panel lateral en oscuro: gris azulado sutil */
+    --cb-layer: #262626;
+    --cb-layer-hover: #333333;
+    --cb-field: #262626;
+    --cb-border-subtle: #393939;
+    --cb-border-strong: #6f6f6f;
+    --cb-text: #f4f4f4;
+    --cb-text-secondary: #c6c6c6;
+    --cb-text-placeholder: #6f6f6f;
+    --cb-interactive: #4589ff;
+    --cb-interactive-hover: #78a9ff;
+    --cb-focus: #ffffff;
+    --cb-error: #fa4d56;
+    --cb-success: #42be65;
+    --cb-warning: #f1c21b;
+    --cb-docs-ico: #f1c21b;   /* icono "Overview": amarillo brillante (legible sobre el sidebar oscuro) */
+}
+/* Admonitions de Docs: re-tintado oscuro para que el texto siga siendo legible. */
+body.cb-host.cb-dark .cb-callout { background: #202d45; }
+body.cb-host.cb-dark .cb-callout--usage { background: #173224; }
+body.cb-host.cb-dark .cb-callout--warn { background: #3d3420; }
+body.cb-host.cb-dark .cb-callout--deprecated { background: #3a1717; }
+body.cb-host.cb-dark .cb-callout--removed { background: #20252d; }
+body.cb-host.cb-dark .cb-callout code { background: var(--cb-layer); }
+body.cb-host.cb-dark .cb-tag--na { background: #3a0d10; border-color: #5d1a1f; }
+body.cb-host.cb-dark .cb-tag--own { background: #0d2818; color: #6fdc8c; border-color: #1f4d2e; }
+
+* { box-sizing: border-box; }
+
+html, body.cb-host { height: 100%; }
+
+body.cb-host {
+    margin: 0;
+    background: var(--cb-bg);
+    color: var(--cb-text);
+    font-family: var(--cb-sans);
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ═══ Shell: sidebar | main ═══ */
+.cb-app {
+    display: grid;
+    grid-template-columns: var(--cb-side-w, 264px) 1fr;
+    grid-template-rows: minmax(0, 1fr);   /* fila definida (100dvh) → sidebar y main pueden ceder altura y hacer scroll interno */
+    /* Unidades de viewport modernas: vh sobre móvil (iOS/Android) deja la chrome del
+       navegador "comiendo" altura cuando se muestra → recortes. dvh sigue al chrome
+       dinámicamente. Patrón de doble declaración (recomendado por la W3C): el navegador
+       que no entienda dvh ignora esa línea y usa vh. Mismo enfoque que ya hay en
+       layouts/layout-ep-noticia-PAYWALL.html y layouts/layout-ep-cerca-fase-2-*. */
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* ─── Sidebar ─── */
+.cb-side {
+    background: var(--cb-side-bg);
+    border-right: 1px solid var(--cb-border-subtle);
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.cb-brand {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--cb-border-subtle);
+}
+.cb-brand__mark {
+    width: 24px; height: 24px;
+    flex: none;
+    object-fit: contain;
+    display: block;
+}
+.cb-brand__name { font-weight: 600; letter-spacing: .01em; }
+/* Pastilla de versión del DS, anclada a la derecha de la cabecera. */
+.cb-brand__ver {
+    margin-left: auto;
+    font: 600 10px/1 var(--cb-mono);
+    color: var(--cb-text-secondary);
+    background: var(--cb-bg);
+    border: 1px solid var(--cb-border-subtle);
+    border-radius: 999px;
+    padding: 3px 8px;
+}
+.cb-brand__ver[hidden] { display: none; }
+
+/* Chivatos de cambios por componente (fila del árbol): NEW (verde) / UPD (ámbar). */
+.cb-status {
+    font: 700 8.5px/1 var(--cb-font, "Inter"), sans-serif;
+    letter-spacing: .04em;
+    padding: 2px 5px; border-radius: 4px; margin-left: 6px;
+    flex: none;
+}
+.cb-status--new { background: #e6f7ec; color: #1a7f37; }
+.cb-status--upd { background: #fff4e0; color: #b9770e; }
+.cb-status--js { background: #e8f1ff; color: #0b57d0; }
+body.cb-host.cb-dark .cb-status--new { background: rgba(35,134,54,.22); color: #6fdc8c; }
+body.cb-host.cb-dark .cb-status--upd { background: rgba(185,119,14,.22); color: #f0c674; }
+body.cb-host.cb-dark .cb-status--js { background: rgba(56,139,253,.22); color: #8ab4ff; }
+
+.cb-search { padding: 12px; position: relative; }
+.cb-search__ico {
+    position: absolute;
+    left: 22px; top: 50%; transform: translateY(-50%);
+    width: 16px; height: 16px;
+    color: var(--cb-text-placeholder);
+    pointer-events: none;
+}
+.cb-search input {
+    width: 100%;
+    font: inherit; font-size: 13px;
+    padding: 9px 10px 9px 34px;
+    border: none;
+    border-bottom: 1px solid var(--cb-border-strong);
+    background: var(--cb-field);
+    color: var(--cb-text);
+    direction: ltr;
+    unicode-bidi: plaintext;
+    text-align: left;
+    outline: none;
+}
+.cb-search input:focus { outline: 2px solid var(--cb-focus); outline-offset: -2px; }
+.cb-search input::placeholder { color: var(--cb-text-placeholder); }
+/* Oculta la X nativa de webkit; renderizamos nuestro propio botón clear con
+   posición/estilo controlados para que también funcione en Firefox. */
+.cb-search input::-webkit-search-cancel-button { -webkit-appearance: none; appearance: none; }
+
+/* Atajo "/" — pequeño chip a la derecha del input mientras está vacío.
+   Se sustituye por el botón clear (×) cuando hay texto. */
+.cb-search__shortcut {
+    position: absolute;
+    right: 22px; top: 50%; transform: translateY(-50%);
+    font: 500 11px/1 ui-monospace, "JetBrains Mono", monospace;
+    color: var(--cb-text-placeholder);
+    border: 1px solid var(--cb-border-strong);
+    border-radius: 3px;
+    padding: 2px 5px;
+    background: var(--cb-bg);
+    pointer-events: none;
+}
+.cb-search__shortcut[hidden] { display: none; }
+
+.cb-search__clear {
+    position: absolute;
+    right: 18px; top: 50%; transform: translateY(-50%);
+    width: 20px; height: 20px;
+    border: 0; padding: 0;
+    background: var(--cb-interactive);
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: opacity .12s ease;
+}
+/* Icono "x" (SVG Phosphor): centrado exacto por el flex del botón (el glifo × de
+   texto quedaba ópticamente descentrado). */
+.cb-search__clear__ico { width: 10px; height: 10px; display: block; }
+.cb-search__clear:hover { opacity: .85; }
+.cb-search__clear:focus-visible { outline: 2px solid var(--cb-focus); outline-offset: 2px; }
+.cb-search__clear[hidden] { display: none; }
+
+/* Contador "8 resultados" / "Sin resultados" — vive entre el input y el árbol. */
+.cb-search__meta {
+    padding: 0 16px 8px;
+    font: 500 11px/1.3 var(--cb-font, "Inter"), sans-serif;
+    color: var(--cb-text-secondary);
+}
+.cb-search__meta[hidden] { display: none; }
+
+/* Barra de filtros faceted (⚡ AMP, niveles…) — entre el buscador y el árbol. Plegable
+   con el toggle "Filtros"; los chips togglean con .is-active (color de foco) y se combinan
+   con la búsqueda de texto. */
+.cb-filterbar { padding: 0 12px 8px; }
+.cb-filterbar__toggle {
+    display: flex; align-items: center; gap: 6px;
+    width: 100%; padding: 2px 0 8px;
+    background: none; border: 0; cursor: pointer;
+    font: 600 10px/1 var(--cb-font, "Inter"), sans-serif;
+    letter-spacing: .05em; text-transform: uppercase;
+    color: var(--cb-text-secondary);
+}
+.cb-filterbar__toggle:hover { color: var(--cb-text); }
+.cb-filterbar__toggle:focus-visible { outline: 2px solid var(--cb-focus); outline-offset: 2px; border-radius: 4px; }
+.cb-filterbar__toggle .cb-caret { width: 12px; height: 12px; transition: transform .15s; }
+.cb-filterbar.is-collapsed .cb-caret { transform: rotate(-90deg); }
+.cb-filterbar.is-collapsed .cb-filters { display: none; }
+.cb-filterbar__count {
+    margin-left: 2px; padding: 1px 6px; border-radius: 999px;
+    background: var(--cb-focus); color: #fff; font-size: 10px; line-height: 1.4;
+}
+.cb-filterbar__count[hidden] { display: none; }
+
+/* En columna por SECCIONES (Característica/Componentes/Páginas/Base): cada sección con su
+   etiqueta + una fila de chips. max-height de seguridad → en pantallas bajas scrollea aquí en vez
+   de aplastar el árbol (el toggle "Filtros" sigue siendo el gestor de altura principal). */
+.cb-filters { display: flex; flex-direction: column; gap: 10px; max-height: 38vh; overflow: auto; }
+.cb-filters:empty { display: none; }
+.cb-filters__group { display: flex; flex-direction: column; gap: 5px; }
+.cb-filters__label {
+    font: 600 9px/1 var(--cb-font, "Inter"), sans-serif;
+    letter-spacing: .09em; text-transform: uppercase;
+    color: var(--cb-text-placeholder);
+}
+.cb-filters__row { display: flex; flex-wrap: wrap; gap: 5px; }
+.cb-filter {
+    font: 500 11px/1 var(--cb-font, "Inter"), sans-serif;
+    padding: 4px 9px;
+    border-radius: 999px;
+    border: 1px solid var(--cb-border-subtle);
+    background: var(--cb-bg);
+    color: var(--cb-text-secondary);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background .12s, border-color .12s, color .12s;
+}
+.cb-filter:hover { border-color: var(--cb-focus); color: var(--cb-text); }
+.cb-filter:focus-visible { outline: 2px solid var(--cb-focus); outline-offset: 2px; }
+.cb-filter.is-active {
+    background: var(--cb-focus);
+    border-color: var(--cb-focus);
+    color: #fff;
+}
+
+/* Highlight de coincidencias en el label de cada story. Tono suave para no
+   competir con el is-active de la story seleccionada. */
+.cb-search__hit {
+    background: color-mix(in srgb, var(--cb-focus) 22%, transparent);
+    color: inherit;
+    border-radius: 2px;
+    padding: 0 1px;
+}
+
+/* Empty state cuando ningún match coincide. Centrado vertical en el espacio
+   restante del sidebar. */
+.cb-tree__empty {
+    padding: 28px 18px;
+    color: var(--cb-text-secondary);
+    text-align: center;
+}
+.cb-tree__empty[hidden] { display: none; }
+.cb-tree__empty-msg {
+    margin: 0 0 4px;
+    font: 600 12.5px/1.4 var(--cb-font, "Inter"), sans-serif;
+    color: var(--cb-text);
+}
+.cb-tree__empty-hint {
+    margin: 0;
+    font: 400 11.5px/1.4 var(--cb-font, "Inter"), sans-serif;
+}
+
+/* Sombra interna muy sutil en el borde superior → separa la cabecera (buscador/filtros) del
+   contenido que scrollea por debajo. Fija al borde del contenedor (no scrollea con el contenido). */
+.cb-tree { overflow-y: auto; padding: 6px 6px 24px; flex: 1; min-height: 0; box-shadow: inset 0 7px 6px -7px rgba(0, 0, 0, .12); }
+body.cb-host.cb-dark .cb-tree { box-shadow: inset 0 7px 6px -7px rgba(0, 0, 0, .55); }
+
+/* Fila base común — todas las entradas comparten alto, gap e iconos */
+.cb-tree__group,
+.cb-tree__component,
+.cb-tree__subgroup,
+.cb-story {
+    display: flex; align-items: center; gap: 6px;
+    width: 100%; font-size: 13px; line-height: 1.25;
+}
+
+/* Iconos Phosphor — tamaño y color por jerarquía */
+.cb-caret { width: 14px; height: 14px; flex: none; color: var(--cb-text-placeholder); }
+.cb-ic { width: 16px; height: 16px; flex: none; }
+.cb-story__ico { width: 16px; height: 16px; flex: none; color: var(--cb-text-secondary); }
+
+/* Nivel 0 — grupo (ATOMS / MOLECULES / ORGANISMS)
+   Sección del sidebar: divisor superior + uppercase + tipografía pequeña discreta.
+   El divisor + el aire vertical separan visualmente los bloques de componentes y
+   refuerzan la jerarquía respecto al Nivel 1 (componente). */
+.cb-tree__group {
+    margin-top: 10px;
+    padding: 14px 8px 8px;
+    border-top: 1px solid var(--cb-border-subtle);
+    font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--cb-text-placeholder); font-weight: 700;
+}
+.cb-tree__group:first-child {
+    margin-top: 0;
+    padding-top: 8px;
+    border-top: none;
+}
+.cb-tree__group .cb-caret { width: 11px; height: 11px; }
+
+/* Nivel 1 — componente (Btn, Btn Group, Authors…)
+   El nombre del componente es el peso máximo del árbol: color principal + size 13. */
+.cb-tree__component {
+    padding: 8px 8px 7px; font-size: 13.5px; font-weight: 600;
+    color: var(--cb-text); cursor: default;
+}
+.cb-tree__component .cb-ic { color: var(--cb-text-secondary); }
+
+/* Nivel 2 — stories planas + Overview */
+.cb-story {
+    text-align: left; border: none; background: none; font: inherit;
+    color: var(--cb-text); cursor: pointer;
+    padding: 6px 8px 6px 36px;
+}
+.cb-story:hover { background: var(--cb-layer); }
+.cb-story.is-active { background: #d0e2ff; color: #0043ce; font-weight: 500; }
+.cb-story.is-active .cb-story__ico { color: #0043ce; }
+.cb-story--docs .cb-story__ico { color: var(--cb-docs-ico); }
+
+/* Nivel 2 — subgrupo (Galleries): caret a la izquierda, icono alineado con las stories */
+.cb-tree__subgroup {
+    padding: 7px 8px 7px 16px; font-weight: 600; color: var(--cb-text); cursor: default;
+}
+.cb-tree__subgroup .cb-ic { color: var(--cb-interactive); }
+.cb-tree__subgroup small { font-weight: 400; color: var(--cb-text-secondary); font-family: var(--cb-mono); font-size: 10.5px; }
+
+/* Nivel 3 — stories anidadas (bajo un subgrupo) */
+.cb-story--nested { padding-left: 52px; }
+
+/* Accordion — cabeceras plegables (grupo / componente / subgrupo) */
+.cb-tree__toggle { cursor: pointer; user-select: none; }
+.cb-tree__toggle:hover { background: var(--cb-layer); }
+.cb-tree__toggle:focus-visible { outline: 2px solid var(--cb-focus); outline-offset: -2px; }
+.cb-caret { transition: transform .15s ease; }
+.cb-tree__toggle.is-collapsed .cb-caret { transform: rotate(-90deg); }
+.cb-tree__body[hidden] { display: none; }
+
+/* Hint de clase (.ft-btn-nav…) junto al nombre de una story */
+.cb-story__hint { font-weight: 400; color: var(--cb-text-secondary); font-family: var(--cb-mono); font-size: 10.5px; margin-left: 4px; }
+
+/* Contador de items (nº de stories) en cabeceras de grupo y componente. `margin-left:auto`
+   lo ancla a la derecha. Estilo discreto (pill neutra) para no competir con el resaltado
+   de la story activa. Estático = TOTAL (la búsqueda no lo altera). */
+.cb-tree__count {
+    margin-left: auto; flex: none;
+    min-width: 18px; height: 16px; padding: 0 5px;
+    display: inline-flex; align-items: center; justify-content: center;
+    border-radius: 999px;
+    background: var(--cb-layer); color: var(--cb-text-secondary);
+    font-family: var(--cb-mono); font-size: 10px; font-weight: 600;
+    letter-spacing: 0;            /* resetea el .12em heredado en el header de grupo */
+    line-height: 1;
+}
+/* En el header de grupo (uppercase, discreto) el badge va aún más sutil: sin relleno. */
+.cb-tree__group .cb-tree__count { background: transparent; color: var(--cb-text-placeholder); padding: 0 2px; }
+body.cb-host.cb-dark .cb-tree__count { background: var(--cb-layer); color: var(--cb-text-secondary); }
+body.cb-host.cb-dark .cb-tree__group .cb-tree__count { background: transparent; }
+
+/* ─── Main column ─── */
+.cb-main {
+    display: grid;
+    /* 4 tracks: toolbar (40) · sub-toolbar a11y (40) · canvas/docs (1fr) · panel (h)
+       Panel default = 320px (suficiente para ver tabs + barra de filtros + ~6 filas de
+       tabla en Contraste/Controls sin tener que arrastrar). El JS persiste el ajuste del
+       usuario en localStorage["cbPanelH"] y lo restaura en boot. */
+    grid-template-rows: 40px 40px minmax(0, 1fr) var(--cb-panel-h, 320px);
+    min-width: 0;
+    min-height: 0;   /* permite que el canvas/docs (overflow:auto) hagan scroll en vez de empujar el alto */
+    position: relative;
+}
+.cb-main.is-docs { grid-template-rows: 40px 40px minmax(0, 1fr) 0; }
+
+/* ─── Resizers de paneles (arrastrables) ─── */
+.cb-resize-x,
+.cb-resize-y { position: absolute; z-index: 30; background: var(--cb-interactive); opacity: 0; transition: opacity .12s; }
+.cb-resize-x { top: 0; bottom: 0; left: var(--cb-side-w, 264px); width: 9px; margin-left: -4px; cursor: col-resize; }
+.cb-resize-y { left: 0; right: 0; bottom: var(--cb-panel-h, 320px); height: 9px; margin-bottom: -4px; cursor: row-resize; }
+.cb-resize-x:hover, .cb-resize-x.is-drag,
+.cb-resize-y:hover, .cb-resize-y.is-drag { opacity: .35; }
+.cb-main.is-docs .cb-resize-y { display: none; }   /* en Docs el panel está oculto */
+body.cb-host.is-resizing { user-select: none; }
+
+/* ═══ Toolbar (chrome global) ═══
+   Patrón Carbon: barra de 40px con un "section pill" a la izquierda que ancla el dominio
+   (Canvas / A11y), grupos de controles separados solo en transiciones de significado
+   (no entre cada item), tipografía meta-info compacta. */
+.cb-toolbar {
+    display: flex; align-items: center; gap: 8px;      /* gap entre flex children; el separador ya no añade margin propio */
+    border-bottom: 1px solid var(--cb-border-subtle);
+    padding: 0 12px;
+    background: var(--cb-bg);
+}
+/* Section pill: ancla el propósito de la barra. Borde derecho como separador implícito
+   con el primer grupo de controles. */
+.cb-tb-section {
+    display: inline-flex; align-items: center;
+    align-self: stretch;
+    font-size: 10px; font-weight: 700; letter-spacing: .14em;
+    color: var(--cb-text);
+    text-transform: uppercase;
+    padding-right: 12px;
+    border-right: 1px solid var(--cb-border-subtle);
+    flex-shrink: 0;
+}
+/* Separador entre grupos conceptuales. SIN margin: el gap del padre (8px) ya separa;
+   solo aporta la línea de 1px → distancia total entre grupos = 8+1+8 = 17px (limpio). */
+.cb-tool-sep { width: 1px; height: 18px; background: var(--cb-border-subtle); opacity: .6; flex-shrink: 0; }
+/* .cb-globals: contenedor de "control + su label" — gap interno pequeño porque visualmente
+   pertenecen al mismo átomo de UI (label-control). El gap del padre los separa entre sí. */
+.cb-globals { display: inline-flex; align-items: center; gap: 6px; }
+/* Globals inertes sobre una página completa (kind:"page"): la página fija su propia marca
+   (su <link> de CSS y sus clases de <body>), así que Brand/Cabecera/Fondo/Oscuro no pueden
+   aplicar. Se atenúan y bloquean clicks para que no parezca que funcionan. Viewport/Visión/
+   Fullscreen NO se tocan (viven en el iframe padre y sí aplican). */
+.cb-globals.is-disabled { opacity: .4; pointer-events: none; }
+.cb-globals label {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 10px; color: var(--cb-text-secondary); text-transform: uppercase; letter-spacing: .08em;
+}
+.cb-globals label svg { width: 14px; height: 14px; }
+.cb-globals select {
+    font: inherit; font-size: 12px; padding: 5px 6px;
+    border: 1px solid var(--cb-border-subtle); background: var(--cb-field); color: var(--cb-text);
+}
+.cb-globals--bg select { max-width: 200px; }
+
+/* ═══ Dropdown custom (.cb-csel) ═══
+   Reemplazo del <select> nativo. Cada opción lleva un icono izquierdo (.cb-csel__sw):
+   en el dropdown de Cabecera es un CHECKBOX de selección (ver bloque «Cabecera: checkbox»
+   más abajo); en el de visión (A11y) es una muestra circular con el filtro aplicado.
+   Mantiene el look Carbon del select nativo en estado cerrado para no romper el ritmo. */
+.cb-csel { position: relative; display: inline-block; }
+.cb-csel__trigger {
+    display: inline-flex; align-items: center; gap: 7px;
+    font: inherit; font-size: 12px;
+    padding: 5px 6px 5px 8px;
+    border: 1px solid var(--cb-border-subtle);
+    background: var(--cb-field); color: var(--cb-text);
+    cursor: pointer;
+    min-width: 160px; max-width: 220px;
+}
+.cb-csel__trigger:focus-visible { outline: 2px solid var(--cb-focus); outline-offset: -2px; }
+.cb-csel__trigger:disabled { cursor: wait; opacity: .55; }
+/* Cabecera tiene labels más largos (nombres de poblaciones + hint de región) */
+.cb-csel--cabecera .cb-csel__trigger { min-width: 200px; max-width: 280px; }
+/* padding: 0 para que el search bar (top) y el footer (bottom) queden flush con los bordes */
+.cb-csel--cabecera .cb-csel__menu { min-width: 280px; max-width: 420px; padding: 0; }
+
+/* Barra de búsqueda sticky en el top del menu — siempre visible aunque se scrollee.
+   Patrón clásico de dropdowns con muchos items (Notion, Linear, Figma). */
+.cb-csel__search {
+    position: sticky; top: 0;
+    z-index: 2;   /* sobre las opciones */
+    display: flex; align-items: center; gap: 7px;
+    padding: 8px 12px;
+    background: var(--cb-bg);
+    border-bottom: 1px solid var(--cb-border-subtle);
+}
+.cb-csel__search-ic { width: 14px; height: 14px; color: var(--cb-text-placeholder); flex-shrink: 0; }
+.cb-csel__search-input {
+    flex: 1; min-width: 0;
+    font: inherit; font-size: 13px;
+    padding: 3px 0;
+    border: none; outline: none;
+    background: transparent;
+    color: var(--cb-text);
+    direction: ltr;
+    unicode-bidi: plaintext;
+    text-align: left;
+}
+.cb-csel__search-input::placeholder { color: var(--cb-text-placeholder); }
+
+/* Footer sticky al final del menu — siempre visible, también scrolleando la lista.
+   Apila la leyenda de tipología (clave de color) y el contador. El contador muestra el
+   total absoluto ("159 cabeceras"), el filtrado ("8 de 159"), o "Sin resultados". */
+.cb-csel__footer {
+    position: sticky; bottom: 0;
+    z-index: 2;
+    display: flex; flex-direction: column; align-items: center; gap: 7px;
+    padding: 8px 14px;
+    background: var(--cb-bg);
+    border-top: 1px solid var(--cb-border-subtle);
+}
+/* Contador: mono para que los dígitos se alineen al cambiar entre estados. */
+.cb-csel__count {
+    font-family: var(--cb-mono);
+    font-size: 11px;
+    color: var(--cb-text-secondary);
+    letter-spacing: .02em;
+    text-align: center;
+}
+/* Leyenda de tipología: clave de color de los acentos de anclaje. Cada ítem = un swatch
+   con la MISMA forma (barra vertical) y color que el acento de su fila, + etiqueta. Wrap
+   si no cabe. Sólo en el menú de Cabecera (los demás selectores no tienen tipología). */
+#cbCabecera .cb-csel__legend {
+    display: flex; flex-wrap: wrap; justify-content: center;
+    gap: 5px 14px;
+}
+#cbCabecera .cb-csel__legend-item {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: var(--cb-sans);
+    font-size: 11px; font-weight: 500;
+    color: var(--cb-text-secondary);
+}
+#cbCabecera .cb-csel__legend-item::before {
+    content: "";
+    width: 4px; height: 12px;
+    border-radius: 1px;
+    flex-shrink: 0;
+}
+#cbCabecera .cb-csel__legend-item--principal::before { background: var(--cb-anchor-principal); }
+#cbCabecera .cb-csel__legend-item--linked::before    { background: var(--cb-anchor-linked); }
+#cbCabecera .cb-csel__legend-item--combo::before     { background: var(--cb-anchor-combo); }
+/* Filter en vivo: el atributo `hidden` no aplica por defecto a elementos con
+   display:flex (el `display:flex` del autor gana al `display:none` del UA para [hidden]).
+   Hay que reactivarlo explícitamente para que el filtrado oculte opciones y grupos. */
+.cb-csel__opt[hidden],
+.cb-csel__group[hidden] { display: none; }
+.cb-csel__lbl {
+    flex: 1; text-align: left;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.cb-csel__caret { width: 12px; height: 12px; flex-shrink: 0; color: var(--cb-text-secondary); }
+
+/* La muestra: square 14×14 con borde sutil; clip al padding para que un border-radius
+   no recorte el color sólido. data-empty="true" = sin selección → patrón diagonal. */
+.cb-csel__sw {
+    display: inline-block;
+    width: 14px; height: 14px;
+    border: 1px solid var(--cb-border-subtle);
+    border-radius: 2px;
+    flex-shrink: 0;
+    background-clip: padding-box;
+    background-size: cover;
+}
+.cb-csel__sw[data-empty="true"] {
+    background-image: linear-gradient(135deg,
+        transparent 45%, var(--cb-text-placeholder) 45%, var(--cb-text-placeholder) 55%, transparent 55%) !important;
+    background-color: transparent !important;
+}
+
+/* Modificador "vision": swatch circular con el espectro RGB completo (conic-gradient)
+   sobre el que aplicamos el filtro SVG correspondiente — el resultado es exactamente
+   lo que verá el iframe bajo esa simulación, en miniatura. Los <filter> SVG viven en
+   el parent doc (CHROME inyecta cb-vision-defs), así que filter: url(#...) resuelve
+   referencias locales. data-vision="" = sin filtro (referencia neutra). */
+.cb-csel__sw--vision {
+    width: 16px; height: 16px;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg,
+        #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff, #ff0000);
+    border-color: rgba(0, 0, 0, .15);
+}
+.cb-csel__sw--vision[data-vision="protanomaly"]   { filter: url(#sb-vis-protanomaly); }
+.cb-csel__sw--vision[data-vision="deuteranomaly"] { filter: url(#sb-vis-deuteranomaly); }
+.cb-csel__sw--vision[data-vision="tritanomaly"]   { filter: url(#sb-vis-tritanomaly); }
+.cb-csel__sw--vision[data-vision="achromatomaly"] { filter: url(#sb-vis-achromatomaly); }
+.cb-csel__sw--vision[data-vision="protanopia"]    { filter: url(#sb-vis-protanopia); }
+.cb-csel__sw--vision[data-vision="deuteranopia"]  { filter: url(#sb-vis-deuteranopia); }
+.cb-csel__sw--vision[data-vision="tritanopia"]    { filter: url(#sb-vis-tritanopia); }
+.cb-csel__sw--vision[data-vision="achromatopsia"] { filter: url(#sb-vis-achromatopsia); }
+.cb-csel__sw--vision[data-vision="grayscale"]     { filter: grayscale(1); }
+.cb-csel__sw--vision[data-vision="blurred"]       { filter: blur(2px); }
+/* Trigger compacto: el dropdown vive en la sub-toolbar A11y, espacio reducido */
+.cb-csel--vision .cb-csel__menu { min-width: 280px; }
+
+/* Menu (listbox): popover bajo el trigger. Misma tipografía que el dropdown nativo
+   y respeta el theme dark del chrome por usar tokens --cb-*. */
+.cb-csel__menu {
+    position: absolute; top: calc(100% + 2px); left: 0;
+    z-index: 200;
+    min-width: 100%;
+    background: var(--cb-bg);
+    border: 1px solid var(--cb-border-subtle);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .08);
+    max-height: 60dvh;
+    overflow-y: auto;
+    padding: 4px 0;
+}
+.cb-csel__opt {
+    display: flex; align-items: center; gap: 9px;
+    width: 100%;
+    padding: 6px 14px;
+    font: inherit; font-size: 13px;
+    color: var(--cb-text);
+    background: none; border: none;
+    cursor: pointer; text-align: left;
+}
+/* Nombre del outlet: ocupa el espacio sobrante, con elipsis si el contenedor no
+   da para más. Sin esto, un label largo + pastilla a la derecha podrían empujarse. */
+.cb-csel__opt-label {
+    flex: 1; min-width: 0;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+/* Pastilla de comunidad autónoma — alineada a la derecha (flex-shrink:0 mantiene
+   su forma intacta aunque el nombre del outlet sea largo). Color neutro tokenizado
+   para no competir con la muestra de color de marca (.cb-csel__sw) ni con la
+   tipografía principal. Auto-adapta a dark mode por usar tokens --cb-*. */
+.cb-csel__opt-region {
+    flex-shrink: 0;
+    font-size: 10.5px;
+    font-weight: 500;
+    color: var(--cb-text-secondary);
+    background: var(--cb-layer);
+    padding: 2px 8px;
+    border-radius: 999px;
+    white-space: nowrap;
+    line-height: 1.4;
+}
+/* En filas seleccionadas o hover, la pastilla se adapta al fondo activo para que no
+   "flote" como cuerpo extraño visualmente. */
+.cb-csel__opt:hover .cb-csel__opt-region { background: var(--cb-bg); }
+.cb-csel__opt[aria-selected="true"] .cb-csel__opt-region {
+    background: rgba(255, 255, 255, .55);
+    color: #0043ce;
+}
+body.cb-host.cb-dark .cb-csel__opt[aria-selected="true"] .cb-csel__opt-region {
+    background: rgba(255, 255, 255, .08);
+    color: #78a9ff;
+}
+.cb-csel__opt:hover { background: var(--cb-layer); }
+.cb-csel__opt[aria-selected="true"] { background: #d0e2ff; color: #0043ce; font-weight: 500; }
+.cb-csel__opt[aria-selected="true"] .cb-csel__sw { border-color: #0043ce; }
+body.cb-host.cb-dark .cb-csel__opt[aria-selected="true"] { background: #1f3a6b; color: #78a9ff; }
+body.cb-host.cb-dark .cb-csel__opt[aria-selected="true"] .cb-csel__sw { border-color: #78a9ff; }
+
+/* ── Cabecera: el icono izquierdo (.cb-csel__sw) es un CHECKBOX check/no-check, NO una
+   muestra de color (el CSV ya no trae color). Comunica de un vistazo qué está seleccionado
+   y qué no, sin inducir a error con un color decorativo. Dirigido por aria-selected → vale
+   igual para outlets (selección única) y combinables (multi). Scope estricto al menú de
+   Cabecera: NO afecta al swatch circular de "visión" (A11y) ni al swatch del trigger. */
+#cbCabecera .cb-csel__menu .cb-csel__sw {
+    position: relative;
+    width: 16px; height: 16px;
+    border: 1.5px solid var(--cb-text-placeholder);
+    border-radius: 3px;
+    background: transparent !important;
+    background-image: none !important;   /* anula el patrón diagonal de data-empty */
+    transition: background-color .12s ease, border-color .12s ease;
+}
+#cbCabecera .cb-csel__menu .cb-csel__opt[aria-selected="true"] .cb-csel__sw {
+    /* Color de la tipología de la fila (--row-c). Fallback al azul principal para la opción
+       "— Por defecto —", que no tiene tipo. Auto-adapta a dark (el token ya cambia). */
+    background: var(--row-c, var(--cb-anchor-principal)) !important;
+    border-color: var(--row-c, var(--cb-anchor-principal));
+}
+/* Checkmark (CSS puro: dos bordes de un pseudo rotado), solo en estado seleccionado.
+   Centrado por translate desde el centro de la caja (independiente del tamaño exacto);
+   el -60% en Y compensa ópticamente que el vértice del tick cae bajo. */
+#cbCabecera .cb-csel__menu .cb-csel__opt[aria-selected="true"] .cb-csel__sw::after {
+    content: "";
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 4px; height: 8px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: translate(-50%, -60%) rotate(45deg);
+}
+/* El relleno/borde del check ya salen de --row-c (que cambia de valor en dark): no hace falta
+   override de color aquí. Solo el checkmark se invierte a oscuro para contrastar sobre el token
+   claro de dark (#78a9ff / #3ddbd9 / #be95ff). */
+body.cb-host.cb-dark #cbCabecera .cb-csel__menu .cb-csel__opt[aria-selected="true"] .cb-csel__sw::after {
+    border-color: #161616;
+}
+/* El trigger ya no muestra color de marca → su swatch vacío sería ruido. Lo ocultamos
+   (el nombre del outlet en la etiqueta ya comunica la selección). */
+#cbCabecera .cb-csel__trigger .cb-csel__sw { display: none; }
+
+/* Nombres largos: en el menú de Cabecera el nombre del outlet HACE WRAP (hasta 2 líneas)
+   en vez de cortarse con elipsis — así ningún nombre queda oculto. La pastilla de región
+   sigue a la derecha; el checkbox y la pastilla se alinean arriba para que en filas de 2
+   líneas no "floten" centrados. (Scope al menú: no afecta a Fondo/Visión.) */
+#cbCabecera .cb-csel__menu .cb-csel__opt { align-items: flex-start; }
+#cbCabecera .cb-csel__menu .cb-csel__sw { margin-top: 1px; }
+#cbCabecera .cb-csel__menu .cb-csel__opt-label {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    overflow-wrap: anywhere;
+    line-height: 1.35;
+    padding-right: 12px;   /* canalón entre la columna de nombres y la de pastillas (tag/región);
+                              se suma al gap base de la fila para que el nombre no pegue al tag. */
+}
+#cbCabecera .cb-csel__menu .cb-csel__opt-region { margin-top: 1px; }
+
+/* Cabecera PRINCIPAL del medio (portada): va la primera del grupo, distinguida por la pastilla
+   "principal". MISMA receta que el chip principal de "Apilados" (token --cb-anchor-principal +
+   color-mix) → el tag de la fila y el chip del apilado son idénticos. Auto-adapta a dark porque
+   el token y --cb-bg ya cambian de valor. */
+#cbCabecera .cb-csel__menu .cb-csel__opt-tag {
+    flex-shrink: 0;
+    margin-top: 1px;   /* se ancla a la 1ª línea, igual que el checkbox y la pastilla de región;
+                          sin esto (con align-self:center) se centraba entre las 2 líneas y quedaba
+                          desnivelada respecto a la región cuando el nombre hacía wrap. */
+    font-size: 9px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
+    color: var(--cb-anchor-principal);
+    background: color-mix(in srgb, var(--cb-anchor-principal) 15%, var(--cb-bg));
+    padding: 1px 6px;
+    border-radius: 999px;
+    line-height: 1.6;
+}
+/* En fila seleccionada el fondo de la fila ya es azul → el tag se aclara para no fundirse. */
+#cbCabecera .cb-csel__menu .cb-csel__opt[aria-selected="true"] .cb-csel__opt-tag {
+    background: rgba(255, 255, 255, .55);
+}
+body.cb-host.cb-dark #cbCabecera .cb-csel__menu .cb-csel__opt[aria-selected="true"] .cb-csel__opt-tag {
+    background: rgba(255, 255, 255, .12);
+}
+
+/* ── Tipología de anclajes: color-coding por TIPO de cabecera ────────────────────────
+   En el modelo (brand-data.js) una fila seleccionable es de uno de tres tipos. Cada uno
+   lleva un acento de color a la izquierda (barra inset → no recalcula layout como haría
+   un border-left, y no compite con el checkbox de selección ni con el fondo activo):
+     · PRINCIPAL  → portada del medio, la raíz          (.cb-csel__opt--principal)        azul
+     · VINCULADA  → cabecera hija (vertical/hiperlocal)  ([data-parent] no vacío)          teal
+     · COMBINABLE → eje ortogonal apilable               (.cb-csel__opt--combo)            púrpura
+   Tokens Carbon con variante dark. La opción "— Por defecto —" (--pinned) NO es un anclaje
+   → sin acento. Scope estricto al menú de Cabecera. */
+#cbCabecera .cb-csel__menu {
+    --cb-anchor-principal: #0f62fe;
+    --cb-anchor-linked:    #007d79;
+    --cb-anchor-combo:     #8a3ffc;
+}
+body.cb-host.cb-dark #cbCabecera .cb-csel__menu {
+    --cb-anchor-principal: #78a9ff;
+    --cb-anchor-linked:    #3ddbd9;
+    --cb-anchor-combo:     #be95ff;
+}
+/* --row-c = color de la tipología de la fila. Fuente única: lo fija cada tipo y de él beben
+   tanto el acento izquierdo como el relleno del checkbox seleccionado → el check es del color
+   de su etiqueta (principal/vinculada/combinable), no un azul genérico para todos. */
+#cbCabecera .cb-csel__menu .cb-csel__opt--principal { --row-c: var(--cb-anchor-principal); }
+#cbCabecera .cb-csel__menu .cb-csel__opt[data-parent]:not([data-parent=""]) { --row-c: var(--cb-anchor-linked); }
+#cbCabecera .cb-csel__menu .cb-csel__opt--combo { --row-c: var(--cb-anchor-combo); }
+/* "— Por defecto —" no es una tipología → su check es neutro (gris), no azul: así el color
+   solo aparece en filas con tipo real (principal/vinculada/combinable). */
+#cbCabecera .cb-csel__menu .cb-csel__opt--pinned { --row-c: var(--cb-text-secondary); }
+#cbCabecera .cb-csel__menu .cb-csel__opt--principal,
+#cbCabecera .cb-csel__menu .cb-csel__opt[data-parent]:not([data-parent=""]),
+#cbCabecera .cb-csel__menu .cb-csel__opt--combo {
+    box-shadow: inset 3px 0 0 var(--row-c);
+}
+/* Fila SELECCIONADA: toda la fila se tiñe con el color de su tipología (--row-c), no con azul
+   fijo. El fondo es un tinte suave del MISMO token que rellena el check; el texto y la pastilla
+   de región se alinean al token para que la fila entera "hable" un solo color. Override del
+   resaltado genérico (#d0e2ff); auto-adapta a dark porque --row-c y --cb-bg ya cambian. */
+#cbCabecera .cb-csel__menu .cb-csel__opt[aria-selected="true"] {
+    background: color-mix(in srgb, var(--row-c) 18%, var(--cb-bg));
+    color: var(--row-c);
+}
+#cbCabecera .cb-csel__menu .cb-csel__opt[aria-selected="true"] .cb-csel__opt-region {
+    color: var(--row-c);
+}
+
+/* Combinables: tipos de página / modificadores apilables (multi-selección). El estado
+   (activo / no activo) lo señala ahora el MISMO checkbox de la izquierda que en los outlets
+   — un único sistema visual coherente, sin doble check. */
+.cb-csel__opt--combo { position: relative; }
+
+/* Barra de combinables ACTIVOS: chips eliminables justo bajo el buscador. Complementa el
+   "+N" del trigger mostrando QUÉ se ha apilado y permitiendo quitarlo de un toque (✕).
+   Sticky bajo el buscador (top ≈ alto del buscador) para seguir accesible al scrollear. */
+#cbCabecera .cb-csel__active {
+    position: sticky; top: 38px;
+    z-index: 1;
+    display: flex; flex-wrap: wrap; align-items: center; gap: 6px;
+    padding: 7px 12px;
+    background: var(--cb-layer);
+    border-bottom: 1px solid var(--cb-border-subtle);
+}
+#cbCabecera .cb-csel__active[hidden] { display: none; }   /* [hidden] no gana a display:flex sin esto */
+#cbCabecera .cb-csel__active-lbl {
+    font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+    color: var(--cb-text-secondary);
+    margin-right: 2px;
+}
+/* Chips: el color sale de --chip-c (token de tipología de la fila). Un único color por chip
+   del que se derivan fondo y ✕ con color-mix → coherente con el acento de la fila y con la
+   leyenda, y se adapta solo a dark (los tokens --cb-anchor-* y --cb-bg ya cambian de valor). */
+#cbCabecera .cb-csel__chip {
+    --chip-c: var(--cb-anchor-combo);   /* fallback; cada chip fija el suyo por modificador */
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 2px 5px 2px 9px;
+    font: inherit; font-size: 11.5px; font-weight: 500;
+    color: var(--chip-c);
+    background: color-mix(in srgb, var(--chip-c) 15%, var(--cb-bg));
+    border: none; border-radius: 999px;
+    cursor: pointer;
+}
+#cbCabecera .cb-csel__chip--principal { --chip-c: var(--cb-anchor-principal); }
+#cbCabecera .cb-csel__chip--linked    { --chip-c: var(--cb-anchor-linked); }
+#cbCabecera .cb-csel__chip--combo     { --chip-c: var(--cb-anchor-combo); }
+#cbCabecera .cb-csel__chip:hover { background: color-mix(in srgb, var(--chip-c) 26%, var(--cb-bg)); }
+/* Chivato de vinculación (solo chips --linked): el medio del que cuelga la cabecera, como
+   SUBPASTILLA dentro del chip ("pastilla dentro de pastilla"). Fondo = superficie + borde fino
+   en el color del chip → se recorta con claridad sobre el tinte del chip en claro y oscuro.
+   El texto hereda el color de tipología (--chip-c). Aclara "Cerca" → "Cerca (El Correo …)". */
+#cbCabecera .cb-csel__chip-parent {
+    padding: 0 6px;
+    border-radius: 999px;
+    background: var(--cb-bg);
+    border: 1px solid color-mix(in srgb, var(--chip-c) 30%, transparent);
+    font-size: 10px; font-weight: 600;
+    line-height: 1.55;
+    white-space: nowrap;
+}
+/* ✕: contenedor circular + icono SVG (centrado perfecto en H/V, sin el bearing irregular del
+   glifo "×"). El SVG usa currentColor → hereda el color del chip. */
+#cbCabecera .cb-csel__chip-x {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 15px; height: 15px;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--chip-c) 20%, transparent);
+}
+#cbCabecera .cb-csel__chip-x__ico { width: 8px; height: 8px; display: block; }
+#cbCabecera .cb-csel__chip:hover .cb-csel__chip-x { background: color-mix(in srgb, var(--chip-c) 34%, transparent); }
+body.cb-host.cb-dark #cbCabecera .cb-csel__active { background: var(--cb-bg); }
+
+/* Group header dentro del menu: emula <optgroup label="..."> nativo.
+   Display flex con el nombre a la izquierda y el contador en chip a la derecha. */
+.cb-csel__group {
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    padding: 9px 14px 4px;
+    font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--cb-text-secondary);
+}
+.cb-csel__group-name {
+    flex: 1; min-width: 0;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+/* Chip circular del contador: pill que arranca como círculo perfecto (20px alto + min-width 20px)
+   y crece a oval cuando el número tiene 2+ dígitos (padding horizontal lo expande naturalmente).
+   Azul Carbon de selección activa — consistente con el highlight de .cb-csel__opt[aria-selected]
+   y con el resto del lenguaje visual del chrome. */
+.cb-csel__group-count {
+    display: inline-flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    min-width: 20px; height: 20px;
+    padding: 0 6px;
+    border-radius: 999px;
+    background: #d0e2ff;
+    color: #0043ce;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0;        /* override del .08em heredado del header */
+    line-height: 1;
+}
+body.cb-host.cb-dark .cb-csel__group-count {
+    background: #1f3a6b;
+    color: #78a9ff;
+}
+.cb-csel__group:not(:first-child) {
+    border-top: 1px solid var(--cb-border-subtle);
+    margin-top: 4px;
+}
+
+/* Cabecera: los headers de medio son el grupo "PADRE" de sus outlets. Para que se
+   distingan a simple vista (no como una opción más), llevan una banda de fondo sutil +
+   el nombre en color principal (los outlets van en secundario), y un acento fino a la
+   izquierda. Tokens --cb-* → se adaptan solos a dark. (Scope al menú de Cabecera.) */
+#cbCabecera .cb-csel__menu .cb-csel__group {
+    background: var(--cb-layer);
+    padding-top: 7px; padding-bottom: 6px;
+    box-shadow: inset 2px 0 0 var(--cb-border-strong);
+}
+#cbCabecera .cb-csel__menu .cb-csel__group-name {
+    color: var(--cb-text);
+}
+
+/* Sub-toolbar a11y: hereda layout de .cb-toolbar (40px, flex, padding 0 8px, border-bottom)
+   y solo cambia el bg para crear jerarquía visual (primaria · secundaria). Los selectores
+   .cb-globals dentro siguen el mismo lenguaje que el toolbar principal. */
+.cb-toolbar--a11y { background: var(--cb-layer); }
+.cb-globals--textsize select { max-width: 180px; }
+.cb-globals--forced select { max-width: 180px; }
+/* Visión: ahora widget .cb-csel--vision (con swatches), no <select>. Sizing del trigger
+   se gestiona vía cb-csel__menu (ancho del listbox) — el trigger se ajusta solo. */
+/* Viewport: campos manuales ancho × alto (px) */
+.cb-vp-size { display: inline-flex; align-items: center; gap: 4px; }
+.cb-vp-input {
+    width: 52px; font: inherit; font-size: 12px; padding: 5px 6px;
+    border: 1px solid var(--cb-border-subtle); background: var(--cb-field); color: var(--cb-text);
+    text-align: right;
+}
+.cb-vp-input:focus { outline: 2px solid var(--cb-focus); outline-offset: -2px; }
+.cb-vp-input::-webkit-outer-spin-button, .cb-vp-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.cb-vp-x { color: var(--cb-text-secondary); font-size: 11px; }
+
+/* Botón-icono compacto del toolbar (lenguaje Carbon: cuadrado 28×28, sin borde por defecto,
+   layer al hover, color interactive cuando aria-pressed=true). Lo usa fullscreen y futuras
+   acciones globales que no necesiten label visible. */
+.cb-icobtn {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 28px; height: 28px;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--cb-text-secondary);
+    cursor: pointer;
+    padding: 0;
+}
+.cb-icobtn:hover { color: var(--cb-text); background: var(--cb-layer); }
+.cb-icobtn:focus-visible { outline: 2px solid var(--cb-focus); outline-offset: -2px; }
+.cb-icobtn[aria-pressed="true"] { color: var(--cb-interactive); }
+.cb-icobtn__ic { width: 16px; height: 16px; }
+
+/* ═══ Modo fullscreen (tecla F) ═══
+   Colapsa sidebar + toolbar + panel → el iframe del canvas ocupa todo el viewport.
+   Útil para revisar templates/layouts sin distracciones. El retorno NO es destructivo:
+   - El botón del toolbar permuta su icono y aria-pressed (atajo del propio toolbar)
+   - Una "solapa" .cb-exit-fs aparece fija en esquina sup-izq (visible solo en este modo)
+   - Atajos teclado F (toggle) y Esc (salir) garantizan recuperación sin ratón
+   Importante: hay que reescribir grid-template-* porque los tracks fijos (40px / panel-h /
+   side-w) se mantienen aunque sus celdas tengan display:none — solo se colapsan si el
+   propio track se redefine a 0. */
+body.cb-host.cb-fullscreen .cb-side,
+body.cb-host.cb-fullscreen .cb-toolbar,
+body.cb-host.cb-fullscreen .cb-panel,
+body.cb-host.cb-fullscreen .cb-resize-x,
+body.cb-host.cb-fullscreen .cb-resize-y { display: none; }
+/* Sacamos canvas-wrap / docs del flujo del grid y los anclamos al viewport.
+   Motivo: si dejamos canvas-wrap dentro del grid de .cb-main, al colapsar los demás
+   tracks (toolbar/panel) hay browsers que no propagan el nuevo height al iframe
+   (que es width/height:100%), resultado: iframe a 0px aunque la fila tenga 1fr.
+   Position:fixed + inset:0 garantiza el viewport completo de forma determinista; en
+   móvil, los elementos `fixed` ya respetan por especificación el viewport dinámico
+   (equivalente a 100dvh/100dvw automáticamente, sin necesidad de declararlo). */
+body.cb-host.cb-fullscreen .cb-canvas-wrap,
+body.cb-host.cb-fullscreen .cb-docs {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+}
+
+/* Solapa de recuperación — pill discreta sup-izq, visible SOLO en fullscreen.
+   Diseño: baja opacidad por defecto (no compite con el canvas), prominente al hover/foco.
+   Tokenizada (--cb-bg/--cb-border-subtle) → se adapta automáticamente al dark mode. */
+.cb-exit-fs {
+    position: fixed; bottom: 16px; right: 16px; z-index: 1000;
+    display: none; align-items: center; gap: 7px;
+    font: inherit; font-size: 12px; font-weight: 500;
+    padding: 7px 12px 7px 9px;
+    background: var(--cb-bg); color: var(--cb-text-secondary);
+    border: 1px solid var(--cb-border-subtle);
+    border-radius: 999px;
+    cursor: pointer;
+    opacity: .55;
+    transition: opacity .15s ease, box-shadow .15s ease, color .15s ease;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+}
+.cb-exit-fs__ic { width: 14px; height: 14px; flex: none; }
+.cb-exit-fs__label { line-height: 1; }
+.cb-exit-fs:hover { opacity: 1; color: var(--cb-text); box-shadow: 0 4px 12px rgba(0, 0, 0, .12); }
+.cb-exit-fs:focus-visible { opacity: 1; outline: 2px solid var(--cb-focus); outline-offset: 2px; }
+body.cb-host.cb-fullscreen .cb-exit-fs { display: inline-flex; }
+
+/* Canvas = IFRAME aislado: las media queries del DS responden a SU ancho, así el selector
+   de viewport simula la resolución real. El layout del stage (.cb-canvas, .cb-grid, galerías…)
+   vive DENTRO del iframe (lo inyecta el motor en core/storybook.js); aquí solo el contenedor
+   y el marco. El gutter (cuando el viewport es fijo y más estrecho) muestra --cb-layer. */
+.cb-canvas-wrap { overflow: auto; background: var(--cb-layer); position: relative; }
+.cb-frame { display: block; margin: 0 auto; width: 100%; height: 100%; border: 0; background: var(--cb-bg); }
+.cb-frame.cb-frame--fixed { box-shadow: 0 0 0 1px var(--cb-border-subtle); }
+
+/* Pestaña Code (addon panel) — snippet derivado del DOM, con barra de cabecera
+   (lenguaje + copiar) y resaltado de sintaxis HTML (highlightCode en core/storybook.js). */
+.cb-code { position: relative; background: #16161e; }
+.cb-code__bar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 7px 12px; background: #11111a;
+    border-bottom: 1px solid rgba(255, 255, 255, .07);
+}
+.cb-code__lang {
+    font: 600 10px/1 var(--cb-mono); letter-spacing: .1em; text-transform: uppercase;
+    color: #6b7280;
+}
+.cb-code__copy {
+    font: 500 11px/1 var(--cb-font, "Inter"), sans-serif; cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, .16); background: rgba(255, 255, 255, .04);
+    color: #cbd2e0; padding: 5px 11px; border-radius: 5px;
+    transition: border-color .12s, color .12s, background .12s;
+}
+.cb-code__copy:hover { border-color: var(--cb-interactive); color: #fff; background: rgba(255, 255, 255, .08); }
+.cb-code__copy.is-done { border-color: var(--cb-success); color: var(--cb-success); }
+.cb-code pre {
+    margin: 0; background: #16161e; color: #e7e9ef;
+    font-family: var(--cb-mono); font-size: 12.5px; line-height: 1.6;
+    padding: 14px 16px; white-space: pre-wrap; word-break: break-word;
+    max-height: 60vh; overflow: auto;
+}
+/* Tokens del resaltador HTML (paleta one-dark). */
+.cb-tok-tag { color: #e06c75; }
+.cb-tok-attr { color: #d19a66; }
+.cb-tok-string { color: #98c379; }
+.cb-tok-comment { color: #6b7280; font-style: italic; }
+.cb-tok-punct { color: #828a9a; }
+/* Banner: aparece cuando el componente activo tiene estilos experimentales
+   (def._sharedStyle, declarados como <style> top-level en <x>.html). */
+.cb-code__warn {
+    padding: 10px 14px;
+    background: #fff8e1;
+    color: #6b4f00;
+    border-bottom: 1px solid #ffc933;
+    font-size: 12.5px; line-height: 1.5;
+}
+.cb-code__warn code {
+    font-family: var(--cb-mono); font-size: 11.5px;
+    background: rgba(0,0,0,.06); padding: 1px 5px; border-radius: 2px;
+}
+body.cb-host.cb-dark .cb-code__warn {
+    background: #3a2e00;
+    color: #ffd479;
+    border-bottom-color: #8a6a00;
+}
+body.cb-host.cb-dark .cb-code__warn code { background: rgba(255,255,255,.08); }
+/* La pestaña Code usa todo el ancho/alto del panel, sin el padding del body */
+.cb-panel__body.is-code { padding: 0; }
+
+/* ─── Addons panel ─── */
+.cb-panel {
+    border-top: 1px solid var(--cb-border-subtle);
+    display: flex; flex-direction: column;
+    min-height: 0; background: var(--cb-bg);
+}
+.cb-main.is-docs .cb-panel { display: none; }
+.cb-panel__tabs { display: flex; align-items: center; border-bottom: 1px solid var(--cb-border-subtle); padding: 0 8px; }
+.cb-ptab {
+    border: none; background: none; font: inherit; font-size: 12px; font-weight: 500;
+    color: var(--cb-text-secondary); padding: 0 10px; height: 35px; cursor: pointer;
+    border-bottom: 2px solid transparent; display: inline-flex; align-items: center; gap: 6px;
+}
+.cb-ptab:hover { color: var(--cb-text); }
+.cb-ptab.is-active { color: var(--cb-text); border-bottom-color: var(--cb-interactive); }
+.cb-ptab__badge {
+    font-size: 10px; background: var(--cb-layer); color: var(--cb-text-secondary);
+    border-radius: 10px; padding: 1px 6px; font-weight: 600;
+}
+.cb-panel__body { overflow: auto; padding: 12px 16px; flex: 1; min-height: 0; }
+
+/* Controls (args) table — estilo Carbon */
+.cb-args { width: 100%; border-collapse: collapse; font-size: 13px; }
+.cb-args th {
+    text-align: left; font-weight: 600; color: var(--cb-text-secondary);
+    font-size: 11px; text-transform: uppercase; letter-spacing: .06em;
+    padding: 8px 12px; border-bottom: 1px solid var(--cb-border-subtle);
+}
+.cb-args td { padding: 10px 12px; border-bottom: 1px solid var(--cb-border-subtle); vertical-align: top; }
+.cb-args__name { font-weight: 600; }
+/* peso 500 = real (JetBrains Mono carga 400/500); heredar el 600 del td sintetizaría
+   un "faux-bold" que se ve borroso en monospace a 12px. */
+.cb-args__name code { font-family: var(--cb-mono); font-weight: 500; font-size: 12px; color: var(--cb-text); }
+.cb-args__desc { color: var(--cb-text-secondary); font-size: 12px; }
+/* Chip de tipo (string/boolean…) bajo la descripción — estilo Carbon */
+.cb-type { display: inline-block; margin-top: 6px; font-family: var(--cb-mono); font-size: 11px; color: var(--cb-text-secondary); background: var(--cb-layer); padding: 1px 6px; border-radius: 2px; }
+/* Columna Default */
+.cb-args__default code { font-family: var(--cb-mono); font-size: 12px; color: var(--cb-text); background: var(--cb-layer); padding: 1px 6px; border-radius: 2px; }
+.cb-args__default .cb-muted { color: var(--cb-text-placeholder); background: none; padding: 0; }
+/* Botón reset en la cabecera de Control */
+.cb-reset { float: right; border: none; background: none; cursor: pointer; color: var(--cb-text-secondary); font-size: 15px; line-height: 1; padding: 0 2px; }
+.cb-reset:hover { color: var(--cb-interactive); }
+.cb-args input[type="text"], .cb-args input[type="number"], .cb-args select {
+    font: inherit; font-size: 13px; padding: 6px 8px; min-width: 160px;
+    border: none; border-bottom: 1px solid var(--cb-border-strong);
+    background: var(--cb-field); color: var(--cb-text); outline: none;
+}
+/* Number control: ancho contenido (no necesita 160px como el text) y los spinners
+   nativos del navegador se mantienen — el usuario tiene flecha arriba/abajo + escritura libre. */
+.cb-args input[type="number"] { min-width: 96px; width: 96px; }
+.cb-args input[type="text"]:focus, .cb-args input[type="number"]:focus, .cb-args select:focus { outline: 2px solid var(--cb-focus); outline-offset: -2px; }
+.cb-radioset { display: inline-flex; border: 1px solid var(--cb-border-strong); }
+.cb-radioset button {
+    border: none; background: var(--cb-field); font: inherit; font-size: 12px; padding: 5px 10px; cursor: pointer;
+    color: var(--cb-text); border-right: 1px solid var(--cb-border-subtle);
+}
+.cb-radioset button:last-child { border-right: 0; }
+.cb-radioset button.is-on { background: var(--cb-interactive); color: #fff; }
+.cb-toggle { position: relative; display: inline-block; width: 38px; height: 20px; }
+.cb-toggle input { opacity: 0; width: 0; height: 0; }
+.cb-toggle__track { position: absolute; inset: 0; background: var(--cb-border-strong); transition: .15s; border-radius: 20px; }
+.cb-toggle__track:before { content: ""; position: absolute; width: 14px; height: 14px; left: 3px; top: 3px; background: #fff; border-radius: 50%; transition: .15s; }
+.cb-toggle input:checked + .cb-toggle__track { background: var(--cb-interactive); }
+.cb-toggle input:checked + .cb-toggle__track:before { transform: translateX(18px); }
+
+.cb-note { color: var(--cb-text-secondary); font-size: 13px; line-height: 1.6; }
+.cb-note code { font-family: var(--cb-mono); background: var(--cb-layer); padding: 1px 5px; font-size: 12px; }
+
+/* Actions logger */
+.cb-log { font-family: var(--cb-mono); font-size: 12.5px; }
+.cb-log__row { padding: 6px 0; border-bottom: 1px solid var(--cb-border-subtle); color: var(--cb-text); }
+.cb-log__row b { color: var(--cb-interactive); font-weight: 500; }
+.cb-log__row span { color: var(--cb-text-secondary); }
+.cb-log__empty { color: var(--cb-text-placeholder); font-style: italic; }
+
+/* A11y */
+.cb-a11y__summary { display: flex; gap: 18px; margin-bottom: 12px; }
+.cb-a11y__count { display: flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 600; }
+.cb-dot { width: 10px; height: 10px; border-radius: 50%; }
+.cb-dot--ok { background: var(--cb-success); }
+.cb-dot--warn { background: var(--cb-warning); }
+.cb-dot--err { background: var(--cb-error); }
+.cb-a11y__row { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--cb-border-subtle); font-size: 13px; }
+.cb-a11y__row em { font-style: normal; color: var(--cb-text-secondary); }
+
+/* Contraste WCAG (panel) — barra superior con filtros + tabla de grupos fg×bg×size */
+.cb-cn { font-size: 13px; }
+.cb-cn__bar {
+    display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+    padding: 0 0 12px;
+    border-bottom: 1px solid var(--cb-border-subtle);
+    margin-bottom: 12px;
+}
+.cb-cn__field {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 11px; letter-spacing: .04em; text-transform: uppercase;
+    color: var(--cb-text-secondary); font-weight: 600;
+}
+.cb-cn__field select {
+    font: inherit; font-size: 13px; font-weight: 400; letter-spacing: 0; text-transform: none;
+    padding: 5px 8px;
+    border: 1px solid var(--cb-border-strong);
+    background: var(--cb-field); color: var(--cb-text);
+    cursor: pointer;
+}
+.cb-cn__summary { display: inline-flex; gap: 14px; margin-left: auto; }
+.cb-cn__refresh {
+    font: inherit; font-size: 12px; font-weight: 500;
+    padding: 5px 12px;
+    border: 1px solid var(--cb-border-strong);
+    background: var(--cb-bg); color: var(--cb-text);
+    cursor: pointer;
+}
+.cb-cn__refresh:hover { border-color: var(--cb-interactive); color: var(--cb-interactive); }
+.cb-cn__table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.cb-cn__table thead th {
+    text-align: left; padding: 6px 10px;
+    font-size: 11px; letter-spacing: .04em; text-transform: uppercase;
+    color: var(--cb-text-secondary); font-weight: 600;
+    border-bottom: 1px solid var(--cb-border-subtle);
+}
+.cb-cn__table tbody td { padding: 8px 10px; border-bottom: 1px solid var(--cb-border-subtle); }
+.cb-cn__table tr.is-ok   .cb-cn__r { color: var(--cb-success); }
+.cb-cn__table tr.is-fail .cb-cn__r { color: var(--cb-error); }
+.cb-cn__r { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.cb-cn__r strong { font-weight: 700; }
+.cb-cn__sw { width: 1%; }
+/* "Chip Aa" — muestra fg×bg en miniatura usando los colores reales medidos. Forma compacta
+   (lo importante es el par, no el tamaño). */
+.cb-cn__chip {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 32px; height: 24px;
+    border-radius: 3px;
+    border: 1px solid var(--cb-border-subtle);
+    font-family: var(--cb-mono); font-size: 13px; font-weight: 600;
+    line-height: 1;
+}
+.cb-cn__els code {
+    font-family: var(--cb-mono); font-size: 11.5px;
+    background: var(--cb-layer); color: var(--cb-text);
+    padding: 1px 6px; border-radius: 2px;
+    margin-right: 4px;
+}
+.cb-cn__hint { margin-top: 10px; font-size: 11.5px; color: var(--cb-text-secondary); }
+
+/* Badge de fallos en la tab Contraste — rojo Carbon para "demanda atención" */
+.cb-ptab__badge--err { background: var(--cb-error); color: #fff; }
+
+/* ═══ Docs view (estilo Carbon component docs) ═══ */
+.cb-docs { display: none; overflow: auto; padding: 0; background: var(--cb-bg); }
+.cb-main.is-docs .cb-docs { display: block; }
+.cb-main.is-docs .cb-canvas-wrap { display: none; }
+.cb-docs__inner { max-width: 880px; margin: 0 auto; padding: 56px 40px 120px; }
+
+/* Encabezados — h1 expresivo (Carbon), h2 de sección con divisor + acento de marca */
+.cb-docs h1 { font-size: 42px; font-weight: 700; margin: 0 0 12px; letter-spacing: -.03em; line-height: 1.05; color: var(--cb-text); }
+.cb-docs h2 {
+    position: relative;
+    font-size: 20px; font-weight: 600; letter-spacing: -.01em; color: var(--cb-text);
+    margin: 56px 0 18px; padding-top: 26px; border-top: 1px solid var(--cb-border-subtle);
+}
+.cb-docs h2::before { content: ""; position: absolute; top: -1px; left: 0; width: 40px; height: 2px; background: var(--cb-interactive); }
+.cb-docs h3 { font-size: 15px; font-weight: 600; margin: 30px 0 10px; color: var(--cb-text); }
+.cb-docs p { color: var(--cb-text-secondary); line-height: 1.68; margin: 0 0 14px; max-width: 68ch; }
+.cb-docs strong { color: var(--cb-text); font-weight: 700; }
+.cb-docs code { font-family: var(--cb-mono); background: var(--cb-layer); padding: 1.5px 6px; border-radius: 4px; font-size: 12.5px; color: var(--cb-text); }
+.cb-docs__lead { font-size: 19px; font-weight: 450; color: var(--cb-text); line-height: 1.58; margin-bottom: 24px; max-width: 60ch; text-wrap: balance; }
+.cb-docs__lead code { font-size: 15.5px; }
+
+/* Changelog: usa un lienzo más ancho que el resto de Docs para dar aire a las rutas largas. */
+.cb-docs__inner.cb-cl { box-sizing: border-box; width: min(100%, 1040px); max-width: 1040px; }
+.cb-docs__inner.cb-cl .cb-docs__lead { max-width: 72ch; }
+
+/* AI docs: overview mas ancho y con modulos editoriales propios */
+.cb-docs__inner.cb-ai { box-sizing: border-box; width: min(100%, 1080px); max-width: 1080px; }
+.cb-docs__inner.cb-ai .cb-docs__lead { max-width: 66ch; }
+.cb-ai__hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.55fr) minmax(240px, .9fr);
+    gap: 22px;
+    margin-bottom: 24px;
+    padding: 24px 26px;
+    border: 1px solid rgba(15, 98, 254, .14);
+    border-radius: 18px;
+    background:
+        radial-gradient(circle at top right, rgba(15, 98, 254, .09), transparent 34%),
+        linear-gradient(135deg, #f8fbff 0%, #ffffff 62%);
+    box-shadow: 0 10px 26px rgba(15, 23, 42, .04);
+}
+.cb-ai__heroBody { min-width: 0; }
+.cb-ai__heroSide { display: flex; flex-direction: column; gap: 12px; }
+.cb-ai__heroKpi {
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: 1px solid var(--cb-border-subtle);
+    background: rgba(255, 255, 255, .86);
+}
+.cb-ai__heroKpi span,
+.cb-ai__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+.cb-ai__heroKpi span { color: var(--cb-interactive); margin-bottom: 8px; }
+.cb-ai__heroKpi strong {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 15px;
+    line-height: 1.3;
+}
+.cb-ai__heroKpi em {
+    display: block;
+    font-style: normal;
+    font-size: 12.5px;
+    line-height: 1.55;
+    color: var(--cb-text-secondary);
+}
+.cb-ai__eyebrow {
+    color: var(--cb-interactive);
+    margin-bottom: 10px;
+}
+.cb-ai__stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.cb-ai__pill,
+.cb-ai__mode {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 28px;
+    padding: 5px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--cb-border-subtle);
+    background: rgba(255, 255, 255, .88);
+    color: var(--cb-text);
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.25;
+}
+.cb-ai__mode code,
+.cb-ai__pill code {
+    background: transparent;
+    padding: 0;
+}
+.cb-ai__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 14px;
+}
+.cb-ai__card {
+    min-width: 0;
+    padding: 18px 18px 16px;
+    border: 1px solid var(--cb-border-subtle);
+    border-radius: 16px;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, .98) 0%, rgba(248, 250, 252, .9) 100%);
+    box-shadow: 0 8px 18px rgba(15, 23, 42, .03);
+}
+.cb-ai__card--blue { border-color: rgba(15, 98, 254, .18); background: linear-gradient(180deg, #f7fbff 0%, #ffffff 100%); }
+.cb-ai__card--green { border-color: rgba(25, 135, 84, .18); background: linear-gradient(180deg, #f7fcf8 0%, #ffffff 100%); }
+.cb-ai__card--amber { border-color: rgba(209, 115, 0, .22); background: linear-gradient(180deg, #fffaf0 0%, #ffffff 100%); }
+.cb-ai__card--rose { border-color: rgba(184, 50, 128, .18); background: linear-gradient(180deg, #fff8fb 0%, #ffffff 100%); }
+.cb-ai__cardTitle {
+    margin: 0 0 8px;
+    font-size: 18px;
+    line-height: 1.25;
+    letter-spacing: -.01em;
+    color: var(--cb-text);
+}
+.cb-ai__cardLead {
+    margin: 0 0 14px;
+    font-size: 13.5px;
+    line-height: 1.62;
+    color: var(--cb-text-secondary);
+    max-width: none;
+}
+.cb-ai__list {
+    margin: 14px 0 0;
+    padding-left: 18px;
+    color: var(--cb-text-secondary);
+}
+.cb-ai__list li { margin: 0 0 8px; line-height: 1.58; }
+.cb-ai__tokenViz {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin: 16px 0 10px;
+}
+.cb-ai__tokenBar {
+    min-width: 0;
+    padding: 16px;
+    border: 1px solid var(--cb-border-subtle);
+    border-radius: 16px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, .98) 0%, rgba(248, 250, 252, .92) 100%);
+}
+.cb-ai__tokenHead {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+.cb-ai__tokenHead strong {
+    display: block;
+    min-width: 0;
+    font-size: 13px;
+    line-height: 1.45;
+}
+.cb-ai__tokenScore {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+    min-width: 58px;
+    min-height: 28px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font: 700 12px/1 var(--cb-mono);
+    border: 1px solid transparent;
+    background: rgba(255, 255, 255, .86);
+}
+.cb-ai__tokenMeter {
+    position: relative;
+    height: 10px;
+    border-radius: 999px;
+    overflow: hidden;
+    background: #e8edf3;
+}
+.cb-ai__tokenFill {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, rgba(15, 98, 254, .78) 0%, rgba(15, 98, 254, 1) 100%);
+}
+.cb-ai__tokenNote {
+    margin: 10px 0 0;
+    max-width: none;
+    font-size: 12.5px;
+    line-height: 1.58;
+    color: var(--cb-text-secondary);
+}
+.cb-ai__tokenBar--blue { border-color: rgba(15, 98, 254, .18); }
+.cb-ai__tokenBar--blue .cb-ai__tokenScore { color: #0f62fe; border-color: rgba(15, 98, 254, .16); }
+.cb-ai__tokenBar--blue .cb-ai__tokenFill { background: linear-gradient(90deg, #7fb3ff 0%, #0f62fe 100%); }
+.cb-ai__tokenBar--green { border-color: rgba(25, 135, 84, .18); }
+.cb-ai__tokenBar--green .cb-ai__tokenScore { color: #198754; border-color: rgba(25, 135, 84, .16); }
+.cb-ai__tokenBar--green .cb-ai__tokenFill { background: linear-gradient(90deg, #8fd9b4 0%, #198754 100%); }
+.cb-ai__tokenBar--amber { border-color: rgba(209, 115, 0, .2); }
+.cb-ai__tokenBar--amber .cb-ai__tokenScore { color: #b46a00; border-color: rgba(209, 115, 0, .18); }
+.cb-ai__tokenBar--amber .cb-ai__tokenFill { background: linear-gradient(90deg, #f6c76f 0%, #d17300 100%); }
+.cb-ai__tokenBar--rose { border-color: rgba(184, 50, 128, .18); }
+.cb-ai__tokenBar--rose .cb-ai__tokenScore { color: #b83280; border-color: rgba(184, 50, 128, .18); }
+.cb-ai__tokenBar--rose .cb-ai__tokenFill { background: linear-gradient(90deg, #f0a8d0 0%, #b83280 100%); }
+.cb-ai__tokenBar--slate { border-color: rgba(71, 85, 105, .18); }
+.cb-ai__tokenBar--slate .cb-ai__tokenScore { color: #475569; border-color: rgba(71, 85, 105, .18); }
+.cb-ai__tokenBar--slate .cb-ai__tokenFill { background: linear-gradient(90deg, #b8c4d6 0%, #475569 100%); }
+.cb-ai__steps {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 14px;
+}
+.cb-ai__step {
+    display: grid;
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 14px;
+    padding: 18px;
+    border: 1px solid var(--cb-border-subtle);
+    border-radius: 16px;
+    background: var(--cb-bg);
+}
+.cb-ai__stepNo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #edf5ff;
+    color: var(--cb-interactive);
+    font: 700 15px/1 var(--cb-mono);
+}
+.cb-ai__stepBody { min-width: 0; }
+.cb-ai__stepTitle {
+    margin: 0 0 8px;
+    font-size: 17px;
+    line-height: 1.25;
+}
+.cb-ai__step p { max-width: none; margin-bottom: 10px; }
+.cb-ai__stepExample {
+    margin-bottom: 0;
+    color: var(--cb-text);
+}
+.cb-ai .cb-table--matrix th[scope="row"] { width: 24%; }
+.cb-ai .cb-table td,
+.cb-ai .cb-table th[scope="row"] { line-height: 1.58; }
+
+@media (max-width: 980px) {
+    .cb-ai__hero { grid-template-columns: 1fr; }
+    .cb-ai__grid,
+    .cb-ai__tokenViz,
+    .cb-ai__steps { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+    .cb-docs__inner.cb-ai { padding-left: 24px; padding-right: 24px; }
+    .cb-ai__hero,
+    .cb-ai__card,
+    .cb-ai__step { padding: 16px; }
+}
+
+/* AI — navegación por tabs + buscador transversal + divulgación progresiva.
+   Carga cognitiva baja: un panel a la vez; el buscador revela coincidencias de
+   todas las secciones. Buscador con la misma mecánica visual que el Changelog. */
+.cb-ai__nav {
+    position: sticky; top: 0; z-index: 5;
+    margin: 6px 0 18px; padding: 12px 0 0;
+    background: var(--cb-bg);
+}
+.cb-ai__search { position: relative; display: flex; align-items: center; }
+.cb-ai__searchIco {
+    position: absolute; left: 12px; width: 16px; height: 16px; pointer-events: none;
+    color: var(--cb-text-placeholder);
+}
+.cb-ai__searchInput {
+    width: 100%; box-sizing: border-box;
+    font: 400 13.5px/1.2 var(--cb-font, "Inter"), sans-serif; color: var(--cb-text);
+    background: var(--cb-bg); border: 1px solid var(--cb-border-subtle); border-radius: 8px;
+    padding: 10px 36px; outline: none; transition: border-color .15s ease, box-shadow .15s ease;
+}
+.cb-ai__searchInput::placeholder { color: var(--cb-text-placeholder); }
+.cb-ai__searchInput:focus-visible { border-color: var(--cb-focus); box-shadow: 0 0 0 3px rgba(15, 98, 254, .18); }
+.cb-ai__searchInput::-webkit-search-cancel-button { -webkit-appearance: none; appearance: none; }
+.cb-ai__searchClear {
+    position: absolute; right: 8px; display: inline-flex; align-items: center; justify-content: center;
+    width: 22px; height: 22px; border: 0; border-radius: 6px; cursor: pointer;
+    background: transparent; color: var(--cb-text-placeholder);
+    transition: background .12s ease, color .12s ease;
+}
+.cb-ai__searchClear:hover { background: var(--cb-bg-hover, rgba(0, 0, 0, .05)); color: var(--cb-text); }
+.cb-ai__searchClearIco { width: 14px; height: 14px; }
+/* Tabs: un panel visible a la vez. Indicador inferior en la pestaña activa. */
+.cb-ai__tabs {
+    display: flex; flex-wrap: wrap; gap: 2px;
+    margin-top: 12px; border-bottom: 1px solid var(--cb-border-subtle);
+}
+.cb-ai__tab {
+    position: relative; border: 0; background: transparent; cursor: pointer;
+    padding: 10px 14px; border-radius: 8px 8px 0 0;
+    font: 600 13px/1 var(--cb-font, "Inter"), sans-serif; color: var(--cb-text-secondary);
+    transition: color .12s ease, background .12s ease;
+}
+.cb-ai__tab:hover { color: var(--cb-text); background: var(--cb-bg-hover, rgba(0, 0, 0, .04)); }
+.cb-ai__tab[aria-selected="true"] { color: var(--cb-interactive); }
+.cb-ai__tab[aria-selected="true"]::after {
+    content: ""; position: absolute; left: 8px; right: 8px; bottom: -1px;
+    height: 2px; background: var(--cb-interactive); border-radius: 2px 2px 0 0;
+}
+.cb-ai__tab:focus-visible { outline: 2px solid var(--cb-focus); outline-offset: -2px; border-radius: 8px; }
+.cb-ai__searchHint { margin-top: 12px; font: 500 12.5px/1.4 var(--cb-font, "Inter"), sans-serif; color: var(--cb-text-secondary); }
+.cb-ai--searching .cb-ai__tabs { opacity: .45; }
+.cb-ai__panel[hidden] { display: none; }
+.cb-ai__panel { padding-top: 6px; }
+.cb-ai__block { scroll-margin-top: 96px; }
+.cb-ai__block[hidden] { display: none; }
+.cb-ai__block > h2:first-child { margin-top: 18px; }
+.cb-ai__panel > .cb-ai__block:first-child > h2:first-child { margin-top: 6px; }
+.cb-ai__noresults { color: var(--cb-text-secondary); margin-top: 24px; }
+/* Divulgación progresiva: tablas pesadas plegadas tras un summary tipo botón. */
+.cb-ai__more { margin: 12px 0 6px; border: 1px solid var(--cb-border-subtle); border-radius: 12px; background: var(--cb-bg); }
+.cb-ai__moreSum {
+    cursor: pointer; list-style: none; display: flex; align-items: center; gap: 8px;
+    padding: 12px 14px; font: 600 13px/1 var(--cb-font, "Inter"), sans-serif; color: var(--cb-interactive);
+}
+.cb-ai__moreSum::-webkit-details-marker { display: none; }
+.cb-ai__moreSum::before { content: "▸"; font-size: 11px; transition: transform .15s ease; }
+.cb-ai__more[open] > .cb-ai__moreSum::before { transform: rotate(90deg); }
+.cb-ai__moreBody { padding: 0 14px 12px; }
+/* Decision helper de "Empezar": intención (izquierda) → mode recomendado (derecha). */
+.cb-ai__pick { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; margin-top: 14px; }
+.cb-ai__pickOpts { display: flex; flex-direction: column; gap: 8px; }
+.cb-ai__pickOpt {
+    display: flex; align-items: center; gap: 10px; text-align: left; cursor: pointer;
+    padding: 12px 14px; border: 1px solid var(--cb-border-subtle); border-radius: 12px;
+    background: var(--cb-bg); color: var(--cb-text);
+    font: 500 13.5px/1.4 var(--cb-font, "Inter"), sans-serif;
+    transition: border-color .12s ease, background .12s ease, box-shadow .12s ease;
+}
+.cb-ai__pickOpt:hover { border-color: var(--cb-border-strong); }
+.cb-ai__pickOpt[aria-pressed="true"] {
+    border-color: var(--cb-interactive); background: #f2f7ff;
+    box-shadow: inset 0 0 0 1px var(--cb-interactive);
+}
+.cb-ai__pickOptIco { flex: none; width: 8px; height: 8px; border-radius: 50%; border: 2px solid var(--cb-border-strong); }
+.cb-ai__pickOpt[aria-pressed="true"] .cb-ai__pickOptIco { border-color: var(--cb-interactive); background: var(--cb-interactive); }
+.cb-ai__pickPanel {
+    align-self: start; padding: 18px; border: 1px solid rgba(15, 98, 254, .18); border-radius: 16px;
+    background: linear-gradient(180deg, #f7fbff 0%, #ffffff 100%);
+}
+.cb-ai__pickEmpty { margin: 0; color: var(--cb-text-secondary); line-height: 1.6; }
+.cb-ai__pickEyebrow {
+    font-size: 10.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--cb-interactive); margin-bottom: 10px;
+}
+.cb-ai__pickModes { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+.cb-ai__pickModes code {
+    display: inline-flex; align-items: center; min-height: 28px; padding: 4px 10px;
+    border-radius: 999px; border: 1px solid rgba(15, 98, 254, .18); background: #fff;
+    font-size: 12px; font-weight: 600;
+}
+.cb-ai__pickTip { margin: 0; color: var(--cb-text-secondary); line-height: 1.6; }
+@media (max-width: 980px) { .cb-ai__pick { grid-template-columns: 1fr; } }
+
+/* Tablas — estilo data-table de Carbon: cabecera con banda, filas con hover */
+.cb-table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin: 12px 0 6px; }
+.cb-table caption {
+    caption-side: top;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: var(--cb-text-secondary);
+    margin: 0 0 8px;
+}
+.cb-table thead th {
+    text-align: left; font-weight: 600;
+    font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: var(--cb-text-secondary);
+    background: var(--cb-layer); padding: 11px 14px; border-bottom: 1px solid var(--cb-border-subtle);
+}
+.cb-table th[scope="row"],
+.cb-table td { padding: 11px 14px; border-bottom: 1px solid var(--cb-border-subtle); color: var(--cb-text-secondary); vertical-align: top; }
+.cb-table th[scope="row"] { text-align: left; color: var(--cb-text); font-weight: 600; }
+.cb-table td:first-child { color: var(--cb-text); }
+.cb-table tbody tr { transition: background .1s ease; }
+.cb-table tbody tr:hover td,
+.cb-table tbody tr:hover th[scope="row"] { background: var(--cb-layer); }
+.cb-table code { background: var(--cb-layer); }
+.cb-table--dense { font-size: 12.5px; }
+.cb-table--dense th[scope="row"],
+.cb-table--dense td,
+.cb-table--dense thead th { padding: 8px 11px; }
+.cb-table--matrix th[scope="row"] { width: 22%; }
+.cb-table--matrix td + td,
+.cb-table--matrix th + td { border-left: 1px solid var(--cb-border-subtle); }
+.cb-table--timeline th[scope="row"] { white-space: nowrap; width: 148px; }
+.cb-table--timeline td:last-child { width: 120px; }
+
+/* Tags (Galería…) — pastilla */
+.cb-tag { display: inline-flex; align-items: center; font-size: 11px; font-weight: 600; padding: 2px 9px; border-radius: 10px; line-height: 1.5; }
+.cb-tag--na { background: #fff1f1; color: var(--cb-error); border: 1px solid #ffd7d9; }
+.cb-tag--own { background: #defbe6; color: #0e6027; border: 1px solid #a7f0ba; }
+
+/* Cuadro de dependencias — card redondeada: cuerpo claro + banda de cabecera */
+.cb-deps { border: 1px solid var(--cb-border-subtle); border-radius: 8px; overflow: hidden; margin: 14px 0 18px; }
+.cb-deps .cb-table { margin: 0; }
+.cb-deps .cb-table td { background: var(--cb-bg); }
+.cb-deps .cb-table tbody tr:last-child td { border-bottom: 0; }
+
+/* Admonitions — notificación Carbon: acento lateral + esquina redondeada */
+.cb-callout { border-left: 4px solid var(--cb-interactive); background: #edf5ff; padding: 14px 18px; margin: 18px 0; font-size: 13.5px; color: var(--cb-text); line-height: 1.65; border-radius: 0 6px 6px 0; }
+.cb-callout code { background: rgba(255, 255, 255, .65); }
+.cb-callout--usage { border-left-color: var(--cb-success); background: #edf7ee; }
+.cb-callout--warn { border-left-color: var(--cb-warning); background: #fff8e1; }
+.cb-callout--deprecated { border-left-color: var(--cb-error); background: #fff1f1; }
+.cb-callout--removed { border-left-color: #6b7280; background: #f3f4f6; }
+.cb-callout__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--cb-error);
+    margin-bottom: 6px;
+}
+.cb-callout__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 8px;
+    color: var(--cb-text);
+}
+.cb-callout__date {
+    display: inline-flex;
+    align-items: center;
+    flex: none;
+    font: 600 11px/1 var(--cb-mono);
+    color: var(--cb-error);
+    background: rgba(255, 255, 255, .6);
+    border: 1px solid rgba(250, 77, 86, .22);
+    border-radius: 999px;
+    padding: 5px 8px;
+}
+.cb-callout--deprecated .cb-table { margin-bottom: 0; }
+.cb-callout--removed .cb-table { margin-bottom: 0; }
+.cb-callout--deprecated .cb-table td,
+.cb-callout--deprecated .cb-table th[scope="row"],
+.cb-callout--removed .cb-table td,
+.cb-callout--removed .cb-table th[scope="row"] { background: transparent; }
+.cb-callout--removed .cb-callout__eyebrow,
+.cb-callout--removed .cb-callout__date { color: #4b5563; }
+.cb-callout--removed .cb-callout__date { border-color: rgba(107, 114, 128, .28); }
+
+/* Registro de cambios en Overview — bloque estándar, apilable y con fecha semántica */
+.cb-change {
+    position: relative;
+    overflow: hidden;
+    margin: 18px 0;
+    padding: 18px 20px;
+    border: 1px solid var(--cb-border-subtle);
+    border-left: 4px solid var(--cb-interactive);
+    border-radius: 0 10px 10px 0;
+    background: linear-gradient(135deg, rgba(15, 98, 254, .08), var(--cb-bg) 58%);
+    color: var(--cb-text);
+}
+.cb-change__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 10px;
+}
+.cb-change__labels { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+.cb-change__eyebrow {
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--cb-interactive);
+}
+.cb-change__type {
+    display: inline-flex;
+    align-items: center;
+    min-height: 22px;
+    padding: 3px 8px;
+    border: 1px solid var(--cb-border-subtle);
+    border-radius: 999px;
+    background: var(--cb-layer);
+    font: 600 10.5px/1 var(--cb-sans);
+    color: var(--cb-text-secondary);
+}
+.cb-change__date {
+    display: inline-flex;
+    align-items: center;
+    flex: none;
+    padding: 5px 8px;
+    border: 1px solid var(--cb-border-subtle);
+    border-radius: 999px;
+    background: var(--cb-bg);
+    font: 600 11px/1 var(--cb-mono);
+    color: var(--cb-interactive);
+}
+.cb-change__title { margin: 0 0 8px; font-size: 17px; line-height: 1.35; }
+.cb-change__summary { margin: 0; color: var(--cb-text-secondary); line-height: 1.65; }
+.cb-change .cb-table { margin: 14px 0 0; }
+.cb-change .cb-table th[scope="row"],
+.cb-change .cb-table td { background: transparent; }
+@media (max-width: 640px) {
+    .cb-change__top { align-items: flex-start; flex-direction: column; gap: 10px; }
+}
+
+/* Pie de fuente */
+.cb-src { font-family: var(--cb-mono); font-size: 12px; color: var(--cb-text-placeholder); margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--cb-border-subtle); }
+
+/* ─── Página-doc Changelog (Docs › Changelog) — registro de releases en SB_META.releases ─── */
+.cb-cl__title { display: flex; align-items: baseline; gap: 12px; }
+.cb-cl__ver {
+    font: 600 13px/1 var(--cb-mono); color: var(--cb-text-secondary);
+    background: var(--cb-bg); border: 1px solid var(--cb-border-subtle);
+    border-radius: 999px; padding: 4px 10px;
+}
+.cb-cl__log { margin-top: 18px; display: flex; flex-direction: column; gap: 14px; }
+.cb-cl__empty { color: var(--cb-text-secondary); }
+
+/* Registro de releases — acordeón <details> nativo (la última abierta, el resto plegado). */
+.cb-cl__releases { margin-top: 10px; display: flex; flex-direction: column; gap: 0; }
+.cb-cl__rel {
+    border: 1px solid var(--cb-border-subtle); border-radius: 12px;
+    background: var(--cb-bg); overflow: hidden;
+    transition: border-color .15s ease, box-shadow .15s ease;
+}
+.cb-cl__rel--latest { box-shadow: 0 1px 3px rgba(0, 0, 0, .06); }
+.cb-cl__rel:hover { border-color: var(--cb-border-strong); }
+
+/* <summary> solo aporta el click; el layout flex va en el div interno (Chrome no flexea summary). */
+.cb-cl__relSummary { cursor: pointer; list-style: none; user-select: none; outline: none; }
+.cb-cl__relSummary::-webkit-details-marker { display: none; }
+.cb-cl__relSummary:focus-visible .cb-cl__relHead { box-shadow: inset 0 0 0 2px var(--cb-focus); border-radius: 12px; }
+.cb-cl__relHead {
+    display: flex; align-items: center; gap: 10px;
+    padding: 14px 18px; transition: background .15s ease;
+}
+.cb-cl__rel:not([open]) .cb-cl__relSummary:hover .cb-cl__relHead { background: var(--cb-bg-hover, rgba(0, 0, 0, .025)); }
+.cb-cl__relHead::before {
+    content: ""; flex: none; width: 7px; height: 7px; margin-right: 2px;
+    border-right: 2px solid var(--cb-text-placeholder); border-bottom: 2px solid var(--cb-text-placeholder);
+    transform: rotate(-45deg); transition: transform .18s ease;
+}
+.cb-cl__rel[open] .cb-cl__relHead::before { transform: rotate(45deg); }
+.cb-cl__rel[open] .cb-cl__relHead { border-bottom: 1px solid var(--cb-border-subtle); }
+.cb-cl__relVer { font: 700 14px/1 var(--cb-mono); color: var(--cb-text); letter-spacing: -.01em; }
+.cb-cl__relVer--date { font: 600 14px/1 var(--cb-font, "Inter"), sans-serif; letter-spacing: 0; }
+.cb-cl__relDate {
+    font: 500 12px/1 var(--cb-font, "Inter"), sans-serif; color: var(--cb-text-secondary);
+    padding-left: 10px; margin-left: 2px; border-left: 1px solid var(--cb-border-subtle);
+}
+.cb-cl__relMeta { margin-left: auto; display: inline-flex; align-items: center; gap: 10px; }
+.cb-cl__relCount { font: 500 11px/1 var(--cb-font, "Inter"), sans-serif; color: var(--cb-text-placeholder); }
+.cb-cl__relBadge {
+    font: 700 9.5px/1 var(--cb-font, "Inter"), sans-serif; letter-spacing: .07em; text-transform: uppercase;
+    padding: 4px 8px; border-radius: 999px; background: var(--cb-interactive); color: #fff;
+}
+.cb-cl__rel .cb-cl__log { margin: 0; padding: 18px; }
+
+/* ─── Toolbar del changelog: buscador + chips de tag + contador (sticky arriba) ─── */
+.cb-cl__toolbar {
+    position: sticky; top: 0; z-index: 5;
+    margin: 24px 0 6px; padding: 14px 0 12px;
+    background: var(--cb-bg);
+    border-bottom: 1px solid var(--cb-border-subtle);
+    display: flex; flex-direction: column; gap: 10px;
+}
+/* Fila 1: buscador con icono y botón de limpiar. */
+.cb-cl__search { position: relative; display: flex; align-items: center; }
+.cb-cl__searchIco {
+    position: absolute; left: 12px; width: 16px; height: 16px; pointer-events: none;
+    color: var(--cb-text-placeholder);
+}
+.cb-cl__searchInput {
+    width: 100%; box-sizing: border-box;
+    font: 400 13.5px/1.2 var(--cb-font, "Inter"), sans-serif; color: var(--cb-text);
+    background: var(--cb-bg); border: 1px solid var(--cb-border-subtle); border-radius: 8px;
+    padding: 10px 36px; outline: none; transition: border-color .15s ease, box-shadow .15s ease;
+}
+.cb-cl__searchInput::placeholder { color: var(--cb-text-placeholder); }
+.cb-cl__searchInput:focus-visible { border-color: var(--cb-focus); box-shadow: 0 0 0 3px rgba(15, 98, 254, .18); }
+.cb-cl__searchInput::-webkit-search-cancel-button { -webkit-appearance: none; appearance: none; }
+.cb-cl__searchClear {
+    position: absolute; right: 8px; display: inline-flex; align-items: center; justify-content: center;
+    width: 22px; height: 22px; border: 0; border-radius: 6px; cursor: pointer;
+    background: transparent; color: var(--cb-text-placeholder);
+    transition: background .12s ease, color .12s ease;
+}
+.cb-cl__searchClear:hover { background: var(--cb-bg-hover, rgba(0, 0, 0, .05)); color: var(--cb-text); }
+.cb-cl__searchClearIco { width: 14px; height: 14px; }
+/* Fila 2: chips de tag a la izquierda + contador a la derecha. */
+.cb-cl__filters { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+.cb-cl__chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.cb-cl__chip {
+    font: 600 11px/1 var(--cb-font, "Inter"), sans-serif; letter-spacing: .03em;
+    padding: 6px 11px; border-radius: 999px; cursor: pointer;
+    color: var(--cb-text-secondary); background: var(--cb-bg);
+    border: 1px solid var(--cb-border-subtle);
+    transition: background .12s ease, color .12s ease, border-color .12s ease;
+}
+.cb-cl__chip:hover { border-color: var(--cb-border-strong); }
+.cb-cl__chip[aria-pressed="true"] { background: var(--cb-interactive); border-color: var(--cb-interactive); color: #fff; }
+.cb-cl__chip--new[aria-pressed="true"] { background: #1a7f37; border-color: #1a7f37; }
+.cb-cl__chip--update[aria-pressed="true"] { background: #b9770e; border-color: #b9770e; }
+.cb-cl__chip--fix[aria-pressed="true"] { background: #c0392b; border-color: #c0392b; }
+.cb-cl__chip--deprecated[aria-pressed="true"] { background: #b83280; border-color: #b83280; }
+.cb-cl__chip--remove[aria-pressed="true"] { background: #6b7280; border-color: #6b7280; }
+.cb-cl__chip--a11y[aria-pressed="true"] { background: #8250df; border-color: #8250df; }
+.cb-cl__chip--amp[aria-pressed="true"] { background: #0d9488; border-color: #0d9488; }
+.cb-cl__resultCount { font: 500 12px/1 var(--cb-font, "Inter"), sans-serif; color: var(--cb-text-placeholder); margin-left: auto; }
+.cb-cl__noresults { color: var(--cb-text-secondary); margin-top: 24px; }
+/* Coincidencias de búsqueda resaltadas. */
+.cb-cl__hl { background: #ffe08a; color: #161616; border-radius: 3px; padding: 0 1px; font-weight: 700; }
+/* "Sin novedades" (N/A) atenuado, en vez de pintarse como fichero. */
+.cb-cl__na { margin: 12px 0 0; font: italic 400 13px/1.4 var(--cb-font, "Inter"), sans-serif; color: var(--cb-text-placeholder); }
+
+/* ─── Agrupación por año (details plegable) → mes (divisor) ─── */
+.cb-cl__year { border: 0; }
+.cb-cl__year + .cb-cl__year { margin-top: 18px; }
+.cb-cl__yearSummary { cursor: pointer; list-style: none; outline: none; }
+.cb-cl__yearSummary::-webkit-details-marker { display: none; }
+.cb-cl__yearHead { display: flex; align-items: center; gap: 12px; padding: 10px 0 12px; border-bottom: 2px solid var(--cb-border-subtle); }
+.cb-cl__yearHead::before {
+    content: ""; flex: none; align-self: center; width: 8px; height: 8px;
+    border-right: 2px solid var(--cb-text-secondary); border-bottom: 2px solid var(--cb-text-secondary);
+    transform: rotate(-45deg); transition: transform .18s ease;
+}
+.cb-cl__year[open] > .cb-cl__yearSummary .cb-cl__yearHead::before { transform: rotate(45deg); }
+.cb-cl__yearSummary:focus-visible .cb-cl__yearHead { box-shadow: 0 2px 0 var(--cb-focus); }
+.cb-cl__yearLabel { font: 800 22px/1 var(--cb-font, "Inter"), sans-serif; color: var(--cb-text); letter-spacing: -.01em; }
+.cb-cl__yearCount {
+    margin-left: auto;
+    font: 600 11px/1 var(--cb-font, "Inter"), sans-serif; color: var(--cb-text-secondary);
+    background: var(--cb-bg); border: 1px solid var(--cb-border-subtle); border-radius: 999px;
+    padding: 5px 11px;
+}
+.cb-cl__yearBody { padding-top: 6px; }
+.cb-cl__month + .cb-cl__month { margin-top: 4px; }
+.cb-cl__monthHead { margin: 16px 0 10px; font: 600 12px/1 var(--cb-font, "Inter"), sans-serif; letter-spacing: .04em; text-transform: uppercase; color: var(--cb-text-secondary); }
+.cb-cl__monthRels { display: flex; flex-direction: column; gap: 12px; }
+
+/* Tarjeta por sección, con acento de color a la izquierda según el tipo. */
+.cb-cl__sec {
+    border: 1px solid var(--cb-border-subtle);
+    border-left: 3px solid var(--cb-interactive);
+    border-radius: 10px; padding: 16px 18px 18px;
+    background: var(--cb-bg);
+}
+.cb-cl__sec--add, .cb-cl__sec--new { border-left-color: #1a7f37; }
+.cb-cl__sec--update, .cb-cl__sec--upd { border-left-color: #b9770e; }
+.cb-cl__sec--fix, .cb-cl__sec--bugfix { border-left-color: #c0392b; }
+.cb-cl__sec--deprecated, .cb-cl__sec--deprecate { border-left-color: #b83280; }
+.cb-cl__sec--remove, .cb-cl__sec--removed, .cb-cl__sec--delete { border-left-color: #6b7280; }
+.cb-cl__sec--a11y { border-left-color: #8250df; }
+.cb-cl__sec--amp { border-left-color: #0d9488; }
+.cb-cl__sec--html, .cb-cl__sec--scss, .cb-cl__sec--css, .cb-cl__sec--js { border-left-color: var(--cb-focus); }
+.cb-cl__secHead { display: flex; align-items: center; gap: 10px; }
+/* Etiqueta de sección (ADD/UPDATE/HTML/SCSS/FIX…) */
+.cb-cl__tag {
+    display: inline-block;
+    font: 700 10px/1 var(--cb-font, "Inter"), sans-serif; letter-spacing: .07em;
+    padding: 4px 9px; border-radius: 5px; background: var(--cb-interactive); color: #fff;
+}
+.cb-cl__tag--add, .cb-cl__tag--new { background: #1a7f37; }
+.cb-cl__tag--update, .cb-cl__tag--upd { background: #b9770e; }
+.cb-cl__tag--fix, .cb-cl__tag--bugfix { background: #c0392b; }
+.cb-cl__tag--deprecated, .cb-cl__tag--deprecate { background: #b83280; }
+.cb-cl__tag--remove, .cb-cl__tag--removed, .cb-cl__tag--delete { background: #6b7280; }
+.cb-cl__tag--a11y { background: #8250df; }
+.cb-cl__tag--amp { background: #0d9488; }
+.cb-cl__tag--html, .cb-cl__tag--scss, .cb-cl__tag--css, .cb-cl__tag--js { background: var(--cb-focus); }
+.cb-cl__count { font: 500 11px/1 var(--cb-font, "Inter"), sans-serif; color: var(--cb-text-placeholder); }
+/* Entradas dentro de la sección (nota + ficheros). */
+.cb-cl__entry { margin-top: 14px; }
+.cb-cl__entry:first-child { margin-top: 12px; }
+.cb-cl__note { font: 600 15px/1.4 var(--cb-font, "Inter"), sans-serif; color: var(--cb-text); margin: 0 0 8px; letter-spacing: -.01em; }
+.cb-cl__body { display: flex; flex-direction: column; gap: 6px; width: 100%; margin: 0 0 10px; }
+.cb-docs .cb-cl__desc {
+    margin: 0;
+    width: 100%;
+    max-width: none;
+    font: 400 12.5px/1.55 var(--cb-font, "Inter"), sans-serif;
+    color: var(--cb-text-secondary);
+}
+.cb-cl__files { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.cb-cl__file { margin: 0; }
+.cb-cl__file code {
+    font: 500 12px/1.55 var(--cb-mono);
+    display: inline-flex; flex-wrap: wrap; align-items: center;
+    max-width: 100%;
+    padding: 6px 10px;
+    border: 1px solid var(--cb-border-subtle);
+    border-radius: 8px;
+    background: var(--cb-layer);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .03);
+    overflow-wrap: anywhere;
+}
+.cb-cl__file code::before {
+    content: "›";
+    flex: none;
+    margin-right: 8px;
+    color: var(--cb-text-placeholder);
+    font-weight: 700;
+    opacity: .85;
+}
+.cb-cl__path {
+    color: var(--cb-text-secondary);
+    opacity: .78;
+}
+.cb-cl__name {
+    color: var(--cb-text);
+    font-weight: 700;
+    letter-spacing: -.01em;
+}
+
+@media (max-width: 900px) {
+    .cb-app { grid-template-columns: 1fr; }
+    .cb-side { display: none; }
+}
