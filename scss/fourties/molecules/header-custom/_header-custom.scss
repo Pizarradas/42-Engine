@@ -1,0 +1,182 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// .ft-mol-header-custom
+// ===============================================
+.ft-mol-header-custom {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+  min-height: 12rem;
+  background-color: var(--color-illustrations-skin-5);
+  border-bottom-left-radius: 6rem;
+  @include min-screen(1024px) {
+    min-height: auto;
+    max-height: 14rem;
+    border-radius: 0;
+  }
+
+  // .ft
+  .ft {
+    // &-img
+    &-img {
+      @include margin(auto auto null null);
+      max-width: 40%;
+      @include min-screen(680px) {
+        max-width: 25rem;
+      }
+    }
+
+    // &-helper
+    &-helper {
+      // &-img
+      &-img {
+        // &-rd
+        &-rd {
+          border-bottom-left-radius: 6rem;
+          @include min-screen(1024px) {
+            border-bottom-left-radius: 0;
+          }
+        }
+      }
+    }
+  }
+
+  // &__title
+  &__title {
+    @include margin(0 null 0 null);
+    @include font--heading-M;
+    flex-basis: 100%;
+  }
+
+  // &__highlighted
+  &__highlighted {
+    @include font--heading-XXL;
+    display: block;
+    @include min-screen(1024px) {
+      display: inline-block;
+    }
+  }
+
+  // &__subtitle
+  &__subtitle {
+    @include margin(0 null 0 null);
+    @include font--body-M--small;
+    flex-basis: 100%;
+  }
+
+  // &__txt
+  &__txt {
+    @include padding(1rem);
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    text-align: right;
+  }
+
+  // &--has
+  &--has {
+    // &-txt
+    &-txt {
+      // &-lft
+      &-lft {
+        flex-direction: row;
+        border-bottom-right-radius: 6rem;
+        border-bottom-left-radius: 0;
+        @include min-screen(1024px) {
+          border-bottom-right-radius: 0;
+        }
+
+        // [class*=__txt]
+        [class*="__txt"] {
+          text-align: left;
+        }
+
+        // .ft
+        .ft {
+          // &-img
+          &-img {
+            @include margin(null 0 null auto);
+          }
+
+          // &-helper
+          &-helper {
+            // &-img
+            &-img {
+              // &-rd
+              &-rd {
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 6rem;
+                @include min-screen(1024px) {
+                  border-bottom-right-radius: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      // &-cnt
+      &-cnt {
+        @include padding(1rem null null null);
+        min-height: auto;
+
+        // [class*=__txt]
+        [class*="__txt"] {
+          flex-basis: 100%;
+          text-align: center;
+        }
+
+        // .ft
+        .ft {
+          // &-img
+          &-img {
+            @include hide-visually;
+          }
+        }
+      }
+    }
+
+    // &-img-hiden-desktop
+    &-img-hiden-desktop {
+      @include min-screen(1024px) {
+        @include padding(1rem null 1rem null);
+        min-height: auto;
+        justify-content: flex-end;
+      }
+
+      // [class*=__txt]
+      [class*="__txt"] {
+        @include min-screen(1024px) {
+          @include padding(0 null 0 null);
+          text-align: left;
+        }
+      }
+
+      // .ft
+      .ft {
+        // &-img
+        &-img {
+          @include min-screen(1024px) {
+            @include hide-visually;
+          }
+        }
+      }
+
+      // &.ft-mol-header-custom--has-txt-lft
+      &.ft-mol-header-custom--has-txt-lft {
+        @include min-screen(1024px) {
+          justify-content: flex-start;
+        }
+      }
+    }
+  }
+
+  // &.affix
+  &.affix {
+    min-height: auto;
+  } 
+}

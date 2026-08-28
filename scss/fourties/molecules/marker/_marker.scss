@@ -1,0 +1,187 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// FT-MOL-marker
+// ===============================================
+.ft-mol-marker
+{
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    max-width: 100%;
+
+    @mixin border-bottom()
+    {
+        @include border-style(null null solid null);
+        @include border-width(null null .1rem null);
+        @include border-color(null null var(--color-mediumGrey) null);
+    }
+
+
+    // &__header
+    &__header
+    {
+        // general
+        @include padding(.5rem 1rem);
+        @include border-bottom;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        background-color: var(--color-lightGrey);
+
+        @include min-screen(768px)
+        {
+            flex-direction: row;
+        }
+
+        // &Title
+        &Title
+        {
+            // general
+            @include margin(0 2.5rem 0 0);
+            @include font--body-S;
+            @include fontBold;
+            color: var(--color-primary);
+
+        }
+
+        // &Links
+        &Links
+        {
+            // general
+            @include margin(0);
+            @include font--body-S;
+            display: flex;
+            flex-direction: row;
+
+            .ft-link
+            {
+                @include margin(0 1.5rem 0 0);
+            }
+
+        }
+
+        // end // &Header
+    }
+
+    //&__main
+    // ---------------------------------------------
+    &__main
+    {
+        // general
+        @include border-bottom;
+        display: flex;
+        flex-direction: row;
+        white-space: nowrap;
+        max-width: 100%;
+
+
+        // &Box
+        &Box
+        {
+            // general
+            @include padding(.2rem 1rem);
+            @include font--body-XS--small;
+            @include fontBold;
+            @include border-style(null null null solid);
+            @include border-width(null null null .1rem);
+            @include border-color(null null null var(--color-mediumGrey));
+            display: block;
+            width: 100%;
+
+
+            &:last-child
+            {
+                @include border-style(null solid null null);
+                @include border-width(null .2rem null null);
+                @include border-color(null var(--color-mediumGrey) null null);
+            }
+
+            .ft-link
+            {
+                display: flex;
+                flex-direction: column;
+            }
+
+            // &--info
+            &--info
+            {
+                // general
+                @include font--body-XS--small;
+                color: var(--color-quaternary);
+                @include margin(.3rem 0 .3rem 0);
+
+                // &is
+                &Active
+                {
+
+                    // generals
+                    @include position (relative, null null null null);
+                    @include fontBold;
+
+                    background-size: 200%;
+                    transition: all .5s;
+                    color: var(--color-black);
+
+                    // &:before
+                    &:before
+                    {
+                        @include position (absolute, 0 null 0 -.8rem);
+                        @include margin(auto);
+                        content: "";
+                        width: 5px;
+                        height: 5px;
+                        border-radius: 50%;
+                        opacity: 1;
+                        animation: shift 1s cubic-bezier(0.36, 0, 0.66, -0.56) 0s infinite normal backwards;
+
+                        // end // &:before
+                    }
+
+                    // end //  &--advice
+
+
+
+                }
+            }
+
+            // &--line
+            &--line
+            {
+
+                // general
+                @include margin(.3rem null);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+
+                *
+                {
+                    display: flex;
+                    justify-content: center;
+                    max-height: 1.7rem;
+                    width: 3rem;
+                    object-fit: contain;
+                }
+
+            }
+
+            //end // &Box
+        }
+
+        // end // &__main
+    }
+
+    // ---------------------------------------------
+    // end // ft-mol-marker
+    // ---------------------------------------------
+}
+
+// ===============================================

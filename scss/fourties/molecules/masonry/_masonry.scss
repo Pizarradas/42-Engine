@@ -1,0 +1,195 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// FOURTY-MOL: masonry
+// ===============================================
+.ft-mol-masonry {
+  @include margin(null null 2.5rem null);
+  display: flex;
+  flex-wrap: wrap;
+
+  // &__picture
+  &__picture {
+    width: 100%;
+
+    // .ft-helper-img-rd
+    img.ft-helper-img-rd {
+      width: 100%;
+      object-fit: contain;
+    }
+
+    // behavior-parent: ft-mol-masonry--has-video
+    @include behavior-parent(ft-mol-masonry--has-video) {
+      @include position(relative, null null null null);
+    }
+    // behavior-parent: ft-mol-masonry--has-audio
+    @include behavior-parent(ft-mol-masonry--has-audio) {
+      @include position(relative, null null null null);
+    }
+    // behavior-parent: ft-mol-masonry--has-photo
+    @include behavior-parent(ft-mol-masonry--has-photo) {
+      @include position(relative, null null null null);
+    }
+  }
+
+  // &__icon
+  &__icon {
+    @include position(absolute, 50% null null 50%);
+    content: "";
+    display: inline-flex;
+    width: 100%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    width: 54px;
+    height: 54px;
+
+    // behavior-parent: ft-mol-masonry--has--photo
+    @include behavior-parent(ft-mol-masonry--has-photo) {
+      background: null
+        url('data:image/svg+xml,<svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M27 54C12.1122 54 0 41.8878 0 27C0 12.1122 12.1122 0 27 0C41.8878 0 54 12.1122 54 27C54 41.8878 41.8878 54 27 54ZM27 3.64895C15.4206 3.64895 3.64895 15.4206 3.64895 27C3.64895 38.5794 15.4206 50.3511 27 50.3511C38.5794 50.3511 50.3511 38.5794 50.3511 27C50.3511 15.4206 38.5794 3.64895 27 3.64895Z" fill="black" fill-opacity="0.3" /><path d="M27 3.64895C15.4206 3.64895 3.64895 15.4206 3.64895 27C3.64895 38.5794 15.4206 50.3511 27 50.3511C38.5794 50.3511 50.3511 38.5794 50.3511 27C50.3511 15.4206 38.5794 3.64895 27 3.64895Z" fill="black" fill-opacity="0.3" /><path d="M27 54C12.1122 54 0 41.8878 0 27C0 12.1122 12.1122 0 27 0C41.8878 0 54 12.1122 54 27C54 41.8878 41.8878 54 27 54ZM27 3.64895C15.4206 3.64895 3.64895 15.4206 3.64895 27C3.64895 38.5794 15.4206 50.351 27 50.351C38.5794 50.351 50.351 38.5794 50.351 27C50.351 15.4206 38.5794 3.64895 27 3.64895Z" fill="white" /><path fill-rule="evenodd" clip-rule="evenodd" d="M19.8231 15.8701C20.127 15.3334 20.7077 15 21.3383 15H31.4017C31.9827 15 32.5249 15.2834 32.845 15.7543L33.9854 17.4322H38.4725C39.8684 17.4322 41 18.5314 41 19.8873V35.5449C41 36.9008 39.8684 38 38.4725 38H14.5275C13.1316 38 12 36.9008 12 35.5449V19.8873C12 18.5314 13.1316 17.4322 14.5275 17.4322H18.9383L19.8231 15.8701ZM21.7315 17.3258L20.354 19.7581H14.5275C14.4541 19.7581 14.3945 19.8159 14.3945 19.8873V35.5449C14.3945 35.6163 14.4541 35.6742 14.5275 35.6742H38.4725C38.5459 35.6742 38.6055 35.6163 38.6055 35.5449V19.8873C38.6055 19.8159 38.5459 19.7581 38.4725 19.7581H32.6969L31.0438 17.3258H21.7315Z" fill="white" /><path fill-rule="evenodd" clip-rule="evenodd" d="M26.5 21C30.0899 21 33 23.9101 33 27.5C33 31.0899 30.0899 34 26.5 34C22.9101 34 20 31.0899 20 27.5C20 23.9101 22.9101 21 26.5 21ZM26.5 23.4375C28.7437 23.4375 30.5625 25.2563 30.5625 27.5C30.5625 29.7437 28.7437 31.5625 26.5 31.5625C24.2563 31.5625 22.4375 29.7437 22.4375 27.5C22.4375 25.2563 24.2563 23.4375 26.5 23.4375Z" fill="white" /></svg>')
+        no-repeat 50%;
+    }
+    // behavior-parent: ft-mol-masonry--has-video
+    @include behavior-parent(ft-mol-masonry--has-video) {
+      background: null
+        url('data:image/svg+xml,<svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M27 54C12.1122 54 0 41.8878 0 27C0 12.1122 12.1122 0 27 0C41.8878 0 54 12.1122 54 27C54 41.8878 41.8878 54 27 54ZM27 3.64895C15.4206 3.64895 3.64895 15.4206 3.64895 27C3.64895 38.5794 15.4206 50.3511 27 50.3511C38.5794 50.3511 50.3511 38.5794 50.3511 27C50.3511 15.4206 38.5794 3.64895 27 3.64895Z" fill="black" fill-opacity="0.3"></path><path d="M27 3.64895C15.4206 3.64895 3.64895 15.4206 3.64895 27C3.64895 38.5794 15.4206 50.3511 27 50.3511C38.5794 50.3511 50.3511 38.5794 50.3511 27C50.3511 15.4206 38.5794 3.64895 27 3.64895Z" fill="black" fill-opacity="0.3"></path><path d="M27 54C12.1122 54 0 41.8878 0 27C0 12.1122 12.1122 0 27 0C41.8878 0 54 12.1122 54 27C54 41.8878 41.8878 54 27 54ZM27 3.64895C15.4206 3.64895 3.64895 15.4206 3.64895 27C3.64895 38.5794 15.4206 50.351 27 50.351C38.5794 50.351 50.351 38.5794 50.351 27C50.351 15.4206 38.5794 3.64895 27 3.64895Z" fill="white"></path><path d="M38.4013 28.5854C39.4085 28.0039 39.4085 26.5495 38.4013 25.9681L30.0603 21.1528L21.7193 16.3375C20.712 15.756 19.4521 16.4828 19.4521 17.6464V27.2764V36.9076C19.4521 38.0712 20.7114 38.7981 21.7193 38.2166L30.0603 33.4013L38.4013 28.5854Z" fill="white"></path></svg>')
+        no-repeat 50%;
+    }
+    // behavior-parent: ft-mol-masonry--has-audio
+    @include behavior-parent(ft-mol-masonry--has-audio) {
+      background: null
+        url('data:image/svg+xml,<svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M27 54C12.1122 54 0 41.8878 0 27C0 12.1122 12.1122 0 27 0C41.8878 0 54 12.1122 54 27C54 41.8878 41.8878 54 27 54ZM27 3.64895C15.4206 3.64895 3.64895 15.4206 3.64895 27C3.64895 38.5794 15.4206 50.3511 27 50.3511C38.5794 50.3511 50.3511 38.5794 50.3511 27C50.3511 15.4206 38.5794 3.64895 27 3.64895Z" fill="black" fill-opacity="0.3" /><path d="M27 3.64895C15.4206 3.64895 3.64895 15.4206 3.64895 27C3.64895 38.5794 15.4206 50.3511 27 50.3511C38.5794 50.3511 50.3511 38.5794 50.3511 27C50.3511 15.4206 38.5794 3.64895 27 3.64895Z" fill="black" fill-opacity="0.3" /><path d="M27 54C12.1122 54 0 41.8878 0 27C0 12.1122 12.1122 0 27 0C41.8878 0 54 12.1122 54 27C54 41.8878 41.8878 54 27 54ZM27 3.64895C15.4206 3.64895 3.64895 15.4206 3.64895 27C3.64895 38.5794 15.4206 50.351 27 50.351C38.5794 50.351 50.351 38.5794 50.351 27C50.351 15.4206 38.5794 3.64895 27 3.64895Z" fill="white" /><path fill-rule="evenodd" clip-rule="evenodd" d="M31.3792 28.4909V20.5386C31.3792 18.205 29.4874 16.3133 27.1538 16.3133C24.8202 16.3133 22.9285 18.205 22.9285 20.5386V28.4909C22.9285 30.8245 24.8202 32.7163 27.1538 32.7163C29.4874 32.7163 31.3792 30.8245 31.3792 28.4909ZM27.1538 14C23.5427 14 20.6152 16.9274 20.6152 20.5386V28.4909C20.6152 32.1021 23.5427 35.0295 27.1538 35.0295C30.765 35.0295 33.6924 32.1021 33.6924 28.4909V20.5386C33.6924 16.9274 30.765 14 27.1538 14Z" fill="white" /><path d="M31.3792 20.5386V28.4909C31.3792 30.8245 29.4874 32.7163 27.1538 32.7163C24.8202 32.7163 22.9285 30.8245 22.9285 28.4909V20.5386C22.9285 18.205 24.8202 16.3133 27.1538 16.3133C29.4874 16.3133 31.3792 18.205 31.3792 20.5386Z" fill="white" /><path fill-rule="evenodd" clip-rule="evenodd" d="M37.9021 27.4487C38.5401 27.4812 39.0309 28.0246 38.9985 28.6626C38.7975 32.6144 37.2117 35.5128 34.8548 37.3593C32.5238 39.1855 29.5418 39.9037 26.6503 39.7254C20.945 39.3736 15.0001 35.4118 15 28.6039C15 27.9651 15.5178 27.4472 16.1566 27.4472C16.7954 27.4472 17.3132 27.9651 17.3133 28.6038C17.3133 33.7711 21.8404 37.1112 26.7927 37.4166C29.23 37.5668 31.6232 36.9525 33.4282 35.5384C35.2071 34.1447 36.5178 31.8952 36.6882 28.5451C36.7207 27.9071 37.2641 27.4163 37.9021 27.4487Z" fill="white" /><path fill-rule="evenodd" clip-rule="evenodd" d="M27.3021 37.5239C27.9409 37.5239 28.4588 38.0417 28.4588 38.6805V42.9156C28.4588 43.5544 27.9409 44.0722 27.3021 44.0722C26.6633 44.0722 26.1455 43.5544 26.1455 42.9156V38.6805C26.1455 38.0417 26.6633 37.5239 27.3021 37.5239Z" fill="white" /></svg>')
+        no-repeat 50%;
+    }
+  }
+
+  // &__previous 
+  &__previous {
+    color: var(--color-tertiary);
+
+    // &:hover, &:focus-visible
+    &:hover,
+    &:focus-visible {
+      text-decoration: underline;
+    }
+  }
+
+  // &__content
+  &__content {
+    @include padding(null null 1.5rem null);
+    width: 100%;
+
+    @include min-screen(768px) {
+      @include padding(null null 2.5rem null);
+      width: auto;
+    }
+
+    // &Title
+    &Title {
+      @include margin(1.5rem 0);
+      @include font--body-XL--small;
+      @include fontBold;
+
+      // @if $brand ==revistas
+      @if $brand ==revistas {
+        @include min-screen(768px) {
+          font-size: 2rem;
+          line-height: 2.8rem;
+        }
+      }
+
+      // behavior-parent(ft-mol-masonryIs-lft)
+      @include behavior-parent(ft-mol-masonryIs-lft) {
+        @include margin(0);
+      }
+
+      // behavior-parent(ft-mol-masonryIs-rgt)
+      @include behavior-parent(ft-mol-masonryIs-rgt) {
+        @include margin(0);
+      }
+
+      // behavior-parent(ft-mol-masonryIs-btm)
+      @include behavior-parent(ft-mol-masonryIs-btm) {
+        @include margin(0);
+      }
+    }
+
+    // &Text
+    &Text {
+      @include margin(0.5rem null);
+      @include font--body-M--small;
+      color: var(--color-darkGrey);
+    }
+  }
+
+  // &Is
+  &Is {
+    // &-lft
+    &-lft {
+      flex-wrap: nowrap;
+
+      // .ft-mol-masonry__picture
+      .ft-mol-masonry__picture {
+        @include margin(null 1rem null null);
+        min-width: 50%;
+      }
+
+      // end // &-lft
+    }
+
+    // &-rgt
+    &-rgt {
+      flex-wrap: nowrap;
+
+      // .ft-mol-masonry__picture
+      .ft-mol-masonry__picture {
+        @include margin(null null null 1rem);
+        order: 2;
+        min-width: 50%;
+      }
+    }
+
+    // &-btm
+    &-btm {
+      height: auto;
+
+      // .ft
+      .ft {
+        // &-mol
+        &-mol {
+          // &-masonry
+          &-masonry {
+            // &__picture
+            &__picture {
+              @include margin(0.5rem 0 0 0);
+              order: 2;
+            }
+
+            // &__content
+            &__content {
+              order: 1;
+              @include padding(null null 0 null);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// AMP
+// ===============================================
+// .ft-img
+.ft-img {
+  // .i-amphtml-fill-content
+  .i-amphtml-fill-content {
+    aspect-ratio: 1/1;
+
+    @include min-screen(768px) {
+      aspect-ratio: 16/9;
+    }
+  }
+}

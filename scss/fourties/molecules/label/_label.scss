@@ -1,0 +1,239 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// animation
+// ===============================================
+@keyframes move
+{
+    to
+    {
+        transform: translateX(-100%);
+    }
+}
+
+ // @keyframes shift
+ @keyframes shift
+ {
+
+     0%,
+     100%
+     {
+         opacity: 0;
+     }
+
+     50%
+     {
+         opacity: 1;
+     }
+ }
+
+// ft-mol-label
+// ===============================================
+.ft-mol-label
+{
+    // generals
+    @include margin(2rem null 2rem null);
+    display: flex;
+
+    // min-screen(768px)
+    @include min-screen(768px)
+    {
+        @include margin(0 null 2rem null);
+        @include font--body-L;
+        @include fontBold;
+    }
+
+    // --------------------------------------------- 
+
+    // &__cnt
+    // ---------------------------------------------
+    &--cnt
+    {
+        justify-content: center;
+    }
+
+    // &__rgt
+    // ---------------------------------------------
+    &--rgt
+    {
+        // generals
+        justify-content: flex-end;
+        // end // &--rgt
+    }
+
+
+    // &__content
+    // ---------------------------------------------
+    &__content
+    {
+        // generals
+        @include border-style(solid);
+        @include border-color(var(--color-mediumGrey));
+        @include border-width(0.1rem);
+        @include border-top-radius(3rem);
+        @include border-right-radius(3rem);
+        @include border-bottom-radius(3rem);
+        @include border-left-radius(3rem);
+        @include padding(0.17rem 0.16rem 0.2rem 0.15rem);
+        @include margin(0 1rem 0 0);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+
+        // behavior parent: ft-mol-label--advice
+        @include behavior-parent(ft-mol-label--advice)
+        {
+            min-width: 22px;
+            min-height: 22px;
+        }
+
+        // behavior parent: ft-mol-label--advice
+        @include behavior-parent(ft-mol-label--xs)
+        {
+            @include padding(0 .2rem);
+
+        }
+
+
+        // end // &__content
+    }
+
+    // &__title
+    // ---------------------------------------------
+    &__title
+    {
+        // generals
+        @include margin(0 .6rem);
+        @include font--body-L--small;
+        @include fontBold;
+        letter-spacing: 0.05rem;
+
+        // behavior parent: ft-mol-label--xs
+        @include behavior-parent(ft-mol-label--xs)
+        {
+            // generals
+            @include font--body-S--small;
+            @include fontBold;
+        }
+
+        // behavior parent: ft-mol-label--sm
+        @include behavior-parent(ft-mol-label--sm)
+        {
+            // generals
+            @include font--body-M--small;
+            @include fontBold;
+        }
+
+
+        // behavior parent: ft-mol-label--advice
+        @include behavior-parent(ft-mol-label--advice)
+        {
+            // generals
+            @include margin(null null null 2rem);
+
+        }
+
+        // end // &__title
+    }
+
+    // ---------------------------------------------
+
+    // &__image
+    // ---------------------------------------------
+    &__image
+    {
+        // generals
+        width: 2.4rem;
+        height: auto;
+
+        // min-screen(768px)
+        @include min-screen(768px)
+        {
+            width: 3rem;
+        }
+
+        // behavior parent: ft-mol-label--sm
+        @include behavior-parent(ft-mol-label--sm)
+        {
+            // generals
+            width: 1.8rem;
+            height: auto;
+
+            // min-screen(768px)
+            @include min-screen(768px)
+            {
+                width: 2.3rem;
+            }
+
+            // end // behavior parent: ft-mol-label--xs
+        }
+
+        // behavior parent: ft-mol-label--xs
+        @include behavior-parent(ft-mol-label--xs)
+        {
+            // generals
+            width: 1.4rem;
+            height: auto;
+            @include padding(0.2rem 0);
+
+            // min-screen(768px)
+            @include min-screen(768px)
+            {
+                width: 1.6rem;
+            }
+
+            // end // behavior parent: ft-mol-label--sm
+        }
+
+        // end // &__image
+    }
+
+    // ---------------------------------------------
+
+    //  &--advice
+    // ---------------------------------------------
+    &--advice
+    {
+        // generals
+        @include position (relative, null null null null);
+        background-size: 200%;
+        letter-spacing: 0.3rem;
+        transition: all .5s;
+
+
+        // &:before
+        &:before
+        {
+            @include position (absolute, 0 null 0 .7rem);
+            @include margin(auto);
+            background-color: var(--color-functional-error);
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            animation: shift 1s infinite;
+
+            // min-screen(768px)
+            @include min-screen(768px)
+            {
+                @include position (absolute, 0 null 0 .9rem);
+            }
+
+            // end // &:before
+        }
+
+        // end //  &--advice
+    }
+
+
+
+    // --------------------------------------------- 
+
+    // END // ft-mol-label
+}
+
+// ===============================================

@@ -1,0 +1,385 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// FT-mol-pagination
+// ===============================================
+.ft-mol-pagination
+{
+    // generals
+    // ---------------------------------------------
+    @include padding(2.5rem null 2.5rem 0);
+
+    // ---------------------------------------------
+
+    // &__content
+    // ---------------------------------------------
+    &__content
+    {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        list-style: none;
+        width: 100%;
+
+        // behavior parent: ft-mol-pagination-is--cnt
+        @include behavior-parent(ft-mol-pagination-is--cnt)
+        {
+            justify-content: center;
+        }
+
+        // behavior parent: ft-mol-pagination-is--rgt
+        @include behavior-parent(ft-mol-pagination-is--rgt)
+        {
+            justify-content: flex-end;
+        }
+
+    }
+
+    // &__trigger
+    // ---------------------------------------------
+    &__trigger
+    {
+
+        // generals
+        @include position(relative, null null null null);
+        @include size(100%, 100%);
+        @include font--body-L--small;
+        @include fontBold;
+        @include border-top-radius(50%);
+        @include border-bottom-radius(50%);
+        @include border-width(0);
+        @include border-style(none);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: border-color 200ms ease, color 200ms ease;
+        color: var(--color-quaternary);
+        background-color: transparent;
+
+
+        // behavior: bg(Color-black)
+        @include behavior-ft-helper-bg(Color-black)
+        {
+            color: var(--color-white);
+        }
+
+
+        // &:hover
+        &:hover
+        {
+            @include border-color(var(--color-mediumGrey));
+        }
+
+        // &:focus-visible
+        &:focus-visible
+        {
+
+            @include border-color(var(--color-primary));
+            @include focus--custom(var(--color-primary));
+            color: var(--color-white);
+            background-color: var(--color-primary);
+
+            // end // &:focus-visible
+        }
+
+        // end // &__trigger
+    }
+
+    // ---------------------------------------------
+
+    // &__item
+    // ---------------------------------------------
+    &__item
+    {
+
+        // generals
+        @include position(relative, null null null null);
+        @include margin(null 0 0 null);
+        @include size(3.8rem, 3.8rem);
+        @include border-top-radius(50%);
+        @include border-bottom-radius(50%);
+        transition: background-color 200ms ease;
+
+        // min-screen(768px) 
+        @include min-screen(768px)
+        {
+            @include margin(null 1rem 0 null);
+            @include size(4rem, 4rem);
+
+        }
+
+        // &Is
+        &Is
+        {
+
+            // &Iconized
+            &Iconized
+            {
+
+                // &:after
+                &:after
+                {
+
+                    // generals
+                    content: '';
+                    @include position(absolute, 0 0 0 0);
+                    @include margin(auto);
+                    @include size(1.5rem, 1.5rem);
+                    pointer-events: none;
+
+                    // behavior: bg(Color-black)
+                    @include behavior-ft-helper-bg(Color-black)
+                    {
+                        filter: map-filters(whites, brand--all);
+                    }
+
+                    ;
+
+                    // end // &:after
+                }
+
+                // ft-mol-pagination
+                .ft-mol-pagination
+                {
+
+                    // &__trigger
+                    &__trigger
+                    {
+                        @include size(4rem, 4rem);
+                        text-indent: -9999px;
+                    }
+
+                    // end // ft-mol-pagination
+                }
+
+                // &:focus-visible
+                &:focus-visible
+                {
+
+                    // :after
+                    &:after
+                    {
+                        filter: map-filters(whites, brand--all);
+                    }
+
+                    // end // &:focus-visible
+                }
+
+                // end // &Iconized
+            }
+
+            // &Nav
+            &Nav
+            {
+
+                // &Prev
+                &Prev
+                {
+
+                    // &:after
+                    &:after
+                    {
+
+
+
+                        @include background-setup(map-icons(chevrons, brand--default), // img path
+                            'center center / 90%', // position and size
+                            no-repeat, // repeat
+                            null, // attachment
+                            null, // origin
+                            null, // clip
+                            transparent, // color
+                        );
+                        transform: rotate(90deg);
+
+                        // end // &:after
+                    }
+
+                    // end // &Prev
+                }
+
+                // &Next
+                &Next
+                {
+
+                    // &:after
+                    &:after
+                    {
+
+
+
+                        @include background-setup(map-icons(chevrons, brand--default), // img path
+                            'center center / 90%', // position and size
+                            no-repeat, // repeat
+                            null, // attachment
+                            null, // origin
+                            null, // clip
+                            transparent, // color
+                        );
+                        transform: rotate(-90deg);
+
+
+                        // end // &:after
+                    }
+
+                    // end // &Next
+                }
+
+                // end // &Nav
+            }
+
+            // &First
+            &First
+            {
+
+                // &:after
+                &:after
+                {
+
+                    // generals
+                    content: '';
+
+                    @include background-setup(map-icons(chevrons, brand--double), // img path
+                        'center center / 90%', // position and size
+                        no-repeat, // repeat
+                        null, // attachment
+                        null, // origin
+                        null, // clip
+                        transparent, // color
+                    );
+                    transform: rotate(90deg);
+
+                    // end // &:after
+                }
+
+                // end // &First
+            }
+
+            // &Last
+            &Last
+            {
+
+                // &:after
+                &:after
+                {
+
+                    // generals
+                    content: '';
+
+                    @include background-setup(map-icons(chevrons, brand--double), // img path
+                        'center center / 90%', // position and size
+                        no-repeat, // repeat
+                        null, // attachment
+                        null, // origin
+                        null, // clip
+                        transparent, // color
+                    );
+                    transform: rotate(-90deg);
+
+                    // end // &:after
+                }
+
+                // end // &Last
+            }
+
+            // &Active
+            &Active
+            {
+
+                background-color: var(--color-primary);
+
+                // ft-mol-pagination
+                .ft-mol-pagination
+                {
+
+                    // &__trigger
+                    &__trigger
+                    {
+                        color: var(--color-white);
+
+                        // &:hover
+                        &:hover
+                        {
+                            cursor: default;
+                        }
+
+                        // end // &__trigger
+                    }
+
+                    // end // ft-mol-pagination
+                }
+
+                // end // &Active
+            }
+
+            // &Disabled
+            &Disabled
+            {
+
+                // &:after
+                &:after
+                {
+
+                    // generals
+                    filter: map-filters(greys, brand--300);
+
+                    // behavior: bg(Color-black)
+                    @include behavior-ft-helper-bg(Color-black)
+                    {
+                        filter: map-filters(greys, brand--500);
+                    }
+
+                    // end // &:after
+                }
+
+                // ft-mol-pagination
+                .ft-mol-pagination
+                {
+
+                    // &__trigger
+                    &__trigger
+                    {
+
+                        color: var(--color-mediumGrey);
+
+
+                        // &:hover
+                        &:hover
+                        {
+                            cursor: not-allowed;
+                        }
+
+                        // end // &__trigger
+                    }
+
+                    // end // ft-mol-pagination
+                }
+
+                // &:focus-visible
+                &:focus-visible
+                {
+
+                    // :after
+                    &:after
+                    {
+                        filter: map-filters(greys, brand-all-600);
+                    }
+
+                    // end // &:focus-visible
+                }
+
+                // end // &Disabled
+            }
+
+            // end // &Is
+        }
+
+        // end // &__item
+    }
+
+    // ---------------------------------------------
+    // END // FT-mol-pagination
+}

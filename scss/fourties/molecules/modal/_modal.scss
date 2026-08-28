@@ -1,0 +1,833 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// FOURTY-MOL: MODAL
+// ===============================================
+.ft-mol-modal {
+  @include position(fixed, 0 0 0 0);
+  z-index: 99999999999999;
+  display: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0.85);
+
+  // &__container
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+
+    &--cnt {
+      text-align: center;
+      margin: 0px auto;
+    }
+  }
+
+  // &__window
+  &__window {
+    @include position(relative, null null null null);
+    @include padding(2rem);
+    @include border-style(solid);
+    @include border-width(0.2rem);
+    @include border-color(transparent);
+    @include border-top-radius(1rem);
+    @include border-bottom-radius(1rem);
+    width: 95%;
+    background-color: var(--color-white);
+    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.4);
+
+    @include min-screen(768px) {
+      width: 50%;
+    }
+  }
+
+  &__feedback {
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    min-height: 4.4rem;
+    top: 4.5rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    z-index: 2;
+
+    @include min-screen(768px) {
+      top: 6rem;
+    }
+
+    // .ft-text-alert
+    .ft-text-alert {
+      &:before {
+        filter: brightness(0);
+        z-index: 1;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0.3rem;
+        left: 0.1rem;
+        height: 1.8rem;
+        width: 1.8rem;
+        background-color: var(--color-white);
+        border-radius: 50%;
+      }
+    }
+  }
+
+  // &__header
+  &__header {
+    @include margin(null null 2rem null);
+    width: calc(100% - 5rem);
+
+    @include behavior-parent(ft-mol-modal-has--img--sm) {
+      @include margin(null null 1rem null);
+      @include padding(null 2rem null 2rem);
+      min-height: 2.4rem;
+    }
+
+    // &*
+    & * {
+      @include margin(0);
+    }
+  }
+
+  // &__body
+  &__body {
+    position: relative;
+    @include margin(null);
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 25rem;
+    min-height: 5rem;
+    padding-block: 1px;
+
+    @include min-screen(1440px) {
+      max-height: 65rem;
+    }
+
+    a {
+      color: var(--color-primary);
+    }
+
+    > p:first-child {
+      // primer hijo si es <p>
+      @include margin(0 null null null);
+    }
+
+    > p:last-child {
+      // último hijo si es <p>
+      @include margin(null null 0 null);
+    }
+
+    /* Fades */
+    &::before,
+    &::after {
+      content: "";
+      position: sticky;
+      @include margin(-5rem null null null);
+      height: 5rem;
+      left: 0;
+      right: 0;
+      display: block;
+      pointer-events: none;
+      z-index: 10;
+      opacity: 0;
+      transition: opacity 0.2s linear;
+    }
+
+    /* Fade superior */
+    &::before {
+      top: -0.5rem;
+      background: linear-gradient(
+        to bottom,
+        var(--color-white) 10%,
+        color-mix(in srgb, var(--color-white), transparent 100%)
+      );
+      opacity: var(--fade-top, 0);
+    }
+
+    /* Fade inferior */
+    &::after {
+      bottom: -0.5rem;
+      background: linear-gradient(
+        to top,
+        var(--color-white) 10%,
+        color-mix(in srgb, var(--color-white), transparent 100%)
+      );
+      opacity: var(--fade-bottom, 0);
+    }
+
+    &--hoffset {
+      @include margin(null -2rem);
+
+      // .ft-list — el átomo lleva un margin vertical nativo (1rem/2rem)
+      // pensado para flujo de texto; dentro de un body full-bleed
+      // (hoffset) el padding del modal ya gestiona el espacio y el
+      // margin propio del list rompe la fila full-width. Lo anulamos.
+      .ft-list {
+        @include margin(0);
+      }
+    }
+
+    &--honset {
+      @include padding(null 2rem);
+    }
+  }
+
+  // &__footer
+  &__footer {
+    // .ft-mol-btnGroup
+    .ft-mol-btnGroup {
+      @include margin(2rem null null null);
+      @include padding(0 null null null);
+
+      @include min-screen(768px) {
+        justify-content: center;
+      }
+    }
+
+    // Fondos Pastiempos
+    &.ft-helper-bgPink-pangramax,
+    &.ft-helper-bgRed-wordle,
+    &.ft-helper-bgRed-porra,
+    &.ft-helper-bgBrown-sopa,
+    &.ft-helper-bgYellow-crucigrama,
+    &.ft-helper-bgGreen-sudoku,
+    &.ft-helper-bgBlue-cuadronumerico,
+    &.ft-helper-bgPink-saltaminas,
+    &.ft-helper-bgBrown-timequest,
+    &.ft-helper-bgGreen-cuatroencampo {
+      @include margin(0 -2rem -2rem -2rem);
+      @include padding(2rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      min-height: 10rem;
+      max-height: 10rem;
+
+      // .ft-text-alert
+      .ft-text-alert {
+        &:before {
+          filter: brightness(0);
+          z-index: 1;
+        }
+
+        &:after {
+          content: "";
+          position: absolute;
+          top: 0.3rem;
+          left: 0.1rem;
+          height: 1.8rem;
+          width: 1.8rem;
+          background-color: var(--color-white);
+          border-radius: 50%;
+        }
+      }
+
+      .ft-mol-btnGroup {
+        @include margin(0 null null null);
+      }
+    }
+
+    // Fondos Pastiempos oscuros
+    &.ft-helper-bgPink-pangramax,
+    &.ft-helper-bgRed-wordle,
+    &.ft-helper-bgRed-porra,
+    &.ft-helper-bgBlue-cuadronumerico,
+    &.ft-helper-bgPink-saltaminas,
+    &.ft-helper-bgGreen-cuatroencampo {
+      color: var(--color-white);
+
+      // .ft-text-alert
+      .ft-text-alert {
+        color: var(--color-white);
+      }
+    }
+  }
+
+  // &__title
+  &__title {
+    @include margin(0 null 0 null);
+    @include font--heading-XXS;
+  }
+
+  // &__img
+  &__img {
+    @include margin(-9.5rem auto 1rem auto);
+    display: block;
+    width: 8rem;
+    height: 8rem;
+    object-fit: cover;
+
+    @include min-screen(768px) {
+      @include margin(-11rem null null null);
+      width: 11rem;
+      height: 11rem;
+    }
+
+    // &--rounded
+    &--rounded {
+      clip-path: circle(50px at 50% 50%);
+      border-radius: 50%;
+    }
+
+    @include behavior-parent(ft-mol-modal-has--img--sm) {
+      @include position(absolute, 1rem null null 1rem);
+      @include size(2.4rem);
+      @include margin(0 null null null);
+    }
+
+    &Text {
+      @include position(absolute, 1.5rem null null 50%);
+      transform: translateX(-50%);
+      @include padding(0.2rem 1rem);
+      @include font--body-XS--small;
+      font-weight: bold;
+      border-radius: 1rem;
+      background-color: var(--color-black);
+      color: var(--color-white);
+      text-transform: uppercase;
+
+      @include min-screen(768px) {
+        top: 2.2rem;
+        @include font--body-S--small;
+        font-weight: bold;
+      }
+    }
+  }
+
+  // &__close
+  &__close {
+    @include position(absolute, 0.5rem 0.5rem null null);
+    z-index: 3;
+  }
+
+  // &--top
+  &--top {
+    // .ft-mol-modal
+    .ft-mol-modal {
+      // &__window
+      &__window {
+        @include margin(5% null auto null);
+      }
+    }
+  }
+
+  // &--rgt
+  &--rgt {
+    // .ft-mol-modal
+    .ft-mol-modal {
+      // &__window
+      &__window {
+        @include margin(null null null auto);
+        animation: fadeInRgt 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+      }
+    }
+  }
+
+  // &--bttm
+  &--bttm {
+    // .ft-mol-modal
+    .ft-mol-modal {
+      // &__window
+      &__window {
+        @include margin(auto null 0 null);
+      }
+    }
+  }
+
+  // &--lft
+  &--lft {
+    // .ft-mol-modal
+    .ft-mol-modal {
+      // &__window
+      &__window {
+        @include margin(null null null 0);
+        animation: fadeInLft 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+      }
+    }
+  }
+
+  // &--cnt
+  &--cnt {
+    // .ft-mol-modal
+    .ft-mol-modal {
+      // &__window
+      &__window {
+        @include margin(auto);
+        animation: scaleIn 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+      }
+
+      // end // .ft-mol-modal
+    }
+
+    // end // &--cnt
+  }
+
+  // &--bttm-cnt
+  &--bttm-cnt {
+    // .ft-mol-modal
+    .ft-mol-modal {
+      // &__window
+      &__window {
+        @include margin(auto auto 0 auto);
+        @include border-bottom-radius(0);
+        width: calc(100% - 4px);
+        animation: fadeInBttm 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+      }
+    }
+  }
+
+  // &--sm
+  &--sm {
+    // .ft-mol-modal
+    .ft-mol-modal {
+      // &__window
+      &__window {
+        // generals
+        @include min-screen(768px) {
+          max-width: 450px;
+        }
+      }
+    }
+  }
+
+  // &--md
+  &--md {
+    // .ft-mol-modal
+    .ft-mol-modal {
+      // &__window
+      &__window {
+        // generals
+        @include min-screen(768px) {
+          max-width: 600px;
+        }
+      }
+    }
+  }
+
+  // &--fullscreen
+  &--fullscreen {
+    // .bric
+    .ft-mol-modal {
+      // &__window
+      &__window {
+        @include margin(null auto null auto);
+        width: 95%;
+      }
+    }
+  }
+
+  // &--fullheight
+  &--fullheight {
+    // .ft-mol-modal
+    .ft-mol-modal {
+      // &__window
+      &__window {
+        @include margin(null auto null auto);
+        height: 95%;
+      }
+    }
+  }
+
+  // &--maxheight
+  &--maxheight {
+    // .ft-mol-modal
+    .ft-mol-modal {
+      // &__window
+      &__window {
+        max-height: calc(100% - 5rem);
+        display: flex;
+        flex-direction: column;
+      }
+      // &__body
+      &__body {
+        max-height: unset;
+      }
+    }
+  }
+
+  // &--fullscreen-mobile  (vista a pantalla completa solo en mobile)
+  &--fullscreen-mobile {
+    @include max-screen(768px) {
+      // .ft-mol-modal__window
+      .ft-mol-modal__window {
+        display: flex;
+        flex-direction: column;
+        width: 100dvw;
+        height: 100dvh;
+        max-width: none;
+        max-height: none;
+        @include margin(0);
+        @include border-top-radius(0);
+        @include border-bottom-radius(0);
+      }
+
+      // .ft-mol-modal__body  (libera el max-height: 25rem del base
+      // para que el body crezca y rellene el alto disponible)
+      .ft-mol-modal__body {
+        flex: 1 1 auto;
+        max-height: none;
+      }
+    }
+  }
+
+  // &-has
+  &-has {
+    // &--back  (modal con back-button en el __header en vez de __close)
+    &--back {
+      // .ft-mol-modal
+      .ft-mol-modal {
+        // &__header
+        &__header {
+          @include margin(null null 1.6rem null);
+          display: flex;
+          align-items: center;
+          gap: 1.2rem;
+          width: 100%;
+
+          // Cualquier hijo directo del __header: ocupa el ancho restante
+          // junto al back-button y anula su margin vertical nativo para
+          // alinearse verticalmente. El back-button se identifica por su
+          // clase atom y se le restituye el tamaño intrínseco más abajo.
+          > * {
+            @include margin(0);
+            flex: 1 1 auto;
+            min-width: 0;
+            text-align: left;
+          }
+
+          // Back-button: tamaño intrínseco (no crece, no se comprime).
+          > .ft-btn-nav--back {
+            flex: 0 0 auto;
+          }
+        }
+      }
+    }
+
+    // &--error
+    &--error {
+      .ft-mol-modal {
+        // &__window
+        &__window {
+          @include border-color(var(--color-functional-error));
+        }
+      }
+    }
+
+    // &--img
+    &--img {
+      // .ft-mol-modal
+      .ft-mol-modal {
+        // &__window
+        &__window {
+          @include padding(5rem null null null);
+
+          @include behavior-parent-nested(ft-mol-modal-has--img--sm) {
+            @include padding(1rem null null null);
+          }
+        }
+
+        // &__header
+        &__header {
+          width: 100%;
+          text-align: center;
+
+          // *
+          & * {
+            @include margin(0);
+          }
+        }
+      }
+    }
+
+    // &--info
+    &--info {
+      // ft-mol-modal
+      .ft-mol-modal {
+        // &__window
+        &__window {
+          @include border-color(var(--color-functional-info));
+        }
+      }
+    }
+
+    // &--ok
+    &--ok {
+      // ft-mol-modal
+      .ft-mol-modal {
+        // &__window
+        &__window {
+          @include border-color(var(--color-functional-success));
+        }
+      }
+    }
+
+    // &--warning
+    &--warning {
+      .ft-mol-modal {
+        // &__window
+        &__window {
+          @include border-color(var(--color-functional-warning));
+        }
+      }
+    }
+
+    // &--share
+    &--share {
+      // ft-mol-modal
+      .ft-mol-modal {
+        // &__header
+        &__header {
+          text-align: left;
+          @include margin(3rem null null null);
+
+          // &:before
+          &:before {
+            content: "";
+            @include position(absolute, 0 0 null 0);
+            background-position: 1rem center;
+            background-repeat: no-repeat;
+            background-size: auto 2.4rem;
+            height: 4.4rem;
+            border-radius: 0.8rem 0.8rem 0 0;
+            background-color: var(--color-primary);
+
+            // @if $brand ==ux
+            @if $brand ==ux {
+              background-image: url("#{$images-path}/logos/logo-medios-prensa-iberica-blanco.svg");
+            }
+
+            // @if $brand ==ep
+            @if $brand ==ep {
+              background-image: url("#{$images-path}/logos/logo-medios-ep-blanco.svg");
+            }
+
+            // @if $brand ==epe
+            @if $brand ==epe {
+              background-image: url("#{$images-path}/logos/logo-medios-epe-blanco.svg");
+            }
+
+            //  @if $brand ==sport
+            @if $brand ==sport {
+              background-image: url("#{$images-path}/logos/logo-medios-sport-blanco.svg");
+            }
+
+            // @if $brand ==regionales
+            @if $brand ==regionales {
+              background-image: url("#{$images-path}/logos/logo-medios-prensa-iberica-blanco.svg");
+
+              // behavior-brand: diari-de-girona
+              @include behavior-parent(diari-de-girona) {
+                background-image: url("#{$images-path}/logos/logo-medios-regionales-diari-de-girona-blanco.svg");
+              }
+
+              // behavior-brand: diario-cordoba
+              @include behavior-parent(diario-cordoba) {
+                background-image: url("#{$images-path}/logos/logo-medios-regionales-diario-cordoba-blanco.svg");
+              }
+
+              // behavior-brand: diario-de-ibiza
+              @include behavior-parent(diario-de-ibiza) {
+                background-image: url("#{$images-path}/logos/logo-medios-regionales-diario-de-ibiza-blanco.svg");
+              }
+
+              // behavior-brand: diario-de-mallorca
+              @include behavior-parent(diario-de-mallorca) {
+                background-image: url("#{$images-path}/logos/logo-medios-regionales-diario-de-mallorca-blanco.svg");
+              }
+
+              // behavior-brand: diario-informacion
+              @include behavior-parent(diario-informacion) {
+                background-image: url("#{$images-path}/logos/logo-medios-regionales-diario-informacion-blanco.svg");
+              }
+
+              // behavior-brand: el-correo-de-andalucia
+              @include behavior-parent(el-correo-de-andalucia) {
+                background-image: url("#{$images-path}/logos/logo-medios-regionales-el-correo-de-andalucia-blanco.svg");
+              }
+
+              // behavior-brand: el-correo-gallego
+              @include behavior-parent(el-correo-gallego) {
+                background-image: url("#{$images-path}/logos/logo-medios-regionales-el-correo-gallego-blanco.svg");
+              }
+
+              // behavior-brand: el-dia-la-opinion-de-tenerife
+              @include behavior-parent(el-dia-la-opinion-de-tenerife) {
+                background-image: url("#{$images-path}/logos/logo-medios-regionales-el-dia-la-opinion-de-tenerife-blanco.svg");
+              }
+
+              // behavior-brand: el-periodico-de-aragon
+              @include behavior-parent(el-periodico-de-aragon) {
+                background-image: url("#{$images-path}/logos/logo-medios-regionales-el-periodico-de-aragon-blanco.svg");
+              }
+
+              // behavior-brand: el-periodico-extremadura
+              @include behavior-parent(el-periodico-extremadura) {
+                background-image: url("#{$images-path}/logos/logo-medios-regionales-el-periodico-extremadura-blanco.svg");
+              }
+
+              // behavior-brand: el-periodico-mediterraneo
+              @include behavior-parent(el-periodico-mediterraneo) {
+                background-image: url("#{$images-path}/logos/logo-medios-regionales-el-periodico-mediterraneo-blanco.svg");
+              }
+
+              // behavior-brand: emporda
+              @include behavior-parent(emporda) {
+                background-image: url("#{$images-path}/logos/logo-medios-regionales-emporda-blanco.svg");
+              }
+
+              // behavior-brand: faro-de-vigo
+              @include behavior-parent(faro-de-vigo) {
+                background-image: url("#{$images-path}/logos/logo-medios-regionales-faro-de-vigo-blanco.svg");
+              }
+
+              // behavior-brand: la-cronica-de-badajoz
+              @include behavior-parent(la-cronica-de-badajoz) {
+                background-image: url("#{$images-path}/logos/logo-medios-regionales-la-cronica-de-badajoz-blanco.svg");
+              }
+
+              // behavior-brand: la-nueva-espana
+              @include behavior-parent(la-nueva-espana) {
+                background-image: url("#{$images-path}/logos/logo-medios-regionales-la-nueva-espana-blanco.svg");
+              }
+
+              // behavior-brand: la-opinion-a-coruna
+              @include behavior-parent(la-opinion-a-coruna) {
+                background-image: url("#{$images-path}/logos/logo-medios-regionales-la-opinion-a-coruna-blanco.svg");
+              }
+
+              // behavior-brand: la-opinion-correo-de-zamora
+              @include behavior-parent(la-opinion-correo-de-zamora) {
+                background-image: url("#{$images-path}/logos/logo-medios-regionales-la-opinion-correo-de-zamora-blanco.svg");
+              }
+
+              // behavior-brand: la-opinion-de-malaga
+              @include behavior-parent(la-opinion-de-malaga) {
+                background-image: url("#{$images-path}/logos/logo-medios-regionales-la-opinion-de-malaga-blanco.svg");
+              }
+
+              // behavior-brand: la-opinion-de-murcia
+              @include behavior-parent(la-opinion-de-murcia) {
+                background-image: url("#{$images-path}/logos/logo-medios-regionales-la-opinion-de-murcia-blanco.svg");
+              }
+
+              // behavior-brand: la-provincia-diario-de-las-palmas
+              @include behavior-parent(la-provincia-diario-de-las-palmas) {
+                background-image: url("#{$images-path}/logos/logo-medios-regionales-la-provincia-diario-de-las-palmas-blanco.svg");
+              }
+
+              // behavior-brand: levante-el-mercantil-valenciano
+              @include behavior-parent(levante-el-mercantil-valenciano) {
+                background-image: url("#{$images-path}/logos/logo-medios-regionales-levante-el-mercantil-valenciano-blanco.svg");
+              }
+
+              // behavior-brand: mallorca-zeitung
+              @include behavior-parent(mallorca-zeitung) {
+                background-image: url("#{$images-path}/logos/logo-medios-regionales-mallorca-zeitung-blanco.svg");
+              }
+
+              // behavior-brand: regio7
+              @include behavior-parent(regio7) {
+                background-image: url("#{$images-path}/logos/logo-medios-regionales-regio7-blanco.svg");
+              }
+
+              // behavior-brand: superdeporte
+              @include behavior-parent(superdeporte) {
+                background-image: url("#{$images-path}/logos/logo-medios-regionales-superdeporte-blanco.svg");
+              }
+            }
+
+            // @if $brand ==revistas
+            @if $brand ==revistas {
+              // behavior-brand: cuore
+              @include behavior-parent(cuore) {
+                background-image: url("#{$images-path}/logos/logo-medios-revistas-cuore-blanco.svg");
+              }
+
+              // behavior-brand: viajar
+              @include behavior-parent(viajar) {
+                background-image: url("#{$images-path}/logos/logo-medios-revistas-viajar-blanco.svg");
+              }
+
+              // behavior-brand: woman
+              @include behavior-parent(woman) {
+                background-image: url("#{$images-path}/logos/logo-medios-revistas-woman-blanco.svg");
+              }
+
+              // medio: stilo
+              @include behavior-parent(stilo) {
+                background-image: url("#{$images-path}/logos/logo-medios-revistas-stilo-blanco.svg");
+              }
+            }
+          }
+        }
+
+        // &__body
+        &__body {
+          max-height: calc(100vh - 25rem);
+
+          // .ft-list
+          .ft-list {
+            // &__link
+            &__link {
+              @include min-click-area();
+            }
+          }
+        }
+
+        // &__close
+        &__close {
+          // .ft-btn-nav__icon:after
+          .ft-btn-nav__icon:after {
+            filter: map-filters(whites, brand--all);
+          }
+        }
+      }
+    }
+  }
+
+  // &--open
+  &--open {
+    display: block;
+  }
+
+  // data variant: la modal convive con la barra de acciones sticky
+  &[data-has-sticky="action-bar"] {
+    z-index: 1000;
+  }
+}
+
+// AMP
+// ===============================================
+.lightbox {
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ft-mol-modal-amp {
+  // &--has
+  &--has {
+    // &-img
+    &-img {
+      // .ft-mol-modal__header
+      .ft-mol-modal__header {
+        @include margin(5rem null null null);
+      }
+    }
+  }
+}

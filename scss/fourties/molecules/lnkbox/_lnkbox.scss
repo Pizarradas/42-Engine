@@ -1,0 +1,287 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// .ft-mol-lnkbox
+// ===============================================
+.ft-mol-lnkbox {
+  $self: &;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  // &__container
+  &__container {
+    @include position(relative, null null null null);
+    display: flex;
+    flex-wrap: wrap;
+
+    // &:after
+    &:after {
+      content: "";
+      @include position(absolute, 0 0 0 null);
+      @include margin(auto null auto null);
+      @include size(1.5rem);
+      pointer-events: none;
+      @include background-setup(
+        map-icons(chevrons, brand--default),
+        // img path
+        "center right / contain",
+        // position and size
+        no-repeat,
+        // repeat
+        null,
+        // attachment
+        null,
+        // origin
+        null,
+        // clip
+        transparent // color
+      );
+      transform: rotate(270deg);
+    }
+  }
+
+  // &__data
+  &__data {
+    flex: 1 0 90%;
+
+    @include min-screen(768px) {
+      @include border-style(solid);
+      @include border-width(0 0 0.1rem 0);
+      @include border-color(var(--color-mediumGrey));
+    }
+
+    // &:first-of-type
+    &:first-of-type {
+      @include min-screen(768px) {
+        @include border-width(0.1rem 0 0.1rem 0);
+      }
+    }
+
+    // &:last-of-type
+    &:last-of-type {
+      @include min-screen(768px) {
+        @include border-width(0 0 0.1rem 0);
+      }
+    }
+
+    // &-title
+    &-title {
+      @include margin(1.2rem null 1.2rem null);
+    }
+  }
+
+  // &--simple
+  &--simple {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    // .ft-mol-lnkbox
+    .ft-mol-lnkbox {
+      // &__container
+      &__container {
+        // &:after
+        &:after {
+          content: none;
+        }
+      }
+
+      // &__data
+      &__data {
+        // &-title
+        &-title {
+          @include margin(1.2rem null 1.2rem null);
+          display: inline-flex;
+        }
+
+        // &-subtitle
+        &-subtitle {
+          @include margin(1.2rem null 1.2rem 1rem);
+          display: inline-flex;
+        }
+      }
+    }
+  }
+
+  // &--card  (tarjeta clicable con badge de flecha)
+  &--card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    // &__container  (la tarjeta: borde, hover lift, chevron en badge)
+    #{$self}__container {
+      @include position(relative, null null null null);
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+      @include padding(1.8rem 6.4rem 1.8rem 2rem);
+      border: 0.1rem solid color-mix(in srgb, var(--color-primary) 12%, var(--color-white));
+      border-radius: 1.8rem;
+      background: var(--color-white);
+      cursor: pointer;
+      box-shadow: 0 0.1rem 0.2rem color-mix(in srgb, var(--color-black) 4%, transparent);
+      transition: transform 200ms cubic-bezier(0.2, 0, 0, 1), box-shadow 200ms cubic-bezier(0.2, 0, 0, 1), border-color 200ms cubic-bezier(0.2, 0, 0, 1);
+
+      // @include min-screen(768px)
+      @include min-screen(768px) {
+        @include padding(2rem 2.2rem);
+      }
+
+      // @include min-screen(1024px)
+      // Barra de acento de marca a la izquierda. Para que la barra no choque
+      // con el redondeo de la esquina, se corta la esquina sup-izquierda.
+      // Las animaciones de hover/active se activan SOLO desde 1024px para
+      // evitar disparos accidentales al pasar el dedo en mobile.
+      @include min-screen(1024px) {
+        @include padding(2.2rem 7.2rem 2.2rem 2.4rem);
+        border-left: 0.2rem solid var(--color-primary);
+        border-radius: 0 2rem 0 0;
+
+        // &:hover  (solo desktop)
+        &:hover {
+          border-color: color-mix(in srgb, var(--color-primary) 22%, var(--color-white));
+          border-left-color: var(--color-primary);
+          background: var(--color-white);
+          box-shadow: 0 0.8rem 1.6rem -0.4rem color-mix(in srgb, var(--color-black) 8%, transparent), 0 0.4rem 0.8rem -0.2rem color-mix(in srgb, var(--color-black) 4%, transparent);
+          transform: translateY(-0.3rem);
+
+          // &::after  (badge se rellena de primary)
+          &::after {
+            background: var(--color-primary);
+          }
+
+          // &::before  (chevron pasa a blanco via filter del DS y avanza)
+          &::before {
+            right: 2.375rem;
+            filter: map-filters(whites, brand--all);
+          }
+        }
+
+        // &:active  (solo desktop)
+        &:active {
+          transform: translateY(0);
+          transition-duration: 80ms;
+        }
+      }
+
+      // &::after  (badge circular que sustituye al chevron base)
+      &::after {
+        content: "";
+        @include position(absolute, 0 1.8rem 0 null);
+        @include margin(auto null auto null);
+        @include size(1.75rem);
+        border-radius: 50%;
+        background: color-mix(in srgb, var(--color-primary) 6%, var(--color-white));
+        transition: background-color 200ms cubic-bezier(0.2, 0, 0, 1), transform 200ms cubic-bezier(0.2, 0, 0, 1);
+
+        @include min-screen(1024px) {
+          @include position(absolute, null 2.2rem null null);
+          @include size(2rem);
+        }
+      }
+
+      // &::before  (glifo chevron sobre el badge, usando el icono 42DS)
+      // Centrado con el __container::after circular:
+      //   badge center X = 1.8 + 1.75/2 = 2.675rem desde la derecha.
+      //   chevron right + width/2 = 2.225 + 0.9/2 = 2.675rem  -> alineado.
+      &::before {
+        content: "";
+        @include position(absolute, 0 2.225rem 0 null);
+        z-index: 1;
+        @include margin(auto null auto null);
+        @include size(0.9rem);
+        pointer-events: none;
+        @include background-setup(
+          map-icons(chevrons, brand--default),
+          // img path
+          "center / contain",
+          // position and size
+          no-repeat,
+          // repeat
+          null,
+          // attachment
+          null,
+          // origin
+          null,
+          // clip
+          transparent // color
+        );
+        transform: rotate(270deg);
+        transition: filter 200ms cubic-bezier(0.2, 0, 0, 1), right 200ms cubic-bezier(0.2, 0, 0, 1);
+
+        @include min-screen(1024px) {
+          right: 2.675rem;
+          @include size(1.05rem);
+        }
+      }
+
+      // &:has(:focus-visible)  (anillo de foco; el foco real lo recibe
+      // el <a>/<button> ft-link--block interior. Activo en todos los
+      // breakpoints porque solo lo dispara navegacion con teclado, no tap.)
+      &:has(:focus-visible) {
+        border-color: var(--color-functional-error);
+        box-shadow: 0 0 0 0.3rem color-mix(in srgb, var(--color-functional-error) 12%, transparent);
+
+        @include min-screen(1024px) {
+          border-left-color: var(--color-primary);
+        }
+      }
+    }
+
+    // &__data  (reset de los borders del partial base; en --card no aplican)
+    #{$self}__data {
+      flex: 1 1 100%;
+
+      @include min-screen(768px) {
+        border: 0;
+      }
+
+      // &-title
+      &-title {
+        @include margin(0 null 0.4rem null);
+      }
+
+      // &-subtitle
+      &-subtitle {
+        @include margin(0);
+      }
+    }
+
+    // .ft-link--block  (defensa: la regla global `button { overflow: visible }`
+    // puede pisar el patron ft-link--block en algunas marcas y romper el
+    // text-indent del enlace, generando scroll horizontal)
+    .ft-link--block {
+      overflow: hidden;
+    }
+
+    // a11y: respeta preferencia del usuario
+    @media (prefers-reduced-motion: reduce) {
+      // Quita las transiciones en todos los breakpoints (no hace dano si
+      // no hay state-change que disparar — y simplifica el cascade).
+      #{$self}__container,
+      #{$self}__container::after,
+      #{$self}__container::before {
+        transition: none;
+      }
+
+      // El hover/active SOLO fira en >=1024px; aqui anulamos los desplazamientos
+      // de ese rango (lift de la tarjeta y avance del chevron) para que el
+      // unico cambio visible en hover sea el recolor del badge/chevron.
+      @include min-screen(1024px) {
+        #{$self}__container:hover,
+        #{$self}__container:active {
+          transform: none;
+        }
+
+        #{$self}__container:hover::before {
+          right: 2.675rem;
+        }
+      }
+    }
+  }
+}

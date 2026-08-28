@@ -1,0 +1,371 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// ANIMATIONS
+// ===============================================
+@keyframes unfoldIn {
+  0% {
+    transform: scaleY(0.005) scaleX(0);
+  }
+  50% {
+    transform: scaleY(0.005) scaleX(1);
+  }
+  100% {
+    transform: scaleY(1) scaleX(1);
+  }
+}
+@keyframes unfoldOut {
+  0% {
+    transform: scaleY(1) scaleX(1);
+  }
+  50% {
+    transform: scaleY(0.005) scaleX(1);
+  }
+  100% {
+    transform: scaleY(0.005) scaleX(0);
+  }
+}
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes zoomOut {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    background: rgba(0, 0, 0, 0);
+  }
+  100% {
+    background: rgba(0, 0, 0, 0.7);
+  }
+}
+
+@keyframes fadeInInfinitive {
+  from {
+    opacity: 0;
+  }
+}
+
+// .ft-mol-overlay-live
+// ===============================================
+.ft-mol-overlay-live {
+  width: 100%;
+
+  // .ft
+  .ft {
+    // &-helper
+    &-helper {
+      //  &-img-rd
+      &-img-rd {
+        @include size(3rem);
+      }
+    }
+  }
+
+  // &__section
+  &__section {
+    @include position(sticky, -1rem null null null);
+    @include margin(0 null 0 null);
+    @include padding(1rem 4rem 1rem 1rem);
+    z-index: 2;
+    font-size: 2rem;
+    line-height: 2.2rem;
+    background-color: var(--color-lightGrey);
+  }
+
+  // &__schedule
+  &__schedule {
+    @include position(absolute, -1rem null null 0);
+    @include padding(0.5rem 1rem);
+    @include border-top-radius(1rem);
+    @include border-bottom-radius(1rem);
+    display: inline-table;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    color: var(--color-white);
+    background-color: var(--color-quaternary);
+
+    // behavior-parent(ft-helper-bgColor-white)
+    @include behavior-parent(ft-helper-bgColor-white) {
+      * {
+        color: var(--color-white);
+      }
+    }
+
+    // &::before
+    &:before {
+      content: "";
+      @include position(absolute, 0 null 0 1rem);
+      @include margin(auto null auto null);
+      @include size(2.2rem);
+      filter: map-filters(whites, brand--all);
+    }
+  }
+
+  // &__streaming
+  &__streaming {
+    @include position(absolute, null 0 -1.8rem null);
+    @include margin(null null null auto);
+    @include padding(0.5rem 1rem);
+    @include border-top-radius(1rem);
+    @include border-bottom-radius(1rem);
+    display: inline-block;
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    color: var(--color-white);
+    background-color: var(--color-primary);
+
+    // &::before
+    &:before {
+      content: "";
+      @include position(absolute, 0 null null -1.2rem);
+      @include size(0);
+      @include border-style(solid);
+      @include border-width(0 2.2rem 2.2rem 0);
+      border-color: transparent var(--color-primary) transparent transparent;
+    }
+  }
+
+  // &__result
+  &__result {
+    @include margin(null null null auto);
+    font-weight: bold;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+
+    // &:empty
+    &:empty {
+      // &:after
+      &:after {
+        content: "-";
+      }
+    }
+  }
+
+  // &__team
+  &__team {
+    @include position(relative, null null null null);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    // &:not(:first-child)
+    &:not(:first-child) {
+      @include margin(2rem null null null);
+    }
+
+    // &:only-of-type
+    &:nth-child(2 of span.ft-mol-overlay-live__team) {
+      // &:before
+      &:before {
+        content: "";
+        @include position(absolute, -1rem 0 null 0);
+        @include margin(null auto null auto);
+        @include size(calc(100% - 8rem), 0.1rem);
+        background-color: var(--color-lightGrey);
+      }
+    }
+
+    // &-name
+    &-name {
+      @include margin(null 1rem null 1rem);
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+    }
+  }
+
+  // &__item
+  &__item {
+    @include padding(0.5rem null 2rem null);
+    background-color: var(--color-lightGrey);
+
+    // &:first-child
+    &:first-child {
+      @include border-top-radius(1rem);
+    }
+
+    // &:not(:first-child)
+    &:not(:first-child) {
+      @include margin(1rem null null null);
+    }
+
+    // &:last-child
+    &:last-child {
+      @include border-bottom-radius(1rem);
+    }
+  }
+
+  // &__scoreboard
+  &__scoreboard {
+    @include position(relative, null null null null);
+    @include margin(null 1rem null 1rem);
+    @include padding(1.5rem 1rem);
+    @include border-top-radius(1rem);
+    @include border-bottom-radius(1rem);
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-white);
+    box-shadow: 0 4px 5px -3px rgba(0, 0, 0, 0.1);
+
+    // &:not(:first-child)
+    &:not(:first-child) {
+      @include margin(2.5rem null null null);
+    }
+
+    // &--is
+    &--is {
+      // &-live
+      &-live {
+        // [class*="__schedule"]
+        [class*="__schedule"] {
+          @include padding(null null null 4rem);
+          background-color: var(--color-primary);
+
+          // &::before
+          &:before {
+            @include background-setup(
+              map-icons(interface, brand--camera-play),
+              // img path
+              "center center / contain",
+              // position and size
+              no-repeat,
+              // repeat
+              null,
+              // attachment
+              null,
+              // origin
+              null,
+              // clip
+              transparent,
+              // color
+            );
+            animation: fadeInInfinitive 1s infinite alternate;
+          }
+        }
+      }
+
+      // &-halftime
+      &-halftime {
+        // [class*="__schedule"]
+        [class*="__schedule"] {
+          @include padding(null null null 4rem);
+          background-color: var(--color-primary);
+
+          // &::before
+          &:before {
+            @include background-setup(
+              map-icons(interface, brand--camera-pause),
+              // img path
+              "center center / contain",
+              // position and size
+              no-repeat,
+              // repeat
+              null,
+              // attachment
+              null,
+              // origin
+              null,
+              // clip
+              transparent,
+              // color
+            );
+          }
+        }
+      }
+    }
+  }
+}
+
+// .ft-modal-overlay-folding
+// ===============================================
+.ft-modal-overlay-folding {
+  @include position(fixed, 0 0 null 0);
+  @include size(100%);
+  z-index: 999;
+  transform: scale(0);
+
+// @if $brand ==epe
+ @if $brand ==sport
+ {
+  top: 6rem;
+ }
+  // &__background
+  &__background {
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  // &__box
+  &__box {
+    @include position(relative, null null null null);
+    @include margin(null auto null auto);
+    @include padding(1rem);
+    overflow-y: auto;
+    max-width: 1280px;
+    height: 100%;
+    background-color: var(--color-white);
+  }
+
+  // &.active
+  &.unfold-modal {
+    transform: scaleY(0.01) scaleX(0);
+    animation: unfoldIn 0.65s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+
+    // [class*="__background"]
+    [class*="__background"] {
+      // [class*="__box"]
+      [class*="__box"] {
+        transform: scale(0);
+        animation: zoomIn 0.5s 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+      }
+    }
+
+    // &.out
+    &.out {
+      transform: scale(1);
+      animation: unfoldOut 1s 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+
+      // [class*="__background"]
+      [class*="__background"] {
+        // [class*="__box"]
+        [class*="__box"] {
+          animation: zoomOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+        }
+      }
+    }
+  }
+}
+
+// ft-close-modal-overlay
+.ft-close-modal-overlay {
+  @include position(absolute, 2.2rem 1rem null null);
+  z-index: 3;
+  background-color: var(--color-lightGrey);
+}
+
+// MODAL BLOCKING PAGE
+html.ft-modal-overlay-folding-active,
+body.ft-modal-overlay-folding-active {
+  overflow: hidden;
+}
+
+// AMP
+// ===============================================
+.ft-modal-overlay-folding-amp {
+  overflow-y: auto;
+  max-height: 450px;
+}
