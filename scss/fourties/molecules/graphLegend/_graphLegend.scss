@@ -1,0 +1,34 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+.ft-mol-graph-legend
+{
+
+  //generals
+  display: flex;
+  flex-wrap: wrap;
+  @include margin(null null 2rem null);
+  // end // generals
+  // ---------------------------------------------
+
+  //&--left
+  &--left
+  {
+    justify-content: flex-start;
+  }
+
+  //&--center
+  &--center
+  {
+    justify-content: center;
+  }
+
+  //&--right
+  &--right
+  {
+    justify-content: flex-end;
+  }
+
+}

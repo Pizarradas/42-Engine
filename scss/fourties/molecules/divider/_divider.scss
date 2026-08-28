@@ -1,0 +1,165 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// ft-mol-divider
+// ===============================================
+.mol-divider {
+  @include position(relative, null null null null);
+  @include margin(0 auto);
+  @include padding(2rem 1rem);
+  z-index: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 4px;
+  height: auto;
+
+  @include min-screen(1024px) {
+    max-width: 660px;
+  }
+
+  // &__icon-wrapper
+  &__icon-wrapper {
+    @include position(relative, null null null null);
+    @include margin(null null 1rem null);
+    @include size(5.4rem, 5.4rem);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+
+    // .ft-img
+    .ft-img {
+      @include size(2.4rem, 2.4rem);
+    }
+  }
+
+  // &__block
+  &__block {
+    @include position(relative, null null null null);
+    @include padding(0 1rem);
+    z-index: 1;
+    text-align: center;
+    background-color: transparent;
+
+    // strong
+    strong {
+      flex-basis: 100%;
+
+      @include min-screen(1024px) {
+        flex-basis: auto;
+      }
+    }
+
+    // span
+    span {
+      flex-basis: 100%;
+
+      @include min-screen(1024px) {
+        flex-basis: auto;
+        font-weight: 700;
+      }
+    }
+
+    // &--top
+    &--top {
+      @include padding(0 1rem 2rem 1rem);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+
+      @include min-screen(1024px) {
+        gap: 0.5rem;
+      }
+
+      // &::before
+      &::before {
+        content: "";
+        @include position(absolute, null 0 0 50%);
+        top: calc(-1rem - 27px);
+        z-index: -2;
+        border: 2px dashed var(--color-mediumGrey);
+        border-left: none;
+        border-radius: 0 12px 12px 0;
+      }
+    }
+
+    // &--bottom
+    &--bottom {
+      @include padding(2rem 1rem 1.5rem 1rem);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+      @include min-screen(1024px) {
+        gap: 0.5rem;
+      }
+
+      // &:before
+      &::before {
+        content: "";
+        @include position(absolute, -0.2rem 50% -1.25rem 0);
+        z-index: -2;
+        border: 2px dashed var(--color-mediumGrey);
+        border-right: none;
+        border-radius: 12px 0 0 12px;
+      }
+    }
+  }
+
+  // &__tag
+  &__tag {
+    @include position(relative, -0.5rem null null null);
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+
+    // .ft-tag--badge
+    .ft-tag--badge {
+      @include position(relative, null null null null);
+      @include padding(0.4rem 0.6rem 0.4rem 1.6rem);
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      background-color: var(--color-tertiary);
+      color: var(--color-white);
+      border-radius: 32px;
+      border: none;
+
+      // .ft-tag
+      .ft-tag {
+        // &-link
+        &-link {
+          @include position(absolute, 0 null null 0);
+          @include size(100%, 100%);
+          z-index: 10;
+          font-size: 0;
+          color: transparent;
+        }
+        // &__img
+        &__img {
+          @include margin(null 0.8rem null null);
+          @include size(1.8rem, 1.8rem);
+          display: flex;
+          align-items: center;
+          filter: brightness(0) invert(1);
+        }
+        // &_value
+        &__value {
+          @include margin(null null null 1.2rem);
+          @include padding(0.4rem 1.4rem);
+          font-weight: 700;
+          color: var(--color-white);
+          border-radius: 24px;
+          background-color: var(--color-primary);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,205 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+// ft-mol-gallery-img
+// ===============================================
+.ft-mol-gallery-img
+{
+  $self: &;
+  @include margin(null null 2.5rem null);
+
+  // .ft
+  // ---------------------------------------------
+  .ft
+  {
+
+    // &-mol
+    &-mol
+    {
+
+      // &-rrss-inline
+      &-rrss-inline
+      {
+
+        // .ft
+        .ft
+        {
+          &-btn-rrss:not(.ft-btn-rrss--bookmark)
+          {
+            @include border-color(transparent);
+          }
+        }
+      }
+    }
+  }
+
+  // &__contents
+  // ---------------------------------------------
+  &__contents
+  {
+    @include position(relative, null null null null);
+    @include padding(null 2.5rem null 2.5rem null);
+    z-index: 2;
+  }
+
+  // &__total-boxes-img 
+  // ---------------------------------------------
+  &__total-boxes-img
+  {
+    display: block;
+    text-align: center;
+
+    // .ft
+    .ft
+    {
+
+      // &-text
+      &-text
+      {
+        @include position(relative, null null null null);
+        @include margin(4rem null 4rem null);
+        @include padding(3rem null null null);
+        display: inline-block;
+
+        // &:before
+        &:before
+        {
+          content: "";
+          @include position(absolute, 0 0 null 0);
+          @include size(100%, .3rem);
+          background-color: var(--color-primary);
+        }
+      }
+    }
+  }
+
+  // &-videos
+  // ---------------------------------------------
+  &-videos
+  {
+
+    // &__layout
+    &__layout
+    {
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+  }
+
+  // &--is
+  // ---------------------------------------------
+  &--is
+  {
+
+    // &-cover
+    &-cover
+    {
+      @include position(relative, null null null null);
+      @include padding(0 8.33333333% null 8.33333333%);
+
+      @include min-screen(1024px)
+      {
+        @include padding(14rem 8.33333333% null 8.33333333%);
+      }
+
+      // .ft
+      .ft
+      {
+
+        // &-helper
+        &-helper
+        {
+
+          // &-img
+          &-img
+          {
+
+            // &-rd
+            &-rd
+            {
+              height: 100%;
+              object-fit: none;
+            }
+          }
+        }
+
+        // &-img
+        &-img
+        {
+          @include position(absolute, 0 0 0 0);
+          @include margin(auto);
+          @include size(100%, 100%);
+          z-index: 1;
+          opacity: 0.2;
+
+          @include min-screen(1024px)
+          {
+            opacity: 0.4;
+          }
+
+          // picture
+          picture
+          {
+            display: flex;
+            flex-wrap: wrap;
+          }
+        }
+
+        // &-date
+        &-date
+        {
+          @include margin(1rem null null null);
+
+          // &__text
+          &__text
+          {
+
+            // &:last-child
+            &:last-child
+            {
+              @include margin(1rem null null null);
+            }
+          }
+
+          //end // &-ft-date__text
+        }
+
+        // &-mol
+        &-mol
+        {
+
+          // &-btnGroup
+          &-btnGroup
+          {
+            @include margin(3rem null null null);
+          }
+
+          //end // &-btnGroup
+        }
+
+        //end // &-mol-btnGroup
+      }
+    }
+
+    // &-in-layout-news
+    &-in-layout-news
+    {
+      @include margin(2.8rem null null null);
+      @include padding(4rem null 4rem null);
+
+      @include min-screen(1024px)
+      {
+        @include padding(8rem null 8rem null);
+      }
+
+      .ft-img picture
+      {
+        display: initial;
+      }
+    }
+  }
+
+  //end  // ft-mol-gallery-img
+}

@@ -1,0 +1,323 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+// .ft-mol-dropdown
+// ===============================================
+.ft-mol-dropdown {
+  $self: &;
+  @include position(relative, null null null null);
+  display: inline-block;
+
+  // &__icon
+  &__icon {
+    @include position(absolute, 50% null null 1rem);
+  transform: translateY(-50%);
+  }
+
+  // &__link
+  &__link {
+    @include font--body-M--small;
+    @include padding(1.35rem 1.5rem);
+    display: block;
+    color: var(--color-black);
+    background-color: transparent;
+    transition: background-color 0.2s ease;
+
+    // &:hover, &:focus-visible
+    &:hover,
+    &:focus-visible {
+      color: var(--color-white);
+      background-color: var(--color-primary);
+
+      .ft-mol-dropdown__icon{
+        filter: invert(1);
+      }
+    }
+
+    // &:focus-visible
+    &:focus-visible {
+      outline: 0.2rem solid var(--color-black);
+      outline-offset: 0.2rem;
+    }
+
+    // &[disabled]
+    &[disabled] {
+      cursor: not-allowed;
+      opacity: 0.5;
+
+      // &:hover, &:focus-visible
+      &:hover,
+      &:focus-visible {
+        cursor: not-allowed;
+        background-color: transparent;
+        color: inherit;
+      }
+    }
+  }
+
+  // &__trigger
+  &__trigger {
+    @include margin(null 0 0 null);
+    top: 0;
+
+    // &:focus-visible
+    &:focus-visible {
+      outline: 0.2rem solid var(--color-black);
+      outline-offset: 0.2rem;
+    }
+
+    // behavior: parent(fourty)
+    @include behavior-parent(fourty) {
+      overflow: hidden;
+    }
+  }
+
+  // &__summary
+  &__summary {
+    @include position(relative, null null null null);
+    @include padding(1.35rem 1.5rem);
+    @include font--body-M--small;
+    display: block;
+    transition: background-color 0.2s ease;
+    color: var(--color-black);
+    background-color: transparent;
+
+    // &::after
+    &::after {
+      content: "";
+      @include position(absolute, 0 1rem 0 null);
+      @include margin(auto null auto null);
+      pointer-events: none;
+      width: 1.2rem;
+      height: 1.2rem;
+      transform: rotate(90deg);
+      transform-origin: 50% 50%;
+      transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+      background: center / contain no-repeat
+        url("#{$images-path}/icons/nav-chevron.svg");
+    }
+
+    // &:hover, &:focus-visible
+    &:hover,
+    &:focus-visible {
+      @include min-screen(1024px) {
+        color: var(--color-white);
+        background-color: var(--color-primary);
+      }
+
+      // &::after
+      &:after {
+        @include min-screen(1024px) {
+          filter: brightness(0) invert(1);
+        }
+      }
+    }
+  }
+
+  // __details
+  &__details {
+    // &-item
+    &-item {
+      @include padding(0.8rem null 0.8rem null);
+      @include font--body-M--small;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    // &-list
+    &-list {
+      @include padding(null 0.8rem 0.8rem null);
+
+      // behavior: parent(fourty)
+      @include behavior-parent(fourty) {
+        @include padding(null null null 4rem);
+      }
+    }
+
+    // &[open]
+    &[open] {
+      // #{ $self }
+      #{ $self } {
+        // &__summary
+        &__summary {
+          // &::after
+          &:after {
+            transform: rotate(-90deg);
+          }
+        }
+      }
+    }
+  }
+
+  // &__item
+  &__item {
+    // &:not(:last-child)
+    &:not(:last-child) {
+      @include border-style(null null solid null);
+      @include border-width(0.1rem);
+      @include border-color(var(--color-mediumGrey));
+    }
+
+    // &:first-child
+    &:first-child {
+      // #{ $self }
+      #{ $self } {
+        // &__link
+        &__link {
+          @include border-top-radius(0.5rem);
+        }
+      }
+    }
+
+    // &:last-child
+    &:last-child {
+      // #{ $self }
+      #{ $self } {
+        // &__link
+        &__link {
+          @include border-bottom-radius(0.5rem);
+        }
+      }
+    }
+  }
+
+  // &__list
+  &__list {
+    display: none;
+    @include margin(0 null 0 null);
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+
+    // &Is
+    &Is {
+      // &-active
+      &-active {
+        @include position(absolute, null null null null);
+        @include border-top-radius(0.5rem);
+        @include border-bottom-radius(0.5rem);
+        @include border-style(solid);
+        @include border-width(0.1rem);
+        @include border-color(var(--color-mediumGrey));
+        z-index: 10;
+        display: block;
+        background-color: var(--color-white);
+        box-shadow: 0 0.2rem 1.5rem -0.6rem rgba(0, 0, 0, 0.25);
+        pointer-events: auto;
+   &:before, &:after {
+	bottom: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: "";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+        // &::before
+        &:before {
+          content: "";
+         border-color: rgba(204, 204, 204, 0);
+	border-bottom-color: #cccccc;
+	border-width: 10px;
+	margin-left: -10px;
+        }
+      }
+    }
+  }
+
+  // &--is
+  &--is {
+    // &-list
+    &-list {
+      // &-rgt
+      &-rgt {
+        // #{ $self }
+        #{ $self } {
+          &__list {
+            left: 0;
+
+            // &Is
+            &Is {
+              // &-active
+              &-active {
+                // &::before
+                &:before {
+                  @include margin(null unset null unset);
+                  right: unset;
+                  left: 0.5rem;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      // &-lft
+      &-lft {
+        // #{ $self }
+        #{ $self } {
+          &__list {
+            right: 0;
+
+            // &Is
+            &Is {
+              // &-active
+              &-active {
+                // &::before
+                &:before {
+                  @include margin(null unset null unset);
+                  right: 0.5rem;
+                  left: unset;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // &--has
+  &--has {
+    // &-btn-nav
+    &-btn-nav {
+      // #{ $self }
+      #{ $self } {
+        &__list {
+          min-width: 15rem;
+
+          // &Is
+          &Is {
+            // &-active
+            &-active {
+              top: 3.3rem;
+            }
+          }
+        }
+      }
+    }
+
+    // &-icons
+    &-icons {
+      // #{ $self }
+      #{ $self } {
+        // &__link
+        &__link {
+          @include padding(null null null 4rem);
+        }
+
+        // &__summary
+        &__summary {
+          @include padding(null null null 4rem);
+        }
+
+        // &__item
+        &__item {
+          @include position(relative, null null null null);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,274 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+// ft-mol-countdown
+// ===============================================
+.ft-mol-countdown
+{
+    // generals
+    @include margin (2rem null);
+    @include border-top-radius(.6rem);
+    @include border-bottom-radius(.6rem);
+    @include border-style(solid);
+    @include border-width(.2rem);
+    @include border-color(var(--color-lightGrey));
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    // min-screen(768px) 
+    @include min-screen(768px)
+    {
+        // generals
+        @include margin (4rem null);
+        flex-direction: row;
+        max-height: 16rem;
+        min-height: 13rem;
+    }
+
+
+    &--bg
+    {
+        background-image: url(#{$images-path}/bgs/ft-mol-countdown.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center bottom;
+
+        // min-screen(768px) 
+        @include min-screen(768px)
+        {
+            // generals
+            background-size: cover;
+            background-position: center bottom;
+        }
+    }
+
+    // &__lft
+    // --------------------------------------------- 
+    &__lft
+    {
+        // generals
+        @include position(relative, null);
+        @include padding(1rem 0);
+        display: flex;
+        flex-basis: 100%;
+        justify-content: center;
+        align-items: center;
+
+        // min-screen(768px) 
+        @include min-screen(768px)
+        {
+            // generals
+            @include padding(0 1% 0 2%);
+            justify-content: flex-end;
+            flex-basis: 27%;
+
+        }
+
+        // END // &__left
+
+    }
+
+    // &__cnt
+    // ---------------------------------------------
+    &__cnt
+    {
+        @include position(relative, null);
+        min-height: auto;
+        display: flex;
+        flex-direction: row;
+        flex-basis: 100%;
+        justify-content: center;
+
+        // min-screen(768px) 
+        @include min-screen(768px)
+        {
+            // generals
+            flex-basis: 60%;
+            flex-direction: column;
+
+            // ft-mol-countdown--custom
+            @include behavior-parent(ft-mol-countdown--custom)
+            {
+                min-height: 19rem;
+            }
+        }
+
+        // ft-mol-countdown--custom
+        @include behavior-parent(ft-mol-countdown--custom)
+        {
+
+            &:before
+            {
+
+                content: none;
+
+                // min-screen(768px) 
+                @include min-screen(768px)
+                {
+                    // generals
+                    @include position(absolute, null);
+                    content: "";
+                    background-image: url(#{$images-path}/bgs/ft-mol-countdown_bgcounter2.svg);
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: contain;
+                    min-height: 21rem;
+                    width: 100%;
+                }
+
+            }
+        }
+
+        // &Content
+        // ---------------------------------------------
+        &Content
+        {
+            // generals
+            @include position(relative, null 0 null 0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: var(--color-white);
+
+
+            // &-title
+            &-title
+            {
+                display: none;
+
+                // min-screen(768px) 
+                @include min-screen(768px)
+                {
+                    // generals
+                    display: block;
+                    @include margin(0 0 .5rem 0);
+                    @include font--body-L--small;
+                    color: var(--color-black);
+
+                    // ft-mol-countdown--custom
+                    @include behavior-parent(ft-mol-countdown--custom)
+                    {
+                        color: var(--color-white);
+                    }
+
+                }
+            }
+
+            // &-count
+            &-count
+            {
+                @include margin(0 null);
+                display: flex;
+                flex-direction: row;
+            }
+
+            // &-text
+            &-text
+            {
+                @include margin(null .5rem);
+                @include padding(.5rem);
+                @include font--body-XS--small;
+                @include fontBold;
+                @include border-top-radius(4px);
+                @include border-bottom-radius(4px);
+                min-width: 6rem;
+                background-color: var(--color-primary);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+
+                // ft-mol-countdown--bg
+                @include behavior-parent(ft-mol-countdown--bg)
+                {
+                    background-color: var(--color-black);
+                }
+
+                // ft-mol-countdown--bg
+                @include behavior-parent(ft-mol-countdown--custom)
+                {
+                    background-color: var(--color-black);
+                }
+
+                // &Inner
+                &Inner
+                {
+                    @include font--heading-S;
+                    @include fontBold;
+                }
+
+
+            }
+
+            // END // &Content
+        }
+
+        // END // &__cnt
+    }
+
+
+    // &__rgt
+    // ---------------------------------------------
+    &__rgt
+    {
+        // generals
+        @include padding(1rem 0);
+        display: flex;
+        flex-basis: 100%;
+        justify-content: center;
+        align-items: center;
+
+
+        // min-screen(768px) 
+        @include min-screen(768px)
+        {
+            // generals
+            @include padding(0 2% 0 1%);
+            justify-content: flex-start;
+            flex-basis: 27%;
+        }
+
+        // END // &__right
+
+    }
+
+    // &--custom
+    // --------------------------------------------- 
+    &--custom
+    {
+
+        // min-screen(768px) 
+        @include min-screen(768px)
+        {
+            // generals
+            @include margin (2rem null 8rem null);
+        }
+    }
+
+    .ft-helper-img-rd
+    {
+        width: revert-layer;
+        height: revert-layer;
+        max-height: 5rem;
+
+        // min-screen(768px) 
+        @include min-screen(768px)
+        {
+            // generals
+            width: auto;
+            height: auto;
+            max-height: initial;
+        }
+    }
+
+    // ---------------------------------------------
+
+    // END // ft-mol-countdown
+}
+
+// ===============================================

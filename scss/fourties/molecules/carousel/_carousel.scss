@@ -1,0 +1,223 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+// ft-mol-carousel
+// ===============================================
+.ft-mol-carousel
+{
+
+    .ft-mol-ft-mol-carousel--wrapper
+    {
+        display: none;
+    }
+
+    .ft-mol-carousel:has(input#radio0:checked) .ft-mol-ft-mol-carousel--wrapper:nth-child(1)
+    {
+        display: contents;
+    }
+
+    .ft-mol-carousel:has(input#radio1:checked) .ft-mol-ft-mol-carousel--wrapper:nth-child(2)
+    {
+        display: contents;
+    }
+
+    .ft-mol-carousel:has(input#radio2:checked) .ft-mol-ft-mol-carousel--wrapper:nth-child(3)
+    {
+        display: contents;
+    }
+
+
+    &__nav
+    {
+        padding: 20px;
+        line-height: 1;
+        background: #bde0fe;
+        border-radius: 0.2rem;
+        border: 1px solid;
+        box-shadow: 0.1rem 0.1rem 0 0.1rem;
+        user-select: none;
+        transition: all 40ms;
+
+        &.ft-mol-ft-mol-carousel__nav--prev
+        {
+
+
+            grid-area: p;
+        }
+
+        &.ft-mol-ft-mol-carousel__nav--next
+        {
+
+
+            grid-area: n;
+
+        }
+
+    }
+
+    &__nav:active
+    {
+        background: color-mix(in hsl, #bde0fe, #000 20%);
+        box-shadow: inset 0.1rem 0.1rem 0 rgba(0, 0, 0, 0.24);
+        transform: translate(0.2rem, 0.2rem);
+    }
+
+
+
+
+    &--img
+    {
+        grid-area: img;
+        aspect-ratio: 0.666666666666667;
+        border-radius: 0.2rem;
+        border: 1px solid;
+        box-shadow: 0.1rem 0.1rem 0 0.1rem;
+        overflow: hidden;
+    }
+
+    .ft-mol-carousel--img img
+    {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .ft-mol-carousel__pagination
+    {
+        display: flex;
+        gap: 0.4rem;
+        justify-content: center;
+    }
+
+    .ft-mol-carousel__pagination input
+    {
+        appearance: none;
+        display: block;
+        width: 1rem;
+        height: 1rem;
+        background: #fff;
+        border: 2px solid #b388eb;
+        border-radius: 100%;
+        box-shadow: 0.1rem 0.1rem 0;
+    }
+
+    .ft-mol-carousel__pagination input:checked
+    {
+        background: #b388eb;
+        border-color: color-mix(in hsl, #b388eb, #000 20%);
+    }
+
+    // END // ft-mol-ft-mol-carousel
+
+}
+
+
+
+.carousel__content--wrapper
+{
+    display: none;
+}
+
+.carousel:has(input#radio0:checked) .carousel__content--wrapper:nth-child(1)
+{
+    display: contents;
+}
+
+.carousel:has(input#radio1:checked) .carousel__content--wrapper:nth-child(2)
+{
+    display: contents;
+}
+
+.carousel:has(input#radio2:checked) .carousel__content--wrapper:nth-child(3)
+{
+    display: contents;
+}
+
+.carousel__content
+{
+    display: grid;
+    grid-template-areas: 'p img n';
+    grid-template-columns: auto 70vmin auto;
+    place-items: center;
+}
+
+.carousel__nav
+{
+    padding: 20px;
+    line-height: 1;
+    background: #bde0fe;
+    border-radius: 0.2rem;
+    border: 1px solid;
+    box-shadow: 0.1rem 0.1rem 0 0.1rem;
+    user-select: none;
+    transition: all 40ms;
+}
+
+.carousel__nav:active
+{
+    background: color-mix(in hsl, #bde0fe, #000 20%);
+    box-shadow: inset 0.1rem 0.1rem 0 rgba(0, 0, 0, 0.24);
+    transform: translate(0.2rem, 0.2rem);
+}
+
+.carousel__nav--prev
+{
+    grid-area: p;
+}
+
+.carousel__nav--next
+{
+    grid-area: n;
+}
+
+.carousel--img
+{
+    grid-area: img;
+    aspect-ratio: 0.666666666666667;
+    border-radius: 0.2rem;
+    border: 1px solid;
+    box-shadow: 0.1rem 0.1rem 0 0.1rem;
+    overflow: hidden;
+}
+
+.carousel--img img
+{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.carousel__pagination
+{
+    display: flex;
+    gap: 0.4rem;
+    justify-content: center;
+}
+
+.carousel__pagination input
+{
+    appearance: none;
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    background: #fff;
+    border: 2px solid #b388eb;
+    border-radius: 100%;
+    box-shadow: 0.1rem 0.1rem 0;
+}
+
+.carousel__pagination input:checked
+{
+    background: #b388eb;
+    border-color: color-mix(in hsl, #b388eb, #000 20%);
+}
+
+// ===============================================
+
+// ===============================================

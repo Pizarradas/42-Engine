@@ -1,0 +1,296 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+
+// ================================================
+// ft-mol-gallery
+// ===============================================
+.ft-mol-gallery {
+  $self: &;
+  @include margin(2rem null);
+  @include position(relative, null null null null);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 50vw;
+  background-color: var(--color-black);
+  color: var(--color-white);
+
+  /*  // .ft
+  // ---------------------------------------------
+  .ft
+  {
+
+    // &-mol
+    &-mol
+    {
+
+      // &-rrss-inline
+      &-rrss-inline
+      {
+
+        // .ft
+        .ft
+        {
+          &-btn-rrss:not(.ft-btn-rrss--bookmark)
+          {
+            @include border-color(transparent);
+          }
+        }
+      }
+    }
+  } */
+
+  // &__contents
+  // ---------------------------------------------
+  &__contents {
+    @include position(relative, null null null null);
+    @include padding(2.5rem 1rem 0 1rem);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+
+    // behavior-parent(ft-mol-gallery--vertical)
+    @include behavior-parent(ft-mol-gallery--vertical) {
+      @include padding(0 1rem 0 1rem);
+    }
+
+    @include min-screen(768px) {
+      @include padding(0 5rem);
+
+      // behavior-parent(ft-mol-gallery--vertical)
+      @include behavior-parent(ft-mol-gallery--vertical) {
+        @include padding(0 2rem);
+      }
+    }
+
+    // &Pretitle
+    // ---------------------------------------------
+    &Pretitle {
+      @include font--body-L;
+
+      // behavior-parent(ft-mol-gallery--vertical)
+      @include behavior-parent(ft-mol-gallery--vertical) {
+        color: var(--color-primary);
+        margin-top: 1rem;
+        text-align: center;
+          @include min-screen(768px) {
+            margin-top: 0;
+          }
+      }
+    }
+
+    // &Title
+    // ---------------------------------------------
+    &Title {
+      @include font--heading-L;
+      @include margin(null 0 2rem 0);
+      text-align: center;
+
+      // behavior-parent(ft-mol-gallery--vertical)
+      @include behavior-parent(ft-mol-gallery--vertical) {
+        @include margin(0 0 2rem 0);
+      }
+    }
+
+    // &SubTitle
+    // ---------------------------------------------
+    &SubTitle {
+      @include font--body-L;
+      @include margin(0 auto);
+      text-align: center;
+      color: var(--color-quaternary);
+
+      // behavior-parent(ft-mol-gallery--vertical)
+      @include behavior-parent(ft-mol-gallery--vertical) {
+        @include margin(0 null 2.5rem null);
+      }
+    }
+
+    // &Boxes
+    // ---------------------------------------------
+    &Boxes {
+      @include position(relative, null);
+      @include font--body-XL;
+      @include margin(0 null 4rem null);
+      @include padding(1rem null null null);
+      display: block;
+      text-align: center;
+
+      @include min-screen(768px) {
+        @include margin(4rem null 4rem null);
+        @include padding(3rem null null null);
+      }
+
+      // behavior-parent(ft-mol-gallery--vertical)
+      @include behavior-parent(ft-mol-gallery--vertical) {
+        @include margin(0 null 1rem null);
+
+        @include min-screen(768px) {
+          @include padding(.5rem null null null);
+        }
+      }
+
+      // &:before
+      &:before {
+        content: "";
+        @include position(absolute, 0 0 null 0);
+        @include size(100%, .2rem);
+        background-color: var(--color-primary);
+      }
+    }
+  }
+
+  // &-videos
+  // ---------------------------------------------
+  &-videos {
+
+    // &__layout
+    &__layout {
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+  }
+
+  // .ft
+  .ft {
+
+    // &-helper
+    &-helper {
+
+      // &-img
+      &-img {
+
+        // &-rd
+        &-rd {
+          height: 53vh;
+          width: 100vw;
+
+          // ft-mol-gallery--vertical
+          @include behavior-parent-nested(ft-mol-gallery--vertical) {
+              height: 100%;
+              aspect-ratio: 16 / 9;
+              object-fit: cover;
+              object-position: 50% 50%;
+          }
+        }
+      }
+
+      //end // &-helper
+    }
+
+    // &-img
+    &-img {
+      @include position(absolute, 0 0 null 0);
+      @include padding(0 null null null);
+      @include size(auto, initial);
+      z-index: 1;
+      opacity: 0.4;
+      display: flex;
+
+      // ft-mol-gallery--vertical
+      @include behavior-parent-nested(ft-mol-gallery--vertical) {
+        @include position(relative, null);
+        opacity: 1;
+        display: flex;
+        flex-direction: column;
+
+      }
+
+      @include min-screen(1024px) {
+        @include padding(1rem null null null);
+        @include size(auto, inherit);
+        @include margin(auto);
+        @include position(absolute, 0 0 0 0);
+      }
+    }
+  }
+
+  // .ft-date
+  .ft-date {
+    color: var(--color-white);
+    @include margin(null null 2.5rem null);
+
+    //behavior-parent-nested(ft-mol-gallery--vertical)
+    @include behavior-parent-nested(ft-mol-gallery--vertical) {
+      color: var(--color-quaternary);
+      @include margin(null null 0 null);
+    }
+
+    //end // &-ft-date__text
+  }
+
+  // .ft-mol-writer
+  .ft-mol-writer {
+    @include margin(0 null 1rem null);
+
+    // &__item
+    &__item {
+      @include margin(0);
+    }
+
+    // &--side
+    &--side {
+      justify-content: center;
+
+      // .ft-date
+      .ft-date {
+        align-items: center;
+        justify-content: center;
+      }
+
+      // .ft-mol-writer__titleOpinion
+      .ft-mol-writer__titleOpinion {
+        font-weight: normal;
+      }
+    }
+
+    &__source {
+      display: none;
+    }
+  }
+
+  &__add {
+    @include margin(null auto null auto);
+    @include padding(0);
+    background-color: var(--color-white);
+    max-width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: flex-start;
+    min-height: auto;
+  }
+
+  .ft-btn-txt__text {
+    color: var(--color-black);
+  }
+
+  // &--vertical
+  // ---------------------------------------------
+  &--vertical {
+    @include margin(2rem null 1rem null);
+    min-height: auto;
+    color: var(--color-black);
+    background-color: var(--color-white);
+
+    @include min-screen(768px) {
+      @include margin(2rem null 4rem null);
+    }
+//  .ft-mol-rrss-inline
+    .ft-mol-rrss-inline {
+      @include margin(0 null null null);
+    }
+//  pie de foto a la izquierda
+     .ft-mol-figcaption{
+    width:100%
+  }
+  }
+ 
+  //end  // ft-mol-gallery
+}

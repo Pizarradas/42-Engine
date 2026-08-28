@@ -1,0 +1,1630 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+
+// ================================================
+// .ft-mol-form
+// ===============================================
+.ft-mol-form {
+  $this: &;
+  // ASPECTO GENERAL FORM
+  // form elements (dropdown, search, text, ...)
+  // generals
+  @include margin(1rem null 1rem null);
+  @include position(relative, null null null null);
+  // display: flex;
+  flex-direction: column;
+
+  // &__label
+  &__label {
+    @include position(absolute, 1rem null null 1rem);
+    @include padding(0);
+    display: none;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    color: var(--color-quaternary);
+    background-color: var(--color-white);
+  }
+
+  // &__input
+  // &__select
+  // ---------------------------------------------
+  // Tipos de entrada de datos (inputs) el único diferente es un input de selección no rellenable.
+  // Aunque tienen mismo aspecto tienen funcionalidades diferentes.
+  // En este bloque he añadido !important ya que en regionales
+  // no aparecen por defecto. Tienen asignados un webkit-appearance: none
+  &__select,
+  &__input {
+    @include padding(0.4rem 1rem);
+    @include size(100%, 4rem);
+    @include border-style(solid);
+    @include border-width(0.1rem);
+    @include border-color(var(--color-mediumGrey));
+    -webkit-appearance: none;
+    appearance: none;
+    outline: none;
+    transition: all 0.3s ease;
+    min-height: 4.5rem;
+    font-family: var(--font-stack);
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    letter-spacing: 0.1rem;
+    text-align: left;
+    background: var(--color-white);
+
+    // behavior-in-ancestor: .fourty
+    @include behavior-in-ancestors(".fourty") {
+      border-radius: 5rem;
+    }
+
+    // :focus
+    // Es necesario el lanzar el efecto label en el focus ya que indica que el usuario
+    // va a escribir o a seleccionar una opción. Por tanto hay que mover la etiqueta.
+    &:focus {
+      @include border-style(solid);
+      @include border-width(0.13rem);
+      @include border-color(var(--color-form));
+      box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.25);
+
+      // + #{$this}__label
+      + #{$this}__label {
+        @include padding(.2rem .6rem);
+        top: -1.2rem;
+        left: 1.2rem;
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+        color: var(--color-form);
+        border: 1px solid var(--color-mediumGrey);
+        border-radius: 1.5rem;
+      }
+    }
+
+    // Respeta prefers-reduced-motion: anula la transición de focus y
+    // cualquier animación heredada para usuarios que rechazan movimiento.
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+      transition: none;
+    }
+  }
+
+  // &__input
+  &__input {
+    // En los inputs rellenables, lanzamos el efecto label cuando el usuario está escribiendo
+    // o ha dejado escrito un input. Esto lo detectamos usando la propiedad placeholder-shown.
+    &:not(:placeholder-shown) {
+      + #{$this}__label {
+        @include padding(.2rem .6rem);
+        top: -1.2rem;
+        left: 1.2rem;
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+        color: var(--color-form);
+        border: 1px solid var(--color-mediumGrey);
+        border-radius: 1.5rem;
+      }
+    }
+  }
+
+  // &__supporting-text
+  &__supporting-text {
+    @include margin(0.2rem null null null);
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.8rem;
+    font-size: 1.2rem;
+  }
+
+  // &__error-msg
+  &__error-msg {
+    @include hide-visually;
+    @include margin(1rem null 0 null);
+    @include padding(null 1rem null 1rem);
+
+    // span
+    span {
+      @include position(relative, null null null null);
+      @include padding(null 3.2rem null 3.2rem);
+      font-size: 1.4rem;
+      line-height: 2.2rem;
+      color: var(--color-tertiary);
+
+      // &:before
+      &:before {
+        content: "";
+        @include position(absolute, 0 null null 0.4rem);
+        @include size(2rem, 2rem);
+        @include background-setup(
+          map-icons(alerts, brand--errorCircle),
+          // img path
+          "center center / contain",
+          // position and size
+          no-repeat,
+          // repeat
+          null,
+          // attachment
+          null,
+          // origin
+          null,
+          // clip
+          transparent // color
+        );
+        filter: map-filters(reds, brand--error);
+      }
+    }
+  }
+
+  // &__list (contenido inyectado por jquery)
+  &__list {
+    @include border-style(solid);
+    @include border-width(0.1rem);
+    @include border-color(var(--color-lightGrey));
+    @include border-top-radius(0.4rem);
+    @include border-bottom-radius(0.4rem);
+    overflow-x: hidden;
+    scrollbar-width: thin; // firefox
+    max-height: 60vh;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+
+    // &::-webkit-scrollbar
+    &::-webkit-scrollbar {
+      width: 0.5rem;
+    }
+
+    // &::-webkit-scrollbar-track
+    &::-webkit-scrollbar-track {
+      @include border-top-radius(1rem);
+      @include border-bottom-radius(1rem);
+      -webkit-border-radius: 10px;
+      background-color: var(--color-white);
+    }
+
+    // &::-webkit-scrollbar-thumb
+    &::-webkit-scrollbar-thumb {
+      @include border-top-radius(1rem);
+      @include border-bottom-radius(1rem);
+      -webkit-border-radius: 10px;
+      background: var(--color-secondary);
+    }
+  }
+
+  // &__list-item (contenido inyectado por jquery)
+  &__list-item {
+    @include padding(0 0.8rem 0 0.8rem);
+    @include size(100%, 4rem);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--color-white);
+
+    // &:hover
+    &:hover {
+      background-color: var(--color-lightGrey);
+    }
+  }
+
+  // &__list-value (contenido inyectado por jquery)
+  &__list-value {
+    font-weight: bold;
+  }
+
+  // &__list-type (contenido inyectado por jquery)
+  &__list-type {
+    color: var(--color-darkGrey);
+  }
+
+  // &__combo
+  &__combo {
+    // &-search
+    &-search {
+      @include padding(1rem 1rem 1rem 3.5rem);
+      @include font--body-L;
+      @include border-style(solid);
+      @include border-width(0 0 0.1rem 0);
+      @include border-color(var(--color-lightGrey));
+      width: 100%;
+    }
+
+    // &-input
+    &-input {
+      @include position(relative, null null null null);
+
+      // &:after
+      &:after {
+        content: "";
+        @include position(absolute, 0 1.2rem 0 null);
+        @include margin(auto null auto null);
+        @include size(1.4rem, 7rem);
+        @include background-setup(
+          // img path
+          map-icons(chevrons, brand--default),
+          // position and size
+          "center center / contain",
+          // repeat
+          no-repeat,
+          // attachment
+          null,
+          // origin
+          null,
+          // clip
+          null,
+          // color
+          transparent
+        );
+        z-index: 1;
+        filter: map-filters(greys, brand--600);
+      }
+    }
+
+    // &-link
+    &-link {
+      @include padding(null 1rem null 1rem);
+      @include font--body-L;
+      display: flex;
+      width: 100%;
+
+      // &:hover, &:focus
+      &:hover,
+      &:focus {
+        color: var(--color-primary);
+        background-color: var(--color-lightGrey);
+      }
+    }
+
+    // &-item
+    &-item {
+      @include padding(null 1rem null 1rem);
+      font-weight: bold;
+
+      // > [class*="-link"]
+      > [class*="-link"] {
+        @include margin(null -1rem null -1rem);
+        font-weight: bold;
+        color: var(--color-primary);
+      }
+
+      // &:first-child
+      &:first-child {
+        @include position(sticky, 0 null null null);
+        @include margin(null -1rem null -1rem);
+        @include border-style(null null solid null);
+        @include border-width(0.1rem);
+        @include border-color(var(--color-lightGrey));
+
+        // &:before
+        &:before {
+          content: "";
+          @include position(absolute, 0 null 0 2rem);
+          @include margin(auto null auto null);
+          @include size(1.8rem, 1.8rem);
+          @include background-setup(
+            // img path
+            map-icons(forms, brand--search),
+            // position and size
+            "center center / contain",
+            // repeat
+            no-repeat,
+            // attachment
+            null,
+            // origin
+            null,
+            // clip
+            null,
+            // color
+            transparent
+          );
+          z-index: 1;
+          filter: map-filters(greys, brand--600);
+        }
+      }
+
+      // &:nth-child(2)
+      &:nth-child(2) {
+        @include margin(null -3rem null -1rem);
+        @include padding(null 2rem null 2rem);
+        @include border-style(null null solid null);
+        @include border-width(0.1rem);
+        @include border-color(var(--color-lightGrey));
+
+        // [class*="-link"]
+        [class*="-link"] {
+          @include padding(1rem null 1rem 1rem);
+        }
+      }
+
+      // &:not(:nth-child(1)):not(:nth-child(2))
+      &:not(:nth-child(1)):not(:nth-child(2)) {
+        @include padding(1rem null null null);
+      }
+    }
+
+    // &-list
+    &-list {
+      @include border-style(solid);
+      @include border-width(0.1rem);
+      @include border-color(var(--color-lightGrey));
+      @include border-top-radius(0.4rem);
+      @include border-bottom-radius(0.4rem);
+      overflow-x: hidden;
+      scrollbar-width: thin; // firefox
+      flex-basis: 100%;
+    }
+
+    // &-sublist
+    &-sublist {
+      @include margin(null -1rem null -1rem);
+
+      // [class*="-link"]
+      [class*="-link"] {
+        @include padding(0.8rem 2rem);
+      }
+
+      // [class*="-item"]
+      [class*="-combo-item"] {
+        @include margin(null -1rem null -1rem);
+      }
+    }
+
+    // &-content
+    &-content {
+      display: none;
+
+      // &Is-open
+      &Is-open {
+        @include position(absolute, null 0 null 0);
+        @include margin(null auto null auto);
+        overflow-x: hidden;
+        overflow-y: auto;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        min-height: 30rem;
+        max-height: 30rem;
+        background-color: var(--color-white);
+      }
+    }
+  }
+
+  // &--has
+  &--has {
+    // &-label
+    &-label {
+      // #{$this}__label
+      #{$this}__label {
+        display: block;
+      }
+    }
+
+    // &-supporting-text
+    &-supporting-text {
+      #{$this}__supporting-text {
+        display: flex;
+      }
+    }
+
+    // &-buttons
+    &-buttons {
+      .ft-mol-form__input {
+        @include padding(null 9rem null null);
+      }
+
+      .ft-mol-btnGroup {
+        @include position(absolute, 50% 0.6rem nul null);
+        @include padding(0);
+        transform: translateY(-50%);
+      }
+
+      .ft-btn-nav:last-child:before {
+        content: "";
+        @include position(absolute, null nul null -0.7rem);
+        height: 2.5rem;
+        width: 0.1rem;
+        background-color: var(--color-black);
+      }
+    }
+
+    // &-dropdown
+    &-dropdown {
+      @include position(relative, null null null null);
+      display: inline-block;
+      vertical-align: top;
+      min-width: max-content;
+
+      // &.ft-mol-form--has-dropdown--full
+      &.ft-mol-form--has-dropdown--full {
+        display: block;
+        width: 100%;
+      }
+
+      // #{$this}__dropdown-input
+      #{$this}__dropdown-input {
+        @include min-click-area;
+        @include padding(0.6rem 1.2rem);
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        min-height: 3rem;
+        height: unset;
+        box-sizing: border-box;
+        color: var(--color-black);
+        border: 0.2rem solid var(--color-lightGrey);
+        border-radius: 999px;
+        text-align: left;
+        transition: none;
+
+        // &::before
+        &::before {
+          content: "";
+          pointer-events: none;
+          flex-shrink: 0;
+          @include size(1.4rem, 1.4rem);
+          aspect-ratio: 1;
+          @include background-setup(
+            // img path
+            map-icons(chevrons, brand--default),
+            // position and size
+            "center center / contain",
+            // repeat
+            no-repeat,
+            // attachment
+            null,
+            // origin
+            null,
+            // clip
+            null,
+            // color
+            transparent
+          );
+          filter: map-filters(greys, brand--600);
+          transform: rotate(0deg);
+          transition-property: transform;
+          transition-duration: 160ms;
+          transition-timing-function: ease;
+          will-change: transform;
+          order: 2;
+        }
+
+        // &[aria-expanded="true"]::before
+        &[aria-expanded="true"]::before {
+          transform: rotate(180deg);
+        }
+
+        // &:focus-visible
+        &:focus-visible {
+          outline: 0.2rem solid var(--color-form);
+          outline-offset: 0.2rem;
+        }
+
+        & > span {
+          font-weight: bold;
+        }
+      }
+
+      // #{$this}__dropdown-content
+      #{$this}__dropdown-content {
+        @include position(fixed, null null null null);
+        @include margin(0);
+        @include padding(0);
+        z-index: 100;
+        box-sizing: border-box;
+        max-width: min(36rem, calc(100vw - 3.2rem));
+        max-height: min(42rem, calc(100vh - 6rem));
+        inset: auto;
+        border: 0.2rem solid var(--color-lightGrey);
+        background-color: var(--color-white);
+        border-radius: 2rem;
+        overflow-y: auto;
+        overflow-x: hidden;
+        overscroll-behavior: contain;
+        scrollbar-gutter: stable;
+        scrollbar-width: thin;
+        box-shadow: 0 0.8rem 2.4rem rgba(0, 0, 0, 0.12);
+        display: none;
+        contain: layout paint;
+
+        // &.ft-mol-form__dropdown-contentIs-open
+        // &:popover-open
+        &.ft-mol-form__dropdown-contentIs-open,
+        &:popover-open {
+          display: block;
+        }
+      }
+
+      // #{$this}__dropdown-list
+      #{$this}__dropdown-list {
+        list-style: none;
+        @include margin(0);
+        @include padding(0);
+      }
+
+      // #{$this}__dropdown-item
+      #{$this}__dropdown-item {
+        @include position(relative, null null null null);
+        @include margin(0);
+
+        // &:not(:last-child)::after
+        &:not(:last-child)::after {
+          content: "";
+          @include position(absolute, null 1rem 0 1rem);
+          height: 0.1rem;
+          background-color: var(--color-lightGrey);
+          pointer-events: none;
+        }
+
+        // &--disabled
+        &--disabled {
+          #{$this}__dropdown-link {
+            color: var(--color-mediumGrey);
+            cursor: not-allowed;
+
+            // &:hover
+            &:hover {
+              background-color: transparent;
+            }
+          }
+
+          #{$this}__dropdown-meta {
+            color: var(--color-mediumGrey);
+          }
+        }
+
+        // &--emphasis
+        &--emphasis {
+          #{$this}__dropdown-meta {
+            color: var(--color-black);
+          }
+
+          // &.ft-mol-form__dropdown-item--disabled
+          &.ft-mol-form__dropdown-item--disabled {
+            #{$this}__dropdown-meta {
+              color: var(--color-mediumGrey);
+            }
+          }
+
+          // a#{$this}__dropdown-link::after
+          // button#{$this}__dropdown-link::after
+          a#{$this}__dropdown-link::after,
+          button#{$this}__dropdown-link::after {
+            content: "";
+            flex-shrink: 0;
+            @include size(1.4rem, 0.8rem);
+            @include background-setup(
+              // img path
+              map-icons(chevrons, brand--default),
+              // position and size
+              "center center / contain",
+              // repeat
+              no-repeat,
+              // attachment
+              null,
+              // origin
+              null,
+              // clip
+              null,
+              // color
+              transparent
+            );
+            filter: map-filters(greys, brand--600);
+            transform: rotate(-90deg);
+          }
+        }
+
+        // &--heading
+        &--heading {
+          > #{$this}__dropdown-link > #{$this}__dropdown-title {
+            font-weight: bold;
+          }
+        }
+      }
+
+      // #{$this}__dropdown-sublist
+      #{$this}__dropdown-sublist {
+        @include position(relative, null null null null);
+        @include margin(0);
+        @include padding(0);
+        list-style: none;
+
+        // #{$this}__dropdown-link
+        #{$this}__dropdown-link {
+          padding-left: calc(2.4rem + 1rem);
+        }
+
+        // &::before
+        &::before {
+          content: "";
+          @include position(absolute, 0 1rem null 1rem);
+          height: 0.1rem;
+          background-color: var(--color-lightGrey);
+          pointer-events: none;
+        }
+      }
+
+      // #{$this}__dropdown-link
+      #{$this}__dropdown-link {
+        @include padding(0 2.4rem);
+        display: flex;
+        align-items: center;
+        gap: 1.4rem;
+        box-sizing: border-box;
+        min-height: 4.5rem;
+        color: var(--color-black);
+        text-decoration: none;
+        transition-property: background-color;
+        transition-duration: 120ms;
+        transition-timing-function: ease;
+
+        // &:focus-visible
+        &:focus-visible {
+          background-color: var(--color-lightGrey);
+          outline: 0.2rem solid var(--color-form);
+          outline-offset: -0.2rem;
+        }
+
+        // &[aria-current="true"]
+        &[aria-current="true"] {
+          background-color: var(--color-lightGrey);
+        }
+      }
+
+      // a#{$this}__dropdown-link:hover
+      // button#{$this}__dropdown-link:hover
+      a#{$this}__dropdown-link:hover,
+      button#{$this}__dropdown-link:hover {
+        background-color: var(--color-lightGrey);
+      }
+
+      // #{$this}__dropdown-icon
+      #{$this}__dropdown-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.8rem;
+        height: 2.8rem;
+        aspect-ratio: 1;
+        flex-shrink: 0;
+        background-color: var(--color-black);
+        border-radius: 50%;
+
+        // img
+        img {
+          width: 1.6rem;
+          height: 1.6rem;
+          aspect-ratio: 1;
+          flex-shrink: 0;
+          filter: brightness(0) invert(1);
+        }
+      }
+
+      // #{$this}__dropdown-title
+      #{$this}__dropdown-title {
+        font-size: 1.4rem;
+        line-height: 1.2;
+        color: inherit;
+      }
+
+      // #{$this}__dropdown-meta
+      #{$this}__dropdown-meta {
+        @include margin(null null null auto);
+        @include padding(null null null 1.6rem);
+        flex-shrink: 0;
+        font-size: 0.95rem;
+        font-weight: 400;
+        line-height: 1.3;
+        color: var(--color-quaternary);
+      }
+
+      // @media (prefers-reduced-motion: reduce)
+      @media (prefers-reduced-motion: reduce) {
+        #{$this}__dropdown-input::after,
+        #{$this}__dropdown-link {
+          transition: none;
+        }
+      }
+    }
+
+    // &-dropdown--full
+    &-dropdown--full {
+      #{$this}__dropdown-input {
+        display: flex;
+        width: 100%;
+      }
+
+      #{$this}__dropdown-content {
+        max-width: none;
+      }
+    }
+
+    // &-predictive — variante autocompletado/predictivo. Arquitectura
+    &-predictive {
+      @include position(relative, null null null null);
+
+      // #{$this}__dropdown-content — panel desplegable (mismo nombre que
+      // en --has-dropdown; el contexto del padre define el aspecto:
+      // popover en combo, sticky-bottom en predictive).
+      #{$this}__dropdown-content {
+        @include position(absolute, calc(100% + 1.2rem) null null 0);
+        @include border-style(solid);
+        @include border-width(0.1rem);
+        @include border-top-radius(2rem);
+        @include border-bottom-radius(2rem);
+        z-index: 30;
+        width: 100%;
+        background-color: var(--color-white);
+        border-color: color-mix(in srgb, var(--color-primary) 14%, var(--color-white));
+        box-shadow: 0 2.4rem 5.4rem rgba(15, 23, 42, 0.12);
+        overflow: hidden;
+
+        &[hidden] {
+          display: none;
+        }
+      }
+
+      // #{$this}__dropdown-list — <ul> de items
+      #{$this}__dropdown-list {
+        @include margin(0);
+        @include padding(0.8rem 0 0 0);
+        list-style: none;
+        max-height: none;
+        min-height: 100dvh;
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: var(--color-mediumGrey) var(--color-white);
+
+        @include min-screen(1024px) {
+          max-height: 30dvh;
+          min-height: fit-content;
+        }
+      }
+
+      // #{$this}__dropdown-item — <li> wrapper de cada entrada del list.
+      // Mismo nombre que en --has-dropdown.
+      #{$this}__dropdown-item {
+        @include position(relative, null null null null);
+        @include margin(0);
+
+        // Separador entre items consecutivos: borde top en el link del
+        // item que sigue a otro item.
+        & + #{$this}__dropdown-item > #{$this}__dropdown-link {
+          @include border-style(solid null null null);
+          @include border-width(0.1rem null null null);
+          @include border-color(var(--color-lightGrey) null null null);
+        }
+
+        // &--heading — cabecera de sección no interactiva (p.ej. "Te
+        // puede interesar"). Mismo modificador que en --has-dropdown.
+        // El tamaño tipográfico se aplica sobre el __dropdown-title
+        // interno (más abajo), no sobre el link, para que conviva con
+        // el resto del sistema sin filtrarse por herencia.
+        //
+        // Nota: el padding lateral del --heading vive también a top-level
+        // (al final del archivo) para que aplique cuando el JS clona el
+        // template fuera de .ft-mol-form--has-predictive (típicamente la
+        // sheet móvil que se adjunta a <body> y no tiene ancestor form).
+        &--heading {
+          #{$this}__dropdown-link {
+            @include padding(1.4rem 2.4rem 0.9rem 2.4rem);
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--color-darkGrey);
+            cursor: default;
+            background-color: transparent;
+          }
+
+          // Title de la cabecera: 1rem (más compacto que el item normal).
+          #{$this}__dropdown-title {
+            font-size: 1rem;
+            line-height: 1.2;
+            color: var(--color-darkGrey);
+          }
+
+          // Anula el separador encima del siguiente item (la sección no
+          // necesita la línea divisoria justo después).
+          + #{$this}__dropdown-item > #{$this}__dropdown-link {
+            border-top: 0;
+          }
+        }
+      }
+
+      // #{$this}__dropdown-icon — contenedor opcional del icono al inicio
+      // de cada item. Mismo patrón que en --has-dropdown: el consumidor
+      // mete un <img> real dentro del <span> (.svg/.png con el icono que
+      // toque, p.ej. pin de localización). Para omitir el icono basta con
+      // no incluir el <span> en el markup.
+      #{$this}__dropdown-icon {
+        @include size(2.4rem, 2.4rem);
+        flex: 0 0 auto;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        // img dentro: se adapta al contenedor manteniendo proporción
+        img {
+          max-width: 100%;
+          max-height: 100%;
+        }
+      }
+
+      // #{$this}__dropdown-link — elemento interactivo dentro de cada
+      // item. En predictive es un <button> con estados BEM (--is-active
+      // resaltado por teclado / --is-selected elegido por el usuario);
+      // en combo es un <a> con aria-current="true". Mismo nombre.
+      #{$this}__dropdown-link {
+        @include padding(1.35rem 2.4rem);
+        @include border-style(none);
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+        width: 100%;
+        background-color: var(--color-white);
+        color: inherit;
+        cursor: pointer;
+        text-align: left;
+
+        &:hover,
+        &:focus-visible,
+        &--is-active {
+          background-color: color-mix(in srgb, var(--color-lightGrey) 60%, var(--color-white));
+        }
+
+        &--is-selected,
+        &--is-selected:hover,
+        &--is-selected:focus-visible {
+          background: linear-gradient(180deg,
+            color-mix(in srgb, var(--color-functional-success) 6%, var(--color-white)) 0%,
+            color-mix(in srgb, var(--color-functional-success) 14%, var(--color-white)) 100%);
+        }
+
+        // .ft-btn-nav trailing — átomo del 42DS (-nav, --plus, --bordered).
+        // Mismo patrón que ft-list--add: el átomo se renderiza con la
+        // clase `ft-btn-nav--plus`, pero el background-image del glifo
+        // se aporta aquí porque en _btn.scss el selector de --plus exige
+        // un wrapper .ft-btn-nav anidado que no tenemos. El icono se
+        // intercambia por CSS según el estado del link (hover/active →
+        // verde, selected → negro con icono delete, selected+hover →
+        // rojo). El click lo captura el <button> __dropdown-link, así
+        // que el átomo no intercepta el puntero.
+        .ft-btn-nav {
+          flex: 0 0 auto;
+          @include margin(null null null auto);
+          @include border-width(0.1rem);
+          @include border-color(var(--color-mediumGrey));
+          background-color: var(--color-white);
+          pointer-events: none;
+          transition: background-color 0.2s ease, border-color 0.2s ease;
+
+          // glifo "plus" reducido al tamaño del context (atom default 1.6rem)
+          &__icon::after {
+            @include size(1.2rem);
+            background-image: url("#{$images-path}/icons/nav-solid-light-actions-plus.svg");
+          }
+        }
+
+        // hover / active (sin seleccionar): el átomo vira a verde
+        &:hover .ft-btn-nav,
+        &:focus-visible .ft-btn-nav,
+        &--is-active .ft-btn-nav {
+          @include border-color(var(--color-functional-success));
+          background-color: var(--color-functional-success);
+        }
+
+        &:hover .ft-btn-nav__icon::after,
+        &:focus-visible .ft-btn-nav__icon::after,
+        &--is-active .ft-btn-nav__icon::after {
+          filter: brightness(0) invert(1);
+        }
+
+        // seleccionado: el átomo vira a negro y el icono pasa a "delete"
+        &--is-selected .ft-btn-nav {
+          @include border-color(var(--color-black));
+          background-color: var(--color-black);
+        }
+
+        &--is-selected .ft-btn-nav__icon::after {
+          background-image: url("#{$images-path}/icons/nav-solid-light-delete.svg");
+          filter: brightness(0) invert(1);
+        }
+
+        // hover sobre seleccionado: anticipa la acción de quitar (rojo)
+        @include min-screen(768px) {
+          &--is-selected:hover .ft-btn-nav,
+          &--is-selected:focus-visible .ft-btn-nav,
+          &--is-selected#{$this}__dropdown-link--is-active .ft-btn-nav {
+            @include border-color(var(--color-functional-error));
+            background-color: var(--color-functional-error);
+          }
+        }
+      }
+
+      // #{$this}__dropdown-title — nombre del item. Admite <mark> para
+      // highlight de la query del autocompletado. Tamaño 1.4rem por
+      // defecto; los items con modificador --heading reducen a 1rem
+      // (override más arriba dentro de &--heading).
+      #{$this}__dropdown-title {
+        flex: 1 1 auto;
+        min-width: 0;
+        font-size: 1.4rem;
+        font-weight: 600;
+        line-height: 1.4;
+        color: color-mix(in srgb, var(--color-black) 90%, var(--color-primary));
+
+        mark {
+          background: transparent;
+          color: inherit;
+          font-weight: 700;
+        }
+      }
+
+      // #{$this}__dropdown-meta — meta secundaria del item (p.ej. región).
+      // Por orden DOM va justo después del título y antes del .ft-btn-nav
+      // trailing; con flex queda alineado a la derecha del título.
+      #{$this}__dropdown-meta {
+        flex: 0 0 auto;
+        font-size: 1.2rem;
+        color: var(--color-darkGrey);
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      // Recoloreo de title + meta cuando el link está --is-selected.
+      #{$this}__dropdown-link--is-selected #{$this}__dropdown-title {
+        color: color-mix(in srgb, var(--color-functional-success) 70%, var(--color-black));
+      }
+
+      #{$this}__dropdown-link--is-selected #{$this}__dropdown-meta {
+        color: color-mix(in srgb, var(--color-functional-success) 50%, var(--color-darkGrey));
+      }
+
+      // Compactación en mobile: el panel suele renderizarse a ancho
+      // completo (típicamente dentro de una sheet móvil), así que el
+      // padding y la tipografía bajan para que entren más items por
+      // pantalla. El meta deja de ser nowrap para que su texto pueda
+      // partir en dos líneas si la fila se queda corta.  
+      @media (max-width: 768px) {
+        // En mobile el JS canónico de --has-predictive
+        // (FTMolFormPredictive.mount) abre la sheet móvil con su propio
+        // <ul> de resultados; el panel desktop deja de tener sentido aquí
+        // y lo silenciamos aunque el dropdown-toggle lo abra
+        // programáticamente. Solo aplica a --has-predictive: --has-dropdown
+        // y --has-combo sí usan su panel en mobile.
+        #{$this}__dropdown-content {
+          display: none;
+        }
+
+        #{$this}__dropdown-item--heading #{$this}__dropdown-link {
+          @include padding(1rem 1.6rem 0.8rem 1.6rem);
+        }
+
+        #{$this}__dropdown-link {
+          @include padding(1.2rem 1.6rem);
+        }
+
+        #{$this}__dropdown-title {
+          font-size: 1.35rem;
+        }
+
+        #{$this}__dropdown-meta {
+          font-size: 1rem;
+          white-space: normal;
+        }
+      }
+    }
+
+  }
+
+  // &--is (error, disabled, etc)
+  &--is {
+    // &-error
+    &-error {
+      // #{$this}__label, #{$this}__supporting-text
+      #{$this}__label,
+      #{$this}__supporting-text {
+        color: var(--color-functional-error);
+      }
+
+      // #{$this}__select, #{$this}__input
+      #{$this}__select,
+      #{$this}__input {
+        @include border-style(solid);
+        @include border-width(0.1rem);
+        @include border-color(var(--color-functional-error));
+        color: var(--color-functional-error);
+        box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.25);
+      }
+
+      // #{$this}__supporting-message
+      #{$this}__supporting-message {
+        @include position(relative, null null null null);
+        @include padding(null null null 2.4rem);
+
+        // &:before
+        &::before {
+          content: "";
+          @include position(absolute, 0 null null 0);
+          @include size(2rem, 2rem);
+          @include background-setup(
+            // img path
+            map-icons(alerts, brand--errorCircle),
+            // position and size
+            "center center / contain",
+            // repeat
+            no-repeat,
+            // attachment
+            null,
+            // origin
+            null,
+            // clip
+            null,
+            // color
+            transparent
+          );
+          filter: map-filters(reds, brand--error);
+        }
+      }
+
+      // #{$this}__error-msg
+      #{$this}__error-msg {
+        @include hide-visually("unhide");
+      }
+    }
+
+    // &-disabled
+    &-disabled {
+      // #{$this}__select, #{$this}__input
+      #{$this}__select,
+      #{$this}__input {
+        cursor: no-drop;
+        pointer-events: none;
+        color: var(--color-quaternary);
+        background-color: var(--color-lightGrey);
+      }
+
+      // #{$this}__label
+      #{$this}__label {
+        background-color: transparent;
+      }
+
+      // #{$this}__supporting-text
+      #{$this}__supporting-text {
+        display: none;
+      }
+    }
+
+    // &-warning
+    &-warning {
+      // #{$this}__label, #{$this}__supporting-text
+      #{$this}__label,
+      #{$this}__supporting-text {
+        color: var(--color-functional-warning);
+      }
+
+      // #{$this}__select, #{$this}__input
+      #{$this}__select,
+      #{$this}__input {
+        @include border-style(solid);
+        @include border-width(0.1rem);
+        @include border-color(var(--color-functional-warning));
+        color: var(--color-functional-warning);
+        box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.25);
+      }
+
+      // #{$this}__supporting-message
+      #{$this}__supporting-message {
+        @include position(relative, null null null null);
+        @include padding(null null null 2.4rem);
+
+        // &:before
+        &::before {
+          content: "";
+          @include position(absolute, 0 null null 0);
+          @include size(2rem, 2rem);
+          @include background-setup(
+            // img path
+            map-icons(alerts, brand--warningCircle),
+            // position and size
+            "center center / contain",
+            // repeat
+            no-repeat,
+            // attachment
+            null,
+            // origin
+            null,
+            // clip
+            null,
+            // color
+            transparent
+          );
+          filter: map-filters(reds, brand--warning);
+        }
+      }
+
+      // #{$this}__error-msg
+      #{$this}__error-msg {
+        @include hide-visually("unhide");
+      }
+    }
+  }
+
+  // FUNCIONES ESPECIFICAS DE ELEMENTOS
+  // &-search
+  &-search {
+    // &--template-desktop
+    &--template-desktop {
+      @include breakpoint(phablet) {
+        display: flex;
+      }
+
+      @include breakpoint(mobileonly) {
+        display: none;
+      }
+    }
+
+    // &--is
+    &--is {
+      // &-trigger
+      &-trigger {
+        @include breakpoint(phablet) {
+          display: none;
+        }
+
+        @include breakpoint(mobileonly) {
+          display: flex;
+        }
+
+        // #{$this}__input
+        #{$this}__input {
+          pointer-events: none;
+        }
+      }
+    }
+
+    // &--has
+    &--has {
+      // &-search-icon
+      &-search-icon {
+        // &:before
+        &::before {
+          content: "";
+          @include position(absolute, 1.3rem null null 1.8rem);
+          @include size(2.2rem, 2.2rem);
+          @include background-setup(
+            // img path
+            map-icons(forms, brand--search),
+            // position and size
+            "center center / contain",
+            // repeat
+            no-repeat,
+            // attachment
+            null,
+            // origin
+            null,
+            // clip
+            null,
+            // color
+            transparent
+          );
+          z-index: 1;
+          filter: map-filters(greys, brand--600);
+        }
+
+        // #{$this}__label
+        #{$this}__label {
+          left: 5rem;
+        }
+
+        // #{$this}__input
+        #{$this}__input {
+          @include padding(null null null 5rem);
+        }
+      }
+
+      // &-clear-btn
+      &-clear-btn {
+        @include position(relative, null null null null);
+
+        // #{$this}__input
+        #{$this}__input {
+          @include padding(null 5rem null null);
+        }
+
+        // #{$this}__clear-btn
+        #{$this}__clear-btn {
+          @include position(absolute, 1.3rem 1.8rem null null);
+          @include size(2.2rem, 2.2rem);
+          @include padding(0);
+          @include border-style(none);
+          display: none; // Hidden by default, JavaScript will show it when input has content
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          opacity: 0.6;
+          transition:
+            opacity 0.3s ease,
+            outline 0.2s ease;
+          z-index: 2;
+          background: transparent;
+          outline: none;
+
+          // &:hover
+          &:hover {
+            opacity: 1;
+          }
+
+          // &:focus-visible
+          &:focus-visible {
+            opacity: 1;
+            outline: 0.2rem solid var(--color-form);
+            outline-offset: 0.2rem;
+            border-radius: 0.2rem;
+          }
+
+          // &:active
+          &:active {
+            opacity: 0.8;
+          }
+        }
+
+        // #{$this}__clear-icon
+        #{$this}__clear-icon {
+          @include size(2.2rem, 2.2rem);
+          @include background-setup(
+            // img path
+            map-icons(alerts, brand--errorCircle),
+            // position and size
+            "center center / contain",
+            // repeat
+            no-repeat,
+            // attachment
+            null,
+            // origin
+            null,
+            // clip
+            null,
+            // color
+            transparent
+          );
+          display: block;
+          filter: map-filters(greys, brand--600);
+        }
+      }
+    }
+  }
+
+  // &-slide
+  &-slide {
+    @include position(fixed, 0 0 null null);
+    @include size(100%, 100vh);
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--color-white);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    // He puesto un z-index absurdo porque en las medias
+    // está completamente descontrolado e innecesariamente alto
+    z-index: 111111;
+    overflow-y: scroll;
+
+    // &__heading
+    &__heading {
+      @include position(relative, null null null null);
+      @include padding(1rem 5rem);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 6rem;
+      font-size: 1.6rem;
+      color: var(--color-white);
+      background-color: var(--color-primary);
+    }
+
+    // &__close
+    &__close {
+      // &:before
+      &::before {
+        content: "";
+        @include position(absolute, 50% 2rem null null);
+        @include size(1.8rem, 1.8rem);
+        @include background-setup(
+          // img path
+          map-icons(alerts, brand--errorCircle),
+          // position and size
+          "center center / contain",
+          // repeat
+          no-repeat,
+          // attachment
+          null,
+          // origin
+          null,
+          // clip
+          null,
+          // color
+          transparent
+        );
+        transform: translateY(-50%);
+        filter: map-filters(whites, brand--all);
+      }
+    }
+
+    // &__image
+    &__image {
+      flex-shrink: 0;
+
+      // &-color
+      &-color {
+        // &--primary
+        &--primary {
+          fill: var(--color-form-image--primary);
+        }
+
+        // &--secondary
+        &--secondary {
+          fill: var(--color-form-image--secondary);
+        }
+      }
+    }
+
+    // #{$this}-search
+    #{$this}-search {
+      @include margin(3rem auto);
+      @include size(95%, 100%);
+      display: flex;
+    }
+
+    // &--is
+    &--is {
+      // &-open
+      &-open {
+        display: flex;
+        transform: translateX(0);
+      }
+    }
+  }
+
+  // &-dropdown
+  &-dropdown {
+    // &__chevron-icon
+    &__chevron-icon {
+      @include size(1.4rem, 0.7rem);
+      @include background-setup(
+        // img path
+        map-icons(chevrons, brand--default),
+        // position and size
+        "center center / contain",
+        // repeat
+        no-repeat,
+        // attachment
+        null,
+        // origin
+        null,
+        // clip
+        null,
+        // color
+        transparent
+      );
+      transition: all 0.3s ease;
+      filter: map-filters(greys, brand--600);
+    }
+
+    // &--is
+    &--is {
+      // &-open
+      &-open {
+        // #{$this}-dropdown__chevron-icon
+        #{$this}-dropdown__chevron-icon {
+          transform: rotate(180deg);
+        }
+      }
+
+      // Se crea una clase selected en específico para el dropdown, ya que es diferente al resto
+      //  de inputs de datos. En este caso es un seleccionable y no un rellenable.
+      // Para lanzar el efecto label necesitamos detectar cuando se ha seleccionado una opción.
+      &-selected {
+        // ~ #{$this}__label
+        ~ #{$this}__label {
+          top: -1.2rem;
+          left: 1.8rem;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+
+  // &__dropdown-state — wrapper genérico de estados loading/empty del
+  // dropdown predictivo. Desescopado (no requiere __dropdown--predictive
+  // como ancestor) para poder reutilizarse fuera del dropdown desktop
+  // (p.ej. dentro de un modal __body en sheet móvil).
+  &__dropdown-state {
+    @include padding(2.4rem 1.6rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+
+    &[hidden] {
+      display: none;
+    }
+  }
+
+  // &__dropdown-state-copy — texto de estado (loading/empty)
+  &__dropdown-state-copy {
+    @include margin(0);
+    font-size: 1.4rem;
+    line-height: 1.5;
+    color: color-mix(in srgb, var(--color-quaternary) 82%, var(--color-primary));
+  }
+
+  // &__dropdown-spinner — anillo animado de loading
+  &__dropdown-spinner {
+    @include size(2.8rem, 2.8rem);
+    @include border-style(solid);
+    @include border-width(0.3rem);
+    @include border-top-radius(50%);
+    @include border-bottom-radius(50%);
+    border-color: var(--color-lightGrey);
+    border-top-color: var(--color-primary);
+    animation: ft-mol-form__dropdown-spin 0.8s linear infinite;
+  }
+
+  // &__dropdown-item--heading — padding del link dentro de la cabecera
+  // de sección del dropdown predictivo. Desescopado (no requiere
+  // .ft-mol-form--has-predictive como ancestor) para que aplique también
+  // cuando el JS canónico clona el template fuera de ese contexto
+  // (típicamente la sheet móvil que el JS adjunta a <body>). El padding
+  // lateral coincide con el de .ft-list__item (2rem desktop / 1.6rem
+  // mobile) para que el texto del heading quede alineado con los iconos
+  // de las filas. El resto de estilos canónicos del --heading
+  // (typografía, color, separadores) viven dentro de &-predictive porque
+  // solo tienen sentido en ese contexto.
+  &__dropdown-item--heading #{$this}__dropdown-link {
+    @include padding(1.4rem 2.4rem 0.9rem 2.4rem);
+
+    @media (max-width: 768px) {
+      @include padding(1.2rem 1.6rem 0.8rem 1.6rem);
+    }
+  }
+
+}
+
+// Animación del spinner del modificador --has-predictive
+@keyframes ft-mol-form__dropdown-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// AMP
+// ===============================================
+.ft-mol-form-amp {
+  $this: &;
+
+  // :disabled
+  :disabled {
+    color: var(--color-quaternary);
+    background-color: var(--color-lightGrey);
+  }
+
+  // &__label
+  &__label {
+    // &-span
+    &-span {
+      @include margin(null null 0.5rem null);
+      @include font--body-M--small;
+      display: block;
+      font-weight: bold;
+    }
+  }
+
+  // &-dropdown
+  &-dropdown {
+    @include size(100%, 4rem);
+    @include border-style(solid);
+    @include border-width(0.1rem);
+    @include border-color(var(--color-mediumGrey));
+    @include border-top-radius(0.4rem);
+    @include border-bottom-radius(0.4rem);
+    outline: none;
+    appearance: initial;
+    min-height: 4rem;
+
+    // &__label
+    &__label {
+      @include hide-visually;
+    }
+
+    // &__select
+    &__select {
+      @include border-width(0);
+      width: 100%;
+      font-size: 1.6rem;
+      line-height: 2.6rem;
+      color: var(--color-form);
+      background-color: transparent;
+    }
+
+    // &__container
+    &__container {
+      @include position(relative, null null null null);
+      @include padding(0.4rem 1rem);
+      height: 100%;
+
+      // &:before
+      &:before {
+        content: "";
+        pointer-events: none;
+        @include position(absolute, 0 1rem 0 null);
+        @include margin(auto null auto null);
+        @include size(1.4rem, 0.7rem);
+        @include background-setup(
+          // img path
+          map-icons(chevrons, brand--default),
+          // position and size
+          "center center / contain",
+          // repeat
+          no-repeat,
+          // attachment
+          null,
+          // origin
+          null,
+          // clip
+          null,
+          // color
+          transparent
+        );
+        filter: map-filters(greys, brand--600);
+      }
+    }
+  }
+
+  // &--has
+  &--has {
+    // &-label
+    &-label {
+      // .ft-mol-form
+      .ft-mol-form {
+        // &-search
+        &-search {
+          // &--has
+          &--has {
+            // &-search-icon
+            &-search-icon {
+              // &::before
+              &:before {
+                top: 3.3rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // &.user
+  &.user {
+    // &-invalid
+    &-invalid {
+      // .ft-mol-form
+      .ft-mol-form {
+        // &__input, &__select
+        &__input,
+        &__select {
+          @include border-style(solid);
+          @include border-width(0.1rem);
+          @include border-color(var(--color-functional-error));
+        }
+      }
+    }
+  }
+}
+
+// .UI // vendors: jquery-ui
+// ===============================================
+.fourty .ui-selectmenu-button.ui-button {
+  width: 100%;
+}

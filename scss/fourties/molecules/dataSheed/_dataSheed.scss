@@ -1,0 +1,374 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+// FT-MOL-DATASHEED
+// ===============================================
+.ft-mol-dataSheed
+{
+    // general
+    @include margin(null null null auto);
+    @include padding(2rem null null null);
+    @include position(relative, null);
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    // min screen 768
+    @include min-screen(768px)
+    {
+        background-color: transparent;
+    }
+
+    // end general
+
+    //&__header
+    // ---------------------------------------------
+    &__header
+    {
+        // general
+        @include margin(0.5rem auto);
+        @include position(relative, null);
+        @include font--body-L;
+        @include font--weight-800;
+        display: block;
+        width: 100%;
+        text-align: center;
+        text-transform: uppercase;
+
+        // &:before
+        &:before
+        {
+            content: "";
+            @include position(absolute, 5rem null null 0);
+            @include border-style(solid null null null);
+            @include border-width(0.2rem null null null);
+            @include border-color(var(--color-mediumGrey) null null null);
+            width: 100%;
+            // end // &:before
+        }
+
+        // &Has
+        &Has
+        {
+
+            // &Ligue
+            &Ligue
+            {
+                @include padding(0.5rem 2rem);
+                @include border-left-radius(4px);
+                @include border-right-radius(4px);
+                width: auto;
+                background-color: var(--color-senary);
+                color: var(--color-white);
+
+                // &:before
+                &:before
+                {
+                    content: none;
+                    // end // &:before
+                }
+            }
+
+            // end // &Title
+        }
+    }
+
+    //&__content
+    // ---------------------------------------------
+    &__content
+    {
+        // general
+        @include padding(0.2rem);
+        @include margin(2rem auto);
+        @include position(relative, null);
+        @include font--body-L;
+        @include fontBold;
+        @include fontBold;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        width: 100%;
+        // end general
+
+        &:after
+        {
+            content: "";
+            @include position(absolute, 0 0 0 0);
+            @include margin(auto);
+            @include border-left-radius(1rem);
+            @include border-right-radius(1rem);
+            @include border-style(solid null null null);
+            @include border-width(0.5rem null null null);
+            @include border-color(var(--color-black) null null null);
+            width: 1.5rem;
+            height: 0rem;
+            // end // &:after
+        }
+
+        // min screen 768
+        @include min-screen(768px)
+        {
+            @include margin(3rem auto);
+            justify-content: center;
+        }
+
+    }
+
+    //&__image
+    // ---------------------------------------------
+    &__image
+    {
+        // general
+        display: block;
+        width: 4rem;
+        height: auto;
+
+        // min screen 768
+        @include min-screen(768px)
+        {
+            width: 6rem;
+        }
+
+        // end general
+
+    }
+
+    //&__logo
+    // ---------------------------------------------
+    &__logo
+    {
+        // general
+        @include padding(0.2rem);
+        @include margin(0);
+
+        // min screen 768
+        @include min-screen(768px)
+        {
+            @include margin(0 auto);
+        }
+
+        // ft-text
+        .ft-text
+        {
+            text-align: center;
+            @include margin(0);
+        }
+
+        // end // ft-text
+    }
+
+    //&__score
+    // ---------------------------------------------
+    &__score
+    {
+        // general
+        @include font--display-S;
+        @include font--weight-800;
+        @include margin(0);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: auto;
+        color: var(--color-black);
+
+        // min screen 768
+        @include min-screen(768px)
+        {
+            @include padding(2rem);
+        }
+
+        // end // &__score
+    }
+
+    //&__lineups
+    // ---------------------------------------------
+    &__lineups
+    {
+        // general
+        @include fontBold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        background-color: var(--color-senary);
+        color: var(--color-white);
+
+        // end // &__lineups
+
+    }
+
+
+    //&__container
+    // ---------------------------------------------
+    &__container
+    {
+        // general
+        @include padding(2rem);
+        @include position(relative, null);
+        @include font--body-L;
+        @include fontBold;
+        @include border-style(null null solid null);
+        @include border-width(null null 0.2rem null);
+        @include border-color(null null var(--color-senary) null);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        background: var(--color-lightGrey);
+        width: 100%;
+
+
+        // min screen 768
+        @include min-screen(768px)
+        {
+            flex-wrap: nowrap;
+        }
+
+        &--footer
+        {
+            // general
+            @include padding(1rem 2rem 2rem 2rem);
+            @include border-style(null null null null);
+            @include border-color(null null var(--color-lightGrey) null);
+            align-items: center;
+            justify-content: center;
+            background: var(--color-white);
+            width: 100%;
+
+
+            // min screen 768
+            @include min-screen(768px)
+            {
+                flex-wrap: nowrap;
+            }
+
+            .ft-mol-dataSheed__equip
+            {
+                display: block;
+                text-align: center;
+            }
+
+            .ft-mol-dataSheed__equipHeader
+            {
+                @include margin(1.3rem null 0.5rem null);
+                text-transform: uppercase;
+                color: var(--color-senary);
+
+                // min screen 768
+                @include min-screen(768px)
+                {
+                    @include margin(1.5rem null 1rem null);
+                }
+
+            }
+
+            // end //&--footer
+
+        }
+
+        // end //&__container
+    }
+
+    // &__equip
+    // ---------------------------------------------
+    &__equip
+    {
+        // general
+        @include border-left-radius(0.3rem);
+        @include border-right-radius(0.3rem);
+        @include font--body-M;
+        @include margin(null 2rem null null);
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+
+
+        // &:last-of-type
+        &:last-of-type
+        {
+            @include margin(null 0 null null);
+        }
+
+        // end // &:last-of-type
+
+
+        //  &__Lft
+        &Lft
+        {
+            // general
+            justify-content: flex-start;
+            // end //&__Lft
+
+        }
+
+        //  &__Rgt
+        &Rgt
+        {
+            // general
+            @include margin(1rem null null null);
+            justify-content: flex-end;
+            text-align: end;
+
+            // min screen 768
+            @include min-screen(768px)
+            {
+                @include margin(0 null null null);
+            }
+
+            // end //&__Rgt
+
+        }
+
+        //  &Header
+        &Header
+        {
+            // general
+            @include font--weight-800;
+            @include margin(0 null 0.5rem null);
+            display: block;
+
+            // min screen 768
+            @include min-screen(768px)
+            {
+                @include margin(0 null 1rem null);
+            }
+
+            // end //&Header
+
+        }
+
+        //  &Players
+        &Players
+        {
+
+            // td
+            td
+            {
+                float: left;
+
+                // behavior parent: ft-mol-dataSheed__equipRgt
+                @include behavior-parent(ft-mol-dataSheed__equipRgt)
+                {
+                    // generals
+                    float: right;
+                }
+            }
+
+
+            // end //  &Players
+
+        }
+
+        // end //&__equip
+
+    }
+
+    // ---------------------------------------------
+    // end // ft-mol-dataSheed
+    // ---------------------------------------------
+}
+
+// ===============================================

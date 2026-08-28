@@ -1,0 +1,194 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+// ft-mol-comment
+// ===============================================
+.ft-mol-comment
+{
+  $self: &;
+  @include margin(2.5rem 0);
+  @include padding(2rem 0 0 0);
+  @include border-style(solid);
+  @include border-width(0.1rem 0 0 0);
+  @include border-color(var(--color-mediumGrey));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  // &:first-child
+  &:first-child
+  {
+    @include border-width(0);
+  }
+
+  // min-screen(1024px)
+  @include min-screen(1024px)
+  {
+    flex-direction: row;
+  }
+
+  //  &__left
+  // ---------------------------------------------
+  &__left
+  {
+    flex-basis: 100%;
+
+    @include min-screen(1024px)
+    {
+      flex-basis: 40%;
+    }
+
+    // behavior parent: ft-mol-comment--answer
+    @include behavior-parent(ft-mol-comment--answer)
+    {
+      @include margin(0 0 0 4.5rem);
+      flex-basis: 100%;
+
+      @include min-screen(1024px)
+      {
+        @include margin(null null null 0);
+        flex-basis: 28%;
+      }
+    }
+
+    // behavior parent: ft-mol-comment--answer-hasAnswer
+    @include behavior-parent(ft-mol-comment--answer-hasAnswer)
+    {
+      @include margin(0 0 0 4.5rem);
+      flex-basis: 100%;
+
+      @include min-screen(1024px)
+      {
+        @include margin(0);
+        flex-basis: 25%;
+      }
+    }
+  }
+
+  //  &__center
+  // ---------------------------------------------
+  &__center
+  {
+    flex-basis: 100%;
+    display: flex;
+
+    @include min-screen(1024px)
+    {
+      flex-basis: 10%;
+    }
+  }
+
+  //  &__right
+  // ---------------------------------------------
+  &__right
+  {
+    flex-basis: 100%;
+
+    @include min-screen(1024px)
+    {
+      flex-basis: 50%;
+    }
+
+    // &itle
+    &Title
+    {
+      @include margin(0 0 1rem 0);
+      @include font--body-M;
+      @include fontBold;
+    }
+
+    // &Text
+    &Text
+    {
+      @include margin(0 0 1rem 0);
+      @include font--body-M;
+      @include fontStack;
+    }
+  }
+
+  // &--answer
+  // ---------------------------------------------
+  &--answer
+  {
+    @include border-style(none none none solid);
+    @include border-width(0 0 0.1rem 0);
+    justify-content: flex-end;
+
+    // .ft
+    .ft
+    {
+
+      // &-link
+      &-link
+      {
+        color: var(--color-black);
+
+        // &:hover, &:focus-within
+        &:hover,
+        &:focus-within
+        {
+          text-decoration: none;
+          color: var(--color-primary);
+        }
+      }
+
+      // &-mol
+      &-mol
+      {
+
+        // &-writer
+        &-writer
+        {
+          // generals
+          @include position(relative, null null null null);
+
+          &:before
+          {
+            // generals
+            content: "";
+            @include position(absolute, 1.5rem null null -3.5rem);
+            @include margin(auto);
+            @include size(2rem, 2rem);
+            transition: color 0.25s ease-in, opacity 0.25s ease-in;
+            filter: map-filters(blacks, brand--all);
+            @include background-setup(map-icons(system, brand--answer),
+              // img path
+              "0 0 / 100%",
+              // position and size
+              no-repeat,
+              // repeat
+              null,
+              // attachment
+              null,
+              // origin
+              null,
+              // clip
+              null,
+              // color
+            );
+          }
+
+          // &__title
+          &__title
+          {
+            @include margin(0 null 0 1rem);
+          }
+        }
+      }
+    }
+
+    // &-has
+    &-has
+    {
+
+      // &Answer
+      &Answer
+      {
+        @include border-width(0);
+      }
+    }
+  }
+}

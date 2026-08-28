@@ -1,0 +1,55 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+// ft-mol-figcaption
+// ===============================================
+.ft-mol-figcaption
+{
+  $self: &;
+  @include margin(.5rem null);
+  display: flex;
+  justify-content: space-around;
+
+  // .ft
+  // ---------------------------------------------
+  .ft
+  {
+
+    // &-mol
+    &-mol
+    {
+
+      // &-number-highlighted
+      &-number-highlighted
+      {
+        @include margin(0 null null null);
+        flex-basis: 17rem;
+        justify-content: flex-end;
+        text-align: right;
+      }
+    }
+  }
+
+  // &__txt
+  // ---------------------------------------------
+  &__txt
+  {
+    @include margin(0 null 0 null);
+    @include padding(0);
+    // @include font--body-M;
+    flex: auto;
+    color: var(--color-quaternary);
+    font-size: clamp(10px, 10px + (14 - 10) * ((100vw - 320px) / (1900 - 320)), 12px);
+    line-height: calc(1rem + 0.390625vw);
+    letter-spacing: 0px;
+    font-weight: 500;
+
+    // behavior: bg(Color-black)
+    @include behavior-ft-helper-bg(Color-black)
+    {
+      color: var(--color-white);
+    }
+  }
+}

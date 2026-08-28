@@ -1,0 +1,848 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+// .ft-mol-headband
+// ===============================================
+.ft-mol-headband {
+  $self: &;
+  @include position(relative, null null null null);
+  @include margin(3rem auto 2.7rem null);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  // @include min-screen(768px)
+  @include min-screen(768px) {
+    @include margin(null auto 3rem null);
+
+    // behavior: bg(Color-black)
+    @include behavior-ft-helper-bg(Color-black) {
+      @include margin(3rem auto 1rem null);
+    }
+  }
+
+  // &__title
+  &__title {
+    @include margin(null);
+
+    // behavior parent: ft-mol-headband--branded
+    @include behavior-parent(ft-mol-headband--branded) {
+      color: var(--color-black);
+      text-transform: uppercase;
+      @include margin(null auto null null);
+    }
+
+    // behavior parent: ft-mol-headband--center
+    @include behavior-parent(ft-mol-headband--center) {
+      display: none;
+    }
+
+    // behavior parent: ft-mol-headband--news
+    @include behavior-parent(ft-mol-headband--news) {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+
+      @include font--heading-XXS;
+      @include fontBold;
+      color: var(--color-black);
+
+      @include min-screen(768px) {
+        display: flex;
+        justify-content: flex-start;
+        width: auto;
+      }
+    }
+
+    @if $brand ==sport {
+      // behavior parent: ft-mol-headband--bet
+      @include behavior-parent(ft-mol-headband--bet) {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        @include fontBold;
+
+        @include min-screen(768px) {
+          display: flex;
+          justify-content: flex-start;
+          width: auto;
+        }
+      }
+
+      // behavior parent: ft-mol-headband--sportium
+      @include behavior-parent(ft-mol-headband--sportium) {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        @include fontBold;
+
+        @include min-screen(768px) {
+          display: flex;
+          justify-content: flex-start;
+          width: auto;
+        }
+      }
+    }
+
+    // behavior: bg(Color-black)
+    @include behavior-ft-helper-bg(Color-black) {
+      color: var(--color-white);
+    }
+
+    // min screen 768
+    @include min-screen(768px) {
+      display: flex;
+    }
+
+    // .ft-link
+    .ft-link {
+      color: var(--color-black);
+    }
+
+    // end // &__title
+  }
+
+  // &__logo
+  &__logo {
+    display: flex;
+    align-items: center;
+    @include margin(null);
+
+    // behavior parent: ft-mol-headband--branded
+    @include behavior-parent(ft-mol-headband--branded) {
+      color: var(--color-quaternary);
+      @include Branded;
+      @include font--body-XS;
+      @include margin(null null null auto);
+      justify-content: flex-end;
+    }
+    // behavior parent: ft-mol-headband--branded
+    @include behavior-parent(ft-mol-headband--branded__noMark) {
+      @include fontStack;
+      font-weight: 500;
+    }
+
+    // behavior parent: ft-mol-headband--brandedTrust
+    @include behavior-parent(ft-mol-headband--brandedTrust) {
+      color: var(--color-primary);
+    }
+
+    // behavior parent: ft-mol-modNews
+    @include behavior-parent(ft-mol-modNews) {
+      justify-content: flex-start;
+    }
+  }
+
+  // &__img
+  &__img {
+    // general
+    @include margin(null null null 1rem);
+
+    // behavior: bg(Color-black)
+    @include behavior-ft-helper-bg(Color-black) {
+      @include margin(null null null 0);
+    }
+
+    // behavior parent: ft-mol-headband--branded
+    @include behavior-parent(ft-mol-headband--branded) {
+      max-height: 30px;
+    }
+
+    // behavior parent: ft-mol-headband--modNews
+    @include behavior-parent(ft-mol-modNews) {
+      height: 25px;
+      max-width: 65px;
+      object-fit: cover;
+    }
+
+    // behavior parent: ft-mol-headband--reverse
+    @include behavior-parent(ft-mol-headband--reverse) {
+      @include margin(null null null 0);
+    }
+
+    // behavior parent: ft-mol-headband--news
+    @include behavior-parent(ft-mol-headband--news) {
+      @include position(absolute, null 0 -35% 0);
+      @include margin(auto);
+      @include padding(1rem);
+      @include border-style(solid);
+      @include border-width(0.1rem);
+      @include border-color(var(--color-white));
+      width: fit-content;
+      max-width: 80px;
+
+      // min-screen(768px)
+      @include min-screen(768px) {
+        @include position(absolute, null auto -2rem 0);
+        max-width: 90px;
+      }
+    }
+
+    @if $brand ==sport {
+      // behavior parent: ft-mol-headband--bet
+      @include behavior-parent(ft-mol-headband--bet) {
+        @include position(absolute, null 0 -35% 0);
+        @include margin(auto);
+        @include padding(1rem);
+        @include border-style(solid);
+        @include border-width(0.3rem);
+        @include border-color(var(--color-white));
+
+        // min-screen(768px)
+        @include min-screen(768px) {
+          @include position(absolute, null 2rem -1rem auto);
+        }
+      }
+
+      // behavior parent: ft-mol-headband--sportium
+      @include behavior-parent(ft-mol-headband--sportium) {
+        @include position(absolute, null 0 -35% 0);
+        @include margin(auto);
+        @include padding(1rem);
+        @include border-style(solid);
+        @include border-width(0.3rem);
+        @include border-color(var(--color-black));
+
+        // min-screen(768px)
+        @include min-screen(768px) {
+          @include position(absolute, null 2rem -1rem auto);
+        }
+      }
+    }
+  }
+
+  // &__label
+  &__label {
+    @include padding(null 1rem 0.2rem 1rem);
+    @include font--body-S;
+    z-index: 1;
+    font-style: italic;
+    color: var(--color-white);
+    border-radius: 0.4rem;
+    background-color: var(--color-quaternary);
+  }
+
+  @if $brand ==sport {
+    // &--bet, &--sportium
+    &--bet,
+    &--sportium {
+      @include padding(1rem 1rem 3rem 1rem);
+      @include border-style(null null solid null);
+      @include border-width(null null 0.3rem null);
+      color: var(--color-white);
+
+      @include min-screen(768px) {
+        @include padding(1rem);
+      }
+    }
+  }
+
+  // &--center
+  &--center {
+    @include padding(1rem 1rem 3rem 1rem);
+    @include margin(2rem auto 1rem null);
+    @include border-style(null null solid null);
+    @include border-width(null null 0.1rem null);
+    @include border-color(var(--color-mediumGrey));
+    justify-content: center;
+
+    // behavior: bg(Color-black)
+    @include behavior-ft-helper-bg(Color-black) {
+      color: var(--color-darkGrey);
+    }
+
+    @include min-screen(768px) {
+      @include padding(1rem 1rem 2rem 1rem);
+    }
+  }
+
+  // &--news
+  &--news {
+    @include padding(1rem 1rem 3rem 1rem);
+    @include margin(2rem auto 3rem null);
+    @include border-style(null null solid null);
+    @include border-width(null null 0.1rem null);
+    color: var(--color-mediumGrey);
+    flex-direction: row-reverse;
+
+    @include min-screen(768px) {
+      @include padding(1rem);
+    }
+  }
+
+  // &--heading
+  &--heading {
+    @include padding(1rem 1.5rem);
+    @include fontBold;
+    background: var(--color-black);
+    color: var(--color-white);
+
+    @include min-screen(768px) {
+      @include padding(1rem 1.5rem);
+      @include margin(null 2rem null null);
+      width: auto;
+    }
+
+    // .ft-date
+    .ft-date {
+      @include margin(0);
+    }
+
+    // .ft-date__text
+    .ft-date__text {
+      @include font--body-M;
+      @include fontBold;
+      color: var(--color-white);
+    }
+  }
+
+  // &--reverse
+  &--reverse {
+    flex-direction: row-reverse;
+  }
+
+  // &--branded
+  &--branded {
+    @include Branded;
+    font-weight: 600;
+    border-bottom: 1px solid var(--color-mediumGrey);
+    @include padding(null null 1rem null);
+
+    @include behavior-parent(ft-mol-modNews) {
+      border-bottom: 0px none;
+    }
+    &:not(:has(.ft-mol-headband__title)) .ft-mol-headband__logo {
+      width: inherit;
+    }
+    // @include min-screen(768px)
+    @include min-screen(768px) {
+      @include margin(null auto 2rem null);
+    }
+
+    // &-noMark
+    &-noMark {
+      @include fontStack;
+      font-weight: 600;
+    }
+  }
+
+  // &--section
+  &--section {
+    @include border-style(null null solid null);
+    @include border-width(0.1rem);
+    @include border-color(var(--color-mediumGrey));
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    overflow: hidden;
+    // behavior parent: videos
+    @include behavior-parent(videos) {
+      @include margin(1rem null null null);
+      @include min-screen(768px) {
+        @include margin(0 null null null);
+      }
+    }
+
+    // behavior: bg(Color-black)
+    @include behavior-ft-helper-bg(Color-black) {
+      @include border-color(var(--color-darkGrey));
+    }
+
+    // @if $brand ==revistas
+    @if $brand ==revistas {
+      @include border-style(null null none null);
+     @include margin(null null 1rem null);
+      @include border-width(0);
+      background-color: transparent;
+
+      @include min-screen(1024px) {
+        @include padding(null 1.5rem null null);
+        @include margin(null null .5rem null);
+      }
+    }
+
+    // @if $brand ==sport
+    @if $brand ==sport {
+      @include border-width(0);
+      align-items: center;
+      background-color: var(--color-lightGrey);
+
+      @include min-screen(1024px) {
+        @include padding(null 1.5rem null null);
+      }
+
+      // behavior parent: videos
+      @include behavior-parent(videos) {
+        background-color: var(--color-white);
+      }
+    }
+
+    // behavior: bg(Color-black)
+    @include behavior-ft-helper-bg(Color-black) {
+      @if $brand ==sport {
+        background-color: var(--color-black);
+      }
+    }
+
+    /*   // &:after
+        &:after {
+            @if $brand ==sport {
+                @include min-screen(1024px) {
+                    content: "";
+                    @include position(absolute, 0 0 0 null);
+                    @include size(0.8rem, 100%);
+                    background-color: var(--color-black);
+                }
+            }
+        } */
+
+    // .ft
+    .ft {
+      // &-link
+      &-link {
+        @include margin(null 0 null null);
+        @include padding(null null 1rem null);
+        min-width: 8rem;
+
+        // @if $brand ==sport
+        @if $brand ==sport {
+          @include padding(null null 0 null);
+           @include margin(null 1rem null null);
+        }
+
+        // @if $brand ==revistas
+        @if $brand ==revistas {
+          @include padding(null null 1.3rem null);
+        }
+
+
+        @include min-screen(1024px) {
+          @include padding(null null 0 null);
+          align-self: center;
+
+          // @if $brand ==sport
+          @if $brand ==sport {
+            @include margin(null 2rem null null);
+          }
+          
+        }
+      }
+
+      // &-mol
+      &-mol {
+        // &-dropdown
+        &-dropdown {
+          @include min-screen(1024px) {
+            @include margin(null null 1rem null);
+            overflow: hidden;
+
+            // @if $brand ==sport
+            @if $brand ==sport {
+              @include margin(null 2rem 0 null);
+            }
+
+            // @if $brand ==revistas
+            @if $brand ==revistas {
+              @include behavior-parent(viajar){
+                @include margin(null null 1.8rem null);
+              }
+              @include behavior-parent(woman,stilo){
+                @include margin(null null 1.6rem null);
+              }
+                @include behavior-parent(cuore){
+                @include margin(null null 1.3rem null);
+              }
+              
+            }
+          } 
+
+          // &__trigger
+          &__trigger {
+            
+             // @if $brand ==revistas
+            @if $brand ==revistas {
+              @include margin(null null .7rem null);
+            }
+            @include min-screen(1024px) {
+              @include hide-visually;
+            }
+          }
+
+          // &__list
+          &__link {
+            color: var(--color-quaternary);
+
+            @include min-screen(1024px) {
+              @include padding(0);
+            }
+
+            // &:hover, &:focus-visible
+            &:hover,
+            &:focus-visible {
+              color: var(--color-white);
+              background-color: var(--color-primary);
+              @include min-screen(1024px) {
+                color: var(--color-black);
+                text-decoration: underline;
+                background-color: transparent;
+              }
+            }
+          }
+
+          // &__item
+          &__item {
+            // &:not(:last-child)
+            &:not(:last-child) {
+              @include min-screen(1024px) {
+                @include margin(null 2rem null null);
+                @include border-width(0);
+              }
+
+              @include min-screen(1440px) {
+                @include margin(null 2rem null null);
+              }
+            }
+
+            @include min-screen(1024px) {
+              float: left;
+              white-space: nowrap;
+
+              // @if $brand ==sport
+              @if $brand ==sport {
+                text-transform: uppercase;
+              }
+            }
+          }
+
+          // &__list
+          &__list {
+            @include min-screen(1024px) {
+              @include hide-visually("unhide");
+              @include position(relative, null null null null);
+              @include border-width(0);
+              display: flex;
+
+              @include min-screen(1024px) {
+                overflow: hidden;
+                display: block;
+                height: 2rem;
+                white-space: normal;
+              }
+
+              // &:Is
+              &Is {
+                // &-active
+                &-active {
+                  // &:before
+                  &:before {
+                    @include min-screen(1024px) {
+                      @include hide-visually;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // #{ $self }
+    #{ $self } {
+      // &__title
+      &__title {
+        @include position(relative, null null null null);
+        @include margin(0 1rem 0 null);
+        @include padding(1rem 0 1rem null);
+        flex: initial;
+        font-size: 2.4rem;
+        line-height: 2.6rem;
+
+        @include behavior-parent-nested(ft-mol-headband--section__img) {
+          @include font--heading-XS;
+
+          @include min-screen(768px) {
+            display: inline-block;
+          }
+        }
+
+        // @if $brand ==regionales
+        @if $brand ==regionales {
+         // behavior-parent(asturiasexterior)
+          @include behavior-parent(asturiasexterior) {
+            @include padding(null null null 3.2rem);
+            background: url("#{$images-path}/bgs/ft-mol-headband-title--asturiasexterior.svg")
+            left 1.2rem / 2.5rem auto
+            no-repeat;
+          }
+        }
+
+        // @if $brand ==revistas
+        @if $brand ==revistas {
+            @include font--heading-L;
+            font-family: var(--font-primary);
+            @include font--weight-500;
+        }
+
+        // @if $brand ==sport
+        @if $brand ==sport {
+          @include padding(null 1rem null 1.5rem);
+          font-size: 2rem;
+          line-height: 2.2rem;
+          @include fontMediaSans;
+          text-transform: uppercase;
+          color: var(--color-primary);
+
+          @include min-screen(1024px) {
+            font-size: 3rem;
+            line-height: 3.2rem;
+          }
+
+          // .ft-link
+          .ft-link {
+            color: var(--color-primary);
+          }
+        }
+
+        // &::after
+        &:after {
+          content: "";
+          @include position(absolute, null null 0 0);
+          @include size(100%, 0.2rem);
+          background-color: var(--color-black);
+
+          // behavior: bg(Color-black)
+          @include behavior-ft-helper-bg(Color-black) {
+            background-color: var(--color-white);
+          }
+
+        // @if $brand ==regionales
+        @if $brand ==regionales {
+         // behavior-parent(asturiasexterior)
+          @include behavior-parent(asturiasexterior) {
+            background-color: var(--color-asturiasexterior-green);
+          }
+        }
+
+          // @if $brand ==sport
+          @if $brand ==sport {
+            @include hide-visually;
+          }
+
+          // @if $brand ==(revistas)
+          @if $brand ==revistas {
+            content: none;
+          }
+        }
+      }
+
+      // &__logo
+      &__logo {
+        @include margin(null 1rem null null);
+        color: var(--color-quaternary);
+
+        @include min-screen(1024px) {
+          @include margin(null null 0.5rem null);
+
+          // @if $brand ==sport
+          @if $brand ==sport {
+            @include margin(null 2rem 0 null);
+            color: var(--color-black);
+          }
+            // @if $brand ==revistas
+          @if $brand ==revistas {
+            @include margin(null null 1rem null);
+          }
+        }
+      }
+
+      // &__section-img
+      &__section-img {
+        @include margin(null null 1rem null);
+        max-width: 14rem;
+
+        // @if $brand ==sport
+        @if $brand ==sport {
+          @include margin(null null 0 null);
+          @include padding(1rem);
+        }
+
+        @include min-screen(1024px) {
+          max-width: 20rem;
+        }
+
+        @include behavior-parent-nested(ft-mol-headband--section__img) {
+          display: block;
+          @include margin(null null 0.3rem null);
+          @include padding(0);
+          max-width: unset;
+          height: 2.8rem;
+
+          @include min-screen(768px) {
+            display: inline-block;
+            @include margin(null 8px 0 null);
+            height: 3.2rem;
+            vertical-align: text-bottom;
+          }
+        }
+      }
+    }
+  }
+
+  // &--top-lined
+  &--top-lined {
+    @include margin(2rem null null null);
+    @include padding(1rem null null null);
+
+    &:before {
+      content: "";
+      @include position(absolute, 0 0 null 0);
+      @include margin(null auto null auto);
+      @include size(100%, 0.2rem);
+      z-index: 1;
+      background-color: var(--color-black);
+    }
+  }
+
+  // &--xxs
+  &--xxs {
+    // [class*="ft-mol-headband__title"]
+    [class*="ft-mol-headband__title"] {
+      @include font--body-L;
+      font-weight: bold;
+    }
+
+    //  &[class*="--branded"]:not([class*="--branded-noMark"])
+    &[class*="--branded"]:not([class*="--branded-noMark"]) {
+      // [class*="ft-mol-headband__title"]
+      [class*="ft-mol-headband__title"] {
+        @include Branded;
+        font-weight: 600;
+      }
+    }
+
+    // &[class*="--branded-noMark"]
+    &[class*="--branded-noMark"] {
+      // [class*="ft-mol-headband__title"]
+      [class*="ft-mol-headband__title"] {
+        @include fontStack;
+        font-weight: 600;
+      }
+    }
+  }
+
+  // &--xs
+  &--xs {
+    // [class*="ft-mol-headband__title"]
+    [class*="ft-mol-headband__title"] {
+      @include font--body-XXL--small;
+      font-weight: bold;
+    }
+
+    //  &[class*="--branded"]:not([class*="--branded-noMark"])
+    &[class*="--branded"]:not([class*="--branded-noMark"]) {
+      // [class*="ft-mol-headband__title"]
+      [class*="ft-mol-headband__title"] {
+        @include Branded;
+        font-weight: 600;
+      }
+    }
+
+    // &[class*="--branded-noMark"]
+    &[class*="--branded-noMark"] {
+      // [class*="ft-mol-headband__title"]
+      [class*="ft-mol-headband__title"] {
+        @include fontStack;
+        font-weight: 600;
+      }
+    }
+  }
+
+  // &--has
+  &--has {
+    // &-logo
+    &-logo {
+      @include margin(null null 6rem null);
+
+      //min-screem (1024px)
+      @include min-screen(1024px) {
+        @include margin(null null 4rem null);
+      }
+
+      // #{ $self }
+      #{ $self } {
+        // &__logo
+        &__logo {
+          @include font--body-M--small;
+          @include position(absolute, null 0 -4rem null);
+
+          //min-screem (1024px)
+          @include min-screen(1024px) {
+            @include position(relative, null initial initial null);
+          }
+        }
+      }
+    }
+
+    // &-trademark-links
+    &-trademark-links {
+      @include border-style(null null none null);
+      flex-wrap: wrap;
+
+      @include min-screen(1280px) {
+        @include border-style(null null solid null);
+        flex-wrap: nowrap;
+      }
+
+      // #{ $self }
+      #{ $self } {
+        // &__img
+        &__img {
+          @include margin(null null null 0);
+        }
+
+        // &__logo
+        &__logo {
+          @include margin(null 0 null null);
+          @include padding(0.4rem null null null);
+          @include border-style(solid null null null);
+          @include border-width(0.1rem);
+          @include border-color(var(--color-mediumGrey));
+          @include font--body-M--small;
+          flex-wrap: wrap;
+          justify-content: flex-end;
+          gap: 1rem;
+          width: 100%;
+
+          @include min-screen(1280px) {
+            @include padding(0 null null null);
+            @include border-style(none null null null);
+            width: auto;
+          }
+
+          // a
+          a {
+            @include margin(0.4rem null null null);
+
+            @include min-screen(1280px) {
+              @include margin(0 null null null);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .ft-link--navNext {
+    color: var(--color-black);
+
+    // behavior: bg(Color-black)
+    @include behavior-ft-helper-bg(Color-black) {
+      color: var(--color-white);
+      @include margin(null 0 null null);
+    }
+  }
+}
