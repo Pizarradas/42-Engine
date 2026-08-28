@@ -1,0 +1,222 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// .ft-org-services
+// ===============================================
+.ft-org-services {
+  // &-ft
+  .ft-list {
+    // &-block
+    &-block {
+      @include margin(0 null null null);
+      align-items: normal;
+      gap: 0;
+      min-width: max-content;
+      @include min-screen(768px) {
+        justify-content: center;
+      }
+      @include min-screen(1024px) {
+        @include padding(null 0 null 0);
+        justify-content: space-between;
+      }
+
+      // &__icon
+      &__icon {
+        @include margin(null 0 null null);
+        @include size(3rem, 3rem);
+        @include min-screen(768px) {
+          @include size(5.5rem, 5.5rem);
+        }
+        @include min-screen(1024px) {
+          display: none;
+        }
+      }
+
+      // &__icon
+      &__decorative {
+        display: none;
+        @include min-screen(1024px) {
+          @include margin(null 0 null null);
+          @include size(7rem, 7rem);
+          display: block;
+        }
+      }
+
+      // &__text
+      &__text {
+        @include font--body-XS--small;
+        font-weight: bold;
+        white-space: collapse;
+        @include min-screen(768px) {
+          @include font--body-L--small;
+          font-weight: bold;
+        }
+        @include min-screen(1024px) {
+          @include font--body-XXL--small;
+          font-weight: bold;
+        }
+  
+        // Fondos Pastiempos oscuros
+        @include behavior-parent(
+          ft-helper-bgPink-pangramax,
+          ft-helper-bgRed-wordle,
+          ft-helper-bgBlue-cuadronumerico,
+          ft-helper-bgPink-saltaminas,
+          ft-helper-bgGreen-cuatroencampo
+        ) {
+          color: var(--color-white);
+        }
+      }
+
+      // &__item
+      &__item {
+        @include padding(2rem 2rem 1.5rem 2rem);
+        @include margin(null 0 null null);
+        text-align: center;
+        width: 8rem;
+        min-height: fit-content;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: 0.5rem;
+        white-space: preserve-breaks;
+        @include min-screen(768px) {
+          width: 12rem;
+        }
+        @include min-screen(1024px) {
+          @include padding(null null 2rem null);
+          width: 16rem;
+        }
+      }
+    }
+  }
+
+  .ft-link.ft-link--navNext {
+    @include margin(1rem 1.5rem 1.5rem null);
+    @include font--body-M--small;
+    font-weight: bold;
+    white-space: collapse;
+    color: var(--color-black);
+
+    // &:before
+    &:before {        
+      filter: brightness(0) invert(0) saturate(0%);
+    }
+
+    @include min-screen(768px) {
+      @include margin(null null 3rem null);
+      @include font--body-XL--small;
+      font-weight: bold;
+    }
+    @include min-screen(1024px) {
+      @include font--heading-XXS;
+      font-weight: bold;
+    }
+  
+    // Fondos Pastiempos oscuros
+    @include behavior-parent(
+      ft-helper-bgPink-pangramax,
+      ft-helper-bgRed-wordle,
+      ft-helper-bgBlue-cuadronumerico,
+      ft-helper-bgPink-saltaminas,
+      ft-helper-bgGreen-cuatroencampo
+    ) {
+      color: var(--color-white);
+
+      // &:before
+      &:before {        
+        filter: brightness(0) invert(1) saturate(0%);
+      }
+    }
+  }
+
+  // 
+  .scroll-content {
+    text-align: center;
+  }
+
+  // scrollbar
+  &[data-scrollbar] .ft-list-block {
+    overflow-x: initial;
+    overflow-y: initial;
+    width: 100%;
+  }
+
+  // &--cta
+  &--cta {
+    @include position(relative, null null null null);
+    @include padding(0 2.5rem 4rem .8rem);
+    overflow-x: hidden;
+    justify-content: flex-end;
+    display: flex;
+    @include min-screen(1024px) {
+      @include padding(1rem 2.5rem 2rem 0.8rem);
+      display: flex;
+      justify-content: center;
+    }
+
+    // &::after
+    &::after {
+      content: "";
+      @include position(absolute, .8rem .8rem 0 null);
+      @include margin(.3rem null auto null);
+      pointer-events: none;
+      width: 1.7rem;
+      height: 1.7rem;
+      transform: rotate(1800deg);
+      transform-origin: 50% 50%;
+      transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+      background: center / contain no-repeat
+        url("#{$images-path}/icons/nav-chevron.svg");
+        filter: brightness(0) invert(1);
+      // min-screen(1024px)
+      @include min-screen(1024px) {
+         content: none;
+      }
+    }
+    // .ft-link
+    .ft-link {
+      @include position(absolute, 0 null 0 null);
+      @include margin(auto null auto null);
+      @include padding(null 1rem null null);
+      @include font--body-L--small;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+      font-weight: bold;
+      color: var(--color-white);
+      text-align: right;
+      //  @include min-screen(1024px)
+      @include min-screen(1024px) {
+        @include position(relative, auto null auto null);
+        @include padding(1rem 1.5rem);
+        border-radius:3rem;
+        display: inline-flex;
+        width: auto;
+        @include border-style(solid);
+        @include border-width(.2rem);
+        @include border-color(var(--color-white));
+          // &:hover, &:focus-visible
+          &:hover,
+          &:focus-visible {
+            @include min-screen(1024px) {
+               @include border-color(var(--color-black));
+               background-color: var(--color-black);
+               color: var(--color-white);
+            }
+          }
+      }
+
+      // &:hover, &:focus-visible
+      &:hover,
+      &:focus-visible {
+        @include min-screen(1024px) {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

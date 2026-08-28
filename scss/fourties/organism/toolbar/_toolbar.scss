@@ -1,0 +1,82 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// .ft-org-toolbar
+// ===============================================
+.ft-org-toolbar {
+  @include position(sticky, 0 null null null);
+  @include margin(0 null 0 null);
+  @include padding(.4rem null .4rem null);
+  z-index: 200;
+  overflow-x: visible;
+    background-color: var(--color-lightGrey);
+
+  @include min-screen(768px) {
+    @include position(relative, null null null null);
+    @include margin(0 null 0 null);
+    @include padding(0.5rem null 0.5rem null);
+    overflow-x: clip;
+
+  }
+
+  @include behavior-parent(seleccion) {
+    background-color: var(--color-white);
+  }
+
+  // .ft-mol-toolbar
+  .ft-mol-toolbar {
+    @include margin(null auto null auto);
+    max-width: 1002px;
+    @include min-screen(1200px) {
+      max-width: 1200px;
+    }
+
+    // &__item
+    &__item {
+      // .ft-mol-dropdown
+      .ft-mol-dropdown {
+        // &--has-btn-nav
+        &--has-btn-nav {
+          // .ft-mol-dropdown__list
+          .ft-mol-dropdown__list {
+            // &Is-active
+            &Is-active {
+              @include min-screen(768px) {
+                top: 5rem;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // &__right
+    &__right {
+      @include position(relative, null null null null);
+      z-index: 0;
+
+      // &:before
+      &:before {
+        @include min-screen(768px) {
+          content: "";
+          @include position(absolute, 0 null 0 100%);
+          z-index: -1;
+          pointer-events: none;
+          width: calc(50vw - 1002px / 2);
+          background: var(--color-white);
+        }
+        @include min-screen(1200px) {
+          width: calc(50vw - 1200px / 2);
+        }
+      }
+    }
+  }
+
+  // &:has(.ft-mol-toolbar--porra)
+  &:has(.ft-mol-toolbar--porra) {
+    background-color: var(--color-white);
+  }
+}

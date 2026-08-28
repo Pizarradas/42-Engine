@@ -1,0 +1,40 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// .ft-org-object
+// ===============================================
+.ft-org-object
+{
+  $self: &;
+
+  .ft-mol-writer--side
+  {
+    justify-content: flex-start;
+    flex-direction: row;
+
+    .ft-mol-writer__title
+    {
+      margin: 0
+    }
+
+    .ft-date
+    {
+      text-align: left;
+    }
+  }
+
+
+
+  .ft-mol-subtitle--listSimple:last-of-type
+  {
+   @include padding(null null 0 null)
+  }
+
+  .ft-mol-gallery__contentsPretitle{
+    @include margin(0 null 0 null);
+    color:var(--color-primary);
+  }
+}

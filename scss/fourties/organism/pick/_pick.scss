@@ -1,0 +1,32 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// .ft-org-pick
+// ===============================================
+.ft-org-pick {
+
+  // .ft-mol-pick
+  .ft-mol-pick {
+
+    // .ft-mol-bar
+    .ft-mol-bar {
+      @include margin(0);
+      width: 100%;
+  
+      // &__background
+      &__background {
+        height: .5rem;
+        border: 1px solid var(--color-mediumGrey);
+        border-radius: .5rem;        
+
+        // &-inProgress
+        &-inProgress {
+          height: 100%;
+        }
+      }
+    }
+  }
+}

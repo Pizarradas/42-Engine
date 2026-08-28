@@ -1,0 +1,729 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// DARK MODE
+// ===============================================
+// dark-mode: automatic
+/* @media (prefers-color-scheme: dark) {
+  // skin
+  [data-showroom-skin*="secciones interiores"] h1.ft-helper-fontColor-white,
+  [data-showroom-skin*="secciones interiores"] p.ft-helper-fontColor-white {
+    color: var(--color-black-dm);
+  }
+  
+  // organisms
+  .ft-org {
+    // &-overview-panel
+    &-overview-panel {
+      border-color: #111111;
+
+      // [class*="ft-mol-headband"]
+      [class*="ft-mol-headband"] {
+        background-color: #111111;
+      }
+
+      // &-select
+      &-select {
+        // [class*="ft-helper-fontColor-black"]
+        [class*="ft-helper-fontColor-black"] {
+          color: #111111;
+        }
+
+        // &__amount
+        &__amount {
+          color: #111111;
+        }
+      }
+
+      //  [data-showroom-switch="switch"] [class*="ft-switch__checkbox"]:checked + [class*="__label"] [class*="__txt"]
+      [data-showroom-switch="switch"] [class*="ft-switch__checkbox"]:checked + [class*="__label"] [class*="__txt"] {
+        color: black;
+      }
+    }
+
+    // &-header
+    &-header {
+      // &-showroom
+      &-showroom {
+        // [class*="ft-mol-accordion__summary"], [class*="ft-mol-accordion__text"] [class*="ft-list__link"], [class*="ft-list__link"]
+        [class*="ft-mol-accordion__summary"],
+        [class*="ft-mol-accordion__text"] [class*="ft-list__link"],
+        [class*="ft-list__link"] {
+          // &:hover, &:focus-visible
+          &:hover,
+          &:focus-visible {
+            color: var(--color-black-dm);
+          }
+        }
+
+        // [class*="ft-list"] [class*="magic-body"], [class*="ft-mol-accordion__details"][open] [class*="__summary"]
+        [class*="ft-list"] [class*="magic-body"],
+        [class*="ft-mol-accordion__details"][open] [class*="__summary"] {
+          color: var(--color-black-dm);
+        }
+      }
+    }
+  }
+} */
+
+// dark-mode: manual
+[data-theme="dark"] {
+  // skin
+  [data-showroom-skin*="secciones interiores"] h1.ft-helper-fontColor-white,
+  [data-showroom-skin*="secciones interiores"] p.ft-helper-fontColor-white {
+    color: var(--color-black-dm);
+  }
+
+  // organisms
+  .ft-org {
+    // &-overview-panel
+    &-overview-panel {
+      border-color: #111111;
+
+      // [class*="ft-mol-headband"]
+      [class*="ft-mol-headband"] {
+        background-color: #111111;
+
+        // [class*="ft-mol-headband__label"]
+        [class*="ft-mol-headband__label"] {
+          background-color: #cdc9c3;
+        }
+      }
+
+      // &-select
+      &-select {
+        // [class*="ft-helper-fontColor-black"]
+        [class*="ft-helper-fontColor-black"] {
+          color: #111111;
+        }
+
+        // &__amount
+        &__amount {
+          color: #111111;
+        }
+      }
+
+      //  [data-showroom-switch="switch"] [class*="ft-switch__checkbox"]:checked + [class*="__label"] [class*="__txt"]
+      [data-showroom-switch="switch"] [class*="ft-switch__checkbox"]:checked + [class*="__label"] [class*="__txt"] {
+        color: black;
+      }
+    }
+
+    // &-header
+    &-header {
+      // &-showroom
+      &-showroom {
+        // [class*="ft-mol-accordion__summary"], [class*="ft-mol-accordion__text"] [class*="ft-list__link"], [class*="ft-list__link"]
+        [class*="ft-mol-accordion__summary"],
+        [class*="ft-mol-accordion__text"] [class*="ft-list__link"],
+        [class*="ft-list__link"] {
+          // &:hover, &:focus-visible
+          &:hover,
+          &:focus-visible {
+            color: var(--color-black-dm);
+          }
+        }
+
+        // [class*="ft-list"] [class*="magic-body"], [class*="ft-mol-accordion__details"][open] [class*="__summary"]
+        [class*="ft-list"] [class*="magic-body"],
+        [class*="ft-mol-accordion__details"][open] [class*="__summary"] {
+          color: var(--color-black-dm);
+        }
+      }
+    }
+  }
+}
+
+
+// Animations
+// ===============================================
+@keyframes panelGlow {
+  0% {
+    box-shadow: 0 0 0 rgba(115, 215, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 2rem rgba(252, 246, 181, 0.85);
+  }
+}
+
+// .ft-org-overview-panel
+// ===============================================
+.ft-org-overview-panel {
+  @include border-style(solid);
+  @include border-width(0.1rem);
+  @include border-color(var(--color-lightGrey));
+  border-radius: 0.6rem;
+
+  // [class*="tag-copied"]
+  // Tooltip "Clase copiada" anclado sobre el __tag que lo contiene (este
+  // necesita position:relative, ver &__tag). Se centra con translateX(-50%)
+  // y se sitúa justo encima del tag (bottom:100% + holgura).
+  [class*="tag-copied"] {
+    @include position(absolute, null null calc(100% + 0.5rem) 50%);
+    @include padding(0.5rem);
+    transform: translateX(-50%);
+    z-index: 10;
+    transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    white-space: nowrap;
+    font-size: 1rem;
+    line-height: 1rem;
+    color: var(--color-white);
+    border-radius: 0.5rem;
+    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+    background-color: var(--color-functional-success);
+  }
+
+  // [data-showroom-action="copy-class"]
+  [data-showroom-action="copy-class"] {
+    // &:hover, &:focus
+    &:hover,
+    &:focus {
+      cursor: pointer;
+    }
+  }
+
+  // [data-showroom-switch="switch"]
+  [data-showroom-switch="switch"] {
+    // [class*="__switch"]
+    [class*="__switch"] {
+      // &::after — vista diseño (OFF): icono de pluma en gris neutro
+      &:after {
+        transition: transform 0.25s ease;
+        background-image: url("#{$images-path}/icons/nav-solid-light-edit.svg");
+        filter: brightness(0) invert(0.6);
+      }
+    }
+
+    // [class*="__txt"]
+    [class*="__txt"] {
+      @include hide-visually();
+      @include min-screen(768px) {
+        @include hide-visually("unhide");
+        @include padding(0.5rem 1.2rem);
+        // Centrada y anclada sobre el switch; ancho al contenido y en una
+        // sola línea (sin partir "Vista diseño"/"Vista código").
+        position: absolute;
+        bottom: calc(100% + 1rem);
+        left: 50%;
+        transform: translateX(-50%);
+        display: block;
+        width: max-content;
+        white-space: nowrap;
+        font-weight: 700;
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+        letter-spacing: 0.02em;
+        text-align: center;
+        color: var(--color-black);
+        // Borde blanco fino: el headband es lightGrey y la burbuja
+        // mediumGrey, así que sin borde apenas contrastan. El blanco las
+        // separa del fondo.
+        background-color: var(--color-mediumGrey);
+        border: 0.1rem solid color-mix(in srgb, var(--color-white) 70%, transparent);
+        border-radius: 5rem;
+        box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.16),
+          0 0.1rem 0.3rem rgba(0, 0, 0, 0.1);
+        transition: color 0.3s ease, background-color 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      // &::before — flecha "borde": triángulo blanco, detrás y algo mayor
+      // que el relleno, para que asome como contorno por los lados y la punta.
+      &:before {
+        @include min-screen(768px) {
+          content: "";
+          @include position(absolute, null null 0 50%);
+          @include margin(null null -0.8rem -0.8rem);
+          @include size(0, 0);
+          border: 0.8rem solid transparent;
+          border-top-color: color-mix(in srgb, var(--color-white) 70%, transparent);
+          border-bottom: 0;
+        }
+      }
+      // &::after — flecha "relleno": triángulo gris delante; deja ver el
+      // borde blanco del &::before alrededor.
+      &:after {
+        @include min-screen(768px) {
+          content: "";
+          @include position(absolute, null null 0 50%);
+          @include margin(null null -0.7rem -0.7rem);
+          @include size(0, 0);
+          border: 0.7rem solid transparent;
+          border-top-color: var(--color-mediumGrey);
+          border-bottom: 0;
+        }
+      }
+    }
+
+    // [class*="ft-switch__checkbox"]
+    [class*="ft-switch__checkbox"] {
+      // &:checked
+      &:checked {
+        + [class*="__label"] {
+          // [class*="__inner"]
+          [class*="__inner"] {
+            background-color: var(--color-functional-success);
+          }
+
+          // [class*="__txt"]
+          [class*="__txt"] {
+            color: var(--color-black);
+            background-color: var(--color-functional-success);
+            // El borde blanco se mantiene en la vista activa (verde) para
+            // seguir separando la burbuja del fondo.
+            border-color: color-mix(in srgb, var(--color-white) 70%, transparent);
+            box-shadow: 0 0.4rem 1.2rem
+              color-mix(in srgb, var(--color-functional-success) 30%, transparent);
+
+            // Solo el relleno de la flecha (&::after) vira a verde; el
+            // &::before se queda blanco como contorno de la flecha.
+            &:after {
+              border-top-color: var(--color-functional-success);
+            }
+          }
+
+          // [class*="__switch"]
+          [class*="__switch"] {
+            // &::after — vista código (ON): se mantiene el icono </> verde
+            &::after {
+              transform: rotate(180deg);
+              background-image: url("#{$images-path}/icons/icons-alerts--showroom-code-on.svg");
+              filter: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // > [class*="ft-mol-headband"]
+  > [class*="ft-mol-headband"] {
+    @include position(sticky, 0 null null null);
+    @include margin(0 null 0 null);
+    @include padding(1.2rem);
+    z-index: 5;
+    background-color: var(--color-lightGrey);
+
+    // [class*="__title"]
+    [class*="__title"] {
+      max-width: calc(100% - 10rem);
+      align-items: baseline;
+      gap: 1rem;
+
+      // > [data-showroom-view="develop"]
+      > [data-showroom-view="develop tags"] {
+        @include position(absolute, -1.5rem null null null);
+        display: flex;
+        gap: 1rem;
+      }
+    }
+  }
+
+  // [class*="code-container"]
+  [class*="code-container"] {
+    @include position(relative, null null null null);
+
+    // &[class*="__btn-copy"]
+    &[class*="__btn-copy"] {
+      // Botón siempre visible: el panel de código es ahora su propio
+      // scrollport (max-height + overflow), así que el botón se pega (sticky)
+      // al pie del bloque y permanece a la vista mientras scrolleas dentro.
+      // Sticky exige estar en el flujo (no absolute); se alinea a la derecha
+      // con margin-left auto.
+      position: sticky;
+      bottom: 6rem;
+      z-index: 2;
+      display: block;
+      width: 4.2rem;
+      height: 4.2rem;
+      margin-left: auto;
+      margin-right: 4rem;
+      // Círculo del color del fondo del código (#282c34, tema hljs): tapa el
+      // texto que quede debajo para que el icono no se superponga de forma
+      // ilegible y quede siempre claro.
+      background: rgba(0, 0, 0, 0.6);
+      border: none;
+      border-radius: 50%;
+
+      // &:before
+      &:before {
+        content: "";
+        // Icono con holgura dentro del círculo (no pega a los bordes).
+        @include position(absolute, 0.4rem 0.4rem 0.4rem 0.4rem);
+        @include margin(auto);
+        width: 2rem;
+        height: 2rem;
+        background: transparent
+          url("#{$images-path}/icons/icons-actions--showroom-copy.svg")
+          no-repeat 0 0;
+        background-size: contain;
+      }
+
+      // &[class*="--completed"]
+      &[class*="--completed"] {
+        // &:before
+        &:before {
+          background-image: url("#{$images-path}/icons/icons-actions--showroom-copy-completed.svg");
+        }
+      }
+    }
+
+    // [class*="__copy-tooltip"]
+    [class*="__copy-tooltip"] {
+      // El tooltip "¡Copiado!" se muestra ENCIMA del botón (que vive al pie
+      // del bloque), para quedar dentro del panel y no recortarse.
+      @include position(absolute, -3rem null null 50%);
+      @include padding(0.5rem);
+      z-index: 10;
+      transition: opacity 0.3s ease-in-out;
+      transform: translateX(-50%);
+      font-size: 1.1rem;
+      line-height: 1.1rem;
+      white-space: nowrap;
+      color: var(--color-white);
+      border-radius: 0.5rem;
+      background-color: var(--color-functional-success);
+
+      // &[class*="--hide"]
+      &[class*="--hide"] {
+        opacity: 0;
+      }
+
+      // &[class*="--show"]
+      &[class*="--show"] {
+        opacity: 1;
+      }
+    }
+
+    // &:not()
+    &:not(.code-container__btn-copy):not(.code-container__copy-tooltip) {
+      @include margin(3.4rem -2.4rem null -2.4rem);
+      @include padding(2.4rem 2.4rem null 2.4rem);
+      @include border-style(solid null null null);
+      @include border-width(0.1rem);
+      @include border-color(var(--color-lightGrey));
+      // Bloque acotado: altura máxima con scroll interno. Así el panel es su
+      // propio scrollport y el botón de copia (sticky) queda visible dentro
+      // sin depender del overflow de ancestros. Los códigos cortos no llegan
+      // al límite, así que se ven enteros sin scroll.
+      max-height: 60vh;
+      overflow: auto;
+    }
+
+    // pre
+    pre {
+      border-radius: 2rem;
+    }
+
+    // &[class*="ft-helper-hide"]
+    &[class*="ft-helper-hide"] {
+      @include position(absolute, null null null null);
+    }
+  }
+
+  // &__tag
+  &__tag {
+    // Ancla del tooltip "Clase copiada" (.tag-copied), que se inserta dentro
+    // por JS con position:absolute. Sin esto el tooltip escaparía al primer
+    // ancestro posicionado (o al body) y aparecería desubicado.
+    @include position(relative, null null null null);
+    @include margin(0rem 0.5rem 0rem null);
+    @include padding(0.4rem 1.2rem);
+    @include border-style(solid);
+    @include border-width(0.1rem);
+    @include border-color(var(--color-mediumGrey));
+    @include font--body-M;
+    display: inline-flex;
+    background-color: var(--color-lightGrey);
+    border-radius: 0.4rem;
+
+    // &:after
+    &:after {
+      content: "";
+      @include margin(auto -2.5rem -2rem -0.5rem);
+      width: 3rem;
+      height: 3rem;
+      background: var(--color-white)
+        url("#{$images-path}/icons/icons-actions--showroom-copy-dark.svg")
+        no-repeat 0 0;
+      background-size: 1.5rem;
+      background-position: center;
+      @include border-style(solid);
+      @include border-width(0.1rem);
+      @include border-color(var(--color-mediumGrey));
+      border-radius: 50%;
+    }
+  }
+
+  // &__tooltip-swatch
+  &__tooltip-swatch {
+    @include position(absolute, null null null null);
+    @include padding(0.6rem 0.8rem);
+    @include font--body-M--small;
+    @include border-style(solid);
+    @include border-width(0.1rem);
+    @include border-color(var(--color-lightGrey));
+    z-index: 1000;
+    white-space: nowrap;
+    font-style: italic;
+    color: var(--color-white);
+    background-color: var(--color-black);
+    border-radius: 0.4rem;
+    box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.15);
+  }
+
+  // &__list
+  &__list {
+    @include margin(0 null 0 null);
+
+    // &-item
+    &-item {
+      @include margin(2rem 0);
+    }
+
+    // &[data-showroom-list="color swatch"]
+    &[data-showroom-list="color swatch"] {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+
+      // [class*="__list-item"]
+      [class*="__list-item"] {
+        @include position(relative, null null null null);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1rem;
+
+        // > span
+        > span {
+          @include border-style(solid);
+          @include border-width(0.1rem);
+          @include border-color(var(--color-lightGrey));
+          display: inline-block;
+          width: 4.8rem;
+          height: 4.8rem;
+          order: 1;
+          text-indent: -9999px;
+        }
+
+        // [class*="ft-org-overview-panel__tag"]
+        [class*="ft-org-overview-panel__tag"] {
+          @include margin(null 2rem null null);
+          order: 2;
+        }
+
+        // &:hover, &:focus
+        &:hover,
+        &:focus {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  // &__body
+  &__body {
+    @include padding(2.4rem);
+
+    .toggle-variant {
+      display: none;
+
+      & + label {
+        display: flex;
+        justify-content: center;
+
+        .eye-open,
+        .eye-closed {
+          font-size: 1rem;
+          line-height: 1;
+          text-align: center;
+          cursor: pointer;
+        }
+      }
+
+      &:not(:checked) {
+        & + label {
+          .eye-open {
+            display: inline-block;
+          }
+
+          .eye-closed {
+            display: none;
+          }
+        }
+
+        & ~ .rendered-content > * {
+          display: none;
+        }
+      }
+
+      &:checked {
+        & + label {
+          .eye-open {
+            display: none;
+          }
+
+          .eye-closed {
+            display: inline-block;
+          }
+        }
+
+        & ~ .rendered-content > * {
+          display: block;
+        }
+      }
+    }
+  }
+
+  // &:not(:last-of-type)
+  &:not(:last-of-type) {
+    @include margin(null null 3.6rem null);
+  }
+
+  // &-select
+  &-select {
+    @include margin(null auto 6.8rem auto);
+    @include padding(2.4rem);
+    border-radius: 0.4rem;
+    z-index: 200;
+    background-color: beige;
+    @include min-screen(768px) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    // [class*="ft-mol-form"]
+    [class*="ft-mol-form"] {
+      @include min-screen(768px) {
+        @include margin(0 null 0 null);
+        flex: 1;
+        max-width: 30rem;
+      }
+
+      // &:after
+      &:after {
+        content: "";
+        @include position(absolute, 0 null 0 0);
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--color-white);
+      }
+
+      // &[class*="__label"]
+      &[class*="__label"] {
+        @include margin(auto null auto null);
+        top: 0;
+        bottom: 0;
+        z-index: 2;
+        width: calc(100% - 4rem);
+        height: calc(100% - 1.5rem);
+        line-height: 2.4rem;
+
+        // &::after
+        &:after {
+          background-color: transparent;
+        }
+      }
+
+      // &[class*="__select"]
+      &[class*="__select"] {
+        @include position(relative, null null null null);
+        z-index: 1;
+        transition: transform 0.3s ease;
+        font-weight: 600;
+        font-style: italic;
+        border-radius: 0.6rem;
+        background: url("#{$images-path}/icons/icons-actions--showroom-chevron-off.svg")
+          no-repeat right 1rem center / 1rem;
+
+        // &:focus
+        &:focus {
+          background-image: url("#{$images-path}/icons/icons-actions--showroom-chevron-on.svg");
+
+          // + [class*="__label"]
+          + [class*="__label"] {
+            top: -3.7rem;
+            left: 0.8rem;
+            width: auto;
+            height: 2rem;
+            line-height: normal;
+          }
+        }
+      }
+    }
+
+    // &__amount
+    &__amount {
+      left: -1rem;
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+
+    // &[class*="headroom--not-top"]
+    //
+    // Sticky-on-scroll-up: cuando el usuario no está en el top de la
+    // página, el selector se ancla al pie del viewport. Por defecto se
+    // mantiene fuera del viewport (translateY 100%) para no tapar
+    // contenido mientras se scrollea hacia abajo. Solo se desliza a la
+    // vista cuando el JS detecta scroll-up y añade `headroom--pinned`.
+    &[class*="headroom--not-top"] {
+      @include position(fixed, null 0 0 0);
+      @include margin(null 0 0 0);
+      max-width: 65rem;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+      transform: translateY(100%);
+      transition: transform 0.35s ease;
+      // En reduce-motion la transición se anula para no marear.
+      @media (prefers-reduced-motion: reduce) {
+        transition: none;
+      }
+      @include min-screen(768px) {
+        @include margin(null auto null auto);
+      }
+      @include min-screen(1280px) {
+        left: 300px;
+      }
+
+      // Visible solo cuando el usuario scrollea hacia arriba.
+      &[class*="headroom--pinned"] {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  // &--highlighted
+  &--highlighted {
+    animation: panelGlow 0.55s ease-in-out forwards;
+    // > [class*="ft-mol-headband"]
+    > [class*="ft-mol-headband"] {
+      background-color: lightgoldenrodyellow;
+    }
+  }
+}
+
+// [data-showroom-view='amp']
+[data-showroom-view="amp"] {
+  // [class*="ft-mol-headband"]
+  > [class*="ft-mol-headband"] {
+    background-color: #1279bf;
+
+    // *
+    * {
+      color: var(--color-white);
+    }
+
+    // &[class*="__label"]
+    &[class*="__label"] {
+      color: var(--color-white);
+      background-color: #0b4f7d;
+    }
+  }
+}

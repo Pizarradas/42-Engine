@@ -1,0 +1,377 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// .ft-org-paywall
+// ===============================================
+.org-paywall {
+  @include min-screen(680px) {
+    @include padding(4rem null 4rem null);
+  }
+  @include min-screen(1002px) {
+    @include margin(0 auto);
+      min-width: 800px;
+      max-width: 800px;
+  }
+
+  // &__box
+  &__box {
+    @include padding(3rem 1.5rem);
+  }
+
+  // &__content
+  &__content {
+    @include margin(2.4rem 0);
+    @include min-screen(680px) {
+      @include padding(null 4.5rem);
+    }
+    border-radius: 2.5rem;
+  }
+
+  // &__title, &__subtitle
+  &__title,
+  &__subtitle {
+    @include margin(null null 0 null);
+    display: block;
+    text-align: center;
+  }
+
+  // &__title
+  &__title {
+    @include margin(0 null null null);
+    @include min-screen(680px) {
+      font-size: 2.4rem;
+      line-height: 2.8rem;
+    }
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 2.2rem;
+  }
+
+  // &__subtitle
+  &__subtitle {
+    @include margin(.5rem null null null);
+    @include min-screen(680px) {
+      font-size: 1.8rem;
+      line-height: 2rem;
+    }
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+  }
+
+  // &__box-title
+  &__box-title {
+    @include margin(0);
+    font-weight: bold;
+  }
+
+  // &__badge
+  &__badge {
+    @include position(absolute, -0.8rem null null 1rem);
+    @include padding(.4rem 0.6rem);
+    @include min-screen(680px) {
+      top: -1.2rem;
+      font-size: 1.4rem;
+      line-height: 1.4rem;
+    }
+    color: var(--color-black);
+    font-size: 1rem;
+    line-height: 1rem;
+    border-radius: 1rem;
+    background-color: var(--color-white);
+  }
+
+  // &__text
+  &__text {
+    @include min-screen(680px) {
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+    }
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+
+    // a
+    a {
+      color: var(--color-tertiary);
+      text-decoration: underline;
+    }
+
+    // &--block
+    &--block {
+      display: block;
+      text-align: center;
+    }
+
+    // &--info
+    &--info {
+      @include margin(2.4rem null 0 null);
+      @include min-screen(680px) {
+        font-size: 1.8rem;
+        line-height: 2rem;
+      }
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+    }
+
+    // &--mf
+    &--mf {
+      @include min-screen(680px) {
+        display: block;
+      }
+      display: none;
+    }
+
+    // &--divider
+    &--divider {
+      @include position(relative, null null null null);
+      @include padding(null null 1.4rem null);
+
+      // &::before
+      &::before {
+        @include position(absolute, 0 0 null 0);
+        @include size(15rem, 0.1rem);
+        content: "";
+        margin-inline: auto;
+        background-color: var(--color-mediumGrey);
+      }
+    }
+  }
+
+  // &__box-benefits
+  &__box-benefits {
+    @include margin(0);
+    @include padding(null null null 0.6rem);
+    @include min-screen(680px) {
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+    }
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+    color: var(--color-tertiary);
+    list-style-position: outside;
+
+    // a
+    a {
+      text-decoration: underline;
+      color: var(--color-black);
+    }
+
+    // &-item
+    &-item {
+      @include position(relative, null null null null);
+      @include padding(null null null 1.5rem);
+
+      // &::before
+      &::before {
+        content: "\2022";
+        @include position(absolute, 0 null null 0);
+        font-size: 1.2em;
+      }
+    }
+  }
+
+  // &__plans
+  &__plans {
+    @include margin(0);
+    @include padding(null null null 0);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style: none;
+
+    // &-item
+    &-item {
+      @include position(relative, null null null null);
+      flex: 1;
+      background-color: var(--color-paywall-secondary);
+    }
+
+    // &-price, &-period
+    &-price,
+    &-period {
+      @include margin(0);
+      color: var(--color-black);
+    }
+
+    // &-price
+    &-price {
+      @include min-screen(680px) {
+        font-size: 2rem;
+        line-height: 2.4rem;
+        letter-spacing: 0;
+      }
+      font-weight: bold;
+      font-size: 1.6rem;
+      line-height: 2rem;
+      letter-spacing: -0.04rem;
+    }
+
+    // &-period
+    &-period {
+      @include min-screen(680px) {
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+      }
+      font-size: 1.4rem;
+      line-height: 2rem;
+    }
+
+    // &-cta
+    &-cta {
+      @include padding(0.6rem 1.5rem);
+      @include min-screen(680px) {
+        font-size: 1.6rem;
+        line-height: 1.6rem;
+      }
+      align-self: flex-end;
+      color: var(--color-black);
+      font-size: 1.2rem;
+      line-height: 1.2rem;
+      border: 1px solid var(--color-black);
+      border-radius: 2rem;
+    }
+  }
+
+  // &__plan-was
+  &__plan-was {
+    @include margin(0);
+    display: flex;
+    flex-wrap: wrap;
+    color: var(--color-tertiary);
+    font-size: 1.6rem;
+    line-height: 2rem;
+
+    // del
+    del {
+      @include min-screen(680px) {
+        font-size: 1.6rem;
+        line-height: 1.8rem;
+      }
+      font-size: 1.2rem;
+      line-height: 1.4rem;
+    }
+  }
+
+  // &__box--web
+  &__box--web {
+    background-color: var(--color-paywall-primary);
+    border-top-right-radius: 2.5rem;
+    border-top-left-radius: 2.5rem;
+
+    // [class*="org-paywall__box-title"]
+    [class*="org-paywall__box-title"] {
+      @include margin(null null 2.4rem null);
+      @include min-screen(680px) {
+        font-size: 2rem;
+        line-height: 2.6rem;
+      }
+      font-size: 1.8rem;
+      line-height: 2.2rem;
+    }
+
+    // [class*="org-paywall__plans-price"]
+    [class*="org-paywall__plans-price"] {
+      flex-basis: 100%;
+    }
+
+    // [class*="org-paywall__plans-period"]
+    [class*="org-paywall__plans-period"] {
+      @include margin(2rem null null null);
+    }
+
+    // [class*="org-paywall__plans-conditions"]
+    [class*="org-paywall__plans-conditions"] {
+      flex-basis: 100%;
+      align-self: flex-end;
+    }
+
+    // [class*="org-paywall__plans-cta"]
+    [class*="org-paywall__plans-cta"] {
+      @include margin(1rem null null null);
+      display: inline-block;
+    }
+
+    // [class*="org-paywall__plan--link"]
+    [class*="org-paywall__plan--link"] {
+      @include padding(2.4rem 1.2rem 1.4rem);
+      @include min-screen(680px) {
+        @include padding(2.4rem 1.4rem 1.4rem);
+      }
+      display: flex;
+      flex-wrap: wrap;
+      height: 100%;
+    }
+
+    // [class*="org-paywall__plans-item"]
+    [class*="org-paywall__plans-item"] {
+      min-height: 12.4rem;
+      border-radius: 0.5rem;
+    }
+
+    // [class*="org-paywall__plans-item--featured"]
+    [class*="org-paywall__plans-item--featured"] {
+      border: 2px solid var(--color-black);
+
+      // [class*="org-paywall__plans-cta"]
+      [class*="org-paywall__plans-cta"] {
+        color: var(--color-white);
+        background-color: var(--color-black);
+      }
+    }
+
+    // > [class*="org-paywall__box-benefits"]
+    > [class*="org-paywall__box-benefits"] {
+      @include margin(2.4rem null null null);
+      @include min-screen(680px) {
+        columns: 2;
+      }
+    }
+  }
+
+  // &__box--print
+  &__box--print {
+    background-color: var(--color-paywall-secondary);
+    border-bottom-right-radius: 2.5rem;
+    border-bottom-left-radius: 2.5rem;
+
+    // [class*="org-paywall__plans-cta"]
+    [class*="org-paywall__plans-cta"] {
+      @include position(absolute, 0 0 null null);
+    }
+
+    // [class*="org-paywall__plans-item"]
+    [class*="org-paywall__plans-item"] {
+      @include margin(2.4rem null null null);
+    }
+
+    // [class*="org-paywall__box-title"]
+    [class*="org-paywall__box-title"] {
+      @include min-screen(680px) {
+        font-size: 2rem;
+        line-height: 2.6rem;
+      }
+      font-size: 1.8rem;
+      line-height: 2.2rem;
+    }
+
+    // > [class*="org-paywall__box-benefits"]
+    > [class*="org-paywall__box-benefits"] {
+      @include margin(2.4rem null 0 null);
+    }
+  }
+
+  // &__plan:focus-visible
+  &__plan:focus-visible {
+    outline: 3px solid var(--color-black);
+    outline-offset: 4px;
+    border-radius: 0.5rem;
+  }
+
+  // &__plans-cta:focus-visible
+  &__plans-cta:focus-visible {
+    outline: 2px solid var(--color-black);
+    outline-offset: 2px;
+  }
+}

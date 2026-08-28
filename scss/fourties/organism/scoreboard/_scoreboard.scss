@@ -1,0 +1,222 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// .ft-org-scoreboard
+// ===============================================
+.ft-org-scoreboard
+{
+  $self: &;
+  @include margin(2.7rem null null null);
+  @include border-top-radius(0.5rem);
+
+  @include min-screen(768px)
+  {
+    @include margin(null null 3rem null);
+  }
+
+  // .ft
+  // ---------------------------------------------
+  .ft
+  {
+
+    // &-date
+    &-date
+    {
+      @include margin(0.5rem null null null);
+
+      // &__text
+      &__text
+      {
+        @include margin(null auto null auto);
+      }
+
+      // &__reload
+      &__reload
+      {
+        display:none;
+      }
+    }
+
+    // &-mol
+    &-mol
+    {
+
+      // &-tab
+      &-tab
+      {
+
+        // &__bar
+        &__bar
+        {
+
+          // &::after
+          &:after
+          {
+            filter: brightness(85%);
+          }
+        }
+      }
+    }
+
+    
+  }
+
+  // &__match-name
+  // ---------------------------------------------
+  &__match-name
+  {
+    @include padding(0.5rem 0.5rem null 0.5rem);
+    @include fontBold;
+    display: block;
+    text-align: center;
+    color: var(--color-primary);
+  }
+
+  // &.affix
+  // ---------------------------------------------
+  &.affix
+  {
+    @include margin(0 -1.3rem null -1.3rem);
+    @include padding(1rem null null null);
+    @include border-top-radius(0);
+    @include border-style(null null solid null);
+    @include border-width(0 0 0.2rem 0);
+    @include border-color(null null var(--color-mediumGrey) null);
+    box-shadow: 2px 2px 25px -6px rgba(0, 0, 0, 0.2);
+
+    @include min-screen(768px)
+    {
+      @include margin(null -1.9rem null -1.9rem);
+    }
+
+    @include min-screen(1024px)
+    {
+      @include margin(null auto null auto);
+    }
+
+    // .ft
+    .ft
+    {
+
+      // &-date
+      &-date
+      {
+        @include hide-visually;
+      }
+
+      // &-mol
+      &-mol
+      {
+
+        // &-scoreboard
+        &-scoreboard
+        {
+          @include padding(0 null null null);
+
+          @include min-screen(1024px)
+          {
+            @include padding(null null 1rem null);
+          }
+
+          // &__club
+          &__club
+          {
+            @include hide-visually;
+
+            @include min-screen(1024px)
+            {
+              @include hide-visually("unhide");
+              font-size: 1.6rem;
+              line-height: 1.8rem;
+            }
+          }
+
+          // &__score
+          &__score
+          {
+            @include min-screen(1024px)
+            {
+              font-size: 3rem;
+              line-height: 3.2rem;
+            }
+          }
+
+          // &__shield
+          &__shield
+          {
+            @include size(4.5rem);
+
+            // .ft
+            .ft
+            {
+
+              // &-helper
+              &-helper
+              {
+
+                // &-img-rd
+                &-img-rd
+                {
+                  max-width: 3rem;
+                }
+              }
+            }
+          }
+
+          // &__state
+          &__state
+          {
+            @include hide-visually;
+
+            @include min-screen(1024px)
+            {
+              @include hide-visually("unhide");
+              @include margin(0 null null null);
+              font-size: 1.2rem;
+              line-height: 1.4rem;
+            }
+          }
+
+          // &-event-list
+          &-event-list
+          {
+            @include hide-visually;
+          }
+
+          // &__brief
+          &__brief
+          {
+            @include min-screen(1024px)
+            {
+              align-self: center;
+            }
+          }
+
+          &--interactive{
+  background-color: var(--color-lightGrey);
+          }
+        }
+
+        // &-tab
+        &-tab
+        {
+          @include hide-visually;
+        }
+      }
+    }
+
+    // #{ $self }
+    #{ $self }
+    {
+
+      // &__match-name
+      &__match-name
+      {
+        @include hide-visually;
+      }
+    }
+  }
+}

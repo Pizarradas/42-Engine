@@ -1,0 +1,20 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// .ft-org-object
+// ===============================================
+.ft-org-path {
+  @include margin(null auto null auto);
+  max-width: 1200px;
+
+  // .ft-mol-path
+  .ft-mol-path {
+    @include margin(1rem null null null);
+    @include min-screen(768px) {
+      @include margin(2rem null null null);
+    }
+  }
+}

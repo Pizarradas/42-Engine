@@ -1,0 +1,158 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// .ft-org
+// ===============================================
+.ft-org {
+  // &-search-autocomplete // CAJA DEL BUSCADOR
+  &-search-autocomplete {
+    @include position(relative, null null null null);
+    @include padding(null 0.8rem null 0.8rem);
+    min-height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    @include min-screen(1024px) {
+      @include padding(null 1.1rem null 1.1rem);
+      min-height: 20dvh;
+      align-content: center;
+    }
+
+    // form
+    form {
+      @include margin(null auto null auto);
+      flex-basis: 100%;
+    }
+
+    // .ft-mol-form
+    .ft-mol-form {
+      @include margin(1rem null null null);
+
+      @include min-screen(1024px) {
+        @include margin(2.6rem null null null);
+      }
+    }
+
+    // ul:has(.ft-tag--chip)
+    ul:has(.ft-tag--chip) {
+      @include margin(null null 2rem null);
+      @include min-screen(1204px) {
+        @include margin(0 null null null);
+      }
+    }
+
+    // .ft-text-alert--is-guided
+    .ft-text-alert--is-guided {
+      @include margin(1rem null 2rem null);
+    }
+
+    .ft-text-alert--is-guided:has(+ h2.ft-helper-fontSize-heading-XS.ft-helper-text-align-center) {
+      @include margin(1rem null 4rem null);
+    }
+
+    // .ft-mol-btnGroup--cnt
+    .ft-mol-btnGroup--cnt {
+      @include margin(2rem null 4rem null);
+      @include padding(0 null null null);
+    }
+
+    // &:has(.ft-org-cardHome--discover)
+    &:has(.ft-org-cardHome--discover) {
+      display: block
+    }
+
+    // &__content
+    &__content {
+      @include position(relative, null null null null);
+      @include margin(null auto null auto);
+      @include padding(1rem null null null);
+      z-index: 2;
+      width: 100%;
+      max-width: 933px;
+      min-height: 400px;
+
+       @include min-screen(1024px) {
+              min-height: 20dvh;
+      }
+
+      // Excepción: cuando contiene ft-org-cardHome
+      &:has(.ft-org-cardHome) {
+        max-width: 1280px;
+      }
+      // h3, h4, h5
+      h3,
+      h4,
+      h5{
+        @include margin(0 null 0.5rem null);
+      }
+      p {
+        @include margin(0 null 2rem null);
+      }
+
+      p.ft-mol-label__title{
+         @include margin(0 null 0 null);
+      }
+      // section
+      section {
+        @include margin(2rem null null null);
+
+        @include min-screen(1024px) {
+          @include margin(4rem null null null);
+        }
+
+        // h3, h4, h5
+        h3,
+        h4,
+        h5 {
+          @include margin(0 null 1.5rem null);
+
+          @include min-screen(1024px) {
+            @include margin(null null 2.2rem null);
+          }
+        }
+      }
+
+      .ft-layout-grid-flex__row{
+        @include padding(0);
+      }
+      .ft-layout-grid-flex__colXs-12{
+         @include padding(0);
+         // tablet
+           @include min-screen(768px) {
+          @include padding(null .8rem);
+        }
+         // tablet
+           @include min-screen(1024px) {
+          @include padding(null 1.1rem);
+        }
+      }
+    }
+  }
+
+  // &-region // LISTA DE REGIONES
+  &-region {
+    @include margin(3rem null null null);
+
+    @include min-screen(1024px) {
+      @include margin(null null null 3rem);
+    }
+
+    // &__tags
+    &__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      @include min-screen(1024px) {
+        gap: 1rem;
+      }
+    }
+  }
+}

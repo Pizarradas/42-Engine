@@ -1,0 +1,59 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// .ft-org-suggestions-chips
+// ===============================================
+.ft-org-suggestions-chips {
+  @include position(relative, null null null null);
+  @include padding(4rem 0.8rem null 0.8rem);
+  width: 100%;
+  @include min-screen(1024px) {
+    @include padding(8rem 1.1rem null 1.1rem);
+  }
+
+  // h2, h3, h4
+  h2,
+  h3,
+  h4 {
+    @include margin(0 null 0 null);
+  }
+
+  // ul:has(.ft-tag--chip)
+  ul:has(.ft-tag--chip) {
+    @include margin(2rem null null null);
+    justify-content: center;
+    @include min-screen(1024px) {
+      @include margin(4rem null null null);
+    }
+  }
+
+  // .ft-tag--chip
+  .ft-tag--chip {
+    .ft-btn,
+    .ft-link {
+      max-width: none;
+    }
+  }
+
+  // ul:has(.ft-tag--chip-tiny)
+  ul:has(.ft-tag--chip-tiny) {
+    @include margin(0);
+  }
+
+  // &__content
+  &__content {
+    @include position(relative, null null null null);
+    @include margin(null auto null auto);
+    z-index: 2;
+    max-width: 933px;
+
+    // .ft-mol-btnGroup--cnt
+    .ft-mol-btnGroup--cnt {
+      @include margin(2rem null 4rem null);
+      @include padding(0 null null null);
+    }
+  }
+}
