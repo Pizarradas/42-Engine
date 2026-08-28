@@ -1,0 +1,759 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <title>
+        42DS | Layouts | Cerca FASE 2: Inicio
+    </title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <!-- CSS: settings -->
+    <link href="../../cds-statics/css/brands/ux/setting.css" id="brandStyles-root" rel="stylesheet" type="text/css" />
+    <!-- CSS: library multibrand -->
+    <link href="../../cds-statics/css/ux-index.css" id="brandStyles" rel="stylesheet" type="text/css" />
+    <!-- FAVICON -->
+    <link href="../favicon.png" rel="icon" type="image/png" />
+    <style>
+        /* ESTILOS ESPECÍFICOS PARA CERCA - QUICK WINS HARD CODED *
+        /* ORG: HERO | welcome */
+        .ft-skin--cerca-buscador [data-hardcode-styles="initialSearch"].ft-org-hero-welcome {
+            min-height: 14rem;
+        }
+
+        @media only screen and (min-width: 1024px) {
+            .ft-skin--cerca-buscador [data-hardcode-styles="initialSearch"].ft-org-hero-welcome {
+                min-height: 18rem;
+            }
+        }
+
+        .ft-skin--cerca-buscador [data-hardcode-styles="initialSearch"].ft-org-hero-welcome p {
+            margin-right: 2rem;
+            margin-left: 2rem;
+        }
+
+        /* SEARCH AUTOCOMPLETE */
+        .ft-skin--cerca-buscador [data-hardcode-styles="initialSearch"].ft-org-search-autocomplete {
+            max-height: none;
+            min-height: fit-content;
+        }
+
+                    .ft-skin--cerca-buscador [data-hardcode-styles="initialSearch"].ft-org-search-autocomplete .ft-org-search-autocomplete__content section {
+                margin-top: 1.5rem;
+            }
+
+        @media only screen and (min-width: 1024px) {
+            .ft-skin--cerca-buscador [data-hardcode-styles="initialSearch"].ft-org-search-autocomplete .ft-org-search-autocomplete__content section {
+                margin-top: 2rem;
+            }
+        }
+
+        .ft-skin--cerca-buscador [data-hardcode-styles="initialSearch"] .ft-org-search-autocomplete__content .ft-helper-fontSize-heading-XXS {
+            margin-bottom: 0;
+            flex-basis: 100%;
+        }
+
+
+        .ft-skin--cerca-buscador [data-hardcode-styles="initialSearch"].ft-org-search-autocomplete .ft-org-search-autocomplete__content {
+            padding-top: 0;
+            padding-bottom: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+            max-height: none;
+            min-height: 25rem;
+        }
+
+        @media only screen and (min-width: 1024px) {
+            .ft-skin--cerca-buscador [data-hardcode-styles="initialSearch"].ft-org-search-autocomplete .ft-org-search-autocomplete__content {
+                min-height: 15rem;
+            }
+        }
+
+        /* TAGS */
+        .ft-skin--cerca-buscador [data-hardcode-styles="initialSearch"].ft-org-suggestions-chips {
+            padding-top: 4rem;
+        }
+
+        .ft-skin--cerca-buscador [data-hardcode-styles="initialSearch"].ft-cerca-localidades-list__tags {
+            justify-content: center;
+        }
+
+        .ft-skin--cerca-buscador [data-hardcode-styles="initialSearch"].ft-org-search-autocomplete ul:has(.ft-tag--chip) {
+            margin-bottom: 0;
+            justify-content: center;
+        }
+
+        .ft-skin--cerca-buscador [data-hardcode-styles="initialSearch"].ft-org-suggestions-chips .ft-org-suggestions-chips__content p {
+            margin-top: 0;
+            margin-bottom: .3rem;
+        }
+
+        @media only screen and (min-width: 1024px) {
+            .ft-skin--cerca-buscador [data-hardcode-styles="initialSearch"].ft-org-suggestions-chips .ft-org-suggestions-chips__content p {
+                margin-bottom: 0.5rem;
+                flex-basis: 100%;
+            }
+        }
+
+        .ft-skin--cerca-buscador [data-hardcode-styles="initialSearch"].ft-org-suggestions-chips .ft-org-suggestions-chips__content {
+            display: flex;
+            flex-wrap: wrap;
+            flex-flow: column;
+            justify-content: center;
+            align-content: flex-start;
+            min-height: 13rem;
+        }
+
+        @media only screen and (min-width: 1024px) {
+            .ft-skin--cerca-buscador [data-hardcode-styles="initialSearch"].ft-org-suggestions-chips .ft-org-suggestions-chips__content {
+                min-height: 18rem;
+            }
+        }
+
+        /* MOL: form  */
+        .ft-skin--cerca-buscador [data-hardcode-styles="initialSearch"].ft-org-suggestions-chips .ft-mol-form {
+            margin-right: auto;
+            margin-left: auto;
+            max-width: 32rem;
+        }
+
+        @media only screen and (min-width: 1024px) {
+            .ft-skin--cerca-buscador [data-hardcode-styles="initialSearch"].ft-org-suggestions-chips .ft-mol-form {
+                max-width: 50rem;
+            }
+        }
+
+        .ft-skin--cerca-buscador [data-hardcode-styles="initialSearch"].ft-org-suggestions-chips .ft-mol-form__label {
+            font-style: italic;
+            font-size: 1.5rem;
+        }
+
+
+        .ft-skin--cerca-buscador [data-hardcode-styles="initialSearch"].ft-org-suggestions-chips ul {
+            justify-content: flex-start;
+        }
+
+        /* MOL: sticky-panel  */
+        .ft-skin--cerca-buscador [data-hardcode-styles="initialSearch"].ft-mol-sticky-panel--bttm {
+
+            box-shadow: 0 -2px 12px 0 rgba(0, 0, 0, 0.15);
+        }
+
+        .ft-skin--cerca-buscador [data-hardcode-styles="initialSearch"].ft-mol-sticky-panel--bttm .ft-mol-btnGroup {
+            padding-top: 0;
+        }
+
+        .ft-skin--cerca-buscador [data-hardcode-styles="initialSearch"].ft-mol-sticky-panel--bttm .ft-mol-sticky-panel__chips-list {
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+
+<body class="fourty ft-brand-ep ft-skin ft-skin--cerca-buscador minimal-header" id="header-sticky"
+ data-showroom-skin="layout">
+    <nav class="ft-mol-tapbar" role="navigation" aria-label="Menú de navegación principal" aria-orientation="horizontal"
+        aria-controls="mainContent" aria-expanded="true" aria-live="polite" aria-relevant="additions removals"
+        tabindex="0" data-component="tapbar" data-version="1.1" data-tracking="main-navigation"
+        data-seo="main-navigation" data-category="navigation" data-section="main-menu" itemscope=""
+        itemtype="https://schema.org/SiteNavigationElement" id="navbar-pi">
+        <div class="ft-mol-tapbar__container" role="menubar" aria-label="Menú de navegación principal"
+            aria-orientation="horizontal"><!--[--><!--[--><a href="https://www.elperiodico.com/es/"
+                class="ft-mol-tapbar__item" role="menuitem" aria-current="false" aria-label="Ir a Portada"
+                data-tracking="tapbar-leer" tabindex="-1" data-mrf-recirculation="barra-navegacion-leer"
+                data-mrf-link="https://www.elperiodico.com/es/" cmp-ltrk="barra-navegacion-leer" cmp-ltrk-idx="0"
+                mrfobservableid="8eefe0f8-8eb9-49a8-ba83-309935bc1d72"><span class="ft-mol-tapbar__icon-wrapper" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ft-mol-tapbar__icon" aria-labelledby="title-tapbar-icon-leer"><title id="title-tapbar-icon-leer">Lectura</title><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /><path d="M14 2v4a2 2 0 0 0 2 2h4" /><path d="M10 9H8" /><path d="M16 13H8" /><path d="M16 17H8" /></svg></span><span class="ft-mol-tapbar__text">Leer</span></a><!--]--><!--[--><a
+                href="https://www.elperiodico.com/es/cerca/" class="ft-mol-tapbar__item ft-mol-tapbar__item--active"
+                role="menuitem" aria-current="page" aria-label="Ir a Ubicación" data-tracking="tapbar-cerca"
+                tabindex="0" data-mrf-recirculation="barra-navegacion-cerca"
+                data-mrf-link="https://www.elperiodico.com/es/cerca/" cmp-ltrk="barra-navegacion-cerca" cmp-ltrk-idx="0"
+                mrfobservableid="8797de2c-18cc-4378-a4a6-bbdd47e87216"><span class="ft-mol-tapbar__icon-wrapper" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ft-mol-tapbar__icon" aria-labelledby="title-tapbar-icon-ubicacion"><title id="title-tapbar-icon-ubicacion">Ubicación</title><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /><circle cx="12" cy="10" r="3" /></svg></span><span class="ft-mol-tapbar__text">Cerca</span></a><!--]--><!--[--><a
+                href="https://pasatiempos.elperiodico.com/" class="ft-mol-tapbar__item" role="menuitem"
+                aria-current="false" aria-label="Ir a Pasatiempos" data-tracking="tapbar-jugar" tabindex="-1"
+                data-mrf-recirculation="barra-navegacion-jugar" data-mrf-link="https://pasatiempos.elperiodico.com/"
+                cmp-ltrk="barra-navegacion-jugar" cmp-ltrk-idx="0"
+                mrfobservableid="e326774d-b3a4-4818-b03f-04106d693a99"><span class="ft-mol-tapbar__icon-wrapper" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ft-mol-tapbar__icon" aria-labelledby="title-tapbar-icon-jugar"><title id="title-tapbar-icon-jugar">Dado</title><rect width="18" height="18" x="3" y="3" rx="2" ry="2" /><path d="M16 8h.01" /><path d="M8 8h.01" /><path d="M8 16h.01" /><path d="M16 16h.01" /><path d="M12 12h.01" /></svg></span><span class="ft-mol-tapbar__text">Jugar</span></a><!--]--><!--]--></div>
+    </nav>
+    <!-- grid -->
+    <div class="ft-layout-grid-flex">
+        <!-- Comienzo del layout -->
+        <article class="ft-layout-grid-flex__row">
+            <!--Contenido central -->
+            <div class="ft-layout-grid-flex__colXs-12">
+                <div class="ft-layout-grid-flex__nested">
+                    <!-- 
+    ================================================
+                    CERCA - ESTRUCTURA PREPARADA PARA DATOS JSON MASIVOS
+                    ================================================
+                    
+                    Esta estructura HTML está completamente preparada para trabajar con
+                    grandes volúmenes de datos JSON. Todos los elementos tienen:
+                    
+                    ✅ IDs ÚNICOS: Para manipulación directa del DOM
+                    ✅ Atributos data-*: Para fácil acceso desde JavaScript
+                    ✅ Estructura semántica: Para SEO y accesibilidad
+                    ✅ Contenedores claros: Para inyección dinámica de contenido
+                    ✅ Estados preparados: Loading, empty, error
+                    ✅ Schema.org: Para datos estructurados
+                    
+                    ESTRUCTURA PRINCIPAL:
+                    1. Hero/Bienvenida (ft-org-hero-welcome)
+                    2. Buscador autocomplete (ft-org-search-autocomplete)
+                       - Formulario con atributos data-search-*
+                       - Contenedor de resultados (#cerca-results-wrapper)
+                       - Estados: loading, empty, error
+                    3. Comunidades autónomas (ft-org-regions-list)
+                       - Lista preparada para recibir datos JSON
+                       - Cada localidad con data-tag-id único
+                    4. Sugerencias (ft-org-suggestions-chips)
+                       - Lista preparada para localidades sugeridas
+                    5. Resultados de artículos (ft-org-articles-results)
+                       - Contenedor vacío listo para inyección masiva
+                       - Paginación/infinite scroll preparada
+                    
+                    SELECTORES PRINCIPALES PARA DESARROLLO:
+                    - Formulario: #cerca-search-form
+                    - Input búsqueda: #cerca-localidades
+                    - Resultados autocomplete: #cerca-results-list
+                    - Lista comunidades: #cerca-regions-list-content
+                    - Lista sugerencias: #cerca-suggestions-list
+                    - Contenedor artículos: #cerca-articles-list
+                    - Estados: #cerca-results-loading, #cerca-results-empty, #cerca-results-error
+                -->
+                    <!-- CERCA -->
+                    <!-- cerca: bienvenida -->
+                    <div class="ft-org-hero-welcome" data-hardcode-styles="initialSearch">
+                        <div class="ft-org-hero-welcome__content">
+                            <h2 class="ft-helper-fontSize-heading-M ft-helper-text-align-center">
+                                CERCA
+                            </h2>
+                            <p
+                                class="ft-helper-fontSize-body-L ft-helper-fontColor-teriary ft-helper-text-align-center">
+                                <strong>Selecciona</strong> tus localidades y personaliza tu portada de noticias
+                            </p>
+                        </div>
+                    </div>
+                    <!-- cerca: bloque chips / modificado para los quickwins -->
+                    <div class="ft-org-search-autocomplete" data-hardcode-styles="initialSearch">
+                        <div class="ft-org-search-autocomplete__content">
+
+                            <h3 class="ft-helper-fontSize-heading-XXS ft-helper-text-align-center">
+                                Las más buscadas
+                            </h3>
+
+                            <section id="cerca-localidades-list" role="region"
+                                aria-label="Listado de localidades disponibles" data-suggestions-section="true">
+                                <h3 class="ft-helper-hide">
+                                    Las más buscadas
+                                </h3>
+                                <ul role="list" aria-label="Listado de localidades"
+                                    class="ft-cerca-localidades-list__tags" id="cerca-suggestions-list" itemscope
+                                    itemtype="https://schema.org/ItemList" data-localidades-list="true"
+                                    data-suggestions-list="true" data-suggestions-total="0">
+
+                                    <li class="ft-tag ft-tag--chip ft-tag--md" data-tag-id="loc-cataluna-barcelona"
+                                        data-tag-type="location" data-tag-region="Cataluña"
+                                        data-tag-context="favorites-selector" data-tag-state="unselected"
+                                        data-tag-slug="barcelona" data-analytics-category="localidades"
+                                        data-analytics-action="fav_toggle" data-analytics-label="Barcelona"
+                                        itemprop="itemListElement" itemscope itemtype="https://schema.org/City">
+                                        <meta itemprop="name" content="Barcelona">
+                                        <meta itemprop="addressRegion" content="Cataluña">
+                                        <button type="button" class="ft-btn" aria-pressed="false"
+                                            aria-label="Marcar Barcelona como localidad favorita"
+                                            title="Marcar Barcelona como localidad favorita">
+                                            Barcelona
+                                        </button>
+                                    </li>
+
+                                    <li class="ft-tag ft-tag--chip ft-tag--md" data-tag-id="loc-cataluna-badalona"
+                                        data-tag-type="location" data-tag-region="Cataluña"
+                                        data-tag-context="favorites-selector" data-tag-state="unselected"
+                                        data-tag-slug="badalona" data-analytics-category="localidades"
+                                        data-analytics-action="fav_toggle" data-analytics-label="Badalona"
+                                        itemprop="itemListElement" itemscope itemtype="https://schema.org/City">
+                                        <meta itemprop="name" content="Badalona">
+                                        <meta itemprop="addressRegion" content="Cataluña">
+                                        <button type="button" class="ft-btn" aria-pressed="false"
+                                            aria-label="Marcar Badalona como localidad favorita"
+                                            title="Marcar Badalona como localidad favorita">
+                                            Badalona
+                                        </button>
+                                    </li>
+
+                                    <li class="ft-tag ft-tag--chip ft-tag--md" data-tag-id="loc-cataluna-castelldefels"
+                                        data-tag-type="location" data-tag-region="Cataluña"
+                                        data-tag-context="favorites-selector" data-tag-state="unselected"
+                                        data-tag-slug="castelldefels" data-analytics-category="localidades"
+                                        data-analytics-action="fav_toggle" data-analytics-label="Castelldefels"
+                                        itemprop="itemListElement" itemscope itemtype="https://schema.org/City">
+                                        <meta itemprop="name" content="Castelldefels">
+                                        <meta itemprop="addressRegion" content="Cataluña">
+                                        <button type="button" class="ft-btn" aria-pressed="false"
+                                            aria-label="Marcar Castelldefels como localidad favorita"
+                                            title="Marcar Castelldefels como localidad favorita">
+                                            Castelldefels
+                                        </button>
+                                    </li>
+
+                                    <li class="ft-tag ft-tag--chip ft-tag--md" data-tag-id="loc-cataluna-cornella"
+                                        data-tag-type="location" data-tag-region="Cataluña"
+                                        data-tag-context="favorites-selector" data-tag-state="unselected"
+                                        data-tag-slug="cornella" data-analytics-category="localidades"
+                                        data-analytics-action="fav_toggle" data-analytics-label="Cornellá"
+                                        itemprop="itemListElement" itemscope itemtype="https://schema.org/City">
+                                        <meta itemprop="name" content="Cornellá">
+                                        <meta itemprop="addressRegion" content="Cataluña">
+                                        <button type="button" class="ft-btn" aria-pressed="false"
+                                            aria-label="Marcar Cornellá como localidad favorita"
+                                            title="Marcar Cornellá como localidad favorita">
+                                            Cornellá
+                                        </button>
+                                    </li>
+
+                                    <li class="ft-tag ft-tag--chip ft-tag--md" data-tag-id="loc-cataluna-esplugues"
+                                        data-tag-type="location" data-tag-region="Cataluña"
+                                        data-tag-context="favorites-selector" data-tag-state="unselected"
+                                        data-tag-slug="esplugues" data-analytics-category="localidades"
+                                        data-analytics-action="fav_toggle" data-analytics-label="Esplugues"
+                                        itemprop="itemListElement" itemscope itemtype="https://schema.org/City">
+                                        <meta itemprop="name" content="Esplugues">
+                                        <meta itemprop="addressRegion" content="Cataluña">
+                                        <button type="button" class="ft-btn" aria-pressed="false"
+                                            aria-label="Marcar Esplugues como localidad favorita"
+                                            title="Marcar Esplugues como localidad favorita">
+                                            Esplugues
+                                        </button>
+                                    </li>
+
+                                    <li class="ft-tag ft-tag--chip ft-tag--md"
+                                        data-tag-id="loc-cataluna-vilanova-i-la-geltru" data-tag-type="location"
+                                        data-tag-region="Cataluña" data-tag-context="favorites-selector"
+                                        data-tag-state="unselected" data-tag-slug="vilanova-i-la-geltru"
+                                        data-analytics-category="localidades" data-analytics-action="fav_toggle"
+                                        data-analytics-label="Vilanova i la Geltrú" itemprop="itemListElement" itemscope
+                                        itemtype="https://schema.org/City">
+                                        <meta itemprop="name" content="Vilanova i la Geltrú">
+                                        <meta itemprop="addressRegion" content="Cataluña">
+                                        <button type="button" class="ft-btn" aria-pressed="false"
+                                            aria-label="Marcar Vilanova i la Geltrú como localidad favorita"
+                                            title="Marcar Vilanova i la Geltrú como localidad favorita">
+                                            Vilanova i la Geltrú
+                                        </button>
+                                    </li>
+
+                                    <li class="ft-tag ft-tag--chip ft-tag--md" data-tag-id="loc-cataluna-gava"
+                                        data-tag-type="location" data-tag-region="Cataluña"
+                                        data-tag-context="favorites-selector" data-tag-state="unselected"
+                                        data-tag-slug="gava" data-analytics-category="localidades"
+                                        data-analytics-action="fav_toggle" data-analytics-label="Gavá"
+                                        itemprop="itemListElement" itemscope itemtype="https://schema.org/City">
+                                        <meta itemprop="name" content="Gavá">
+                                        <meta itemprop="addressRegion" content="Cataluña">
+                                        <button type="button" class="ft-btn" aria-pressed="false"
+                                            aria-label="Marcar Gavá como localidad favorita"
+                                            title="Marcar Gavá como localidad favorita">
+                                            Gavá
+                                        </button>
+                                    </li>
+                                </ul>
+                            </section>
+
+                        </div>
+                    </div>
+                    <!-- cerca: bloque buscador / modificado para los quickwins -->
+                    <div class="ft-org-suggestions-chips" id="cerca-suggestions-chips" data-suggestions-container="true"
+                        data-suggestions-count="0" data-suggestions-loaded="false" data-hardcode-styles="initialSearch">
+                        <div class="ft-org-suggestions-chips__content">
+                            <p
+                                class="ft-helper-fontSize-body-XL--small ft-helper-fontColor-tertiary ft-helper-text-align-center">
+                                ¿Todavía no las has encontrado?
+                            </p>
+                            <form action="/cerca/" method="get" role="search" aria-label="Búsqueda de localidades"
+                                data-search-min-length="2" data-search-debounce="300" data-search-context="localidades"
+                                data-search-id="cerca-search-form" data-search-state="idle" novalidate>
+                                <div class="ft-mol-form ft-mol-form--has-label ft-mol-form--has-supporting-text ft-mol-form-search ft-mol-form-search--has-search-icon"
+                                    data-search-wrapper="true">
+
+                                    <input type="search" id="cerca-localidades" class="ft-mol-form__input"
+                                        name="localidad" placeholder=" " autocomplete="address-level2"
+                                        spellcheck="false" aria-label="Busca tu localidad"
+                                        aria-describedby="cerca-help cerca-results-status cerca-error-msg"
+                                        aria-required="false" aria-invalid="false" aria-expanded="false"
+                                        aria-controls="cerca-results-list" aria-autocomplete="list"
+                                        aria-haspopup="listbox" data-search-input="true"
+                                        data-search-id="cerca-localidades-input"
+                                        title="Busca tu localidad escribiendo el nombre de tu ciudad o pueblo"
+                                        maxlength="50" inputmode="text" value="">
+
+                                    <label for="cerca-localidades" class="ft-mol-form__label">Escribe tu localidad o
+                                        ciudad</label>
+
+                                    <button type="submit" class="ft-mol-form__submit ft-helper-hide"
+                                        aria-label="Buscar localidad" data-search-submit="true">
+                                        Buscar
+                                    </button>
+
+                                    <!-- Contenedor para resultados de búsqueda autocomplete -->
+                                    <div id="cerca-results-wrapper" class="ft-mol-form__results-wrapper ft-helper-hide"
+                                        data-search-results-wrapper="true">
+                                        <div id="cerca-results-container" class="ft-mol-form__results-container"
+                                            data-search-results-container="true">
+                                            <!-- Estado: Cargando -->
+                                            <div class="ft-mol-form__results-loading ft-helper-hide"
+                                                id="cerca-results-loading-autocomplete" role="status" aria-live="polite"
+                                                aria-label="Buscando localidades">
+                                                <p class="ft-helper-fontSize-body-S">Buscando...</p>
+                                            </div>
+
+                                            <!-- Estado: Sin resultados -->
+                                            <div class="ft-mol-form__results-empty ft-helper-hide"
+                                                id="cerca-results-empty-autocomplete" role="status" aria-live="polite">
+                                                <p class="ft-helper-fontSize-body-S">No se encontraron localidades</p>
+                                            </div>
+
+                                            <!-- Estado: Error -->
+                                            <div class="ft-mol-form__results-error ft-helper-hide"
+                                                id="cerca-results-error-autocomplete" role="alert"
+                                                aria-live="assertive">
+                                                <p class="ft-helper-fontSize-body-S">Error en la búsqueda</p>
+                                            </div>
+
+                                            <!-- Lista de resultados -->
+                                            <ul id="cerca-results-list" class="ft-mol-form__results-list" role="listbox"
+                                                aria-label="Resultados de búsqueda" data-search-results-list="true"
+                                                data-results-count="0">
+                                                <!-- Los resultados se inyectarán dinámicamente aquí mediante JavaScript -->
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <!-- Contador de resultados (oculto por defecto) -->
+                                    <div id="cerca-results-status" class="ft-helper-hide" role="status"
+                                        aria-live="polite" aria-atomic="true">
+                                        <span id="cerca-results-status-text" data-results-status-text=""></span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                    <!-- cerca: sticky panel de chips seleccionados -->
+                    <div id="cercaSelectedChips"
+                        class="ft-mol-sticky-panel ft-mol-sticky-panel--bttm ft-mol-sticky-panel--short ft-mol-sticky-panel--open near-ssr-search ft-mol-sticky-panel--no-animate"
+                        role="region" aria-label="Localidades favoritas seleccionadas" aria-live="polite"
+                        aria-atomic="true" aria-hidden="false" addtext="Eliminar" data-hardcode-styles="initialSearch">
+                        <div class="ft-mol-sticky-panel__container">
+                            <div class="ft-mol-sticky-panel__header">
+                                <p class="ft-mol-sticky-panel__message">0 localidades seleccionadas</p>
+                            </div>
+                            <div class="ft-mol-sticky-panel__body"><!--[--><!--]--><!----></div>
+                            <div class="ft-mol-sticky-panel__footer">
+                                <div class="ft-mol-btnGroup ft-mol-btnGroup--cnt"><!--[--><button type="button"
+                                        id="cerca-finish-button" name="submit"
+                                        aria-label="Finalizar selección de localidades favoritas" aria-pressed="false"
+                                        tabindex="0" aria-disabled="false" aria-busy="false" aria-invalid="false"
+                                        class="ft-btn ft-btn--sm ft-btn--tertiary">Ver mi portada</button><!--]-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--  END // CERCA -->
+                </div>
+            </div>
+        </article>
+        <!--Publi Footer (cuando aplique)
+        <div class="ft-ad ft-ad--footer">
+            <div class="ft-ad--footer__content">
+                <div class="ft-ad--footer__embed">
+                    <aside class="ft-helper-hide-md">
+                        <img src="../../cds-statics/assets/img/banners/ad-footer--mobile.svg" width="768" height="87" alt="banner" class="ft-helper-img-rd">
+                    </aside>
+                    <aside class="ft-helper-hide-mo">
+                        <img src="../../cds-statics/assets/img/banners/ad-footer.png" width="768" height="87" alt="banner" class="ft-helper-img-rd">
+                    </aside>
+                </div>
+                <button type="button" name="close-button" class="ft-btn-nav ft-btn-nav--close ft-popover-close-trigger" title="title text">
+                    <span class="ft-btn-nav__text">
+                        Cerrar
+                    </span>
+                    <span class="ft-btn-nav__icon"></span>
+                </button>
+            </div>
+        </div>
+        Fin Publi Footer -->
+        <!-- Pie -->
+        <footer id="footer-media" role="contentinfo" aria-label="Información del pie de página">
+            <h2 class="ft-helper-hide">Información de pie de página</h2>
+
+            <div class="footer-mediaTop">
+                <a data-edition-homelink="data-edition-homelink" title="El Periódico" href="/es/" aria-current="page">
+                    <img width="263" height="65" loading="lazy" alt="El Periódico2"
+                        src="../../cds-statics/assets/img/logos/logoEpColor.svg">
+                </a>
+
+                <div class="rrss" aria-label="Redes sociales de El Periódico">
+                    <a class="btn" href="#" rel="noopener noreferrer nofollow" target="_blank"
+                        aria-label="WhatsApp de El Periódico">
+                        <span class="icon icon-Whatsapp" aria-hidden="true"></span>
+                    </a>
+                    <a class="btn" href="https://www.facebook.com/elperiodico.catalunya"
+                        rel="noopener noreferrer nofollow" target="_blank" hreflang="es"
+                        aria-label="Facebook de El Periódico">
+                        <span class="icon icon-Facebook" aria-hidden="true"></span>
+                    </a>
+                    <a class="btn" href="https://twitter.com/elperiodico" rel="noopener noreferrer nofollow"
+                        target="_blank" hreflang="es" aria-label="Twitter de El Periódico">
+                        <span class="icon icon-Twitter" aria-hidden="true"></span>
+                    </a>
+                    <a class="btn" href="https://www.instagram.com/elperiodico_cas/" rel="noopener noreferrer nofollow"
+                        target="_blank" hreflang="es" aria-label="Instagram de El Periódico">
+                        <span class="icon icon-Instagram" aria-hidden="true"></span>
+                    </a>
+                </div>
+
+                <h3 class="ft-helper-hide">Enlaces institucionales</h3>
+                <nav aria-label="Enlaces institucionales">
+                    <ul class="lnk">
+                        <li><a href="https://www.elperiodico.com/es/quienessomos.shtml" rel="nofollow noopener"
+                                target="_blank" hreflang="es" title="Quiénes somos">
+                                Quiénes somos
+                            </a></li>
+                        <li><a href="https://www.elperiodico.com/es/contacto.shtml" rel="nofollow noopener"
+                                target="_blank" hreflang="es" title="Contacto">
+                                Contacto
+                            </a></li>
+                        <li><a href="https://www.elperiodico.com/es/rss/portada_rss.shtml" rel="nofollow noopener"
+                                target="_blank" hreflang="es" title="RSS">
+                                RSS
+                            </a></li>
+                        <li><a href="https://www.elperiodico.com/es/mapa-sitio.shtml" rel="nofollow noopener"
+                                target="_blank" hreflang="es" title="Mapa del sitio">
+                                Mapa del sitio
+                            </a></li>
+                        <li><a href="https://www.prensaiberica360.es/?_sid=1686819132" rel="nofollow noopener"
+                                target="_blank" hreflang="es" title="Publicidad">
+                                Publicidad
+                            </a></li>
+                        <li><a href="https://www.elperiodico.com/es/avisolegal.shtml" rel="nofollow noopener"
+                                target="_blank" hreflang="es" title="Aviso legal">
+                                Aviso legal
+                            </a></li>
+                        <li><a href="https://www.prensaiberica.es/politica-de-privacidad-resumida/?_sid=1686819132"
+                                rel="nofollow noopener" target="_blank" hreflang="es"
+                                title="Política de privacidad y cookies">
+                                Política de privacidad y cookies
+                            </a></li>
+                        <li><a href="javascript: Didomi.preferences.show();" rel="nofollow noopener"
+                                title="Preferencias de Privacidad">
+                                Preferencias de Privacidad
+                            </a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="footer-mediaMiddle">
+                <address>
+                    <p>El Periódico de Catalunya, S.L.U</p>
+                    <a href="https://estaticos-cdn.lne.es/images/footer/prensa-iberica-360.png?id=00bc9e3946af531b5a7b"
+                        rel="noopener" target="_blank" hreflang="es" title="Prensa Ibérica">
+                        <img width="114" height="73" loading="lazy" alt="Prensa Ibérica"
+                            src="https://estaticos-cdn.lne.es/images/footer/prensa-iberica-360.png?id=00bc9e3946af531b5a7b"
+                            title="Prensa Ibérica">
+                    </a>
+                </address>
+            </div>
+
+            <div class="footer-mediaBottom">
+                <p>Otras webs de Prensa Ibérica Media:</p>
+                <ul>
+                    <li class="titular">
+                        Titular 1
+                    </li>
+                    <li><a rel="nofollow" target="_blank" title="Casa Gourmet"
+                            href="https://www.casagourmet.es/?_sid=1686737966">
+                            Casa Gourmet
+                        </a>
+                    </li>
+                    <li><a rel="nofollow" target="_blank" title="Coche de ocasión" href="https://ocasion.neomotor.com/">
+                            Coche de ocasión
+                        </a>
+                    </li>
+                    <li><a rel="nofollow" target="_blank" title="Código Nuevo"
+                            href="https://www.codigonuevo.com/?_sid=1686737966">
+                            Código Nuevo
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Cuore"
+                            href="https://www.elperiodico.com/cuore/?_sid=1686737966">
+                            Cuore
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Diari de Girona"
+                            href="https://www.diaridegirona.cat/?_sid=1686737966">
+                            Diari de Girona
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Diario de Córdoba"
+                            href="https://www.diariocordoba.com/?_sid=1686737966">
+                            Diario de Córdoba
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Diario de Ibiza"
+                            href="https://www.diariodeibiza.es/?_sid=1686737966">
+                            Diario de Ibiza
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Diario de Mallorca"
+                            href="https://www.diariodemallorca.es/?_sid=1686737966">
+                            Diario de Mallorca
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="El Correo Gallego"
+                            href="https://www.elcorreogallego.es/?_sid=1686737966">
+                            El Correo Gallego
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="El Día Tenerife"
+                            href="https://www.eldia.es/?_sid=1686737966">
+                            El Día Tenerife
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="El Periódico de Aragón"
+                            href="https://www.elperiodicodearagon.com/?_sid=1686737966">
+                            El Periódico de Aragón
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="El Periódico de Catalunya"
+                            href="https://www.elperiodico.com/es/?_sid=1686737966">
+                            El Periódico de Catalunya
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="El Periódico de España"
+                            href="https://www.epe.es/es/?_sid=1686737966">
+                            El Periódico de España
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="El Periódico de Extremadura"
+                            href="http://www.elperiodicoextremadura.com/?_sid=1686737966">
+                            El Periódico de Extremadura
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="El Periódico Mediterráneo"
+                            href="https://www.elperiodicomediterraneo.com/?_sid=1686737966">
+                            El Periódico Mediterráneo
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Faro de Vigo"
+                            href="https://www.farodevigo.es/?_sid=1686737966">
+                            Faro de Vigo
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Fórmula 1"
+                            href="https://formula1.lne.es/?_sid=1686737966">
+                            Fórmula 1
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Goya" href="https://www.premios-cine.com/goya/">
+                            Goya
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Iberempleos" href="https://www.iberempleos.es/">
+                            Iberempleos
+                        </a></li>
+                    <li class="titular">
+                        Titular 2
+                    </li>
+                    <li><a rel="nofollow" target="_blank" title="Información" href="https://www.diarioinformacion.com/">
+                            Información
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Información TV" href="http://www.informaciontv.es/">
+                            Información TV
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="La Crónica de Badajoz"
+                            href="https://www.lacronicabadajoz.com/">
+                            La Crónica de Badajoz
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="La Nueva España Asturias"
+                            href="https://www.lne.es/asturias/?_sid=1686737966">
+                            La Nueva España Asturias
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="La Opinión de A Coruña"
+                            href="https://www.laopinioncoruna.es/?_sid=1686737966">
+                            La Opinión de A Coruña
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="La Opinión de Murcia"
+                            href="https://www.laopiniondemurcia.es/?_sid=1686737966">
+                            La Opinión de Murcia
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="La Opinión de Málaga"
+                            href="https://www.laopiniondemalaga.es/?_sid=1686737966">
+                            La Opinión de Málaga
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="La Opinión El correo de Zamora"
+                            href="https://www.laopiniondezamora.es/?_sid=1686737966">
+                            La Opinión El correo de Zamora
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="La Provincia Diario de Las Palmas"
+                            href="https://www.laprovincia.es/?_sid=1686737966">
+                            La Provincia Diario de Las Palmas
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Levante El Mercantil Valenciano"
+                            href="https://www.levante-emv.com/?_sid=1686737966">
+                            Levante El Mercantil Valenciano
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Levante TV" href="http://www.informaciontv.es/">
+                            Levante TV
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="L'Empordà Figueres"
+                            href="https://www.emporda.info/?_sid=1686737966">
+                            L'Empordà Figueres
+                        </a></li>
+                    <li class="titular">
+                        Titular 3
+                    </li>
+                    <li><a rel="nofollow" target="_blank" title="Mallorca Zeitung Mallorca"
+                            href="https://www.mallorcazeitung.es/?_sid=1686737966">
+                            Mallorca Zeitung Mallorca
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Neomotor"
+                            href="https://neomotor.epe.es/?_sid=1686737966">
+                            Neomotor
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Oscars" href="https://www.premios-cine.com/oscars/">
+                            Oscars
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Regió 7 Manresa"
+                            href="https://www.regio7.cat/?_sid=1686737966">
+                            Regió Manresa
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Sport" href="https://www.sport.es/">
+                            Sport
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Stilo" href="https://www.stilo.es/?_sid=1686737966">
+                            Stilo
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Superdeporte Valencia"
+                            href="https://www.superdeporte.es/?_sid=1686737966">
+                            Superdeporte Valencia
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Tendencias 21"
+                            href="https://www.sport.es/es/tendencias21/">
+                            Tendencias 21
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Tu casa" href="https://www.tucasa.com/">
+                            Tu casa
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Medio Ambiente"
+                            href="https://www.sport.es/es/medio-ambiente/">
+                            Medio Ambiente
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Viajar"
+                            href="https://viajar.elperiodico.com/?_sid=1686737966">
+                            Viajar
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Woman Madame Figaro" href="https://www.woman.es/">
+                            Woman Madame Figaro
+                        </a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+
+
+    <!-- JS: masthead -->
+    <script rel="modulepreload" src="../../cds-statics/js/affix/affix.js"></script>
+    <script rel="modulepreload" src="../../cds-statics/js/headers/masthead.js"></script>
+    <script rel="modulepreload" src="../../cds-statics/js/sticking/fourty-header-sticky.js"></script>
+    <script rel="modulepreload" src="../../cds-statics/js/form/fourty-js-form-combo-search.js"></script>
+    <script rel="modulepreload" src="../../cds-statics/js/sidenav/fourty-js-sidenav-default.js"></script>
+    <script rel="modulepreload" src="../../cds-statics/js/modal/fourty-js-popover.js"></script>
+    <script rel="modulepreload" src="../../cds-statics/js/dropdown/fortty-js-dropdown-simple.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>42DS | Templates: Noticia, autores</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS: settings -->
+    <link id="brandStyles-root" rel="stylesheet" href="../../cds-statics/css/brands/ux/setting.css" type="text/css">
+    <!-- CSS: library multibrand -->
+    <link id="brandStyles" rel="stylesheet" href="../../cds-statics/css/ux-index.css" type="text/css">
+    <!-- CSS: JS highlight -->
+    <!-- FAVICON -->
+    <link rel="icon" href="../favicon.png" type="image/png">
+</head>
+
+<body class="fourty ft-brand-ux ft-skin ft-skin--showroom minimal-header"
+    data-showroom-skin="layout">
+    <!-- Siempre pondremos a continuación de la etiqueta body los Skip link -->
+    <!-- Skip link al contenido principal -->
+    <a href="#main-content" class="ft-skiplink ft-btn ft-btn--md" title="Saltar al contenido principal" tabindex="0">
+        Saltar al contenido principal
+    </a>
+            <!--header-->
+            <header>
+                <!-- Cabecera normal -->
+                <div class="ft-org-masthead ft-org-masthead--branded">
+                    <div class="ft-org-masthead__top">
+                        <div class="ft-org-masthead__top-left">
+                            <a href="/es/" class="ft-org-masthead__top-left-logo" title="El Periódico de España">
+                            </a>
+                            <div class="ft-date ft-date--inline">
+                                <div class="ft-date__text">
+                                    <time class="ft-date__textTime" itemprop="datePublished" datetime="2025-03-17T04:50:43+01:00">17 MAR 2025</time>
+                                </div>
+                                <time class="ft-date__reload" itemprop="dateModified" datetime="2025-03-17T06:11:15+01:00">Actualizada 6:11</time>
+                            </div>
+                        </div>
+                        <div class="ft-org-masthead__top-right">
+                            <div class="sticky">
+                                <p class="sticky-text">Suscríbete hoy con un <span class="sticky-text__bold">30% de dto</span></p>
+                                <div class="sticky-button"></div>
+                                <a class="sticky-link" data-vars-event-cat="piano link" external-event="marketing=base-pm1A"
+                                    href="https://micuenta.lne.es/tp/suscripcion/galeria?marketing=base-pm1A" rel="nofollow"
+                                    target="_blank" title="link title"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ft-org-masthead__main">
+                        <div class="ft-org-masthead__menu">
+                            <button type="button" class="ft-org-masthead__menu-button" id="toggle">
+                                <span class="ft-org-masthead__menu-buttonIcon"></span>
+                            </button>
+                        </div>
+                        <div class="ft-org-masthead__logo">
+                            <h1 class="ft-org-masthead__logo-img">
+                                <a href="/es/" class="ft-org-masthead__logo-link" title="El Periódico">
+                                    <span class="ft-org-masthead--hide">el periódico</span>
+                                </a>
+                            </h1>
+                            <div class="ft-org-masthead__logo-lang">
+                                <button type="button" onclick="triggerDropdownLanguage()" class="ft-org-masthead__logo-button"
+                                    id="activeLanguage" data-active=".com">.com</button>
+                                <ul class="ft-org-masthead__dropdown" id="languageDropdown">
+                                    <li><a href="https://www.elperiodico.cat/ca/" class="ft-org-masthead__dropdown-link">.cat</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ft-org-masthead__area">
+                            <button class="ft-org-masthead__area--search">
+                            </button>
+                            <button class="ft-org-masthead__area--login">
+                            </button>
+                        </div>
+                    </div>
+                    <nav class="ft-org-masthead__nav">
+                        <ul class="ft-org-masthead__list">
+                            <li class="ft-org-masthead__item">
+                                <a href="#" class="ft-org-masthead__link" title="Title text">
+                                    <img src="../../cds-statics/assets/img/logos/logo-prueba2.svg" width="85" height="40">
+                                </a>
+                            </li>
+                            <li class="ft-org-masthead__item">
+                                <a href="#" class="ft-org-masthead__link" title="Title text">
+                                    Enlace 2
+                                </a>
+                            </li>
+                            <li class="ft-org-masthead__item">
+                                <a href="#" class="ft-org-masthead__link" title="Title text">
+                                    Enlace 3
+                                </a>
+                            </li>
+    
+                            <li class="ft-org-masthead__item">
+                                <a href="#" class="ft-org-masthead__link" title="Title text">
+                                    Enlace 7
+                                </a>
+                            </li>
+                            <li class="ft-org-masthead__item ft-org-masthead__item--live">
+                                <a href="/es/directos/" class="ft-org-masthead__link" title="Directos"> Directos </a>
+                            </li>
+                            <li class="ft-org-masthead__item">
+                                <a href="#" class="ft-org-masthead__link" title="Title text">
+                                    Enlace 8
+                                </a>
+                            </li>
+                            <li class="ft-org-masthead__item">
+                                <a href="#" class="ft-org-masthead__link" title="Title text">
+                                    Enlace 9
+                                </a>
+                            </li>
+                            <li class="ft-org-masthead__item">
+                                <a href="#" class="ft-org-masthead__link" title="Title text">
+                                    Enlace 10
+                                </a>
+                            </li>
+                            <li class="ft-org-masthead__item">
+                                <a href="#" class="ft-org-masthead__link" title="Title text">
+                                    Enlace 11
+                                </a>
+                            </li>
+                            <li class="ft-org-masthead__item">
+                                <a href="#" class="ft-org-masthead__link" title="Title text">
+                                    Enlace 12
+                                </a>
+                            </li>
+                            <li class="ft-org-masthead__item">
+                                <a href="#" class="ft-org-masthead__link" title="Title text">
+                                    Enlace 13
+                                </a>
+                            </li>
+                        </ul>
+                        <a href="#" class="ft-org-masthead__branded">Ofrecido por <img
+                                src="../../cds-statics/assets/img/logos/logo-prueba.svg"></a>
+                    </nav>
+                    <nav class="ft-org-masthead__nav ft-org-masthead__nav--mobile">
+                        <ul class="ft-org-masthead__list">
+                            <li class="ft-org-masthead__item">
+                                <a href="#" class="ft-org-masthead__link" title="Title text">
+                                    <img src="../../cds-statics/assets/img/logos/logo-prueba2.svg" width="85" height="40">
+                                </a>
+                            </li>
+                            <li class="ft-org-masthead__item">
+                                <a href="#" class="ft-org-masthead__link ft-org-masthead__link--active" title="Title text">
+                                    Enlace 2 Mobile
+                                </a>
+                            </li>
+                            <li class="ft-org-masthead__item">
+                                <a href="#" class="ft-org-masthead__link" title="Title text">
+                                    Enlace 3 Mobile
+                                </a>
+                            </li>
+                            <li class="ft-org-masthead__item">
+                                <a href="#" class="ft-org-masthead__link" title="Title text">
+                                    Enlace 4 Mobile
+                                </a>
+                            </li>
+                            <li class="ft-org-masthead__item">
+                                <a href="#" class="ft-org-masthead__link" title="Title text">
+                                    Enlace 5 Mobile
+                                </a>
+                            </li>
+                            <li class="ft-org-masthead__item">
+                                <a href="#" class="ft-org-masthead__link" title="Title text">
+                                    Enlace 6 Mobile
+                                </a>
+                            </li>
+                            <li class="ft-org-masthead__item">
+                                <a href="#" class="ft-org-masthead__link" title="Title text">
+                                    Enlace 7 Mobile
+                                </a>
+                            </li>
+                            <li class="ft-org-masthead__item ft-org-masthead__item--live">
+                                <a href="/es/directos/" class="ft-org-masthead__link" title="Directos"> Directos </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <nav class="ft-org-masthead__subnav">
+                        <ul class="ft-org-masthead__list">
+                            <li class="ft-org-masthead__item">
+                                <a href="#" class="ft-org-masthead__link" title="Title text">
+                                    Ediciones digitales:
+                                </a>
+                            </li>
+                            <li class="ft-org-masthead__item">
+                                <a href="#" class="ft-org-masthead__link" title="Title text">
+                                    Siero
+                                </a>
+                            </li>
+                            <li class="ft-org-masthead__item">
+                                <a href="#" class="ft-org-masthead__link" title="Title text">
+                                    Llanera
+                                </a>
+                            </li>
+                            <li class="ft-org-masthead__item">
+                                <a href="#" class="ft-org-masthead__link" title="Title text">
+                                    Villaviciosa
+                                </a>
+                            </li>
+                            <li class="ft-org-masthead__item">
+                                <a href="#" class="ft-org-masthead__link" title="Title text">
+                                    Grado
+                                </a>
+                            </li>
+                            <li class="ft-org-masthead__item">
+                                <a href="#" class="ft-org-masthead__link" title="Title text">
+                                    Salas
+                                </a>
+                            </li>
+                            <li class="ft-org-masthead__item">
+                                <a href="#" class="ft-org-masthead__link" title="Title text">
+                                    Ribera de Arriba
+                                </a>
+                            </li>
+                            <li class="ft-org-masthead__item">
+                                <a href="#" class="ft-org-masthead__link" title="Title text">
+                                    La Corredoria
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- Cabecera fija -->
+                <div class="ft-org-masthead ft-org-masthead--fix">
+                    <div class="ft-org-masthead__main">
+                        <div class="ft-org-masthead__menu">
+                            <button type="button" class="ft-org-masthead__menu-button" id="toggle">
+                                <span class="ft-org-masthead__menu-buttonIcon"></span>
+                            </button>
+                        </div>
+                        <div class="ft-org-masthead__logo">
+                            <h1 class="ft-org-masthead__logo-img">
+                                <a href="/es/" class="ft-org-masthead__logo-link" title="El Periódico">
+                                    <span class="ft-org-masthead--hide">el periódico</span>
+                                </a>
+                            </h1>
+                            <div class="ft-org-masthead__logo-lang">
+                                <button type="button" onclick="triggerDropdownLanguage()" class="ft-org-masthead__logo-button"
+                                    id="activeLanguage" data-active=".com">.com</button>
+                                <ul class="ft-org-masthead__dropdown" id="languageDropdown">
+                                    <li><a href="https://www.elperiodico.cat/ca/" class="ft-org-masthead__dropdown-link">.cat</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ft-org-masthead__area">
+                            <button class="ft-org-masthead__area--search">
+        
+                            </button>
+                            <button class="ft-org-masthead__area--login">
+                              
+                            </button>
+                        </div>
+                    </div>
+                    <div id="progress-bar" class="ft-org-masthead__progress-bar"></div>
+                </div>
+                <!-- Menú Lateral Único -->
+                <div class="ft-org-masthead ft-org-masthead--side" id="sideMenu">
+                    <div class="ft-org-masthead__main">
+                        <div class="ft-org-masthead__menu">
+                            <button type="button" class="ft-org-masthead__menu-button" id="toggle">
+                                <span class="ft-org-masthead__menu-buttonIcon"></span>
+                            </button>
+                        </div>
+            
+                        <div class="ft-org-masthead__logo">
+                            <div class="ft-org-masthead__logo-img">
+                                <a href="/es/" class="ft-org-masthead__logo-link" title="El Periódico">
+                                    <span class="ft-org-masthead--hide">el periódico</span>
+                                </a>
+                            </div>
+                            <div class="ft-org-masthead__logo-lang">
+                                <button type="button" onclick="triggerDropdownLanguage()" class="ft-org-masthead__logo-button"
+                                    id="activeLanguage" data-active=".com">.com</button>
+                                <ul class="ft-org-masthead__dropdown" id="languageDropdown">
+                                    <li><a href="https://www.elperiodico.cat/ca/" class="ft-org-masthead__dropdown-link">.cat</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ft-org-masthead__area">
+                            <button class="ft-org-masthead__area--search">
+            
+                            </button>
+                            <button class="ft-org-masthead__area--login">
+                              
+                            </button>
+                        </div>
+                    </div>
+                    <div class="ft-org-masthead__box ft-org-masthead__box--white">
+                        <div class="form-field">
+                            <div class="select-wrapper">
+                              <select required>
+                                <option value="" disabled selected></option>
+                                <option value="opcion1">Opción 1</option>
+                                <option value="opcion2">Opción 2</option>
+                                <option value="opcion3">Opción 3</option>
+                              </select>
+                              <label>Selecciona una opción</label>
+                              <span class="select-arrow"></span>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="ft-org-masthead__box ft-org-masthead__box--white">
+                        <h2 class="ft-org-masthead__title">Secciones</h2>
+                        <nav aria-label="Menú principal" class="ft-org-masthead__acordeon">
+                            <ul class="ft-org-masthead__acordeon-list ft-org-masthead__acordeon-list--nivel-1">
+                              <li class="ft-org-masthead__acordeon-item">
+                                <button class="ft-org-masthead__acordeon-toggle" aria-expanded="false" aria-controls="submenu-1">
+                                  Sección 1
+                                </button>
+                                <ul id="submenu-1" class="ft-org-masthead__acordeon-list ft-org-masthead__acordeon-list--nivel-2" hidden>
+                                
+                                  <li class="ft-org-masthead__acordeon-item">
+                                    <button 
+                                      class="ft-org-masthead__acordeon-toggle" 
+                                      aria-expanded="false" 
+                                      aria-controls="submenu-1-2">
+                                      Submenú 1.2 con acordeon
+                                    </button>
+                                    <ul id="submenu-1-2" class="ft-org-masthead__acordeon-list ft-org-masthead__acordeon-list--nivel-3" hidden>
+                                      <li class="ft-org-masthead__acordeon-item"><a class="ft-org-masthead__acordeon-link" href="/ruta-1-2-1">Subsección 1.2.1</a></li>
+                                      <li class="ft-org-masthead__acordeon-item"><a class="ft-org-masthead__acordeon-link" href="/ruta-1-2-2">Subsección 1.2.2</a></li>
+                                    </ul>
+                                  </li>
+                                  <li class="ft-org-masthead__acordeon-item"><a class="ft-org-masthead__acordeon-link" href="/ruta-1-3">Submenú 1.3 con enlace</a></li>
+                                </ul>
+                              </li>
+                          
+                              <li class="ft-org-masthead__acordeon-item">
+                                <button 
+                                  class="ft-org-masthead__acordeon-toggle" 
+                                  aria-expanded="false" 
+                                  aria-controls="submenu-2">
+                                  Sección 2
+        
+                                </button>
+                                <ul id="submenu-2" class="ft-org-masthead__acordeon-list ft-org-masthead__acordeon-list--nivel-2" hidden>
+                                  <li class="ft-org-masthead__acordeon-item"><a class="ft-org-masthead__acordeon-link" href="/ruta-2-1">Subsección 2.1</a></li>
+                                  <li class="ft-org-masthead__acordeon-item"><a class="ft-org-masthead__acordeon-link" href="/ruta-2-1">Subsección 2.2</a></li>
+                                </ul>
+                              </li>
+                              <li class="ft-org-masthead__acordeon-item">
+                                <button 
+                                  class="ft-org-masthead__acordeon-toggle" 
+                                  aria-expanded="false" 
+                                  aria-controls="submenu-3">
+                                  Sección 3
+        
+                                </button>
+                                <ul id="submenu-3" class="ft-org-masthead__acordeon-list ft-org-masthead__acordeon-list--nivel-2" hidden>
+                                  <li class="ft-org-masthead__acordeon-item"><a class="ft-org-masthead__acordeon-link" href="/ruta-2-1">Subsección 3.1</a></li>
+                                  <li class="ft-org-masthead__acordeon-item"><a class="ft-org-masthead__acordeon-link" href="/ruta-2-1">Subsección 3.2</a></li>
+                                </ul>
+                              </li>
+                              <li class="ft-org-masthead__acordeon-item">
+                                <a
+                                  class="ft-org-masthead__acordeon-link">
+                                  Sección 4
+                              </a>
+                               
+                              </li>
+                              <li class="ft-org-masthead__acordeon-item">
+                                <button 
+                                  class="ft-org-masthead__acordeon-toggle" 
+                                  aria-expanded="false" 
+                                  aria-controls="submenu-5">
+                                  Sección 5
+                                </button>
+                                <ul id="submenu-5" class="ft-org-masthead__acordeon-list ft-org-masthead__acordeon-list--nivel-2" hidden>
+                                  <li class="ft-org-masthead__acordeon-item"><a class="ft-org-masthead__acordeon-link" href="/ruta-2-1">Subsección 5.1</a></li>
+                                  <li class="ft-org-masthead__acordeon-item"><a class="ft-org-masthead__acordeon-link" href="/ruta-2-1">Subsección 5.2</a></li>
+                                </ul>
+                              </li>
+                              <li class="ft-org-masthead__acordeon-item">
+                                <button 
+                                  class="ft-org-masthead__acordeon-toggle" 
+                                  aria-expanded="false" 
+                                  aria-controls="submenu-6">
+                                  Sección 6
+                                </button>
+                                <ul id="submenu-6" class="ft-org-masthead__acordeon-list ft-org-masthead__acordeon-list--nivel-2" hidden>
+                                  <li class="ft-org-masthead__acordeon-item"><a class="ft-org-masthead__acordeon-link" href="/ruta-2-1">Subsección 5.1</a></li>
+                                  <li class="ft-org-masthead__acordeon-item"><a class="ft-org-masthead__acordeon-link" href="/ruta-2-1">Subsección 5.2</a></li>
+                                </ul>
+                              </li>
+                              <li class="ft-org-masthead__acordeon-item">
+                                <button 
+                                  class="ft-org-masthead__acordeon-toggle" 
+                                  aria-expanded="false" 
+                                  aria-controls="submenu-7">
+                                  Sección 7
+                                </button>
+                                <ul id="submenu-7" class="ft-org-masthead__acordeon-list ft-org-masthead__acordeon-list--nivel-2" hidden>
+                                  <li class="ft-org-masthead__acordeon-item"><a class="ft-org-masthead__acordeon-link" href="/ruta-2-1">Subsección 5.1</a></li>
+                                  <li class="ft-org-masthead__acordeon-item"><a class="ft-org-masthead__acordeon-link" href="/ruta-2-1">Subsección 5.2</a></li>
+                                </ul>
+                              </li>
+                              <li class="ft-org-masthead__acordeon-item">
+                                <button 
+                                  class="ft-org-masthead__acordeon-toggle" 
+                                  aria-expanded="false" 
+                                  aria-controls="submenu-8">
+                                  <svg class="ft-org-masthead__acordeon-toggleImg" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.59511 1.39615L8.84631 5.24696C9.03374 5.82379 9.57127 6.21434 10.1778 6.21434H14.2268C14.2637 6.21434 14.2791 6.22419 14.2871 6.23042C14.2991 6.23971 14.3134 6.25733 14.3219 6.28344C14.3304 6.30954 14.3292 6.33218 14.3249 6.34676C14.3221 6.35653 14.3154 6.37355 14.2856 6.39524L11.0099 8.77517C10.5192 9.13168 10.3139 9.76359 10.5013 10.3404L11.7525 14.1912C11.7639 14.2263 11.7593 14.244 11.7558 14.2536C11.7507 14.2679 11.7384 14.2869 11.7162 14.303C11.6939 14.3192 11.6721 14.325 11.6569 14.3255C11.6467 14.3258 11.6285 14.3247 11.5986 14.303L8.3229 11.9231C7.83222 11.5666 7.16778 11.5666 6.6771 11.9231L3.4014 14.303C3.37154 14.3247 3.35331 14.3258 3.34313 14.3255C3.32795 14.325 3.30605 14.3192 3.28385 14.303C3.26164 14.2869 3.24929 14.2679 3.24416 14.2536C3.24072 14.244 3.23611 14.2263 3.24752 14.1912L4.49872 10.3404C4.68615 9.76359 4.48083 9.13167 3.99014 8.77517L0.714445 6.39524C0.684584 6.37354 0.677924 6.35653 0.675071 6.34676C0.670813 6.33218 0.669636 6.30954 0.678119 6.28344C0.686601 6.25733 0.700859 6.23971 0.712873 6.23042C0.720929 6.22419 0.736315 6.21434 0.773226 6.21434H4.82221C5.42873 6.21434 5.96627 5.82379 6.15369 5.24696L7.40489 1.39615C7.4163 1.36104 7.43042 1.34945 7.43883 1.34372C7.45138 1.33516 7.47255 1.32705 7.5 1.32705C7.52745 1.32705 7.54861 1.33516 7.56116 1.34372C7.56958 1.34945 7.5837 1.36105 7.59511 1.39615Z" stroke="currentcolor" stroke-width="1.3"/>
+                                    </svg>
+                                  Sección 8
+                                </button>
+                                <ul id="submenu-8" class="ft-org-masthead__acordeon-list ft-org-masthead__acordeon-list--nivel-2" hidden>
+                                  <li class="ft-org-masthead__acordeon-item"><a class="ft-org-masthead__acordeon-link" href="/ruta-2-1">Subsección 5.1</a></li>
+                                  <li class="ft-org-masthead__acordeon-item"><a class="ft-org-masthead__acordeon-link" href="/ruta-2-1">Subsección 5.2</a></li>
+                                </ul>
+                              </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="ft-org-masthead__box">
+                        <div class="ft-org-masthead__section">
+                            <a href="#" class="ft-org-masthead__link">
+                            <img class="" src="/cds-statics/assets/img/icons/sopa-letras-PRUEBA.svg" width="120" height="75">
+                            </a>
+                            <p class="ft-org-masthead__subtitle ft-org-masthead__subtitle--center">Sopa de letras</p>
+                        </div>
+                        <div class="ft-org-masthead__section">
+                            <a href="#" class="ft-org-masthead__link">
+                                <img class="" src="/cds-statics/assets/img/icons/wordle-PRUEBA.svg" width="120" height="75">
+                            </a>
+                            <p class="ft-org-masthead__subtitle ft-org-masthead__subtitle--center">Wordle</p>
+                        </div>
+                    </div>
+                    <div class="ft-org-masthead__box ft-org-masthead__box--white">
+                        <h2 class="ft-org-masthead__title">La newsletter del Director</h2>
+                        <div class="ft-mol-authors ft-mol-authors--horizontal ft-mol-authors--reduced js-prism">
+                            <div class="ft-mol-authors__photo">
+                                <a href="layout-noticia-Woman.html" title="title" target="_self">
+                                    <img src="https://estaticos-cdn.prensaiberica.es/clip/3a5b2a1b-70e3-4746-a273-67c33eb9016e_source-aspect-ratio_default_0.jpg" width="60" height="60" class="ft-helper-img-rd alt=" alt="" text"="" title="title text">
+                                </a>
+                            </div>
+                            <div class="ft-mol-authors__content">
+                                <h2 class="ft-mol-authors__contentName">
+                                    <a href="layout-noticia-Woman.html" class="ft-link ft-link--secondary" target="_self">
+                                        Joan Vehils
+                                    </a>
+                                </h2>
+                                <p class="ft-mol-authors__contentCategory">
+                                    <a href="#" class="ft-link ft-link--tertiary" title="title text">
+                                        Director de Sport
+                                    </a>
+                                </p>
+                                <p class="ft-mol-authors__contentText">
+                                    Recibe en tu correo una selección de las noticias más importantes del director 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ft-org-masthead__box">
+                        <div class="ft-mol-ticker ft-mol-ticker--news" role="region" aria-label="Es Noticia">
+                            <span class="ft-mol-ticker__heading" id="tickerNewsHeading">Es Noticia:</span>
+                            <div class="ft-mol-ticker__scroll" aria-labelledby="tickerNewsHeading" aria-live="polite" aria-atomic="true">
+                              <a href="#" class="ft-mol-ticker__item" title="title text" target="_self">
+                                <strong class="ft-mol-ticker__txt">Lorem ipsum dolor sit amet</strong>
+                              </a>
+                              <a href="#" class="ft-mol-ticker__item" title="title text" target="_self">
+                                <strong class="ft-mol-ticker__txt">Lorem ipsum dolor sit amet</strong>
+                              </a>
+                              <a href="#" class="ft-mol-ticker__item" title="title text" target="_self">
+                                <strong class="ft-mol-ticker__txt">Lorem ipsum dolor sit amet</strong>
+                              </a>
+                              <a href="#" class="ft-mol-ticker__item" title="title text" target="_self">
+                                <strong class="ft-mol-ticker__txt">Lorem ipsum dolor sit amet</strong>
+                              </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ft-org-masthead__box">
+                        <div class="ft-mol-rrss-inline ft-mol-rrss-inline--center">
+                            <div class="ft-mol-rrss-inline__items">
+                              <a href="#" class="ft-btn-rrss ft-btn-rrss--twitter" title="Twitter" target="”_blank”" rel="nofollow">
+                                <span class="ft-mol-rrss ft-mol-rrssTwitter--default ft-btn-rrss__icon"></span>
+                                <span class="ft-btn-rrss__text">
+                                  RRSS Twitter
+                                </span>
+                              </a>
+                              <a href="#" class="ft-btn-rrss ft-btn-rrss--facebook" title="Facebook" target="”_blank”" rel="nofollow">
+                                <span class="ft-mol-rrss ft-mol-rrssFacebook--default ft-btn-rrss__icon"></span>
+                                <span class="ft-btn-rrss__text">
+                                  RRSS Facebook
+                                </span>
+                              </a>
+                              <a href="#" class="ft-btn-rrss ft-btn-rrss--email" title="Email" target="”_blank”" rel="nofollow">
+                                <span class="ft-mol-rrss ft-mol-rrssEmail--default ft-btn-rrss__icon"></span>
+                                <span class="ft-btn-rrss__text">
+                                  RRSS Email
+                                </span>
+                              </a>
+            
+                            </div>
+                          </div>
+                    </div>
+                  
+                </div>
+            </header>
+            <!--fin header-->
+    <div class="ft-layout-grid-flex">
+                <!-- Sky left -->
+        <aside
+            class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__colMd-2 ft-helper-hide-sm ft-layout-grid-flex__col-addsLeft"
+            style="height: 5519px;">
+            <div>
+                <img alt="" src="../../cds-statics/assets/img/banners/ad-sky-left.jpg">
+            </div>
+        </aside>
+        <!-- final Sky left -->
+        <!-- Sky Right -->
+        <aside
+            class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__colMd-2 ft-helper-hide-sm ft-layout-grid-flex__col-addsRight"
+            style="height: 5519px;">
+            <div>
+                <img alt="" src="../../cds-statics/assets/img/banners/ad-sky-right.jpg">
+            </div>
+        </aside>
+        <!-- Fin Sky Right -->
+        <!-- Comienzo del layout -->
+        <article class="ft-layout-grid-flex__row">
+            <!--Contenido central -->
+            <div class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__colMd-8 ft-layout-grid-flex__col-addsContent">
+                <!-- Megabanner -->
+                <aside class="ft-ad ft-ad--mega ft-helper-hide-xs">
+                    <img src="../../cds-statics/assets/img/banners/ad-990x250.gif" alt="megabanner" class="ft-helper-img-rd">
+                </aside>
+                <!-- fin Megabanner -->
+                <div class="ft-layout-grid-flex__nested" id="main-content" tabindex="-1">
+                     <!-- HEADER -->
+                    <header class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__rowAddsGutter-0  ft-helper-text-align-center">
+                        <!-- Modulo molecula Authors -->
+                        <div class="ft-mol-authors ft-mol-authors--horizontal">
+                            <div class="ft-mol-authors__main">
+                                <a href="layout-noticia-Woman.html" class="ft-mol-authors__photo" title="title" target="_self">
+                                    <img src="https://estaticos-cdn.prensaiberica.es/clip/3a5b2a1b-70e3-4746-a273-67c33eb9016e_source-aspect-ratio_default_0.jpg" width="60" height="60" class="ft-mol-authors__photoImage ft-helper-img-rd alt=" alt="" title="title text">
+                                </a>
+                                <div class="ft-mol-authors__mainInfo">
+                                    <h1 class="ft-mol-authors__name">
+                                        Olga Pereda
+                                    </h1>
+                                    <h2 class="ft-mol-authors__category">
+                                        Redactora especialista en Educación
+                                    </h2>
+                                    <div class="ft-mol-authors__rrss">
+                                        <a title="Facebook" target="_blank" rel="nofollow"
+                                        href="#"><i class="ft-mol-rrss ft-mol-rrssFacebook--default"></i></a><a title="Twitter" target="_blank" rel="nofollow" href="#"><i class="ft-mol-rrss ft-mol-rrssTwitter--default"></i></a>
+                                        <a title="Whatsapp" target="_blank" rel="nofollow" href="#"><i class="ft-mol-rrss ft-mol-rrssWhatsapp--default"></i></a>
+                                        <a title="Mailto" target="_blank" rel="nofollow" href="#"><i class="ft-mol-rrss ft-mol-rrss--txt ft-mol-rrssEmail--default">Contacto</i>
+                                        <a title="suscripcion" target="_blank" rel="nofollow" href="#"><i class="ft-mol-rrss ft-mol-rrss--txt ft-mol-rrssSuscription--default">Suscribete a la Newsletter</i>
+                                        </a>
+                                    </div>
+                                    </div>
+
+                            </div>
+                            <div class="ft-mol-authors__content">
+                                <p class="ft-mol-authors__contentDescription">
+                                    Formación: Universidad del País Vasco, licenciatura en Periodismo.                                </p>
+                                <div class="ft-mol-tagsNews">
+                                    <p class="ft-mol-tagsNews__title">Escribe sobre</p>
+                                    <ul class="ft-mol-tagsNews__tags"><!--[-->
+                                        <li class="ft-tag ft-tag--sm ft-tag--linkBasis"><a
+                                                href="/es/temas/trenes-1837078" target="_self"
+                                                title="Trenes" class="ft-link ft-link--secondary"
+                                                rel="">Trenes</a></li>
+                                        <li class="ft-tag ft-tag--sm ft-tag--linkBasis"><a
+                                                href="/es/temas/metro-1741387" target="_self"
+                                                title="Metro" class="ft-link ft-link--secondary"
+                                                rel="">Metro</a></li>
+                                        <li class="ft-tag ft-tag--sm ft-tag--linkBasis"><a
+                                                href="/es/temas/cercanias-1741386" target="_self"
+                                                title="Cercanías" class="ft-link ft-link--secondary"
+                                                rel="">Cercanías</a></li>
+                                        <li class="ft-tag ft-tag--sm ft-tag--linkBasis"><a
+                                                href="/es/temas/apagon-1018090" target="_self"
+                                                title="apagón" class="ft-link ft-link--secondary"
+                                                rel="">apagón</a></li>
+                                        <li class="ft-tag ft-tag--sm ft-tag--linkBasis"><a
+                                                href="/es/temas/transporte-1749188" target="_self"
+                                                title="Transporte"
+                                                class="ft-link ft-link--secondary"
+                                                rel="">Transporte</a></li>
+                                    </ul>
+                                </div>
+                                <p class="ft-mol-authors__contentText">
+                                    A los mandos de la sección 'Mamás y Papás' y del Club de Educación y Crianza. Escribo en la sección de Sociedad y tengo alergia a la pseudociencia
+                                </p>
+
+                            </div>
+                        </div>
+                        <!-- Fin molecula Authors -->
+                        <hr class="ft-layout-grid-flex__colXs-12 ft-helper-spacer-b-xs">
+                        </hr>
+                        <!-- Fin Subtitulo -->
+                    </header>
+                    <!-- FIN HEADER -->
+                      <!-- CONTENIDO -->
+                    <div class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__colSm-7 ft-layout-grid-flex__colMd-8">
+                                                 <!-- CardHome Articulos -->
+                                                 <article class="ft-org-cardHome ft-org-cardHome--row  ft-org-cardHome--md">
+                                                    <!-- Imagen destacada -->
+                                                    <figure class="ft-org-cardHome__media">
+                                                        <a href="#" title="El Barça se abre a negociar la cesión de Lenglet al Tottenham">
+                                                            <picture class="ft-img">
+                                                                <source media="(min-width: 768px)" srcset="https://estaticos-cdn.prensaiberica.es/clip/5a3cf53d-f762-4ac3-9870-64c464995670_baja-aspect-ratio_default_0.jpg 1x">
+                                                                <source media="(min-width: 250px)" srcset="https://estaticos-cdn.prensaiberica.es/clip/5a3cf53d-f762-4ac3-9870-64c464995670_baja-aspect-ratio_default_0.jpg,
+                                                                https://estaticos-cdn.prensaiberica.es/clip/5a3cf53d-f762-4ac3-9870-64c464995670_baja-aspect-ratio_default_0.jpg">
+                                                                <img src="https://estaticos-cdn.prensaiberica.es/clip/5a3cf53d-f762-4ac3-9870-64c464995670_baja-aspect-ratio_default_0.jpg 1x" width="656" height="381" loading="lazy" class="ft-helper-img-rd" alt="alt text" title="title text">
+                                                            </picture>
+                                                        </a>
+                        
+                                                    </figure>
+                                                    <!-- Fin imagen destacada -->
+                                                    <div class="ft-org-cardHome__main">
+                                                        <header>
+                                                            <p class="ft-org-cardHome__mainPretitle">
+                                                                <a class="ft-link ft-link--secondary" href="#">
+                                                                    Futbol</a>
+                                                            </p>
+                                                            <h2 class="ft-org-cardHome__mainTitle">
+                                                                <a href="#" class="ft-link ft-link--secondary" title="link title" target="_self">
+                                                                    Joan Garcia abre la puerta de LaLiga al Barça y Flick se la cierra a Iñaki Peña</a>
+                                                            </h2>
+                                                        </header>
+                                                        <div class="ft-mol-writer ft-mol-writer--cardHome">
+                                                            <div class="ft-mol-writer__item">
+                                                                <div class="ft-mol-writer__title">
+                                                                    <p class="ft-mol-writer__titleOpinion">
+                                                                        <a href="#" class="ft-link ft-link--tertiary" title="link title" target="_self">Sergi Graell</a>
+                                                                    </p>
+                                                                    <p class="ft-mol-writer__titleOpinion">
+                                                                        <a href="#" class="ft-link ft-link--tertiary" title="link title" target="_self">Sergi Graell</a>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="ft-date">
+                                                                <div class="ft-date__text">
+                                                                    <span class="ft-date__textPlace">Barcelona</span>
+                                                                    <time class="ft-date__textTime" itemprop="datePublished" datetime="2011-11-18T14:54:39+00:00">05
+                                                                        SEPT 2022 - 13:04 CET</time>
+                                                                </div>
+                                                                <time class="ft-date__reload" itemprop="dateModified" datetime="2011-11-18T14:54:39+00:00">Actualizada 07 FEB 2023 -12:35
+                                                                    CET</time>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                        
+                                                </article>
+                                                <!-- Fin CardHome Articulos -->
+                        <!-- CardHome Articulos -->
+                        <article class="ft-org-cardHome ft-org-cardHome--row  ft-org-cardHome--md">
+                            <!-- Imagen destacada -->
+                            <figure class="ft-org-cardHome__media">
+                                <a href="#" title="El Barça se abre a negociar la cesión de Lenglet al Tottenham">
+                                    <picture class="ft-img">
+                                        <source media="(min-width: 768px)" srcset="https://estaticos-cdn.prensaiberica.es/clip/9bb052ff-8404-4d0d-9b0a-bfe1ee00d0d0_baja-aspect-ratio_default_0.jpg 1x">
+                                        <source media="(min-width: 250px)" srcset="https://estaticos-cdn.prensaiberica.es/clip/4004b6a2-0af7-4f0f-9af8-8546d657754e_woman-1-1_default_0.jpg,
+                                                                                                       https://estaticos-cdn.prensaiberica.es/clip/4004b6a2-0af7-4f0f-9af8-8546d657754e_woman-1-1_default_0.jpg">
+                                        <img src="https://estaticos-cdn.prensaiberica.es/clip/9bb052ff-8404-4d0d-9b0a-bfe1ee00d0d0_baja-aspect-ratio_default_0.jpg 1x" width="656" height="381" loading="lazy" class="ft-helper-img-rd" alt="alt text" title="title text">
+                                    </picture>
+                                </a>
+
+                            </figure>
+                            <!-- Fin imagen destacada -->
+                            <div class="ft-org-cardHome__main">
+                                <header>
+                                    <p class="ft-org-cardHome__mainPretitle">
+                                        <a class="ft-link ft-link--secondary" href="#">
+                                            Futbol</a>
+                                    </p>
+                                    <h2 class="ft-org-cardHome__mainTitle">
+                                        <a href="#" class="ft-link ft-link--secondary" title="link title" target="_self">
+                                            Flick no se corta con los cambios</a>
+                                    </h2>
+                                </header>
+                                <div class="ft-mol-writer ft-mol-writer--cardHome">
+                                    <div class="ft-mol-writer__item">
+                                        <div class="ft-mol-writer__title">
+                                            <p class="ft-mol-writer__titleOpinion">
+                                                <a href="#" class="ft-link ft-link--tertiary" title="link title" target="_self">Sergi Graell</a>
+                                            </p>
+                                            <p class="ft-mol-writer__titleOpinion">
+                                                <a href="#" class="ft-link ft-link--tertiary" title="link title" target="_self">Sergi Graell</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="ft-date">
+                                        <div class="ft-date__text">
+                                            <span class="ft-date__textPlace">Barcelona</span>
+                                            <time class="ft-date__textTime" itemprop="datePublished" datetime="2011-11-18T14:54:39+00:00">05
+                                                SEPT 2022 - 13:04 CET</time>
+                                        </div>
+                                        <time class="ft-date__reload" itemprop="dateModified" datetime="2011-11-18T14:54:39+00:00">Actualizada 07 FEB 2023 -12:35
+                                            CET</time>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </article>
+                        <!-- Fin CardHome Articulos -->
+                         <aside class="ft-ad ft-ad--roba ft-ad--robaNotext  ft-helper-hide-md">
+                                <div class="ft-ad--sticky"> <img src="../../cds-statics/assets/img/banners/ad-300x600.jpeg"></div>
+                            </aside>
+                        <!-- CardHome Articulos -->
+                        <article class="ft-org-cardHome ft-org-cardHome--row  ft-org-cardHome--md">
+                            <!-- Imagen destacada -->
+                            <figure class="ft-org-cardHome__media">
+                                <a href="#" title="El Barça se abre a negociar la cesión de Lenglet al Tottenham">
+                                    <picture class="ft-img">
+                                        <source media="(min-width: 768px)" srcset="https://estaticos-cdn.prensaiberica.es/clip/92f56430-cc8c-4a2e-a896-07951b3754a2_baja-aspect-ratio_default_0.jpg 1x">
+                                        <source media="(min-width: 250px)" srcset="https://estaticos-cdn.prensaiberica.es/clip/92f56430-cc8c-4a2e-a896-07951b3754a2_baja-aspect-ratio_default_0.jpg,
+                                        https://estaticos-cdn.prensaiberica.es/clip/92f56430-cc8c-4a2e-a896-07951b3754a2_baja-aspect-ratio_default_0.jpg">
+                                        <img src="https://estaticos-cdn.prensaiberica.es/clip/92f56430-cc8c-4a2e-a896-07951b3754a2_baja-aspect-ratio_default_0.jpg 1x" width="656" height="381" loading="lazy" class="ft-helper-img-rd" alt="alt text" title="title text">
+                                    </picture>
+                                </a>
+
+                            </figure>
+                            <!-- Fin imagen destacada -->
+                            <div class="ft-org-cardHome__main">
+                                <header>
+                                    <p class="ft-org-cardHome__mainPretitle">
+                                        <a class="ft-link ft-link--secondary" href="#">
+                                            Futbol</a>
+                                    </p>
+                                    <h2 class="ft-org-cardHome__mainTitle">
+                                        <a href="#" class="ft-link ft-link--secondary" title="link title" target="_self">
+                                            Raphinha, samba a ritmo de martillo</a>
+                                    </h2>
+                                </header>
+                                <div class="ft-mol-writer ft-mol-writer--cardHome">
+                                    <div class="ft-mol-writer__item">
+                                        <div class="ft-mol-writer__title">
+                                            <p class="ft-mol-writer__titleOpinion">
+                                                <a href="#" class="ft-link ft-link--tertiary" title="link title" target="_self">Sergi Graell</a>
+                                            </p>
+                                            <p class="ft-mol-writer__titleOpinion">
+                                                <a href="#" class="ft-link ft-link--tertiary" title="link title" target="_self">Sergi Graell</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="ft-date">
+                                        <div class="ft-date__text">
+                                            <span class="ft-date__textPlace">Barcelona</span>
+                                            <time class="ft-date__textTime" itemprop="datePublished" datetime="2011-11-18T14:54:39+00:00">05
+                                                SEPT 2022 - 13:04 CET</time>
+                                        </div>
+                                        <time class="ft-date__reload" itemprop="dateModified" datetime="2011-11-18T14:54:39+00:00">Actualizada 07 FEB 2023 -12:35
+                                            CET</time>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </article>
+                        <!-- Fin CardHome Articulos -->
+                        <!-- CardHome Articulos -->
+                        <article class="ft-org-cardHome ft-org-cardHome--row  ft-org-cardHome--md">
+                            <!-- Imagen destacada -->
+                            <figure class="ft-org-cardHome__media ft-org-cardHome__mediaVideo">
+                                <a href="#" title="El Barça se abre a negociar la cesión de Lenglet al Tottenham">
+                                    <picture class="ft-img">
+                                        <source media="(min-width: 768px)" srcset="https://estaticos-cdn.prensaiberica.es/clip/954ea37d-c198-4477-9f36-fbe57cd045ad_baja-aspect-ratio_default_0.jpg 1x">
+                                        <source media="(min-width: 250px)" srcset="https://estaticos-cdn.prensaiberica.es/clip/954ea37d-c198-4477-9f36-fbe57cd045ad_baja-aspect-ratio_default_0.jpg,
+                                        https://estaticos-cdn.prensaiberica.es/clip/954ea37d-c198-4477-9f36-fbe57cd045ad_baja-aspect-ratio_default_0.jpg">
+                                        <img src="https://estaticos-cdn.prensaiberica.es/clip/954ea37d-c198-4477-9f36-fbe57cd045ad_baja-aspect-ratio_default_0.jpg 1x" width="656" height="381" loading="lazy" class="ft-helper-img-rd" alt="alt text" title="title text">
+                                    </picture>
+                                </a>
+
+                            </figure>
+                            <!-- Fin imagen destacada -->
+                            <div class="ft-org-cardHome__main">
+                                <header>
+                                    <p class="ft-org-cardHome__mainPretitle">
+                                        <a class="ft-link ft-link--secondary" href="#">
+                                            Futbol</a>
+                                    </p>
+                                    <h2 class="ft-org-cardHome__mainTitle">
+                                        <a href="#" class="ft-link ft-link--secondary" title="link title" target="_self">
+                                            Raphinha explica la trifulca en el túnel de vestuarios tras la remontada ante el Benfica: "Me insultaron"</a>
+                                    </h2>
+                                </header>
+                                <div class="ft-mol-writer ft-mol-writer--cardHome">
+                                    <div class="ft-mol-writer__item">
+                                        <div class="ft-mol-writer__title">
+                                            <p class="ft-mol-writer__titleOpinion">
+                                                <a href="#" class="ft-link ft-link--tertiary" title="link title" target="_self">Sergi Graell</a>
+                                            </p>
+                                            <p class="ft-mol-writer__titleOpinion">
+                                                <a href="#" class="ft-link ft-link--tertiary" title="link title" target="_self">Sergi Graell</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="ft-date">
+                                        <div class="ft-date__text">
+                                            <span class="ft-date__textPlace">Barcelona</span>
+                                            <time class="ft-date__textTime" itemprop="datePublished" datetime="2011-11-18T14:54:39+00:00">05
+                                                SEPT 2022 - 13:04 CET</time>
+                                        </div>
+                                        <time class="ft-date__reload" itemprop="dateModified" datetime="2011-11-18T14:54:39+00:00">Actualizada 07 FEB 2023 -12:35
+                                            CET</time>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </article>
+                        <!-- Fin CardHome Articulos -->
+                        <!-- CardHome Articulos -->
+                        <article class="ft-org-cardHome ft-org-cardHome--row  ft-org-cardHome--md">
+                            <!-- Imagen destacada -->
+                            <figure class="ft-org-cardHome__media">
+                                <a href="#" title="El Barça se abre a negociar la cesión de Lenglet al Tottenham">
+                                    <picture class="ft-img">
+                                        <source media="(min-width: 768px)" srcset="https://estaticos-cdn.prensaiberica.es/clip/49257bfb-42aa-4169-a0ba-51eee00b2bab_baja-aspect-ratio_default_0.jpg 1x">
+                                        <source media="(min-width: 250px)" srcset="https://estaticos-cdn.prensaiberica.es/clip/49257bfb-42aa-4169-a0ba-51eee00b2bab_baja-aspect-ratio_default_0.jpg,
+                                        https://estaticos-cdn.prensaiberica.es/clip/49257bfb-42aa-4169-a0ba-51eee00b2bab_baja-aspect-ratio_default_0.jpg">
+                                        <img src="https://estaticos-cdn.prensaiberica.es/clip/49257bfb-42aa-4169-a0ba-51eee00b2bab_baja-aspect-ratio_default_0.jpg 1x" width="656" height="381" loading="lazy" class="ft-helper-img-rd" alt="alt text" title="title text">
+                                    </picture>
+                                </a>
+
+                            </figure>
+                            <!-- Fin imagen destacada -->
+                            <div class="ft-org-cardHome__main">
+                                <header>
+                                    <p class="ft-org-cardHome__mainPretitle">
+                                        <a class="ft-link ft-link--secondary" href="#">
+                                            Futbol</a>
+                                    </p>
+                                    <h2 class="ft-org-cardHome__mainTitle">
+                                        <a href="#" class="ft-link ft-link--secondary" title="link title" target="_self">
+                                            El gran examen al nuevo formato de la Champions League</a>
+                                    </h2>
+                                </header>
+                                <div class="ft-mol-writer ft-mol-writer--cardHome">
+                                    <div class="ft-mol-writer__item">
+                                        <div class="ft-mol-writer__title">
+                                            <p class="ft-mol-writer__titleOpinion">
+                                                <a href="#" class="ft-link ft-link--tertiary" title="link title" target="_self">Sergi Graell</a>
+                                            </p>
+                                            <p class="ft-mol-writer__titleOpinion">
+                                                <a href="#" class="ft-link ft-link--tertiary" title="link title" target="_self">Sergi Graell</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="ft-date">
+                                        <div class="ft-date__text">
+                                            <span class="ft-date__textPlace">Barcelona</span>
+                                            <time class="ft-date__textTime" itemprop="datePublished" datetime="2011-11-18T14:54:39+00:00">05
+                                                SEPT 2022 - 13:04 CET</time>
+                                        </div>
+                                        <time class="ft-date__reload" itemprop="dateModified" datetime="2011-11-18T14:54:39+00:00">Actualizada 07 FEB 2023 -12:35
+                                            CET</time>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </article>
+                        <!-- Fin CardHome Articulos -->
+                        <!-- CardHome Articulos -->
+                        <article class="ft-org-cardHome ft-org-cardHome--row  ft-org-cardHome--md">
+                            <!-- Imagen destacada -->
+                            <figure class="ft-org-cardHome__media">
+                                <a href="#" title="El Barça se abre a negociar la cesión de Lenglet al Tottenham">
+                                    <picture class="ft-img">
+                                        <source media="(min-width: 768px)" srcset="https://estaticos-cdn.prensaiberica.es/clip/315f112d-df72-4d3c-87ef-eb538f265445_baja-aspect-ratio_default_0.jpg 1x">
+                                        <source media="(min-width: 250px)" srcset="https://estaticos-cdn.prensaiberica.es/clip/315f112d-df72-4d3c-87ef-eb538f265445_baja-aspect-ratio_default_0.jpg,
+                                        https://estaticos-cdn.prensaiberica.es/clip/315f112d-df72-4d3c-87ef-eb538f265445_baja-aspect-ratio_default_0.jpg">
+                                        <img src="https://estaticos-cdn.prensaiberica.es/clip/315f112d-df72-4d3c-87ef-eb538f265445_baja-aspect-ratio_default_0.jpg 1x" width="656" height="381" loading="lazy" class="ft-helper-img-rd" alt="alt text" title="title text">
+                                    </picture>
+                                </a>
+
+                            </figure>
+                            <!-- Fin imagen destacada -->
+                            <div class="ft-org-cardHome__main">
+                                <header>
+                                    <p class="ft-org-cardHome__mainPretitle">
+                                        <a class="ft-link ft-link--secondary" href="#">
+                                            Futbol</a>
+                                    </p>
+                                    <h2 class="ft-org-cardHome__mainTitle">
+                                        <a href="#" class="ft-link ft-link--secondary" title="link title" target="_self">
+                                            Un clásico, dos inscripciones, un perdón y una dimisión</a>
+                                    </h2>
+                                </header>
+                                <div class="ft-mol-writer ft-mol-writer--cardHome">
+                                    <div class="ft-mol-writer__item">
+                                        <div class="ft-mol-writer__title">
+                                            <p class="ft-mol-writer__titleOpinion">
+                                                <a href="#" class="ft-link ft-link--tertiary" title="link title" target="_self">Sergi Graell</a>
+                                            </p>
+                                            <p class="ft-mol-writer__titleOpinion">
+                                                <a href="#" class="ft-link ft-link--tertiary" title="link title" target="_self">Sergi Graell</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="ft-date">
+                                        <div class="ft-date__text">
+                                            <span class="ft-date__textPlace">Barcelona</span>
+                                            <time class="ft-date__textTime" itemprop="datePublished" datetime="2011-11-18T14:54:39+00:00">05
+                                                SEPT 2022 - 13:04 CET</time>
+                                        </div>
+                                        <time class="ft-date__reload" itemprop="dateModified" datetime="2011-11-18T14:54:39+00:00">Actualizada 07 FEB 2023 -12:35
+                                            CET</time>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </article>
+                        <!-- Fin CardHome Articulos -->
+                        <!-- CardHome Articulos -->
+                        <article class="ft-org-cardHome ft-org-cardHome--row  ft-org-cardHome--md">
+                            <!-- Imagen destacada -->
+                            <figure class="ft-org-cardHome__media ft-org-cardHome__mediaVideo">
+                                <a href="#" title="El Barça se abre a negociar la cesión de Lenglet al Tottenham">
+                                    <picture class="ft-img">
+                                        <source media="(min-width: 768px)" srcset="https://estaticos-cdn.prensaiberica.es/clip/5e045f87-81c9-49c3-9c64-1a2eb2a6940d_baja-aspect-ratio_default_0.jpg 1x">
+                                        <source media="(min-width: 250px)" srcset="https://estaticos-cdn.prensaiberica.es/clip/5e045f87-81c9-49c3-9c64-1a2eb2a6940d_baja-aspect-ratio_default_0.jpg,
+                                        https://estaticos-cdn.prensaiberica.es/clip/5e045f87-81c9-49c3-9c64-1a2eb2a6940d_baja-aspect-ratio_default_0.jpg">
+                                        <img src="https://estaticos-cdn.prensaiberica.es/clip/5e045f87-81c9-49c3-9c64-1a2eb2a6940d_baja-aspect-ratio_default_0.jpg 1x" width="656" height="381" loading="lazy" class="ft-helper-img-rd" alt="alt text" title="title text">
+                                    </picture>
+                                </a>
+
+                            </figure>
+                            <!-- Fin imagen destacada -->
+                            <div class="ft-org-cardHome__main">
+                                <header>
+                                    <p class="ft-org-cardHome__mainPretitle">
+                                        <a class="ft-link ft-link--secondary" href="#">
+                                            Futbol</a>
+                                    </p>
+                                    <h2 class="ft-org-cardHome__mainTitle">
+                                        <a href="#" class="ft-link ft-link--secondary" title="link title" target="_self">
+                                            Comunicado de LaLiga sobre el límite de coste de plantilla del FC Barcelona</a>
+                                    </h2>
+                                </header>
+                                <div class="ft-mol-writer ft-mol-writer--cardHome">
+                                    <div class="ft-mol-writer__item">
+                                        <div class="ft-mol-writer__title">
+                                            <p class="ft-mol-writer__titleOpinion">
+                                                <a href="#" class="ft-link ft-link--tertiary" title="link title" target="_self">Sergi Graell</a>
+                                            </p>
+                                            <p class="ft-mol-writer__titleOpinion">
+                                                <a href="#" class="ft-link ft-link--tertiary" title="link title" target="_self">Sergi Graell</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="ft-date">
+                                        <div class="ft-date__text">
+                                            <span class="ft-date__textPlace">Barcelona</span>
+                                            <time class="ft-date__textTime" itemprop="datePublished" datetime="2011-11-18T14:54:39+00:00">05
+                                                SEPT 2022 - 13:04 CET</time>
+                                        </div>
+                                        <time class="ft-date__reload" itemprop="dateModified" datetime="2011-11-18T14:54:39+00:00">Actualizada 07 FEB 2023 -12:35
+                                            CET</time>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </article>
+                        <!-- Fin CardHome Articulos -->
+                         <!-- Botón cargar más contenido -->
+                        <div class="ft-mol-btnGroup ft-mol-btnGroup--cnt ft-helper-spacer-y-xs" id="botonComentar">
+                            <a href="#" class="ft-btn ft-btn--primary ft-btn--sm" title="title text" target="_self">
+                                Cargar más contenido
+                            </a>
+                        </div>
+                         <!-- Fin Botón cargar más contenido -->
+                    </div>
+                    <div class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__colSm-5 ft-layout-grid-flex__colMd-4">
+                        <!-- Roba lateral -->
+                        <aside class="ft-ad ft-ad--roba ft-helper-hide-xs">
+                            <img src="../../cds-statics/assets/img/banners/ad-300x600.jpeg" />
+                        </aside>
+                        <!-- Fin Roba lateral -->
+                        <!-- Contenido para ti -->
+                        <section class="ft-mol-modNews">
+                            <header class="ft-mol-modNews__title">
+                                Contenido para ti
+                            </header>
+                            <div class="ft-mol-modNews__article">
+                                <div class="ft-mol-modNews__content">
+                                    <p class="ft-mol-modNews__contentTitle">
+                                        <svg class="ft-helper-img-rd" width="37" height="36" viewBox="0 0 37 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_506_23)">
+                                                <rect width="37" height="36" fill="#DD2C39" />
+                                                <path d="M23.9002 20.4C21.8002 22 19.0002 22.7999 15.5002 22.7999H13.6002V31.7999H5.2002V4.19995H15.7002C19.1002 4.19995 21.8002 4.99995 23.9002 6.49995C26.0002 7.99995 27.0002 10.3 27.0002 13.3C27.1002 16.4 26.0002 18.8 23.9002 20.4Z" fill="white" />
+                                                <path d="M32.7999 24.5H28.6999V20.3H25.4999V24.5H21.3999V27.7001H25.4999V31.8H28.6999V27.7001H32.7999V24.5Z" fill="white" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_506_23">
+                                                    <rect width="37" height="36" fill="white" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                        <a href="#" title="titulo" class="ft-link ft-link--primary">PARA
+                                            SUSCRIPTORES</a>
+                                    </p>
+                                    <h3 class="ft-mol-modNews__contentText"><a href="#" title="titulo" class="ft-link ft-link--secondary">¿Cuántos partidos ha jugado Busquets
+                                            con el Barça? ¿Quién le supera?</a></h3>
+                                    <time datetime="10/05/2023" class="ft-mol-modNews__data">10/05/2023</time>
+                                </div>
+                                <a class="" href="#" title="titulo">
+                                    <img loading="lazy" class="ft-mol-modNews__contentImage" alt="article" title="title text" width="640" height="360" src="https://content-thumbnail.cxpublic.com/content/dominantthumbnail/3a8f7ef1dc3b13d620bf637d8a6ccc365948d0d2.jpg?645b6ad1">
+                                </a>
+                                <img src="../../cds-statics/assets/img/logos/logo_Iberdrola.svg" alt="headband" class="ft-mol-modNews__contentImage--logo">
+                            </div>
+                            <div class="ft-mol-modNews__article ft-helper-branded">
+                                <div class="ft-mol-modNews__content">
+                                    <h3 class="ft-mol-modNews__contentText"><a href="#" title="titulo" class="ft-link ft-link--secondary">¿Cuántos partidos ha jugado Busquets
+                                            con el Barça? ¿Quién le supera?</a></h3>
+                                    <time datetime="10/05/2023" class="ft-mol-modNews__data">10/05/2023</time>
+                                    <div class="ft-mol-headband ft-mol-headband--branded">
+                                        <div class="ft-mol-headband__logo">
+                                            Ofrecido por
+                                            <a href="#" title="titulo"><img src="../../cds-statics/assets/img/logos/logo_Iberdrola.svg" class="ft-mol-headband__img ft-helper-img-rd"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="#" title="titulo">
+                                    <img loading="lazy" class="ft-mol-modNews__contentImage" alt="article" title="title text" width="640" height="360" src="https://content-thumbnail.cxpublic.com/content/dominantthumbnail/3a8f7ef1dc3b13d620bf637d8a6ccc365948d0d2.jpg?645b6ad1">
+                                </a>
+                            </div>
+                        </section>
+                        <!-- Fin Contenido para ti -->
+                        <!-- Tabs Lo más leído/Lo último -->
+                        <section class="ft-mol-tab">
+                            <ul class="ft-mol-tab__nav" role="tablist">
+                                <li class="ft-mol-tab__header">
+                                    <a href="/es/lo-mas-leido/" type="button" role="tab" data-target="tab1" class="ft-mol-tab__trigger ft-helper-fontSize-body-L  ft-helper-fontWeight-700" title="Title text" aria-selected="true">
+                                        Lo más leído
+                                    </a>
+                                </li>
+                                <li class="ft-mol-tab__header">
+                                    <a href="/es/ultimas-noticias/" type="button" role="tab" data-target="tab2" class="ft-mol-tab__trigger ft-helper-fontSize-body-L  ft-helper-fontWeight-700" title="Title text" aria-selected="false">
+                                        Lo último
+                                    </a>
+                                </li>
+                            </ul>
+                            <span class="ft-mol-tab__bar"></span>
+                            <div class="ft-mol-tab__tab-contents">
+                                <div class="ft-mol-tab__content" role="tabpanel" aria-labelledby="tab1" aria-selected="true">
+                                    <div class="ft-mol-rankingNews">
+                                        <ol class="ft-list ft-list--numbered">
+                                            <li class="ft-list__item">
+                                                <span class="ft-mol-rankingNews__premium">
+                                                    TRÁFICO</span>
+                                                <a href="#" title="titulo" class="ft-link ft-link--secondary ft-mol-rankingNews__text">El
+                                                    túnel de la Alcazaba, cerrado al paso desde el domingo por el avance de las obras de
+                                                    insonorización</a>
+                                            </li>
+                                            <li class="ft-list__item">
+                                                <span class="ft-link ft-link--secondary ft-mol-rankingNews__title">FÚTBOL</span>
+                                                <a href="#" title="titulo" class="ft-link ft-link--secondary ft-mol-rankingNews__text">'Mafalda': un mar de libros en
+                                                    el corazón de Nueva Málaga</a>
+                                            </li>
+                                            <li class="ft-list__item">
+                                                <span class="ft-link ft-link--secondary ft-mol-rankingNews__title">Expulsión</span>
+                                                <a href="#" title="titulo" class="ft-link ft-link--secondary ft-mol-rankingNews__text">El
+                                                    Parque Litoral 'planta' cara a las pérgolas ‘nihilistas’</a>
+                                            </li>
+                                            <li class="ft-list__item">
+                                                <span class="ft-link ft-link--secondary ft-mol-rankingNews__title">MUNDIAL</span>
+                                                <a href="#" title="titulo" class="ft-link ft-link--secondary ft-mol-rankingNews__text">Un
+                                                    autobús sin frenos atropella a varias personas y deja tres muertos en Cádiz</a>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+                                <div class="ft-mol-tab__content" role="tabpanel" aria-labelledby="tab2" aria-selected="false">
+                                    <div class="ft-mol-modNews ft-mol-modNews--last">
+                                        <div class="ft-mol-modNews__article">
+                                            <div class="ft-mol-modNews__content">
+
+                                                <h2 class="ft-mol-modNews__contentText"><a href="#" title="titulo" class="ft-link ft-link--secondary">Sigue en directo el Irán - España del Mundial de
+                                                        baloncesto</a></h2>
+                                                <time datetime="T14:54:39+00:00" class="ft-mol-modNews__data ft-mol-modNews__dataPrimary">14:54:39</time>
+                                            </div>
+                                            <a class="" href="#" title="titulo">
+                                                <img loading="lazy" class="ft-mol-modNews__contentImage" alt="article" title="title text" width="640" height="360" src="https://estaticos-cdn.sport.es/clip/0e2093d6-d554-4846-923c-ca4f55d77246_squdet-aspect-ratio_default_0.jpg">
+                                            </a>
+                                        </div>
+                                        <div class="ft-mol-modNews__article">
+                                            <div class="ft-mol-modNews__content">
+
+                                                <h2 class="ft-mol-modNews__contentText"><a href="#" title="titulo" class="ft-link ft-link--secondary">Cancelo, un fichaje para consolidar una posición
+                                                        'maldita' en el Barça</a></h2>
+                                                <time datetime="T14:54:39+00:00" class="ft-mol-modNews__data ft-mol-modNews__dataPrimary">14:54:39</time>
+                                            </div>
+                                            <a class="" href="#" title="titulo">
+                                                <img loading="lazy" class="ft-mol-modNews__contentImage" alt="article" title="title text" width="640" height="360" src="https://estaticos-cdn.sport.es/clip/0ddbafae-52dc-42e7-8d68-2922c438b99c_squdet-aspect-ratio_default_0.jpg">
+                                            </a>
+                                        </div>
+                                        <div class="ft-mol-modNews__article">
+                                            <div class="ft-mol-modNews__content">
+
+                                                <h2 class="ft-mol-modNews__contentText"><a href="#" title="titulo" class="ft-link ft-link--secondary">¡Bombazo! El inesperado posible destino de Thiago</a>
+                                                </h2>
+                                                <time datetime="T14:54:39+00:00" class="ft-mol-modNews__data ft-mol-modNews__dataPrimary">14:54:39</time>
+                                            </div>
+                                            <a class="" href="#" title="titulo">
+                                                <img loading="lazy" class="ft-mol-modNews__contentImage" alt="article" title="title text" width="640" height="360" src="https://estaticos-cdn.sport.es/clip/7c13dd6e-7dc2-437d-8248-18a97b08a0bf_squdet-aspect-ratio_default_0.jpg">
+                                            </a>
+                                        </div>
+                                        <div class="ft-mol-modNews__article">
+                                            <div class="ft-mol-modNews__content">
+                                                <span class="ft-mol-modNews__contentTitle">
+                                                    TV
+                                                </span>
+                                                <h2 class="ft-mol-modNews__contentText"><a href="#" title="titulo" class="ft-link ft-link--secondary">Esta es la
+                                                        lista de las canciones de Eurovisión 2023</a></h2>
+                                                <time datetime="T14:54:39+00:00" class="ft-mol-modNews__data ft-mol-modNews__dataPrimary">14:54:39</time>
+                                            </div>
+                                            <a href="#" title="titulo">
+                                                <img loading="lazy" class="ft-mol-modNews__contentImage" alt="article" title="title text" width="640" height="360" src="https://estaticos-cdn.sport.es/clip/d6c61200-3d33-4b73-a148-e505c8b4a23d_squdet-aspect-ratio_default_0.jpg">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- Fin Tabs Lo más leído/Lo último -->
+                    </div>
+                    <!-- FIN CONTENIDO -->
+                </div>
+            </div>
+        </article>
+         <!-- Fin del layout  -->
+        <div class="ft-ad ft-ad--footer" style="bottom: 0px;">
+            <div class="ft-ad--footer__content">
+                <div class="ft-ad--footer__embed">
+                    <aside class="ft-helper-hide-md">
+                        <img src="../../cds-statics/assets/img/banners/ad-footer--mobile.svg" width="728" height="87"
+                            alt="banner" class="ft-helper-img-rd">
+                    </aside>
+                    <aside class="ft-helper-hide-mo">
+                        <img src="../../cds-statics/assets/img/banners/ad-footer.png" width="728" height="87"
+                            alt="banner" class="ft-helper-img-rd">
+                    </aside>
+                </div>
+                <button type="button" name="close-button" class="ft-btn-nav ft-btn-nav--close ft-popover-close-trigger"
+                    title="title text">
+                    <span class="ft-btn-nav__text">
+                        Cerrar
+                    </span>
+                    <span class="ft-btn-nav__icon"></span>
+                </button>
+            </div>
+        </div>
+</div>
+         
+   <!-- JS: masthead -->
+      <script rel="modulepreload" src="../../cds-statics/js/layout/fourty-js-layout.js"></script>
+    <script rel="modulepreload" src="../../cds-statics/js/affix/affix.js"></script>
+    <script rel="modulepreload" src="../../cds-statics/js/headers/masthead.js"></script>
+    <script rel="modulepreload" src="../../cds-statics/js/sticking/fourty-header-sticky.js"></script>
+    <script rel="modulepreload" src="../../cds-statics/js/switch/fourty-js-switch-2024.js"></script>
+    <script rel="modulepreload" src="../../cds-statics/js/form/fourty-js-form-combo-search.js"></script>
+    <script rel="modulepreload" src="../../cds-statics/js/sidenav/fourty-js-sidenav-default.js"></script>
+    <script rel="modulepreload" src="../../cds-statics/js/modal/fourty-js-popover.js"></script>
+    <script rel="modulepreload" src="../../cds-statics/js//switch/fourty-js-switch-darkmode.js"></script>
+    <script rel="modulepreload" src="../../cds-statics/js/sticking/fourty-ads_skys-sticky.js"></script>
+
+    <script rel="modulepreload" src="../../cds-statics/js/vendors/jquery-3.6.0.min.js"></script>
+    <script rel="modulepreload" src="../../cds-statics/js/sidenav/fourty-js-sidenav-default.js"></script>
+    <script rel="modulepreload" src="../../cds-statics/js/modal/fourty-js-modal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script rel="modulepreload" src="../../cds-statics/js/swiper-js/swiper-js.js"></script>
+    <script rel="modulepreload" src="../../cds-statics/js/tab/fourty-js-tabs.js"></script>
+    <script rel="modulepreload" src="../../cds-statics/js/poll/fourty-js-pollbox.js"></script>
+
+</body>
+
+</html>

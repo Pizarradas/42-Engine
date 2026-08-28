@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <title>
+        42DS | Layouts | Cerca FASE 2: Inicio
+    </title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <!-- CSS: settings -->
+    <link href="../../cds-statics/css/brands/ux/setting.css" id="brandStyles-root" rel="stylesheet" type="text/css">
+    <!-- CSS: library multibrand -->
+    <link href="../../cds-statics/css/ux-index.css" id="brandStyles" rel="stylesheet" type="text/css">
+    <!-- FAVICON -->
+    <link href="../favicon.png" rel="icon" type="image/png">
+</head>
+
+<body class="fourty ft-brand-ep ft-skin ft-skin--cerca ft-skin--cerca-buscador minimal-header" id="header-sticky"
+    data-showroom-skin="layout">
+    <!-- grid -->
+    <div class="ft-layout-grid-flex">
+        <!-- Comienzo del layout -->
+        <article class="ft-layout-grid-flex__row">
+            <!--Contenido central -->
+            <div class="ft-layout-grid-flex__colXs-12">
+                <div class="ft-layout-grid-flex__nested">
+                    <!-- 
+    ================================================
+                    CERCA - ESTRUCTURA PREPARADA PARA DATOS JSON MASIVOS
+                    ================================================
+                    
+                    Esta estructura HTML está completamente preparada para trabajar con
+                    grandes volúmenes de datos JSON. Todos los elementos tienen:
+                    
+                    ✅ IDs ÚNICOS: Para manipulación directa del DOM
+                    ✅ Atributos data-*: Para fácil acceso desde JavaScript
+                    ✅ Estructura semántica: Para SEO y accesibilidad
+                    ✅ Contenedores claros: Para inyección dinámica de contenido
+                    ✅ Estados preparados: Loading, empty, error
+                    ✅ Schema.org: Para datos estructurados
+                    
+                    ESTRUCTURA PRINCIPAL:
+                    1. Hero/Bienvenida (ft-org-hero-welcome)
+                    2. Buscador autocomplete (ft-org-search-autocomplete)
+                       - Formulario con atributos data-search-*
+                       - Contenedor de resultados (#cerca-results-wrapper)
+                       - Estados: loading, empty, error
+                    3. Comunidades autónomas (ft-org-regions-list)
+                       - Lista preparada para recibir datos JSON
+                       - Cada localidad con data-tag-id único
+                    4. Sugerencias (ft-org-suggestions-chips)
+                       - Lista preparada para localidades sugeridas
+                    5. Resultados de artículos (ft-org-articles-results)
+                       - Contenedor vacío listo para inyección masiva
+                       - Paginación/infinite scroll preparada
+                    
+                    SELECTORES PRINCIPALES PARA DESARROLLO:
+                    - Formulario: #cerca-search-form
+                    - Input búsqueda: #cerca-localidades
+                    - Resultados autocomplete: #cerca-results-list
+                    - Lista comunidades: #cerca-regions-list-content
+                    - Lista sugerencias: #cerca-suggestions-list
+                    - Contenedor artículos: #cerca-articles-list
+                    - Estados: #cerca-results-loading, #cerca-results-empty, #cerca-results-error
+                -->
+                    <!-- CERCA -->
+                    <!-- cerca: bienvenida -->
+                    <div class="ft-org-hero-welcome ">
+                        <div class="ft-org-hero-welcome__content">
+                            <h2 class="ft-helper-fontSize-heading-M ft-helper-text-align-center">
+                                Mis lugares, mis noticias
+                            </h2>
+                        </div>
+                    </div>
+                    <!-- cerca: buscador -->
+                    <div class="ft-org-search-autocomplete">
+                        <div class="ft-org-search-autocomplete__content">
+                             <!-- loader -->
+<div class="ft-helper-text-align-center" style="
+    min-height: 600px;
+    margin-top: 20px;
+    width: 100%;
+">
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 200 200">
+  <circle fill="#666" stroke="#000000" stroke-width="2" r="12" cx="40" cy="65">
+    <animate attributeName="cy" calcMode="spline" dur="1.5s" values="65;135;65" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.4s"></animate>
+  </circle>
+
+  <circle fill="#666" stroke="#000000" stroke-width="2" r="12" cx="100" cy="65">
+    <animate attributeName="cy" calcMode="spline" dur="1.5s" values="65;135;65" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.2s"></animate>
+  </circle>
+
+  <circle fill="#666" stroke="#000000" stroke-width="2" r="12" cx="160" cy="65">
+    <animate attributeName="cy" calcMode="spline" dur="1.5s" values="65;135;65" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="0s"></animate>
+  </circle>
+</svg>
+</div>
+                        </div>
+                    </div>
+                    <!-- cerca: sugerencias -->
+                    <div class="ft-org-suggestions-chips" id="cerca-suggestions-chips" data-suggestions-container="true"
+                        data-suggestions-count="0" data-suggestions-loaded="false">
+                        <div class="ft-org-suggestions-chips__content">
+                            <!-- <h3 class="ft-helper-fontSize-heading-XS ft-helper-text-align-center">
+                            Te sugerimos
+                        </h3>
+                        <section id="cerca-localidades-list" role="region"
+                            aria-label="Listado de localidades disponibles" data-suggestions-section="true">
+                            <h4 class="ft-helper-hide">
+                                Localidades disponibles
+                            </h4>
+                            <ul role="list" aria-label="Listado de localidades" class="ft-cerca-localidades-list__tags"
+                                id="cerca-suggestions-list" itemscope itemtype="https://schema.org/ItemList"
+                                data-localidades-list="true" data-suggestions-list="true" data-suggestions-total="0">
+
+                                <li class="ft-tag ft-tag--chip ft-tag--md" data-tag-id="loc-cataluna-barcelona"
+                                    data-tag-type="location" data-tag-region="Cataluña"
+                                    data-tag-context="favorites-selector" data-tag-state="unselected"
+                                    data-tag-slug="barcelona" data-analytics-category="localidades"
+                                    data-analytics-action="fav_toggle" data-analytics-label="Barcelona"
+                                    itemprop="itemListElement" itemscope itemtype="https://schema.org/City">
+                                    <meta itemprop="name" content="Barcelona">
+                                    <meta itemprop="addressRegion" content="Cataluña">
+                                    <button type="button" class="ft-btn" aria-pressed="false"
+                                        aria-label="Marcar Barcelona como localidad favorita"
+                                        title="Marcar Barcelona como localidad favorita">
+                                        Barcelona
+                                    </button>
+                                </li>
+
+                                <li class="ft-tag ft-tag--chip ft-tag--md" data-tag-id="loc-cataluna-badalona"
+                                    data-tag-type="location" data-tag-region="Cataluña"
+                                    data-tag-context="favorites-selector" data-tag-state="unselected"
+                                    data-tag-slug="badalona" data-analytics-category="localidades"
+                                    data-analytics-action="fav_toggle" data-analytics-label="Badalona"
+                                    itemprop="itemListElement" itemscope itemtype="https://schema.org/City">
+                                    <meta itemprop="name" content="Badalona">
+                                    <meta itemprop="addressRegion" content="Cataluña">
+                                    <button type="button" class="ft-btn" aria-pressed="false"
+                                        aria-label="Marcar Badalona como localidad favorita"
+                                        title="Marcar Badalona como localidad favorita">
+                                        Badalona
+                                    </button>
+                                </li>
+
+                                <li class="ft-tag ft-tag--chip ft-tag--md" data-tag-id="loc-cataluna-castelldefels"
+                                    data-tag-type="location" data-tag-region="Cataluña"
+                                    data-tag-context="favorites-selector" data-tag-state="unselected"
+                                    data-tag-slug="castelldefels" data-analytics-category="localidades"
+                                    data-analytics-action="fav_toggle" data-analytics-label="Castelldefels"
+                                    itemprop="itemListElement" itemscope itemtype="https://schema.org/City">
+                                    <meta itemprop="name" content="Castelldefels">
+                                    <meta itemprop="addressRegion" content="Cataluña">
+                                    <button type="button" class="ft-btn" aria-pressed="false"
+                                        aria-label="Marcar Castelldefels como localidad favorita"
+                                        title="Marcar Castelldefels como localidad favorita">
+                                        Castelldefels
+                                    </button>
+                                </li>
+
+                                <li class="ft-tag ft-tag--chip ft-tag--md" data-tag-id="loc-cataluna-cornella"
+                                    data-tag-type="location" data-tag-region="Cataluña"
+                                    data-tag-context="favorites-selector" data-tag-state="unselected"
+                                    data-tag-slug="cornella" data-analytics-category="localidades"
+                                    data-analytics-action="fav_toggle" data-analytics-label="Cornellá"
+                                    itemprop="itemListElement" itemscope itemtype="https://schema.org/City">
+                                    <meta itemprop="name" content="Cornellá">
+                                    <meta itemprop="addressRegion" content="Cataluña">
+                                    <button type="button" class="ft-btn" aria-pressed="false"
+                                        aria-label="Marcar Cornellá como localidad favorita"
+                                        title="Marcar Cornellá como localidad favorita">
+                                        Cornellá
+                                    </button>
+                                </li>
+
+                                <li class="ft-tag ft-tag--chip ft-tag--md" data-tag-id="loc-cataluna-esplugues"
+                                    data-tag-type="location" data-tag-region="Cataluña"
+                                    data-tag-context="favorites-selector" data-tag-state="unselected"
+                                    data-tag-slug="esplugues" data-analytics-category="localidades"
+                                    data-analytics-action="fav_toggle" data-analytics-label="Esplugues"
+                                    itemprop="itemListElement" itemscope itemtype="https://schema.org/City">
+                                    <meta itemprop="name" content="Esplugues">
+                                    <meta itemprop="addressRegion" content="Cataluña">
+                                    <button type="button" class="ft-btn" aria-pressed="false"
+                                        aria-label="Marcar Esplugues como localidad favorita"
+                                        title="Marcar Esplugues como localidad favorita">
+                                        Esplugues
+                                    </button>
+                                </li>
+
+                                <li class="ft-tag ft-tag--chip ft-tag--md"
+                                    data-tag-id="loc-cataluna-vilanova-i-la-geltru" data-tag-type="location"
+                                    data-tag-region="Cataluña" data-tag-context="favorites-selector"
+                                    data-tag-state="unselected" data-tag-slug="vilanova-i-la-geltru"
+                                    data-analytics-category="localidades" data-analytics-action="fav_toggle"
+                                    data-analytics-label="Vilanova i la Geltrú" itemprop="itemListElement" itemscope
+                                    itemtype="https://schema.org/City">
+                                    <meta itemprop="name" content="Vilanova i la Geltrú">
+                                    <meta itemprop="addressRegion" content="Cataluña">
+                                    <button type="button" class="ft-btn" aria-pressed="false"
+                                        aria-label="Marcar Vilanova i la Geltrú como localidad favorita"
+                                        title="Marcar Vilanova i la Geltrú como localidad favorita">
+                                        Vilanova i la Geltrú
+                                    </button>
+                                </li>
+
+                                <li class="ft-tag ft-tag--chip ft-tag--md" data-tag-id="loc-cataluna-gava"
+                                    data-tag-type="location" data-tag-region="Cataluña"
+                                    data-tag-context="favorites-selector" data-tag-state="unselected"
+                                    data-tag-slug="gava" data-analytics-category="localidades"
+                                    data-analytics-action="fav_toggle" data-analytics-label="Gavá"
+                                    itemprop="itemListElement" itemscope itemtype="https://schema.org/City">
+                                    <meta itemprop="name" content="Gavá">
+                                    <meta itemprop="addressRegion" content="Cataluña">
+                                    <button type="button" class="ft-btn" aria-pressed="false"
+                                        aria-label="Marcar Gavá como localidad favorita"
+                                        title="Marcar Gavá como localidad favorita">
+                                        Gavá
+                                    </button>
+                                </li>
+
+                                <li class="ft-tag ft-tag--chip ft-tag--md" data-tag-id="loc-cataluna-granollers"
+                                    data-tag-type="location" data-tag-region="Cataluña"
+                                    data-tag-context="favorites-selector" data-tag-state="unselected"
+                                    data-tag-slug="granollers" data-analytics-category="localidades"
+                                    data-analytics-action="fav_toggle" data-analytics-label="Granollers"
+                                    itemprop="itemListElement" itemscope itemtype="https://schema.org/City">
+                                    <meta itemprop="name" content="Granollers">
+                                    <meta itemprop="addressRegion" content="Cataluña">
+                                    <button type="button" class="ft-btn" aria-pressed="false"
+                                        aria-label="Marcar Granollers como localidad favorita"
+                                        title="Marcar Granollers como localidad favorita">
+                                        Granollers
+                                    </button>
+                                </li>
+
+                                <li class="ft-tag ft-tag--chip ft-tag--md" data-tag-id="loc-cataluna-lhospitalet"
+                                    data-tag-type="location" data-tag-region="Cataluña"
+                                    data-tag-context="favorites-selector" data-tag-state="unselected"
+                                    data-tag-slug="lhospitalet" data-analytics-category="localidades"
+                                    data-analytics-action="fav_toggle" data-analytics-label="L'Hospitalet"
+                                    itemprop="itemListElement" itemscope itemtype="https://schema.org/City">
+                                    <meta itemprop="name" content="L'Hospitalet">
+                                    <meta itemprop="addressRegion" content="Cataluña">
+                                    <button type="button" class="ft-btn" aria-pressed="false"
+                                        aria-label="Marcar L'Hospitalet como localidad favorita"
+                                        title="Marcar L'Hospitalet como localidad favorita">
+                                        L'Hospitalet
+                                    </button>
+                                </li>
+
+                                <li class="ft-tag ft-tag--chip ft-tag--md" data-tag-id="loc-cataluna-martorell"
+                                    data-tag-type="location" data-tag-region="Cataluña"
+                                    data-tag-context="favorites-selector" data-tag-state="unselected"
+                                    data-tag-slug="martorell" data-analytics-category="localidades"
+                                    data-analytics-action="fav_toggle" data-analytics-label="Martorell"
+                                    itemprop="itemListElement" itemscope itemtype="https://schema.org/City">
+                                    <meta itemprop="name" content="Martorell">
+                                    <meta itemprop="addressRegion" content="Cataluña">
+                                    <button type="button" class="ft-btn" aria-pressed="false"
+                                        aria-label="Marcar Martorell como localidad favorita"
+                                        title="Marcar Martorell como localidad favorita">
+                                        Martorell
+                                    </button>
+                                </li>
+
+                                <li class="ft-tag ft-tag--chip ft-tag--md" data-tag-id="loc-cataluna-mataro"
+                                    data-tag-type="location" data-tag-region="Cataluña"
+                                    data-tag-context="favorites-selector" data-tag-state="unselected"
+                                    data-tag-slug="mataro" data-analytics-category="localidades"
+                                    data-analytics-action="fav_toggle" data-analytics-label="Mataró"
+                                    itemprop="itemListElement" itemscope itemtype="https://schema.org/Place">
+                                    <meta itemprop="name" content="Mataró">
+                                    <meta itemprop="addressRegion" content="Cataluña">
+                                    <meta itemprop="addressCountry" content="ES">
+                                    <meta itemprop="addressLocality" content="Mataró">
+                                    <button type="button" class="ft-btn" aria-pressed="false"
+                                        aria-label="Marcar Mataró como localidad favorita"
+                                        title="Marcar Mataró como localidad favorita">
+                                        Mataró
+                                    </button>
+                                </li>
+
+                                <li class="ft-tag ft-tag--chip ft-tag--md" data-tag-id="loc-cataluna-mollet-del-valles"
+                                    data-tag-type="location" data-tag-region="Cataluña"
+                                    data-tag-context="favorites-selector" data-tag-state="unselected"
+                                    data-tag-slug="mollet-del-valles" data-analytics-category="localidades"
+                                    data-analytics-action="fav_toggle" data-analytics-label="Mollet del Vallés"
+                                    itemprop="itemListElement" itemscope itemtype="https://schema.org/City">
+                                    <meta itemprop="name" content="Mollet del Vallés">
+                                    <meta itemprop="addressRegion" content="Cataluña">
+                                    <button type="button" class="ft-btn" aria-pressed="false"
+                                        aria-label="Marcar Mollet del Vallés como localidad favorita"
+                                        title="Marcar Mollet del Vallés como localidad favorita">
+                                        Mollet del Vallés
+                                    </button>
+                                </li>
+
+                                <li class="ft-tag ft-tag--chip ft-tag--md" data-tag-id="loc-cataluna-parets"
+                                    data-tag-type="location" data-tag-region="Cataluña"
+                                    data-tag-context="favorites-selector" data-tag-state="unselected"
+                                    data-tag-slug="parets" data-analytics-category="localidades"
+                                    data-analytics-action="fav_toggle" data-analytics-label="Parets"
+                                    itemprop="itemListElement" itemscope itemtype="https://schema.org/City">
+                                    <meta itemprop="name" content="Parets">
+                                    <meta itemprop="addressRegion" content="Cataluña">
+                                    <button type="button" class="ft-btn" aria-pressed="false"
+                                        aria-label="Marcar Parets como localidad favorita"
+                                        title="Marcar Parets como localidad favorita">
+                                        Parets
+                                    </button>
+                                </li>
+
+                                <li class="ft-tag ft-tag--chip ft-tag--md" data-tag-id="loc-cataluna-rubi"
+                                    data-tag-type="location" data-tag-region="Cataluña"
+                                    data-tag-context="favorites-selector" data-tag-state="unselected"
+                                    data-tag-slug="rubi" data-analytics-category="localidades"
+                                    data-analytics-action="fav_toggle" data-analytics-label="Rubí"
+                                    itemprop="itemListElement" itemscope itemtype="https://schema.org/City">
+                                    <meta itemprop="name" content="Rubí">
+                                    <meta itemprop="addressRegion" content="Cataluña">
+                                    <button type="button" class="ft-btn" aria-pressed="false"
+                                        aria-label="Marcar Rubí como localidad favorita"
+                                        title="Marcar Rubí como localidad favorita">
+                                        Rubí
+                                    </button>
+                                </li>
+
+                                <li class="ft-tag ft-tag--chip ft-tag--md" data-tag-id="loc-cataluna-sabadell"
+                                    data-tag-type="location" data-tag-region="Cataluña"
+                                    data-tag-context="favorites-selector" data-tag-state="unselected"
+                                    data-tag-slug="sabadell" data-analytics-category="localidades"
+                                    data-analytics-action="fav_toggle" data-analytics-label="Sabadell"
+                                    itemprop="itemListElement" itemscope itemtype="https://schema.org/City">
+                                    <meta itemprop="name" content="Sabadell">
+                                    <meta itemprop="addressRegion" content="Cataluña">
+                                    <button type="button" class="ft-btn" aria-pressed="false"
+                                        aria-label="Marcar Sabadell como localidad favorita"
+                                        title="Marcar Sabadell como localidad favorita">
+                                        Sabadell
+                                    </button>
+                                </li>
+
+                                <li class="ft-tag ft-tag--chip ft-tag--md" data-tag-id="loc-cataluna-sant-boi"
+                                    data-tag-type="location" data-tag-region="Cataluña"
+                                    data-tag-context="favorites-selector" data-tag-state="unselected"
+                                    data-tag-slug="sant-boi" data-analytics-category="localidades"
+                                    data-analytics-action="fav_toggle" data-analytics-label="Sant Boi"
+                                    itemprop="itemListElement" itemscope itemtype="https://schema.org/City">
+                                    <meta itemprop="name" content="Sant Boi">
+                                    <meta itemprop="addressRegion" content="Cataluña">
+                                    <button type="button" class="ft-btn" aria-pressed="false"
+                                        aria-label="Marcar Sant Boi como localidad favorita"
+                                        title="Marcar Sant Boi como localidad favorita">
+                                        Sant Boi
+                                    </button>
+                                </li>
+
+                                <li class="ft-tag ft-tag--chip ft-tag--md" data-tag-id="loc-cataluna-sant-cugat"
+                                    data-tag-type="location" data-tag-region="Cataluña"
+                                    data-tag-context="favorites-selector" data-tag-state="unselected"
+                                    data-tag-slug="sant-cugat" data-analytics-category="localidades"
+                                    data-analytics-action="fav_toggle" data-analytics-label="Sant Cugat"
+                                    itemprop="itemListElement" itemscope itemtype="https://schema.org/City">
+                                    <meta itemprop="name" content="Sant Cugat">
+                                    <meta itemprop="addressRegion" content="Cataluña">
+                                    <button type="button" class="ft-btn" aria-pressed="false"
+                                        aria-label="Marcar Sant Cugat como localidad favorita"
+                                        title="Marcar Sant Cugat como localidad favorita">
+                                        Sant Cugat
+                                    </button>
+                                </li>
+
+                                <li class="ft-tag ft-tag--chip ft-tag--md" data-tag-id="loc-cataluna-santa-coloma"
+                                    data-tag-type="location" data-tag-region="Cataluña"
+                                    data-tag-context="favorites-selector" data-tag-state="unselected"
+                                    data-tag-slug="santa-coloma" data-analytics-category="localidades"
+                                    data-analytics-action="fav_toggle" data-analytics-label="Santa Coloma"
+                                    itemprop="itemListElement" itemscope itemtype="https://schema.org/City">
+                                    <meta itemprop="name" content="Santa Coloma">
+                                    <meta itemprop="addressRegion" content="Cataluña">
+                                    <button type="button" class="ft-btn" aria-pressed="false"
+                                        aria-label="Marcar Santa Coloma como localidad favorita"
+                                        title="Marcar Santa Coloma como localidad favorita">
+                                        Santa Coloma
+                                    </button>
+                                </li>
+
+                                <li class="ft-tag ft-tag--chip ft-tag--md" data-tag-id="loc-cataluna-terrassa"
+                                    data-tag-type="location" data-tag-region="Cataluña"
+                                    data-tag-context="favorites-selector" data-tag-state="unselected"
+                                    data-tag-slug="terrassa" data-analytics-category="localidades"
+                                    data-analytics-action="fav_toggle" data-analytics-label="Terrassa"
+                                    itemprop="itemListElement" itemscope itemtype="https://schema.org/City">
+                                    <meta itemprop="name" content="Terrassa">
+                                    <meta itemprop="addressRegion" content="Cataluña">
+                                    <button type="button" class="ft-btn" aria-pressed="false"
+                                        aria-label="Marcar Terrassa como localidad favorita"
+                                        title="Marcar Terrassa como localidad favorita">
+                                        Terrassa
+                                    </button>
+                                </li>
+
+                                <li class="ft-tag ft-tag--chip ft-tag--md" data-tag-id="loc-cataluna-viladecans"
+                                    data-tag-type="location" data-tag-region="Cataluña"
+                                    data-tag-context="favorites-selector" data-tag-state="unselected"
+                                    data-tag-slug="viladecans" data-analytics-category="localidades"
+                                    data-analytics-action="fav_toggle" data-analytics-label="Viladecans"
+                                    itemprop="itemListElement" itemscope itemtype="https://schema.org/City">
+                                    <meta itemprop="name" content="Viladecans">
+                                    <meta itemprop="addressRegion" content="Cataluña">
+                                    <button type="button" class="ft-btn" aria-pressed="false"
+                                        aria-label="Marcar Viladecans como localidad favorita"
+                                        title="Marcar Viladecans como localidad favorita">
+                                        Viladecans
+                                    </button>
+                                </li>
+                            </ul>
+                        </section> -->
+                        </div>
+                    </div>
+                    <!--  END // CERCA -->
+                </div>
+            </div>
+        </article>
+        <!--Publi Footer (cuando aplique)
+        <div class="ft-ad ft-ad--footer">
+            <div class="ft-ad--footer__content">
+                <div class="ft-ad--footer__embed">
+                    <aside class="ft-helper-hide-md">
+                        <img src="../../cds-statics/assets/img/banners/ad-footer--mobile.svg" width="768" height="87" alt="banner" class="ft-helper-img-rd">
+                    </aside>
+                    <aside class="ft-helper-hide-mo">
+                        <img src="../../cds-statics/assets/img/banners/ad-footer.png" width="768" height="87" alt="banner" class="ft-helper-img-rd">
+                    </aside>
+                </div>
+                <button type="button" name="close-button" class="ft-btn-nav ft-btn-nav--close ft-popover-close-trigger" title="title text">
+                    <span class="ft-btn-nav__text">
+                        Cerrar
+                    </span>
+                    <span class="ft-btn-nav__icon"></span>
+                </button>
+            </div>
+        </div>
+        Fin Publi Footer -->
+        <!-- Pie -->
+        <footer id="footer-media" role="contentinfo" aria-label="Información del pie de página">
+            <h2 class="ft-helper-hide">Información de pie de página</h2>
+
+            <div class="footer-mediaTop">
+                <a data-edition-homelink="data-edition-homelink" title="El Periódico" href="/es/" aria-current="page">
+                    <img width="263" height="65" loading="lazy" alt="El Periódico2"
+                        src="../../cds-statics/assets/img/logos/logoEpColor.svg">
+                </a>
+
+                <div class="rrss" aria-label="Redes sociales de El Periódico">
+                    <a class="btn" href="#" rel="noopener noreferrer nofollow" target="_blank"
+                        aria-label="WhatsApp de El Periódico">
+                        <span class="icon icon-Whatsapp" aria-hidden="true"></span>
+                    </a>
+                    <a class="btn" href="https://www.facebook.com/elperiodico.catalunya"
+                        rel="noopener noreferrer nofollow" target="_blank" hreflang="es"
+                        aria-label="Facebook de El Periódico">
+                        <span class="icon icon-Facebook" aria-hidden="true"></span>
+                    </a>
+                    <a class="btn" href="https://twitter.com/elperiodico" rel="noopener noreferrer nofollow"
+                        target="_blank" hreflang="es" aria-label="Twitter de El Periódico">
+                        <span class="icon icon-Twitter" aria-hidden="true"></span>
+                    </a>
+                    <a class="btn" href="https://www.instagram.com/elperiodico_cas/" rel="noopener noreferrer nofollow"
+                        target="_blank" hreflang="es" aria-label="Instagram de El Periódico">
+                        <span class="icon icon-Instagram" aria-hidden="true"></span>
+                    </a>
+                </div>
+
+                <h3 class="ft-helper-hide">Enlaces institucionales</h3>
+                <nav aria-label="Enlaces institucionales">
+                    <ul class="lnk">
+                        <li><a href="https://www.elperiodico.com/es/quienessomos.shtml" rel="nofollow noopener"
+                                target="_blank" hreflang="es" title="Quiénes somos">
+                                Quiénes somos
+                            </a></li>
+                        <li><a href="https://www.elperiodico.com/es/contacto.shtml" rel="nofollow noopener"
+                                target="_blank" hreflang="es" title="Contacto">
+                                Contacto
+                            </a></li>
+                        <li><a href="https://www.elperiodico.com/es/rss/portada_rss.shtml" rel="nofollow noopener"
+                                target="_blank" hreflang="es" title="RSS">
+                                RSS
+                            </a></li>
+                        <li><a href="https://www.elperiodico.com/es/mapa-sitio.shtml" rel="nofollow noopener"
+                                target="_blank" hreflang="es" title="Mapa del sitio">
+                                Mapa del sitio
+                            </a></li>
+                        <li><a href="https://www.prensaiberica360.es/?_sid=1686819132" rel="nofollow noopener"
+                                target="_blank" hreflang="es" title="Publicidad">
+                                Publicidad
+                            </a></li>
+                        <li><a href="https://www.elperiodico.com/es/avisolegal.shtml" rel="nofollow noopener"
+                                target="_blank" hreflang="es" title="Aviso legal">
+                                Aviso legal
+                            </a></li>
+                        <li><a href="https://www.prensaiberica.es/politica-de-privacidad-resumida/?_sid=1686819132"
+                                rel="nofollow noopener" target="_blank" hreflang="es"
+                                title="Política de privacidad y cookies">
+                                Política de privacidad y cookies
+                            </a></li>
+                        <li><a href="javascript: Didomi.preferences.show();" rel="nofollow noopener"
+                                title="Preferencias de Privacidad">
+                                Preferencias de Privacidad
+                            </a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="footer-mediaMiddle">
+                <address>
+                    <p>El Periódico de Catalunya, S.L.U</p>
+                    <a href="https://estaticos-cdn.lne.es/images/footer/prensa-iberica-360.png?id=00bc9e3946af531b5a7b"
+                        rel="noopener" target="_blank" hreflang="es" title="Prensa Ibérica">
+                        <img width="114" height="73" loading="lazy" alt="Prensa Ibérica"
+                            src="https://estaticos-cdn.lne.es/images/footer/prensa-iberica-360.png?id=00bc9e3946af531b5a7b"
+                            title="Prensa Ibérica">
+                    </a>
+                </address>
+            </div>
+
+            <div class="footer-mediaBottom">
+                <p>Otras webs de Prensa Ibérica Media:</p>
+                <ul>
+                    <li class="titular">
+                        Titular 1
+                    </li>
+                    <li><a rel="nofollow" target="_blank" title="Casa Gourmet"
+                            href="https://www.casagourmet.es/?_sid=1686737966">
+                            Casa Gourmet
+                        </a>
+                    </li>
+                    <li><a rel="nofollow" target="_blank" title="Coche de ocasión" href="https://ocasion.neomotor.com/">
+                            Coche de ocasión
+                        </a>
+                    </li>
+                    <li><a rel="nofollow" target="_blank" title="Código Nuevo"
+                            href="https://www.codigonuevo.com/?_sid=1686737966">
+                            Código Nuevo
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Cuore"
+                            href="https://www.elperiodico.com/cuore/?_sid=1686737966">
+                            Cuore
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Diari de Girona"
+                            href="https://www.diaridegirona.cat/?_sid=1686737966">
+                            Diari de Girona
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Diario de Córdoba"
+                            href="https://www.diariocordoba.com/?_sid=1686737966">
+                            Diario de Córdoba
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Diario de Ibiza"
+                            href="https://www.diariodeibiza.es/?_sid=1686737966">
+                            Diario de Ibiza
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Diario de Mallorca"
+                            href="https://www.diariodemallorca.es/?_sid=1686737966">
+                            Diario de Mallorca
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="El Correo Gallego"
+                            href="https://www.elcorreogallego.es/?_sid=1686737966">
+                            El Correo Gallego
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="El Día Tenerife"
+                            href="https://www.eldia.es/?_sid=1686737966">
+                            El Día Tenerife
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="El Periódico de Aragón"
+                            href="https://www.elperiodicodearagon.com/?_sid=1686737966">
+                            El Periódico de Aragón
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="El Periódico de Catalunya"
+                            href="https://www.elperiodico.com/es/?_sid=1686737966">
+                            El Periódico de Catalunya
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="El Periódico de España"
+                            href="https://www.epe.es/es/?_sid=1686737966">
+                            El Periódico de España
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="El Periódico de Extremadura"
+                            href="http://www.elperiodicoextremadura.com/?_sid=1686737966">
+                            El Periódico de Extremadura
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="El Periódico Mediterráneo"
+                            href="https://www.elperiodicomediterraneo.com/?_sid=1686737966">
+                            El Periódico Mediterráneo
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Faro de Vigo"
+                            href="https://www.farodevigo.es/?_sid=1686737966">
+                            Faro de Vigo
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Fórmula 1"
+                            href="https://formula1.lne.es/?_sid=1686737966">
+                            Fórmula 1
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Goya" href="https://www.premios-cine.com/goya/">
+                            Goya
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Iberempleos" href="https://www.iberempleos.es/">
+                            Iberempleos
+                        </a></li>
+                    <li class="titular">
+                        Titular 2
+                    </li>
+                    <li><a rel="nofollow" target="_blank" title="Información" href="https://www.diarioinformacion.com/">
+                            Información
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Información TV" href="http://www.informaciontv.es/">
+                            Información TV
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="La Crónica de Badajoz"
+                            href="https://www.lacronicabadajoz.com/">
+                            La Crónica de Badajoz
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="La Nueva España Asturias"
+                            href="https://www.lne.es/asturias/?_sid=1686737966">
+                            La Nueva España Asturias
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="La Opinión de A Coruña"
+                            href="https://www.laopinioncoruna.es/?_sid=1686737966">
+                            La Opinión de A Coruña
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="La Opinión de Murcia"
+                            href="https://www.laopiniondemurcia.es/?_sid=1686737966">
+                            La Opinión de Murcia
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="La Opinión de Málaga"
+                            href="https://www.laopiniondemalaga.es/?_sid=1686737966">
+                            La Opinión de Málaga
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="La Opinión El correo de Zamora"
+                            href="https://www.laopiniondezamora.es/?_sid=1686737966">
+                            La Opinión El correo de Zamora
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="La Provincia Diario de Las Palmas"
+                            href="https://www.laprovincia.es/?_sid=1686737966">
+                            La Provincia Diario de Las Palmas
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Levante El Mercantil Valenciano"
+                            href="https://www.levante-emv.com/?_sid=1686737966">
+                            Levante El Mercantil Valenciano
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Levante TV" href="http://www.informaciontv.es/">
+                            Levante TV
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="L'Empordà Figueres"
+                            href="https://www.emporda.info/?_sid=1686737966">
+                            L'Empordà Figueres
+                        </a></li>
+                    <li class="titular">
+                        Titular 3
+                    </li>
+                    <li><a rel="nofollow" target="_blank" title="Mallorca Zeitung Mallorca"
+                            href="https://www.mallorcazeitung.es/?_sid=1686737966">
+                            Mallorca Zeitung Mallorca
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Neomotor"
+                            href="https://neomotor.epe.es/?_sid=1686737966">
+                            Neomotor
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Oscars" href="https://www.premios-cine.com/oscars/">
+                            Oscars
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Regió 7 Manresa"
+                            href="https://www.regio7.cat/?_sid=1686737966">
+                            Regió Manresa
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Sport" href="https://www.sport.es/">
+                            Sport
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Stilo" href="https://www.stilo.es/?_sid=1686737966">
+                            Stilo
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Superdeporte Valencia"
+                            href="https://www.superdeporte.es/?_sid=1686737966">
+                            Superdeporte Valencia
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Tendencias 21"
+                            href="https://www.sport.es/es/tendencias21/">
+                            Tendencias 21
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Tu casa" href="https://www.tucasa.com/">
+                            Tu casa
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Medio Ambiente"
+                            href="https://www.sport.es/es/medio-ambiente/">
+                            Medio Ambiente
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Viajar"
+                            href="https://viajar.elperiodico.com/?_sid=1686737966">
+                            Viajar
+                        </a></li>
+                    <li><a rel="nofollow" target="_blank" title="Woman Madame Figaro" href="https://www.woman.es/">
+                            Woman Madame Figaro
+                        </a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+
+    <!-- JS: masthead -->
+    <script rel="modulepreload" src="../../cds-statics/js/affix/affix.js"></script>
+    <script rel="modulepreload" src="../../cds-statics/js/headers/masthead.js"></script>
+    <script rel="modulepreload" src="../../cds-statics/js/sticking/fourty-header-sticky.js"></script>
+    <script rel="modulepreload" src="../../cds-statics/js/form/fourty-js-form-combo-search.js"></script>
+    <script rel="modulepreload" src="../../cds-statics/js/sidenav/fourty-js-sidenav-default.js"></script>
+    <script rel="modulepreload" src="../../cds-statics/js/modal/fourty-js-popover.js"></script>
+    <script rel="modulepreload" src="../../cds-statics/js/dropdown/fortty-js-dropdown-simple.js"></script>
+
+    <!-- JS: sticky panel (genérico) -->
+    <script src="../../cds-statics/js/sticky-panels/sticky-panel.js" defer></script>
+    <!-- JS: CERCA: funciones globales -->
+    <script src="../../cds-statics/js/pages/cerca-fase-02/cerca-fase-02.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,683 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <title>42DS | Templates: Porra: Ayuda</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta name="format-detection" content="telephone=no">
+  <!-- CSS: library multibrand -->
+  <link href="../../cds-statics/css/ux-index.css" id="brandStyles" rel="stylesheet" type="text/css" />
+  <!-- CSS: settings -->
+  <link href="../../cds-statics/css/brands/ux/setting.css" id="brandStyles-root" rel="stylesheet" type="text/css" />
+  <link href="../../cds-statics/css/brands/ux/core.css" id="brandStyles-root" rel="stylesheet" type="text/css" />
+  <link href="../../cds-statics/css/brands/commons/setting-pasatiempos.css" id="brandStyles-root" rel="stylesheet"
+    type="text/css" />
+  <!-- FAVICON -->
+  <link href="../favicon.png" rel="icon" type="image/png" />
+  <style>
+    ol.ft-list--numberedBig:first-of-type {
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+
+<body class="fourty ft-brand-ux pasatiempos minimal-header"
+  data-showroom-skin="layout">
+
+  <!-- LAYOUT -->
+  <article class="ft-layout-grid-flex">
+
+    <!-- ORG: game -->
+    <div class="ft-org-game ft-helper-bgColor-background-lightGrey">
+      <!-- juego -->
+      <div class="ft-org-game__mundial">
+        <div class="ft-layout-grid-flex__row ft-layout-grid-flex__rowIs-fullwidth">
+
+          <div class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__col-addsContent--L">
+            <!-- tablero -->
+            <div class="ft-org-game__mundial__board" id="porraBoard" role="group" aria-label="Porra del Mundial">
+
+              <div class="ft-layout-grid-flex__row">
+
+                <div class="ft-layout-grid-flex__colXs-12">
+
+                  <header class="ft-org-game__mundial__header">
+                    <!-- mol: bar: --data-inside -->
+                    <div class="ft-mol-bar ft-mol-bar--xs ft-mol-bar--data-inside" role="progressbar" aria-valuenow="20"
+                      aria-valuemin="0" aria-valuemax="100" aria-label="Porra del Mundial: 20% completado">
+                      <div class="ft-mol-bar__info">
+                        <h4 class="ft-mol-bar__title">Mi porra del Mundial</h4>
+                      </div>
+                      <div class="ft-mol-bar__background">
+                        <span class="ft-mol-bar__data"><strong>20%</strong> completado</span>
+                        <div class="ft-mol-bar__background-inProgress" style="width: 20%;"></div>
+                      </div>
+                      <div class="ft-mol-bar__user">
+                        <!-- login -->
+                        <button type="button" name="user-button" class="ft-btn-nav ft-btn-nav--user" title="Usuario">
+                          <span class="ft-btn-nav__text">
+                            Usuario
+                          </span>
+                          <span class="ft-btn-nav__icon"></span>
+                        </button>
+                        <!-- logged -->
+                        <button type="button" name="user-button" class="ft-btn-nav" title="Usuario">
+                          <span class="ft-btn-nav__text">
+                            Usuario
+                          </span>
+                          <span class="ft-helper-fontSize-body-XL--small">SC</span>
+                        </button>
+                      </div>
+                    </div>
+                    <!-- end // bar: --data-inside -->
+                    <!-- mol: toolbar: slider -->
+                    <div class="ft-mol-toolbar ft-mol-toolbar--slider" role="toolbar" aria-label="Opciones del juego">
+                      <div class="ft-mol-toolbar__inner">
+                        <div class="ft-mol-toolbar__item ft-mol-toolbar__itemBack">
+                          <button type="button" class="ft-mol-toolbar__button">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ft-mol-toolbar__icon" width="26" height="27"
+                              viewBox="0 0 26 27" fill="none">
+                              <path
+                                d="M6.48134 14.8657C5.84499 14.1673 5.83885 13.0958 6.46737 12.3903L6.53236 12.3211L17.2183 1.48402C17.8496 0.84376 18.8789 0.837948 19.5174 1.47107C20.1558 2.10422 20.1616 3.13655 19.5303 3.77682L9.83508 13.6093L19.5174 23.2102C20.1558 23.8434 20.1616 24.8757 19.5303 25.516C18.899 26.1563 17.8696 26.162 17.2312 25.5289L6.54697 14.9343L6.48134 14.8657Z"
+                                fill="currentColor" />
+                            </svg>
+                            <span class="ft-mol-toolbar__label"></span>
+                          </button>
+                        </div>
+                        <ul class="ft-mol-toolbar__list">
+                          <!-- item: 1 -->
+                          <li class="ft-mol-toolbar__item ft-mol-toolbar__item--active">
+                            <button type="button" class="ft-mol-toolbar__button" aria-label="Ayuda">
+                              <img class="ft-mol-toolbar__icon"
+                                src="../../cds-statics/assets/img/icons/icon-mundial-porra-resumen.svg" width="38"
+                                height="38" alt="icono de inicio">
+                              <span class="ft-mol-toolbar__label">Inicio</span>
+                            </button>
+                          </li>
+
+                          <!-- item: 2 -->
+                          <li class="ft-mol-toolbar__item">
+                            <button type="button" class="ft-mol-toolbar__button">
+                              <img class="ft-mol-toolbar__icon"
+                                src="../../cds-statics/assets/img/icons/icon-mundial-porra-predicciones.svg" width="38"
+                                height="38" alt="icono de predicciones">
+                              <span class="ft-mol-toolbar__label">Predicciones</span>
+                            </button>
+                          </li>
+
+                          <!-- item: 3 -->
+                          <li class="ft-mol-toolbar__item">
+                            <button type="button" class="ft-mol-toolbar__button">
+                              <img class="ft-mol-toolbar__icon"
+                                src="../../cds-statics/assets/img/icons/icon-mundial-porra-ranking.svg" width="38"
+                                height="38" alt="icono de ranking">
+                              <span class="ft-mol-toolbar__label">Ranking</span>
+                            </button>
+                          </li>
+
+                          <!-- item: 4 -->
+                          <li class="ft-mol-toolbar__item">
+                            <button type="button" class="ft-mol-toolbar__button">
+                              <img class="ft-mol-toolbar__icon"
+                                src="../../cds-statics/assets/img/icons/icon-mundial-porra-ayuda.svg" width="38"
+                                height="38" alt="icono de ayuda">
+                              <span class="ft-mol-toolbar__label">Ayuda</span>
+                            </button>
+                          </li>
+
+                          <!-- item: 5 -->
+                          <li class="ft-mol-toolbar__item">
+                              <button type="button"
+                                  class="ft-mol-toolbar__button">
+                                  <img class="ft-mol-toolbar__icon"
+                                      src="../../cds-statics/assets/img/icons/icon-mundial-porra-premios.svg"
+                                      width="38" height="38" alt="icono de puntuación">
+                                  <span class="ft-mol-toolbar__label">Premios</span>
+                              </button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <!-- end // toolbar: slider -->
+
+                  </header>
+
+                  <div class="ft-org-game__mundial__content">
+                    <section class="ft-org-game__mundial__helper">
+                      <!-- AYUDA -->
+                      <h2 class="ft-helper-fontSize-heading-XS ft-helper-spacer-t-md">
+                        Cómo jugar
+                      </h2>
+                      <p class="ft-helper-fontSize-body-S--small ft-helper-spacer-t-xxs">
+                        Predice partidos y llega hasta la final
+                      </p>
+                      <!-- list: 01 -->
+                      <ol class="ft-list ft-list--numbered ft-list--numberedBig">
+                        <li class="ft-list__item">
+                          <h3 class="ft-list__title">Predice cada partido</h3>
+                        </li>
+                      </ol>
+                      <!-- MOL: pick -->
+                      <article class="ft-mol-pick ft-mol-pick--compact" aria-label="Resultado del pronóstico del partido">
+
+                        <div class="ft-mol-pick__body">
+
+                          <div class="ft-mol-pick__match">
+                            <button class="ft-mol-pick__team">
+                              <span class="ft-mol-pick__flag">
+                                <img src="../../cds-statics/assets/img/flags/england.svg" alt="Inglaterra">
+                              </span>
+                              <span class="ft-mol-pick__team-name">Inglaterra</span>
+                            </button>
+
+                            <button class="ft-mol-pick__team ft-mol-pick__team-selected" aria-label="Resultado 2 a 4">
+                              <span class="ft-mol-pick__outcome">Empate</span>
+                            </button>
+
+                            <button class="ft-mol-pick__team">
+                              <span class="ft-mol-pick__team-name">Rep. Corea</span>
+                              <span class="ft-mol-pick__flag">
+                                <img src="../../cds-statics/assets/img/flags/south_korea.svg" alt="Corea del Sur">
+                              </span>
+                            </button>
+                          </div>
+
+                          <div class="ft-mol-pick__meta">
+                            <div class="ft-mol-pick__forecast">
+                              <span class="ft-mol-pick__forecast-value">0-0</span>
+
+                              <button class="ft-mol-pick__edit ft-btn-nav ft-btn-nav--edit" type="button"
+                                aria-label="Editar pronóstico">
+                                <span class="ft-btn-nav__text">Editar</span>
+                                <span class="ft-btn-nav__icon"></span>
+                              </button>
+                            </div>
+                          </div>
+
+                        </div>
+
+                      </article>
+                      <!-- END // MOL: pick -->
+                      <!-- list: 02 -->
+                      <ol class="ft-list ft-list--numbered ft-list--numberedBig">
+                        <li class="ft-list__item">
+                          <h3 class="ft-list__title">Cuanto más afines, más puntos sumas</h3>
+                        </li>
+                      </ol>
+                      <!-- ft-list-counter: puntos por acierto (vista cards bajo item 2) -->
+                      <ul class="ft-list ft-list-counter">
+                        <li class="ft-list-counter__item">
+                          <strong class="ft-list-counter__number">+1 punto</strong>
+                          Acertar ganador
+                        </li>
+                        <li class="ft-list-counter__item">
+                          <strong class="ft-list-counter__number">+3 puntos</strong>
+                          Resultado exacto
+                        </li>
+                      </ul>
+                      <ul class="ft-list ft-list--primary ft-list--chevron ft-list--chevron-rgt">
+                        <li class="ft-list__item">
+                          <button type="button" aria-controls="viewTotalPoints" aria-haspopup="dialog"
+                            class="ft-list__link ft-helper-fontSize-body-M--small ft-helper-fontWeight-500"
+                            data-target="viewTotalPoints" data-toggle="ft-mol-modal" name="modal-trigger">
+                            Ver puntuación completa
+                          </button>
+                        </li>
+                      </ul>
+
+                      <!-- modal: ver puntuación completa -->
+                      <div aria-labelledby="viewTotalPointsTitle" aria-modal="true"
+                        class="ft-mol-modal ft-mol-modal--bttm-cnt ft-mol-modal--maxheight ft-mol-modal--sm"
+                        id="viewTotalPoints" role="dialog">
+                        <div class="ft-mol-modal__container">
+                          <div class="ft-mol-modal__window">
+                            <div class="ft-mol-modal__header ft-helper-align-center">
+                              <h3 class="ft-mol-modal__title" id="viewTotalPointsTitle">
+                                Puntuación completa
+                              </h3>
+                            </div>
+                            <div class="ft-mol-modal__body ft-helper-align-center">
+                              <!-- tabla de puntuación -->
+                              <!-- Comienzo Molécula Marcador -->
+                              <div class="ft-mol-sorting" role="region" aria-label="Ranking">
+                                <ul>
+                                  <!-- item -->
+                                  <li class="ft-mol-sorting__list">
+                                    <div class="ft-mol-sorting__info">
+                                      <h3 class="ft-mol-sorting__infoName">Ganador o empate</h3>
+                                    </div>
+                                    <div class="ft-mol-sorting__status">
+                                      <span class="ft-mol-sorting__statusPoints">+ 1</span>
+                                    </div>
+                                  </li>
+                                  <!-- item -->
+                                  <li class="ft-mol-sorting__list">
+                                    <div class="ft-mol-sorting__info">
+                                      <h3 class="ft-mol-sorting__infoName">Resultado exacto (extra)</h3>
+                                    </div>
+                                    <div class="ft-mol-sorting__status">
+                                      <span class="ft-mol-sorting__statusPoints">+ 2</span>
+                                    </div>
+                                  </li>
+                                  <!-- item -->
+                                  <li class="ft-mol-sorting__list">
+                                    <div class="ft-mol-sorting__info">
+                                      <h3 class="ft-mol-sorting__infoName">Dieciseisavos</h3>
+                                    </div>
+                                    <div class="ft-mol-sorting__status">
+                                      <span class="ft-mol-sorting__statusPoints">+ 2</span>
+                                    </div>
+                                  </li>
+                                  <!-- item -->
+                                  <li class="ft-mol-sorting__list">
+                                    <div class="ft-mol-sorting__info">
+                                      <h3 class="ft-mol-sorting__infoName">Octavos</h3>
+                                    </div>
+                                    <div class="ft-mol-sorting__status">
+                                      <span class="ft-mol-sorting__statusPoints">+ 3</span>
+                                    </div>
+                                  </li>
+                                  <!-- item -->
+                                  <li class="ft-mol-sorting__list">
+                                    <div class="ft-mol-sorting__info">
+                                      <h3 class="ft-mol-sorting__infoName">Cuartos</h3>
+                                    </div>
+                                    <div class="ft-mol-sorting__status">
+                                      <span class="ft-mol-sorting__statusPoints">+ 4</span>
+                                    </div>
+                                  </li>
+                                  <!-- item -->
+                                  <li class="ft-mol-sorting__list">
+                                    <div class="ft-mol-sorting__info">
+                                      <h3 class="ft-mol-sorting__infoName">Semifinales</h3>
+                                    </div>
+                                    <div class="ft-mol-sorting__status">
+                                      <span class="ft-mol-sorting__statusPoints">+ 5</span>
+                                    </div>
+                                  </li>
+                                  <!-- item -->
+                                  <li class="ft-mol-sorting__list">
+                                    <div class="ft-mol-sorting__info">
+                                      <h3 class="ft-mol-sorting__infoName">Final</h3>
+                                    </div>
+                                    <div class="ft-mol-sorting__status">
+                                      <span class="ft-mol-sorting__statusPoints">+ 7</span>
+                                    </div>
+                                  </li>
+
+                                </ul>
+                              </div>
+                              <!-- Fin // Molécula Marcador -->
+                              <!-- callout: penaltis -->
+                              <hr class="ft-helper-spacer-t-xs" />
+                              <span
+                                class="ft-text-alert ft-text-alert--is-bordered ft-text-alert--is-guided">
+                                <strong
+                                  class="ft-helper-display-flex ft-helper-fontSize-body-M ft-helper-fontWeight-700 ft-helper-text-align-left">
+                                  Penaltis
+                                </strong>
+                                <span class="ft-helper-display-flex ft-helper-fontSize-body-S--small ft-helper-text-align-left">
+                                                                Si un cruce se decide en penaltis, solo sumas la puntuación extra de cada eliminatoria si
+                                habías marcado empate (X) y además aciertas qué equipo pasa.
+                                </span>
+                                <hr class="ft-helper-spacer-b-xxs" />
+                              </span>
+                            </div>
+                            <hr class="ft-helper-spacer-b-xs" />
+                            <div class="ft-mol-modal__footer">
+                              <div class="ft-helper-align-center">
+                                <button type="button" class="ft-btn ft-btn--tertiary ft-btn--sm-md"
+                                  data-dismiss="ft-mol-modal" name="modal-accept">
+                                  Aceptar
+                                </button>
+                              </div>
+                              <button class="ft-btn-nav ft-btn-nav--close ft-mol-modal__close" data-dismiss="ft-mol-modal"
+                                name="close-button" title="Cerrar ventana emergente" type="button">
+                                <span class="ft-btn-nav__text">
+                                  Cerrar
+                                </span>
+                                <span class="ft-btn-nav__icon"></span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- list: 03 -->
+                      <ol class="ft-list ft-list--numbered ft-list--numberedBig">
+                        <li class="ft-list__item">
+                          <h3 class="ft-list__title">Completa los grupos para avanzar</h3>
+                        </li>
+                      </ol>
+                      <div class="ft-org-game__mundial__groups ft-org-game__mundial__groups--strip">
+                        <!-- estado: completado -->
+                        <section class="ft-org-game__mundial__group">
+                          <h3 class="ft-org-game__mundial__group-title">
+                            Grupo A
+                          </h3>
+                          <ul class="ft-org-game__mundial__group__teams">
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/england.svg" alt="Inglaterra">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/france.svg" alt="Francia">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/south_korea.svg" alt="Corea del Sur">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/germany.svg" alt="Alemania">
+                              </span>
+                            </li>
+                          </ul>
+                          <div class="ft-org-game__mundial__group__progress">
+                            <span
+                              class="ft-org-game__mundial__group__progress-bar ft-org-game__mundial__group__progress-bar--6"></span>
+                          </div>
+                          <div class="ft-org-game__mundial__group__actions">
+                            <span class="ft-org-game__mundial__group__link">
+                              ✓ Completado
+                            </span>
+                          </div>
+                        </section>
+                        <!-- estado: pendientes -->
+                        <section class="ft-org-game__mundial__group">
+                          <h3 class="ft-org-game__mundial__group-title">
+                            Grupo D
+                          </h3>
+
+                          <ul class="ft-org-game__mundial__group__teams">
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/england.svg" alt="Inglaterra">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/france.svg" alt="Francia">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/south_korea.svg" alt="Corea del Sur">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/germany.svg" alt="Alemania">
+                              </span>
+                            </li>
+                          </ul>
+                          <div class="ft-org-game__mundial__group__progress">
+                            <span
+                              class="ft-org-game__mundial__group__progress-bar ft-org-game__mundial__group__progress-bar--3"></span>
+                          </div>
+                          <div class="ft-org-game__mundial__group__actions">
+                            <span class="ft-org-game__mundial__group__link">
+                              3 partidos pendientes <span aria-hidden="true">›</span>
+                            </span>
+                          </div>
+                        </section>
+                        <!-- estado: empezar -->
+                        <section class="ft-org-game__mundial__group">
+                          <h3 class="ft-org-game__mundial__group-title">
+                            Grupo G
+                          </h3>
+
+                          <ul class="ft-org-game__mundial__group__teams">
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/england.svg" alt="Inglaterra">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/france.svg" alt="Francia">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/south_korea.svg" alt="Corea del Sur">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/germany.svg" alt="Alemania">
+                              </span>
+                            </li>
+                          </ul>
+                          <div class="ft-org-game__mundial__group__progress">
+                            <span class="ft-org-game__mundial__group__progress-bar"></span>
+                          </div>
+                          <div class="ft-org-game__mundial__group__actions">
+                            <span class="ft-org-game__mundial__group__link">
+                              Empezar <span aria-hidden="true">›</span>
+                            </span>
+                          </div>
+                        </section>
+                      </div>
+                      <!-- list: 04 -->
+                      <ol class="ft-list ft-list--numbered ft-list--numberedBig">
+                        <li class="ft-list__item">
+                          <h3 class="ft-list__title">Tu porra evoluciona hasta la final</h3>
+                        </li>
+                      </ol>
+                      <p class="ft-text">
+                        Acumula tus puntos acertando en octavos, cuartos, semifinales hasta llegar a la final
+                      </p>
+                      <!-- estado 1: inicio — fase activa: Grupos.
+                                      Icono = <img> hijo del <li> activo, white fill sobre el
+                                      ball naranja. -->
+                      <div class="ft-mol-tracking ft-mol-tracking--stepper">
+                        <ul class="ft-mol-tracking__step">
+                          <li
+                            class="ft-mol-tracking__step-line ft-mol-tracking__step-line-ball ft-mol-tracking__step-line-ball--active">
+                            <img class="ft-mol-tracking__icon" alt=""
+                              src="../../cds-statics/assets/img/icons/icon-stepper-grupos.svg">
+                            <h3 class="ft-mol-tracking__title">
+                              <a href="#" class="ft-link ft-link--secondary">Grupos</a>
+                            </h3>
+                          </li>
+                          <li class="ft-mol-tracking__step-line ft-mol-tracking__step-line-ball">
+                            <h3 class="ft-mol-tracking__title">Dieciseisavos</h3>
+                          </li>
+                          <li class="ft-mol-tracking__step-line ft-mol-tracking__step-line-ball">
+                            <h3 class="ft-mol-tracking__title">Octavos</h3>
+                          </li>
+                          <li class="ft-mol-tracking__step-line ft-mol-tracking__step-line-ball">
+                            <h3 class="ft-mol-tracking__title">Cuartos</h3>
+                          </li>
+                          <li class="ft-mol-tracking__step-line ft-mol-tracking__step-line-ball">
+                            <h3 class="ft-mol-tracking__title">Semifinales</h3>
+                          </li>
+                          <li class="ft-mol-tracking__step-line ft-mol-tracking__step-line-ball">
+                            <h3 class="ft-mol-tracking__title">Final</h3>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <!-- estado 2: progreso — Grupos completado, fase activa: Dieciseisavos -->
+                      <div class="ft-mol-tracking ft-mol-tracking--stepper">
+                        <ul class="ft-mol-tracking__step">
+                          <li
+                            class="ft-mol-tracking__step-line ft-mol-tracking__step-line-ball ft-mol-tracking__step-line-ball--completed">
+                            <h3 class="ft-mol-tracking__title">Grupos</h3>
+                          </li>
+                          <li
+                            class="ft-mol-tracking__step-line ft-mol-tracking__step-line-ball ft-mol-tracking__step-line-ball--active">
+                            <img class="ft-mol-tracking__icon" alt=""
+                              src="../../cds-statics/assets/img/icons/icon-stepper-fase.svg">
+                            <h3 class="ft-mol-tracking__title">
+                              <a href="#" class="ft-link ft-link--secondary">Dieciseisavos</a>
+                            </h3>
+                          </li>
+                          <li class="ft-mol-tracking__step-line ft-mol-tracking__step-line-ball">
+                            <h3 class="ft-mol-tracking__title">Octavos</h3>
+                          </li>
+                          <li class="ft-mol-tracking__step-line ft-mol-tracking__step-line-ball">
+                            <h3 class="ft-mol-tracking__title">Cuartos</h3>
+                          </li>
+                          <li class="ft-mol-tracking__step-line ft-mol-tracking__step-line-ball">
+                            <h3 class="ft-mol-tracking__title">Semifinales</h3>
+                          </li>
+                          <li class="ft-mol-tracking__step-line ft-mol-tracking__step-line-ball">
+                            <h3 class="ft-mol-tracking__title">Final</h3>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <!-- estado 3: final — todas las fases previas completadas, fase activa: Final -->
+                      <div class="ft-mol-tracking ft-mol-tracking--stepper">
+                        <ul class="ft-mol-tracking__step">
+                          <li
+                            class="ft-mol-tracking__step-line ft-mol-tracking__step-line-ball ft-mol-tracking__step-line-ball--completed">
+                            <h3 class="ft-mol-tracking__title">Grupos</h3>
+                          </li>
+                          <li
+                            class="ft-mol-tracking__step-line ft-mol-tracking__step-line-ball ft-mol-tracking__step-line-ball--completed">
+                            <h3 class="ft-mol-tracking__title">Dieciseisavos</h3>
+                          </li>
+                          <li
+                            class="ft-mol-tracking__step-line ft-mol-tracking__step-line-ball ft-mol-tracking__step-line-ball--completed">
+                            <h3 class="ft-mol-tracking__title">Octavos</h3>
+                          </li>
+                          <li
+                            class="ft-mol-tracking__step-line ft-mol-tracking__step-line-ball ft-mol-tracking__step-line-ball--completed">
+                            <h3 class="ft-mol-tracking__title">Cuartos</h3>
+                          </li>
+                          <li
+                            class="ft-mol-tracking__step-line ft-mol-tracking__step-line-ball ft-mol-tracking__step-line-ball--completed">
+                            <h3 class="ft-mol-tracking__title">Semifinales</h3>
+                          </li>
+                          <li
+                            class="ft-mol-tracking__step-line ft-mol-tracking__step-line-ball ft-mol-tracking__step-line-ball--active">
+                            <img class="ft-mol-tracking__icon" alt=""
+                              src="../../cds-statics/assets/img/icons/icon-stepper-final.svg">
+                            <h3 class="ft-mol-tracking__title">
+                              <a href="#" class="ft-link ft-link--secondary">Final</a>
+                            </h3>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <!-- estado 4: final — todas las fases previas completadas, fase activa: Final -->
+                      <div class="ft-mol-tracking ft-mol-tracking--stepper">
+                        <ul class="ft-mol-tracking__step">
+                          <li
+                            class="ft-mol-tracking__step-line ft-mol-tracking__step-line-ball ft-mol-tracking__step-line-ball--active">
+                            <img class="ft-mol-tracking__icon" alt=""
+                              src="../../cds-statics/assets/img/icons/icon-stepper-grupos.svg">
+                            <h3 class="ft-mol-tracking__title">Grupos</h3>
+                          </li>
+                          <li
+                            class="ft-mol-tracking__step-line ft-mol-tracking__step-line-ball ft-mol-tracking__step-line-ball--active">
+                            <img class="ft-mol-tracking__icon" alt=""
+                              src="../../cds-statics/assets/img/icons/icon-stepper-fase.svg">
+                            <h3 class="ft-mol-tracking__title">Dieciseisavos</h3>
+                          </li>
+                          <li
+                            class="ft-mol-tracking__step-line ft-mol-tracking__step-line-ball ft-mol-tracking__step-line-ball--active">
+                            <img class="ft-mol-tracking__icon" alt=""
+                              src="../../cds-statics/assets/img/icons/icon-stepper-fase.svg">
+                            <h3 class="ft-mol-tracking__title">Octavos</h3>
+                          </li>
+                          <li
+                            class="ft-mol-tracking__step-line ft-mol-tracking__step-line-ball ft-mol-tracking__step-line-ball--active">
+                            <img class="ft-mol-tracking__icon" alt=""
+                              src="../../cds-statics/assets/img/icons/icon-stepper-fase.svg">
+                            <h3 class="ft-mol-tracking__title">Cuartos</h3>
+                          </li>
+                          <li
+                            class="ft-mol-tracking__step-line ft-mol-tracking__step-line-ball ft-mol-tracking__step-line-ball--active">
+                            <img class="ft-mol-tracking__icon" alt=""
+                              src="../../cds-statics/assets/img/icons/icon-stepper-fase.svg">
+                            <h3 class="ft-mol-tracking__title">Semifinales</h3>
+                          </li>
+                          <li
+                            class="ft-mol-tracking__step-line ft-mol-tracking__step-line-ball ft-mol-tracking__step-line-ball--active">
+                            <img class="ft-mol-tracking__icon" alt=""
+                              src="../../cds-statics/assets/img/icons/icon-stepper-final.svg">
+                            <h3 class="ft-mol-tracking__title">
+                              <a href="#" class="ft-link ft-link--secondary">Final</a>
+                            </h3>
+                          </li>
+                        </ul>
+                      </div>
+                      <!-- list: 05 -->
+                      <ol class="ft-list ft-list--numbered ft-list--numberedBig">
+                        <li class="ft-list__item">
+                          <h3 class="ft-list__title">En eliminatorias eliges quien avanza</h3>
+                        </li>
+                      </ol>
+                      <p class="ft-text">
+                        Si hay empate, los penaltis cuentan para decidir el ganador
+                      </p>
+                      <!-- mol: btnGroup: fixed -->
+                      <div class="ft-mol-btnGroup ft-mol-btnGroup--is-fixed ft-mol-btnGroup--cnt">
+                        <a href="#" class="ft-btn ft-btn--tertiary ft-btn--sm-md" title="title text" target="_self">
+                          Empezar mi porra
+                        </a>
+                      </div>
+                      <!-- END // AYUDA -->
+                    </section>
+                  </div>
+
+                  <footer class="ft-org-game__mundial__footer">
+                    <div class="ft-org-game__mundial__footer-title">
+                      Copa Mundial de la FIFA 2026™
+                    </div>
+                  </footer>
+
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </article>
+
+  <!-- JS: masthead -->
+  <script rel="modulepreload" src="../../cds-statics/js/affix/affix.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/headers/masthead.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/sticking/fourty-header-sticky.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/switch/fourty-js-switch-2024.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/form/fourty-js-form-combo-search.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/sidenav/fourty-js-sidenav-default.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/modal/fourty-js-popover.js"></script>
+  <script src="../../cds-statics/js/tapbar/fourty-js-tapbar.js"></script>
+  <script src="/cds-statics/js/timer/fourty-js-timer.js" defer></script>
+
+  <!-- JS:  dropdown -->
+  <script rel="modulepreload" src="../../cds-statics/js/dropdown/fortty-js-dropdown-simple.js"></script>
+
+  <!-- JS:  modal -->
+  <script rel="modulepreload" src="../../cds-statics/js/modal/fourty-js-modal.js"></script>
+
+  <!-- JS:  tabs -->
+  <script rel="modulepreload" src="../../cds-statics/js/tabs/fourty-js-tabs.js"></script>
+
+  <!-- JS:  smoothscrollbar -->
+  <script rel="modulepreload" src="../../cds-statics/js/scroll/smooth-scrollbar/smooth-scrollbar.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/scroll/smooth-scrollbar/smooth-scrollbar-functions.js"></script>
+
+  <!-- JS: lottie-->
+  <script rel="modulepreload" src="../../cds-statics/js/lottie/fourty-js-lottie.js" type="module"></script>
+
+  <!-- JS: game__input -->
+  <script rel="modulepreload" src="../../cds-statics/js/game/game-input-pipe.js"></script>
+
+</body>
+
+</html>

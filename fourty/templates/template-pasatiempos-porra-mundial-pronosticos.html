@@ -1,0 +1,870 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <title>42DS | Templates: Pasatiempos</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta name="format-detection" content="telephone=no">
+  <!-- CSS: library multibrand -->
+  <link href="../../cds-statics/css/ux-index.css" id="brandStyles" rel="stylesheet" type="text/css" />
+  <!-- CSS: settings -->
+  <link href="../../cds-statics/css/brands/ux/setting.css" id="brandStyles-root" rel="stylesheet" type="text/css" />
+  <link href="../../cds-statics/css/brands/ux/core.css" id="brandStyles-root" rel="stylesheet" type="text/css" />
+  <link href="../../cds-statics/css/brands/commons/setting-pasatiempos.css" id="brandStyles-root" rel="stylesheet" type="text/css" />
+  <!-- FAVICON -->
+  <link href="../favicon.png" rel="icon" type="image/png" />
+</head>
+
+<body class="fourty ft-brand-ux pasatiempos minimal-header"
+  data-showroom-skin="layout">
+
+  <!-- LAYOUT -->
+  <article class="ft-layout-grid-flex">
+     
+    <!-- ORG: game -->
+    <div class="ft-org-game ft-helper-bgColor-background-lightGrey">
+      <!-- juego -->
+      <div class="ft-org-game__mundial">
+        <div class="ft-layout-grid-flex__row ft-layout-grid-flex__rowIs-fullwidth">
+    
+          <div class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__col-addsContent--L">
+            <!-- tablero -->
+            <div class="ft-org-game__mundial__board" id="porraBoard" role="group" aria-label="Porra del Mundial">
+            
+              <div class="ft-layout-grid-flex__row">
+            
+                <div class="ft-layout-grid-flex__colXs-12">
+            
+                  <header class="ft-org-game__mundial__header">
+                    <!-- mol: bar: --data-inside -->
+                    <div class="ft-mol-bar ft-mol-bar--xs ft-mol-bar--data-inside" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" aria-label="Porra del Mundial: 20% completado">
+                      <div class="ft-mol-bar__info">
+                          <h4 class="ft-mol-bar__title">Mi porra del Mundial</h4>
+                      </div>
+                      <div class="ft-mol-bar__background">
+                        <span class="ft-mol-bar__data"><strong>20%</strong> completado</span>
+                          <div class="ft-mol-bar__background-inProgress" style="width: 20%;"></div>
+                      </div>
+                      <div class="ft-mol-bar__user">
+                          <!-- login -->
+                          <button type="button" name="user-button" class="ft-btn-nav ft-btn-nav--user" title="Usuario">
+                              <span class="ft-btn-nav__text">
+                                  Usuario
+                              </span>
+                              <span class="ft-btn-nav__icon"></span>
+                          </button>
+                          <!-- logged -->
+                          <button type="button" name="user-button" class="ft-btn-nav" title="Usuario">
+                              <span class="ft-btn-nav__text">
+                                  Usuario
+                              </span>
+                              <span class="ft-helper-fontSize-body-XL--small">SC</span>
+                          </button>
+                      </div>
+                    </div>
+                    <!-- end // bar: --data-inside -->
+                    <!-- mol: toolbar: slider -->
+                    <div class="ft-mol-toolbar ft-mol-toolbar--slider" role="toolbar" aria-label="Opciones del juego">
+                      <div class="ft-mol-toolbar__inner">
+                          <div class="ft-mol-toolbar__item ft-mol-toolbar__itemBack">
+                              <button type="button" class="ft-mol-toolbar__button">
+                                  <svg xmlns="http://www.w3.org/2000/svg"
+                                      class="ft-mol-toolbar__icon" width="26" height="27"
+                                      viewBox="0 0 26 27" fill="none">
+                                      <path
+                                          d="M6.48134 14.8657C5.84499 14.1673 5.83885 13.0958 6.46737 12.3903L6.53236 12.3211L17.2183 1.48402C17.8496 0.84376 18.8789 0.837948 19.5174 1.47107C20.1558 2.10422 20.1616 3.13655 19.5303 3.77682L9.83508 13.6093L19.5174 23.2102C20.1558 23.8434 20.1616 24.8757 19.5303 25.516C18.899 26.1563 17.8696 26.162 17.2312 25.5289L6.54697 14.9343L6.48134 14.8657Z"
+                                          fill="currentColor" />
+                                  </svg>
+                                  <span class="ft-mol-toolbar__label"></span>
+                              </button>
+                          </div>
+                          <ul class="ft-mol-toolbar__list">
+                              <!-- item: 1 -->
+                              <li class="ft-mol-toolbar__item ft-mol-toolbar__item--active">
+                                  <button type="button"
+                                      class="ft-mol-toolbar__button"
+                                      aria-label="Ayuda">
+                                      <img class="ft-mol-toolbar__icon"
+                                          src="../../cds-statics/assets/img/icons/icon-mundial-porra-resumen.svg"
+                                          width="38" height="38" alt="icono de inicio">
+                                      <span class="ft-mol-toolbar__label">Inicio</span>
+                                  </button>
+                              </li>
+
+                              <!-- item: 2 -->
+                              <li class="ft-mol-toolbar__item">
+                                  <button type="button"
+                                      class="ft-mol-toolbar__button">
+                                      <img class="ft-mol-toolbar__icon"
+                                          src="../../cds-statics/assets/img/icons/icon-mundial-porra-predicciones.svg"
+                                          width="38" height="38" alt="icono de predicciones">
+                                      <span class="ft-mol-toolbar__label">Predicciones</span>
+                                  </button>
+                              </li>
+
+                              <!-- item: 3 -->
+                              <li class="ft-mol-toolbar__item">
+                                  <button type="button"
+                                      class="ft-mol-toolbar__button">
+                                      <img class="ft-mol-toolbar__icon"
+                                          src="../../cds-statics/assets/img/icons/icon-mundial-porra-ranking.svg"
+                                          width="38" height="38" alt="icono de ranking">
+                                      <span class="ft-mol-toolbar__label">Ranking</span>
+                                  </button>
+                              </li>
+
+                              <!-- item: 4 -->
+                              <li class="ft-mol-toolbar__item">
+                                  <button type="button"
+                                      class="ft-mol-toolbar__button">
+                                      <img class="ft-mol-toolbar__icon"
+                                          src="../../cds-statics/assets/img/icons/icon-mundial-porra-ayuda.svg"
+                                          width="38" height="38" alt="icono de ayuda">
+                                      <span class="ft-mol-toolbar__label">Ayuda</span>
+                                  </button>
+                              </li>
+
+                              <!-- item: 5 -->
+                              <li class="ft-mol-toolbar__item">
+                                  <button type="button"
+                                      class="ft-mol-toolbar__button">
+                                      <img class="ft-mol-toolbar__icon"
+                                          src="../../cds-statics/assets/img/icons/icon-mundial-porra-premios.svg"
+                                          width="38" height="38" alt="icono de puntuación">
+                                      <span class="ft-mol-toolbar__label">Premios</span>
+                                  </button>
+                              </li>
+                          </ul>
+                      </div>
+                    </div>
+                    <!-- end // toolbar: slider -->
+                  </header>
+          
+                  <div class="ft-org-game__mundial__content">
+                    <section class="ft-org-game__mundial__forecasts">
+                      <header class="ft-org-game__mundial__forecasts-header">
+                        
+                        <!-- comboGroups -->
+                        <div id="comboGroups" class="ft-mol-form ft-mol-form--has-dropdown">
+                          <span id="comboGroupsLabel" class="ft-helper-hide">Selector de fase y grupo:</span>
+                          <button type="button" class="ft-mol-form__dropdown-input ft-mol-form__select" aria-haspopup="menu"
+                            aria-expanded="false" aria-controls="comboGroupsContent"
+                            aria-labelledby="comboGroupsLabel comboGroupsValue">
+                            <span id="comboGroupsValue" class="ft-helper-fontSize-fluid-body-M">Grupo A</span>
+                          </button>
+                          <div id="comboGroupsContent" class="ft-mol-form__dropdown-content" popover="manual" role="menu"
+                            aria-label="Selector de fase y grupo del torneo">
+                            <ul class="ft-mol-form__dropdown-list">
+                              <li class="ft-mol-form__dropdown-item ft-mol-form__dropdown-item--heading" role="presentation">
+                                <span class="ft-mol-form__dropdown-link">
+                                  <span id="comboGroupsSection-fase"
+                                        class="ft-mol-form__dropdown-title">Fase de grupos</span>
+                                  <span class="ft-mol-form__dropdown-meta">En curso</span>
+                                </span>
+                                <ul class="ft-mol-form__dropdown-sublist"
+                                    role="group" aria-labelledby="comboGroupsSection-fase">
+
+                                  <!-- Sub-item: interactivo · sin icono · opción actual -->
+                                  <li class="ft-mol-form__dropdown-item">
+                                    <a class="ft-mol-form__dropdown-link" href="#grupo-a" role="menuitem" tabindex="-1"
+                                      aria-current="page" title="Ir al Grupo A">
+                                      <span class="ft-mol-form__dropdown-title">Grupo A</span>
+                                      <span class="ft-mol-form__dropdown-meta">Completado</span>
+                                    </a>
+                                  </li>
+
+                                  <!-- Sub-item: interactivo · sin icono -->
+                                  <li class="ft-mol-form__dropdown-item">
+                                    <a class="ft-mol-form__dropdown-link" href="#grupo-b" role="menuitem" tabindex="-1"
+                                      title="Ir al Grupo B">
+                                      <span class="ft-mol-form__dropdown-title">Grupo B</span>
+                                      <span class="ft-mol-form__dropdown-meta">Completado</span>
+                                    </a>
+                                  </li>
+
+                                  <!-- Sub-item: interactivo · sin icono -->
+                                  <li class="ft-mol-form__dropdown-item">
+                                    <a class="ft-mol-form__dropdown-link" href="#grupo-c" role="menuitem" tabindex="-1"
+                                      title="Ir al Grupo C">
+                                      <span class="ft-mol-form__dropdown-title">Grupo C</span>
+                                      <span class="ft-mol-form__dropdown-meta">En curso</span>
+                                    </a>
+                                  </li>
+
+                                  <!-- Sub-item: interactivo · sin icono -->
+                                  <li class="ft-mol-form__dropdown-item">
+                                    <a class="ft-mol-form__dropdown-link" href="#grupo-d" role="menuitem" tabindex="-1"
+                                      title="Ir al Grupo D">
+                                      <span class="ft-mol-form__dropdown-title">Grupo D</span>
+                                      <span class="ft-mol-form__dropdown-meta">En curso</span>
+                                    </a>
+                                  </li>
+
+                                </ul>
+                              </li>
+
+                              <!-- Item: heading + disabled · sin icono · descubrible pero inactivo.
+                                  El bold del título lo aporta `--heading`, el gris lo aporta `--disabled`. -->
+                              <li
+                                class="ft-mol-form__dropdown-item ft-mol-form__dropdown-item--heading ft-mol-form__dropdown-item--disabled">
+                                <span class="ft-mol-form__dropdown-link" role="menuitem" tabindex="-1" aria-disabled="true">
+                                  <span class="ft-mol-form__dropdown-title">Dieciseisavos</span>
+                                  <span class="ft-mol-form__dropdown-meta">Próximamente</span>
+                                </span>
+                              </li>
+
+                            </ul>
+                          </div>
+                        </div>
+                        <!-- END // comboGroups -->
+                        <a href="#" class="ft-btn ft-btn--tertiary ft-btn--sm" target="_self">
+                          Rellenar con IA
+                          <span class="ft-btn__badge">
+                            <img src="../../cds-statics/assets/img/icons/icon-star-porra.svg" width="14" height="14" />
+                          </span>
+                        </a>
+                        <!-- ATOM: TOOLTIP --bottom --dark (hover) -->
+                        <div class="ft-tooltip ft-tooltip--dark">
+                          <div class="ft-tooltip--bottom ft-tooltip--offsetLeft"
+                            data-tooltip="Rellena los resultados de la fase de grupos y compite por ganar la porra del Mundial 2026.">
+                            <button type="button" name="info-more" class="ft-btn-nav ft-btn-nav--info ft-btn-nav--bordered"
+                              aria-label="Más información">
+                              <span class="ft-btn-nav__text">
+                                Más información
+                              </span>
+                              <span class="ft-btn-nav__icon"></span>
+                            </button>
+                          </div>
+                        </div>
+                        <!-- END // ATOM: TOOLTIP --top -->
+
+                      </header>
+
+                      <div class="ft-org-game__mundial__forecasts-body">
+  
+                        <div class="ft-org-game__mundial__forecasts-clashes">
+                        
+                          <article class="ft-mol-pick ft-mol-pick--compact" aria-label="Resultado del pronóstico del partido">
+                        
+                            <div class="ft-mol-pick__body">
+                        
+                              <div class="ft-mol-pick__match">
+                                <button class="ft-mol-pick__team">
+                                  <span class="ft-mol-pick__flag">
+                                    <img src="../../cds-statics/assets/img/flags/england.svg" alt="Inglaterra">
+                                  </span>
+                                  <span class="ft-mol-pick__team-name">Inglaterra</span>
+                                </button>
+                        
+                                <button class="ft-mol-pick__team ft-mol-pick__team-selected" aria-label="Resultado 2 a 4">
+                                  <span class="ft-mol-pick__outcome">Empate</span>
+                                </button>
+                        
+                                <button class="ft-mol-pick__team">
+                                  <span class="ft-mol-pick__team-name">Francia</span>
+                                  <span class="ft-mol-pick__flag">
+                                    <img src="../../cds-statics/assets/img/flags/france.svg" alt="Francia">
+                                  </span>
+                                </button>
+                              </div>
+                        
+                              <div class="ft-mol-pick__meta">
+                                <div class="ft-mol-pick__forecast">
+                                  <span class="ft-mol-pick__forecast-value">0-0</span>
+                                  <button aria-controls="editForecast" class="ft-mol-pick__edit ft-btn-nav ft-btn-nav--edit" type="button" aria-label="Editar pronóstico"
+                                  data-target="editForecast" data-toggle="ft-mol-modal" name="modal-trigger" title="Editar pronóstico">
+                                    <span class="ft-btn-nav__text">Editar</span>
+                                    <span class="ft-btn-nav__icon"></span>
+                                  </button>
+                                </div>
+                              </div>
+                        
+                            </div>
+                        
+                          </article>
+                        
+                          <article class="ft-mol-pick ft-mol-pick--compact" aria-label="Resultado del pronóstico del partido">
+                        
+                            <div class="ft-mol-pick__body">
+                        
+                              <div class="ft-mol-pick__match">
+                                <button class="ft-mol-pick__team">
+                                  <span class="ft-mol-pick__flag">
+                                    <img src="../../cds-statics/assets/img/flags/south_korea.svg" alt="Corea del Sur">
+                                  </span>
+                                  <span class="ft-mol-pick__team-name">Rep. Corea</span>
+                                </button>
+                        
+                                <button class="ft-mol-pick__team" aria-label="Resultado 2 a 4">
+                                  <span class="ft-mol-pick__outcome">Empate</span>
+                                </button>
+                        
+                                <button class="ft-mol-pick__team">
+                                  <span class="ft-mol-pick__team-name">Alemania</span>
+                                  <span class="ft-mol-pick__flag">
+                                    <img src="../../cds-statics/assets/img/flags/germany.svg" alt="Alemania">
+                                  </span>
+                                </button>
+                              </div>
+                        
+                              <div class="ft-mol-pick__meta">
+                                <div class="ft-mol-pick__forecast">
+                                  <button class="ft-mol-pick__add ft-btn-nav ft-btn-nav--plus" type="button" name="go-to">
+                                    <span class="ft-btn-nav__text">Más</span>
+                                    <span class="ft-btn-nav__icon"></span>
+                                  </button>
+                                </div>
+                              </div>
+                        
+                            </div>
+                        
+                          </article>
+                        
+                          <article class="ft-mol-pick ft-mol-pick--compact" aria-label="Resultado del pronóstico del partido">
+                        
+                            <div class="ft-mol-pick__body">
+                        
+                              <div class="ft-mol-pick__match">
+                                <button class="ft-mol-pick__team">
+                                  <span class="ft-mol-pick__flag">
+                                    <img src="../../cds-statics/assets/img/flags/france.svg" alt="Francia">
+                                  </span>
+                                  <span class="ft-mol-pick__team-name">Francia</span>
+                                </button>
+                        
+                                <button class="ft-mol-pick__team" aria-label="Resultado 2 a 4">
+                                  <span class="ft-mol-pick__outcome">Empate</span>
+                                </button>
+                        
+                                <button class="ft-mol-pick__team">
+                                  <span class="ft-mol-pick__team-name">Alemania</span>
+                                  <span class="ft-mol-pick__flag">
+                                    <img src="../../cds-statics/assets/img/flags/germany.svg" alt="Alemania">
+                                  </span>
+                                </button>
+                              </div>
+                        
+                              <div class="ft-mol-pick__meta">
+                                <div class="ft-mol-pick__forecast">
+                                  <button class="ft-mol-pick__add ft-btn-nav ft-btn-nav--plus" type="button" name="go-to">
+                                    <span class="ft-btn-nav__text">Más</span>
+                                    <span class="ft-btn-nav__icon"></span>
+                                  </button>
+                                </div>
+                              </div>
+                        
+                            </div>
+                        
+                          </article>
+                        
+                          <article class="ft-mol-pick ft-mol-pick--compact" aria-label="Resultado del pronóstico del partido">
+                        
+                            <div class="ft-mol-pick__body">
+                        
+                              <div class="ft-mol-pick__match">
+                                <button class="ft-mol-pick__team">
+                                  <span class="ft-mol-pick__flag">
+                                    <img src="../../cds-statics/assets/img/flags/england.svg" alt="Inglaterra">
+                                  </span>
+                                  <span class="ft-mol-pick__team-name">Inglaterra</span>
+                                </button>
+                        
+                                <button class="ft-mol-pick__team" aria-label="Resultado 2 a 4">
+                                  <span class="ft-mol-pick__outcome">Empate</span>
+                                </button>
+                        
+                                <button class="ft-mol-pick__team">
+                                  <span class="ft-mol-pick__team-name">Rep. Corea</span>
+                                  <span class="ft-mol-pick__flag">
+                                    <img src="../../cds-statics/assets/img/flags/south_korea.svg" alt="Corea del Sur">
+                                  </span>
+                                </button>
+                              </div>
+                        
+                              <div class="ft-mol-pick__meta">
+                                <div class="ft-mol-pick__forecast">
+                                  <button class="ft-mol-pick__add ft-btn-nav ft-btn-nav--plus" type="button" name="go-to">
+                                    <span class="ft-btn-nav__text">Más</span>
+                                    <span class="ft-btn-nav__icon"></span>
+                                  </button>
+                                </div>
+                              </div>
+                        
+                            </div>
+                        
+                          </article>
+                        
+                          <article class="ft-mol-pick ft-mol-pick--compact" aria-label="Resultado del pronóstico del partido">
+                        
+                            <div class="ft-mol-pick__body">
+                        
+                              <div class="ft-mol-pick__match">
+                                <button class="ft-mol-pick__team">
+                                  <span class="ft-mol-pick__flag">
+                                    <img src="../../cds-statics/assets/img/flags/germany.svg" alt="Alemania">
+                                  </span>
+                                  <span class="ft-mol-pick__team-name">Alemania</span>
+                                </button>
+                        
+                                <button class="ft-mol-pick__team" aria-label="Resultado 2 a 4">
+                                  <span class="ft-mol-pick__outcome">Empate</span>
+                                </button>
+                        
+                                <button class="ft-mol-pick__team">
+                                  <span class="ft-mol-pick__team-name">Inglaterra</span>
+                                  <span class="ft-mol-pick__flag">
+                                    <img src="../../cds-statics/assets/img/flags/england.svg" alt="Inglaterra">
+                                  </span>
+                                </button>
+                              </div>
+                        
+                              <div class="ft-mol-pick__meta">
+                                <div class="ft-mol-pick__forecast">
+                                  <button class="ft-mol-pick__add ft-btn-nav ft-btn-nav--plus" type="button" name="go-to">
+                                    <span class="ft-btn-nav__text">Más</span>
+                                    <span class="ft-btn-nav__icon"></span>
+                                  </button>
+                                </div>
+                              </div>
+                        
+                            </div>
+                        
+                          </article>
+                        
+                          <article class="ft-mol-pick ft-mol-pick--compact" aria-label="Resultado del pronóstico del partido">
+                        
+                            <div class="ft-mol-pick__body">
+                        
+                              <div class="ft-mol-pick__match">
+                                <button class="ft-mol-pick__team">
+                                  <span class="ft-mol-pick__flag">
+                                    <img src="../../cds-statics/assets/img/flags/france.svg" alt="Francia">
+                                  </span>
+                                  <span class="ft-mol-pick__team-name">Francia</span>
+                                </button>
+                        
+                                <button class="ft-mol-pick__team" aria-label="Resultado 2 a 4">
+                                  <span class="ft-mol-pick__outcome">Empate</span>
+                                </button>
+                        
+                                <button class="ft-mol-pick__team">
+                                  <span class="ft-mol-pick__team-name">Rep. Corea</span>
+                                  <span class="ft-mol-pick__flag">
+                                    <img src="../../cds-statics/assets/img/flags/south_korea.svg" alt="Corea del Sur">
+                                  </span>
+                                </button>
+                              </div>
+                        
+                              <div class="ft-mol-pick__meta">
+                                <div class="ft-mol-pick__forecast">
+                                  <button class="ft-mol-pick__add ft-btn-nav ft-btn-nav--plus" type="button" name="go-to">
+                                    <span class="ft-btn-nav__text">Más</span>
+                                    <span class="ft-btn-nav__icon"></span>
+                                  </button>
+                                </div>
+                              </div>
+                        
+                            </div>
+                        
+                          </article>
+                        
+                        </div>
+
+                        <div class="ft-org-game__mundial__forecasts-side">
+                          <section class="ft-org-game__mundial__forecasts-ranking">
+                            <!-- Comienzo Molécula Marcador -->
+                            <div class="ft-mol-sorting ft-mol-sorting--team" role="region" aria-label="Ranking">
+                              <div class="ft-mol-sorting__header">
+                                <h2 class="ft-mol-sorting__title">Grupo B</h2>
+                                <h2 class="ft-mol-sorting__title">Pts</h2>
+                              </div>
+                              <ul>
+                                <li class="ft-mol-sorting__list ft-mol-sorting__list--primary">
+                                  <div class="ft-mol-sorting__info">
+                                    <span class="ft-mol-sorting__infoNumber">#1</span>
+                                    <img src="../../cds-statics/assets/img/flags/england.svg" alt="Inglaterra" width="20" height="20"
+                                      class="ft-helper-img-rd">
+                          
+                                    <h3 class="ft-mol-sorting__infoName">Inglaterra </h3>
+                                  </div>
+                          
+                                  <div class="ft-mol-sorting__status">
+                                    <span class="ft-mol-sorting__statusBadge">Clasificado</span>
+                                    <span class="ft-mol-sorting__statusPoints">9 puntos</span>
+                                  </div>
+                                </li>
+                                <li class="ft-mol-sorting__list ft-mol-sorting__list--secondary">
+                                  <div class="ft-mol-sorting__info">
+                                    <span class="ft-mol-sorting__infoNumber">#1</span>
+                                    <img src="../../cds-statics/assets/img/flags/france.svg" alt="Francia" width="20" height="20"
+                                      class="ft-helper-img-rd">
+                          
+                                    <h3 class="ft-mol-sorting__infoName">Francia</h3>
+                                  </div>
+                          
+                                  <div class="ft-mol-sorting__status">
+                                    <span class="ft-mol-sorting__statusBadge">Clasificado</span>
+                                    <span class="ft-mol-sorting__statusPoints">6 puntos</span>
+                                  </div>
+                                </li>
+                                <li class="ft-mol-sorting__list">
+                                  <div class="ft-mol-sorting__info">
+                                    <span class="ft-mol-sorting__infoNumber">#1</span>
+                                    <img src="../../cds-statics/assets/img/flags/south_korea.svg" alt="Rep. Corea" width="20" height="20"
+                                      class="ft-helper-img-rd">
+                          
+                                    <h3 class="ft-mol-sorting__infoName">Rep. Corea</h3>
+                                  </div>
+                          
+                                  <div class="ft-mol-sorting__status">
+                                    <span class="ft-mol-sorting__statusBadge">Clasificado</span>
+                                    <span class="ft-mol-sorting__statusPoints">3 puntos</span>
+                                  </div>
+                                </li>
+                                <li class="ft-mol-sorting__list">
+                                  <div class="ft-mol-sorting__info">
+                                    <span class="ft-mol-sorting__infoNumber">#1</span>
+                                    <img src="../../cds-statics/assets/img/flags/germany.svg" alt="Alemania" width="20" height="20"
+                                      class="ft-helper-img-rd">
+                          
+                                    <h3 class="ft-mol-sorting__infoName">Alemania</h3>
+                                  </div>
+                          
+                                  <div class="ft-mol-sorting__status ft-mol-sorting__status--red">
+                                    <span class="ft-mol-sorting__statusBadge">Eliminado</span>
+                                    <span class="ft-mol-sorting__statusPoints">0 puntos</span>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                            <!-- Fin // Molécula Marcador -->
+                          </section>
+
+                          <div class="ft-mol-btnGroup ft-mol-btnGroup--cnt">
+                            <button type="button" aria-controls="saveAccount" aria-haspopup="dialog" class="ft-btn ft-btn--sm-md"
+                              data-target="saveAccount" data-toggle="ft-mol-modal" name="modal-trigger">
+                              Guardar en mi cuenta
+                            </button>                      
+                          </div>
+                        </div>
+
+                      </div>
+
+                    </section>
+                  </div>
+
+                  <div class="ft-mol-btnGroup ft-mol-btnGroup--cnt ft-mol-btnGroup--is-fixed">
+                    <button type="button" aria-controls="chooseAlias" aria-haspopup="dialog" class="ft-btn ft-btn--tertiary ft-btn--sm-md"
+                      data-target="chooseAlias" data-toggle="ft-mol-modal" name="modal-trigger">
+                      Pasar al siguiente grupo
+                    </button>
+                      
+                  </div>
+          
+                  <footer class="ft-org-game__mundial__footer">
+                    <div class="ft-org-game__mundial__footer-title">
+                      Copa Mundial de la FIFA 2026™
+                    </div>
+                  </footer>
+                  
+                  <div aria-describedby="editForecastDesc" aria-labelledby="editForecastTitle" aria-modal="true"
+                    class="ft-mol-modal ft-mol-modal--bttm-cnt ft-mol-modal--maxheight ft-mol-modal--md" id="editForecast" role="dialog">
+                    <div class="ft-mol-modal__container">
+                      <div class="ft-mol-modal__window">
+                        <div class="ft-mol-modal__body">
+                          
+                          <!-- juego -->
+                          <div class="ft-org-game__porra">
+                      
+                            <!-- tablero -->
+                            <div class="ft-org-game__porra__board" id="porraBoard" role="group" aria-label="Porra">
+                      
+                              <h3 class="ft-org-game__porra__title" id="editForecastTitle">
+                                ¿Quién va a ganar?
+                              </h3>
+                              <p class="ft-org-game__porra__subtitle" id="editForecastDesc">
+                                Elige el marcador final
+                              </p>
+                              <div class="ft-org-game__porra__match-info">
+                                <span class="ft-org-game__porra__competition">Mundial 2026</span>
+                                <span>-</span>
+                                <time datetime="2026-04-18T21:00:00+00:00" class="ft-org-game__porra__datetime">18/04 21:00h.</time>
+                                <div class="ft-mol-label ft-mol-label--advice ft-mol-label--xs">
+                                  <div class="ft-mol-label__content">
+                                    <p class="ft-mol-label__title">En directo</p>
+                                  </div>
+                                </div>
+                              </div>
+                      
+                              <!-- Marcador -->
+                              <div class="ft-mol-scoreboard ft-mol-scoreboard--interactive" role="region"
+                                aria-label="Marcador del partido Inglaterra vs Francia">
+                                <div class="ft-mol-scoreboard__col-lft" aria-label="Equipo local: Inglaterra">
+                                  <div class="ft-mol-scoreboard__brief">
+                                    <span class="ft-mol-scoreboard__club">Inglaterra</span>
+                                  </div>
+                                  <div class="ft-mol-scoreboard__shield">
+                                    <img src="../../cds-statics/assets/img/flags/england.svg" class="ft-helper-img-rd"
+                                      alt="Inglaterra">
+                                  </div>
+                                </div>
+                                <div class="ft-mol-scoreboard__col-cnt" aria-label="Resultado seleccionado: 2 - 0">
+                                  <div class="ft-mol-scoreboard__btn-group">
+                                    <button type="button" name="Más"
+                                      aria-label="Aumentar goles de Inglaterra"
+                                      class="ft-btn-nav ft-btn-nav--circle ft-btn-nav--plus ft-helper-bgColor-background-lightGrey">
+                                      <span class="ft-btn-nav__text">
+                                        Más
+                                      </span>
+                                      <span class="ft-btn-nav__icon"></span>
+                                    </button>
+                            
+                                    <button type="button" name="Menos"
+                                      aria-label="Reducir goles de Inglaterra"
+                                      class="ft-btn-nav ft-btn-nav--circle ft-btn-nav--minus ft-helper-bgColor-background-lightGrey">
+                                      <span class="ft-btn-nav__text">
+                                        Menos
+                                      </span>
+                                      <span class="ft-btn-nav__icon"></span>
+                                    </button>
+                                  </div>
+                                  <span class="ft-mol-scoreboard__score">2
+                                  </span>
+                                  <span class="ft-mol-scoreboard__score">0
+                                  </span>
+                                  <div class="ft-mol-scoreboard__btn-group">
+                                    <button type="button" name="Más"
+                                      aria-label="Aumentar goles de Francia"
+                                      class="ft-btn-nav ft-btn-nav--circle ft-btn-nav--plus ft-helper-bgColor-background-lightGrey">
+                                      <span class="ft-btn-nav__text">
+                                        Más
+                                      </span>
+                                      <span class="ft-btn-nav__icon"></span>
+                                    </button>
+                            
+                                    <button type="button" name="Menos"
+                                      aria-label="Reducir goles de Francia"
+                                      class="ft-btn-nav ft-btn-nav--circle ft-btn-nav--minus ft-helper-bgColor-background-lightGrey" disabled>
+                                      <span class="ft-btn-nav__text">
+                                        Menos
+                                      </span>
+                                      <span class="ft-btn-nav__icon"></span>
+                                    </button>
+                                  </div>
+                                </div>
+                                <div class="ft-mol-scoreboard__col-rgt" aria-label="Equipo visitante: Francia">
+                                  <div class="ft-mol-scoreboard__brief">
+                                    <span class="ft-mol-scoreboard__club">Francia</span>
+                                  </div>
+                                  <div class="ft-mol-scoreboard__shield">
+                                    <img src="../../cds-statics/assets/img/flags/france.svg" class="ft-helper-img-rd"
+                                      alt="Francia">
+                                  </div>
+                                </div>
+                              </div>
+                      
+                              <!-- Más votados -->
+                              <div class="ft-org-game__porra__popular ft-helper-bgColor-background-lightGrey">
+                                <p class="ft-org-game__porra__popular-title">
+                                  o elige entre los más votados
+                                </p>
+                                <div class="ft-org-game__porra__popular-grid" role="radiogroup" aria-label="Resultados más votados">
+                                  <button type="button" name="go-to" class="ft-btn-nav ft-btn-nav--square ft-btn-nav--square--md" role="radio"
+                                    aria-checked="false">
+                                    <span class="ft-org-game__porra__popular-result">3-2</span>
+                                    <span class="ft-org-game__porra__popular-percent">100%</span>
+                                  </button>
+                                  <button type="button" name="go-to"
+                                    class="ft-btn-nav ft-btn-nav--square ft-btn-nav--square--md ft-btn-nav--checked" role="radio"
+                                    aria-checked="true">
+                                    <span class="ft-org-game__porra__popular-result">3-2</span>
+                                    <span class="ft-org-game__porra__popular-percent">100%</span>
+                                  </button>
+                                  <button type="button" name="go-to" class="ft-btn-nav ft-btn-nav--square ft-btn-nav--square--md" role="radio"
+                                    aria-checked="false">
+                                    <span class="ft-org-game__porra__popular-result">3-2</span>
+                                    <span class="ft-org-game__porra__popular-percent">100%</span>
+                                  </button>
+                                </div>
+                        
+                                <!-- Resultados -->
+                                <div class="ft-org-game__porra__results">
+                                  <p class="ft-org-game__porra__results-summary">
+                                    <span>Inglaterra</span> <span class="ft-helper-fontWeight-700">55%</span>
+                                    | Empate <span class="ft-helper-fontWeight-700">3%</span> |
+                                    <span>Francia</span> <span class="ft-helper-fontWeight-700">42%</span>
+                                  </p>
+                                  <div class="ft-org-game__porra__results-bar">
+                                    <!-- segmentos -->
+                                    <div class="ft-mol-bar ft-mol-bar--stacked">
+                                      <div
+                                        class="ft-mol-bar__background">
+                                        <div class="ft-mol-bar__background-inProgress" style="background-color: #D8012B; width: 55%;"></div>
+                                        <div class="ft-mol-bar__background-inProgress ft-helper-bgColor-background-mediumGrey"
+                                          style="width: 3%;"></div>
+                                        <div class="ft-mol-bar__background-inProgress" style="background-color: #143C8B; width: 42%;"></div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                      
+                            </div>
+                      
+                          </div>
+                            
+                        </div>
+                        <div class="ft-mol-modal__footer">
+                          <div class="ft-mol-btnGroup">
+                            <a class="ft-btn ft-btn--tertiary ft-btn--sm-md" href="#" target="_self">
+                              Guardar predicción
+                            </a>
+                          </div>
+                          <button class="ft-btn-nav ft-btn-nav--close ft-mol-modal__close" data-dismiss="ft-mol-modal" name="close-button"
+                            title="Cerrar ventana emergente" type="button">
+                            <span class="ft-btn-nav__text">
+                              Cerrar
+                            </span>
+                            <span class="ft-btn-nav__icon"></span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div aria-describedby="saveAccountDesc" aria-labelledby="saveAccountTitle" aria-modal="true"
+                    class="ft-mol-modal ft-mol-modal--bttm-cnt ft-mol-modal--maxheight ft-mol-modal--md" id="saveAccount" role="dialog">
+                    <div class="ft-mol-modal__container">
+                      <div class="ft-mol-modal__window">
+                        <div class="ft-mol-modal__header ft-helper-align-center">
+                          <h3 class="ft-mol-modal__title" id="saveAccountTitle">
+                            Guarda tu porra
+                          </h3>
+                        </div>
+                        <div class="ft-mol-modal__body ft-helper-align-center" id="saveAccountDesc">
+                          <p class="ft-helper-fontSize-body-M--small">
+                            Ya has completado tu primer grupo. Inicia sesión o regístrate para guardar tu porra
+                          </p>
+                        </div>
+                        <div class="ft-mol-modal__footer">
+                          <div class="ft-helper-align-center">
+                            <a href="#" class="ft-btn ft-btn--tertiary ft-btn--sm-md" target="_self">
+                              Crear cuenta
+                            </a>                      
+                          </div>
+                          <div class="ft-mol-btnGroup ft-mol-btnGroup--cnt">
+                            <a href="#" class="ft-org-game__mundial__login-link ft-link ft-link--decoration">
+                              Ya tengo cuenta
+                            </a>
+                          </div>
+                          <button class="ft-btn-nav ft-btn-nav--close ft-mol-modal__close" data-dismiss="ft-mol-modal" name="close-button"
+                            title="Cerrar ventana emergente" type="button">
+                            <span class="ft-btn-nav__text">
+                              Cerrar
+                            </span>
+                            <span class="ft-btn-nav__icon"></span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div aria-describedby="chooseAliasDesc" aria-labelledby="chooseAliasTitle" aria-modal="true"
+                    class="ft-mol-modal ft-mol-modal--bttm-cnt ft-mol-modal--maxheight ft-mol-modal--md" id="chooseAlias" role="dialog">
+                    <div class="ft-mol-modal__container">
+                      <div class="ft-mol-modal__window">
+                        <div class="ft-mol-modal__header ft-helper-align-center">
+                          <h3 class="ft-mol-modal__title" id="chooseAliasTitle">
+                            Elige tu alias
+                          </h3>
+                        </div>
+                        <div class="ft-mol-modal__body ft-mol-modal__body--hoffset">
+                          <div class="ft-mol-modal__body--honset">
+                            <p class="ft-helper-fontSize-body-M--small ft-helper-align-center" id="chooseAliasDesc">
+                              Ey! Ahora mismo tienes un alias genérico <span>[user_123456]</span>.
+                              Te damos la opción de personalizarlo:
+                            </p>
+                            <div class="ft-mol-form ft-mol-form--has-supporting-text ft-mol-form--has-label">
+                              <input type="text" id="chooseAliasInput" class="ft-mol-form__input" name="alias" placeholder=" "
+                                autocomplete="nickname" aria-describedby="chooseAliasInputHelp">
+                              <label for="chooseAliasInput" class="ft-mol-form__label">Introduce tu alias</label>
+                              <p class="ft-mol-form__supporting-text" id="chooseAliasInputHelp">
+                                <span class="ft-mol-form__supporting-message ft-helper-display-flex">
+                                  <img src="../../cds-statics/assets/img/icons/icon-c-error.svg" loading="lazy" class="ft-helper-img-rd" height="16px" width="16px" alt="alt text" title="title text">
+                                  &nbsp;
+                                  <span>Alias no válido</span>
+                                </span>
+                                <span class="ft-mol-form__supporting-numbers">&nbsp;</span>
+                              </p>
+                            </div>
+
+                          </div>
+                        </div>
+                        <div class="ft-mol-modal__footer">
+                          <div class="ft-helper-align-center">
+                            <button class="ft-btn ft-btn--tertiary ft-btn--sm-md" type="button">
+                              Enviar
+                            </button>
+                          </div>
+                          <button class="ft-btn-nav ft-btn-nav--close ft-mol-modal__close" data-dismiss="ft-mol-modal" name="close-button"
+                            title="Cerrar ventana emergente" type="button">
+                            <span class="ft-btn-nav__text">
+                              Cerrar
+                            </span>
+                            <span class="ft-btn-nav__icon"></span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                    
+                </div>
+              </div>
+            
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </article>
+
+  <!-- JS: masthead -->
+  <script rel="modulepreload" src="../../cds-statics/js/affix/affix.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/headers/masthead.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/sticking/fourty-header-sticky.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/switch/fourty-js-switch-2024.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/form/fourty-js-form-combo-search.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/sidenav/fourty-js-sidenav-default.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/modal/fourty-js-popover.js"></script>
+  <script src="../../cds-statics/js/tapbar/fourty-js-tapbar.js"></script>
+             <script src="/cds-statics/js/timer/fourty-js-timer.js" defer></script>
+
+  <!-- JS:  dropdown -->
+  <script rel="modulepreload" src="../../cds-statics/js/dropdown/fortty-js-dropdown-simple.js"></script>
+
+  <!-- JS:  modal -->
+  <script rel="modulepreload" src="../../cds-statics/js/modal/fourty-js-modal.js"></script>
+
+  <!-- JS:  tabs -->
+  <script rel="modulepreload" src="../../cds-statics/js/tabs/fourty-js-tabs.js"></script>
+
+  <!-- JS:  smoothscrollbar -->
+  <script rel="modulepreload" src="../../cds-statics/js/scroll/smooth-scrollbar/smooth-scrollbar.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/scroll/smooth-scrollbar/smooth-scrollbar-functions.js"></script>
+
+  <!-- JS: lottie-->
+  <script rel="modulepreload" src="../../cds-statics/js/lottie/fourty-js-lottie.js" type="module"></script>
+
+  <!-- JS: game__input -->
+  <script rel="modulepreload" src="../../cds-statics/js/game/game-input-pipe.js"></script>
+
+  <!-- JS: form-basics -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="../../cds-statics/js/form/fourty-js-form-basics.js" defer></script>
+
+</body>
+
+</html>

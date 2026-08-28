@@ -1,0 +1,740 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <title>42DS | Templates: Pasatiempos</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <!-- CSS: settings -->
+  <link href="../../cds-statics/css/brands/ux/setting.css" id="brandStyles-root" rel="stylesheet"
+    type="text/css" />
+     <link href="../../cds-statics/css/brands/ux/core.css" id="brandStyles-root" rel="stylesheet"
+    type="text/css" />
+    <link href="../../cds-statics/css/brands/commons/setting-pasatiempos.css" id="brandStyles-root" rel="stylesheet"
+   type="text/css" />
+  <!-- CSS: library multibrand -->
+  <link href="../../cds-statics/css/ux-index.css" id="brandStyles" rel="stylesheet" type="text/css" />
+  <!-- FAVICON -->
+  <link href="../favicon.png" rel="icon" type="image/png" />
+</head>
+<body class="fourty ft-brand-ux pasatiempos minimal-header"
+ data-showroom-skin="layout">
+  <!--header-->
+  <header>
+    <!-- Cabecera normal -->
+    <div class="ft-org-masthead">
+      <div class="ft-org-masthead__top">
+        <div class="ft-org-masthead__top-left">
+          <a href="/es/" class="ft-org-masthead__top-left-logo" title="El Periódico de España">
+          </a>
+          <div class="ft-date ft-date--inline">
+            <div class="ft-date__text">
+              <time class="ft-date__textTime" datetime="2025-03-17T04:50:43+01:00">17 MAR 2025</time>
+            </div>
+            <time class="ft-date__reload" datetime="2025-03-17T06:11:15+01:00">Actualizada 6:11</time>
+          </div>
+        </div>
+        <div class="ft-org-masthead__top-right">
+         <div class="sticky"  id="hero">
+            <p class="sticky-text">
+              Suscríbete hoy con un
+              <span class="sticky-text__bold">30% de dto</span>
+            </p>
+            <div class="sticky-button"></div>
+            <a class="sticky-link" data-vars-event-cat="piano link" external-event="marketing=base-pm1A"
+              href="https://micuenta.lne.es/tp/suscripcion/galeria?marketing=base-pm1A" rel="nofollow" target="_blank"
+              title="link title"></a>
+          </div>
+        </div>
+      </div>
+      <div class="ft-org-masthead__main">
+        <div class="ft-org-masthead__menu">
+          <button type="button" class="ft-org-masthead__menu-button" id="toggle">
+            <span class="ft-org-masthead__menu-buttonIcon"></span>
+          </button>
+        </div>
+        <div class="ft-org-masthead__logo">
+          <h1 class="ft-org-masthead__logo-img">
+            <a href="/es/" class="ft-org-masthead__logo-link" title="El Periódico">
+              <span class="ft-org-masthead--hide">el periódico</span>
+            </a>
+          </h1>
+          <div class="ft-org-masthead__logo-lang">
+            <button type="button" onclick="triggerDropdownLanguage()" class="ft-org-masthead__logo-button"
+              id="activeLanguage" data-active=".com">
+              .com
+            </button>
+            <ul class="ft-org-masthead__dropdown" id="languageDropdown">
+              <li>
+                <a href="https://www.elperiodico.cat/ca/" class="ft-org-masthead__dropdown-link">.cat</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="ft-org-masthead__area">
+          <button class="ft-org-masthead__area--search"></button>
+          <button class="ft-org-masthead__area--login"></button>
+        </div>
+      </div>
+      <nav class="ft-org-masthead__nav">
+        <ul class="ft-org-masthead__list">
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              <img src="../../cds-statics/assets/img/logos/logo-prueba2.svg" width="85" height="40" />
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Enlace 2
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Enlace 3
+            </a>
+          </li>
+
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Enlace 7
+            </a>
+          </li>
+          <li class="ft-org-masthead__item ft-org-masthead__item--live">
+            <a href="/es/directos/" class="ft-org-masthead__link" title="Directos">
+              Directos
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Enlace 8
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Enlace 9
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Enlace 10
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Enlace 11
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Enlace 12
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Enlace 13
+            </a>
+          </li>
+        </ul>
+        <a href="#" class="ft-org-masthead__branded">Ofrecido por
+          <img src="../../cds-statics/assets/img/logos/logo-prueba.svg" /></a>
+      </nav>
+      <nav class="ft-org-masthead__nav ft-org-masthead__nav--mobile">
+        <ul class="ft-org-masthead__list">
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              <img src="../../cds-statics/assets/img/logos/logo-prueba2.svg" width="85" height="40" />
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link ft-org-masthead__link--active" title="Title text">
+              Enlace 2 Mobile
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Enlace 3 Mobile
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Enlace 4 Mobile
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Enlace 5 Mobile
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Enlace 6 Mobile
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Enlace 7 Mobile
+            </a>
+          </li>
+          <li class="ft-org-masthead__item ft-org-masthead__item--live">
+            <a href="/es/directos/" class="ft-org-masthead__link" title="Directos">
+              Directos
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <nav class="ft-org-masthead__subnav">
+        <ul class="ft-org-masthead__list">
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Ediciones digitales:
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Siero
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Llanera
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Villaviciosa
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Grado
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Salas
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Ribera de Arriba
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              La Corredoria
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <!-- Cabecera fija -->
+    <div class="ft-org-masthead ft-org-masthead--fix">
+      <div class="ft-org-masthead__main">
+        <div class="ft-org-masthead__menu">
+          <button type="button" class="ft-org-masthead__menu-button" id="toggle">
+            <span class="ft-org-masthead__menu-buttonIcon"></span>
+          </button>
+        </div>
+        <div class="ft-org-masthead__logo">
+          <h1 class="ft-org-masthead__logo-img">
+            <a href="/es/" class="ft-org-masthead__logo-link" title="El Periódico">
+              <span class="ft-org-masthead--hide">el periódico</span>
+            </a>
+          </h1>
+          <div class="ft-org-masthead__logo-lang">
+            <button type="button" onclick="triggerDropdownLanguage()" class="ft-org-masthead__logo-button"
+              id="activeLanguage" data-active=".com">
+              .com
+            </button>
+            <ul class="ft-org-masthead__dropdown" id="languageDropdown">
+              <li>
+                <a href="https://www.elperiodico.cat/ca/" class="ft-org-masthead__dropdown-link">.cat</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="ft-org-masthead__area">
+          <button class="ft-org-masthead__area--search"></button>
+          <button class="ft-org-masthead__area--login"></button>
+        </div>
+      </div>
+      <div id="progress-bar" class="ft-org-masthead__progress-bar"></div>
+    </div>
+    <!-- Menú Lateral Único -->
+    <div class="ft-org-masthead ft-org-masthead--side" id="sideMenu">
+      <div class="ft-org-masthead__main">
+        <div class="ft-org-masthead__menu">
+          <button type="button" class="ft-org-masthead__menu-button" id="toggle">
+            <span class="ft-org-masthead__menu-buttonIcon"></span>
+          </button>
+        </div>
+
+        <div class="ft-org-masthead__logo">
+          <div class="ft-org-masthead__logo-img">
+            <a href="/es/" class="ft-org-masthead__logo-link" title="El Periódico">
+              <span class="ft-org-masthead--hide">el periódico</span>
+            </a>
+          </div>
+          <div class="ft-org-masthead__logo-lang">
+            <button type="button" onclick="triggerDropdownLanguage()" class="ft-org-masthead__logo-button"
+              id="activeLanguage" data-active=".com">
+              .com
+            </button>
+            <ul class="ft-org-masthead__dropdown" id="languageDropdown">
+              <li>
+                <a href="https://www.elperiodico.cat/ca/" class="ft-org-masthead__dropdown-link">.cat</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="ft-org-masthead__area">
+          <button class="ft-org-masthead__area--search"></button>
+          <button class="ft-org-masthead__area--login"></button>
+        </div>
+      </div>
+      <div class="ft-org-masthead__box ft-org-masthead__box--white">
+        <h2 class="ft-org-masthead__title">Pasatiempos</h2>
+            <ul class="ft-list ft-list--primary ft-list--chevron ft-list--chevron-rgt ft-list--has-icon">
+                        <li class="ft-list__item">
+                            <a href="#" class="ft-list__link" title="title text" target="self">
+                                Pasatiempos de hoy
+                            </a>
+                        </li>
+                        <li class="ft-list__item">
+                            <a href="#" class="ft-list__link" title="title text" target="self">
+
+                               Archivo
+                        </a>
+                        </li>
+                        <li class="ft-list__item">
+                            <a href="#" class="ft-list__link" title="title text" target="self">
+                             <img src="../../cds-statics/assets/img/icons/icon-crucigrama.svg" loading="lazy" width="22" height="22" class="ft-list-photoinfo__img" alt="alt text" title="title text">
+
+                                Crucigrama
+                        </a>
+                        </li>
+                        <li class="ft-list__item">
+                            <a href="#" class="ft-list__link" title="title text" target="self">
+                             <img src="../../cds-statics/assets/img/icons/icon-timequest.svg" loading="lazy" width="22" height="22" class="ft-list-photoinfo__img" alt="alt text" title="title text">
+
+                                TimeQuest
+                        </a>
+                        </li>
+                        <li class="ft-list__item">
+                            <a href="#" class="ft-list__link" title="title text" target="self">
+                             <img src="../../cds-statics/assets/img/icons/icon-pangramax.svg" loading="lazy" width="22" height="22" class="ft-list-photoinfo__img" alt="alt text" title="title text">
+
+                               Pangramax
+                        </a>
+                        </li>
+                         <li class="ft-list__item">
+                            <a href="#" class="ft-list__link" title="title text" target="self">
+                             <img src="../../cds-statics/assets/img/icons/icon-cuadronumerico.svg" loading="lazy" width="22" height="22" class="ft-list-photoinfo__img" alt="alt text" title="title text">
+
+                               Cuadro numérico
+                        </a>
+                        </li>
+                         <li class="ft-list__item">
+                            <a href="#" class="ft-list__link" title="title text" target="self">
+                             <img src="../../cds-statics/assets/img/icons/icon-palabraoculta.svg" loading="lazy" width="22" height="22" class="ft-list-photoinfo__img" alt="alt text" title="title text">
+
+                               Palabra oculta
+                        </a>
+                        </li>
+                        <li class="ft-list__item">
+                            <a href="#" class="ft-list__link" title="title text" target="self">
+                             <img src="../../cds-statics/assets/img/icons/icon-sudoku.svg" loading="lazy" width="22" height="22" class="ft-list-photoinfo__img" alt="alt text" title="title text">
+                               Sudoku
+                        </a>
+                        </li>
+                        <li class="ft-list__item">
+                            <a href="#" class="ft-list__link" title="title text" target="self">
+                             <img src="../../cds-statics/assets/img/icons/icon-sopaletras.svg" loading="lazy" width="22" height="22" class="ft-list-photoinfo__img" alt="alt text" title="title text">
+
+                               Sopa de letras
+                        </a>
+                        </li>
+                        <li class="ft-list__item">
+                            <a href="#" class="ft-list__link" title="title text" target="self">
+                             <img src="../../cds-statics/assets/img/icons/icon-saltaminas.svg" loading="lazy" width="22" height="22" class="ft-list-photoinfo__img" alt="alt text" title="title text">
+
+                               Saltaminas
+                        </a>
+                        </li>
+             </ul>
+      </div>
+       <div class="ft-org-masthead__box ft-org-masthead__box--white">
+        <h2 class="ft-org-masthead__title">Noticias</h2>
+            <ul class="ft-list ft-list--primary ft-list--chevron ft-list--chevron-rgt ft-list--has-icon">
+                        <li class="ft-list__item">
+                            <a href="#" class="ft-list__link" title="title text" target="self">
+                  <img src="../../cds-statics/assets/img/icons/ep-icono-circle.svg" loading="lazy" width="22" height="22" class="ft-list-photoinfo__img" alt="alt text" title="title text">
+
+                                El periódico
+                        </a>
+                        </li>
+             </ul>
+      </div>
+      <div class="ft-org-masthead__box">
+        <div class="ft-mol-rrss-inline ft-mol-rrss-inline--center">
+          <div class="ft-mol-rrss-inline__items">
+            <a href="#" class="ft-btn-rrss ft-btn-rrss--twitter" title="Twitter" target="”_blank”" rel="nofollow">
+              <span class="ft-mol-rrss ft-mol-rrssTwitter--default ft-btn-rrss__icon"></span>
+              <span class="ft-btn-rrss__text"> RRSS Twitter </span>
+            </a>
+            <a href="#" class="ft-btn-rrss ft-btn-rrss--facebook" title="Facebook" target="”_blank”" rel="nofollow">
+              <span class="ft-mol-rrss ft-mol-rrssFacebook--default ft-btn-rrss__icon"></span>
+              <span class="ft-btn-rrss__text"> RRSS Facebook </span>
+            </a>
+            <a href="#" class="ft-btn-rrss ft-btn-rrss--email" title="Email" target="”_blank”" rel="nofollow">
+              <span class="ft-mol-rrss ft-mol-rrssEmail--default ft-btn-rrss__icon"></span>
+              <span class="ft-btn-rrss__text"> RRSS Email </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!--fin header-->
+  <!-- LAYOUT -->
+  <article class="ft-layout-grid-flex">
+   <!--Destacado con un elemento -->
+    <div class="ft-layout-grid-flex__row ft-helper-size-h-100  ft-helper-display-flex--middle ft-helper-size-h-50 ft-layout-grid-flex__rowCenter-xs ft-layout-grid-flex__rowIs-fullwidth ft-helper-bgPink-pangramax">
+      <div class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__colSm-5 ft-helper-spacer-b-lg">
+        <div class="ft-mol-card ft-mol-card--featured ft-mol-card--white">
+          <a href="#" class="ft-mol-card__body" title="title text" target="_self">
+            <div class="ft-mol-card__content">
+              <figure class="ft-img">
+                <picture>
+                  <source media="(min-width: 768px)" srcset="
+                        ../../cds-statics/assets/img/decorative/ft-mol-card-pangramax.svg
+                      " />
+                  <source media="(min-width: 250px)" srcset="
+                        ../../cds-statics/assets/img/decorative/ft-mol-card-pangramax.svg,
+                        ../../cds-statics/assets/img/decorative/ft-mol-card-pangramax.svg 2x
+                      " />
+                  <img src="../../cds-statics/assets/img/decorative/ft-mol-card-pangramax.svg" width="656" height="381"
+                    loading="lazy" class="ft-mol-card__image" alt="alt text" title="title text" />
+                </picture>
+              </figure>
+            </div>
+            <div class="ft-mol-card__header">
+               <div class="ft-mol-card__headband">
+                <h3 class="ft-mol-card__title">Pangramax</h3>
+              </div>
+              <p class="ft-mol-card__subtitle">
+                 Miércoles, 7 de Mayo de 2025
+              </p>
+              <p class="ft-mol-card__text">
+                 Pon a prueba tus conocimientos y habilidades con este juego de letras
+              </p>
+               </div>
+              
+               <div class="ft-mol-card__footer">
+                 <button type="button" class="ft-btn ft-btn--secondary ft-btn--md" title="title text" target="_self">
+                Suscríbete
+                </button>
+                <button type="button" class="ft-btn ft-btn--tertiary ft-btn--md" title="title text" target="_self">
+                Jugar
+                </button>
+                   
+            </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!--Fin destacado con un elementos -->
+    <!--Pie -->
+    <footer id="footer-media" class="footer-media--pasatiempos" role="contentinfo" aria-label="Información del pie de página">
+      <h2 class="ft-helper-hide">Información de pie de página</h2>
+  
+      <div class="footer-mediaTop">
+          <a data-edition-homelink="data-edition-homelink" title="El Periódico" href="/es/" aria-current="page">
+              <img width="263" height="65" loading="lazy" alt="El Periódico2"
+                  src="../../cds-statics/assets/img/logos/logoEpColor.svg">
+          </a>
+  
+          <div class="rrss" aria-label="Redes sociales de El Periódico">
+              <a class="btn" href="#" rel="noopener noreferrer nofollow" target="_blank"
+                  aria-label="WhatsApp de El Periódico">
+                  <span class="icon icon-Whatsapp" aria-hidden="true"></span>
+              </a>
+              <a class="btn" href="https://www.facebook.com/elperiodico.catalunya" rel="noopener noreferrer nofollow"
+                  target="_blank" hreflang="es" aria-label="Facebook de El Periódico">
+                  <span class="icon icon-Facebook" aria-hidden="true"></span>
+              </a>
+              <a class="btn" href="https://twitter.com/elperiodico" rel="noopener noreferrer nofollow" target="_blank"
+                  hreflang="es" aria-label="Twitter de El Periódico">
+                  <span class="icon icon-Twitter" aria-hidden="true"></span>
+              </a>
+              <a class="btn" href="https://www.instagram.com/elperiodico_cas/" rel="noopener noreferrer nofollow"
+                  target="_blank" hreflang="es" aria-label="Instagram de El Periódico">
+                  <span class="icon icon-Instagram" aria-hidden="true"></span>
+              </a>
+          </div>
+  
+          <h3 class="ft-helper-hide">Enlaces institucionales</h3>
+          <nav aria-label="Enlaces institucionales">
+              <ul class="lnk">
+                  <li><a href="https://www.elperiodico.com/es/quienessomos.shtml" rel="nofollow noopener" target="_blank"
+                          hreflang="es" title="Quiénes somos">
+                          Quiénes somos
+                      </a></li>
+                  <li><a href="https://www.elperiodico.com/es/contacto.shtml" rel="nofollow noopener" target="_blank"
+                          hreflang="es" title="Contacto">
+                          Contacto
+                      </a></li>
+                  <li><a href="https://www.elperiodico.com/es/rss/portada_rss.shtml" rel="nofollow noopener"
+                          target="_blank" hreflang="es" title="RSS">
+                          RSS
+                      </a></li>
+                  <li><a href="https://www.elperiodico.com/es/mapa-sitio.shtml" rel="nofollow noopener" target="_blank"
+                          hreflang="es" title="Mapa del sitio">
+                          Mapa del sitio
+                      </a></li>
+                  <li><a href="https://www.prensaiberica360.es/?_sid=1686819132" rel="nofollow noopener" target="_blank"
+                          hreflang="es" title="Publicidad">
+                          Publicidad
+                      </a></li>
+                  <li><a href="https://www.elperiodico.com/es/avisolegal.shtml" rel="nofollow noopener" target="_blank"
+                          hreflang="es" title="Aviso legal">
+                          Aviso legal
+                      </a></li>
+                  <li><a href="https://www.prensaiberica.es/politica-de-privacidad-resumida/?_sid=1686819132"
+                          rel="nofollow noopener" target="_blank" hreflang="es" title="Política de privacidad y cookies">
+                          Política de privacidad y cookies
+                      </a></li>
+                  <li><a href="javascript: Didomi.preferences.show();" rel="nofollow noopener"
+                          title="Preferencias de Privacidad">
+                          Preferencias de Privacidad
+                      </a></li>
+              </ul>
+          </nav>
+      </div>
+  
+      <div class="footer-mediaMiddle">
+          <address>
+              <p>El Periódico de Catalunya, S.L.U</p>
+              <a href="https://estaticos-cdn.lne.es/images/footer/prensa-iberica-360.png?id=00bc9e3946af531b5a7b"
+                  rel="noopener" target="_blank" hreflang="es" title="Prensa Ibérica">
+                  <img width="114" height="73" loading="lazy" alt="Prensa Ibérica"
+                      src="https://estaticos-cdn.lne.es/images/footer/prensa-iberica-360.png?id=00bc9e3946af531b5a7b"
+                      title="Prensa Ibérica">
+              </a>
+          </address>
+      </div>
+  
+      <div class="footer-mediaBottom">
+          <p>Otras webs de Prensa Ibérica Media:</p>
+          <ul>
+              <li class="titular">
+                  Titular 1
+              </li>
+              <li><a rel="nofollow" target="_blank" title="Casa Gourmet"
+                      href="https://www.casagourmet.es/?_sid=1686737966">
+                      Casa Gourmet
+                  </a>
+              </li>
+              <li><a rel="nofollow" target="_blank" title="Coche de ocasión" href="https://ocasion.neomotor.com/">
+                      Coche de ocasión
+                  </a>
+              </li>
+              <li><a rel="nofollow" target="_blank" title="Código Nuevo"
+                      href="https://www.codigonuevo.com/?_sid=1686737966">
+                      Código Nuevo
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Cuore"
+                      href="https://www.elperiodico.com/cuore/?_sid=1686737966">
+                      Cuore
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Diari de Girona"
+                      href="https://www.diaridegirona.cat/?_sid=1686737966">
+                      Diari de Girona
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Diario de Córdoba"
+                      href="https://www.diariocordoba.com/?_sid=1686737966">
+                      Diario de Córdoba
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Diario de Ibiza"
+                      href="https://www.diariodeibiza.es/?_sid=1686737966">
+                      Diario de Ibiza
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Diario de Mallorca"
+                      href="https://www.diariodemallorca.es/?_sid=1686737966">
+                      Diario de Mallorca
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="El Correo Gallego"
+                      href="https://www.elcorreogallego.es/?_sid=1686737966">
+                      El Correo Gallego
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="El Día Tenerife" href="https://www.eldia.es/?_sid=1686737966">
+                      El Día Tenerife
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="El Periódico de Aragón"
+                      href="https://www.elperiodicodearagon.com/?_sid=1686737966">
+                      El Periódico de Aragón
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="El Periódico de Catalunya"
+                      href="https://www.elperiodico.com/es/?_sid=1686737966">
+                      El Periódico de Catalunya
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="El Periódico de España"
+                      href="https://www.epe.es/es/?_sid=1686737966">
+                      El Periódico de España
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="El Periódico de Extremadura"
+                      href="http://www.elperiodicoextremadura.com/?_sid=1686737966">
+                      El Periódico de Extremadura
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="El Periódico Mediterráneo"
+                      href="https://www.elperiodicomediterraneo.com/?_sid=1686737966">
+                      El Periódico Mediterráneo
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Faro de Vigo"
+                      href="https://www.farodevigo.es/?_sid=1686737966">
+                      Faro de Vigo
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Fórmula 1" href="https://formula1.lne.es/?_sid=1686737966">
+                      Fórmula 1
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Goya" href="https://www.premios-cine.com/goya/">
+                      Goya
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Iberempleos" href="https://www.iberempleos.es/">
+                      Iberempleos
+                  </a></li>
+              <li class="titular">
+                  Titular 2
+              </li>
+              <li><a rel="nofollow" target="_blank" title="Información" href="https://www.diarioinformacion.com/">
+                      Información
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Información TV" href="http://www.informaciontv.es/">
+                      Información TV
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="La Crónica de Badajoz"
+                      href="https://www.lacronicabadajoz.com/">
+                      La Crónica de Badajoz
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="La Nueva España Asturias"
+                      href="https://www.lne.es/asturias/?_sid=1686737966">
+                      La Nueva España Asturias
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="La Opinión de A Coruña"
+                      href="https://www.laopinioncoruna.es/?_sid=1686737966">
+                      La Opinión de A Coruña
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="La Opinión de Murcia"
+                      href="https://www.laopiniondemurcia.es/?_sid=1686737966">
+                      La Opinión de Murcia
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="La Opinión de Málaga"
+                      href="https://www.laopiniondemalaga.es/?_sid=1686737966">
+                      La Opinión de Málaga
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="La Opinión El correo de Zamora"
+                      href="https://www.laopiniondezamora.es/?_sid=1686737966">
+                      La Opinión El correo de Zamora
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="La Provincia Diario de Las Palmas"
+                      href="https://www.laprovincia.es/?_sid=1686737966">
+                      La Provincia Diario de Las Palmas
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Levante El Mercantil Valenciano"
+                      href="https://www.levante-emv.com/?_sid=1686737966">
+                      Levante El Mercantil Valenciano
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Levante TV" href="http://www.informaciontv.es/">
+                      Levante TV
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="L'Empordà Figueres"
+                      href="https://www.emporda.info/?_sid=1686737966">
+                      L'Empordà Figueres
+                  </a></li>
+              <li class="titular">
+                  Titular 3
+              </li>
+              <li><a rel="nofollow" target="_blank" title="Mallorca Zeitung Mallorca"
+                      href="https://www.mallorcazeitung.es/?_sid=1686737966">
+                      Mallorca Zeitung Mallorca
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Neomotor" href="https://neomotor.epe.es/?_sid=1686737966">
+                      Neomotor
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Oscars" href="https://www.premios-cine.com/oscars/">
+                      Oscars
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Regió 7 Manresa"
+                      href="https://www.regio7.cat/?_sid=1686737966">
+                      Regió Manresa
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Sport" href="https://www.sport.es/">
+                      Sport
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Stilo" href="https://www.stilo.es/?_sid=1686737966">
+                      Stilo
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Superdeporte Valencia"
+                      href="https://www.superdeporte.es/?_sid=1686737966">
+                      Superdeporte Valencia
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Tendencias 21" href="https://www.sport.es/es/tendencias21/">
+                      Tendencias 21
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Tu casa" href="https://www.tucasa.com/">
+                      Tu casa
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Medio Ambiente" href="https://www.sport.es/es/medio-ambiente/">
+                      Medio Ambiente
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Viajar" href="https://viajar.elperiodico.com/?_sid=1686737966">
+                      Viajar
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Woman Madame Figaro" href="https://www.woman.es/">
+                      Woman Madame Figaro
+                  </a></li>
+          </ul>
+      </div>
+    </footer>
+    <!--TapBar -->
+    <nav class="ft-mol-tapbar" role="navigation" aria-label="Menú de navegación principal" aria-orientation="horizontal" aria-controls="mainContent" aria-expanded="true" aria-live="polite" aria-relevant="additions removals" tabindex="0" data-component="tapbar" data-version="1.1" data-tracking="main-navigation" data-seo="main-navigation" data-category="navigation" data-section="main-menu" itemscope="" itemtype="https://schema.org/SiteNavigationElement">
+
+                                                <!-- Container -->
+                                                <div class="ft-mol-tapbar__container" role="menubar" aria-label="Menú de navegación principal" aria-orientation="horizontal" aria-keyshortcuts="ArrowLeft ArrowRight Home End" aria-expanded="true">
+
+                                                    <!-- Canvas -->
+                                                    
+
+                                                    <!-- Item: 01 -->
+                                                    <a href="#" class="ft-mol-tapbar__item " role="menuitem" aria-current="page" aria-label="Ir a Portada" data-tracking="tapbar-leer" tabindex="0">
+                                                        <span class="ft-mol-tapbar__icon-wrapper" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ft-mol-tapbar__icon" aria-labelledby="title-tapbar-icon-leer"><title id="title-tapbar-icon-leer">Lectura</title><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /><path d="M14 2v4a2 2 0 0 0 2 2h4" /><path d="M10 9H8" /><path d="M16 13H8" /><path d="M16 17H8" /></svg></span>
+                                                        <span class="ft-mol-tapbar__text">Leer</span>
+                                                    </a>
+
+                                                    <!-- Item: 02 -->
+                                                    <a href="#" class="ft-mol-tapbar__item" role="menuitem" aria-label="Ir a ubicación" data-tracking="tapbar-ubicacion" tabindex="-1" aria-current="false">
+                                                        <span class="ft-mol-tapbar__icon-wrapper" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ft-mol-tapbar__icon" aria-labelledby="title-tapbar-icon-ubicacion"><title id="title-tapbar-icon-ubicacion">Ubicación</title><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /><circle cx="12" cy="10" r="3" /></svg></span>
+                                                        <span class="ft-mol-tapbar__text">Cerca</span>
+                                                    </a>
+
+                                                    <!-- Item: 03 -->
+                                                    <a href="#" class="ft-mol-tapbar__item ft-mol-tapbar__item--active" role="menuitem" aria-label="Ir a Pasatiempos" data-tracking="tapbar-pasatiempos" tabindex="-1" aria-current="false">
+                                                        <span class="ft-mol-tapbar__icon-wrapper" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ft-mol-tapbar__icon" aria-labelledby="title-tapbar-icon-jugar"><title id="title-tapbar-icon-jugar">Dado</title><rect width="18" height="18" x="3" y="3" rx="2" ry="2" /><path d="M16 8h.01" /><path d="M8 8h.01" /><path d="M8 16h.01" /><path d="M16 16h.01" /><path d="M12 12h.01" /></svg></span>
+                                                        <span class="ft-mol-tapbar__text">Juega ya</span>
+                                                    </a>
+                                                </div>
+    </nav>
+  </article>
+  <!-- JS: masthead -->
+  <script rel="modulepreload" src="../../cds-statics/js/affix/affix.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/headers/masthead.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/sticking/fourty-header-sticky.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/switch/fourty-js-switch-2024.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/form/fourty-js-form-combo-search.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/sidenav/fourty-js-sidenav-default.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/modal/fourty-js-popover.js"></script>
+  <script src="../../cds-statics/js/tapbar/fourty-js-tapbar.js"></script>
+</body>
+
+</html>

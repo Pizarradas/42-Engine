@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <title>42DS | Templates: Pasatiempos</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta name="format-detection" content="telephone=no">
+  <!-- CSS: settings -->
+  <link href="../../cds-statics/css/brands/ux/setting.css" id="brandStyles-root" rel="stylesheet" type="text/css" />
+  <link href="../../cds-statics/css/brands/ux/core.css" id="brandStyles-root" rel="stylesheet" type="text/css" />
+  <link href="../../cds-statics/css/brands/commons/setting-pasatiempos.css" id="brandStyles-root" rel="stylesheet" type="text/css" />
+  <!-- CSS: library multibrand -->
+  <link href="../../cds-statics/css/ux-index.css" id="brandStyles" rel="stylesheet" type="text/css" />
+  <!-- FAVICON -->
+  <link href="../favicon.png" rel="icon" type="image/png" />
+</head>
+
+<body class="fourty ft-brand-ux pasatiempos minimal-header"
+  data-showroom-skin="layout">
+  <!--header-->
+  <header  class="ft-helper-hide-sm">
+    <!-- Cabecera normal -->
+    <div class="ft-org-masthead">
+      <div class="ft-org-masthead__top" style="background-color:black">
+        <div class="ft-org-masthead__top-left">
+          <a href="/es/" class="ft-org-masthead__top-left-logo" title="El Periódico de España">
+          </a>
+          <div class="ft-date ft-date--inline">
+            <div class="ft-date__text">
+              <time class="ft-date__textTime" datetime="2025-03-17T04:50:43+01:00">17 MAR 2025</time>
+            </div>
+            <time class="ft-date__reload" datetime="2025-03-17T06:11:15+01:00">Actualizada 6:11</time>
+          </div>
+        </div>
+        <div class="ft-org-masthead__top-right">
+         <div class="sticky"  id="hero">
+            <p class="sticky-text">
+              Suscríbete hoy con un
+              <span class="sticky-text__bold">30% de dto</span>
+            </p>
+            <div class="sticky-button"></div>
+            <a class="sticky-link" data-vars-event-cat="piano link" external-event="marketing=base-pm1A"
+              href="https://micuenta.lne.es/tp/suscripcion/galeria?marketing=base-pm1A" rel="nofollow" target="_blank"
+              title="link title"></a>
+          </div>
+        </div>
+      </div>
+      <div class="ft-org-masthead__main">
+        <div class="ft-org-masthead__menu">
+          <button type="button" class="ft-org-masthead__menu-button" id="toggle">
+            <span class="ft-org-masthead__menu-buttonIcon"></span>
+          </button>
+        </div>
+        <div class="ft-org-masthead__logo">
+          <h1 class="ft-org-masthead__logo-img">
+            <a href="/es/" class="ft-org-masthead__logo-link" title="El Periódico">
+              <span class="ft-org-masthead--hide">el periódico</span>
+            </a>
+          </h1>
+          <div class="ft-org-masthead__logo-lang">
+            <button type="button" onclick="triggerDropdownLanguage()" class="ft-org-masthead__logo-button"
+              id="activeLanguage" data-active=".com">
+              .com
+            </button>
+            <ul class="ft-org-masthead__dropdown" id="languageDropdown">
+              <li>
+                <a href="https://www.elperiodico.cat/ca/" class="ft-org-masthead__dropdown-link">.cat</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="ft-org-masthead__area">
+          <button class="ft-org-masthead__area--search"></button>
+          <button class="ft-org-masthead__area--login"></button>
+        </div>
+      </div>
+      <nav class="ft-org-masthead__nav">
+        <ul class="ft-org-masthead__list">
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              <img src="../../cds-statics/assets/img/logos/logo-prueba2.svg" width="85" height="40" />
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Enlace 2
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Enlace 3
+            </a>
+          </li>
+
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Enlace 7
+            </a>
+          </li>
+          <li class="ft-org-masthead__item ft-org-masthead__item--live">
+            <a href="/es/directos/" class="ft-org-masthead__link" title="Directos">
+              Directos
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Enlace 8
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Enlace 9
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Enlace 10
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Enlace 11
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Enlace 12
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Enlace 13
+            </a>
+          </li>
+        </ul>
+        <a href="#" class="ft-org-masthead__branded">Ofrecido por
+          <img src="../../cds-statics/assets/img/logos/logo-prueba.svg" /></a>
+      </nav>
+      <nav class="ft-org-masthead__nav ft-org-masthead__nav--mobile">
+        <ul class="ft-org-masthead__list">
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              <img src="../../cds-statics/assets/img/logos/logo-prueba2.svg" width="85" height="40" />
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link ft-org-masthead__link--active" title="Title text">
+              Enlace 2 Mobile
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Enlace 3 Mobile
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Enlace 4 Mobile
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Enlace 5 Mobile
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Enlace 6 Mobile
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Enlace 7 Mobile
+            </a>
+          </li>
+          <li class="ft-org-masthead__item ft-org-masthead__item--live">
+            <a href="/es/directos/" class="ft-org-masthead__link" title="Directos">
+              Directos
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <nav class="ft-org-masthead__subnav">
+        <ul class="ft-org-masthead__list">
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Ediciones digitales:
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Siero
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Llanera
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Villaviciosa
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Grado
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Salas
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Ribera de Arriba
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              La Corredoria
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <!-- Cabecera fija -->
+    <div class="ft-org-masthead ft-org-masthead--fix">
+      <div class="ft-org-masthead__main">
+        <div class="ft-org-masthead__menu">
+          <button type="button" class="ft-org-masthead__menu-button" id="toggle">
+            <span class="ft-org-masthead__menu-buttonIcon"></span>
+          </button>
+        </div>
+        <div class="ft-org-masthead__logo">
+          <h1 class="ft-org-masthead__logo-img">
+            <a href="/es/" class="ft-org-masthead__logo-link" title="El Periódico">
+              <span class="ft-org-masthead--hide">el periódico</span>
+            </a>
+          </h1>
+          <div class="ft-org-masthead__logo-lang">
+            <button type="button" onclick="triggerDropdownLanguage()" class="ft-org-masthead__logo-button"
+              id="activeLanguage" data-active=".com">
+              .com
+            </button>
+            <ul class="ft-org-masthead__dropdown" id="languageDropdown">
+              <li>
+                <a href="https://www.elperiodico.cat/ca/" class="ft-org-masthead__dropdown-link">.cat</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="ft-org-masthead__area">
+          <button class="ft-org-masthead__area--search"></button>
+          <button class="ft-org-masthead__area--login"></button>
+        </div>
+      </div>
+      <div id="progress-bar" class="ft-org-masthead__progress-bar"></div>
+    </div>
+    <!-- Menú Lateral Único -->
+    <div class="ft-org-masthead ft-org-masthead--side" id="sideMenu">
+      <div class="ft-org-masthead__main">
+        <div class="ft-org-masthead__menu">
+          <button type="button" class="ft-org-masthead__menu-button" id="toggle">
+            <span class="ft-org-masthead__menu-buttonIcon"></span>
+          </button>
+        </div>
+
+        <div class="ft-org-masthead__logo">
+          <div class="ft-org-masthead__logo-img">
+            <a href="/es/" class="ft-org-masthead__logo-link" title="El Periódico">
+              <span class="ft-org-masthead--hide">el periódico</span>
+            </a>
+          </div>
+          <div class="ft-org-masthead__logo-lang">
+            <button type="button" onclick="triggerDropdownLanguage()" class="ft-org-masthead__logo-button"
+              id="activeLanguage" data-active=".com">
+              .com
+            </button>
+            <ul class="ft-org-masthead__dropdown" id="languageDropdown">
+              <li>
+                <a href="https://www.elperiodico.cat/ca/" class="ft-org-masthead__dropdown-link">.cat</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="ft-org-masthead__area">
+          <button class="ft-org-masthead__area--search"></button>
+          <button class="ft-org-masthead__area--login"></button>
+        </div>
+      </div>
+      <div class="ft-org-masthead__box ft-org-masthead__box--white">
+        <h2 class="ft-org-masthead__title">Pasatiempos</h2>
+        <ul class="ft-list ft-list--primary ft-list--chevron ft-list--chevron-rgt ft-list--has-icon">
+          <li class="ft-list__item">
+            <a href="#" class="ft-list__link" title="title text" target="self">
+              Pasatiempos de hoy
+            </a>
+          </li>
+          <li class="ft-list__item">
+            <a href="#" class="ft-list__link" title="title text" target="self">
+
+              Archivo
+            </a>
+          </li>
+          <li class="ft-list__item">
+            <a href="#" class="ft-list__link" title="title text" target="self">
+              <img src="../../cds-statics/assets/img/icons/icon-crucigrama.svg" loading="lazy" width="22" height="22"
+                class="ft-list-photoinfo__img" alt="alt text" title="title text">
+
+              Crucigrama
+            </a>
+          </li>
+          <li class="ft-list__item">
+            <a href="#" class="ft-list__link" title="title text" target="self">
+              <img src="../../cds-statics/assets/img/icons/icon-timequest.svg" loading="lazy" width="22" height="22"
+                class="ft-list-photoinfo__img" alt="alt text" title="title text">
+
+              TimeQuest
+            </a>
+          </li>
+          <li class="ft-list__item">
+            <a href="#" class="ft-list__link" title="title text" target="self">
+              <img src="../../cds-statics/assets/img/icons/icon-pangramax.svg" loading="lazy" width="22" height="22"
+                class="ft-list-photoinfo__img" alt="alt text" title="title text">
+
+              Pangramax
+            </a>
+          </li>
+          <li class="ft-list__item">
+            <a href="#" class="ft-list__link" title="title text" target="self">
+              <img src="../../cds-statics/assets/img/icons/icon-cuadronumerico.svg" loading="lazy" width="22"
+                height="22" class="ft-list-photoinfo__img" alt="alt text" title="title text">
+
+              Cuadro numérico
+            </a>
+          </li>
+          <li class="ft-list__item">
+            <a href="#" class="ft-list__link" title="title text" target="self">
+              <img src="../../cds-statics/assets/img/icons/icon-palabraoculta.svg" loading="lazy" width="22" height="22"
+                class="ft-list-photoinfo__img" alt="alt text" title="title text">
+
+              Palabra oculta
+            </a>
+          </li>
+          <li class="ft-list__item">
+            <a href="#" class="ft-list__link" title="title text" target="self">
+              <img src="../../cds-statics/assets/img/icons/icon-sudoku.svg" loading="lazy" width="22" height="22"
+                class="ft-list-photoinfo__img" alt="alt text" title="title text">
+              Sudoku
+            </a>
+          </li>
+          <li class="ft-list__item">
+            <a href="#" class="ft-list__link" title="title text" target="self">
+              <img src="../../cds-statics/assets/img/icons/icon-sopaletras.svg" loading="lazy" width="22" height="22"
+                class="ft-list-photoinfo__img" alt="alt text" title="title text">
+
+              Sopa de letras
+            </a>
+          </li>
+          <li class="ft-list__item">
+            <a href="#" class="ft-list__link" title="title text" target="self">
+              <img src="../../cds-statics/assets/img/icons/icon-saltaminas.svg" loading="lazy" width="22" height="22"
+                class="ft-list-photoinfo__img" alt="alt text" title="title text">
+
+              Saltaminas
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="ft-org-masthead__box ft-org-masthead__box--white">
+        <h2 class="ft-org-masthead__title">Noticias</h2>
+        <ul class="ft-list ft-list--primary ft-list--chevron ft-list--chevron-rgt ft-list--has-icon">
+          <li class="ft-list__item">
+            <a href="#" class="ft-list__link" title="title text" target="self">
+              <img src="../../cds-statics/assets/img/icons/ep-icono-circle.svg" loading="lazy" width="22" height="22"
+                class="ft-list-photoinfo__img" alt="alt text" title="title text">
+
+              El periódico
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="ft-org-masthead__box">
+        <div class="ft-mol-rrss-inline ft-mol-rrss-inline--center">
+          <div class="ft-mol-rrss-inline__items">
+            <a href="#" class="ft-btn-rrss ft-btn-rrss--twitter" title="Twitter" target="”_blank”" rel="nofollow">
+              <span class="ft-mol-rrss ft-mol-rrssTwitter--default ft-btn-rrss__icon"></span>
+              <span class="ft-btn-rrss__text"> RRSS Twitter </span>
+            </a>
+            <a href="#" class="ft-btn-rrss ft-btn-rrss--facebook" title="Facebook" target="”_blank”" rel="nofollow">
+              <span class="ft-mol-rrss ft-mol-rrssFacebook--default ft-btn-rrss__icon"></span>
+              <span class="ft-btn-rrss__text"> RRSS Facebook </span>
+            </a>
+            <a href="#" class="ft-btn-rrss ft-btn-rrss--email" title="Email" target="”_blank”" rel="nofollow">
+              <span class="ft-mol-rrss ft-mol-rrssEmail--default ft-btn-rrss__icon"></span>
+              <span class="ft-btn-rrss__text"> RRSS Email </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!--fin header-->
+  <!-- LAYOUT -->
+  <article class="ft-layout-grid-flex">
+    <!--Destacado con un elemento -->
+    <div class="ft-layout-grid-flex__row ft-layout-grid-flex__rowIs-fullwidth ft-helper-bgGreen-cuatroencampo">
+      <div class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__col-addsContent--L">
+        <div class="ft-mol-subheader ft-mol-subheader--cuatroencampo">
+          <div class="ft-mol-subheader__header">
+            <h2 class="ft-mol-subheader__title">Cuatro en Campo</h2>
+            <time class="ft-mol-subheader__time" itemprop="datePublished"
+              datetime="2011-11-18T14:54:39+00:00">01/12/2025</time>
+          </div>
+          <div class="ft-mol-subheader__img">
+            <a href="#">
+              <img src="../../cds-statics/assets/img/icons/cuatroencampo-miniw.svg" loading="lazy" width="22" height="22"
+                class="ft-helper-img-rd" alt="alt text" title="title text">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ORG: toolbar -->
+    <div class="ft-org-toolbar">
+      <!-- MOL: toolbar -->
+      <div class="ft-mol-toolbar ft-mol-toolbar--cuatroencampo" role="toolbar" aria-label="Opciones del juego">
+        <div class="ft-mol-toolbar__inner">
+          <ul class="ft-mol-toolbar__list">
+            <!-- Volver (botón simple) -->
+            <li class="ft-mol-toolbar__item ft-mol-toolbar__itemBack">
+              <button type="button" class="ft-mol-toolbar__button">
+                <svg xmlns="http://www.w3.org/2000/svg" class="ft-mol-toolbar__icon" width="26" height="27"
+                  viewBox="0 0 26 27" fill="none">
+                  <path
+                    d="M6.48134 14.8657C5.84499 14.1673 5.83885 13.0958 6.46737 12.3903L6.53236 12.3211L17.2183 1.48402C17.8496 0.84376 18.8789 0.837948 19.5174 1.47107C20.1558 2.10422 20.1616 3.13655 19.5303 3.77682L9.83508 13.6093L19.5174 23.2102C20.1558 23.8434 20.1616 24.8757 19.5303 25.516C18.899 26.1563 17.8696 26.162 17.2312 25.5289L6.54697 14.9343L6.48134 14.8657Z"
+                    fill="currentColor"></path>
+                </svg>
+                <span class="ft-mol-toolbar__label"></span>
+              </button>
+            </li>
+            <!-- Ayuda (botón simple) -->
+            <li class="ft-mol-toolbar__item">
+              <button aria-controls="modalBottom" aria-haspopup="dialog" class="ft-mol-toolbar__button ft-btn" data-target="modalBottom" data-toggle="ft-mol-modal" name="modal-trigger" title="Abrir modal para juegos" type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" class="ft-mol-toolbar__icon" width="26" height="26"
+                  viewBox="0 0 26 26" fill="none">
+                  <g clip-path="url(#clip0_7468_544)">
+                    <path
+                      d="M23.5003 13C23.5003 7.20097 18.7993 2.49996 13.0003 2.49996C7.20134 2.49996 2.50033 7.20097 2.50033 13C2.50033 18.799 7.20134 23.5 13.0003 23.5C18.7993 23.5 23.5003 18.799 23.5003 13ZM25.8337 13C25.8337 20.0876 20.088 25.8333 13.0003 25.8333C5.91267 25.8333 0.166992 20.0876 0.166992 13C0.166992 5.91231 5.91267 0.166626 13.0003 0.166626C20.088 0.166626 25.8337 5.91231 25.8337 13Z"
+                      fill="currentColor"></path>
+                    <path
+                      d="M10.5425 6.6379C11.4926 6.07952 12.61 5.87566 13.6962 6.06197C14.7823 6.2483 15.7675 6.81285 16.4772 7.65588C17.1866 8.49853 17.575 9.56511 17.5738 10.6665L17.5698 10.8323C17.4913 12.5258 16.2202 13.6516 15.3043 14.2622C14.7961 14.601 14.2963 14.8505 13.928 15.0142C13.7422 15.0968 13.5856 15.1592 13.4728 15.2022C13.4164 15.2237 13.3706 15.2405 13.3373 15.2523C13.3206 15.2582 13.3071 15.263 13.2968 15.2666C13.2917 15.2683 13.2872 15.2694 13.2837 15.2705C13.282 15.2711 13.2805 15.2718 13.2792 15.2723C13.2785 15.2725 13.278 15.2726 13.2775 15.2728L13.2769 15.2734C13.2765 15.2735 13.2761 15.2733 12.9072 14.1665L13.2757 15.2734C12.6646 15.477 12.0041 15.1468 11.8003 14.5357C11.5969 13.9254 11.9258 13.2657 12.5352 13.0608L12.5375 13.0603H12.5363C12.5369 13.0601 12.5375 13.0599 12.538 13.0597C12.5412 13.0586 12.5472 13.057 12.5557 13.054C12.5736 13.0476 12.6031 13.0365 12.6423 13.0215C12.7209 12.9916 12.8379 12.9451 12.9801 12.882C13.2681 12.754 13.6433 12.5653 14.01 12.3208C14.8145 11.7845 15.2405 11.2138 15.2405 10.6665V10.6648C15.2413 10.1138 15.0468 9.58019 14.6919 9.15865C14.3371 8.73718 13.8444 8.45484 13.3014 8.36169C12.7583 8.26858 12.1996 8.37077 11.7246 8.64994C11.2496 8.92915 10.8888 9.36753 10.706 9.88724C10.4921 10.495 9.82583 10.8143 9.21804 10.6005C8.61044 10.3866 8.2912 9.72076 8.50483 9.11307C8.87054 8.07345 9.59237 7.1963 10.5425 6.6379Z"
+                      fill="currentColor"></path>
+                    <path
+                      d="M13.0111 17.6666C13.6554 17.6666 14.1777 18.189 14.1777 18.8333C14.1777 19.4776 13.6554 20 13.0111 20H12.9997C12.3553 20 11.833 19.4776 11.833 18.8333C11.833 18.189 12.3553 17.6666 12.9997 17.6666H13.0111Z"
+                      fill="currentColor"></path>
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_7468_544">
+                      <rect width="26" height="26" fill="white"></rect>
+                    </clipPath>
+                  </defs>
+                </svg>
+                <span class="ft-mol-toolbar__label">Ayuda</span>
+              </button>
+            </li>
+            <div aria-describedby="modalBottomDesc" aria-labelledby="modalBottomTitle" aria-modal="true"
+                class="ft-mol-modal ft-mol-modal--bttm-cnt ft-mol-modal--maxheight ft-mol-modal-has--img ft-mol-modal--md" id="modalBottom" role="dialog">
+                <div class="ft-mol-modal__container">
+                    <div class="ft-mol-modal__window">
+                        <img alt="alt text" class="ft-mol-modal__img ft-mol-modal__img--rounded"
+                          src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27110%27%20height%3D%27110%27%20viewBox%3D%270%200%20110%20110%27%20fill%3D%27none%27%3E%3Crect%20width%3D%27110%27%20height%3D%27110%27%20fill%3D%27%236CA450%27/%3E%3Crect%20x%3D%2735%27%20y%3D%2735%27%20width%3D%2740%27%20height%3D%2740%27%20rx%3D%274.21455%27%20fill%3D%27%236CA450%27/%3E%3Cpath%20d%3D%27M45.296%2066.7278C45.296%2065.4352%2046.3439%2064.3873%2047.6365%2064.3873H64.1819C65.4745%2064.3873%2066.5224%2065.4352%2066.5224%2066.7278H65.296C65.296%2066.1125%2064.7972%2065.6137%2064.1819%2065.6137H47.6365C47.0212%2065.6137%2046.5224%2066.1125%2046.5224%2066.7278H45.296ZM65.9092%2074.0914H45.9092H65.9092ZM45.296%2074.0914V66.7278C45.296%2065.4352%2046.3439%2064.3873%2047.6365%2064.3873V65.6137C47.0212%2065.6137%2046.5224%2066.1125%2046.5224%2066.7278V74.0914H45.296ZM64.1819%2064.3873C65.4745%2064.3873%2066.5224%2065.4352%2066.5224%2066.7278V74.0914H65.296V66.7278C65.296%2066.1125%2064.7972%2065.6137%2064.1819%2065.6137V64.3873Z%27%20fill%3D%27black%27/%3E%3Cpath%20d%3D%27M45.9092%2035.9095H65.9092H45.9092ZM66.5224%2043.2732C66.5224%2044.5658%2065.4745%2045.6136%2064.1819%2045.6136H47.6365C46.3439%2045.6136%2045.296%2044.5658%2045.296%2043.2732H46.5224C46.5224%2043.8885%2047.0212%2044.3873%2047.6365%2044.3873H64.1819C64.7972%2044.3873%2065.296%2043.8885%2065.296%2043.2732H66.5224ZM47.6365%2045.6136C46.3439%2045.6136%2045.296%2044.5658%2045.296%2043.2732V35.9095H46.5224V43.2732C46.5224%2043.8885%2047.0212%2044.3873%2047.6365%2044.3873V45.6136ZM66.5224%2035.9095V43.2732C66.5224%2044.5658%2065.4745%2045.6136%2064.1819%2045.6136V44.3873C64.7972%2044.3873%2065.296%2043.8885%2065.296%2043.2732V35.9095H66.5224Z%27%20fill%3D%27black%27/%3E%3Cpath%20d%3D%27M38.6357%2052.9237C38.6357%2052.6772%2038.8355%2052.4774%2039.082%2052.4774H43.3713C43.6178%2052.4774%2043.8176%2052.6772%2043.8176%2052.9237V56.3493C43.8176%2056.5958%2043.6178%2056.7956%2043.3713%2056.7956H39.082C38.8355%2056.7956%2038.6357%2056.5958%2038.6357%2056.3493V52.9237Z%27%20fill%3D%27white%27/%3E%3Cpath%20d%3D%27M47.2725%2052.9237C47.2725%2052.6772%2047.4723%2052.4774%2047.7187%2052.4774H52.008C52.2545%2052.4774%2052.4543%2052.6772%2052.4543%2052.9237V56.3493C52.4543%2056.5958%2052.2545%2056.7956%2052.008%2056.7956H47.7187C47.4723%2056.7956%2047.2725%2056.5958%2047.2725%2056.3493V52.9237Z%27%20fill%3D%27white%27/%3E%3Cpath%20d%3D%27M55.9082%2052.9237C55.9082%2052.6772%2056.108%2052.4774%2056.3545%2052.4774H60.6437C60.8902%2052.4774%2061.09%2052.6772%2061.09%2052.9237V56.3493C61.09%2056.5958%2060.8902%2056.7956%2060.6437%2056.7956H56.3545C56.108%2056.7956%2055.9082%2056.5958%2055.9082%2056.3493V52.9237Z%27%20fill%3D%27white%27/%3E%3Cpath%20d%3D%27M64.5449%2052.9237C64.5449%2052.6772%2064.7447%2052.4774%2064.9912%2052.4774H69.2805C69.5269%2052.4774%2069.7267%2052.6772%2069.7267%2052.9237V56.3493C69.7267%2056.5958%2069.5269%2056.7956%2069.2805%2056.7956H64.9912C64.7447%2056.7956%2064.5449%2056.5958%2064.5449%2056.3493V52.9237Z%27%20fill%3D%27white%27/%3E%3Crect%20x%3D%2735.6132%27%20y%3D%2735.6132%27%20width%3D%2738.7736%27%20height%3D%2738.7736%27%20rx%3D%273.60136%27%20stroke%3D%27black%27%20stroke-width%3D%271.22636%27/%3E%3C/svg%3E" />
+                        <div class="ft-mol-modal__header" id="modalBottomTitle">
+                            <h3 class="ft-mol-modal__title">
+                              Cómo jugar a Cuatro en Campo
+                            </h3>
+                        </div>
+                        <div class="ft-mol-modal__body" id="modalBottomDesc">
+                            <p class="ft-helper-fontSize-body-M--small">
+                              ¿Eres el más experto en el FC Barcelona? En este juego podrás demostrarlo. Encuentra 4 grupos de 4 jugadores que hayan coincidido en el campo de juego durante al menos 1 minuto en las últimas 20 temporadas de LALIGA. 
+                            </p>
+                            <p class="ft-helper-fontSize-body-M--small">
+                              Para empezar selecciona 4 jugadores. Tras pulsar
+                              <svg class="ft-helper-img-intext" viewBox="0 0 76 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="0.404695" y="0.404695" width="75.0881" height="14.1906" rx="7.09531" stroke="black" stroke-width="0.809389"/>
+                                <path d="M12.9833 11.6725C12.4048 11.9782 11.6843 12.131 10.8219 12.131C9.70847 12.131 8.81699 11.7726 8.14747 11.0558C7.47795 10.3389 7.14319 9.39833 7.14319 8.23394C7.14319 6.98223 7.5198 5.97067 8.27301 5.19927C9.02622 4.42786 9.98138 4.04216 11.1385 4.04216C11.8808 4.04216 12.4957 4.1495 12.9833 4.36418V5.34117C12.4229 5.02825 11.8044 4.87178 11.1276 4.87178C10.2288 4.87178 9.49925 5.17197 8.93889 5.77236C8.38217 6.37275 8.10381 7.17508 8.10381 8.17936C8.10381 9.1327 8.36397 9.89319 8.88431 10.4608C9.40828 11.0248 10.0942 11.3068 10.942 11.3068C11.728 11.3068 12.4084 11.1322 12.9833 10.7829V11.6725ZM17.579 12.131C16.4692 12.131 15.5795 11.7653 14.91 11.0339C14.2441 10.3025 13.9112 9.35102 13.9112 8.17936C13.9112 6.92037 14.2514 5.91609 14.9318 5.16652C15.6123 4.41694 16.5383 4.04216 17.71 4.04216C18.7907 4.04216 19.6603 4.40603 20.3189 5.13377C20.9812 5.86151 21.3123 6.81303 21.3123 7.98833C21.3123 9.26552 20.9739 10.2753 20.2971 11.0176C19.6203 11.7598 18.7143 12.131 17.579 12.131ZM17.6445 4.87178C16.8221 4.87178 16.1544 5.16834 15.6414 5.76144C15.1283 6.35455 14.8718 7.13324 14.8718 8.09749C14.8718 9.06175 15.121 9.83861 15.6195 10.4281C16.1217 11.0139 16.7748 11.3068 17.579 11.3068C18.4377 11.3068 19.1145 11.0266 19.6094 10.4663C20.1042 9.90593 20.3517 9.12179 20.3517 8.11387C20.3517 7.08047 20.1115 6.28178 19.6312 5.71778C19.1509 5.15378 18.4887 4.87178 17.6445 4.87178ZM29.161 12H28.0366L24.0086 5.76144C23.9067 5.60498 23.823 5.44124 23.7575 5.27022H23.7248C23.7539 5.4376 23.7684 5.79601 23.7684 6.34546V12H22.8515V4.17315H24.0413L27.9602 10.3135C28.1239 10.5682 28.2295 10.7428 28.2768 10.8374H28.2986C28.2622 10.6118 28.244 10.228 28.244 9.68579V4.17315H29.161V12ZM35.1867 5.00278H32.1302V7.70997H34.9574V8.53414H32.1302V12H31.2132V4.17315H35.1867V5.00278ZM38.3523 4.17315V4.95911H37.5882V11.214H38.3523V12H35.9071V11.214H36.6713V4.95911H35.9071V4.17315H38.3523ZM45.2622 12H44.1706L42.8607 9.80586C42.7406 9.6021 42.6242 9.42926 42.5114 9.28735C42.3986 9.1418 42.2821 9.02354 42.1621 8.93257C42.0456 8.84161 41.9183 8.77611 41.78 8.73608C41.6454 8.69242 41.4925 8.67059 41.3215 8.67059H40.5683V12H39.6514V4.17315H41.9874C42.3294 4.17315 42.6442 4.21682 42.9316 4.30414C43.2227 4.38783 43.4738 4.51701 43.6849 4.69167C43.8995 4.86632 44.0669 5.08465 44.187 5.34663C44.3071 5.60498 44.3671 5.90881 44.3671 6.25813C44.3671 6.53103 44.3253 6.7821 44.2416 7.01134C44.1615 7.23694 44.0451 7.43889 43.8923 7.61718C43.7431 7.79548 43.5611 7.9483 43.3465 8.07566C43.1354 8.19938 42.8971 8.2958 42.6315 8.36494V8.38677C42.7624 8.44499 42.8752 8.5123 42.9699 8.58872C43.0681 8.66149 43.1609 8.74882 43.2482 8.8507C43.3355 8.95259 43.4211 9.06903 43.5047 9.20002C43.5921 9.32737 43.6885 9.47656 43.794 9.64758L45.2622 12ZM40.5683 5.00278V7.84096H41.8127C42.042 7.84096 42.253 7.8064 42.4459 7.73726C42.6424 7.66812 42.8116 7.56988 42.9535 7.44253C43.0954 7.31153 43.2064 7.15325 43.2864 6.96767C43.3665 6.77846 43.4065 6.56742 43.4065 6.33454C43.4065 5.91609 43.27 5.59043 42.9971 5.35755C42.7279 5.12103 42.3367 5.00278 41.8237 5.00278H40.5683ZM54.3226 12H53.4111V6.74935C53.4111 6.33454 53.4366 5.82694 53.4875 5.22656H53.4657C53.3784 5.57951 53.3001 5.8324 53.231 5.98522L50.5565 12H50.109L47.44 6.02889C47.3636 5.85423 47.2854 5.58679 47.2053 5.22656H47.1835C47.2126 5.53948 47.2271 6.05072 47.2271 6.76027V12H46.3429V4.17315H47.5546L49.9562 9.6312C50.1417 10.0497 50.2618 10.3626 50.3164 10.57H50.3491C50.5056 10.1406 50.6311 9.82042 50.7257 9.60937L53.1764 4.17315H54.3226V12ZM62.4442 12H61.429L60.5994 9.80586H57.2809L56.5004 12H55.4797L58.4816 4.17315H59.4313L62.4442 12ZM60.2992 8.9817L59.0711 5.64683C59.0311 5.53766 58.9911 5.36301 58.951 5.12285H58.9292C58.8928 5.34481 58.851 5.51947 58.8037 5.64683L57.5865 8.9817H60.2992ZM69.2122 12H68.1206L66.8106 9.80586C66.6906 9.6021 66.5741 9.42926 66.4613 9.28735C66.3485 9.1418 66.2321 9.02354 66.112 8.93257C65.9956 8.84161 65.8682 8.77611 65.7299 8.73608C65.5953 8.69242 65.4425 8.67059 65.2715 8.67059H64.5182V12H63.6013V4.17315H65.9373C66.2794 4.17315 66.5941 4.21682 66.8816 4.30414C67.1727 4.38783 67.4238 4.51701 67.6348 4.69167C67.8495 4.86632 68.0169 5.08465 68.1369 5.34663C68.257 5.60498 68.3171 5.90881 68.3171 6.25813C68.3171 6.53103 68.2752 6.7821 68.1915 7.01134C68.1115 7.23694 67.995 7.43889 67.8422 7.61718C67.693 7.79548 67.5111 7.9483 67.2964 8.07566C67.0854 8.19938 66.847 8.2958 66.5814 8.36494V8.38677C66.7124 8.44499 66.8252 8.5123 66.9198 8.58872C67.018 8.66149 67.1108 8.74882 67.1982 8.8507C67.2855 8.95259 67.371 9.06903 67.4547 9.20002C67.542 9.32737 67.6384 9.47656 67.744 9.64758L69.2122 12ZM64.5182 5.00278V7.84096H65.7627C65.9919 7.84096 66.203 7.8064 66.3958 7.73726C66.5923 7.66812 66.7615 7.56988 66.9034 7.44253C67.0453 7.31153 67.1563 7.15325 67.2364 6.96767C67.3164 6.77846 67.3564 6.56742 67.3564 6.33454C67.3564 5.91609 67.22 5.59043 66.9471 5.35755C66.6778 5.12103 66.2867 5.00278 65.7736 5.00278H64.5182Z" fill="black"/>
+                              </svg>
+                              podrás comprobar si tu selección es correcta. 
+                            </p>
+                            <p class="ft-helper-display-flex ft-helper-display-flex--column ft-helper-display-flex--middle ft-helper-property-border ft-helper-property-border-lightgrey ft-helper-property-border-mediumgrey ft-helper-property-round-md ft-helper-spacer-inner-xxs">
+                              <span class="ft-helper-align-center ft-helper-fontSize-body-M--small ft-helper-fontWeight-700 ft-helper-spacer-gap-b-xxs">Ej. Estos jugadores han coincidido en el campo de juego en LALIGA durante 1077 minutos entre 2014 y 2016 </span>
+                              <svg width="150" height="74" viewBox="55 0 150 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="55.5" width="72.5" height="35" rx="3" fill="#CDE0C1"/>
+                                <path d="M78.6777 14.3082V12.4332C79.0176 12.7184 79.3867 12.9332 79.7852 13.0778C80.1836 13.2184 80.5859 13.2887 80.9922 13.2887C81.2305 13.2887 81.4375 13.2672 81.6133 13.2242C81.793 13.1813 81.9414 13.1227 82.0586 13.0485C82.1797 12.9703 82.2695 12.8805 82.3281 12.7789C82.3867 12.6735 82.416 12.5602 82.416 12.4391C82.416 12.275 82.3691 12.1285 82.2754 11.9996C82.1816 11.8707 82.0527 11.7516 81.8887 11.6422C81.7285 11.5328 81.5371 11.4274 81.3145 11.3258C81.0918 11.2242 80.8516 11.1207 80.5938 11.0153C79.9375 10.7418 79.4473 10.4078 79.123 10.0133C78.8027 9.61877 78.6426 9.14221 78.6426 8.58362C78.6426 8.14612 78.7305 7.77112 78.9062 7.45862C79.082 7.14221 79.3203 6.88245 79.6211 6.67932C79.9258 6.4762 80.2773 6.32776 80.6758 6.23401C81.0742 6.13635 81.4961 6.08752 81.9414 6.08752C82.3789 6.08752 82.7656 6.11487 83.1016 6.16956C83.4414 6.22034 83.7539 6.30042 84.0391 6.40979V8.16174C83.8984 8.06409 83.7441 7.97815 83.5762 7.90393C83.4121 7.82971 83.2422 7.76917 83.0664 7.72229C82.8906 7.67151 82.7148 7.6344 82.5391 7.61096C82.3672 7.58752 82.2031 7.57581 82.0469 7.57581C81.832 7.57581 81.6367 7.59729 81.4609 7.64026C81.2852 7.67932 81.1367 7.73596 81.0156 7.81018C80.8945 7.8844 80.8008 7.97424 80.7344 8.07971C80.668 8.18127 80.6348 8.29651 80.6348 8.42542C80.6348 8.56604 80.6719 8.69299 80.7461 8.80627C80.8203 8.91565 80.9258 9.02112 81.0625 9.12268C81.1992 9.22034 81.3652 9.31799 81.5605 9.41565C81.7559 9.5094 81.9766 9.60706 82.2227 9.70862C82.5586 9.84924 82.8594 9.99963 83.125 10.1598C83.3945 10.316 83.625 10.4938 83.8164 10.693C84.0078 10.8922 84.1543 11.1207 84.2559 11.3785C84.3574 11.6324 84.4082 11.9293 84.4082 12.2692C84.4082 12.7379 84.3184 13.1324 84.1387 13.4528C83.9629 13.7692 83.7227 14.027 83.418 14.2262C83.1133 14.4215 82.7578 14.5621 82.3516 14.6481C81.9492 14.734 81.5234 14.777 81.0742 14.777C80.6133 14.777 80.1738 14.7379 79.7559 14.6598C79.3418 14.5817 78.9824 14.4645 78.6777 14.3082ZM91 12.1578H87.0859C87.1484 13.0289 87.6973 13.4645 88.7324 13.4645C89.3926 13.4645 89.9727 13.3082 90.4727 12.9957V14.3317C89.918 14.6285 89.1973 14.777 88.3105 14.777C87.3418 14.777 86.5898 14.5094 86.0547 13.9742C85.5195 13.4352 85.252 12.6852 85.252 11.7242C85.252 10.7281 85.541 9.93909 86.1191 9.35706C86.6973 8.77502 87.4082 8.48401 88.252 8.48401C89.127 8.48401 89.8027 8.74377 90.2793 9.26331C90.7598 9.78284 91 10.4879 91 11.3785V12.1578ZM89.2832 11.0211C89.2832 10.1617 88.9355 9.73206 88.2402 9.73206C87.9434 9.73206 87.6855 9.8551 87.4668 10.1012C87.252 10.3473 87.1211 10.6539 87.0742 11.0211H89.2832ZM96.0156 10.3004C95.793 10.1793 95.5332 10.1188 95.2363 10.1188C94.834 10.1188 94.5195 10.2672 94.293 10.5641C94.0664 10.8571 93.9531 11.2574 93.9531 11.7653V14.6305H92.1016V8.63049H93.9531V9.74377H93.9766C94.2695 8.93127 94.7969 8.52502 95.5586 8.52502C95.7539 8.52502 95.9062 8.54846 96.0156 8.59534V10.3004ZM102.719 13.9449C102.719 15.0582 102.396 15.9196 101.752 16.5289C101.107 17.1422 100.174 17.4489 98.9512 17.4489C98.1426 17.4489 97.502 17.3336 97.0293 17.1031V15.5446C97.6465 15.9039 98.2695 16.0836 98.8984 16.0836C99.5234 16.0836 100.008 15.9176 100.352 15.5856C100.695 15.2574 100.867 14.8102 100.867 14.2438V13.7692H100.844C100.422 14.441 99.7988 14.777 98.9746 14.777C98.209 14.777 97.6016 14.5074 97.1523 13.9684C96.7031 13.4293 96.4785 12.7067 96.4785 11.8004C96.4785 10.7848 96.7285 9.97815 97.2285 9.38049C97.7285 8.78284 98.3867 8.48401 99.2031 8.48401C99.9336 8.48401 100.48 8.76526 100.844 9.32776H100.867V8.63049H102.719V13.9449ZM100.891 11.7477V11.2731C100.891 10.8942 100.777 10.5719 100.551 10.3063C100.328 10.0367 100.037 9.90198 99.6777 9.90198C99.2676 9.90198 98.9453 10.0621 98.7109 10.3824C98.4766 10.7028 98.3594 11.1539 98.3594 11.736C98.3594 12.236 98.4707 12.6324 98.6934 12.9254C98.916 13.2145 99.2207 13.359 99.6074 13.359C99.9902 13.359 100.299 13.2125 100.533 12.9196C100.771 12.6227 100.891 12.2321 100.891 11.7477ZM105.203 7.68127C104.891 7.68127 104.635 7.58948 104.436 7.40588C104.236 7.21838 104.137 6.98987 104.137 6.72034C104.137 6.44299 104.236 6.21643 104.436 6.04065C104.635 5.86487 104.891 5.77698 105.203 5.77698C105.52 5.77698 105.775 5.86487 105.971 6.04065C106.17 6.21643 106.27 6.44299 106.27 6.72034C106.27 7.00159 106.17 7.23206 105.971 7.41174C105.775 7.59143 105.52 7.68127 105.203 7.68127ZM106.117 14.6305H104.266V8.63049H106.117V14.6305ZM77.5586 28.6305H75.3848L74.0781 26.4684C73.9805 26.3043 73.8867 26.1578 73.7969 26.0289C73.707 25.9 73.6152 25.7906 73.5215 25.7008C73.4316 25.6071 73.3359 25.5367 73.2344 25.4899C73.1367 25.4391 73.0293 25.4137 72.9121 25.4137H72.4023V28.6305H70.5098V20.2281H73.5098C75.5488 20.2281 76.5684 20.9899 76.5684 22.5133C76.5684 22.8063 76.5234 23.0778 76.4336 23.3278C76.3438 23.5739 76.2168 23.7965 76.0527 23.9957C75.8887 24.1949 75.6895 24.3668 75.4551 24.5114C75.2246 24.6559 74.9668 24.7692 74.6816 24.8512V24.8746C74.8066 24.9137 74.9277 24.9781 75.0449 25.068C75.1621 25.1539 75.2754 25.2555 75.3848 25.3727C75.4941 25.4899 75.5977 25.6168 75.6953 25.7535C75.7969 25.8864 75.8887 26.0172 75.9707 26.1461L77.5586 28.6305ZM72.4023 21.6461V23.984H73.2227C73.6289 23.984 73.9551 23.8668 74.2012 23.6324C74.4512 23.3942 74.5762 23.0992 74.5762 22.7477C74.5762 22.0133 74.1367 21.6461 73.2578 21.6461H72.4023ZM80.7227 28.777C79.7227 28.777 78.9355 28.4977 78.3613 27.9391C77.791 27.3766 77.5059 26.6149 77.5059 25.6539C77.5059 24.6617 77.8027 23.8864 78.3965 23.3278C78.9902 22.7653 79.793 22.484 80.8047 22.484C81.8008 22.484 82.582 22.7653 83.1484 23.3278C83.7148 23.8864 83.998 24.6266 83.998 25.5485C83.998 26.5446 83.7051 27.3317 83.1191 27.9098C82.5371 28.4879 81.7383 28.777 80.7227 28.777ZM80.7695 23.902C80.332 23.902 79.9922 24.0524 79.75 24.3531C79.5078 24.6539 79.3867 25.0797 79.3867 25.6305C79.3867 26.7828 79.8516 27.359 80.7812 27.359C81.668 27.359 82.1113 26.7672 82.1113 25.5836C82.1113 24.4625 81.6641 23.902 80.7695 23.902ZM87.0742 27.9332H87.0508V28.6305H85.1992V19.7477H87.0508V23.5328H87.0742C87.5312 22.8336 88.1816 22.484 89.0254 22.484C89.7988 22.484 90.3945 22.7496 90.8125 23.2809C91.2305 23.8121 91.4395 24.5387 91.4395 25.4606C91.4395 26.4606 91.1953 27.2633 90.707 27.8688C90.2188 28.4742 89.5664 28.777 88.75 28.777C88.0117 28.777 87.4531 28.4957 87.0742 27.9332ZM87.0215 25.402V26.0172C87.0215 26.4039 87.1328 26.7242 87.3555 26.9781C87.5781 27.2321 87.8633 27.359 88.2109 27.359C88.6328 27.359 88.959 27.1969 89.1895 26.8727C89.4238 26.5446 89.541 26.0817 89.541 25.484C89.541 24.9879 89.4336 24.6012 89.2188 24.3239C89.0078 24.0426 88.7051 23.902 88.3105 23.902C87.9395 23.902 87.6309 24.0406 87.3848 24.318C87.1426 24.5953 87.0215 24.9567 87.0215 25.402ZM98.0312 26.1578H94.1172C94.1797 27.0289 94.7285 27.4645 95.7637 27.4645C96.4238 27.4645 97.0039 27.3082 97.5039 26.9957V28.3317C96.9492 28.6285 96.2285 28.777 95.3418 28.777C94.373 28.777 93.6211 28.5094 93.0859 27.9742C92.5508 27.4352 92.2832 26.6852 92.2832 25.7242C92.2832 24.7281 92.5723 23.9391 93.1504 23.3571C93.7285 22.775 94.4395 22.484 95.2832 22.484C96.1582 22.484 96.834 22.7438 97.3105 23.2633C97.791 23.7828 98.0312 24.4879 98.0312 25.3785V26.1578ZM96.3145 25.0211C96.3145 24.1617 95.9668 23.7321 95.2715 23.7321C94.9746 23.7321 94.7168 23.8551 94.498 24.1012C94.2832 24.3473 94.1523 24.6539 94.1055 25.0211H96.3145ZM103.047 24.3004C102.824 24.1793 102.564 24.1188 102.268 24.1188C101.865 24.1188 101.551 24.2672 101.324 24.5641C101.098 24.8571 100.984 25.2574 100.984 25.7653V28.6305H99.1328V22.6305H100.984V23.7438H101.008C101.301 22.9313 101.828 22.525 102.59 22.525C102.785 22.525 102.938 22.5485 103.047 22.5953V24.3004ZM107.893 28.5602C107.619 28.7047 107.207 28.777 106.656 28.777C105.352 28.777 104.699 28.0992 104.699 26.7438V23.9957H103.727V22.6305H104.699V21.3356L106.545 20.8082V22.6305H107.893V23.9957H106.545V26.4215C106.545 27.0465 106.793 27.359 107.289 27.359C107.484 27.359 107.686 27.3024 107.893 27.1891V28.5602ZM111.754 28.777C110.754 28.777 109.967 28.4977 109.393 27.9391C108.822 27.3766 108.537 26.6149 108.537 25.6539C108.537 24.6617 108.834 23.8864 109.428 23.3278C110.021 22.7653 110.824 22.484 111.836 22.484C112.832 22.484 113.613 22.7653 114.18 23.3278C114.746 23.8864 115.029 24.6266 115.029 25.5485C115.029 26.5446 114.736 27.3317 114.15 27.9098C113.568 28.4879 112.77 28.777 111.754 28.777ZM111.801 23.902C111.363 23.902 111.023 24.0524 110.781 24.3531C110.539 24.6539 110.418 25.0797 110.418 25.6305C110.418 26.7828 110.883 27.359 111.812 27.359C112.699 27.359 113.143 26.7672 113.143 25.5836C113.143 24.4625 112.695 23.902 111.801 23.902Z" fill="black"/>
+                                <rect x="132" width="72.5" height="35" rx="3" fill="#CDE0C1"/>
+                                <path d="M156.027 22.8461H154.158V17.8188C154.158 17.2758 154.182 16.6762 154.229 16.02H154.182C154.084 16.5356 153.996 16.9067 153.918 17.1332L151.949 22.8461H150.402L148.398 17.1918C148.344 17.0395 148.256 16.6489 148.135 16.02H148.082C148.133 16.8481 148.158 17.5746 148.158 18.1996V22.8461H146.453V14.4438H149.225L150.941 19.4243C151.078 19.8227 151.178 20.2231 151.24 20.6254H151.275C151.381 20.1606 151.492 19.7563 151.609 19.4125L153.326 14.4438H156.027V22.8461ZM162.748 22.8461H160.996V21.9848H160.973C160.57 22.6567 159.975 22.9926 159.186 22.9926C158.604 22.9926 158.145 22.8286 157.809 22.5004C157.477 22.1684 157.311 21.727 157.311 21.1762C157.311 20.0121 158 19.3403 159.379 19.1606L161.008 18.9438C161.008 18.2875 160.652 17.9594 159.941 17.9594C159.227 17.9594 158.547 18.1723 157.902 18.5981V17.2036C158.16 17.0707 158.512 16.9536 158.957 16.852C159.406 16.7504 159.814 16.6996 160.182 16.6996C161.893 16.6996 162.748 17.5532 162.748 19.2602V22.8461ZM161.008 20.4086V20.0043L159.918 20.145C159.316 20.2231 159.016 20.4946 159.016 20.9594C159.016 21.1703 159.088 21.3442 159.232 21.4809C159.381 21.6137 159.58 21.6801 159.83 21.6801C160.178 21.6801 160.461 21.561 160.68 21.3227C160.898 21.0805 161.008 20.7758 161.008 20.4086ZM167.84 22.7758C167.566 22.9203 167.154 22.9926 166.604 22.9926C165.299 22.9926 164.646 22.3149 164.646 20.9594V18.2114H163.674V16.8461H164.646V15.5512L166.492 15.0239V16.8461H167.84V18.2114H166.492V20.6371C166.492 21.2621 166.74 21.5746 167.236 21.5746C167.432 21.5746 167.633 21.518 167.84 21.4047V22.7758ZM174.648 22.8461H172.803V19.436C172.803 18.5571 172.482 18.1176 171.842 18.1176C171.514 18.1176 171.248 18.2407 171.045 18.4868C170.842 18.7328 170.74 19.0453 170.74 19.4243V22.8461H168.889V13.9633H170.74V17.7368H170.764C171.217 17.0453 171.832 16.6996 172.609 16.6996C173.969 16.6996 174.648 17.52 174.648 19.1606V22.8461ZM177.057 15.8969C176.744 15.8969 176.488 15.8051 176.289 15.6215C176.09 15.434 175.99 15.2055 175.99 14.936C175.99 14.6586 176.09 14.4321 176.289 14.2563C176.488 14.0805 176.744 13.9926 177.057 13.9926C177.373 13.9926 177.629 14.0805 177.824 14.2563C178.023 14.4321 178.123 14.6586 178.123 14.936C178.123 15.2172 178.023 15.4477 177.824 15.6274C177.629 15.8071 177.373 15.8969 177.057 15.8969ZM177.971 22.8461H176.119V16.8461H177.971V22.8461ZM184.92 20.3735H181.006C181.068 21.2446 181.617 21.6801 182.652 21.6801C183.312 21.6801 183.893 21.5239 184.393 21.2114V22.5473C183.838 22.8442 183.117 22.9926 182.23 22.9926C181.262 22.9926 180.51 22.725 179.975 22.1899C179.439 21.6508 179.172 20.9008 179.172 19.9399C179.172 18.9438 179.461 18.1547 180.039 17.5727C180.617 16.9907 181.328 16.6996 182.172 16.6996C183.047 16.6996 183.723 16.9594 184.199 17.4789C184.68 17.9985 184.92 18.7036 184.92 19.5942V20.3735ZM183.203 19.2368C183.203 18.3774 182.855 17.9477 182.16 17.9477C181.863 17.9477 181.605 18.0707 181.387 18.3168C181.172 18.5629 181.041 18.8696 180.994 19.2368H183.203ZM191.723 22.8461H189.877V21.9321H189.848C189.391 22.6391 188.779 22.9926 188.014 22.9926C186.623 22.9926 185.928 22.1508 185.928 20.4672V16.8461H187.773V20.3032C187.773 21.1508 188.109 21.5746 188.781 21.5746C189.113 21.5746 189.379 21.4594 189.578 21.2289C189.777 20.9946 189.877 20.6782 189.877 20.2797V16.8461H191.723V22.8461Z" fill="black"/>
+                                <rect x="55.5" y="39" width="72.5" height="35" rx="3" fill="#CDE0C1"/>
+                                <path d="M67.7617 61.8461V53.4438H70.8203C71.7578 53.4438 72.4785 53.6157 72.9824 53.9594C73.4863 54.3032 73.7383 54.7875 73.7383 55.4125C73.7383 55.8657 73.584 56.2621 73.2754 56.602C72.9707 56.9418 72.5801 57.1782 72.1035 57.311V57.3344C72.7012 57.4086 73.1777 57.6293 73.5332 57.9965C73.8926 58.3637 74.0723 58.811 74.0723 59.3383C74.0723 60.1078 73.7969 60.7192 73.2461 61.1723C72.6953 61.6215 71.9434 61.8461 70.9902 61.8461H67.7617ZM69.6543 54.8383V56.8305H70.4863C70.877 56.8305 71.1836 56.7368 71.4062 56.5493C71.6328 56.3578 71.7461 56.0961 71.7461 55.7641C71.7461 55.1469 71.2852 54.8383 70.3633 54.8383H69.6543ZM69.6543 58.2368V60.4516H70.6797C71.1172 60.4516 71.459 60.35 71.7051 60.1469C71.9551 59.9438 72.0801 59.6664 72.0801 59.3149C72.0801 58.9789 71.957 58.7153 71.7109 58.5239C71.4688 58.3325 71.1289 58.2368 70.6914 58.2368H69.6543ZM80.9805 61.8461H79.1348V60.9321H79.1055C78.6484 61.6391 78.0371 61.9926 77.2715 61.9926C75.8809 61.9926 75.1855 61.1508 75.1855 59.4672V55.8461H77.0312V59.3032C77.0312 60.1508 77.3672 60.5746 78.0391 60.5746C78.3711 60.5746 78.6367 60.4594 78.8359 60.2289C79.0352 59.9946 79.1348 59.6782 79.1348 59.2797V55.8461H80.9805V61.8461ZM82.1523 61.6879V60.1879C82.457 60.3715 82.7598 60.5082 83.0605 60.5981C83.3652 60.6879 83.6523 60.7328 83.9219 60.7328C84.25 60.7328 84.5078 60.6879 84.6953 60.5981C84.8867 60.5082 84.9824 60.3715 84.9824 60.1879C84.9824 60.0707 84.9395 59.9731 84.8535 59.895C84.7676 59.8168 84.6562 59.7485 84.5195 59.6899C84.3867 59.6313 84.2402 59.5786 84.0801 59.5317C83.9199 59.4848 83.7656 59.4321 83.6172 59.3735C83.3789 59.2836 83.168 59.1879 82.9844 59.0864C82.8047 58.9809 82.6523 58.8598 82.5273 58.7231C82.4062 58.5864 82.3125 58.4282 82.2461 58.2485C82.1836 58.0688 82.1523 57.8559 82.1523 57.6098C82.1523 57.2739 82.2246 56.9848 82.3691 56.7426C82.5176 56.5004 82.7129 56.3032 82.9551 56.1508C83.2012 55.9946 83.4805 55.8813 83.793 55.811C84.1094 55.7368 84.4375 55.6996 84.7773 55.6996C85.043 55.6996 85.3125 55.7211 85.5859 55.7641C85.8594 55.8032 86.1289 55.8618 86.3945 55.9399V57.3696C86.1602 57.2328 85.9082 57.1313 85.6387 57.0649C85.373 56.9946 85.1113 56.9594 84.8535 56.9594C84.7324 56.9594 84.6172 56.9711 84.5078 56.9946C84.4023 57.0141 84.3086 57.0453 84.2266 57.0883C84.1445 57.1274 84.0801 57.1801 84.0332 57.2465C83.9863 57.309 83.9629 57.3813 83.9629 57.4633C83.9629 57.5727 83.998 57.6664 84.0684 57.7446C84.1387 57.8227 84.2305 57.8911 84.3438 57.9496C84.457 58.0043 84.582 58.0551 84.7188 58.102C84.8594 58.145 84.998 58.1899 85.1348 58.2368C85.3809 58.3227 85.6035 58.4164 85.8027 58.518C86.002 58.6196 86.1719 58.7387 86.3125 58.8754C86.457 59.0121 86.5664 59.1723 86.6406 59.3559C86.7188 59.5395 86.7578 59.7582 86.7578 60.0121C86.7578 60.3676 86.6797 60.6723 86.5234 60.9262C86.3711 61.1762 86.166 61.3813 85.9082 61.5414C85.6543 61.6977 85.3594 61.811 85.0234 61.8813C84.6914 61.9555 84.3457 61.9926 83.9863 61.9926C83.3262 61.9926 82.7148 61.8911 82.1523 61.6879ZM93.7012 64.6059H91.8496V61.02H91.8262C91.4082 61.6684 90.793 61.9926 89.9805 61.9926C89.2266 61.9926 88.6191 61.7309 88.1582 61.2075C87.7012 60.6801 87.4727 59.9418 87.4727 58.9926C87.4727 57.9926 87.7246 57.1938 88.2285 56.5961C88.7324 55.9985 89.3887 55.6996 90.1973 55.6996C90.9316 55.6996 91.4746 55.9809 91.8262 56.5434H91.8496V55.8461H93.7012V64.6059ZM91.8848 58.9809V58.5004C91.8848 58.1098 91.7715 57.7817 91.5449 57.5161C91.3184 57.2504 91.0273 57.1176 90.6719 57.1176C90.2617 57.1176 89.9395 57.2797 89.7051 57.6039C89.4707 57.9243 89.3535 58.3696 89.3535 58.9399C89.3535 59.4516 89.4668 59.852 89.6934 60.1411C89.9238 60.4301 90.2227 60.5746 90.5898 60.5746C90.9805 60.5746 91.293 60.4282 91.5273 60.1352C91.7656 59.8422 91.8848 59.4575 91.8848 58.9809ZM100.961 61.8461H99.1152V60.9321H99.0859C98.6289 61.6391 98.0176 61.9926 97.252 61.9926C95.8613 61.9926 95.166 61.1508 95.166 59.4672V55.8461H97.0117V59.3032C97.0117 60.1508 97.3477 60.5746 98.0195 60.5746C98.3516 60.5746 98.6172 60.4594 98.8164 60.2289C99.0156 59.9946 99.1152 59.6782 99.1152 59.2797V55.8461H100.961V61.8461ZM107.916 59.3735H104.002C104.064 60.2446 104.613 60.6801 105.648 60.6801C106.309 60.6801 106.889 60.5239 107.389 60.2114V61.5473C106.834 61.8442 106.113 61.9926 105.227 61.9926C104.258 61.9926 103.506 61.725 102.971 61.1899C102.436 60.6508 102.168 59.9008 102.168 58.9399C102.168 57.9438 102.457 57.1547 103.035 56.5727C103.613 55.9907 104.324 55.6996 105.168 55.6996C106.043 55.6996 106.719 55.9594 107.195 56.4789C107.676 56.9985 107.916 57.7036 107.916 58.5942V59.3735ZM106.199 58.2368C106.199 57.3774 105.852 56.9477 105.156 56.9477C104.859 56.9477 104.602 57.0707 104.383 57.3168C104.168 57.5629 104.037 57.8696 103.99 58.2368H106.199ZM112.645 61.7758C112.371 61.9203 111.959 61.9926 111.408 61.9926C110.104 61.9926 109.451 61.3149 109.451 59.9594V57.2114H108.479V55.8461H109.451V54.5512L111.297 54.0239V55.8461H112.645V57.2114H111.297V59.6371C111.297 60.2621 111.545 60.5746 112.041 60.5746C112.236 60.5746 112.438 60.518 112.645 60.4047V61.7758ZM113.301 61.6879V60.1879C113.605 60.3715 113.908 60.5082 114.209 60.5981C114.514 60.6879 114.801 60.7328 115.07 60.7328C115.398 60.7328 115.656 60.6879 115.844 60.5981C116.035 60.5082 116.131 60.3715 116.131 60.1879C116.131 60.0707 116.088 59.9731 116.002 59.895C115.916 59.8168 115.805 59.7485 115.668 59.6899C115.535 59.6313 115.389 59.5786 115.229 59.5317C115.068 59.4848 114.914 59.4321 114.766 59.3735C114.527 59.2836 114.316 59.1879 114.133 59.0864C113.953 58.9809 113.801 58.8598 113.676 58.7231C113.555 58.5864 113.461 58.4282 113.395 58.2485C113.332 58.0688 113.301 57.8559 113.301 57.6098C113.301 57.2739 113.373 56.9848 113.518 56.7426C113.666 56.5004 113.861 56.3032 114.104 56.1508C114.35 55.9946 114.629 55.8813 114.941 55.811C115.258 55.7368 115.586 55.6996 115.926 55.6996C116.191 55.6996 116.461 55.7211 116.734 55.7641C117.008 55.8032 117.277 55.8618 117.543 55.9399V57.3696C117.309 57.2328 117.057 57.1313 116.787 57.0649C116.521 56.9946 116.26 56.9594 116.002 56.9594C115.881 56.9594 115.766 56.9711 115.656 56.9946C115.551 57.0141 115.457 57.0453 115.375 57.0883C115.293 57.1274 115.229 57.1801 115.182 57.2465C115.135 57.309 115.111 57.3813 115.111 57.4633C115.111 57.5727 115.146 57.6664 115.217 57.7446C115.287 57.8227 115.379 57.8911 115.492 57.9496C115.605 58.0043 115.73 58.0551 115.867 58.102C116.008 58.145 116.146 58.1899 116.283 58.2368C116.529 58.3227 116.752 58.4164 116.951 58.518C117.15 58.6196 117.32 58.7387 117.461 58.8754C117.605 59.0121 117.715 59.1723 117.789 59.3559C117.867 59.5395 117.906 59.7582 117.906 60.0121C117.906 60.3676 117.828 60.6723 117.672 60.9262C117.52 61.1762 117.314 61.3813 117.057 61.5414C116.803 61.6977 116.508 61.811 116.172 61.8813C115.84 61.9555 115.494 61.9926 115.135 61.9926C114.475 61.9926 113.863 61.8911 113.301 61.6879Z" fill="black"/>
+                                <rect x="132" y="39" width="72.5" height="35" rx="3" fill="#CDE0C1"/>
+                                <path d="M155.189 61.8461H153.279L149.816 56.5668C149.613 56.2582 149.473 56.0258 149.395 55.8696H149.371C149.402 56.1664 149.418 56.6196 149.418 57.2289V61.8461H147.631V53.4438H149.67L153.004 58.559C153.156 58.7895 153.297 59.018 153.426 59.2446H153.449C153.418 59.0493 153.402 58.6645 153.402 58.0903V53.4438H155.189V61.8461ZM162.32 59.3735H158.406C158.469 60.2446 159.018 60.6801 160.053 60.6801C160.713 60.6801 161.293 60.5239 161.793 60.2114V61.5473C161.238 61.8442 160.518 61.9926 159.631 61.9926C158.662 61.9926 157.91 61.725 157.375 61.1899C156.84 60.6508 156.572 59.9008 156.572 58.9399C156.572 57.9438 156.861 57.1547 157.439 56.5727C158.018 55.9907 158.729 55.6996 159.572 55.6996C160.447 55.6996 161.123 55.9594 161.6 56.4789C162.08 56.9985 162.32 57.7036 162.32 58.5942V59.3735ZM160.604 58.2368C160.604 57.3774 160.256 56.9477 159.561 56.9477C159.264 56.9477 159.006 57.0707 158.787 57.3168C158.572 57.5629 158.441 57.8696 158.395 58.2368H160.604ZM169.135 55.8461L166.697 62.3266C166.111 63.8852 165.229 64.6645 164.049 64.6645C163.6 64.6645 163.23 64.6137 162.941 64.5121V63.0356C163.188 63.1801 163.455 63.2524 163.744 63.2524C164.221 63.2524 164.553 63.0278 164.74 62.5786L165.057 61.8344L162.619 55.8461H164.67L165.789 59.4965C165.859 59.7231 165.914 59.9907 165.953 60.2993H165.977C166.012 60.0727 166.076 59.809 166.17 59.5082L167.301 55.8461H169.135ZM179.406 61.8461H177.561V58.4243C177.561 57.5532 177.24 57.1176 176.6 57.1176C176.295 57.1176 176.047 57.2485 175.855 57.5102C175.664 57.7719 175.568 58.0981 175.568 58.4887V61.8461H173.717V58.3891C173.717 57.5414 173.402 57.1176 172.773 57.1176C172.457 57.1176 172.203 57.2426 172.012 57.4926C171.824 57.7426 171.73 58.0825 171.73 58.5121V61.8461H169.879V55.8461H171.73V56.7836H171.754C171.945 56.4633 172.213 56.2036 172.557 56.0043C172.904 55.8012 173.283 55.6996 173.693 55.6996C174.541 55.6996 175.121 56.0727 175.434 56.8188C175.891 56.0727 176.562 55.6996 177.449 55.6996C178.754 55.6996 179.406 56.5043 179.406 58.1137V61.8461ZM185.863 61.8461H184.111V60.9848H184.088C183.686 61.6567 183.09 61.9926 182.301 61.9926C181.719 61.9926 181.26 61.8286 180.924 61.5004C180.592 61.1684 180.426 60.727 180.426 60.1762C180.426 59.0121 181.115 58.3403 182.494 58.1606L184.123 57.9438C184.123 57.2875 183.768 56.9594 183.057 56.9594C182.342 56.9594 181.662 57.1723 181.018 57.5981V56.2036C181.275 56.0707 181.627 55.9536 182.072 55.852C182.521 55.7504 182.93 55.6996 183.297 55.6996C185.008 55.6996 185.863 56.5532 185.863 58.2602V61.8461ZM184.123 59.4086V59.0043L183.033 59.145C182.432 59.2231 182.131 59.4946 182.131 59.9594C182.131 60.1703 182.203 60.3442 182.348 60.4809C182.496 60.6137 182.695 60.6801 182.945 60.6801C183.293 60.6801 183.576 60.561 183.795 60.3227C184.014 60.0805 184.123 59.7758 184.123 59.4086ZM191.242 57.5161C191.02 57.395 190.76 57.3344 190.463 57.3344C190.061 57.3344 189.746 57.4828 189.52 57.7797C189.293 58.0727 189.18 58.4731 189.18 58.9809V61.8461H187.328V55.8461H189.18V56.9594H189.203C189.496 56.1469 190.023 55.7407 190.785 55.7407C190.98 55.7407 191.133 55.7641 191.242 55.811V57.5161Z" fill="black"/>
+                              </svg>
+                            </p>
+                            <p class="ft-helper-fontSize-body-M--small">
+                              ¡Recuerda! Solo tienes 6 intentos para conseguir los 4 grupos, pero no te preocupes, puedes pedir pistas si lo necesitas. 
+                            </p>
+                            <p class="ft-helper-fontSize-body-M--small">
+                              Cada día tendrás una nueva oportunidad para poner a prueba tus conocimientos sobre tu equipo favorito. ¡Vuelve mañana para seguir aprendiendo sobre el Barça!
+                            </p>
+                        </div>
+                        <div class="ft-mol-modal__footer">
+                            <button class="ft-btn-nav ft-btn-nav--close ft-mol-modal__close" data-dismiss="ft-mol-modal"
+                                name="close-button" title="Cerrar ventana emergente" type="button">
+                                <span class="ft-btn-nav__text">
+                                    Cerrar
+                                </span>
+                                <span class="ft-btn-nav__icon"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resolver (botón simple) -->
+            <li class="ft-mol-toolbar__item">
+                <button type="button" class="ft-mol-toolbar__button">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="ft-mol-toolbar__icon" width="23" height="26" viewBox="0 0 23 26" fill="none">
+                        <g clip-path="url(#clip0_7468_579)">
+                            <path d="M20.9707 16.954C21.7684 17.7298 21.8054 17.7668 21.8066 17.7691L21.8025 17.7731C21.8007 17.7748 21.7992 17.7769 21.7973 17.7787C21.7934 17.7824 21.7886 17.7863 21.784 17.7905C21.7749 17.7989 21.7645 17.8083 21.7528 17.8186C21.7292 17.8395 21.7002 17.8644 21.6655 17.8923C21.596 17.9479 21.5039 18.016 21.3869 18.0918C21.1525 18.2438 20.8211 18.4253 20.3747 18.5989C19.4799 18.947 18.1446 19.2566 16.2354 19.2566C14.2001 19.2566 12.5186 18.5906 11.0602 18.0232C9.55907 17.4393 8.2809 16.954 6.76482 16.954C5.12262 16.954 4.09023 17.22 3.50526 17.4476C3.21174 17.5618 3.02522 17.6681 2.92664 17.732C2.87714 17.7641 2.84905 17.786 2.83994 17.7933C2.83536 17.797 2.83538 17.7973 2.83994 17.7933C2.84221 17.7913 2.84594 17.7878 2.85034 17.7838C2.85253 17.7817 2.85516 17.7796 2.85786 17.777L2.8619 17.7725L2.86421 17.7703L2.80121 17.827C2.46467 18.1086 1.99108 18.1847 1.57634 18.0176C1.13407 17.8394 0.845703 17.4196 0.845703 16.954V3.1382C0.845703 2.83286 0.970516 2.5401 1.19253 2.32419L2.02953 3.1382C1.23185 2.36244 1.19486 2.32536 1.19368 2.32306L1.19773 2.31913C1.1995 2.31743 1.20101 2.31533 1.20293 2.31351C1.20685 2.30979 1.21165 2.30594 1.21623 2.3017C1.2253 2.29328 1.23574 2.28394 1.24744 2.27359C1.27108 2.2527 1.29999 2.22777 1.33472 2.19995C1.40423 2.14428 1.49637 2.07622 1.61334 2.00038C1.84769 1.84844 2.17917 1.66694 2.62548 1.49331C3.52031 1.1452 4.85565 0.835571 6.76482 0.835571C8.80018 0.835571 10.4816 1.50164 11.94 2.06896C13.4412 2.65294 14.7193 3.1382 16.2354 3.1382C17.8776 3.1382 18.91 2.87217 19.495 2.64462C19.7885 2.53044 19.975 2.42408 20.0736 2.36017C20.1231 2.32807 20.1512 2.30619 20.1603 2.29889C20.1649 2.29486 20.1649 2.29523 20.1603 2.29889C20.158 2.3009 20.1543 2.30436 20.1499 2.30845C20.1477 2.31048 20.1451 2.31263 20.1424 2.31519L20.1383 2.31969L20.136 2.32194C20.4746 1.99446 20.9825 1.89679 21.4239 2.07459C21.8662 2.25282 22.1545 2.67259 22.1545 3.1382V16.954C22.1545 17.2593 22.0297 17.5521 21.8077 17.768L20.9707 16.954ZM6.76482 3.1382C5.12262 3.1382 4.09023 3.40424 3.50526 3.63178C3.39249 3.67565 3.29557 3.71862 3.21335 3.75827V15.1084C4.07471 14.8504 5.23558 14.6514 6.76482 14.6514C8.80018 14.6514 10.4816 15.3174 11.94 15.8848C13.4412 16.4687 14.7193 16.954 16.2354 16.954C17.8776 16.954 18.91 16.688 19.495 16.4604C19.6078 16.4165 19.7046 16.373 19.7869 16.3334V4.98323C18.9255 5.24129 17.7647 5.44083 16.2354 5.44083C14.2001 5.44083 12.5186 4.77477 11.0602 4.20744C9.55907 3.62347 8.2809 3.1382 6.76482 3.1382Z" fill="currentColor"></path>
+                            <path d="M2.2998 10.0909C4.0248 8.95454 6.8998 8.57571 11.4998 10.0909C18.3998 12.3636 20.6998 10.0909 20.6998 10.0909" stroke="black" stroke-width="2" stroke-linecap="round"></path>
+                            <path d="M0.845703 25.0131V16.9539C0.845703 16.3181 1.37572 15.8026 2.02953 15.8026C2.68333 15.8026 3.21335 16.3181 3.21335 16.9539V25.0131C3.21335 25.649 2.68333 26.1645 2.02953 26.1645C1.37572 26.1645 0.845703 25.649 0.845703 25.0131Z" fill="currentColor"></path>
+                            <line x1="11.3501" y1="3.27271" x2="11.3501" y2="16.9091" stroke="black" stroke-width="2"></line>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_7468_579">
+                                <rect width="23" height="26" fill="white"></rect>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                    <span class="ft-mol-toolbar__label">Resolver</span>
+                </button>
+            </li>
+          </ul>
+        </div>
+        <!-- end // MOL: toolbar -->
+      </div>
+    </div>
+    <!-- end // ORG: toolbar -->
+    <div class="ft-layout-grid-flex__row ft-layout-grid-flex__rowIs-fullwidth ft-helper-bgGreen-cuatroencampo-deg">
+
+      <div class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__col-addsContent--L">
+        <div class="ft-org-game ft-org-game--fullscreen">
+          <div class="ft-org-game__edition">
+            <span class="ft-helper-fontSize-body-M--small ft-helper-fontWeight-700">Edición Selección Española</span>
+          </div>
+          <!-- game__field -->
+          <div id="field-game" class="ft-org-game__field">
+            <div class="ft-org-game__field__wrapper">                    
+            
+              <!-- ASISTENTE -->
+              <div class="ft-text--assistant ft-helper-bgGreen-cuatroencampo-500 ft-helper-spacer-gap-b-xs">
+                <span>Selecciona 4 jugadores que hayan compartido al menos un minuto en el campo durante algún partido</span>
+              </div>
+
+              <!-- MENSAJES -->
+              <div id="field-messages" class="ft-org-game__field__messages">
+              Selecciona 4 elementos
+              </div>
+          
+              <!-- RESUELTOS -->
+              <div id="field-resolved" class="ft-org-game__field__resolved">
+                <div id="field-resolved-list" class="ft-org-game__field__resolved-list"></div>
+              </div>
+          
+              <!-- TABLERO -->
+              <div id="field-board" class="ft-org-game__field__board"></div>
+
+              <!-- ESTADISTICAS -->
+              <div class="ft-org-game__field__stats">
+                  <div id="field-stats-correct" class="ft-org-game__field__stats-item">
+                      0/4 Grupos acertados
+                  </div>
+                  <div id="field-stats-fails" class="ft-org-game__field__stats-item">
+                      0/6 Intentos fallidos
+                  </div>
+              </div>
+              
+              <!-- Botones -->
+              <div class="ft-mol-btnGroup ft-mol-btnGroup--cnt">
+                <button type="button" class="ft-btn ft-btn--secondary ft-btn--secondary-has--icon ft-btn--md" title="Pista"
+                  target="_self">
+                  <svg class="ft-btn__icon ft-btn__icon--primal" width="40" height="40" viewBox="0 0 40 40" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_7653_2548)">
+                          <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M7.26758 37.8577C7.26758 37.2894 7.49334 36.7443 7.89521 36.3425C8.29707 35.9406 8.84211 35.7148 9.41043 35.7148H19.4104C19.9788 35.7148 20.5238 35.9406 20.9257 36.3425C21.3275 36.7443 21.5533 37.2894 21.5533 37.8577C21.5533 38.426 21.3275 38.9711 20.9257 39.3729C20.5238 39.7748 19.9788 40.0006 19.4104 40.0006H9.41043C8.84211 40.0006 8.29707 39.7748 7.89521 39.3729C7.49334 38.9711 7.26758 38.426 7.26758 37.8577Z"
+                              fill="#FFFFFF"></path>
+                          <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M25.7597 22.9639C24.6169 24.4554 23.1883 25.7154 21.554 26.6611V30.0011C21.554 30.7588 21.253 31.4856 20.7172 32.0214C20.1814 32.5572 19.4546 32.8582 18.6969 32.8582H10.1255C9.36769 32.8582 8.64097 32.5572 8.10515 32.0214C7.56933 31.4856 7.26831 30.7588 7.26831 30.0011V26.6611C5.49002 25.633 3.95435 24.2335 2.76603 22.558C1.57771 20.8825 0.76469 18.9705 0.382401 16.9522C0.000111416 14.934 0.0575493 12.8571 0.550797 10.8631C1.04405 8.86912 1.9615 7.00494 3.24061 5.3977C4.51971 3.79046 6.13038 2.47796 7.96277 1.54971C9.79517 0.621458 11.8062 0.09928 13.8587 0.0187862C15.9112 -0.0617076 17.957 0.301376 19.8564 1.08328C21.7559 1.86518 23.4644 3.04751 24.8654 4.54964C24.7008 5.255 24.332 5.89621 23.805 6.39318C23.2781 6.89014 22.6164 7.22083 21.9026 7.34392C15.9826 8.3725 15.9826 16.8725 21.9026 17.9011C23.3797 18.1582 24.5597 19.2868 24.8797 20.7525L24.934 21.0039C25.0969 21.7582 25.3855 22.4125 25.7626 22.9639H25.7597Z"
+                              fill="#FEDE00"></path>
+                          <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M32.4375 4.88585C31.8946 2.50299 28.4917 2.51442 27.9689 4.90585L27.9489 5.00013L27.906 5.18585C27.6122 6.49876 26.9354 7.69499 25.9615 8.62317C24.9875 9.55135 23.7601 10.1698 22.4346 10.4001C19.9489 10.8344 19.9489 14.4058 22.4346 14.8373C23.7666 15.0687 24.9993 15.6919 25.9754 16.6273C26.9515 17.5627 27.6267 18.7678 27.9146 20.0887L27.9689 20.3373C28.4917 22.7287 31.8946 22.743 32.4375 20.3573L32.5032 20.0658C32.8036 18.7506 33.4859 17.5535 34.4644 16.6248C35.4429 15.6961 36.6741 15.0772 38.0032 14.8458C40.4975 14.4116 40.4975 10.8344 38.0032 10.4001C36.6427 10.1641 35.3856 9.52195 34.3968 8.55818C33.408 7.59441 32.734 6.35407 32.4632 5.00013L32.4375 4.88585Z"
+                              fill="#FFFFFF"></path>
+                      </g>
+                      <defs>
+                          <clipPath id="clip0_7653_2548">
+                              <rect width="40" height="40" fill="white"></rect>
+                          </clipPath>
+                      </defs>
+                  </svg>
+                  Pista
+                  <span class="ft-btn__badge" aria-label="1 de 3">1/3</span>
+                </button>
+                <button id="field-validate" type="button" class="ft-btn ft-btn--tertiary ft-btn--md ft-org-game__field__validate-btn"
+                  title="title text" target="_self">
+                  Confirmar
+                </button>
+              </div>
+            </div>
+          </div>
+            
+          <!-- Alertas -->
+          <div class="ft-org-game__alert ft-org-game__alert--is-open ft-org-game__alert--is-ok" role="alert">
+            <dotlottie-player src="/cds-statics/assets/img/lotties/game-is-ok.lottie" class="ft-lottie" autoplay loop>
+            </dotlottie-player>
+            <span class="ft-org-game__alertText">
+              Correcto, has adivinado una palabra
+            </span>
+          </div>
+          <div class="ft-org-game__alert ft-org-game__alert--is-open ft-org-game__alert--is-error" role="alert">
+            <dotlottie-player src="/cds-statics/assets/img/lotties/game-is-error.lottie" class="ft-lottie" autoplay
+              loop>
+            </dotlottie-player>
+            <span class="ft-org-game__alertText">
+              La palabra contiene letras no permitidas
+            </span>
+          </div>
+          <div class="ft-org-game__alert ft-org-game__alert--is-open ft-org-game__alert--is-warning" role="alert">
+            <dotlottie-player src="/cds-statics/assets/img/lotties/game-is-warning.lottie" class="ft-lottie" autoplay
+              loop>
+            </dotlottie-player>
+            <span class="ft-org-game__alertText">
+              Ya has encontrado esta palabra
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Fin destacado con un elementos -->
+   <!--Pie -->
+    <footer id="footer-media" class="footer-media--pasatiempos  ft-helper-hide-sm" role="contentinfo" aria-label="Información del pie de página">
+      <h2 class="ft-helper-hide">Información de pie de página</h2>
+  
+      <div class="footer-mediaTop">
+          <a data-edition-homelink="data-edition-homelink" title="El Periódico" href="/es/" aria-current="page">
+              <img width="263" height="65" loading="lazy" alt="El Periódico2"
+                  src="../../cds-statics/assets/img/logos/logoEpColor.svg">
+          </a>
+  
+          <div class="rrss" aria-label="Redes sociales de El Periódico">
+              <a class="btn" href="#" rel="noopener noreferrer nofollow" target="_blank"
+                  aria-label="WhatsApp de El Periódico">
+                  <span class="icon icon-Whatsapp" aria-hidden="true"></span>
+              </a>
+              <a class="btn" href="https://www.facebook.com/elperiodico.catalunya" rel="noopener noreferrer nofollow"
+                  target="_blank" hreflang="es" aria-label="Facebook de El Periódico">
+                  <span class="icon icon-Facebook" aria-hidden="true"></span>
+              </a>
+              <a class="btn" href="https://twitter.com/elperiodico" rel="noopener noreferrer nofollow" target="_blank"
+                  hreflang="es" aria-label="Twitter de El Periódico">
+                  <span class="icon icon-Twitter" aria-hidden="true"></span>
+              </a>
+              <a class="btn" href="https://www.instagram.com/elperiodico_cas/" rel="noopener noreferrer nofollow"
+                  target="_blank" hreflang="es" aria-label="Instagram de El Periódico">
+                  <span class="icon icon-Instagram" aria-hidden="true"></span>
+              </a>
+          </div>
+  
+          <h3 class="ft-helper-hide">Enlaces institucionales</h3>
+          <nav aria-label="Enlaces institucionales">
+              <ul class="lnk">
+                  <li><a href="https://www.elperiodico.com/es/quienessomos.shtml" rel="nofollow noopener" target="_blank"
+                          hreflang="es" title="Quiénes somos">
+                          Quiénes somos
+                      </a></li>
+                  <li><a href="https://www.elperiodico.com/es/contacto.shtml" rel="nofollow noopener" target="_blank"
+                          hreflang="es" title="Contacto">
+                          Contacto
+                      </a></li>
+                  <li><a href="https://www.elperiodico.com/es/rss/portada_rss.shtml" rel="nofollow noopener"
+                          target="_blank" hreflang="es" title="RSS">
+                          RSS
+                      </a></li>
+                  <li><a href="https://www.elperiodico.com/es/mapa-sitio.shtml" rel="nofollow noopener" target="_blank"
+                          hreflang="es" title="Mapa del sitio">
+                          Mapa del sitio
+                      </a></li>
+                  <li><a href="https://www.prensaiberica360.es/?_sid=1686819132" rel="nofollow noopener" target="_blank"
+                          hreflang="es" title="Publicidad">
+                          Publicidad
+                      </a></li>
+                  <li><a href="https://www.elperiodico.com/es/avisolegal.shtml" rel="nofollow noopener" target="_blank"
+                          hreflang="es" title="Aviso legal">
+                          Aviso legal
+                      </a></li>
+                  <li><a href="https://www.prensaiberica.es/politica-de-privacidad-resumida/?_sid=1686819132"
+                          rel="nofollow noopener" target="_blank" hreflang="es" title="Política de privacidad y cookies">
+                          Política de privacidad y cookies
+                      </a></li>
+                  <li><a href="javascript: Didomi.preferences.show();" rel="nofollow noopener"
+                          title="Preferencias de Privacidad">
+                          Preferencias de Privacidad
+                      </a></li>
+              </ul>
+          </nav>
+      </div>
+  
+      <div class="footer-mediaMiddle">
+          <address>
+              <p>El Periódico de Catalunya, S.L.U</p>
+              <a href="https://estaticos-cdn.lne.es/images/footer/prensa-iberica-360.png?id=00bc9e3946af531b5a7b"
+                  rel="noopener" target="_blank" hreflang="es" title="Prensa Ibérica">
+                  <img width="114" height="73" loading="lazy" alt="Prensa Ibérica"
+                      src="https://estaticos-cdn.lne.es/images/footer/prensa-iberica-360.png?id=00bc9e3946af531b5a7b"
+                      title="Prensa Ibérica">
+              </a>
+          </address>
+      </div>
+  
+      <div class="footer-mediaBottom">
+          <p>Otras webs de Prensa Ibérica Media:</p>
+          <ul>
+              <li class="titular">
+                  Titular 1
+              </li>
+              <li><a rel="nofollow" target="_blank" title="Casa Gourmet"
+                      href="https://www.casagourmet.es/?_sid=1686737966">
+                      Casa Gourmet
+                  </a>
+              </li>
+              <li><a rel="nofollow" target="_blank" title="Coche de ocasión" href="https://ocasion.neomotor.com/">
+                      Coche de ocasión
+                  </a>
+              </li>
+              <li><a rel="nofollow" target="_blank" title="Código Nuevo"
+                      href="https://www.codigonuevo.com/?_sid=1686737966">
+                      Código Nuevo
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Cuore"
+                      href="https://www.elperiodico.com/cuore/?_sid=1686737966">
+                      Cuore
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Diari de Girona"
+                      href="https://www.diaridegirona.cat/?_sid=1686737966">
+                      Diari de Girona
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Diario de Córdoba"
+                      href="https://www.diariocordoba.com/?_sid=1686737966">
+                      Diario de Córdoba
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Diario de Ibiza"
+                      href="https://www.diariodeibiza.es/?_sid=1686737966">
+                      Diario de Ibiza
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Diario de Mallorca"
+                      href="https://www.diariodemallorca.es/?_sid=1686737966">
+                      Diario de Mallorca
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="El Correo Gallego"
+                      href="https://www.elcorreogallego.es/?_sid=1686737966">
+                      El Correo Gallego
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="El Día Tenerife" href="https://www.eldia.es/?_sid=1686737966">
+                      El Día Tenerife
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="El Periódico de Aragón"
+                      href="https://www.elperiodicodearagon.com/?_sid=1686737966">
+                      El Periódico de Aragón
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="El Periódico de Catalunya"
+                      href="https://www.elperiodico.com/es/?_sid=1686737966">
+                      El Periódico de Catalunya
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="El Periódico de España"
+                      href="https://www.epe.es/es/?_sid=1686737966">
+                      El Periódico de España
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="El Periódico de Extremadura"
+                      href="http://www.elperiodicoextremadura.com/?_sid=1686737966">
+                      El Periódico de Extremadura
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="El Periódico Mediterráneo"
+                      href="https://www.elperiodicomediterraneo.com/?_sid=1686737966">
+                      El Periódico Mediterráneo
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Faro de Vigo"
+                      href="https://www.farodevigo.es/?_sid=1686737966">
+                      Faro de Vigo
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Fórmula 1" href="https://formula1.lne.es/?_sid=1686737966">
+                      Fórmula 1
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Goya" href="https://www.premios-cine.com/goya/">
+                      Goya
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Iberempleos" href="https://www.iberempleos.es/">
+                      Iberempleos
+                  </a></li>
+              <li class="titular">
+                  Titular 2
+              </li>
+              <li><a rel="nofollow" target="_blank" title="Información" href="https://www.diarioinformacion.com/">
+                      Información
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Información TV" href="http://www.informaciontv.es/">
+                      Información TV
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="La Crónica de Badajoz"
+                      href="https://www.lacronicabadajoz.com/">
+                      La Crónica de Badajoz
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="La Nueva España Asturias"
+                      href="https://www.lne.es/asturias/?_sid=1686737966">
+                      La Nueva España Asturias
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="La Opinión de A Coruña"
+                      href="https://www.laopinioncoruna.es/?_sid=1686737966">
+                      La Opinión de A Coruña
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="La Opinión de Murcia"
+                      href="https://www.laopiniondemurcia.es/?_sid=1686737966">
+                      La Opinión de Murcia
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="La Opinión de Málaga"
+                      href="https://www.laopiniondemalaga.es/?_sid=1686737966">
+                      La Opinión de Málaga
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="La Opinión El correo de Zamora"
+                      href="https://www.laopiniondezamora.es/?_sid=1686737966">
+                      La Opinión El correo de Zamora
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="La Provincia Diario de Las Palmas"
+                      href="https://www.laprovincia.es/?_sid=1686737966">
+                      La Provincia Diario de Las Palmas
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Levante El Mercantil Valenciano"
+                      href="https://www.levante-emv.com/?_sid=1686737966">
+                      Levante El Mercantil Valenciano
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Levante TV" href="http://www.informaciontv.es/">
+                      Levante TV
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="L'Empordà Figueres"
+                      href="https://www.emporda.info/?_sid=1686737966">
+                      L'Empordà Figueres
+                  </a></li>
+              <li class="titular">
+                  Titular 3
+              </li>
+              <li><a rel="nofollow" target="_blank" title="Mallorca Zeitung Mallorca"
+                      href="https://www.mallorcazeitung.es/?_sid=1686737966">
+                      Mallorca Zeitung Mallorca
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Neomotor" href="https://neomotor.epe.es/?_sid=1686737966">
+                      Neomotor
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Oscars" href="https://www.premios-cine.com/oscars/">
+                      Oscars
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Regió 7 Manresa"
+                      href="https://www.regio7.cat/?_sid=1686737966">
+                      Regió Manresa
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Sport" href="https://www.sport.es/">
+                      Sport
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Stilo" href="https://www.stilo.es/?_sid=1686737966">
+                      Stilo
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Superdeporte Valencia"
+                      href="https://www.superdeporte.es/?_sid=1686737966">
+                      Superdeporte Valencia
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Tendencias 21" href="https://www.sport.es/es/tendencias21/">
+                      Tendencias 21
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Tu casa" href="https://www.tucasa.com/">
+                      Tu casa
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Medio Ambiente" href="https://www.sport.es/es/medio-ambiente/">
+                      Medio Ambiente
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Viajar" href="https://viajar.elperiodico.com/?_sid=1686737966">
+                      Viajar
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Woman Madame Figaro" href="https://www.woman.es/">
+                      Woman Madame Figaro
+                  </a></li>
+          </ul>
+      </div>
+    </footer>
+  </article>
+  
+  <script rel="modulepreload" src="../../cds-statics/js/game/cuatroencampo/fourty-js-cuatroencampo.js"></script>
+
+  <!-- JS: masthead -->
+  <script rel="modulepreload" src="../../cds-statics/js/affix/affix.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/headers/masthead.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/sticking/fourty-header-sticky.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/switch/fourty-js-switch-2024.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/form/fourty-js-form-combo-search.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/sidenav/fourty-js-sidenav-default.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/modal/fourty-js-popover.js"></script>
+  <script src="../../cds-statics/js/tapbar/fourty-js-tapbar.js"></script>
+             <script src="/cds-statics/js/timer/fourty-js-timer.js" defer></script>
+
+  <!-- JS:  dropdown -->
+  <script rel="modulepreload" src="../../cds-statics/js/dropdown/fortty-js-dropdown-simple.js"></script>
+
+  <!-- JS:  modal -->
+  <script rel="modulepreload" src="../../cds-statics/js/modal/fourty-js-modal.js"></script>
+
+  <!-- JS:  smoothscrollbar -->
+  <script rel="modulepreload" src="../../cds-statics/js/scroll/smooth-scrollbar/smooth-scrollbar.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/scroll/smooth-scrollbar/smooth-scrollbar-functions.js"></script>
+
+  <!-- JS: lottie-->
+  <script rel="modulepreload" src="../../cds-statics/js/lottie/fourty-js-lottie.js" type="module"></script>
+
+  <!-- JS: game__input -->
+  <script rel="modulepreload" src="../../cds-statics/js/game/game-input-pipe.js"></script>
+
+</body>
+
+</html>

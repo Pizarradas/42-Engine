@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <title>42DS | Templates: Pasatiempos</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta name="format-detection" content="telephone=no">
+  <!-- CSS: library multibrand -->
+  <link href="../../cds-statics/css/ux-index.css" id="brandStyles" rel="stylesheet" type="text/css" />
+  <!-- CSS: settings -->
+  <link href="../../cds-statics/css/brands/ux/setting.css" id="brandStyles-root" rel="stylesheet" type="text/css" />
+  <link href="../../cds-statics/css/brands/ux/core.css" id="brandStyles-root" rel="stylesheet" type="text/css" />
+  <link href="../../cds-statics/css/brands/commons/setting-pasatiempos.css" id="brandStyles-root" rel="stylesheet" type="text/css" />
+  <!-- FAVICON -->
+  <link href="../favicon.png" rel="icon" type="image/png" />
+</head>
+
+<body class="fourty ft-brand-ux pasatiempos minimal-header"
+  data-showroom-skin="layout">
+
+  <!-- LAYOUT -->
+  <article class="ft-layout-grid-flex">
+     
+    <!-- ORG: game -->
+    <div class="ft-org-game ft-helper-bgColor-background-lightGrey">
+      <!-- juego -->
+      <div class="ft-org-game__mundial">
+        <div class="ft-layout-grid-flex__row ft-layout-grid-flex__rowIs-fullwidth">
+    
+          <div class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__col-addsContent--L">
+            <!-- tablero -->
+            <div class="ft-org-game__mundial__board" id="porraBoard" role="group" aria-label="Porra del Mundial">
+            
+              <div class="ft-layout-grid-flex__row">
+            
+                <div class="ft-layout-grid-flex__colXs-12">
+            
+                  <div class="ft-org-game__mundial__inicio">
+            
+                    <header class="ft-org-game__mundial__header">
+                      <!-- mol: bar: --data-inside -->
+                      <div class="ft-mol-bar ft-mol-bar--xs ft-mol-bar--data-inside" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" aria-label="Porra del Mundial: 20% completado">
+                        <div class="ft-mol-bar__info">
+                            <h4 class="ft-mol-bar__title">Mi porra del Mundial</h4>
+                        </div>
+                        <div class="ft-mol-bar__background">
+                          <span class="ft-mol-bar__data"><strong>20%</strong> completado</span>
+                            <div class="ft-mol-bar__background-inProgress" style="width: 20%;"></div>
+                        </div>
+                        <div class="ft-mol-bar__user">
+                            <!-- login -->
+                            <button type="button" name="user-button" class="ft-btn-nav ft-btn-nav--user" title="Usuario">
+                                <span class="ft-btn-nav__text">
+                                    Usuario
+                                </span>
+                                <span class="ft-btn-nav__icon"></span>
+                            </button>
+                            <!-- logged -->
+                            <button type="button" name="user-button" class="ft-btn-nav" title="Usuario">
+                                <span class="ft-btn-nav__text">
+                                    Usuario
+                                </span>
+                                <span class="ft-helper-fontSize-body-XL--small">SC</span>
+                            </button>
+                        </div>
+                      </div>
+                      <!-- end // bar: --data-inside -->
+                      <!-- mol: toolbar: slider -->
+                      <div class="ft-mol-toolbar ft-mol-toolbar--slider" role="toolbar" aria-label="Opciones del juego">
+                        <div class="ft-mol-toolbar__inner">
+                            <div class="ft-mol-toolbar__item ft-mol-toolbar__itemBack">
+                                <button type="button" class="ft-mol-toolbar__button">
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        class="ft-mol-toolbar__icon" width="26" height="27"
+                                        viewBox="0 0 26 27" fill="none">
+                                        <path
+                                            d="M6.48134 14.8657C5.84499 14.1673 5.83885 13.0958 6.46737 12.3903L6.53236 12.3211L17.2183 1.48402C17.8496 0.84376 18.8789 0.837948 19.5174 1.47107C20.1558 2.10422 20.1616 3.13655 19.5303 3.77682L9.83508 13.6093L19.5174 23.2102C20.1558 23.8434 20.1616 24.8757 19.5303 25.516C18.899 26.1563 17.8696 26.162 17.2312 25.5289L6.54697 14.9343L6.48134 14.8657Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                    <span class="ft-mol-toolbar__label"></span>
+                                </button>
+                            </div>
+                            <ul class="ft-mol-toolbar__list">
+                                <!-- item: 1 -->
+                                <li class="ft-mol-toolbar__item ft-mol-toolbar__item--active">
+                                    <button type="button"
+                                        class="ft-mol-toolbar__button"
+                                        aria-label="Ayuda">
+                                        <img class="ft-mol-toolbar__icon"
+                                            src="../../cds-statics/assets/img/icons/icon-mundial-porra-resumen.svg"
+                                            width="38" height="38" alt="icono de inicio">
+                                        <span class="ft-mol-toolbar__label">Inicio</span>
+                                    </button>
+                                </li>
+
+                                <!-- item: 2 -->
+                                <li class="ft-mol-toolbar__item">
+                                    <button type="button"
+                                        class="ft-mol-toolbar__button">
+                                        <img class="ft-mol-toolbar__icon"
+                                            src="../../cds-statics/assets/img/icons/icon-mundial-porra-predicciones.svg"
+                                            width="38" height="38" alt="icono de predicciones">
+                                        <span class="ft-mol-toolbar__label">Predicciones</span>
+                                    </button>
+                                </li>
+
+                                <!-- item: 3 -->
+                                <li class="ft-mol-toolbar__item">
+                                    <button type="button"
+                                        class="ft-mol-toolbar__button">
+                                        <img class="ft-mol-toolbar__icon"
+                                            src="../../cds-statics/assets/img/icons/icon-mundial-porra-ranking.svg"
+                                            width="38" height="38" alt="icono de ranking">
+                                        <span class="ft-mol-toolbar__label">Ranking</span>
+                                    </button>
+                                </li>
+
+                                <!-- item: 4 -->
+                                <li class="ft-mol-toolbar__item">
+                                    <button type="button"
+                                        class="ft-mol-toolbar__button">
+                                        <img class="ft-mol-toolbar__icon"
+                                            src="../../cds-statics/assets/img/icons/icon-mundial-porra-ayuda.svg"
+                                            width="38" height="38" alt="icono de ayuda">
+                                        <span class="ft-mol-toolbar__label">Ayuda</span>
+                                    </button>
+                                </li>
+
+                                <!-- item: 5 -->
+                                <li class="ft-mol-toolbar__item">
+                                    <button type="button"
+                                        class="ft-mol-toolbar__button">
+                                        <img class="ft-mol-toolbar__icon"
+                                            src="../../cds-statics/assets/img/icons/icon-mundial-porra-premios.svg"
+                                            width="38" height="38" alt="icono de puntuación">
+                                        <span class="ft-mol-toolbar__label">Premios</span>
+                                    </button>
+                                </li>z
+                            </ul>
+                        </div>
+                      </div>
+                      <!-- end // toolbar: slider -->
+                      <!-- org: status: casuística: inicio porra -->
+                      <section class="ft-org-game__mundial__status ft-helper-bgColor-black"
+                        aria-labelledby="statusCalloutTitle">
+                        <div class="ft-mol-headband ft-mol-headband--section ft-mol-headband--has-logo">
+                          <h2 class="ft-mol-headband__title">Lorem ipsum dolor est</h2>
+                          <div class="ft-mol-headband__logo">
+                            Con la colaboración de
+                            <a href="#">
+                              <img alt="headband" class="ft-mol-headband__img ft-helper-img-rd"
+                                src="../../cds-statics/assets/img/logos/logo-iberdrola.svg" width="85" height="20">
+                            </a>
+                          </div>
+                        </div>
+                        <h3 id="statusCalloutTitle" class="ft-helper-fontSize-fluid-heading-XXS">
+                          Ya has empezado porra del Mundial 2026
+                        </h3>
+                        <p class="ft-helper-fontSize-fluid-body-M">
+                          Aún estás a tiempo de dejar cerrada tu porra
+                        </p>
+                        <!-- mol: boxInfo: -->
+                        <div class="ft-mol-boxInfo ft-mol-boxInfo--inline">
+                          <div class="ft-mol-boxInfo__content">
+                            <div class="ft-helper-display-flex ft-helper-display-flex--column">
+                              <p class="ft-helper-fontSize-fluid-body-S">
+                                Te faltan 2 partidos del Grupo B
+                              </p>
+                            </div>
+                            <a href="#" class="ft-btn ft-btn--secondary ft-btn--xs" title="title text" target="_self">
+                              Continuar mi porra
+                            </a>
+                          </div>
+                        </div>
+                        <p class="ft-helper-fontSize-fluid-body-M">
+                          México vs Sudáfrica - 21 Jun 15:00
+                        </p>
+                        <ul class="ft-list ft-list-counter ft-helper-fontWeight-500">
+                          <li class="ft-list-counter__item ft-helper-fontSize-fluid-body-M">
+                            Días
+                            <strong class="ft-list-counter__number ft-helper-fontWeight-800">
+                              52
+                            </strong>
+                          </li>
+                          <li class="ft-list-counter__item ft-helper-fontSize-fluid-body-M">
+                            Horas
+                            <strong class="ft-list-counter__number ft-helper-fontWeight-800">
+                              2
+                            </strong>
+                          </li>
+                          <li class="ft-list-counter__item ft-helper-fontSize-fluid-body-M">
+                            Minutos
+                            <strong class="ft-list-counter__number ft-helper-fontWeight-800">
+                              22
+                            </strong>
+                          </li>
+                          <li class="ft-list-counter__item ft-helper-fontSize-fluid-body-M">
+                            Segundos
+                            <strong class="ft-list-counter__number ft-helper-fontWeight-800">
+                              14
+                            </strong>
+                          </li>
+                        </ul>
+
+                      </section>
+                      <!-- end // org: status: casuística: inicio porra -->
+                    </header>
+            
+                    <div class="ft-org-game__mundial__content">
+                      <div class="ft-org-game__mundial__groups">
+            
+                        <a href="#" class="ft-org-game__mundial__group">
+                          <h3 class="ft-org-game__mundial__group-title">
+                            Grupo A
+                          </h3>
+                          <ul class="ft-org-game__mundial__group__teams">
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/england.svg" alt="Inglaterra">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/france.svg" alt="Francia">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/south_korea.svg" alt="Corea del Sur">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/germany.svg" alt="Alemania">
+                              </span>
+                            </li>
+                          </ul>
+                          <div class="ft-org-game__mundial__group__progress">
+                            <span class="ft-org-game__mundial__group__progress-bar ft-org-game__mundial__group__progress-bar--6"></span>
+                          </div>
+                          <div class="ft-org-game__mundial__group__actions">
+                            <span class="ft-org-game__mundial__group__link">
+                              ✓ Completado
+                            </span>
+                          </div>
+                        </a>
+            
+                        <a href="#" class="ft-org-game__mundial__group">
+                          <h3 class="ft-org-game__mundial__group-title">
+                            Grupo B
+                          </h3>
+            
+                          <ul class="ft-org-game__mundial__group__teams">
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/england.svg" alt="Inglaterra">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/france.svg" alt="Francia">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/south_korea.svg" alt="Corea del Sur">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/germany.svg" alt="Alemania">
+                              </span>
+                            </li>
+                          </ul>
+                          <div class="ft-org-game__mundial__group__progress">
+                            <span class="ft-org-game__mundial__group__progress-bar ft-org-game__mundial__group__progress-bar--6"></span>
+                          </div>
+                          <div class="ft-org-game__mundial__group__actions">
+                            <span class="ft-org-game__mundial__group__link">
+                              ✓ Completado
+                            </span>
+                          </div>
+                        </a>
+            
+                        <a href="#" class="ft-org-game__mundial__group">
+                          <h3 class="ft-org-game__mundial__group-title">
+                            Grupo C
+                          </h3>
+            
+                          <ul class="ft-org-game__mundial__group__teams">
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/england.svg" alt="Inglaterra">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/france.svg" alt="Francia">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/south_korea.svg" alt="Corea del Sur">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/germany.svg" alt="Alemania">
+                              </span>
+                            </li>
+                          </ul>
+                          <div class="ft-org-game__mundial__group__progress">
+                            <span class="ft-org-game__mundial__group__progress-bar ft-org-game__mundial__group__progress-bar--4"></span>
+                          </div>
+                          <div class="ft-org-game__mundial__group__actions">
+                            <span class="ft-org-game__mundial__group__link">
+                              2 partidos pendientes <span aria-hidden="true">&#8250;</span>
+                            </span>
+                          </div>
+                        </a>
+            
+                        <a href="#" class="ft-org-game__mundial__group">
+                          <h3 class="ft-org-game__mundial__group-title">
+                            Grupo D
+                          </h3>
+            
+                          <ul class="ft-org-game__mundial__group__teams">
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/england.svg" alt="Inglaterra">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/france.svg" alt="Francia">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/south_korea.svg" alt="Corea del Sur">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/germany.svg" alt="Alemania">
+                              </span>
+                            </li>
+                          </ul>
+                          <div class="ft-org-game__mundial__group__progress">
+                            <span class="ft-org-game__mundial__group__progress-bar ft-org-game__mundial__group__progress-bar--3"></span>
+                          </div>
+                          <div class="ft-org-game__mundial__group__actions">
+                            <span class="ft-org-game__mundial__group__link">
+                              3 partidos pendientes <span aria-hidden="true">&#8250;</span>
+                            </span>
+                          </div>
+                        </a>
+            
+                        <a href="#" class="ft-org-game__mundial__group">
+                          <h3 class="ft-org-game__mundial__group-title">
+                            Grupo E
+                          </h3>
+            
+                          <ul class="ft-org-game__mundial__group__teams">
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/england.svg" alt="Inglaterra">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/france.svg" alt="Francia">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/south_korea.svg" alt="Corea del Sur">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/germany.svg" alt="Alemania">
+                              </span>
+                            </li>
+                          </ul>
+                          <div class="ft-org-game__mundial__group__progress">
+                            <span class="ft-org-game__mundial__group__progress-bar ft-org-game__mundial__group__progress-bar--3"></span>
+                          </div>
+                          <div class="ft-org-game__mundial__group__actions">
+                            <span class="ft-org-game__mundial__group__link">
+                              3 partidos pendientes <span aria-hidden="true">&#8250;</span>
+                            </span>
+                          </div>
+                        </a>
+            
+                        <a href="#" class="ft-org-game__mundial__group">
+                          <h3 class="ft-org-game__mundial__group-title">
+                            Grupo F
+                          </h3>
+            
+                          <ul class="ft-org-game__mundial__group__teams">
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/england.svg" alt="Inglaterra">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/france.svg" alt="Francia">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/south_korea.svg" alt="Corea del Sur">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/germany.svg" alt="Alemania">
+                              </span>
+                            </li>
+                          </ul>
+                          <div class="ft-org-game__mundial__group__progress">
+                            <span class="ft-org-game__mundial__group__progress-bar ft-org-game__mundial__group__progress-bar--1"></span>
+                          </div>
+                          <div class="ft-org-game__mundial__group__actions">
+                            <span class="ft-org-game__mundial__group__link">
+                              5 partidos pendientes <span aria-hidden="true">&#8250;</span>
+                            </span>
+                          </div>
+                        </a>
+            
+                        <a href="#" class="ft-org-game__mundial__group">
+                          <h3 class="ft-org-game__mundial__group-title">
+                            Grupo G
+                          </h3>
+            
+                          <ul class="ft-org-game__mundial__group__teams">
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/england.svg" alt="Inglaterra">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/france.svg" alt="Francia">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/south_korea.svg" alt="Corea del Sur">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/germany.svg" alt="Alemania">
+                              </span>
+                            </li>
+                          </ul>
+                          <div class="ft-org-game__mundial__group__progress">
+                            <span class="ft-org-game__mundial__group__progress-bar"></span>
+                          </div>
+                          <div class="ft-org-game__mundial__group__actions">
+                            <span class="ft-org-game__mundial__group__link">
+                              Empezar <span aria-hidden="true">&#8250;</span>
+                            </span>
+                          </div>
+                        </a>
+            
+                        <a href="#" class="ft-org-game__mundial__group">
+                          <h3 class="ft-org-game__mundial__group-title">
+                            Grupo H
+                          </h3>
+            
+                          <ul class="ft-org-game__mundial__group__teams">
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/england.svg" alt="Inglaterra">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/france.svg" alt="Francia">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/south_korea.svg" alt="Corea del Sur">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/germany.svg" alt="Alemania">
+                              </span>
+                            </li>
+                          </ul>
+                          <div class="ft-org-game__mundial__group__progress">
+                            <span class="ft-org-game__mundial__group__progress-bar"></span>
+                          </div>
+                          <div class="ft-org-game__mundial__group__actions">
+                            <span class="ft-org-game__mundial__group__link">
+                              Empezar <span aria-hidden="true">&#8250;</span>
+                            </span>
+                          </div>
+                        </a>
+            
+                        <a href="#" class="ft-org-game__mundial__group">
+                          <h3 class="ft-org-game__mundial__group-title">
+                            Grupo I
+                          </h3>
+            
+                          <ul class="ft-org-game__mundial__group__teams">
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/england.svg" alt="Inglaterra">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/france.svg" alt="Francia">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/south_korea.svg" alt="Corea del Sur">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/germany.svg" alt="Alemania">
+                              </span>
+                            </li>
+                          </ul>
+                          <div class="ft-org-game__mundial__group__progress">
+                            <span class="ft-org-game__mundial__group__progress-bar"></span>
+                          </div>
+                          <div class="ft-org-game__mundial__group__actions">
+                            <span class="ft-org-game__mundial__group__link">
+                              Empezar <span aria-hidden="true">&#8250;</span>
+                            </span>
+                          </div>
+                        </a>
+            
+                        <a href="#" class="ft-org-game__mundial__group">
+                          <h3 class="ft-org-game__mundial__group-title">
+                            Grupo J
+                          </h3>
+            
+                          <ul class="ft-org-game__mundial__group__teams">
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/england.svg" alt="Inglaterra">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/france.svg" alt="Francia">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/south_korea.svg" alt="Corea del Sur">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/germany.svg" alt="Alemania">
+                              </span>
+                            </li>
+                          </ul>
+                          <div class="ft-org-game__mundial__group__progress">
+                            <span class="ft-org-game__mundial__group__progress-bar"></span>
+                          </div>
+                          <div class="ft-org-game__mundial__group__actions">
+                            <span class="ft-org-game__mundial__group__link">
+                              Empezar <span aria-hidden="true">&#8250;</span>
+                            </span>
+                          </div>
+                        </a>
+            
+                        <a href="#" class="ft-org-game__mundial__group">
+                          <h3 class="ft-org-game__mundial__group-title">
+                            Grupo K
+                          </h3>
+            
+                          <ul class="ft-org-game__mundial__group__teams">
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/england.svg" alt="Inglaterra">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/france.svg" alt="Francia">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/south_korea.svg" alt="Corea del Sur">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/germany.svg" alt="Alemania">
+                              </span>
+                            </li>
+                          </ul>
+                          <div class="ft-org-game__mundial__group__progress">
+                            <span class="ft-org-game__mundial__group__progress-bar"></span>
+                          </div>
+                          <div class="ft-org-game__mundial__group__actions">
+                            <span class="ft-org-game__mundial__group__link">
+                              Empezar <span aria-hidden="true">&#8250;</span>
+                            </span>
+                          </div>
+                        </a>
+            
+                        <a href="#" class="ft-org-game__mundial__group">
+                          <h3 class="ft-org-game__mundial__group-title">
+                            Grupo L
+                          </h3>
+            
+                          <ul class="ft-org-game__mundial__group__teams">
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/england.svg" alt="Inglaterra">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/france.svg" alt="Francia">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/south_korea.svg" alt="Corea del Sur">
+                              </span>
+                            </li>
+                            <li class="ft-org-game__mundial__group__team">
+                              <span class="ft-org-game__mundial__flag">
+                                <img src="../../cds-statics/assets/img/flags/germany.svg" alt="Alemania">
+                              </span>
+                            </li>
+                          </ul>
+                          <div class="ft-org-game__mundial__group__progress">
+                            <span class="ft-org-game__mundial__group__progress-bar"></span>
+                          </div>
+                          <div class="ft-org-game__mundial__group__actions">
+                            <span class="ft-org-game__mundial__group__link">
+                              Empezar <span aria-hidden="true">&#8250;</span>
+                            </span>
+                          </div>
+                        </a>
+            
+                        <section class="ft-org-game__mundial__login">
+                        
+                          <div class="ft-org-game__mundial__login-content">
+                            <!-- Registro -->
+                            <p class="ft-org-game__mundial__login-title">
+                              Acuérdate de registrarte / iniciar sesión ...
+                            </p>
+                            <!-- Alias -->
+                            <p class="ft-org-game__mundial__login-title">
+                              Ey! Ahora mismo tienes un alias genérico <span>[user_123456]</span>.
+                              Te damos la opción de personalizarlo:
+                            </p>
+                            <!-- Registro/Alias -->
+                            <ul class="ft-list ft-list--primary ft-org-game__mundial__login-text">
+                              <li class="ft-list__item">Para poder <strong>participar</strong> en el ranking general</li>
+                              <li class="ft-list__item">Para <strong>conservar y acceder</strong> a tus predicciones
+                                desde cualquier dispositivo</li>
+                            </ul>
+                          </div>
+                        
+                          <!-- Registro -->
+                          <div class="ft-org-game__mundial__login-actions">
+                            <a href="#" class="ft-org-game__mundial__login-link ft-link ft-link--decoration">
+                              Iniciar sesión
+                            </a>
+                        
+                            <a href="#" class="ft-org-game__mundial__login-button ft-btn ft-btn--tertiary ft-btn--sm-md">
+                              Regístrate
+                            </a>
+                          </div>
+                        
+                          <!-- Alias -->
+                          <div class="ft-org-game__mundial__login-alias">
+                            <svg class="ft-org-game__mundial__login-img" aria-hidden="true" width="81" height="51" viewBox="0 0 81 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M4.56713 34.729L4.48776 34.7014C4.37511 34.699 4.18117 34.572 3.90597 34.3205C3.87483 34.2638 3.83292 34.1368 3.78025 33.9396C3.75594 33.8486 3.72757 33.7424 3.69516 33.621C3.66275 33.4996 3.63577 33.3687 3.61424 33.2282C3.51446 32.7347 3.38314 31.9734 3.22028 30.9442L3.00031 29.4914L2.96064 27.186C2.88191 27.1907 2.81267 27.2011 2.75292 27.2171C2.68913 27.2178 2.62938 27.2338 2.57369 27.2649C2.37952 27.3168 2.23989 27.1834 2.1548 26.8648C2.05351 26.4856 2.11489 26.266 2.33893 26.2062C2.6974 26.1104 2.89904 26.0566 2.94385 26.0446C2.94409 25.8658 2.94167 25.647 2.93658 25.3883C2.94239 25.1104 2.95502 24.7983 2.97449 24.4518C2.95828 24.3911 2.94486 24.2809 2.93421 24.1212C2.91952 23.9463 2.90887 23.7867 2.90228 23.6421C2.90657 23.4785 2.90872 23.3966 2.90872 23.3966C2.88489 22.9479 2.80445 22.1974 2.66741 21.145C2.54641 21.2911 2.37377 21.4835 2.14949 21.7222C1.93609 21.9417 1.67105 22.2075 1.35436 22.5196C1.32854 22.5428 1.28576 22.5623 1.22602 22.5783C1.00197 22.6381 0.845381 22.5012 0.756244 22.1674C0.687365 21.9095 0.722919 21.7131 0.862908 21.5782L2.05976 20.3077C2.47162 19.8727 2.88337 19.5271 3.29499 19.2709C3.85875 18.9252 4.4543 18.6687 5.08162 18.5011C5.36541 18.4253 5.67021 18.3683 5.99603 18.3301C6.62462 18.2272 7.0536 18.1858 7.28297 18.2058C7.72549 18.1851 8.11701 18.2431 8.45752 18.3797C8.61626 18.4348 8.8231 18.5502 9.07805 18.7259C9.2325 18.9447 9.36644 19.2665 9.47989 19.6913C9.49459 19.8662 9.47587 20.1556 9.42375 20.5596C9.35972 20.7392 9.25023 20.8985 9.09531 21.0374C8.97582 21.0693 8.88227 20.9886 8.81466 20.7954C8.79162 20.769 8.77402 20.7331 8.76187 20.6876C8.74971 20.6421 8.73958 20.6041 8.73148 20.5738C8.71527 20.5131 8.70109 20.46 8.68894 20.4145C8.69172 20.365 8.69248 20.3079 8.6912 20.2432C8.73347 20.1019 8.74182 19.9534 8.71623 19.7977C8.72712 19.7786 8.72851 19.7538 8.72041 19.7235C8.70015 19.6476 8.62356 19.5706 8.49064 19.4923C8.20177 19.3094 7.8476 19.2414 7.42811 19.2885C7.02356 19.3315 6.61357 19.3841 6.19814 19.4463C6.14927 19.4431 6.09497 19.4495 6.03523 19.4654C5.97548 19.4814 5.90827 19.4993 5.83359 19.5193C5.53486 19.5991 5.19741 19.7136 4.82122 19.8628C4.44098 19.9969 4.11504 20.1245 3.84341 20.2458C3.57178 20.3671 3.43596 20.4278 3.43596 20.4278C3.38432 20.4741 3.34964 20.524 3.33192 20.5775C3.33724 20.6573 3.36207 20.8701 3.4064 21.2158C3.46161 21.5424 3.53633 22.0019 3.63055 22.5944L3.74232 24.2711L3.74577 24.7334C3.75919 24.8435 3.76034 24.9976 3.74922 25.1956C3.74898 25.3745 3.74596 25.6028 3.74016 25.8807L4.03141 25.8029C4.1509 25.771 4.27584 25.7295 4.40621 25.6784C4.53253 25.6122 4.66632 25.5439 4.80758 25.4737C4.9896 25.3763 5.14579 25.3021 5.27617 25.2511C5.41743 25.1808 5.53084 25.1262 5.61641 25.087C5.95184 24.965 6.28182 24.8524 6.60637 24.7495C6.9418 24.6274 7.27381 24.5225 7.60241 24.4347C7.79658 24.3829 7.93419 24.5087 8.01522 24.8121C8.12057 25.2065 8.05375 25.4357 7.81477 25.4995C7.48617 25.5872 7.16162 25.6902 6.84113 25.8083C6.53152 25.9072 6.21647 26.0157 5.89597 26.1338C5.82534 26.169 5.7194 26.2216 5.57814 26.2919C5.44777 26.3429 5.29157 26.4172 5.10956 26.5145C4.95336 26.5887 4.80463 26.661 4.66337 26.7312C4.533 26.7823 4.40807 26.8238 4.28858 26.8557L3.66125 27.0232C3.67753 28.0428 3.74645 28.7802 3.868 29.2353C3.88524 29.5395 3.91729 29.9291 3.96416 30.4042C4.00698 30.8641 4.07005 31.3999 4.15339 32.0115L4.25254 32.4726C4.26064 32.5029 4.27748 32.5959 4.30306 32.7516C4.33953 32.8882 4.39764 33.0758 4.47741 33.3146C4.57211 33.5493 4.69211 33.6392 4.83742 33.5841C4.904 33.5338 5.00589 33.466 5.1431 33.3806C5.29524 33.2912 5.48675 33.1994 5.71763 33.1052C6.50115 32.8635 7.08037 32.6356 7.45528 32.4217C7.59932 32.302 7.91183 32.0641 8.39282 31.7081C8.50015 31.6307 8.6428 31.5357 8.82076 31.4232C8.99468 31.2955 9.2134 31.1558 9.47693 31.0042C9.67388 30.9028 9.96462 30.7033 10.3492 30.4055L10.8959 29.5769C10.9584 29.5114 11.0046 29.4747 11.0345 29.4667C11.2436 29.4109 11.3927 29.5498 11.4819 29.8836C11.5346 30.0808 11.5119 30.2656 11.414 30.4381L10.9017 31.3063C10.759 31.4907 10.5816 31.6355 10.3698 31.7409L9.86244 31.9983C9.747 32.0454 9.59486 32.1348 9.40601 32.2665C9.2321 32.3942 9.0249 32.547 8.78441 32.725C8.69606 32.8136 8.56493 32.9218 8.39102 33.0495C8.22799 33.1581 8.01876 33.3033 7.76333 33.4853C7.54056 33.6098 7.27639 33.7291 6.97084 33.8432C6.68021 33.9534 6.35567 34.0563 5.9972 34.152L6.00328 34.1748C5.7805 34.2993 5.54418 34.403 5.29432 34.486C5.06344 34.5802 4.82105 34.6612 4.56713 34.729Z" fill="black"/>
+                              <path d="M15.3092 32.9572C14.8055 33.108 14.3029 32.844 13.8016 32.1652C13.3152 31.4825 12.8695 30.3825 12.4643 28.8655C12.2333 28.0007 12.0433 27.0194 11.8941 25.9215C11.7558 24.8045 11.6563 23.5634 11.5957 22.198C11.4119 18.574 11.8353 16.6243 12.8659 16.349C13.2692 16.2413 13.6597 16.5352 14.0375 17.2307C14.3218 17.7562 14.5023 18.2524 14.5791 18.7195C14.8227 20.231 14.5028 22.4781 13.6192 25.4608C13.5471 25.6101 13.4627 25.8033 13.366 26.0404C13.2842 26.2735 13.1827 26.5526 13.0615 26.8775C13.1248 27.2344 13.1861 27.5837 13.2453 27.9255C13.3195 28.2632 13.3972 28.5838 13.4782 28.8872C13.6241 29.4334 13.8188 29.9827 14.0624 30.5353C14.4657 31.3865 14.8317 31.7682 15.1603 31.6805C15.4739 31.5967 15.7329 31.3081 15.9372 30.8147L16.3013 29.5716C16.3435 29.4303 16.4244 29.3437 16.5439 29.3118C16.6933 29.2719 16.7882 29.3278 16.8287 29.4795C16.8368 29.5099 16.8375 29.5422 16.8306 29.5765C16.8387 29.6069 16.8394 29.6392 16.8325 29.6736C16.7695 30.0967 16.7073 30.4628 16.6458 30.7717C16.5952 31.0616 16.5378 31.2963 16.4738 31.4759C16.2053 32.3278 15.8171 32.8215 15.3092 32.9572ZM13.1474 17.4928C12.2383 18.2232 12.1376 20.9318 12.8453 25.6187C12.878 25.5613 12.9209 25.4523 12.974 25.2918C13.9918 22.452 14.3102 20.3191 13.9294 18.893C13.901 18.7868 13.8631 18.6751 13.8158 18.5577C13.7644 18.4251 13.7015 18.2794 13.627 18.1205C13.428 17.7348 13.2681 17.5256 13.1474 17.4928Z" fill="black"/>
+                              <path d="M16.5985 22.8854C16.3745 22.9453 16.2335 22.8366 16.1755 22.5596L16.1686 21.635C16.1688 21.4562 16.2511 21.3448 16.4154 21.3009C16.7589 21.2092 16.9393 21.3154 16.9565 21.6196C16.9983 21.836 17.0088 22.0851 16.9881 22.3669C16.9674 22.6488 16.8375 22.8216 16.5985 22.8854ZM17.7288 30.2631C17.5944 30.299 17.4885 30.2622 17.4113 30.1528C17.307 30.0019 17.215 29.8071 17.1352 29.5683C17.0554 29.3296 16.9825 29.0565 16.9164 28.7491C16.8531 28.3922 16.8177 27.9303 16.8104 27.3634C16.8179 26.7926 16.8555 26.1243 16.923 25.3586C16.9422 25.1909 17.0265 25.0872 17.1759 25.0473C17.4597 24.9715 17.5912 25.0745 17.5705 25.3563C17.5634 25.5695 17.5638 25.7807 17.5716 25.9899C17.5795 26.1991 17.5874 26.4083 17.5952 26.6175C17.6137 26.9863 17.6371 27.3133 17.6652 27.5983C17.6933 27.8834 17.7357 28.1321 17.7925 28.3445C17.991 29.0879 18.1018 29.4727 18.1248 29.4991C18.2101 29.6388 18.2038 29.7949 18.1059 29.9674C18.0038 30.1246 17.8782 30.2232 17.7288 30.2631Z" fill="black"/>
+                              <path d="M22.6092 38.9309C21.6532 39.1862 20.9889 38.616 20.6161 37.2203C20.3852 36.3555 20.4327 35.3351 20.7587 34.1591C20.8992 33.6665 21.0661 33.1831 21.2595 32.7089C21.4529 32.2347 21.6897 31.7732 21.9699 31.3246L23.7575 28.3117C23.6873 27.9891 23.6259 27.7292 23.5732 27.532C23.5315 27.3156 23.4964 27.1543 23.468 27.0481C23.3455 27.3084 23.0573 27.6373 22.6034 28.0348C22.0979 28.4786 21.6061 28.7643 21.1282 28.892C20.7996 28.9798 20.5058 28.9282 20.2468 28.7373C19.9987 28.5273 19.828 28.2478 19.7348 27.8989C19.5971 27.3831 19.5843 26.8258 19.6964 26.227C19.8234 25.6242 20.0509 24.9783 20.379 24.2893C21.0201 22.9154 21.8112 22.1027 22.7522 21.8514C22.9762 21.7916 23.1207 21.883 23.1855 22.1258C23.2503 22.3685 23.1707 22.5198 22.9467 22.5796C22.1849 22.7831 21.5612 23.3235 21.0754 24.2009C20.6441 24.9824 20.3877 25.8798 20.3063 26.893C20.283 27.0455 20.2936 27.2052 20.3382 27.372C20.4881 27.9334 20.7871 28.1542 21.2352 28.0345C21.3547 28.0026 21.4606 27.9499 21.553 27.8765C22.8803 27.0344 23.4564 25.5966 23.2813 23.563C23.2694 23.3386 23.368 23.1985 23.5771 23.1427C23.7713 23.0908 23.8906 23.1483 23.9352 23.3152C23.9433 23.3455 23.946 23.3855 23.9432 23.435C23.9513 23.4653 23.954 23.5052 23.9512 23.5547C23.9469 23.7184 23.9554 23.9599 23.9767 24.2793C24.0129 24.5947 24.0532 24.9252 24.0975 25.271C24.1418 25.6167 24.1855 25.9301 24.2286 26.2111C24.2676 26.477 24.2993 26.6555 24.3236 26.7465C24.3722 26.9285 24.4712 26.9996 24.6205 26.9597C24.7102 26.9358 24.7767 26.8855 24.8203 26.8089C24.9344 26.6971 25.1125 26.4952 25.3545 26.203C25.4755 26.0569 25.5883 25.9699 25.6929 25.942C25.8123 25.9101 25.8964 25.9851 25.945 26.1672C25.9896 26.3341 25.9453 26.4678 25.8121 26.5684C25.6314 26.7304 25.4329 26.9459 25.2167 27.215C25.0115 27.4648 24.7939 27.7586 24.564 28.0963C24.7 28.9051 24.8077 29.6077 24.887 30.2042C24.9812 30.7966 25.0436 31.3001 25.0743 31.7144C25.2228 33.3488 25.1476 34.7748 24.8487 35.9923C24.4609 37.6562 23.7144 38.6357 22.6092 38.9309ZM22.2354 38.2506C24.207 37.724 24.8187 35.0414 24.0705 30.2028C24.0584 30.1573 24.0462 30.1118 24.0341 30.0663C24.0368 30.0168 24.0342 29.9769 24.0261 29.9465C23.9491 29.6583 23.8434 29.5321 23.709 29.568C23.6044 29.5959 23.4868 29.7248 23.3562 29.9548C23.2474 30.1464 23.129 30.3324 23.0012 30.5128C22.8883 30.6892 22.7373 30.9327 22.5482 31.2433C22.0027 32.1366 21.5881 33.1006 21.3044 34.1353C20.9377 35.3384 20.8596 36.3345 21.0703 37.1233C21.3094 38.0184 21.6977 38.3942 22.2354 38.2506Z" fill="black"/>
+                              <path d="M29.0468 28.1424C28.3896 28.3179 27.7972 28.2567 27.2696 27.9588C26.7569 27.6569 26.4074 27.157 26.221 26.4592C26.1805 26.3074 26.1475 26.1537 26.1219 25.998C26.1112 25.8384 26.1006 25.6787 26.0899 25.519C26.08 24.8228 26.3492 24.0032 26.8975 23.0604C27.5192 22.033 28.1362 21.4375 28.7486 21.2739C29.2564 21.1383 29.5724 21.3627 29.6965 21.9472C29.8801 22.6945 29.6713 23.5304 29.0701 24.4549C28.8035 24.8349 28.516 25.1961 28.2074 25.5386C27.9137 25.8771 27.5653 26.1001 27.162 26.2078L27.1396 26.2138C27.4478 27.188 28.0798 27.5474 29.0357 27.2921C29.3494 27.2083 29.6801 27.0387 30.028 26.7833C30.0538 26.7601 30.0966 26.7406 30.1563 26.7246C30.3505 26.6728 30.4739 26.7455 30.5266 26.9427C30.563 27.0792 30.5242 27.2034 30.41 27.3151C30.0688 27.7151 29.6144 27.9908 29.0468 28.1424ZM27.4589 24.9827C27.8935 24.7529 28.2367 24.4499 28.4883 24.0739C28.9371 23.4177 29.1007 22.862 28.9792 22.4069L28.967 22.3614C28.9387 22.2552 28.879 22.1817 28.7881 22.141C28.6973 22.1003 28.6409 22.0991 28.6192 22.1374C28.1561 22.261 27.7544 22.734 27.414 23.5563C27.3676 23.6825 27.3165 23.8505 27.2606 24.0605C27.2006 24.2553 27.1433 24.49 27.0886 24.7647C27.0818 24.799 27.0824 24.8313 27.0905 24.8617C27.127 24.9982 27.2498 25.0386 27.4589 24.9827Z" fill="black"/>
+                              <path d="M37.6692 26.7904C37.2958 26.8901 37.0483 26.7124 36.9268 26.2573C36.3231 23.9969 35.8377 21.5504 35.4707 18.9179C35.3132 18.9275 35.1503 18.9466 34.9819 18.9753C34.8245 18.9848 34.667 18.9944 34.5095 19.0039C34.0751 19.0549 33.8336 18.9894 33.785 18.8074C33.7364 18.6253 33.7956 18.4876 33.9627 18.3942L33.9403 18.4002C33.8058 18.4361 33.8262 18.4225 34.0014 18.3595C34.1725 18.2813 34.3959 18.1891 34.6716 18.083C34.9473 17.9769 35.1673 17.9019 35.3316 17.858C35.2794 17.3031 35.2905 16.6256 35.3649 15.8256C35.3967 15.3457 35.4149 14.9346 35.4195 14.592C35.4349 14.2304 35.4461 13.9429 35.4532 13.7297C35.4468 13.4064 35.6005 13.2028 35.9142 13.119C36.0486 13.0831 36.1191 13.1375 36.1257 13.282C36.1196 13.7387 36.1182 14.3323 36.1213 15.0629C36.1203 15.7782 36.1388 16.6266 36.1769 17.6078C36.3113 17.5719 36.4756 17.5281 36.6698 17.4762C36.8789 17.4204 37.1199 17.3641 37.3928 17.3075C37.6657 17.2509 37.9013 17.2042 38.0995 17.1675C38.3086 17.1117 38.4729 17.0678 38.5924 17.0359C38.7268 17 38.8082 17.0351 38.8366 17.1413C38.8609 17.2323 38.8275 17.3469 38.7363 17.485C38.6602 17.6191 38.5548 17.7041 38.4204 17.74C38.2412 17.7879 37.9804 17.8901 37.6382 18.0465C37.2919 18.1877 36.8566 18.3852 36.3323 18.639C36.6066 20.5649 37.1712 23.1283 38.0261 26.3294C38.0869 26.557 37.9679 26.7106 37.6692 26.7904Z" fill="black"/>
+                              <path d="M45.6479 23.1968C45.3233 23.2997 45.0168 23.1703 44.7281 22.8085C44.678 22.7407 44.6062 22.6217 44.5128 22.4516C44.4194 22.2815 44.2968 22.0623 44.1451 21.794C43.9841 21.4307 43.8465 21.3049 43.7323 21.4167C43.5947 21.8598 43.3625 22.3687 43.036 22.9435C42.6224 23.6716 42.2737 24.0735 41.9899 24.1493C41.6762 24.2331 41.3426 24.0622 40.9889 23.6365C40.6934 23.3091 40.4991 22.971 40.4059 22.622C40.0939 21.4539 39.9698 20.3899 40.0335 19.4302C40.0596 19.2283 40.1473 19.1073 40.2966 19.0674C40.4311 19.0315 40.5763 19.0659 40.7322 19.1705C40.8882 19.2751 40.9884 19.4109 41.033 19.5778C41.0573 19.6688 41.0462 19.8668 40.9996 20.1718C40.8657 20.8089 40.892 21.4764 41.0784 22.1742C41.281 22.9328 41.5242 23.2742 41.8079 23.1984C41.9424 23.1625 42.2122 22.8547 42.6175 22.2752C43.3288 21.2238 43.7139 19.9995 43.7728 18.6023C43.7988 18.4003 43.894 18.2773 44.0583 18.2334C44.3272 18.1616 44.492 18.2395 44.5527 18.4671C44.5933 18.6188 44.6154 18.7917 44.6192 18.9857C44.638 19.1757 44.6404 19.3945 44.6265 19.642C44.6275 19.8855 44.6374 20.1023 44.6562 20.2923C44.6749 20.4823 44.7046 20.6532 44.7451 20.8049C44.7734 20.9111 44.8153 21.0381 44.8708 21.1858C44.9222 21.3183 44.9851 21.4641 45.0596 21.623C45.2558 22.0581 45.4088 22.3017 45.5187 22.3536C45.5187 22.3536 45.5833 22.2957 45.7124 22.18C45.8524 22.0451 46.0073 21.9062 46.1772 21.7633C46.3579 21.6013 46.5054 21.4644 46.6195 21.3526C46.7446 21.2217 46.8071 21.1562 46.8071 21.1562C46.9565 21.1163 47.0473 21.1571 47.0798 21.2785C47.1122 21.3998 47.0318 21.6082 46.8387 21.9036C46.6605 22.195 46.4538 22.4696 46.2186 22.7274C45.9834 22.9853 45.7932 23.1417 45.6479 23.1968Z" fill="black"/>
+                              <path d="M57.2551 20.3894C57.1804 20.4093 57.1051 20.3969 57.0291 20.3522C56.5124 20.0351 56.1371 19.469 55.9034 18.6537C55.8872 18.593 55.8764 18.5228 55.8711 18.4429C55.8618 18.3479 55.8429 18.2473 55.8145 18.1411L55.7093 17.6573L55.6911 17.589C55.6181 17.3159 55.4947 17.2432 55.3208 17.3709C55.0788 17.6631 54.7586 18.0818 54.3601 18.6271C53.9726 19.1531 53.5048 19.7982 52.9568 20.5622C52.735 20.9302 52.3926 21.176 51.9296 21.2997C51.6608 21.3715 51.3908 21.2892 51.1196 21.0528C50.8593 20.7973 50.7151 20.527 50.687 20.2419C50.6265 19.8355 50.6699 19.3688 50.8172 18.8419C50.9604 18.2998 51.1654 17.7493 51.4322 17.1905C51.7099 16.6125 52.0262 16.0892 52.3811 15.6206C52.7469 15.1328 53.1186 14.7572 53.4963 14.4938C53.6444 14.3893 53.7891 14.3019 53.9303 14.2317C54.0716 14.1614 54.2169 14.1064 54.3663 14.0665C55.0085 13.8949 55.3904 14.0367 55.512 14.4919C55.5525 14.6436 55.513 14.7354 55.3935 14.7673C55.3487 14.7793 55.3039 14.7912 55.2591 14.8032C55.2102 14.8 55.1593 14.7892 55.1064 14.7708C54.7768 14.6151 54.5 14.5671 54.2759 14.6269C54.0519 14.6868 53.7598 14.9111 53.3995 15.2998C53.1127 15.604 52.8476 15.9592 52.604 16.3656C52.3605 16.7719 52.1421 17.2122 51.9487 17.6864C51.7662 18.1415 51.6333 18.5427 51.5501 18.89C51.4628 19.2221 51.4346 19.5059 51.4655 19.7415C51.4667 19.8061 51.4795 19.884 51.5038 19.975C51.5686 20.2177 51.6982 20.3132 51.8923 20.2613C52.1313 20.1975 52.5206 19.8579 53.0603 19.2424C54.345 17.7616 55.1842 16.5298 55.5778 15.547C55.6744 15.3099 55.738 15.0085 55.7683 14.6428C55.7863 14.4105 55.9147 14.2624 56.1537 14.1986C56.4226 14.1268 56.5975 14.2426 56.6786 14.546C56.7434 14.7887 56.7124 15.1221 56.5856 15.546C56.5229 16.7492 56.5483 17.5632 56.6617 17.988C56.8658 18.6324 57.1624 19.1139 57.5516 19.4325C57.6085 19.4661 57.6471 19.5208 57.6674 19.5966C57.7039 19.7332 57.6731 19.8877 57.5752 20.0601C57.4812 20.2477 57.3745 20.3575 57.2551 20.3894Z" fill="black"/>
+                              <path d="M61.4526 20.6336C60.9488 20.7844 60.4463 20.5204 59.945 19.8416C59.4586 19.1589 59.0128 18.059 58.6077 16.5419C58.3767 15.6771 58.1867 14.6958 58.0375 13.598C57.8991 12.4809 57.7997 11.2398 57.7391 9.87445C57.5553 6.25037 57.9787 4.30071 59.0093 4.02546C59.4125 3.91776 59.8031 4.21166 60.1808 4.90716C60.4652 5.43259 60.6457 5.92884 60.7225 6.39594C60.9661 7.9074 60.6462 10.1545 59.7626 13.1372C59.6905 13.2865 59.606 13.4797 59.5093 13.7168C59.4276 13.95 59.3261 14.229 59.2049 14.5539C59.2682 14.9108 59.3295 15.2602 59.3887 15.6019C59.4629 15.9396 59.5405 16.2602 59.6216 16.5636C59.7674 17.1098 59.9622 17.6591 60.2057 18.2117C60.6091 19.0629 60.9751 19.4446 61.3037 19.3569C61.6173 19.2731 61.8763 18.9845 62.0806 18.4911L62.4446 17.2481C62.4869 17.1068 62.5678 17.0201 62.6873 16.9882C62.8366 16.9483 62.9316 17.0042 62.9721 17.156C62.9802 17.1863 62.9808 17.2186 62.974 17.253C62.9821 17.2833 62.9827 17.3156 62.9759 17.35C62.9129 17.7731 62.8507 18.1392 62.7892 18.4482C62.7385 18.738 62.6812 18.9727 62.6172 19.1523C62.3487 20.0042 61.9605 20.4979 61.4526 20.6336ZM59.2907 5.16926C58.3817 5.89963 58.281 8.60827 58.9887 13.2952C59.0214 13.2377 59.0642 13.1287 59.1174 12.9682C60.1352 10.1284 60.4536 7.99552 60.0727 6.56946C60.0444 6.46326 60.0065 6.35148 59.9592 6.2341C59.9078 6.10155 59.8448 5.95583 59.7704 5.79692C59.5714 5.41124 59.4115 5.20202 59.2907 5.16926Z" fill="black"/>
+                              <path d="M62.7419 10.5618C62.5179 10.6217 62.3768 10.5131 62.3188 10.236L62.3119 9.31142C62.3122 9.13257 62.3945 9.02121 62.5587 8.97733C62.9023 8.88558 63.0827 8.99181 63.0999 9.29602C63.1417 9.5124 63.1522 9.76151 63.1315 10.0433C63.1107 10.3252 62.9809 10.498 62.7419 10.5618ZM63.8722 17.9395C63.7378 17.9754 63.6319 17.9387 63.5547 17.8293C63.4504 17.6783 63.3584 17.4835 63.2786 17.2448C63.1988 17.006 63.1259 16.7329 63.0598 16.4255C62.9965 16.0686 62.9611 15.6067 62.9538 15.0398C62.9613 14.469 62.9988 13.8007 63.0664 13.035C63.0856 12.8674 63.1699 12.7636 63.3193 12.7237C63.6031 12.6479 63.7346 12.7509 63.7138 13.0328C63.7068 13.2459 63.7072 13.4571 63.715 13.6663C63.7229 13.8755 63.7308 14.0847 63.7386 14.2939C63.7571 14.6628 63.7804 14.9897 63.8086 15.2748C63.8367 15.5598 63.8791 15.8085 63.9358 16.0209C64.1344 16.7643 64.2452 17.1491 64.2682 17.1755C64.3535 17.3152 64.3472 17.4713 64.2492 17.6438C64.1472 17.801 64.0215 17.8996 63.8722 17.9395Z" fill="black"/>
+                              <path d="M72.3517 16.3575C72.2771 16.3774 72.2018 16.365 72.1258 16.3203C71.6091 16.0032 71.2338 15.4371 71.0001 14.6218C70.9839 14.5611 70.9731 14.4909 70.9678 14.411C70.9584 14.316 70.9396 14.2154 70.9112 14.1092L70.806 13.6254L70.7878 13.5571C70.7148 13.284 70.5914 13.2113 70.4175 13.339C70.1755 13.6312 69.8553 14.0499 69.4568 14.5952C69.0693 15.1212 68.6015 15.7663 68.0535 16.5303C67.8317 16.8983 67.4893 17.1441 67.0263 17.2678C66.7575 17.3396 66.4875 17.2573 66.2163 17.0209C65.956 16.7654 65.8118 16.4951 65.7837 16.21C65.7232 15.8036 65.7666 15.3369 65.9139 14.81C66.0571 14.2679 66.2621 13.7174 66.5289 13.1586C66.8066 12.5806 67.1229 12.0573 67.4778 11.5887C67.8436 11.1009 68.2153 10.7254 68.593 10.4619C68.7411 10.3574 68.8858 10.27 69.027 10.1998C69.1683 10.1295 69.3136 10.0745 69.463 10.0346C70.1052 9.86304 70.4871 10.0048 70.6087 10.46C70.6492 10.6117 70.6097 10.7035 70.4902 10.7354C70.4454 10.7474 70.4006 10.7593 70.3558 10.7713C70.3069 10.7681 70.256 10.7573 70.2031 10.7389C69.8735 10.5832 69.5967 10.5352 69.3726 10.595C69.1486 10.6549 68.8565 10.8792 68.4962 11.2679C68.2094 11.5721 67.9443 11.9273 67.7007 12.3337C67.4572 12.74 67.2388 13.1803 67.0454 13.6545C66.8629 14.1096 66.73 14.5108 66.6468 14.8581C66.5594 15.1902 66.5312 15.474 66.5621 15.7096C66.5634 15.7742 66.5762 15.8521 66.6005 15.9431C66.6653 16.1858 66.7948 16.2813 66.989 16.2294C67.228 16.1656 67.6173 15.826 68.157 15.2105C69.4417 13.7297 70.2809 12.4979 70.6744 11.5151C70.7711 11.278 70.8347 10.9766 70.865 10.6109C70.883 10.3786 71.0114 10.2305 71.2504 10.1667C71.5193 10.0949 71.6942 10.2107 71.7753 10.5141C71.8401 10.7568 71.8091 11.0902 71.6823 11.5141C71.6196 12.7173 71.645 13.5313 71.7584 13.9561C71.9625 14.6005 72.2591 15.082 72.6483 15.4006C72.7052 15.4342 72.7438 15.4889 72.7641 15.5647C72.8006 15.7013 72.7698 15.8558 72.6718 16.0282C72.5779 16.2158 72.4712 16.3256 72.3517 16.3575Z" fill="black"/>
+                              <path d="M75.3512 15.8002C74.9778 15.8999 74.6384 15.9174 74.3331 15.8527C74.0427 15.784 73.8651 15.6283 73.8003 15.3855C73.7557 15.2186 73.8081 15.1153 73.9575 15.0754C73.9425 15.0793 74.0762 15.1005 74.3585 15.1389C74.6367 15.1621 74.9177 15.1358 75.2015 15.06C76.0678 14.8287 76.5036 14.2735 76.5088 13.3944C76.5053 13.0215 76.0376 12.5288 75.106 11.9162C74.4482 11.4905 74.0241 10.9212 73.8337 10.2081C73.7689 9.96541 73.7985 9.65682 73.9225 9.28239C74.0425 8.89278 74.2194 8.53672 74.4533 8.21421C74.6831 7.87652 74.9325 7.67178 75.2013 7.59998C75.6793 7.47233 75.9806 7.52189 76.1051 7.74867C76.1322 7.79019 76.1518 7.83371 76.164 7.87922C76.1911 7.92075 76.2107 7.96426 76.2229 8.00978C76.2877 8.25251 76.2305 8.39781 76.0513 8.44568C75.9467 8.4736 75.8544 8.45762 75.7744 8.39772C75.6795 8.34181 75.5648 8.33181 75.4304 8.36771C75.4005 8.37568 75.3632 8.38566 75.3184 8.39762C75.2735 8.40959 75.2402 8.43474 75.2185 8.47306C74.7537 8.88974 74.5488 9.35078 74.6038 9.8562C74.6575 10.2969 75.1366 10.8028 76.0412 11.3739C76.8509 11.889 77.3347 12.4425 77.4927 13.0341C77.6669 13.6865 77.4781 14.2976 76.9263 14.8676C76.5035 15.3218 75.9785 15.6327 75.3512 15.8002Z" fill="black"/>
+                              <path d="M33.6906 31.7321C33.5302 31.5073 33.218 31.4551 32.9932 31.6156C32.7684 31.776 32.7163 32.0882 32.8767 32.313L33.2837 32.0225L33.6906 31.7321ZM50.92 41.4099L50.92 40.9099L50.92 41.4099ZM80.0987 25.2516C80.0586 24.9784 79.8046 24.7894 79.5314 24.8295L75.0791 25.4832C74.8059 25.5234 74.6169 25.7774 74.657 26.0506C74.6971 26.3238 74.9512 26.5128 75.2244 26.4726L79.1819 25.8916L79.763 29.8491C79.8031 30.1223 80.0571 30.3113 80.3303 30.2712C80.6036 30.2311 80.7925 29.9771 80.7524 29.7039L80.0987 25.2516ZM33.2837 32.0225C32.8767 32.313 32.8768 32.3132 32.877 32.3134C32.8771 32.3135 32.8773 32.3138 32.8774 32.314C32.8778 32.3145 32.8782 32.3152 32.8788 32.3159C32.8799 32.3175 32.8814 32.3196 32.8834 32.3223C32.8872 32.3276 32.8927 32.3352 32.8999 32.3449C32.9141 32.3644 32.9349 32.3925 32.9621 32.4286C33.0164 32.5009 33.0966 32.6054 33.2019 32.7375C33.4124 33.0017 33.7238 33.3767 34.1312 33.8254C34.9455 34.7224 36.1462 35.9171 37.6952 37.1121C40.7901 39.4997 45.3042 41.9099 50.92 41.9099L50.92 41.4099L50.92 40.9099C45.5992 40.9099 41.2952 38.6264 38.306 36.3204C36.8131 35.1685 35.6552 34.0164 34.8716 33.1532C34.48 32.7219 34.1825 32.3635 33.9839 32.1143C33.8847 31.9897 33.8102 31.8926 33.7611 31.8273C33.7365 31.7947 33.7183 31.7701 33.7066 31.754C33.7007 31.746 33.6964 31.7401 33.6938 31.7364C33.6924 31.7346 33.6915 31.7333 33.691 31.7326C33.6907 31.7322 33.6906 31.732 33.6905 31.7319C33.6905 31.7318 33.6905 31.7319 33.6905 31.7319C33.6906 31.732 33.6906 31.7321 33.2837 32.0225ZM50.92 41.4099L50.92 41.9099C59.4384 41.9099 66.7174 37.8142 71.8412 33.7592C74.4073 31.7284 76.4449 29.6983 77.8415 28.1756C78.54 27.4139 79.0789 26.7784 79.4441 26.332C79.6267 26.1088 79.766 25.9329 79.86 25.8121C79.9071 25.7516 79.9428 25.705 79.9671 25.6731C79.9792 25.6572 79.9885 25.6449 79.9948 25.6365C79.998 25.6322 80.0005 25.629 80.0022 25.6267C80.003 25.6255 80.0037 25.6246 80.0042 25.6239C80.0045 25.6236 80.0047 25.6233 80.0048 25.6231C80.005 25.6229 80.0052 25.6227 79.604 25.3242C79.2028 25.0258 79.2029 25.0257 79.2029 25.0257C79.2028 25.0258 79.2028 25.0258 79.2027 25.026C79.2024 25.0263 79.202 25.0269 79.2014 25.0277C79.2002 25.0293 79.1983 25.0318 79.1957 25.0353C79.1904 25.0424 79.1822 25.0532 79.1712 25.0677C79.1492 25.0966 79.1157 25.1403 79.071 25.1977C78.9816 25.3125 78.8474 25.4822 78.6702 25.6988C78.3156 26.1321 77.789 26.7533 77.1045 27.4997C75.7349 28.993 73.7359 30.9844 71.2206 32.975C66.1817 36.9629 59.1188 40.9099 50.92 40.9099L50.92 41.4099Z" fill="black"/>
+                            </svg>
+                            
+                            <div class="ft-org-game__mundial__login-form">
+                              <div class="ft-mol-form ft-mol-form--has-label ft-mol-form--has-supporting-text">
+                                <input type="text" id="chooseAliasInput" class="ft-mol-form__input" name="alias" placeholder=" " autocomplete="nickname" aria-describedby="chooseAliasInputHelp">
+                                <label for="chooseAliasInput" class="ft-mol-form__label">Introduce tu alias</label>
+                                <p class="ft-mol-form__supporting-text" id="chooseAliasInputHelp">
+                                  <span class="ft-mol-form__supporting-message ft-helper-display-flex">
+                                    <img src="../../cds-statics/assets/img/icons/icon-c-error.svg" loading="lazy" class="ft-helper-img-rd" height="16px" width="16px" alt="alt text" title="title text">
+                                    &nbsp;
+                                    <span>Alias no válido</span>
+                                  </span>
+                                  <span class="ft-mol-form__supporting-numbers">&nbsp;</span>
+                                </p>
+                              </div>
+                              <a href="#" class="ft-org-game__mundial__login-alias-button ft-btn ft-btn--tertiary ft-btn--sm-md">
+                                Enviar
+                              </a>
+                            </div>
+                          </div>
+                        </section>
+            
+                      </div>
+                    </div>
+            
+                    <footer class="ft-org-game__mundial__footer">
+                      <div class="ft-org-game__mundial__footer-title">
+                        Copa Mundial de la FIFA 2026™
+                      </div>
+                    </footer>
+            
+                  </div>
+                </div>
+              </div>
+            
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </article>
+
+  <!-- JS: masthead -->
+  <script rel="modulepreload" src="../../cds-statics/js/affix/affix.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/headers/masthead.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/sticking/fourty-header-sticky.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/switch/fourty-js-switch-2024.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/form/fourty-js-form-combo-search.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/sidenav/fourty-js-sidenav-default.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/modal/fourty-js-popover.js"></script>
+  <script src="../../cds-statics/js/tapbar/fourty-js-tapbar.js"></script>
+             <script src="/cds-statics/js/timer/fourty-js-timer.js" defer></script>
+
+  <!-- JS:  dropdown -->
+  <script rel="modulepreload" src="../../cds-statics/js/dropdown/fortty-js-dropdown-simple.js"></script>
+
+  <!-- JS:  modal -->
+  <script rel="modulepreload" src="../../cds-statics/js/modal/fourty-js-modal.js"></script>
+
+  <!-- JS:  tabs -->
+  <script rel="modulepreload" src="../../cds-statics/js/tabs/fourty-js-tabs.js"></script>
+
+  <!-- JS:  smoothscrollbar -->
+  <script rel="modulepreload" src="../../cds-statics/js/scroll/smooth-scrollbar/smooth-scrollbar.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/scroll/smooth-scrollbar/smooth-scrollbar-functions.js"></script>
+
+  <!-- JS: lottie-->
+  <script rel="modulepreload" src="../../cds-statics/js/lottie/fourty-js-lottie.js" type="module"></script>
+
+  <!-- JS: game__input -->
+  <script rel="modulepreload" src="../../cds-statics/js/game/game-input-pipe.js"></script>
+
+</body>
+
+</html>

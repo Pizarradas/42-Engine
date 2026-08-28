@@ -1,0 +1,2480 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>42DS | Layouts | Cerca FASE 2: Inicio</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"><!-- CSS: settings -->
+    <link href="../../cds-statics/css/brands/ep/setting.css" id="brandStyles-root" rel="stylesheet" type="text/css">
+    <!-- CSS: library multibrand -->
+    <link href="../../cds-statics/css/ep-index-layout.css" id="brandStyles" rel="stylesheet" type="text/css">
+    <!-- FAVICON -->
+    <link href="../favicon.png" rel="icon" type="image/png">
+    <style>
+        .ft-org-cardHome__main .ft-mol-headband--branded {
+            position: relative;
+            left: initial;
+            padding-top: 0;
+            background-color: transparent;
+            display: flex;
+            flex-direction: row-reverse;
+        }
+
+        .ft-org-cardHome__main .ft-mol-headband--branded .ft-mol-headband__title:before,
+        .ft-org-cardHome__main .ft-mol-headband--branded .ft-mol-headband__logo:before,
+        .ft-org-cardHome__main .ft-mol-headband--branded .ft-mol-headband__logo a:before {
+            display: none;
+        }
+
+        .ft-org-cardHome__main .ft-mol-headband__logo {
+            margin-left: 0;
+            text-transform: uppercase;
+        }
+
+        .ft-org-cardHome__main .ft-mol-headband__title {
+            margin-right: 0;
+        }
+
+        /*discover*/
+        .ft-org-cardHome--discover.ft-org-cardHome--branded .ft-mol-headband--branded {
+            padding-top: 0;
+
+        }
+
+        .ft-org-cardHome--discover.ft-org-cardHome--branded:has(.ft-mol-headband--branded) .ft-mol-headband--branded {
+            padding-right: 0;
+            padding-left: 0;
+        }
+
+        .ft-org-cardHome--discover.ft-org-cardHome--branded:has(.ft-mol-headband--branded) .ft-org-cardHome__footer {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="fourty ft-brand-ep ft-skin ft-skin--cerca ft-skin--cerca-buscador minimal-header" id="header-sticky" data-showroom-skin="layout">
+    <!--header-->
+    <header>
+        <!-- Cabecera normal -->
+        <div class="ft-org-masthead ft-org-masthead--branded ">
+            <div class="ft-org-masthead__top">
+                <div class="ft-org-masthead__top-left">
+                    <a class="ft-org-masthead__top-left-logo" href="/es/" title="El Periódico de España"></a>
+                    <div class="ft-date ft-date--inline">
+                        <div class="ft-date__text">
+                            <time class="ft-date__textTime" datetime="2025-03-17T04:50:43+01:00"
+                                itemprop="datePublished">17 MAR 2025</time>
+                        </div><time class="ft-date__reload" datetime="2025-03-17T06:11:15+01:00"
+                            itemprop="dateModified">Actualizada 6:11</time>
+                    </div>
+                </div>
+                <div class="ft-org-masthead__top-right">
+                    <div class="sticky" id="hero">
+                        <p class="sticky-text">Suscríbete hoy con un <span class="sticky-text__bold">30% de dto</span>
+                        </p>
+                        <div class="sticky-button"></div><a class="sticky-link" data-vars-event-cat="piano link"
+                            external-event="marketing=base-pm1A"
+                            href="https://micuenta.lne.es/tp/suscripcion/galeria?marketing=base-pm1A" rel="nofollow"
+                            target="_blank" title="link title"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="ft-org-masthead__main">
+                <div class="ft-org-masthead__menu">
+                    <button class="ft-org-masthead__menu-button" id="toggle" type="button"><span
+                            class="ft-org-masthead__menu-buttonIcon"></span></button>
+                </div>
+                <div class="ft-org-masthead__logo">
+                    <h1 class="ft-org-masthead__logo-img"><a class="ft-org-masthead__logo-link" href="/es/"
+                            title="Title Text"><span class="ft-org-masthead--hide">el periódico</span></a></h1>
+                    <div class="ft-org-masthead__logo-lang">
+                        <button class="ft-org-masthead__logo-button" data-active=".com" id="activeLanguage"
+                            onclick="triggerDropdownLanguage()" type="button">.com</button>
+                        <ul class="ft-org-masthead__dropdown" id="languageDropdown">
+                            <li>
+                                <a class="ft-org-masthead__dropdown-link"
+                                    href="https://www.elperiodico.cat/ca/">.cat</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="ft-org-masthead__area">
+                    <button class="ft-org-masthead__area--search"></button>
+                    <div class="ft-mol-dropdown">
+                        <button aria-controls="ft-dropdown-list-3" aria-expanded="false" aria-haspopup="true"
+                            class="ft-org-masthead__area--login ft-mol-dropdown__trigger" id="ft-dropdown-trigger-3"
+                            onclick="toggleDropdown(event)" title="Abrir menú desplegable">
+                            <ul aria-hidden="true" aria-labelledby="ft-dropdown-trigger-1"
+                                class=" ft-mol-dropdown__list ft-mol-dropdown--has-icons" hidden=""
+                                id="ft-dropdown-list-1" role="menu">
+                                <li class="ft-mol-dropdown__item">
+                                    <a class="ft-mol-dropdown__link" href="#" tabindex="-1" target="_self"
+                                        title="Archivo"><img alt="" class="ft-mol-dropdown__icon" height="19"
+                                            loading="eager"
+                                            src="../../cds-statics/assets/img/icons/icon-user-masterhead.svg"
+                                            width="18"> Mi cuenta</a>
+                                </li>
+                                <li class="ft-mol-dropdown__item ft-mol-dropdown__item--active">
+                                    <a class="ft-mol-dropdown__link" href="#" tabindex="-1" target="_self"
+                                        title="Archivo"><img alt="" class="ft-mol-dropdown__icon" height="19"
+                                            loading="eager"
+                                            src="../../cds-statics/assets/img/icons/nav-solid-suscription.svg"
+                                            width="18">
+                                        Suscribete</a>
+                                </li>
+                                <li class="ft-mol-dropdown__item">
+                                    <a class="ft-mol-dropdown__link" href="#" tabindex="-1" target="_self"
+                                        title="Archivo"><img alt="" class="ft-mol-dropdown__icon" height="19"
+                                            loading="eager"
+                                            src="../../cds-statics/assets/img/icons/icon-credit-card-masterhead.svg"
+                                            width="18"> Mi suscripción</a>
+                                </li>
+                                <li class="ft-mol-dropdown__item" role="none">
+                                    <a class="ft-mol-dropdown__link" href="#" role="menuitem" tabindex="-1"
+                                        target="_self" title="title text"><img alt="" class="ft-mol-dropdown__icon"
+                                            height="21" loading="eager"
+                                            src="../../cds-statics/assets/img/icons/nav-solid-light-save.svg"
+                                            width="21"> Mis
+                                        noticias guardadas</a>
+                                </li>
+                                <li class="ft-mol-dropdown__item" role="none">
+                                    <a class="ft-mol-dropdown__link" href="#" role="menuitem" tabindex="-1"
+                                        target="_self" title="title text"><img alt="" class="ft-mol-dropdown__icon"
+                                            height="21" loading="eager"
+                                            src="../../cds-statics/assets/img/icons/nav-solid-light-plus.svg"
+                                            width="20"> Mi
+                                        Medio</a>
+                                </li>
+                                <li class="ft-mol-dropdown__item" role="none">
+                                    <a class="ft-mol-dropdown__link" href="#" role="menuitem" tabindex="-1"
+                                        target="_self" title="title text"><img alt="" class="ft-mol-dropdown__icon"
+                                            height="21" loading="eager"
+                                            src="../../cds-statics/assets/img/icons/icon-kiosk-masterhead.svg"
+                                            width="20">
+                                        Kiosko</a>
+                                </li>
+                                <li class="ft-mol-dropdown__item" role="none">
+                                    <a class="ft-mol-dropdown__link" href="#" role="menuitem" tabindex="-1"
+                                        target="_self" title="title text"><img alt="" class="ft-mol-dropdown__icon"
+                                            height="21" loading="eager"
+                                            src="../../cds-statics/assets/img/icons/nav-solid-light-newsletter.svg"
+                                            width="20"> Newsletters</a>
+                                </li>
+                                <li class="ft-mol-dropdown__item" role="none">
+                                    <a class="ft-mol-dropdown__link" href="#" role="menuitem" tabindex="-1"
+                                        target="_self" title="title text"><img alt="" class="ft-mol-dropdown__icon"
+                                            height="21" loading="eager"
+                                            src="../../cds-statics/assets/img/icons/nav-solid-light-pasatiempos.svg"
+                                            width="20"> Jugar</a>
+                                </li>
+                                <li class="ft-mol-dropdown__item" role="none">
+                                    <a class="ft-mol-dropdown__link" href="#" role="menuitem" tabindex="-1"
+                                        target="_self" title="title text"><img alt="" class="ft-mol-dropdown__icon"
+                                            height="21" loading="eager"
+                                            src="../../cds-statics/assets/img/icons/icon-close-user-masterhead.svg"
+                                            width="20"> Cerrar sesión</a>
+                                </li>
+                            </ul>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <nav class="ft-org-masthead__nav">
+                <ul class="ft-org-masthead__list">
+                    <li class="ft-org-masthead__item">
+                        <a class="ft-org-masthead__link" href="#" title="Title text"><img height="40"
+                                src="../../cds-statics/assets/img/logos/logo-prueba2.svg" width="85"></a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a class="ft-org-masthead__link" href="#" title="Title text">Enlace 2</a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a class="ft-org-masthead__link" href="#" title="Title text">Enlace 3</a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a class="ft-org-masthead__link" href="#" title="Title text">Enlace 7</a>
+                    </li>
+                    <li class="ft-org-masthead__item ft-org-masthead__item--live">
+                        <a class="ft-org-masthead__link" href="/es/directos/" title="Directos">Directos</a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a class="ft-org-masthead__link" href="#" title="Title text">Enlace 8</a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a class="ft-org-masthead__link" href="#" title="Title text">Enlace 9</a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a class="ft-org-masthead__link" href="#" title="Title text">Enlace 10</a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a class="ft-org-masthead__link" href="#" title="Title text">Enlace 11</a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a class="ft-org-masthead__link" href="#" title="Title text">Enlace 12</a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a class="ft-org-masthead__link" href="#" title="Title text">Enlace 13</a>
+                    </li>
+                </ul><a class="ft-org-masthead__branded" href="#">Ofrecido por <img
+                        src="../../cds-statics/assets/img/logos/logo-prueba.svg"></a>
+            </nav>
+            <nav class="ft-org-masthead__nav ft-org-masthead__nav--mobile">
+                <ul class="ft-org-masthead__list">
+                    <li class="ft-org-masthead__item">
+                        <a class="ft-org-masthead__link" href="#" title="Title text"><img height="40"
+                                src="../../cds-statics/assets/img/logos/logo-prueba2.svg" width="85"></a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a class="ft-org-masthead__link ft-org-masthead__link--active" href="#"
+                            title="Title text">Enlace 2 Mobile</a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a class="ft-org-masthead__link" href="#" title="Title text">Enlace 3 Mobile</a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a class="ft-org-masthead__link" href="#" title="Title text">Enlace 4 Mobile</a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a class="ft-org-masthead__link" href="#" title="Title text">Enlace 5 Mobile</a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a class="ft-org-masthead__link" href="#" title="Title text">Enlace 6 Mobile</a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a class="ft-org-masthead__link" href="#" title="Title text">Enlace 7 Mobile</a>
+                    </li>
+                    <li class="ft-org-masthead__item ft-org-masthead__item--live">
+                        <a class="ft-org-masthead__link" href="/es/directos/" title="Directos">Directos</a>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="ft-org-masthead__subnav">
+                <ul class="ft-org-masthead__list">
+                    <li class="ft-org-masthead__item">
+                        <a class="ft-org-masthead__link" href="#" title="Title text">Ediciones digitales:</a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a class="ft-org-masthead__link" href="#" title="Title text">Siero</a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a class="ft-org-masthead__link" href="#" title="Title text">Llanera</a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a class="ft-org-masthead__link" href="#" title="Title text">Villaviciosa</a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a class="ft-org-masthead__link" href="#" title="Title text">Grado</a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a class="ft-org-masthead__link" href="#" title="Title text">Salas</a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a class="ft-org-masthead__link" href="#" title="Title text">Ribera de Arriba</a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a class="ft-org-masthead__link" href="#" title="Title text">La Corredoria</a>
+                    </li>
+                </ul>
+            </nav>
+        </div><!-- Cabecera fija -->
+        <div class="ft-org-masthead ft-org-masthead--fix">
+            <div class="ft-org-masthead__main">
+                <div class="ft-org-masthead__menu">
+                    <button class="ft-org-masthead__menu-button" id="toggle" type="button"><span
+                            class="ft-org-masthead__menu-buttonIcon"></span></button>
+                </div>
+                <div class="ft-org-masthead__logo">
+                    <h2 class="ft-org-masthead__logo-img"><a class="ft-org-masthead__logo-link" href="/es/"
+                            title="El Periódico"><span class="ft-org-masthead--hide">el periódico</span></a></h2>
+                    <div class="ft-org-masthead__logo-lang">
+                        <button class="ft-org-masthead__logo-button" data-active=".com" id="activeLanguage"
+                            onclick="triggerDropdownLanguage()" type="button">.com</button>
+                        <ul class="ft-org-masthead__dropdown" id="languageDropdown">
+                            <li>
+                                <a class="ft-org-masthead__dropdown-link"
+                                    href="https://www.elperiodico.cat/ca/">.cat</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="ft-org-masthead__area">
+                    <button class="ft-org-masthead__area--search"></button>
+                    <div class="ft-mol-dropdown">
+                        <button aria-controls="ft-dropdown-list-1" aria-expanded="false" aria-haspopup="true"
+                            class="ft-org-masthead__area--login ft-mol-dropdown__trigger" id="ft-dropdown-trigger-1"
+                            onclick="toggleDropdown(event)" title="Abrir menú desplegable">
+                            <ul aria-hidden="true" aria-labelledby="ft-dropdown-trigger-1"
+                                class=" ft-mol-dropdown__list ft-mol-dropdown--has-icons" hidden=""
+                                id="ft-dropdown-list-1" role="menu">
+                                <li class="ft-mol-dropdown__item">
+                                    <a class="ft-mol-dropdown__link" href="#" tabindex="-1" target="_self"
+                                        title="Archivo"><img alt="" class="ft-mol-dropdown__icon" height="19"
+                                            loading="eager"
+                                            src="../../cds-statics/assets/img/icons/icon-user-masterhead.svg"
+                                            width="18"> Mi cuenta</a>
+                                </li>
+                                <li class="ft-mol-dropdown__item ft-mol-dropdown__item--active">
+                                    <a class="ft-mol-dropdown__link" href="#" tabindex="-1" target="_self"
+                                        title="Archivo"><img alt="" class="ft-mol-dropdown__icon" height="19"
+                                            loading="eager"
+                                            src="../../cds-statics/assets/img/icons/nav-solid-suscription.svg"
+                                            width="18">
+                                        Suscribete</a>
+                                </li>
+                                <li class="ft-mol-dropdown__item">
+                                    <a class="ft-mol-dropdown__link" href="#" tabindex="-1" target="_self"
+                                        title="Archivo"><img alt="" class="ft-mol-dropdown__icon" height="19"
+                                            loading="eager"
+                                            src="../../cds-statics/assets/img/icons/icon-credit-card-masterhead.svg"
+                                            width="18"> Mi suscripción</a>
+                                </li>
+                                <li class="ft-mol-dropdown__item" role="none">
+                                    <a class="ft-mol-dropdown__link" href="#" role="menuitem" tabindex="-1"
+                                        target="_self" title="title text"><img alt="" class="ft-mol-dropdown__icon"
+                                            height="21" loading="eager"
+                                            src="../../cds-statics/assets/img/icons/nav-solid-light-save.svg"
+                                            width="21"> Mis
+                                        noticias guardadas</a>
+                                </li>
+                                <li class="ft-mol-dropdown__item" role="none">
+                                    <a class="ft-mol-dropdown__link" href="#" role="menuitem" tabindex="-1"
+                                        target="_self" title="title text"><img alt="" class="ft-mol-dropdown__icon"
+                                            height="21" loading="eager"
+                                            src="../../cds-statics/assets/img/icons/nav-solid-light-plus.svg"
+                                            width="20"> Mi
+                                        Medio</a>
+                                </li>
+                                <li class="ft-mol-dropdown__item" role="none">
+                                    <a class="ft-mol-dropdown__link" href="#" role="menuitem" tabindex="-1"
+                                        target="_self" title="title text"><img alt="" class="ft-mol-dropdown__icon"
+                                            height="21" loading="eager"
+                                            src="../../cds-statics/assets/img/icons/icon-kiosk-masterhead.svg"
+                                            width="20">
+                                        Kiosko</a>
+                                </li>
+                                <li class="ft-mol-dropdown__item" role="none">
+                                    <a class="ft-mol-dropdown__link" href="#" role="menuitem" tabindex="-1"
+                                        target="_self" title="title text"><img alt="" class="ft-mol-dropdown__icon"
+                                            height="21" loading="eager"
+                                            src="../../cds-statics/assets/img/icons/nav-solid-light-newsletter.svg"
+                                            width="20"> Newsletters</a>
+                                </li>
+                                <li class="ft-mol-dropdown__item" role="none">
+                                    <a class="ft-mol-dropdown__link" href="#" role="menuitem" tabindex="-1"
+                                        target="_self" title="title text"><img alt="" class="ft-mol-dropdown__icon"
+                                            height="21" loading="eager"
+                                            src="../../cds-statics/assets/img/icons/nav-solid-light-pasatiempos.svg"
+                                            width="20"> Jugar</a>
+                                </li>
+                                <li class="ft-mol-dropdown__item" role="none">
+                                    <a class="ft-mol-dropdown__link" href="#" role="menuitem" tabindex="-1"
+                                        target="_self" title="title text"><img alt="" class="ft-mol-dropdown__icon"
+                                            height="21" loading="eager"
+                                            src="../../cds-statics/assets/img/icons/icon-close-user-masterhead.svg"
+                                            width="20"> Cerrar sesión</a>
+                                </li>
+                            </ul>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="ft-org-masthead__progress-bar" id="progress-bar"></div>
+        </div><!-- Menú Lateral Único -->
+        <div class="ft-org-masthead ft-org-masthead--side" id="sideMenu">
+            <div class="ft-org-masthead__main">
+                <div class="ft-org-masthead__menu">
+                    <button class="ft-org-masthead__menu-button" id="toggle" type="button"><span
+                            class="ft-org-masthead__menu-buttonIcon"></span></button>
+                </div>
+                <div class="ft-org-masthead__logo">
+                    <div class="ft-org-masthead__logo-img">
+                        <a class="ft-org-masthead__logo-link" href="/es/" title="El Periódico"><span
+                                class="ft-org-masthead--hide">el periódico</span></a>
+                    </div>
+                    <div class="ft-org-masthead__logo-lang">
+                        <button class="ft-org-masthead__logo-button" data-active=".com" id="activeLanguage"
+                            onclick="triggerDropdownLanguage()" type="button">.com</button>
+                        <ul class="ft-org-masthead__dropdown" id="languageDropdown">
+                            <li>
+                                <a class="ft-org-masthead__dropdown-link"
+                                    href="https://www.elperiodico.cat/ca/">.cat</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="ft-org-masthead__area">
+                    <button class="ft-org-masthead__area--search"></button>
+                    <div class="ft-mol-dropdown">
+                        <button aria-controls="ft-dropdown-list-1" aria-expanded="false" aria-haspopup="true"
+                            class="ft-org-masthead__area--login ft-mol-dropdown__trigger" id="ft-dropdown-trigger-1"
+                            onclick="toggleDropdown(event)" title="Abrir menú desplegable">
+                            <ul aria-hidden="true" aria-labelledby="ft-dropdown-trigger-1"
+                                class=" ft-mol-dropdown__list ft-mol-dropdown--has-icons" hidden=""
+                                id="ft-dropdown-list-1" role="menu">
+                                <li class="ft-mol-dropdown__item">
+                                    <a class="ft-mol-dropdown__link" href="#" tabindex="-1" target="_self"
+                                        title="Archivo"><img alt="" class="ft-mol-dropdown__icon" height="19"
+                                            loading="eager"
+                                            src="../../cds-statics/assets/img/icons/icon-user-masterhead.svg"
+                                            width="18"> Mi cuenta</a>
+                                </li>
+                                <li class="ft-mol-dropdown__item ft-mol-dropdown__item--active">
+                                    <a class="ft-mol-dropdown__link" href="#" tabindex="-1" target="_self"
+                                        title="Archivo"><img alt="" class="ft-mol-dropdown__icon" height="19"
+                                            loading="eager"
+                                            src="../../cds-statics/assets/img/icons/nav-solid-suscription.svg"
+                                            width="18">
+                                        Suscribete</a>
+                                </li>
+                                <li class="ft-mol-dropdown__item">
+                                    <a class="ft-mol-dropdown__link" href="#" tabindex="-1" target="_self"
+                                        title="Archivo"><img alt="" class="ft-mol-dropdown__icon" height="19"
+                                            loading="eager"
+                                            src="../../cds-statics/assets/img/icons/icon-credit-card-masterhead.svg"
+                                            width="18"> Mi suscripción</a>
+                                </li>
+                                <li class="ft-mol-dropdown__item" role="none">
+                                    <a class="ft-mol-dropdown__link" href="#" role="menuitem" tabindex="-1"
+                                        target="_self" title="title text"><img alt="" class="ft-mol-dropdown__icon"
+                                            height="21" loading="eager"
+                                            src="../../cds-statics/assets/img/icons/nav-solid-light-save.svg"
+                                            width="21"> Mis
+                                        noticias guardadas</a>
+                                </li>
+                                <li class="ft-mol-dropdown__item" role="none">
+                                    <a class="ft-mol-dropdown__link" href="#" role="menuitem" tabindex="-1"
+                                        target="_self" title="title text"><img alt="" class="ft-mol-dropdown__icon"
+                                            height="21" loading="eager"
+                                            src="../../cds-statics/assets/img/icons/nav-solid-light-plus.svg"
+                                            width="20"> Mi
+                                        Medio</a>
+                                </li>
+                                <li class="ft-mol-dropdown__item" role="none">
+                                    <a class="ft-mol-dropdown__link" href="#" role="menuitem" tabindex="-1"
+                                        target="_self" title="title text"><img alt="" class="ft-mol-dropdown__icon"
+                                            height="21" loading="eager"
+                                            src="../../cds-statics/assets/img/icons/icon-kiosk-masterhead.svg"
+                                            width="20">
+                                        Kiosko</a>
+                                </li>
+                                <li class="ft-mol-dropdown__item" role="none">
+                                    <a class="ft-mol-dropdown__link" href="#" role="menuitem" tabindex="-1"
+                                        target="_self" title="title text"><img alt="" class="ft-mol-dropdown__icon"
+                                            height="21" loading="eager"
+                                            src="../../cds-statics/assets/img/icons/nav-solid-light-newsletter.svg"
+                                            width="20"> Newsletters</a>
+                                </li>
+                                <li class="ft-mol-dropdown__item" role="none">
+                                    <a class="ft-mol-dropdown__link" href="#" role="menuitem" tabindex="-1"
+                                        target="_self" title="title text"><img alt="" class="ft-mol-dropdown__icon"
+                                            height="21" loading="eager"
+                                            src="../../cds-statics/assets/img/icons/nav-solid-light-pasatiempos.svg"
+                                            width="20"> Jugar</a>
+                                </li>
+                                <li class="ft-mol-dropdown__item" role="none">
+                                    <a class="ft-mol-dropdown__link" href="#" role="menuitem" tabindex="-1"
+                                        target="_self" title="title text"><img alt="" class="ft-mol-dropdown__icon"
+                                            height="21" loading="eager"
+                                            src="../../cds-statics/assets/img/icons/icon-close-user-masterhead.svg"
+                                            width="20"> Cerrar sesión</a>
+                                </li>
+                            </ul>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="ft-org-masthead__box ft-org-masthead__box--white">
+                <div class="form-field">
+                    <div class="select-wrapper">
+                        <select required="">
+                            <option disabled selected value="">
+                            </option>
+                            <option value="opcion1">
+                                Opción 1
+                            </option>
+                            <option value="opcion2">
+                                Opción 2
+                            </option>
+                            <option value="opcion3">
+                                Opción 3
+                            </option>
+                        </select> <label>Selecciona una opción</label> <span class="select-arrow"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="ft-org-masthead__box ft-org-masthead__box--white">
+                <h2 class="ft-org-masthead__title">Secciones</h2>
+                <nav aria-label="Menú principal" class="ft-org-masthead__acordeon">
+                    <ul class="ft-org-masthead__acordeon-list ft-org-masthead__acordeon-list--nivel-1">
+                        <li class="ft-org-masthead__acordeon-item">
+                            <button aria-controls="submenu-1" aria-expanded="false"
+                                class="ft-org-masthead__acordeon-toggle">Asturias</button>
+                            <ul class="ft-org-masthead__acordeon-list ft-org-masthead__acordeon-list--nivel-2" hidden=""
+                                id="submenu-1">
+                                <li class="ft-org-masthead__acordeon-item">
+                                    <a class="ft-org-masthead__acordeon-link ft-org-masthead__acordeon-linkTitle"
+                                        href="/ruta-1-3">Portada Asturias</a>
+                                </li>
+                                <li class="ft-org-masthead__acordeon-item">
+                                    <button aria-controls="submenu-1-2" aria-expanded="false"
+                                        class="ft-org-masthead__acordeon-toggle">Asturias Exterior</button>
+                                    <ul class="ft-org-masthead__acordeon-list ft-org-masthead__acordeon-list--nivel-3"
+                                        hidden="" id="submenu-1-2">
+                                        <li class="ft-org-masthead__acordeon-item">
+                                            <a class="ft-org-masthead__acordeon-link ft-org-masthead__acordeon-linkTitle"
+                                                href="/ruta-1-2-1">Portada Asturias Exterior</a>
+                                        </li>
+                                        <li class="ft-org-masthead__acordeon-item">
+                                            <a class="ft-org-masthead__acordeon-link" href="/ruta-1-2-2">Subsección
+                                                Subnivel 1.2.2</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="ft-org-masthead__acordeon-item">
+                            <button aria-controls="submenu-2" aria-expanded="false"
+                                class="ft-org-masthead__acordeon-toggle">Sección 2</button>
+                            <ul class="ft-org-masthead__acordeon-list ft-org-masthead__acordeon-list--nivel-2" hidden=""
+                                id="submenu-2">
+                                <li class="ft-org-masthead__acordeon-item">
+                                    <a class="ft-org-masthead__acordeon-link" href="/ruta-2-1">Subsección 2.1</a>
+                                </li>
+                                <li class="ft-org-masthead__acordeon-item">
+                                    <a class="ft-org-masthead__acordeon-link" href="/ruta-2-1">Subsección 2.2</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="ft-org-masthead__acordeon-item">
+                            <button aria-controls="submenu-3" aria-expanded="false"
+                                class="ft-org-masthead__acordeon-toggle">Sección 3</button>
+                            <ul class="ft-org-masthead__acordeon-list ft-org-masthead__acordeon-list--nivel-2" hidden=""
+                                id="submenu-3">
+                                <li class="ft-org-masthead__acordeon-item">
+                                    <a class="ft-org-masthead__acordeon-link" href="/ruta-2-1">Subsección 3.1</a>
+                                </li>
+                                <li class="ft-org-masthead__acordeon-item">
+                                    <a class="ft-org-masthead__acordeon-link" href="/ruta-2-1">Subsección 3.2</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="ft-org-masthead__acordeon-item">
+                            <a class="ft-org-masthead__acordeon-link">Sección 4</a>
+                        </li>
+                        <li class="ft-org-masthead__acordeon-item">
+                            <button aria-controls="submenu-5" aria-expanded="false"
+                                class="ft-org-masthead__acordeon-toggle">Sección 5</button>
+                            <ul class="ft-org-masthead__acordeon-list ft-org-masthead__acordeon-list--nivel-2" hidden=""
+                                id="submenu-5">
+                                <li class="ft-org-masthead__acordeon-item">
+                                    <a class="ft-org-masthead__acordeon-link" href="/ruta-2-1">Subsección 5.1</a>
+                                </li>
+                                <li class="ft-org-masthead__acordeon-item">
+                                    <a class="ft-org-masthead__acordeon-link" href="/ruta-2-1">Subsección 5.2</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="ft-org-masthead__acordeon-item">
+                            <button aria-controls="submenu-6" aria-expanded="false"
+                                class="ft-org-masthead__acordeon-toggle">Sección 6</button>
+                            <ul class="ft-org-masthead__acordeon-list ft-org-masthead__acordeon-list--nivel-2" hidden=""
+                                id="submenu-6">
+                                <li class="ft-org-masthead__acordeon-item">
+                                    <a class="ft-org-masthead__acordeon-link" href="/ruta-2-1">Subsección 5.1</a>
+                                </li>
+                                <li class="ft-org-masthead__acordeon-item">
+                                    <a class="ft-org-masthead__acordeon-link" href="/ruta-2-1">Subsección 5.2</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="ft-org-masthead__acordeon-item">
+                            <button aria-controls="submenu-7" aria-expanded="false"
+                                class="ft-org-masthead__acordeon-toggle">Sección 7</button>
+                            <ul class="ft-org-masthead__acordeon-list ft-org-masthead__acordeon-list--nivel-2" hidden=""
+                                id="submenu-7">
+                                <li class="ft-org-masthead__acordeon-item">
+                                    <a class="ft-org-masthead__acordeon-link" href="/ruta-2-1">Subsección 5.1</a>
+                                </li>
+                                <li class="ft-org-masthead__acordeon-item">
+                                    <a class="ft-org-masthead__acordeon-link" href="/ruta-2-1">Subsección 5.2</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="ft-org-masthead__acordeon-item">
+                            <button aria-controls="submenu-8" aria-expanded="false"
+                                class="ft-org-masthead__acordeon-toggle"><svg
+                                    class="ft-org-masthead__acordeon-toggleImg" fill="none" height="15"
+                                    viewbox="0 0 15 15" width="15" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M7.59511 1.39615L8.84631 5.24696C9.03374 5.82379 9.57127 6.21434 10.1778 6.21434H14.2268C14.2637 6.21434 14.2791 6.22419 14.2871 6.23042C14.2991 6.23971 14.3134 6.25733 14.3219 6.28344C14.3304 6.30954 14.3292 6.33218 14.3249 6.34676C14.3221 6.35653 14.3154 6.37355 14.2856 6.39524L11.0099 8.77517C10.5192 9.13168 10.3139 9.76359 10.5013 10.3404L11.7525 14.1912C11.7639 14.2263 11.7593 14.244 11.7558 14.2536C11.7507 14.2679 11.7384 14.2869 11.7162 14.303C11.6939 14.3192 11.6721 14.325 11.6569 14.3255C11.6467 14.3258 11.6285 14.3247 11.5986 14.303L8.3229 11.9231C7.83222 11.5666 7.16778 11.5666 6.6771 11.9231L3.4014 14.303C3.37154 14.3247 3.35331 14.3258 3.34313 14.3255C3.32795 14.325 3.30605 14.3192 3.28385 14.303C3.26164 14.2869 3.24929 14.2679 3.24416 14.2536C3.24072 14.244 3.23611 14.2263 3.24752 14.1912L4.49872 10.3404C4.68615 9.76359 4.48083 9.13167 3.99014 8.77517L0.714445 6.39524C0.684584 6.37354 0.677924 6.35653 0.675071 6.34676C0.670813 6.33218 0.669636 6.30954 0.678119 6.28344C0.686601 6.25733 0.700859 6.23971 0.712873 6.23042C0.720929 6.22419 0.736315 6.21434 0.773226 6.21434H4.82221C5.42873 6.21434 5.96627 5.82379 6.15369 5.24696L7.40489 1.39615C7.4163 1.36104 7.43042 1.34945 7.43883 1.34372C7.45138 1.33516 7.47255 1.32705 7.5 1.32705C7.52745 1.32705 7.54861 1.33516 7.56116 1.34372C7.56958 1.34945 7.5837 1.36105 7.59511 1.39615Z"
+                                        stroke="currentcolor" stroke-width="1.3"></path>
+                                </svg> Sección 8</button>
+                            <ul class="ft-org-masthead__acordeon-list ft-org-masthead__acordeon-list--nivel-2" hidden=""
+                                id="submenu-8">
+                                <li class="ft-org-masthead__acordeon-item">
+                                    <a class="ft-org-masthead__acordeon-link" href="/ruta-2-1">Subsección 5.1</a>
+                                </li>
+                                <li class="ft-org-masthead__acordeon-item">
+                                    <a class="ft-org-masthead__acordeon-link" href="/ruta-2-1">Subsección 5.2</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="ft-org-masthead__box">
+                <div class="ft-org-masthead__section">
+                    <a class="ft-org-masthead__link" href="#"><img class="" height="75"
+                            src="../../cds-statics/assets/img/icons/sopa-letras-PRUEBA.svg" width="120"></a>
+                    <p class="ft-org-masthead__subtitle ft-org-masthead__subtitle--center">Sopa de letras</p>
+                </div>
+                <div class="ft-org-masthead__section">
+                    <a class="ft-org-masthead__link" href="#"><img class="" height="75"
+                            src="../../cds-statics/assets/img/icons/wordle-PRUEBA.svg" width="120"></a>
+                    <p class="ft-org-masthead__subtitle ft-org-masthead__subtitle--center">Wordle</p>
+                </div>
+            </div>
+            <div class="ft-org-masthead__box ft-org-masthead__box--white">
+                <h2 class="ft-org-masthead__title">La newsletter del Director</h2>
+                <div class="ft-mol-authors ft-mol-authors--horizontal ft-mol-authors--reduced js-prism">
+                    <div class="ft-mol-authors__photo">
+                        <a href="layout-noticia-Woman.html" target="_self" title="title"><img alt=""
+                                class="ft-helper-img-rd alt=" height="60"
+                                src="https://estaticos-cdn.elperiodico.com/clip/dd09b7a7-0295-4bc1-abf4-4b2961f4f775_source-aspect-ratio_default_0.jpg"
+                                title="title text" width="60"></a>
+                    </div>
+                    <div class="ft-mol-authors__content">
+                        <h2 class="ft-mol-authors__contentName"><a class="ft-link ft-link--secondary"
+                                href="layout-noticia-Woman.html" target="_self">Joan Vehils</a></h2>
+                        <p class="ft-mol-authors__contentCategory"><a class="ft-link ft-link--tertiary" href="#"
+                                title="title text">Director de Sport</a></p>
+                        <p class="ft-mol-authors__contentText">Recibe en tu correo una selección de las noticias más
+                            importantes del director</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ft-org-masthead__box">
+                <div aria-label="Es Noticia" class="ft-mol-ticker ft-mol-ticker--news" role="region">
+                    <span class="ft-mol-ticker__heading" id="tickerNewsHeading">Es Noticia:</span>
+                    <div aria-atomic="true" aria-labelledby="tickerNewsHeading" aria-live="polite"
+                        class="ft-mol-ticker__scroll">
+                        <a class="ft-mol-ticker__item" href="#" target="_self" title="title text"><strong
+                                class="ft-mol-ticker__txt">Lorem ipsum dolor sit amet</strong></a> <a
+                            class="ft-mol-ticker__item" href="#" target="_self" title="title text"><strong
+                                class="ft-mol-ticker__txt">Lorem ipsum dolor sit amet</strong></a> <a
+                            class="ft-mol-ticker__item" href="#" target="_self" title="title text"><strong
+                                class="ft-mol-ticker__txt">Lorem ipsum dolor sit amet</strong></a> <a
+                            class="ft-mol-ticker__item" href="#" target="_self" title="title text"><strong
+                                class="ft-mol-ticker__txt">Lorem ipsum dolor sit amet</strong></a>
+                    </div>
+                </div>
+            </div>
+            <div class="ft-org-masthead__box">
+                <div class="ft-mol-rrss-inline ft-mol-rrss-inline--center">
+                    <div class="ft-mol-rrss-inline__items">
+                        <a class="ft-btn-rrss ft-btn-rrss--twitter" href="#" rel="nofollow" target="”_blank”"
+                            title="Twitter"><span
+                                class="ft-mol-rrss ft-mol-rrssTwitter--default ft-btn-rrss__icon"></span> <span
+                                class="ft-btn-rrss__text">RRSS Twitter</span></a> <a
+                            class="ft-btn-rrss ft-btn-rrss--facebook" href="#" rel="nofollow" target="”_blank”"
+                            title="Facebook"><span
+                                class="ft-mol-rrss ft-mol-rrssFacebook--default ft-btn-rrss__icon"></span> <span
+                                class="ft-btn-rrss__text">RRSS Facebook</span></a> <a
+                            class="ft-btn-rrss ft-btn-rrss--email" href="#" rel="nofollow" target="”_blank”"
+                            title="Email"><span class="ft-mol-rrss ft-mol-rrssEmail--default ft-btn-rrss__icon"></span>
+                            <span class="ft-btn-rrss__text">RRSS Email</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header><!--fin header-->
+    <!-- grid -->
+    <div class="ft-layout-grid-flex">
+        <!-- Comienzo del layout -->
+        <article class="ft-layout-grid-flex__row">
+            <!--Contenido central -->
+            <div class="ft-layout-grid-flex__colXs-12">
+                <div class="ft-layout-grid-flex__nested">
+                    <!-- CERCA -->
+                    <!-- cerca: bienvenida -->
+                    <div class="ft-org-hero-welcome">
+                        <div class="ft-org-hero-welcome__content">
+                            <h2 class="ft-helper-fontSize-heading-M ft-helper-text-align-center">Mis lugares, mis
+                                noticias</h2>
+                            <div aria-controls="" aria-label="Barra de desplazamiento horizontal"
+                                aria-orientation="horizontal" data-scrollbar="" data-scrollbar-announce-scroll="true"
+                                data-scrollbar-axis="x" data-scrollbar-remove-inline-styles="true"
+                                data-scrollbar-wheel-to-x="true" role="scrollbar">
+                                <div class="ft-scrollbar__container">
+                                    <ul aria-label="Listado de localidades favoritas" role="list">
+                                        <li class="ft-tag ft-tag--chip ft-tag--sm" data-tag-context="filter-bar"
+                                            data-tag-id="all" data-tag-state="selected" data-tag-type="filter"><button
+                                                aria-label="Mostrar todas las localidades" aria-pressed="true"
+                                                class="ft-btn" title="Mostrar todas las localidades"
+                                                type="button">Todos</button></li>
+                                        <li class="ft-tag ft-tag--chip ft-tag--sm" data-analytics-action="fav_toggle"
+                                            data-analytics-category="localidades" data-analytics-label="Barbastro"
+                                            data-tag-context="favorites-selector" data-tag-id="loc-aragon-barbastro"
+                                            data-tag-region="Aragón" data-tag-state="deletable"
+                                            data-tag-type="location"><button
+                                                aria-label="Eliminar Barbastro de tus localidades favoritas"
+                                                aria-pressed="false" class="ft-btn" tabindex="0"
+                                                title="Eliminar Barbastro de tus localidades favoritas"
+                                                type="button">Barbastro</button></li>
+                                        <li class="ft-tag ft-tag--chip ft-tag--sm" data-analytics-action="fav_toggle"
+                                            data-analytics-category="localidades" data-analytics-label="Sevilla"
+                                            data-tag-context="favorites-selector" data-tag-id="loc-andalucia-sevilla"
+                                            data-tag-region="Andalucía" data-tag-state="deletable"
+                                            data-tag-type="location"><button
+                                                aria-label="Eliminar Sevilla de tus localidades favoritas"
+                                                aria-pressed="false" class="ft-btn" tabindex="0"
+                                                title="Eliminar Sevilla de tus localidades favoritas"
+                                                type="button">Sevilla</button></li>
+                                        <li class="ft-tag ft-tag--chip ft-tag--sm" data-analytics-action="fav_toggle"
+                                            data-analytics-category="localidades" data-analytics-label="Madrid"
+                                            data-tag-context="favorites-selector" data-tag-id="loc-madrid-madrid"
+                                            data-tag-region="Comunidad de Madrid" data-tag-state="deletable"
+                                            data-tag-type="location"><button
+                                                aria-label="Eliminar Madrid de tus localidades favoritas"
+                                                aria-pressed="false" class="ft-btn" tabindex="0"
+                                                title="Eliminar Madrid de tus localidades favoritas"
+                                                type="button">Madrid</button></li>
+                                        <li class="ft-tag ft-tag--chip ft-tag--sm" data-analytics-action="fav_toggle"
+                                            data-analytics-category="localidades" data-analytics-label="Barcelona"
+                                            data-tag-context="favorites-selector" data-tag-id="loc-cataluna-barcelona"
+                                            data-tag-region="Cataluña" data-tag-state="deletable"
+                                            data-tag-type="location"><button
+                                                aria-label="Eliminar Barcelona de tus localidades favoritas"
+                                                aria-pressed="false" class="ft-btn" tabindex="0"
+                                                title="Eliminar Barcelona de tus localidades favoritas"
+                                                type="button">Barcelona</button></li>
+                                        <li class="ft-tag ft-tag--chip ft-tag--sm" data-analytics-action="fav_toggle"
+                                            data-analytics-category="localidades" data-analytics-label="Valencia"
+                                            data-tag-context="favorites-selector" data-tag-id="loc-valenciana-valencia"
+                                            data-tag-region="Comunidad Valenciana" data-tag-state="deletable"
+                                            data-tag-type="location"><button
+                                                aria-label="Eliminar Valencia de tus localidades favoritas"
+                                                aria-pressed="false" class="ft-btn" tabindex="0"
+                                                title="Eliminar Valencia de tus localidades favoritas"
+                                                type="button">Valencia</button></li>
+                                        <li class="ft-tag ft-tag--chip ft-tag--sm" data-analytics-action="fav_toggle"
+                                            data-analytics-category="localidades" data-analytics-label="Vigo"
+                                            data-tag-context="favorites-selector" data-tag-id="loc-galicia-vigo"
+                                            data-tag-region="Galicia" data-tag-state="deletable"
+                                            data-tag-type="location"><button
+                                                aria-label="Eliminar Vigo de tus localidades favoritas"
+                                                aria-pressed="false" class="ft-btn" tabindex="0"
+                                                title="Eliminar Vigo de tus localidades favoritas"
+                                                type="button">Vigo</button></li>
+                                        <li class="ft-tag ft-tag--chip ft-tag--sm" data-analytics-action="fav_toggle"
+                                            data-analytics-category="localidades" data-analytics-label="Bilbao"
+                                            data-tag-context="favorites-selector" data-tag-id="loc-pais-vasco-bilbao"
+                                            data-tag-region="País Vasco" data-tag-state="deletable"
+                                            data-tag-type="location"><button
+                                                aria-label="Eliminar Bilbao de tus localidades favoritas"
+                                                aria-pressed="false" class="ft-btn" tabindex="0"
+                                                title="Eliminar Bilbao de tus localidades favoritas"
+                                                type="button">Bilbao</button></li>
+                                        <li class="ft-tag ft-tag--chip ft-tag--sm" data-analytics-action="fav_toggle"
+                                            data-analytics-category="localidades" data-analytics-label="Valladolid"
+                                            data-tag-context="favorites-selector"
+                                            data-tag-id="loc-castilla-leon-valladolid" data-tag-region="Castilla y León"
+                                            data-tag-state="deletable" data-tag-type="location"><button
+                                                aria-label="Eliminar Valladolid de tus localidades favoritas"
+                                                aria-pressed="false" class="ft-btn" tabindex="0"
+                                                title="Eliminar Valladolid de tus localidades favoritas"
+                                                type="button">Valladolid</button></li>
+                                        <li class="ft-tag ft-tag--chip ft-tag--sm" data-analytics-action="fav_toggle"
+                                            data-analytics-category="localidades"
+                                            data-analytics-label="Las Palmas de Gran Canaria"
+                                            data-tag-context="favorites-selector" data-tag-id="loc-canarias-las-palmas"
+                                            data-tag-region="Canarias" data-tag-state="deletable"
+                                            data-tag-type="location"><button
+                                                aria-label="Eliminar Las Palmas de Gran Canaria de tus localidades favoritas"
+                                                aria-pressed="false" class="ft-btn" tabindex="0"
+                                                title="Eliminar Las Palmas de Gran Canaria de tus localidades favoritas"
+                                                type="button">Las Palmas</button></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="ft-helper-align-center">
+                                <button class="ft-link ft-link--secondary ft-link--decoration ft-helper-fontSize-body-M"
+                                    title=" title text" type="button">Añadir o editar mis favoritas</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- cerca: buscador -->
+                    <div class="ft-org-search-autocomplete">
+                        <div class="ft-org-search-autocomplete__content">
+                            <h2 class="ft-helper-fontSize-heading-XXS">
+                                Noticias de [nombrelocalidad]
+                            </h2>
+                            <!-- feeds: row -->
+                            <div class="ft-layout-grid-flex__row">
+                                <!-- feeds: item 01 -->
+                                <div
+                                    class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__colSm-6 ft-layout-grid-flex__colMd-4">
+                                    <!-- CardHome -->
+                                    <article
+                                        class="ft-org-cardHome ft-org-cardHome--featured ft-org-cardHome--col ft-org-cardHome--md ft-org-cardHome--discover">
+                                        <!-- Imagen destacada -->
+                                        <figure class="ft-org-cardHome__media">
+                                            <a href="#"
+                                                title="El Barça se abre a negociar la cesión de Lenglet al Tottenham">
+                                                <picture class="ft-img">
+                                                    <source media="(min-width: 768px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/687d00b3-7442-4103-92e3-2e2f9883a8b7_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <source media="(min-width: 250px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/687d00b3-7442-4103-92e3-2e2f9883a8b7_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <img alt="alt text" class="ft-helper-img-rd" height="381"
+                                                        loading="lazy"
+                                                        src="https://estaticos-cdn.prensaiberica.es/clip/687d00b3-7442-4103-92e3-2e2f9883a8b7_16-9-discover-aspect-ratio_default_0.webp"
+                                                        title="title text" width="656">
+                                                    <div class="ft-mol-label">
+                                                        <div class="ft-mol-label__content">
+                                                            <p class="ft-mol-label__title">
+                                                                Localidad
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </picture>
+                                            </a>
+                                        </figure>
+                                        <div class="ft-org-cardHome__main">
+                                            <header>
+                                                <h2 class="ft-org-cardHome__mainTitle"><a
+                                                        class="ft-link ft-link--secondary" href="#" target="_self"
+                                                        title="link title">Las altas temperaturas prolongan el riesgo de
+                                                        incendios hasta octubre</a></h2>
+                                            </header>
+                                        </div><!-- Footer de discover -->
+                                        <div class="ft-org-cardHome__footer">
+                                            <a class="ft-org-cardHome__medio"><img class="ft-org-cardHome__medioImg"
+                                                    src="../../cds-statics/assets/img/logos/logo-favicon-ep-16x16.svg">
+                                                El
+                                                Periódico</a> <time class="ft-org-cardHome__date" datetime=""
+                                                itemprop="dateModified">Hace 15 minutos</time>
+                                        </div>
+                                    </article>
+                                </div>
+                                <!-- feeds: item 02 -->
+                                <div
+                                    class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__colSm-6 ft-layout-grid-flex__colMd-4">
+                                    <!-- CardHome -->
+                                    <article
+                                        class="ft-org-cardHome ft-org-cardHome--featured ft-org-cardHome--col ft-org-cardHome--md ft-org-cardHome--discover">
+                                        <!-- Imagen destacada -->
+                                        <figure class="ft-org-cardHome__media ft-org-cardHome__mediaVideo">
+                                            <a href="#"
+                                                title="El Barça se abre a negociar la cesión de Lenglet al Tottenham">
+                                                <picture class="ft-img">
+                                                    <source media="(min-width: 768px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/90cbee78-74d3-43db-94ef-b8e260a1f814_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <source media="(min-width: 250px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/90cbee78-74d3-43db-94ef-b8e260a1f814_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <img alt="alt text" class="ft-helper-img-rd" height="381"
+                                                        loading="lazy"
+                                                        src="https://estaticos-cdn.prensaiberica.es/clip/90cbee78-74d3-43db-94ef-b8e260a1f814_16-9-discover-aspect-ratio_default_0.webp"
+                                                        title="title text" width="656">
+                                                    <div class="ft-mol-label">
+                                                        <div class="ft-mol-label__content">
+                                                            <p class="ft-mol-label__title">
+                                                                Localidad
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </picture>
+                                            </a>
+                                        </figure>
+                                        <div class="ft-org-cardHome__main">
+                                            <header>
+                                                <h2 class="ft-org-cardHome__mainTitle"><a
+                                                        class="ft-link ft-link--secondary" href="#" target="_self"
+                                                        title="link title">La contratación indefinida se estabiliza tras
+                                                        el impulso inicial de la reforma</a></h2>
+                                            </header>
+                                        </div><!-- Footer de discover -->
+                                        <div class="ft-org-cardHome__footer">
+                                            <a class="ft-org-cardHome__medio"><img class="ft-org-cardHome__medioImg"
+                                                    src="../../cds-statics/assets/img/logos/logo-favicon-epe-16x16.svg">
+                                                El
+                                                Periódico de España</a> <time class="ft-org-cardHome__date" datetime=""
+                                                itemprop="dateModified">Hace 30 minutos</time>
+                                        </div>
+                                    </article>
+                                </div>
+                                <!-- feeds: item 03 -->
+                                <div
+                                    class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__colSm-6 ft-layout-grid-flex__colMd-4">
+                                    <!-- CardHome -->
+                                    <article
+                                        class="ft-org-cardHome ft-org-cardHome--featured ft-org-cardHome--col ft-org-cardHome--md ft-org-cardHome--discover">
+                                        <!-- Imagen destacada -->
+                                        <figure class="ft-org-cardHome__media">
+                                            <a href="#"
+                                                title="El Barça se abre a negociar la cesión de Lenglet al Tottenham">
+                                                <picture class="ft-img">
+                                                    <source media="(min-width: 768px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/26683db8-179d-4321-af41-b7fd2fd94738_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <source media="(min-width: 250px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/26683db8-179d-4321-af41-b7fd2fd94738_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <img alt="alt text" class="ft-helper-img-rd" height="381"
+                                                        loading="lazy"
+                                                        src="https://estaticos-cdn.prensaiberica.es/clip/26683db8-179d-4321-af41-b7fd2fd94738_16-9-discover-aspect-ratio_default_0.webp"
+                                                        title="title text" width="656">
+                                                    <div class="ft-mol-label">
+                                                        <div class="ft-mol-label__content">
+                                                            <p class="ft-mol-label__title">
+                                                                Localidad
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </picture>
+                                            </a>
+                                        </figure>
+                                        <div class="ft-org-cardHome__main">
+                                            <header>
+                                                <h2 class="ft-org-cardHome__mainTitle"><a
+                                                        class="ft-link ft-link--secondary" href="#" target="_self"
+                                                        title="link title">El abandono escolar temprano desciende a
+                                                        mínimos históricos</a></h2>
+                                            </header>
+                                        </div><!-- Footer de discover -->
+                                        <div class="ft-org-cardHome__footer">
+                                            <a class="ft-org-cardHome__medio"><img class="ft-org-cardHome__medioImg"
+                                                    src="../../cds-statics/assets/img/logos/logo-favicon-regionales-la-nueva-espana-16x16.svg">
+                                                La Nueva España</a> <time class="ft-org-cardHome__date" datetime=""
+                                                itemprop="dateModified">Hace 45 minutos</time>
+                                        </div>
+                                    </article>
+                                </div>
+                                <!-- feeds: item 04 -->
+                                <div
+                                    class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__colSm-6 ft-layout-grid-flex__colMd-4">
+                                    <!-- CardHome -->
+                                    <article
+                                        class="ft-org-cardHome ft-org-cardHome--featured ft-org-cardHome--col ft-org-cardHome--md ft-org-cardHome--discover">
+                                        <!-- Imagen destacada -->
+                                        <figure class="ft-org-cardHome__media ft-org-cardHome__mediaVideo">
+                                            <a href="#"
+                                                title="El Barça se abre a negociar la cesión de Lenglet al Tottenham">
+                                                <picture class="ft-img">
+                                                    <source media="(min-width: 768px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/f4221ff5-1b2e-4ac7-b46d-2e1b833999de_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <source media="(min-width: 250px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/f4221ff5-1b2e-4ac7-b46d-2e1b833999de_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <img alt="alt text" class="ft-helper-img-rd" height="381"
+                                                        loading="lazy"
+                                                        src="https://estaticos-cdn.prensaiberica.es/clip/f4221ff5-1b2e-4ac7-b46d-2e1b833999de_16-9-discover-aspect-ratio_default_0.webp"
+                                                        title="title text" width="656">
+                                                    <div class="ft-mol-label">
+                                                        <div class="ft-mol-label__content">
+                                                            <p class="ft-mol-label__title">
+                                                                Localidad
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </picture>
+                                            </a>
+                                        </figure>
+                                        <div class="ft-org-cardHome__main">
+                                            <header>
+                                                <h2 class="ft-org-cardHome__mainTitle"><a
+                                                        class="ft-link ft-link--secondary" href="#" target="_self"
+                                                        title="link title">El alquiler absorbe ya más del 40% del
+                                                        salario medio en las grandes ciudades</a></h2>
+                                            </header>
+                                        </div><!-- Footer de discover -->
+                                        <div class="ft-org-cardHome__footer">
+                                            <a class="ft-org-cardHome__medio"><img class="ft-org-cardHome__medioImg"
+                                                    src="../../cds-statics/assets/img/logos/logo-favicon-sport-16x16.svg">
+                                                Sport</a> <time class="ft-org-cardHome__date" datetime=""
+                                                itemprop="dateModified">Hace 1 hora</time>
+                                        </div>
+                                    </article>
+                                </div>
+                                <!-- feeds: item 05 -->
+                                <div
+                                    class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__colSm-6 ft-layout-grid-flex__colMd-4">
+                                    <!-- CardHome -->
+                                    <article
+                                        class="ft-org-cardHome ft-org-cardHome--featured ft-org-cardHome--col ft-org-cardHome--md ft-org-cardHome--discover ft-org-cardHome--branded">
+                                        <!-- Imagen destacada -->
+                                        <figure class="ft-org-cardHome__media ft-org-cardHome__mediaVideo">
+                                            <a href="#"
+                                                title="El Barça se abre a negociar la cesión de Lenglet al Tottenham">
+                                                <picture class="ft-img">
+                                                    <source media="(min-width: 768px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/fb886785-ffd0-4964-8389-155971cb4aa6_16-9-discover-aspect-ratio_640w_0.webp">
+                                                    <source media="(min-width: 250px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/fb886785-ffd0-4964-8389-155971cb4aa6_16-9-discover-aspect-ratio_640w_0.webp">
+                                                    <img alt="alt text" class="ft-helper-img-rd" height="381"
+                                                        loading="lazy"
+                                                        src="https://estaticos-cdn.prensaiberica.es/clip/fb886785-ffd0-4964-8389-155971cb4aa6_16-9-discover-aspect-ratio_640w_0.webp"
+                                                        title="title text" width="656">
+                                                    <div class="ft-mol-label">
+                                                        <div class="ft-mol-label__content">
+                                                            <p class="ft-mol-label__title">
+                                                                Ikea
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </picture>
+                                            </a>
+                                        </figure>
+                                        <div class="ft-org-cardHome__main">
+                                            <header>
+                                                <div class="ft-mol-headband ft-mol-headband--branded">
+                                                    <div class="ft-mol-headband__title">
+                                                        Lorem Ipsum
+                                                    </div>
+                                                    <div class="ft-mol-headband__logo">
+                                                        Ofrecido por <a href="#"><img alt="headband"
+                                                                class="ft-mol-headband__img ft-helper-img-rd"
+                                                                src="../../cds-statics/assets/img/logos/logo-becontent.svg"></a>
+                                                    </div>
+                                                </div>
+                                                <h2 class="ft-org-cardHome__mainTitle"><a
+                                                        class="ft-link ft-link--secondary" href="#" target="_self"
+                                                        title="link title">Un estudio alerta del retroceso de la
+                                                        biodiversidad en zonas agrícolas</a></h2>
+                                            </header>
+                                        </div>
+                                        <div class="ft-org-cardHome__footer">
+                                            <a class="ft-org-cardHome__medio"><img class="ft-org-cardHome__medioImg"
+                                                    src="../../cds-statics/assets/img/logos/logo-favicon-sport-16x16.svg">
+                                                Sport</a> <time class="ft-org-cardHome__date" datetime=""
+                                                itemprop="dateModified">Hace 1 hora</time>
+                                        </div>
+                                    </article>
+                                </div>
+                                <!-- feeds: item 06 -->
+                                <div
+                                    class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__colSm-6 ft-layout-grid-flex__colMd-4">
+                                    <!-- CardHome -->
+                                    <article
+                                        class="ft-org-cardHome ft-org-cardHome--featured ft-org-cardHome--col ft-org-cardHome--md ft-org-cardHome--discover">
+                                        <!-- Imagen destacada -->
+                                        <figure class="ft-org-cardHome__media">
+                                            <a href="#"
+                                                title="El Barça se abre a negociar la cesión de Lenglet al Tottenham">
+                                                <picture class="ft-img">
+                                                    <source media="(min-width: 768px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/820b0506-a568-49c0-a1bb-9c648e8d67bd_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <source media="(min-width: 250px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/820b0506-a568-49c0-a1bb-9c648e8d67bd_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <img alt="alt text" class="ft-helper-img-rd" height="381"
+                                                        loading="lazy"
+                                                        src="https://estaticos-cdn.prensaiberica.es/clip/820b0506-a568-49c0-a1bb-9c648e8d67bd_16-9-discover-aspect-ratio_default_0.webp"
+                                                        title="title text" width="656">
+                                                    <div class="ft-mol-label">
+                                                        <div class="ft-mol-label__content">
+                                                            <p class="ft-mol-label__title">
+                                                                Localidad
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </picture>
+                                            </a>
+                                        </figure>
+                                        <div class="ft-org-cardHome__main">
+                                            <header>
+                                                <h2 class="ft-org-cardHome__mainTitle"><a
+                                                        class="ft-link ft-link--secondary" href="#" target="_self"
+                                                        title="link title">La inflación se modera por tercer mes
+                                                        consecutivo y alivia el gasto de los hogares</a></h2>
+                                            </header>
+                                        </div><!-- Footer de discover -->
+                                        <div class="ft-org-cardHome__footer">
+                                            <a class="ft-org-cardHome__medio"><img class="ft-org-cardHome__medioImg"
+                                                    src="../../cds-statics/assets/img/logos/logo-favicon-regionales-diario-de-mallorca-16x16.svg">
+                                                Diario de Mallorca</a> <time class="ft-org-cardHome__date" datetime=""
+                                                itemprop="dateModified">Hace 3 horas</time>
+                                        </div>
+                                    </article>
+                                </div>
+                                <!-- feeds: item 07 -->
+                                <div
+                                    class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__colSm-6 ft-layout-grid-flex__colMd-4">
+                                    <!-- CardHome -->
+                                    <article
+                                        class="ft-org-cardHome ft-org-cardHome--featured ft-org-cardHome--col ft-org-cardHome--md ft-org-cardHome--discover">
+                                        <!-- Imagen destacada -->
+                                        <figure class="ft-org-cardHome__media ft-org-cardHome__mediaVideo">
+                                            <a href="#"
+                                                title="El Barça se abre a negociar la cesión de Lenglet al Tottenham">
+                                                <picture class="ft-img">
+                                                    <source media="(min-width: 768px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/c14b77d2-48e0-419e-9d2e-f8719bdc6b1c_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <source media="(min-width: 250px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/c14b77d2-48e0-419e-9d2e-f8719bdc6b1c_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <img alt="alt text" class="ft-helper-img-rd" height="381"
+                                                        loading="lazy"
+                                                        src="https://estaticos-cdn.prensaiberica.es/clip/c14b77d2-48e0-419e-9d2e-f8719bdc6b1c_16-9-discover-aspect-ratio_default_0.webp"
+                                                        title="title text" width="656">
+                                                    <div class="ft-mol-label">
+                                                        <div class="ft-mol-label__content">
+                                                            <p class="ft-mol-label__title">
+                                                                Localidad
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </picture>
+                                            </a>
+                                        </figure>
+                                        <div class="ft-org-cardHome__main">
+                                            <header>
+                                                <h2 class="ft-org-cardHome__mainTitle"><a
+                                                        class="ft-link ft-link--secondary" href="#" target="_self"
+                                                        title="link title">El voluntariado crece entre los jóvenes tras
+                                                        la pandemia</a></h2>
+                                            </header>
+                                        </div><!-- Footer de discover -->
+                                        <div class="ft-org-cardHome__footer">
+                                            <a class="ft-org-cardHome__medio"><img class="ft-org-cardHome__medioImg"
+                                                    src="../../cds-statics/assets/img/logos/logo-favicon-regionales-faro-de-vigo-16x16.svg">
+                                                Faro de Vigo</a> <time class="ft-org-cardHome__date" datetime=""
+                                                itemprop="dateModified">Hace 4 horas</time>
+                                        </div>
+                                    </article>
+                                </div>
+                                <!-- feeds: item 08 -->
+                                <div
+                                    class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__colSm-6 ft-layout-grid-flex__colMd-4">
+                                    <!-- CardHome -->
+                                    <article
+                                        class="ft-org-cardHome ft-org-cardHome--featured ft-org-cardHome--col ft-org-cardHome--md ft-org-cardHome--discover">
+                                        <!-- Imagen destacada -->
+                                        <figure class="ft-org-cardHome__media">
+                                            <a href="#"
+                                                title="El Barça se abre a negociar la cesión de Lenglet al Tottenham">
+                                                <picture class="ft-img">
+                                                    <source media="(min-width: 768px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/a52b972f-a2f3-4855-858f-74d5baaad162_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <source media="(min-width: 250px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/a52b972f-a2f3-4855-858f-74d5baaad162_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <img alt="alt text" class="ft-helper-img-rd" height="381"
+                                                        loading="lazy"
+                                                        src="https://estaticos-cdn.prensaiberica.es/clip/a52b972f-a2f3-4855-858f-74d5baaad162_16-9-discover-aspect-ratio_default_0.webp"
+                                                        title="title text" width="656">
+                                                    <div class="ft-mol-label">
+                                                        <div class="ft-mol-label__content">
+                                                            <p class="ft-mol-label__title">
+                                                                Localidad
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </picture>
+                                            </a>
+                                        </figure>
+                                        <div class="ft-org-cardHome__main">
+                                            <header>
+                                                <h2 class="ft-org-cardHome__mainTitle"><a
+                                                        class="ft-link ft-link--secondary" href="#" target="_self"
+                                                        title="link title">La energía solar bate su récord de generación
+                                                        en verano</a></h2>
+                                            </header>
+                                        </div><!-- Footer de discover -->
+                                        <div class="ft-org-cardHome__footer">
+                                            <a class="ft-org-cardHome__medio"><img class="ft-org-cardHome__medioImg"
+                                                    src="../../cds-statics/assets/img/logos/logo-favicon-regionales-el-correo-gallego-16x16.svg">
+                                                El Correo Gallego</a> <time class="ft-org-cardHome__date" datetime=""
+                                                itemprop="dateModified">Hace 6 horas</time>
+                                        </div>
+                                    </article>
+                                </div>
+                                <!-- feeds: item 09 -->
+                                <div
+                                    class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__colSm-6 ft-layout-grid-flex__colMd-4">
+                                    <!-- CardHome -->
+                                    <article
+                                        class="ft-org-cardHome ft-org-cardHome--featured ft-org-cardHome--col ft-org-cardHome--md ft-org-cardHome--discover">
+                                        <!-- Imagen destacada -->
+                                        <figure class="ft-org-cardHome__media ft-org-cardHome__mediaVideo">
+                                            <a href="#"
+                                                title="El Barça se abre a negociar la cesión de Lenglet al Tottenham">
+                                                <picture class="ft-img">
+                                                    <source media="(min-width: 768px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/f5c442d5-7df1-4417-9f7c-deee9fec2237_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <source media="(min-width: 250px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/f5c442d5-7df1-4417-9f7c-deee9fec2237_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <img alt="alt text" class="ft-helper-img-rd" height="381"
+                                                        loading="lazy"
+                                                        src="https://estaticos-cdn.prensaiberica.es/clip/f5c442d5-7df1-4417-9f7c-deee9fec2237_16-9-discover-aspect-ratio_default_0.webp"
+                                                        title="title text" width="656">
+                                                    <div class="ft-mol-label">
+                                                        <div class="ft-mol-label__content">
+                                                            <p class="ft-mol-label__title">
+                                                                Localidad
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </picture>
+                                            </a>
+                                        </figure>
+                                        <div class="ft-org-cardHome__main">
+                                            <header>
+                                                <h2 class="ft-org-cardHome__mainTitle"><a
+                                                        class="ft-link ft-link--secondary" href="#" target="_self"
+                                                        title="link title">Las listas de espera sanitarias vuelven a
+                                                        aumentar tras el verano</a></h2>
+                                            </header>
+                                        </div><!-- Footer de discover -->
+                                        <div class="ft-org-cardHome__footer">
+                                            <a class="ft-org-cardHome__medio"><img class="ft-org-cardHome__medioImg"
+                                                    src="../../cds-statics/assets/img/logos/logo-favicon-regionales-la-opinion-de-malaga-16x16.svg">
+                                                La Opinión de Málaga</a> <time class="ft-org-cardHome__date" datetime=""
+                                                itemprop="dateModified">Hace 8 horas</time>
+                                        </div>
+                                    </article>
+                                </div>
+                                <!-- feeds: item 10 -->
+                                <div
+                                    class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__colSm-6 ft-layout-grid-flex__colMd-4">
+                                    <!-- Publicidad -->
+                                    <aside class="ft-ad ft-helper-hide-xs">
+                                        <img src="../../cds-statics/assets/img/banners/ad-300x250.png">
+                                    </aside>
+
+                                    <aside class="ft-ad ft-ad--roba ft-ad--robaNotext ft-helper-hide-md">
+                                        <div class="ft-ad--sticky"> <img
+                                                src="../../cds-statics/assets/img/banners/ad-300x600.jpeg"></div>
+                                    </aside>
+                                </div>
+                                <!-- feeds: item 11 -->
+                                <div
+                                    class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__colSm-6 ft-layout-grid-flex__colMd-4">
+                                    <!-- CardHome -->
+                                    <article
+                                        class="ft-org-cardHome ft-org-cardHome--featured ft-org-cardHome--col ft-org-cardHome--md ft-org-cardHome--discover">
+                                        <!-- Imagen destacada -->
+                                        <figure class="ft-org-cardHome__media">
+                                            <a href="#"
+                                                title="El Barça se abre a negociar la cesión de Lenglet al Tottenham">
+                                                <picture class="ft-img">
+                                                    <source media="(min-width: 768px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/a52b972f-a2f3-4855-858f-74d5baaad162_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <source media="(min-width: 250px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/a52b972f-a2f3-4855-858f-74d5baaad162_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <img alt="alt text" class="ft-helper-img-rd" height="381"
+                                                        loading="lazy"
+                                                        src="https://estaticos-cdn.prensaiberica.es/clip/a52b972f-a2f3-4855-858f-74d5baaad162_16-9-discover-aspect-ratio_default_0.webp"
+                                                        title="title text" width="656">
+                                                    <div class="ft-mol-label">
+                                                        <div class="ft-mol-label__content">
+                                                            <p class="ft-mol-label__title">
+                                                                Localidad
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </picture>
+                                            </a>
+                                        </figure>
+                                        <div class="ft-org-cardHome__main">
+                                            <header>
+                                                <h2 class="ft-org-cardHome__mainTitle"><a
+                                                        class="ft-link ft-link--secondary" href="#" target="_self"
+                                                        title="link title">La energía solar bate su récord de generación
+                                                        en verano</a></h2>
+                                            </header>
+                                        </div><!-- Footer de discover -->
+                                        <div class="ft-org-cardHome__footer">
+                                            <a class="ft-org-cardHome__medio"><img class="ft-org-cardHome__medioImg"
+                                                    src="../../cds-statics/assets/img/logos/logo-favicon-regionales-el-correo-gallego-16x16.svg">
+                                                El Correo Gallego</a> <time class="ft-org-cardHome__date" datetime=""
+                                                itemprop="dateModified">Hace 6 horas</time>
+                                        </div>
+                                    </article>
+                                </div>
+                                <!-- feeds: item 12 -->
+                                <div
+                                    class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__colSm-6 ft-layout-grid-flex__colMd-4">
+                                    <!-- CardHome -->
+                                    <article
+                                        class="ft-org-cardHome ft-org-cardHome--featured ft-org-cardHome--col ft-org-cardHome--md ft-org-cardHome--discover">
+                                        <!-- Imagen destacada -->
+                                        <figure class="ft-org-cardHome__media ft-org-cardHome__mediaVideo">
+                                            <a href="#"
+                                                title="El Barça se abre a negociar la cesión de Lenglet al Tottenham">
+                                                <picture class="ft-img">
+                                                    <source media="(min-width: 768px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/f5c442d5-7df1-4417-9f7c-deee9fec2237_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <source media="(min-width: 250px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/f5c442d5-7df1-4417-9f7c-deee9fec2237_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <img alt="alt text" class="ft-helper-img-rd" height="381"
+                                                        loading="lazy"
+                                                        src="https://estaticos-cdn.prensaiberica.es/clip/f5c442d5-7df1-4417-9f7c-deee9fec2237_16-9-discover-aspect-ratio_default_0.webp"
+                                                        title="title text" width="656">
+                                                    <div class="ft-mol-label">
+                                                        <div class="ft-mol-label__content">
+                                                            <p class="ft-mol-label__title">
+                                                                Localidad
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </picture>
+                                            </a>
+                                        </figure>
+                                        <div class="ft-org-cardHome__main">
+                                            <header>
+                                                <h2 class="ft-org-cardHome__mainTitle"><a
+                                                        class="ft-link ft-link--secondary" href="#" target="_self"
+                                                        title="link title">Las listas de espera sanitarias vuelven a
+                                                        aumentar tras el verano</a></h2>
+                                            </header>
+                                        </div><!-- Footer de discover -->
+                                        <div class="ft-org-cardHome__footer">
+                                            <a class="ft-org-cardHome__medio"><img class="ft-org-cardHome__medioImg"
+                                                    src="../../cds-statics/assets/img/logos/logo-favicon-regionales-la-opinion-de-malaga-16x16.svg">
+                                                La Opinión de Málaga</a> <time class="ft-org-cardHome__date" datetime=""
+                                                itemprop="dateModified">Hace 8 horas</time>
+                                        </div>
+                                    </article>
+                                </div>
+                                <!-- feeds: item 13 -->
+                                <div
+                                    class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__colSm-6 ft-layout-grid-flex__colMd-4">
+                                    <!-- CardHome -->
+                                    <article
+                                        class="ft-org-cardHome ft-org-cardHome--featured ft-org-cardHome--col ft-org-cardHome--md ft-org-cardHome--discover">
+                                        <!-- Imagen destacada -->
+                                        <figure class="ft-org-cardHome__media">
+                                            <a href="#"
+                                                title="El Barça se abre a negociar la cesión de Lenglet al Tottenham">
+                                                <picture class="ft-img">
+                                                    <source media="(min-width: 768px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/3f124b1d-f30e-4897-8fc7-38a2a5b9506a_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <source media="(min-width: 250px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/3f124b1d-f30e-4897-8fc7-38a2a5b9506a_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <img alt="alt text" class="ft-helper-img-rd" height="381"
+                                                        loading="lazy"
+                                                        src="https://estaticos-cdn.prensaiberica.es/clip/3f124b1d-f30e-4897-8fc7-38a2a5b9506a_16-9-discover-aspect-ratio_default_0.webp"
+                                                        title="title text" width="656">
+                                                    <div class="ft-mol-label">
+                                                        <div class="ft-mol-label__content">
+                                                            <p class="ft-mol-label__title">
+                                                                Localidad
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </picture>
+                                            </a>
+                                        </figure>
+                                        <div class="ft-org-cardHome__main">
+                                            <header>
+                                                <h2 class="ft-org-cardHome__mainTitle"><a
+                                                        class="ft-link ft-link--secondary" href="#" target="_self"
+                                                        title="link title">Las bibliotecas públicas amplían horarios
+                                                        ante el aumento de usuarios</a></h2>
+                                            </header>
+                                        </div><!-- Footer de discover -->
+                                        <div class="ft-org-cardHome__footer">
+                                            <a class="ft-org-cardHome__medio"><img class="ft-org-cardHome__medioImg"
+                                                    src="../../cds-statics/assets/img/logos/logo-favicon-regionales-superdeporte-16x16.svg">
+                                                Superdeporte</a> <time class="ft-org-cardHome__date" datetime=""
+                                                itemprop="dateModified">Hace 2 días</time>
+                                        </div>
+                                    </article>
+                                </div>
+                                <!-- feeds: item 14 -->
+                                <div
+                                    class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__colSm-6 ft-layout-grid-flex__colMd-4">
+                                    <!-- CardHome -->
+                                    <article
+                                        class="ft-org-cardHome ft-org-cardHome--featured ft-org-cardHome--col ft-org-cardHome--md ft-org-cardHome--discover">
+                                        <!-- Imagen destacada -->
+                                        <figure class="ft-org-cardHome__media ft-org-cardHome__mediaVideo">
+                                            <a href="#"
+                                                title="El Barça se abre a negociar la cesión de Lenglet al Tottenham">
+                                                <picture class="ft-img">
+                                                    <source media="(min-width: 768px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/b9a33d06-0795-46f0-bcb0-60cc451f8b01_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <source media="(min-width: 250px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/b9a33d06-0795-46f0-bcb0-60cc451f8b01_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <img alt="alt text" class="ft-helper-img-rd" height="381"
+                                                        loading="lazy"
+                                                        src="https://estaticos-cdn.prensaiberica.es/clip/b9a33d06-0795-46f0-bcb0-60cc451f8b01_16-9-discover-aspect-ratio_default_0.webp"
+                                                        title="title text" width="656">
+                                                    <div class="ft-mol-label">
+                                                        <div class="ft-mol-label__content">
+                                                            <p class="ft-mol-label__title">
+                                                                Localidad
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </picture>
+                                            </a>
+                                        </figure>
+                                        <div class="ft-org-cardHome__main">
+                                            <header>
+                                                <h2 class="ft-org-cardHome__mainTitle"><a
+                                                        class="ft-link ft-link--secondary" href="#" target="_self"
+                                                        title="link title">El Ejecutivo defiende su plan energético ante
+                                                        las críticas de la oposición</a></h2>
+                                            </header>
+                                        </div><!-- Footer de discover -->
+                                        <div class="ft-org-cardHome__footer">
+                                            <a class="ft-org-cardHome__medio"><img class="ft-org-cardHome__medioImg"
+                                                    src="../../cds-statics/assets/img/logos/logo-favicon-regionales-diario-de-ibiza-16x16.svg">
+                                                Diario de Ibiza</a> <time class="ft-org-cardHome__date" datetime=""
+                                                itemprop="dateModified">Hace 2 días</time>
+                                        </div>
+                                    </article>
+                                </div>
+                                <!-- feeds: item 15 -->
+                                <div
+                                    class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__colSm-6 ft-layout-grid-flex__colMd-4">
+                                    <!-- CardHome -->
+                                    <article
+                                        class="ft-org-cardHome ft-org-cardHome--featured ft-org-cardHome--col ft-org-cardHome--md ft-org-cardHome--discover ft-org-cardHome--branded">
+                                        <!-- Imagen destacada -->
+                                        <figure class="ft-org-cardHome__media ft-org-cardHome__mediaVideo">
+                                            <a href="#"
+                                                title="El Barça se abre a negociar la cesión de Lenglet al Tottenham">
+                                                <picture class="ft-img">
+                                                    <source media="(min-width: 768px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/4f62ae64-476c-46cd-915a-be8e9d7f1508_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <source media="(min-width: 250px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/4f62ae64-476c-46cd-915a-be8e9d7f1508_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <img alt="alt text" class="ft-helper-img-rd" height="381"
+                                                        loading="lazy"
+                                                        src="https://estaticos-cdn.prensaiberica.es/clip/4f62ae64-476c-46cd-915a-be8e9d7f1508_16-9-discover-aspect-ratio_default_0.webp"
+                                                        title="title text" width="656">
+                                                    <div class="ft-mol-label">
+                                                        <div class="ft-mol-label__content">
+                                                            <p class="ft-mol-label__title">
+                                                                Iberdrola
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </picture>
+                                            </a>
+                                        </figure>
+                                        <div class="ft-org-cardHome__main">
+                                            <p class="ft-org-cardHome__mainPretitle">
+                                                Ofecido por Iberdrola
+                                            </p>
+                                            <header>
+                                                <h2 class="ft-org-cardHome__mainTitle"><a
+                                                        class="ft-link ft-link--secondary" href="#" target="_self"
+                                                        title="link title">Un estudio alerta del retroceso de la
+                                                        biodiversidad en zonas agrícolas</a></h2>
+                                            </header>
+                                        </div>
+                                        <div class="ft-org-cardHome__footer">
+                                            <a class="ft-org-cardHome__medio"><img class="ft-org-cardHome__medioImg"
+                                                    src="../../cds-statics/assets/img/logos/logo-favicon-sport-16x16.svg">
+                                                Sport</a> <time class="ft-org-cardHome__date" datetime=""
+                                                itemprop="dateModified">Hace 1 hora</time>
+                                        </div>
+                                    </article>
+                                </div>
+                                <!-- feeds: item 16 -->
+                                <div
+                                    class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__colSm-6 ft-layout-grid-flex__colMd-4">
+                                    <!-- CardHome -->
+                                    <article
+                                        class="ft-org-cardHome ft-org-cardHome--featured ft-org-cardHome--col ft-org-cardHome--md ft-org-cardHome--discover">
+                                        <!-- Imagen destacada -->
+                                        <figure class="ft-org-cardHome__media">
+                                            <a href="#"
+                                                title="El Barça se abre a negociar la cesión de Lenglet al Tottenham">
+                                                <picture class="ft-img">
+                                                    <source media="(min-width: 768px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/4010f003-b680-4499-a572-32179fc00d1e_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <source media="(min-width: 250px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/4010f003-b680-4499-a572-32179fc00d1e_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <img alt="alt text" class="ft-helper-img-rd" height="381"
+                                                        loading="lazy"
+                                                        src="https://estaticos-cdn.prensaiberica.es/clip/4010f003-b680-4499-a572-32179fc00d1e_16-9-discover-aspect-ratio_default_0.webp"
+                                                        title="title text" width="656">
+                                                    <div class="ft-mol-label">
+                                                        <div class="ft-mol-label__content">
+                                                            <p class="ft-mol-label__title">
+                                                                Localidad
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </picture>
+                                            </a>
+                                        </figure>
+                                        <div class="ft-org-cardHome__main">
+                                            <header>
+                                                <h2 class="ft-org-cardHome__mainTitle"><a
+                                                        class="ft-link ft-link--secondary" href="#" target="_self"
+                                                        title="link title">La sequía obliga a restringir el riego en
+                                                        varias cuencas</a></h2>
+                                            </header>
+                                        </div><!-- Footer de discover -->
+                                        <div class="ft-org-cardHome__footer">
+                                            <a class="ft-org-cardHome__medio"><img class="ft-org-cardHome__medioImg"
+                                                    src="../../cds-statics/assets/img/logos/logo-favicon-regionales-el-periodico-mediterraneo-16x16.svg">
+                                                El Periódico del Mediterráneo</a> <time class="ft-org-cardHome__date"
+                                                datetime="" itemprop="dateModified">Hace 3 días</time>
+                                        </div>
+                                    </article>
+                                </div>
+                                <!-- feeds: item 17 -->
+                                <div
+                                    class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__colSm-6 ft-layout-grid-flex__colMd-4">
+                                    <!-- CardHome -->
+                                    <article
+                                        class="ft-org-cardHome ft-org-cardHome--featured ft-org-cardHome--col ft-org-cardHome--md ft-org-cardHome--discover">
+                                        <!-- Imagen destacada -->
+                                        <figure class="ft-org-cardHome__media ft-org-cardHome__mediaVideo">
+                                            <a href="#"
+                                                title="El Barça se abre a negociar la cesión de Lenglet al Tottenham">
+                                                <picture class="ft-img">
+                                                    <source media="(min-width: 768px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/62029fe5-2431-4cfc-aaa7-708424bfb4d1_media-libre-aspect-ratio_default_0.webp">
+                                                    <source media="(min-width: 250px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/62029fe5-2431-4cfc-aaa7-708424bfb4d1_media-libre-aspect-ratio_default_0.webp">
+                                                    <img alt="alt text" class="ft-helper-img-rd" height="381"
+                                                        loading="lazy"
+                                                        src="https://estaticos-cdn.prensaiberica.es/clip/62029fe5-2431-4cfc-aaa7-708424bfb4d1_media-libre-aspect-ratio_default_0.webp"
+                                                        title="title text" width="656">
+                                                    <div class="ft-mol-label">
+                                                        <div class="ft-mol-label__content">
+                                                            <p class="ft-mol-label__title">
+                                                                Localidad
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </picture>
+                                            </a>
+                                        </figure>
+                                        <div class="ft-org-cardHome__main">
+                                            <header>
+                                                <h2 class="ft-org-cardHome__mainTitle"><a
+                                                        class="ft-link ft-link--secondary" href="#" target="_self"
+                                                        title="link title">Los jóvenes retrasan la emancipación pese a
+                                                        la mejora del empleo</a></h2>
+                                            </header>
+                                        </div><!-- Footer de discover -->
+                                        <div class="ft-org-cardHome__footer">
+                                            <a class="ft-org-cardHome__medio"><img class="ft-org-cardHome__medioImg"
+                                                    src="../../cds-statics/assets/img/logos/logo-favicon-regionales-la-provincia-diario-de-las-palmas-16x16.svg">
+                                                La Provincia Diario de las Palmas</a> <time
+                                                class="ft-org-cardHome__date" datetime="" itemprop="dateModified">Hace 4
+                                                días</time>
+                                        </div>
+                                    </article>
+                                </div>
+                                <!-- feeds: item 18 -->
+                                <div
+                                    class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__colSm-6 ft-layout-grid-flex__colMd-4">
+                                    <!-- CardHome -->
+                                    <article
+                                        class="ft-org-cardHome ft-org-cardHome--featured ft-org-cardHome--col ft-org-cardHome--md ft-org-cardHome--discover">
+                                        <!-- Imagen destacada -->
+                                        <figure class="ft-org-cardHome__media ft-org-cardHome__mediaVideo">
+                                            <a href="#"
+                                                title="El Barça se abre a negociar la cesión de Lenglet al Tottenham">
+                                                <picture class="ft-img">
+                                                    <source media="(min-width: 768px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/9fbaa53e-50eb-4190-92c0-9f3d8f2530ee_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <source media="(min-width: 250px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/9fbaa53e-50eb-4190-92c0-9f3d8f2530ee_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <img alt="alt text" class="ft-helper-img-rd" height="381"
+                                                        loading="lazy"
+                                                        src="https://estaticos-cdn.prensaiberica.es/clip/9fbaa53e-50eb-4190-92c0-9f3d8f2530ee_16-9-discover-aspect-ratio_default_0.webp"
+                                                        title="title text" width="656">
+                                                    <div class="ft-mol-label">
+                                                        <div class="ft-mol-label__content">
+                                                            <p class="ft-mol-label__title">
+                                                                Localidad
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </picture>
+                                            </a>
+                                        </figure>
+                                        <div class="ft-org-cardHome__main">
+                                            <header>
+                                                <h2 class="ft-org-cardHome__mainTitle"><a
+                                                        class="ft-link ft-link--secondary" href="#" target="_self"
+                                                        title="link title">Las pymes alertan del impacto del
+                                                        encarecimiento del crédito</a></h2>
+                                            </header>
+                                        </div><!-- Footer de discover -->
+                                        <div class="ft-org-cardHome__footer">
+                                            <a class="ft-org-cardHome__medio"><img class="ft-org-cardHome__medioImg"
+                                                    src="../../cds-statics/assets/img/logos/logo-favicon-regionales-emporda-16x16.svg">
+                                                Diari de Girona</a> <time class="ft-org-cardHome__date" datetime=""
+                                                itemprop="dateModified">Hace 5 días</time>
+                                        </div>
+                                    </article>
+                                </div>
+                                <!-- feeds: item 19 -->
+                                <div
+                                    class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__colSm-6 ft-layout-grid-flex__colMd-4">
+                                    <!-- CardHome -->
+                                    <article
+                                        class="ft-org-cardHome ft-org-cardHome--featured ft-org-cardHome--col ft-org-cardHome--md ft-org-cardHome--discover">
+                                        <!-- Imagen destacada -->
+                                        <figure class="ft-org-cardHome__media">
+                                            <a href="#"
+                                                title="El Barça se abre a negociar la cesión de Lenglet al Tottenham">
+                                                <picture class="ft-img">
+                                                    <source media="(min-width: 768px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/a40acd80-6051-4c71-9f2f-9d8fc40b021e_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <source media="(min-width: 250px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/a40acd80-6051-4c71-9f2f-9d8fc40b021e_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <img alt="alt text" class="ft-helper-img-rd" height="381"
+                                                        loading="lazy"
+                                                        src="https://estaticos-cdn.prensaiberica.es/clip/a40acd80-6051-4c71-9f2f-9d8fc40b021e_16-9-discover-aspect-ratio_default_0.webp"
+                                                        title="title text" width="656">
+                                                    <div class="ft-mol-label">
+                                                        <div class="ft-mol-label__content">
+                                                            <p class="ft-mol-label__title">
+                                                                Localidad
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </picture>
+                                            </a>
+                                        </figure>
+                                        <div class="ft-org-cardHome__main">
+                                            <header>
+                                                <h2 class="ft-org-cardHome__mainTitle"><a
+                                                        class="ft-link ft-link--secondary" href="#" target="_self"
+                                                        title="link title">El sector cultural recupera público, pero aún
+                                                        no ingresos</a></h2>
+                                            </header>
+                                        </div><!-- Footer de discover -->
+                                        <div class="ft-org-cardHome__footer">
+                                            <a class="ft-org-cardHome__medio"><img class="ft-org-cardHome__medioImg"
+                                                    src="../../cds-statics/assets/img/logos/logo-favicon-regionales-el-correo-de-andalucia-16x16.svg">
+                                                El Correo de Andalucía</a> <time class="ft-org-cardHome__date"
+                                                datetime="" itemprop="dateModified">Hace 6 días</time>
+                                        </div>
+                                    </article>
+                                </div>
+                                <!-- feeds: item 20 -->
+                                <div
+                                    class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__colSm-6 ft-layout-grid-flex__colMd-4">
+                                    <!-- Publicidad -->
+                                    <aside class="ft-ad ft-helper-hide-xs">
+                                        <img src="../../cds-statics/assets/img/banners/ad-300x250.png">
+                                    </aside>
+
+                                    <aside class="ft-ad ft-ad--roba ft-ad--robaNotext ft-helper-hide-md">
+                                        <div class="ft-ad--sticky"> <img
+                                                src="../../cds-statics/assets/img/banners/ad-300x250.png"></div>
+                                    </aside>
+                                </div>
+                                <!-- feeds: item 21 -->
+                                <div
+                                    class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__colSm-6 ft-layout-grid-flex__colMd-4">
+                                    <!-- CardHome -->
+                                    <article
+                                        class="ft-org-cardHome ft-org-cardHome--featured ft-org-cardHome--col ft-org-cardHome--md ft-org-cardHome--discover">
+                                        <!-- Imagen destacada -->
+                                        <figure class="ft-org-cardHome__media">
+                                            <a href="#"
+                                                title="El Barça se abre a negociar la cesión de Lenglet al Tottenham">
+                                                <picture class="ft-img">
+                                                    <source media="(min-width: 768px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/4ac7b7fb-af9c-4e44-ba99-3e9b48462089_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <source media="(min-width: 250px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/4ac7b7fb-af9c-4e44-ba99-3e9b48462089_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <img alt="alt text" class="ft-helper-img-rd" height="381"
+                                                        loading="lazy"
+                                                        src="https://estaticos-cdn.prensaiberica.es/clip/4ac7b7fb-af9c-4e44-ba99-3e9b48462089_16-9-discover-aspect-ratio_default_0.webp"
+                                                        title="title text" width="656">
+                                                    <div class="ft-mol-label">
+                                                        <div class="ft-mol-label__content">
+                                                            <p class="ft-mol-label__title">
+                                                                Localidad
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </picture>
+                                            </a>
+                                        </figure>
+                                        <div class="ft-org-cardHome__main">
+                                            <header>
+                                                <h2 class="ft-org-cardHome__mainTitle"><a
+                                                        class="ft-link ft-link--secondary" href="#" target="_self"
+                                                        title="link title">Más mujeres acceden a puestos directivos,
+                                                        aunque persiste la brecha salarial</a></h2>
+                                            </header>
+                                        </div><!-- Footer de discover -->
+                                        <div class="ft-org-cardHome__footer">
+                                            <a class="ft-org-cardHome__medio"><img class="ft-org-cardHome__medioImg"
+                                                    src="../../cds-statics/assets/img/logos/logo-favicon-regionales-el-periodico-extremadura-16x16.svg">
+                                                El Periódico Extremadura</a> <time class="ft-org-cardHome__date"
+                                                datetime="" itemprop="dateModified">Hace 1 semana</time>
+                                        </div>
+                                    </article>
+                                </div>
+                                <!-- feeds: item 22 -->
+                                <div
+                                    class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__colSm-6 ft-layout-grid-flex__colMd-4">
+                                    <!-- CardHome -->
+                                    <article
+                                        class="ft-org-cardHome ft-org-cardHome--featured ft-org-cardHome--col ft-org-cardHome--md ft-org-cardHome--discover">
+                                        <!-- Imagen destacada -->
+                                        <figure class="ft-org-cardHome__media ft-org-cardHome__mediaVideo">
+                                            <a href="#"
+                                                title="El Barça se abre a negociar la cesión de Lenglet al Tottenham">
+                                                <picture class="ft-img">
+                                                    <source media="(min-width: 768px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/8502af5d-d788-4ede-9e35-b67c0ac80bdb_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <source media="(min-width: 250px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/8502af5d-d788-4ede-9e35-b67c0ac80bdb_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <img alt="alt text" class="ft-helper-img-rd" height="381"
+                                                        loading="lazy"
+                                                        src="https://estaticos-cdn.prensaiberica.es/clip/8502af5d-d788-4ede-9e35-b67c0ac80bdb_16-9-discover-aspect-ratio_default_0.webp"
+                                                        title="title text" width="656">
+                                                    <div class="ft-mol-label">
+                                                        <div class="ft-mol-label__content">
+                                                            <p class="ft-mol-label__title">
+                                                                Localidad
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </picture>
+                                            </a>
+                                        </figure>
+                                        <div class="ft-org-cardHome__main">
+                                            <header>
+                                                <h2 class="ft-org-cardHome__mainTitle"><a
+                                                        class="ft-link ft-link--secondary" href="#" target="_self"
+                                                        title="link title">El Gobierno presenta una reforma fiscal
+                                                        centrada en las rentas medias</a></h2>
+                                            </header>
+                                        </div><!-- Footer de discover -->
+                                        <div class="ft-org-cardHome__footer">
+                                            <a class="ft-org-cardHome__medio"><img class="ft-org-cardHome__medioImg"
+                                                    src="../../cds-statics/assets/img/logos/logo-favicon-regionales-la-opinion-a-coruna-16x16.svg">
+                                                La Opinión A Coruña</a> <time class="ft-org-cardHome__date" datetime=""
+                                                itemprop="dateModified">Hace 10 días</time>
+                                        </div>
+                                    </article>
+                                </div>
+                                <!-- feeds: item 23 -->
+                                <div
+                                    class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__colSm-6 ft-layout-grid-flex__colMd-4">
+                                    <!-- CardHome -->
+                                    <article
+                                        class="ft-org-cardHome ft-org-cardHome--featured ft-org-cardHome--col ft-org-cardHome--md ft-org-cardHome--discover">
+                                        <!-- Imagen destacada -->
+                                        <figure class="ft-org-cardHome__media ft-org-cardHome__mediaVideo">
+                                            <a href="#"
+                                                title="El Barça se abre a negociar la cesión de Lenglet al Tottenham">
+                                                <picture class="ft-img">
+                                                    <source media="(min-width: 768px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/90cbee78-74d3-43db-94ef-b8e260a1f814_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <source media="(min-width: 250px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/90cbee78-74d3-43db-94ef-b8e260a1f814_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <img alt="alt text" class="ft-helper-img-rd" height="381"
+                                                        loading="lazy"
+                                                        src="https://estaticos-cdn.prensaiberica.es/clip/90cbee78-74d3-43db-94ef-b8e260a1f814_16-9-discover-aspect-ratio_default_0.webp"
+                                                        title="title text" width="656">
+                                                    <div class="ft-mol-label">
+                                                        <div class="ft-mol-label__content">
+                                                            <p class="ft-mol-label__title">
+                                                                Localidad
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </picture>
+                                            </a>
+                                        </figure>
+                                        <div class="ft-org-cardHome__main">
+                                            <header>
+                                                <h2 class="ft-org-cardHome__mainTitle"><a
+                                                        class="ft-link ft-link--secondary" href="#" target="_self"
+                                                        title="link title">La contaminación urbana cae ligeramente, pero
+                                                        sigue por encima de los límites recomendados</a></h2>
+                                            </header>
+                                        </div><!-- Footer de discover -->
+                                        <div class="ft-org-cardHome__footer">
+                                            <a class="ft-org-cardHome__medio"><img class="ft-org-cardHome__medioImg"
+                                                    src="../../cds-statics/assets/img/logos/logo-favicon-regionales-el-correo-de-zamora-16x16.svg">
+                                                El Correo de Zamora</a> <time class="ft-org-cardHome__date" datetime=""
+                                                itemprop="dateModified">Hace 2 semanas</time>
+                                        </div>
+                                    </article>
+                                </div>
+                                <!-- feeds: item 24 -->
+                                <div
+                                    class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__colSm-6 ft-layout-grid-flex__colMd-4">
+                                    <!-- CardHome -->
+                                    <article
+                                        class="ft-org-cardHome ft-org-cardHome--featured ft-org-cardHome--col ft-org-cardHome--md ft-org-cardHome--discover">
+                                        <!-- Imagen destacada -->
+                                        <figure class="ft-org-cardHome__media">
+                                            <a href="#"
+                                                title="El Barça se abre a negociar la cesión de Lenglet al Tottenham">
+                                                <picture class="ft-img">
+                                                    <source media="(min-width: 768px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/bbc41a26-91dd-4f6a-aeec-8ff7f44d8812_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <source media="(min-width: 250px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/bbc41a26-91dd-4f6a-aeec-8ff7f44d8812_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <img alt="alt text" class="ft-helper-img-rd" height="381"
+                                                        loading="lazy"
+                                                        src="https://estaticos-cdn.prensaiberica.es/clip/bbc41a26-91dd-4f6a-aeec-8ff7f44d8812_16-9-discover-aspect-ratio_default_0.webp"
+                                                        title="title text" width="656">
+                                                    <div class="ft-mol-label">
+                                                        <div class="ft-mol-label__content">
+                                                            <p class="ft-mol-label__title">
+                                                                Localidad
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </picture>
+                                            </a>
+                                        </figure>
+                                        <div class="ft-org-cardHome__main">
+                                            <header>
+                                                <h2 class="ft-org-cardHome__mainTitle"><a
+                                                        class="ft-link ft-link--secondary" href="#" target="_self"
+                                                        title="link title">La negociación presupuestaria entra en su
+                                                        fase decisiva</a></h2>
+                                            </header>
+                                        </div><!-- Footer de discover -->
+                                        <div class="ft-org-cardHome__footer">
+                                            <a class="ft-org-cardHome__medio"><img class="ft-org-cardHome__medioImg"
+                                                    src="../../cds-statics/assets/img/logos/logo-favicon-regionales-regio7-16x16.svg">
+                                                Regió7</a> <time class="ft-org-cardHome__date" datetime=""
+                                                itemprop="dateModified">Hace 2 semanas</time>
+                                        </div>
+                                    </article>
+                                </div>
+                                <!-- feeds: item 25 -->
+                                <div
+                                    class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__colSm-6 ft-layout-grid-flex__colMd-4">
+                                    <!-- CardHome -->
+                                    <article
+                                        class="ft-org-cardHome ft-org-cardHome--featured ft-org-cardHome--col ft-org-cardHome--md ft-org-cardHome--discover ft-org-cardHome--branded">
+                                        <!-- Imagen destacada -->
+                                        <figure class="ft-org-cardHome__media ft-org-cardHome__mediaVideo">
+                                            <a href="#"
+                                                title="El Barça se abre a negociar la cesión de Lenglet al Tottenham">
+                                                <picture class="ft-img">
+                                                    <source media="(min-width: 768px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/2df0abae-5f92-4eff-93c9-b9e30865d835_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <source media="(min-width: 250px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/2df0abae-5f92-4eff-93c9-b9e30865d835_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <img alt="alt text" class="ft-helper-img-rd" height="381"
+                                                        loading="lazy"
+                                                        src="https://estaticos-cdn.prensaiberica.es/clip/2df0abae-5f92-4eff-93c9-b9e30865d835_16-9-discover-aspect-ratio_default_0.webp"
+                                                        title="title text" width="656">
+                                                    <div class="ft-mol-label">
+                                                        <div class="ft-mol-label__content">
+                                                            <p class="ft-mol-label__title">
+                                                                El Corte Inglés
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </picture>
+                                            </a>
+                                        </figure>
+                                        <div class="ft-org-cardHome__main">
+                                            <div class="ft-mol-headband ft-mol-headband--branded">
+                                                <div class="ft-mol-headband__title">
+                                                    Lorem Ipsum
+                                                </div>
+                                                <div class="ft-mol-headband__logo">
+                                                    Ofrecido por <a href="#"><img alt="headband"
+                                                            class="ft-mol-headband__img ft-helper-img-rd"
+                                                            src="../../cds-statics/assets/img/logos/logo-becontent.svg"></a>
+                                                </div>
+                                            </div>
+                                            <header>
+                                                <h2 class="ft-org-cardHome__mainTitle"><a
+                                                        class="ft-link ft-link--secondary" href="#" target="_self"
+                                                        title="link title">Un estudio alerta del retroceso de la
+                                                        biodiversidad en zonas agrícolas</a></h2>
+                                            </header>
+                                        </div>
+                                        <div class="ft-org-cardHome__footer">
+                                            <a class="ft-org-cardHome__medio"><img class="ft-org-cardHome__medioImg"
+                                                    src="../../cds-statics/assets/img/logos/logo-favicon-sport-16x16.svg">
+                                                Sport</a> <time class="ft-org-cardHome__date" datetime=""
+                                                itemprop="dateModified">Hace 1 hora</time>
+                                        </div>
+                                    </article>
+                                </div>
+                                <!-- feeds: item -->
+                                <div
+                                    class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__colSm-6 ft-layout-grid-flex__colMd-4">
+                                    <!-- CardHome -->
+                                    <article
+                                        class="ft-org-cardHome ft-org-cardHome--featured ft-org-cardHome--col ft-org-cardHome--md ft-org-cardHome--discover">
+                                        <!-- Imagen destacada -->
+                                        <figure class="ft-org-cardHome__media">
+                                            <a href="#"
+                                                title="El Barça se abre a negociar la cesión de Lenglet al Tottenham">
+                                                <picture class="ft-img">
+                                                    <source media="(min-width: 768px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/66628d50-715d-43ae-afee-5b85952e89c1_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <source media="(min-width: 250px)"
+                                                        srcset="https://picsum.photos/seed/news26/414/276"> <img
+                                                        alt="alt text" class="ft-helper-img-rd" height="381"
+                                                        loading="lazy"
+                                                        src="https://estaticos-cdn.prensaiberica.es/clip/66628d50-715d-43ae-afee-5b85952e89c1_16-9-discover-aspect-ratio_default_0.webp"
+                                                        title="title text" width="656">
+                                                    <div class="ft-mol-label">
+                                                        <div class="ft-mol-label__content">
+                                                            <p class="ft-mol-label__title">
+                                                                Localidad
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </picture>
+                                            </a>
+                                        </figure>
+                                        <div class="ft-org-cardHome__main">
+                                            <header>
+                                                <h2 class="ft-org-cardHome__mainTitle"><a
+                                                        class="ft-link ft-link--secondary" href="#" target="_self"
+                                                        title="link title">Volver al pueblo: la opción de quienes buscan
+                                                        trabajo y calidad de vida</a></h2>
+                                            </header>
+                                        </div><!-- Footer de discover -->
+                                        <div class="ft-org-cardHome__footer">
+                                            <a class="ft-org-cardHome__medio"><img class="ft-org-cardHome__medioImg"
+                                                    src="../../cds-statics/assets/img/logos/logo-favicon-regionales-el-dia-la-opinion-de-tenerife-16x16.svg">
+                                                El Día</a> <time class="ft-org-cardHome__date" datetime=""
+                                                itemprop="dateModified">Hace 1 mes</time>
+                                        </div>
+                                    </article>
+                                </div>
+                                <!-- feeds: item 26 -->
+                                <div
+                                    class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__colSm-6 ft-layout-grid-flex__colMd-4">
+                                    <!-- CardHome -->
+                                    <article
+                                        class="ft-org-cardHome ft-org-cardHome--featured ft-org-cardHome--col ft-org-cardHome--md ft-org-cardHome--discover">
+                                        <!-- Imagen destacada -->
+                                        <figure class="ft-org-cardHome__media ft-org-cardHome__mediaVideo">
+                                            <a href="#"
+                                                title="El Barça se abre a negociar la cesión de Lenglet al Tottenham">
+                                                <picture class="ft-img">
+                                                    <source media="(min-width: 768px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/17380833-8267-4a87-8834-e495e7d8080c_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <source media="(min-width: 250px)"
+                                                        srcset="https://estaticos-cdn.prensaiberica.es/clip/17380833-8267-4a87-8834-e495e7d8080c_16-9-discover-aspect-ratio_default_0.webp">
+                                                    <img alt="alt text" class="ft-helper-img-rd" height="381"
+                                                        loading="lazy"
+                                                        src="https://estaticos-cdn.prensaiberica.es/clip/17380833-8267-4a87-8834-e495e7d8080c_16-9-discover-aspect-ratio_default_0.webp"
+                                                        title="title text" width="656">
+                                                    <div class="ft-mol-label">
+                                                        <div class="ft-mol-label__content">
+                                                            <p class="ft-mol-label__title">
+                                                                Localidad
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </picture>
+                                            </a>
+                                        </figure>
+                                        <div class="ft-org-cardHome__main">
+                                            <header>
+                                                <h2 class="ft-org-cardHome__mainTitle"><a
+                                                        class="ft-link ft-link--secondary" href="#" target="_self"
+                                                        title="link title">Las comunidades reclaman más financiación
+                                                        para afrontar el envejecimiento</a></h2>
+                                            </header>
+                                        </div><!-- Footer de discover -->
+                                        <div class="ft-org-cardHome__footer">
+                                            <a class="ft-org-cardHome__medio"><img class="ft-org-cardHome__medioImg"
+                                                    src="../../cds-statics/assets/img/logos/logo-favicon-regionales-emporda-16x16.svg">
+                                                Empordà</a> <time class="ft-org-cardHome__date" datetime=""
+                                                itemprop="dateModified">Hace 1 mes</time>
+                                        </div>
+                                    </article>
+                                </div>
+                                <!-- Botón añadir más -->
+                                <div class="ft-layout-grid-flex__colXs-12">
+                                    <!-- feeds: ver más -->
+                                    <div class="ft-mol-btnGroup ft-mol-btnGroup--cnt" data-controls="searchResults">
+                                        <button type="button" class="ft-btn ft-btn--primary ft-btn--md"
+                                            data-action="load-more" aria-controls="searchResults"
+                                            aria-describedby="searchLoadMoreHint">
+                                            Ver más
+                                        </button>
+                                    </div>
+                                </div>
+                                <!-- Fin Botón añadir más -->
+                                <!-- feeds: item -->
+                                <div
+                                    class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__colSm-6 ft-layout-grid-flex__colMd-4">
+                                    <article
+                                        class="ft-org-cardHome ft-org-cardHome--featured ft-org-cardHome--col ft-org-cardHome--md ft-org-cardHome--discover"
+                                        data-mrf-recirculation="section-cerca-feed-noticias" cardsize="md"
+                                        cardtypes="col" pretitle="Plans" ispremium="false" isbranded="false"
+                                        isbrandednomark="false">
+                                        <figure class="ft-org-cardHome__media"><a
+                                                href="https://www.emporda.info/oci/agenda/2026/01/19/agenda-19-25-gener-lalt-125614172.html?utm_campaign=cerca-v2&amp;utm_term=user_defined"
+                                                target="_self" title="Agenda del 19 al 25 de gener a l'Alt Empordà"
+                                                class="">
+                                                <picture class="ft-img"><img
+                                                        src="https://estaticos-cdn.prensaiberica.es/clip/7c3ce32f-8b6e-4ef2-aa2b-1e60eab0ccf8_16-9-discover-aspect-ratio_640w_0.jpg"
+                                                        width="" height=""
+                                                        alt="Agenda del 19 al 25 de gener a l'Alt Empordà"
+                                                        class="ft-helper-img-rd" loading="lazy">
+                                                    <div class="ft-mol-label">
+                                                        <div class="ft-mol-label__content">
+                                                            <p class="ft-mol-label__title">
+                                                                Localidad
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </picture>
+                                            </a></figure>
+                                        <div class="ft-org-cardHome__main">
+                                            <header>
+                                                <h2 class="ft-org-cardHome__mainTitle"><a
+                                                        href="https://www.emporda.info/oci/agenda/2026/01/19/agenda-19-25-gener-lalt-125614172.html?utm_campaign=cerca-v2&amp;utm_term=user_defined"
+                                                        target="_self"
+                                                        title="Agenda del 19 al 25 de gener a l'Alt Empordà"
+                                                        class="ft-link ft-link--secondary">Agenda del 19 al 25 de gener
+                                                        a l'Alt Empordà</a></h2>
+                                            </header>
+                                        </div>
+                                        <div class="ft-org-cardHome__footer">
+                                            <a title="" class="ft-org-cardHome__medio"><img
+                                                    src="../../cds-statics/assets/img/near-favicons/logo-favicon-regionales-emporda-16x16.svg"
+                                                    alt="" class="ft-org-cardHome__medioImg" loading="eager">
+                                                emporda</a><time datetime="2026-01-19T05:00:28Z"
+                                                class="ft-org-cardHome__date" itemprop="dateModified">19 GEN 2026 -
+                                                6:00</time>
+                                        </div>
+                                    </article>
+                                </div>
+                                <!-- feeds: item -->
+                                <div
+                                    class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__colSm-6 ft-layout-grid-flex__colMd-4">
+                                    <article
+                                        class="ft-org-cardHome ft-org-cardHome--featured ft-org-cardHome--col ft-org-cardHome--md ft-org-cardHome--discover"
+                                        data-mrf-recirculation="section-cerca-feed-noticias" cardsize="md"
+                                        cardtypes="col" pretitle="Castelló d'Empúries" ispremium="false"
+                                        isbranded="false" isbrandednomark="false">
+                                        <figure class="ft-org-cardHome__media"><a
+                                                href="https://www.emporda.info/comarca/2026/01/17/comenca-nova-fase-dels-treballs-125703386.html?utm_campaign=cerca-v2&amp;utm_term=user_defined"
+                                                target="_self"
+                                                title="Comença una nova fase dels treballs per millorar la xarxa ciclista de Castelló d'Empúries"
+                                                class="">
+                                                <picture class="ft-img"><img
+                                                        src="https://estaticos-cdn.prensaiberica.es/clip/f0917d75-4839-4763-89ac-e9ff7fb30ad3_16-9-discover-aspect-ratio_640w_0_x732y1052.jpg"
+                                                        width="" height=""
+                                                        alt="Comença una nova fase dels treballs per millorar la xarxa ciclista de Castelló d'Empúries"
+                                                        class="ft-helper-img-rd" loading="lazy">
+                                                    <div class="ft-mol-label">
+                                                        <div class="ft-mol-label__content">
+                                                            <p class="ft-mol-label__title">
+                                                                Localidad
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </picture>
+                                            </a>
+                                        </figure>
+                                        <div class="ft-org-cardHome__main">
+                                            <header>
+                                                <h2 class="ft-org-cardHome__mainTitle"><a
+                                                        href="https://www.emporda.info/comarca/2026/01/17/comenca-nova-fase-dels-treballs-125703386.html?utm_campaign=cerca-v2&amp;utm_term=user_defined"
+                                                        target="_self"
+                                                        title="Comença una nova fase dels treballs per millorar la xarxa ciclista de Castelló d'Empúries"
+                                                        class="ft-link ft-link--secondary">Comença una nova fase dels
+                                                        treballs per millorar la xarxa ciclista de Castelló
+                                                        d'Empúries</a></h2>
+                                            </header>
+                                        </div>
+                                        <div class="ft-org-cardHome__footer">
+                                            <a title="" class="ft-org-cardHome__medio"><img
+                                                    src="../../cds-statics/assets/img/near-favicons/logo-favicon-regionales-emporda-16x16.svg"
+                                                    alt="" class="ft-org-cardHome__medioImg" loading="eager">
+                                                emporda</a><time datetime="2026-01-17T05:00Z"
+                                                class="ft-org-cardHome__date" itemprop="dateModified">17 GEN 2026 -
+                                                6:00</time>
+                                        </div>
+                                    </article>
+                                </div>
+                                <!-- feeds: item -->
+                                <div
+                                    class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__colSm-6 ft-layout-grid-flex__colMd-4">
+                                    <article
+                                        class="ft-org-cardHome ft-org-cardHome--featured ft-org-cardHome--col ft-org-cardHome--md ft-org-cardHome--discover"
+                                        data-mrf-recirculation="section-cerca-feed-noticias" cardsize="md"
+                                        cardtypes="col" pretitle="Ramaderia" ispremium="false" isbranded="false"
+                                        isbrandednomark="false">
+                                        <figure class="ft-org-cardHome__media"><a
+                                                href="https://www.emporda.info/economia/2026/01/15/govern-abona-1-5-milions-125719615.html?utm_campaign=cerca-v2&amp;utm_term=user_defined"
+                                                target="_self"
+                                                title="El Govern abona 1,5 milions d'euros pendents per indemnitzar els afectats per la dermatosi nodular contagiosa"
+                                                class="">
+                                                <picture class="ft-img"><img
+                                                        src="https://estaticos-cdn.prensaiberica.es/clip/79286225-0874-46d2-977b-02aad9c7d9ed_16-9-discover-aspect-ratio_640w_0.jpg"
+                                                        width="" height=""
+                                                        alt="El Govern abona 1,5 milions d'euros pendents per indemnitzar els afectats per la dermatosi nodular contagiosa"
+                                                        class="ft-helper-img-rd" loading="lazy">
+                                                    <div class="ft-mol-label">
+                                                        <div class="ft-mol-label__content">
+                                                            <p class="ft-mol-label__title">
+                                                                Localidad
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </picture>
+                                            </a></figure>
+                                        <div class="ft-org-cardHome__main">
+                                            <header>
+                                                <h2 class="ft-org-cardHome__mainTitle"><a
+                                                        href="https://www.emporda.info/economia/2026/01/15/govern-abona-1-5-milions-125719615.html?utm_campaign=cerca-v2&amp;utm_term=user_defined"
+                                                        target="_self"
+                                                        title="El Govern abona 1,5 milions d'euros pendents per indemnitzar els afectats per la dermatosi nodular contagiosa"
+                                                        class="ft-link ft-link--secondary">El Govern abona 1,5 milions
+                                                        d'euros pendents per indemnitzar els afectats per la dermatosi
+                                                        nodular contagiosa</a></h2>
+                                            </header>
+                                        </div>
+                                        <div class="ft-org-cardHome__footer">
+                                            <a title="" class="ft-org-cardHome__medio"><img
+                                                    src="../../cds-statics/assets/img/near-favicons/logo-favicon-regionales-emporda-16x16.svg"
+                                                    alt="" class="ft-org-cardHome__medioImg" loading="eager">
+                                                emporda</a><time datetime="2026-01-15T15:04:08Z"
+                                                class="ft-org-cardHome__date" itemprop="dateModified">15 GEN 2026 -
+                                                16:04</time>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- cerca: sugerencias -->
+                    <div class="ft-org-suggestions-chips" data-suggestions-container="true" data-suggestions-count="0"
+                        data-suggestions-loaded="false" id="cerca-suggestions-chips">
+                        <div class="ft-org-suggestions-chips__content">
+                            <h2 class="ft-helper-fontSize-heading-XS ft-helper-text-align-center">
+                                ¿Quieres añadir más localidades?
+                            </h2>
+                            <div class="ft-mol-btnGroup ft-mol-btnGroup--cnt">
+                                <button class="ft-btn ft-btn--primary ft-btn--md" title="title text"
+                                    type="button">Explóralas todas</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--  END // CERCA -->
+                </div>
+            </div>
+        </article><!--Publi Footer (cuando aplique)
+
+        <div class="ft-ad ft-ad==footer">
+
+            <div class="ft-ad==footer__content">
+
+                <div class="ft-ad==footer__embed">
+
+                    <aside class="ft-helper-hide-md">
+
+                        <img src="../../cds-statics/assets/img/banners/ad-footer==mobile.svg" width="768" height="87" alt="banner" class="ft-helper-img-rd">
+
+                    </aside>
+
+                    <aside class="ft-helper-hide-mo">
+
+                        <img src="../../cds-statics/assets/img/banners/ad-footer.png" width="768" height="87" alt="banner" class="ft-helper-img-rd">
+
+                    </aside>
+
+                </div>
+
+                <button type="button" name="close-button" class="ft-btn-nav ft-btn-nav==close ft-popover-close-trigger" title="title text">
+
+                    <span class="ft-btn-nav__text">
+
+                        Cerrar
+
+                    </span>
+
+                    <span class="ft-btn-nav__icon"></span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+        Fin Publi Footer -->
+        <!-- Pie -->
+        <footer aria-label="Información del pie de página" id="footer-media" role="contentinfo">
+            <h2 class="ft-helper-hide">Información de pie de página</h2>
+            <div class="footer-mediaTop">
+                <a aria-current="page" data-edition-homelink="data-edition-homelink" href="/es/"
+                    title="El Periódico"><img alt="El Periódico2" height="65" loading="lazy"
+                        src="../../cds-statics/assets/img/logos/logoEpColor.svg" width="263"></a>
+                <div aria-label="Redes sociales de El Periódico" class="rrss">
+                    <a aria-label="WhatsApp de El Periódico" class="btn" href="#" rel="noopener noreferrer nofollow"
+                        target="_blank"><span aria-hidden="true" class="icon icon-Whatsapp"></span></a> <a
+                        aria-label="Facebook de El Periódico" class="btn"
+                        href="https://www.facebook.com/elperiodico.catalunya" hreflang="es"
+                        rel="noopener noreferrer nofollow" target="_blank"><span aria-hidden="true"
+                            class="icon icon-Facebook"></span></a> <a aria-label="Twitter de El Periódico" class="btn"
+                        href="https://twitter.com/elperiodico" hreflang="es" rel="noopener noreferrer nofollow"
+                        target="_blank"><span aria-hidden="true" class="icon icon-Twitter"></span></a> <a
+                        aria-label="Instagram de El Periódico" class="btn"
+                        href="https://www.instagram.com/elperiodico_cas/" hreflang="es"
+                        rel="noopener noreferrer nofollow" target="_blank"><span aria-hidden="true"
+                            class="icon icon-Instagram"></span></a>
+                </div>
+                <h3 class="ft-helper-hide">Enlaces institucionales</h3>
+                <nav aria-label="Enlaces institucionales">
+                    <ul class="lnk">
+                        <li>
+                            <a href="https://www.elperiodico.com/es/quienessomos.shtml" hreflang="es"
+                                rel="nofollow noopener" target="_blank" title="Quiénes somos">Quiénes somos</a>
+                        </li>
+                        <li>
+                            <a href="https://www.elperiodico.com/es/contacto.shtml" hreflang="es"
+                                rel="nofollow noopener" target="_blank" title="Contacto">Contacto</a>
+                        </li>
+                        <li>
+                            <a href="https://www.elperiodico.com/es/rss/portada_rss.shtml" hreflang="es"
+                                rel="nofollow noopener" target="_blank" title="RSS">RSS</a>
+                        </li>
+                        <li>
+                            <a href="https://www.elperiodico.com/es/mapa-sitio.shtml" hreflang="es"
+                                rel="nofollow noopener" target="_blank" title="Mapa del sitio">Mapa del sitio</a>
+                        </li>
+                        <li>
+                            <a href="https://www.prensaiberica360.es/?_sid=1686819132" hreflang="es"
+                                rel="nofollow noopener" target="_blank" title="Publicidad">Publicidad</a>
+                        </li>
+                        <li>
+                            <a href="https://www.elperiodico.com/es/avisolegal.shtml" hreflang="es"
+                                rel="nofollow noopener" target="_blank" title="Aviso legal">Aviso legal</a>
+                        </li>
+                        <li>
+                            <a href="https://www.prensaiberica.es/politica-de-privacidad-resumida/?_sid=1686819132"
+                                hreflang="es" rel="nofollow noopener" target="_blank"
+                                title="Política de privacidad y cookies">Política de privacidad y cookies</a>
+                        </li>
+                        <li>
+                            <a href="javascript:%20Didomi.preferences.show();" rel="nofollow noopener"
+                                title="Preferencias de Privacidad">Preferencias de Privacidad</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer-mediaMiddle">
+                <address>
+                    <p>El Periódico de Catalunya, S.L.U</p><a
+                        href="https://estaticos-cdn.lne.es/images/footer/prensa-iberica-360.png?id=00bc9e3946af531b5a7b"
+                        hreflang="es" rel="noopener" target="_blank" title="Prensa Ibérica"><img alt="Prensa Ibérica"
+                            height="73" loading="lazy"
+                            src="https://estaticos-cdn.lne.es/images/footer/prensa-iberica-360.png?id=00bc9e3946af531b5a7b"
+                            title="Prensa Ibérica" width="114"></a>
+                </address>
+            </div>
+            <div class="footer-mediaBottom">
+                <p>Otras webs de Prensa Ibérica Media:</p>
+                <ul>
+                    <li class="titular">Titular 1</li>
+                    <li>
+                        <a href="https://www.casagourmet.es/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="Casa Gourmet">Casa Gourmet</a>
+                    </li>
+                    <li>
+                        <a href="https://ocasion.neomotor.com/" rel="nofollow" target="_blank"
+                            title="Coche de ocasión">Coche de ocasión</a>
+                    </li>
+                    <li>
+                        <a href="https://www.codigonuevo.com/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="Código Nuevo">Código Nuevo</a>
+                    </li>
+                    <li>
+                        <a href="https://www.elperiodico.com/cuore/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="Cuore">Cuore</a>
+                    </li>
+                    <li>
+                        <a href="https://www.diaridegirona.cat/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="Diari de Girona">Diari de Girona</a>
+                    </li>
+                    <li>
+                        <a href="https://www.diariocordoba.com/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="Diario de Córdoba">Diario de Córdoba</a>
+                    </li>
+                    <li>
+                        <a href="https://www.diariodeibiza.es/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="Diario de Ibiza">Diario de Ibiza</a>
+                    </li>
+                    <li>
+                        <a href="https://www.diariodemallorca.es/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="Diario de Mallorca">Diario de Mallorca</a>
+                    </li>
+                    <li>
+                        <a href="https://www.elcorreogallego.es/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="El Correo Gallego">El Correo Gallego</a>
+                    </li>
+                    <li>
+                        <a href="https://www.eldia.es/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="El Día Tenerife">El Día Tenerife</a>
+                    </li>
+                    <li>
+                        <a href="https://www.elperiodicodearagon.com/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="El Periódico de Aragón">El Periódico de Aragón</a>
+                    </li>
+                    <li>
+                        <a href="https://www.elperiodico.com/es/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="El Periódico de Catalunya">El Periódico de Catalunya</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epe.es/es/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="El Periódico de España">El Periódico de España</a>
+                    </li>
+                    <li>
+                        <a href="http://www.elperiodicoextremadura.com/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="El Periódico de Extremadura">El Periódico de Extremadura</a>
+                    </li>
+                    <li>
+                        <a href="https://www.elperiodicomediterraneo.com/?_sid=1686737966" rel="nofollow"
+                            target="_blank" title="El Periódico Mediterráneo">El Periódico Mediterráneo</a>
+                    </li>
+                    <li>
+                        <a href="https://www.farodevigo.es/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="Faro de Vigo">Faro de Vigo</a>
+                    </li>
+                    <li>
+                        <a href="https://formula1.lne.es/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="Fórmula 1">Fórmula 1</a>
+                    </li>
+                    <li>
+                        <a href="https://www.premios-cine.com/goya/" rel="nofollow" target="_blank"
+                            title="Goya">Goya</a>
+                    </li>
+                    <li>
+                        <a href="https://www.iberempleos.es/" rel="nofollow" target="_blank"
+                            title="Iberempleos">Iberempleos</a>
+                    </li>
+                    <li class="titular">Titular 2</li>
+                    <li>
+                        <a href="https://www.diarioinformacion.com/" rel="nofollow" target="_blank"
+                            title="Información">Información</a>
+                    </li>
+                    <li>
+                        <a href="http://www.informaciontv.es/" rel="nofollow" target="_blank"
+                            title="Información TV">Información TV</a>
+                    </li>
+                    <li>
+                        <a href="https://www.lacronicabadajoz.com/" rel="nofollow" target="_blank"
+                            title="La Crónica de Badajoz">La Crónica de Badajoz</a>
+                    </li>
+                    <li>
+                        <a href="https://www.lne.es/asturias/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="La Nueva España Asturias">La Nueva España Asturias</a>
+                    </li>
+                    <li>
+                        <a href="https://www.laopinioncoruna.es/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="La Opinión de A Coruña">La Opinión de A Coruña</a>
+                    </li>
+                    <li>
+                        <a href="https://www.laopiniondemurcia.es/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="La Opinión de Murcia">La Opinión de Murcia</a>
+                    </li>
+                    <li>
+                        <a href="https://www.laopiniondemalaga.es/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="La Opinión de Málaga">La Opinión de Málaga</a>
+                    </li>
+                    <li>
+                        <a href="https://www.laopiniondezamora.es/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="La Opinión El correo de Zamora">La Opinión El correo de Zamora</a>
+                    </li>
+                    <li>
+                        <a href="https://www.laprovincia.es/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="La Provincia Diario de Las Palmas">La Provincia Diario de Las Palmas</a>
+                    </li>
+                    <li>
+                        <a href="https://www.levante-emv.com/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="Levante El Mercantil Valenciano">Levante El Mercantil Valenciano</a>
+                    </li>
+                    <li>
+                        <a href="http://www.informaciontv.es/" rel="nofollow" target="_blank" title="Levante TV">Levante
+                            TV</a>
+                    </li>
+                    <li>
+                        <a href="https://www.emporda.info/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="L'Empordà Figueres">L'Empordà Figueres</a>
+                    </li>
+                    <li class="titular">Titular 3</li>
+                    <li>
+                        <a href="https://www.mallorcazeitung.es/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="Mallorca Zeitung Mallorca">Mallorca Zeitung Mallorca</a>
+                    </li>
+                    <li>
+                        <a href="https://neomotor.epe.es/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="Neomotor">Neomotor</a>
+                    </li>
+                    <li>
+                        <a href="https://www.premios-cine.com/oscars/" rel="nofollow" target="_blank"
+                            title="Oscars">Oscars</a>
+                    </li>
+                    <li>
+                        <a href="https://www.regio7.cat/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="Regió 7 Manresa">Regió Manresa</a>
+                    </li>
+                    <li>
+                        <a href="https://www.sport.es/" rel="nofollow" target="_blank" title="Sport">Sport</a>
+                    </li>
+                    <li>
+                        <a href="https://www.stilo.es/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="Stilo">Stilo</a>
+                    </li>
+                    <li>
+                        <a href="https://www.superdeporte.es/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="Superdeporte Valencia">Superdeporte Valencia</a>
+                    </li>
+                    <li>
+                        <a href="https://www.sport.es/es/tendencias21/" rel="nofollow" target="_blank"
+                            title="Tendencias 21">Tendencias 21</a>
+                    </li>
+                    <li>
+                        <a href="https://www.tucasa.com/" rel="nofollow" target="_blank" title="Tu casa">Tu casa</a>
+                    </li>
+                    <li>
+                        <a href="https://www.sport.es/es/medio-ambiente/" rel="nofollow" target="_blank"
+                            title="Medio Ambiente">Medio Ambiente</a>
+                    </li>
+                    <li>
+                        <a href="https://viajar.elperiodico.com/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="Viajar">Viajar</a>
+                    </li>
+                    <li>
+                        <a href="https://www.woman.es/" rel="nofollow" target="_blank" title="Woman Madame Figaro">Woman
+                            Madame Figaro</a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JS: masthead -->
+    <script rel="modulepreload" src="../../cds-statics/js/affix/affix.js">
+    </script>
+    <script rel="modulepreload" src="../../cds-statics/js/headers/masthead.js">
+    </script>
+    <script rel="modulepreload" src="../../cds-statics/js/form/fourty-js-form-combo-search.js">
+    </script>
+    <script rel="modulepreload" src="../../cds-statics/js/sidenav/fourty-js-sidenav-default.js">
+    </script>
+    <script rel="modulepreload" src="../../cds-statics/js/modal/fourty-js-popover.js">
+    </script>
+    <script rel="modulepreload" src="../../cds-statics/js/dropdown/fortty-js-dropdown-simple.js">
+
+    </script>
+    <script rel="modulepreload" src="../../cds-statics/js/tour/fourty-js-tour.js">
+
+    </script>
+
+    <!-- JS: smoothscroll -->
+    <script defer src="../../cds-statics/js/scroll/smooth-scrollbar/smooth-scrollbar.js">
+    </script>
+    <script defer src="../../cds-statics/js/scroll/smooth-scrollbar/smooth-scrollbar-functions.js">
+    </script>
+</body>
+
+</html>

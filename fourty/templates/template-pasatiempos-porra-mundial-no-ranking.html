@@ -1,0 +1,279 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <title>42DS | Templates: Pasatiempos</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta name="format-detection" content="telephone=no">
+  <!-- CSS: library multibrand -->
+  <link href="../../cds-statics/css/ux-index.css" id="brandStyles" rel="stylesheet" type="text/css" />
+  <!-- CSS: settings -->
+  <link href="../../cds-statics/css/brands/ux/setting.css" id="brandStyles-root" rel="stylesheet" type="text/css" />
+  <link href="../../cds-statics/css/brands/ux/core.css" id="brandStyles-root" rel="stylesheet" type="text/css" />
+  <link href="../../cds-statics/css/brands/commons/setting-pasatiempos.css" id="brandStyles-root" rel="stylesheet" type="text/css" />
+  <!-- FAVICON -->
+  <link href="../favicon.png" rel="icon" type="image/png" />
+</head>
+
+<body class="fourty ft-brand-ux pasatiempos minimal-header"
+  data-showroom-skin="layout">
+
+  <!-- LAYOUT -->
+  <article class="ft-layout-grid-flex">
+     
+    <!-- ORG: game -->
+    <div class="ft-org-game ft-helper-bgColor-background-lightGrey">
+      <!-- juego -->
+      <div class="ft-org-game__mundial">
+        <div class="ft-layout-grid-flex__row ft-layout-grid-flex__rowIs-fullwidth">
+    
+          <div class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__col-addsContent--L">
+            <!-- tablero -->
+            <div class="ft-org-game__mundial__board" id="porraBoard" role="group" aria-label="Porra del Mundial">
+            
+              <div class="ft-layout-grid-flex__row">
+            
+                <div class="ft-layout-grid-flex__colXs-12">
+            
+                  <header class="ft-org-game__mundial__header">
+                    <!-- mol: bar: --data-inside -->
+                    <div class="ft-mol-bar ft-mol-bar--xs ft-mol-bar--data-inside" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" aria-label="Porra del Mundial: 20% completado">
+                      <div class="ft-mol-bar__info">
+                          <h4 class="ft-mol-bar__title">Mi porra del Mundial</h4>
+                      </div>
+                      <div class="ft-mol-bar__background">
+                        <span class="ft-mol-bar__data"><strong>20%</strong> completado</span>
+                          <div class="ft-mol-bar__background-inProgress" style="width: 20%;"></div>
+                      </div>
+                      <div class="ft-mol-bar__user">
+                          <!-- login -->
+                          <button type="button" name="user-button" class="ft-btn-nav ft-btn-nav--user" title="Usuario">
+                              <span class="ft-btn-nav__text">
+                                  Usuario
+                              </span>
+                              <span class="ft-btn-nav__icon"></span>
+                          </button>
+                          <!-- logged -->
+                          <button type="button" name="user-button" class="ft-btn-nav" title="Usuario">
+                              <span class="ft-btn-nav__text">
+                                  Usuario
+                              </span>
+                              <span class="ft-helper-fontSize-body-XL--small">SC</span>
+                          </button>
+                      </div>
+                    </div>
+                    <!-- end // bar: --data-inside -->
+                    <!-- mol: toolbar: slider -->
+                    <div class="ft-mol-toolbar ft-mol-toolbar--slider" role="toolbar" aria-label="Opciones del juego">
+                      <div class="ft-mol-toolbar__inner">
+                          <div class="ft-mol-toolbar__item ft-mol-toolbar__itemBack">
+                              <button type="button" class="ft-mol-toolbar__button">
+                                  <svg xmlns="http://www.w3.org/2000/svg"
+                                      class="ft-mol-toolbar__icon" width="26" height="27"
+                                      viewBox="0 0 26 27" fill="none">
+                                      <path
+                                          d="M6.48134 14.8657C5.84499 14.1673 5.83885 13.0958 6.46737 12.3903L6.53236 12.3211L17.2183 1.48402C17.8496 0.84376 18.8789 0.837948 19.5174 1.47107C20.1558 2.10422 20.1616 3.13655 19.5303 3.77682L9.83508 13.6093L19.5174 23.2102C20.1558 23.8434 20.1616 24.8757 19.5303 25.516C18.899 26.1563 17.8696 26.162 17.2312 25.5289L6.54697 14.9343L6.48134 14.8657Z"
+                                          fill="currentColor" />
+                                  </svg>
+                                  <span class="ft-mol-toolbar__label"></span>
+                              </button>
+                          </div>
+                          <ul class="ft-mol-toolbar__list">
+                              <!-- item: 1 -->
+                              <li class="ft-mol-toolbar__item ft-mol-toolbar__item--active">
+                                  <button type="button"
+                                      class="ft-mol-toolbar__button"
+                                      aria-label="Ayuda">
+                                      <img class="ft-mol-toolbar__icon"
+                                          src="../../cds-statics/assets/img/icons/icon-mundial-porra-resumen.svg"
+                                          width="38" height="38" alt="icono de inicio">
+                                      <span class="ft-mol-toolbar__label">Inicio</span>
+                                  </button>
+                              </li>
+
+                              <!-- item: 2 -->
+                              <li class="ft-mol-toolbar__item">
+                                  <button type="button"
+                                      class="ft-mol-toolbar__button">
+                                      <img class="ft-mol-toolbar__icon"
+                                          src="../../cds-statics/assets/img/icons/icon-mundial-porra-predicciones.svg"
+                                          width="38" height="38" alt="icono de predicciones">
+                                      <span class="ft-mol-toolbar__label">Predicciones</span>
+                                  </button>
+                              </li>
+
+                              <!-- item: 3 -->
+                              <li class="ft-mol-toolbar__item">
+                                  <button type="button"
+                                      class="ft-mol-toolbar__button">
+                                      <img class="ft-mol-toolbar__icon"
+                                          src="../../cds-statics/assets/img/icons/icon-mundial-porra-ranking.svg"
+                                          width="38" height="38" alt="icono de ranking">
+                                      <span class="ft-mol-toolbar__label">Ranking</span>
+                                  </button>
+                              </li>
+
+                              <!-- item: 4 -->
+                              <li class="ft-mol-toolbar__item">
+                                  <button type="button"
+                                      class="ft-mol-toolbar__button">
+                                      <img class="ft-mol-toolbar__icon"
+                                          src="../../cds-statics/assets/img/icons/icon-mundial-porra-ayuda.svg"
+                                          width="38" height="38" alt="icono de ayuda">
+                                      <span class="ft-mol-toolbar__label">Ayuda</span>
+                                  </button>
+                              </li>
+
+                              <!-- item: 5 -->
+                              <li class="ft-mol-toolbar__item">
+                                  <button type="button"
+                                      class="ft-mol-toolbar__button">
+                                      <img class="ft-mol-toolbar__icon"
+                                          src="../../cds-statics/assets/img/icons/icon-mundial-porra-premios.svg"
+                                          width="38" height="38" alt="icono de puntuación">
+                                      <span class="ft-mol-toolbar__label">Premios</span>
+                                  </button>
+                              </li>
+                          </ul>
+                      </div>
+                    </div>
+                    <!-- end // toolbar: slider -->
+                     <section class="ft-org-game__mundial__status ft-helper-bgColor-black" aria-labelledby="statusCalloutProgressTitle">
+                      <div class="ft-mol-headband ft-mol-headband--section ft-mol-headband--has-logo">
+                        <h2 class="ft-mol-headband__title">Con toda la energía al mundial</h2>
+                        <div class="ft-mol-headband__logo">
+                          Con la colaboración de
+                          <a href="#">
+                            <img alt="headband" class="ft-mol-headband__img ft-helper-img-rd" src="../../cds-statics/assets/img/logos/logo-iberdrola.svg" width="85" height="20">
+                          </a>
+                        </div>
+                      </div>
+                      <h3 id="statusCalloutProgressTitle" class="ft-helper-fontSize-fluid-heading-XXS">
+                        Prepárate para entrar en el ranking
+                      </h3>
+                      <!-- Registro -->
+                      <p class="ft-helper-fontSize-fluid-body-M">
+                        Crea tu cuenta y deja tu porra lista para competir desde el primer partido.
+                      </p>
+                      <div class="ft-helper-spacer-b-xs">
+                        <div class="ft-mol-btnGroup">
+                          <a href="#" class="ft-btn ft-btn--sm-md">
+                            Crear cuenta
+                          </a>
+                        </div>
+                        <div class="ft-mol-btnGroup ft-helper-fontSize-body-M--small">
+                          <a href="#" class="ft-link ft-link--decoration">
+                            Ya tengo cuenta
+                          </a>
+                        </div>
+                      </div>
+                      <!-- Alias -->
+                      <p class="ft-helper-fontSize-fluid-body-M">
+                        Ey! Ahora mismo tienes un alias genérico <span>[user_123456]</span>.
+                        Te damos la opción de personalizarlo:
+                      </p>
+                      <div class="ft-helper-spacer-b-xs">
+                        <div class="ft-mol-form ft-mol-form--has-supporting-text ft-mol-form--has-label">
+                          <input type="text" id="chooseAliasInput" class="ft-mol-form__input" name="alias" placeholder=" "
+                            autocomplete="nickname" aria-describedby="chooseAliasInputHelp">
+                          <label for="chooseAliasInput" class="ft-mol-form__label">Introduce tu alias</label>
+                          <p class="ft-mol-form__supporting-text" id="chooseAliasInputHelp">
+                            <span class="ft-mol-form__supporting-message ft-helper-display-flex">
+                              <img src="../../cds-statics/assets/img/icons/icon-c-error.svg" loading="lazy" class="ft-helper-img-rd" height="16px" width="16px" alt="alt text" title="title text">
+                              &nbsp;
+                              <span>Alias no válido</span>
+                            </span>
+                            <span class="ft-mol-form__supporting-numbers">&nbsp;</span>
+                          </p>
+                        </div>
+                        <div class="ft-mol-btnGroup">
+                          <a href="#" class="ft-btn ft-btn--sm-md">
+                            Enviar
+                          </a>
+                        </div>
+                      </div>
+                    </section>
+                  </header>
+          
+                  <div class="ft-org-game__mundial__content">
+                    <section class="ft-org-game__mundial__no-ranking">
+                      <h3 class="ft-helper-align-center ft-helper-fontSize-fluid-heading-XXS">
+                        Cuando empiece el mundial
+                      </h3>
+
+                      <ul class="ft-list ft-list--primary">
+                        <li class="ft-list__item">
+                          <span class="ft-helper-fontSize-fluid-body-L">Sumarás puntos con tus aciertos</span>
+                        </li>
+                        <li class="ft-list__item">
+                          <span class="ft-helper-fontSize-fluid-body-L">Subirás posiciones jornada a jornada</span>
+                        </li>
+                        <li class="ft-list__item">
+                          <span class="ft-helper-fontSize-fluid-body-L">Verás tu puesto en la general</span>
+                        </li>
+                      </ul>
+                    </section>
+                  </div>
+
+                  <div class="ft-mol-btnGroup ft-mol-btnGroup--cnt ft-mol-btnGroup--is-fixed">
+                    <a href="#" class="ft-btn ft-btn--tertiary ft-btn--sm-md" target="_self">
+                      Volver al resumen
+                    </a>
+                  </div>
+          
+                  <footer class="ft-org-game__mundial__footer">
+                    <div class="ft-org-game__mundial__footer-title">
+                      Copa Mundial de la FIFA 2026™
+                    </div>
+                  </footer>
+                    
+                </div>
+              </div>
+            
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </article>
+
+  <!-- JS: masthead -->
+  <script rel="modulepreload" src="../../cds-statics/js/affix/affix.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/headers/masthead.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/sticking/fourty-header-sticky.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/switch/fourty-js-switch-2024.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/form/fourty-js-form-combo-search.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/sidenav/fourty-js-sidenav-default.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/modal/fourty-js-popover.js"></script>
+  <script src="../../cds-statics/js/tapbar/fourty-js-tapbar.js"></script>
+             <script src="/cds-statics/js/timer/fourty-js-timer.js" defer></script>
+
+  <!-- JS:  dropdown -->
+  <script rel="modulepreload" src="../../cds-statics/js/dropdown/fortty-js-dropdown-simple.js"></script>
+
+  <!-- JS:  modal -->
+  <script rel="modulepreload" src="../../cds-statics/js/modal/fourty-js-modal.js"></script>
+
+  <!-- JS:  tabs -->
+  <script rel="modulepreload" src="../../cds-statics/js/tabs/fourty-js-tabs.js"></script>
+
+  <!-- JS:  smoothscrollbar -->
+  <script rel="modulepreload" src="../../cds-statics/js/scroll/smooth-scrollbar/smooth-scrollbar.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/scroll/smooth-scrollbar/smooth-scrollbar-functions.js"></script>
+
+  <!-- JS: lottie-->
+  <script rel="modulepreload" src="../../cds-statics/js/lottie/fourty-js-lottie.js" type="module"></script>
+
+  <!-- JS: game__input -->
+  <script rel="modulepreload" src="../../cds-statics/js/game/game-input-pipe.js"></script>
+
+  <!-- JS: form-basics -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="../../cds-statics/js/form/fourty-js-form-basics.js" defer></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <title>42DS | Templates: Pasatiempos</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta name="format-detection" content="telephone=no">
+  <!-- CSS: settings -->
+  <link href="../../cds-statics/css/brands/ux/setting.css" id="brandStyles-root" rel="stylesheet" type="text/css" />
+  <link href="../../cds-statics/css/brands/ux/core.css" id="brandStyles-root" rel="stylesheet" type="text/css" />
+  <link href="../../cds-statics/css/brands/commons/setting-pasatiempos.css" id="brandStyles-root" rel="stylesheet"
+ type="text/css" />
+  <!-- CSS: library multibrand -->
+  <link href="../../cds-statics/css/ux-index.css" id="brandStyles" rel="stylesheet" type="text/css" />
+  <!-- FAVICON -->
+  <link href="../favicon.png" rel="icon" type="image/png" />
+</head>
+
+<body class="fourty ft-brand-ux pasatiempos minimal-header"
+  data-showroom-skin="layout">
+  <!--header-->
+  <header  class="ft-helper-hide-sm">
+    <!-- Cabecera normal -->
+    <div class="ft-org-masthead">
+      <div class="ft-org-masthead__top" style="background-color:black">
+        <div class="ft-org-masthead__top-left">
+          <a href="/es/" class="ft-org-masthead__top-left-logo" title="El Periódico de España">
+          </a>
+          <div class="ft-date ft-date--inline">
+            <div class="ft-date__text">
+              <time class="ft-date__textTime" datetime="2025-03-17T04:50:43+01:00">17 MAR 2025</time>
+            </div>
+            <time class="ft-date__reload" datetime="2025-03-17T06:11:15+01:00">Actualizada 6:11</time>
+          </div>
+        </div>
+        <div class="ft-org-masthead__top-right">
+         <div class="sticky"  id="hero">
+            <p class="sticky-text">
+              Suscríbete hoy con un
+              <span class="sticky-text__bold">30% de dto</span>
+            </p>
+            <div class="sticky-button"></div>
+            <a class="sticky-link" data-vars-event-cat="piano link" external-event="marketing=base-pm1A"
+              href="https://micuenta.lne.es/tp/suscripcion/galeria?marketing=base-pm1A" rel="nofollow" target="_blank"
+              title="link title"></a>
+          </div>
+        </div>
+      </div>
+      <div class="ft-org-masthead__main">
+        <div class="ft-org-masthead__menu">
+          <button type="button" class="ft-org-masthead__menu-button" id="toggle">
+            <span class="ft-org-masthead__menu-buttonIcon"></span>
+          </button>
+        </div>
+        <div class="ft-org-masthead__logo">
+          <h1 class="ft-org-masthead__logo-img">
+            <a href="/es/" class="ft-org-masthead__logo-link" title="El Periódico">
+              <span class="ft-org-masthead--hide">el periódico</span>
+            </a>
+          </h1>
+          <div class="ft-org-masthead__logo-lang">
+            <button type="button" onclick="triggerDropdownLanguage()" class="ft-org-masthead__logo-button"
+              id="activeLanguage" data-active=".com">
+              .com
+            </button>
+            <ul class="ft-org-masthead__dropdown" id="languageDropdown">
+              <li>
+                <a href="https://www.elperiodico.cat/ca/" class="ft-org-masthead__dropdown-link">.cat</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="ft-org-masthead__area">
+          <button class="ft-org-masthead__area--search"></button>
+          <button class="ft-org-masthead__area--login"></button>
+        </div>
+      </div>
+      <nav class="ft-org-masthead__nav">
+        <ul class="ft-org-masthead__list">
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              <img src="../../cds-statics/assets/img/logos/logo-prueba2.svg" width="85" height="40" />
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Enlace 2
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Enlace 3
+            </a>
+          </li>
+
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Enlace 7
+            </a>
+          </li>
+          <li class="ft-org-masthead__item ft-org-masthead__item--live">
+            <a href="/es/directos/" class="ft-org-masthead__link" title="Directos">
+              Directos
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Enlace 8
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Enlace 9
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Enlace 10
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Enlace 11
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Enlace 12
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Enlace 13
+            </a>
+          </li>
+        </ul>
+        <a href="#" class="ft-org-masthead__branded">Ofrecido por
+          <img src="../../cds-statics/assets/img/logos/logo-prueba.svg" /></a>
+      </nav>
+      <nav class="ft-org-masthead__nav ft-org-masthead__nav--mobile">
+        <ul class="ft-org-masthead__list">
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              <img src="../../cds-statics/assets/img/logos/logo-prueba2.svg" width="85" height="40" />
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link ft-org-masthead__link--active" title="Title text">
+              Enlace 2 Mobile
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Enlace 3 Mobile
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Enlace 4 Mobile
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Enlace 5 Mobile
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Enlace 6 Mobile
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Enlace 7 Mobile
+            </a>
+          </li>
+          <li class="ft-org-masthead__item ft-org-masthead__item--live">
+            <a href="/es/directos/" class="ft-org-masthead__link" title="Directos">
+              Directos
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <nav class="ft-org-masthead__subnav">
+        <ul class="ft-org-masthead__list">
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Ediciones digitales:
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Siero
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Llanera
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Villaviciosa
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Grado
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Salas
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              Ribera de Arriba
+            </a>
+          </li>
+          <li class="ft-org-masthead__item">
+            <a href="#" class="ft-org-masthead__link" title="Title text">
+              La Corredoria
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <!-- Cabecera fija -->
+    <div class="ft-org-masthead ft-org-masthead--fix">
+      <div class="ft-org-masthead__main">
+        <div class="ft-org-masthead__menu">
+          <button type="button" class="ft-org-masthead__menu-button" id="toggle">
+            <span class="ft-org-masthead__menu-buttonIcon"></span>
+          </button>
+        </div>
+        <div class="ft-org-masthead__logo">
+          <h1 class="ft-org-masthead__logo-img">
+            <a href="/es/" class="ft-org-masthead__logo-link" title="El Periódico">
+              <span class="ft-org-masthead--hide">el periódico</span>
+            </a>
+          </h1>
+          <div class="ft-org-masthead__logo-lang">
+            <button type="button" onclick="triggerDropdownLanguage()" class="ft-org-masthead__logo-button"
+              id="activeLanguage" data-active=".com">
+              .com
+            </button>
+            <ul class="ft-org-masthead__dropdown" id="languageDropdown">
+              <li>
+                <a href="https://www.elperiodico.cat/ca/" class="ft-org-masthead__dropdown-link">.cat</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="ft-org-masthead__area">
+          <button class="ft-org-masthead__area--search"></button>
+          <button class="ft-org-masthead__area--login"></button>
+        </div>
+      </div>
+      <div id="progress-bar" class="ft-org-masthead__progress-bar"></div>
+    </div>
+    <!-- Menú Lateral Único -->
+    <div class="ft-org-masthead ft-org-masthead--side" id="sideMenu">
+      <div class="ft-org-masthead__main">
+        <div class="ft-org-masthead__menu">
+          <button type="button" class="ft-org-masthead__menu-button" id="toggle">
+            <span class="ft-org-masthead__menu-buttonIcon"></span>
+          </button>
+        </div>
+
+        <div class="ft-org-masthead__logo">
+          <div class="ft-org-masthead__logo-img">
+            <a href="/es/" class="ft-org-masthead__logo-link" title="El Periódico">
+              <span class="ft-org-masthead--hide">el periódico</span>
+            </a>
+          </div>
+          <div class="ft-org-masthead__logo-lang">
+            <button type="button" onclick="triggerDropdownLanguage()" class="ft-org-masthead__logo-button"
+              id="activeLanguage" data-active=".com">
+              .com
+            </button>
+            <ul class="ft-org-masthead__dropdown" id="languageDropdown">
+              <li>
+                <a href="https://www.elperiodico.cat/ca/" class="ft-org-masthead__dropdown-link">.cat</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="ft-org-masthead__area">
+          <button class="ft-org-masthead__area--search"></button>
+          <button class="ft-org-masthead__area--login"></button>
+        </div>
+      </div>
+      <div class="ft-org-masthead__box ft-org-masthead__box--white">
+        <h2 class="ft-org-masthead__title">Pasatiempos</h2>
+        <ul class="ft-list ft-list--primary ft-list--chevron ft-list--chevron-rgt ft-list--has-icon">
+          <li class="ft-list__item">
+            <a href="#" class="ft-list__link" title="title text" target="self">
+              Pasatiempos de hoy
+            </a>
+          </li>
+          <li class="ft-list__item">
+            <a href="#" class="ft-list__link" title="title text" target="self">
+
+              Archivo
+            </a>
+          </li>
+          <li class="ft-list__item">
+            <a href="#" class="ft-list__link" title="title text" target="self">
+              <img src="../../cds-statics/assets/img/icons/icon-crucigrama.svg" loading="lazy" width="22" height="22"
+                class="ft-list-photoinfo__img" alt="alt text" title="title text">
+
+              Crucigrama
+            </a>
+          </li>
+          <li class="ft-list__item">
+            <a href="#" class="ft-list__link" title="title text" target="self">
+              <img src="../../cds-statics/assets/img/icons/icon-timequest.svg" loading="lazy" width="22" height="22"
+                class="ft-list-photoinfo__img" alt="alt text" title="title text">
+
+              TimeQuest
+            </a>
+          </li>
+          <li class="ft-list__item">
+            <a href="#" class="ft-list__link" title="title text" target="self">
+              <img src="../../cds-statics/assets/img/icons/icon-pangramax.svg" loading="lazy" width="22" height="22"
+                class="ft-list-photoinfo__img" alt="alt text" title="title text">
+
+              Pangramax
+            </a>
+          </li>
+          <li class="ft-list__item">
+            <a href="#" class="ft-list__link" title="title text" target="self">
+              <img src="../../cds-statics/assets/img/icons/icon-cuadronumerico.svg" loading="lazy" width="22"
+                height="22" class="ft-list-photoinfo__img" alt="alt text" title="title text">
+
+              Cuadro numérico
+            </a>
+          </li>
+          <li class="ft-list__item">
+            <a href="#" class="ft-list__link" title="title text" target="self">
+              <img src="../../cds-statics/assets/img/icons/icon-palabraoculta.svg" loading="lazy" width="22" height="22"
+                class="ft-list-photoinfo__img" alt="alt text" title="title text">
+
+              Palabra oculta
+            </a>
+          </li>
+          <li class="ft-list__item">
+            <a href="#" class="ft-list__link" title="title text" target="self">
+              <img src="../../cds-statics/assets/img/icons/icon-sudoku.svg" loading="lazy" width="22" height="22"
+                class="ft-list-photoinfo__img" alt="alt text" title="title text">
+              Sudoku
+            </a>
+          </li>
+          <li class="ft-list__item">
+            <a href="#" class="ft-list__link" title="title text" target="self">
+              <img src="../../cds-statics/assets/img/icons/icon-sopaletras.svg" loading="lazy" width="22" height="22"
+                class="ft-list-photoinfo__img" alt="alt text" title="title text">
+
+              Sopa de letras
+            </a>
+          </li>
+          <li class="ft-list__item">
+            <a href="#" class="ft-list__link" title="title text" target="self">
+              <img src="../../cds-statics/assets/img/icons/icon-saltaminas.svg" loading="lazy" width="22" height="22"
+                class="ft-list-photoinfo__img" alt="alt text" title="title text">
+
+              Saltaminas
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="ft-org-masthead__box ft-org-masthead__box--white">
+        <h2 class="ft-org-masthead__title">Noticias</h2>
+        <ul class="ft-list ft-list--primary ft-list--chevron ft-list--chevron-rgt ft-list--has-icon">
+          <li class="ft-list__item">
+            <a href="#" class="ft-list__link" title="title text" target="self">
+              <img src="../../cds-statics/assets/img/icons/ep-icono-circle.svg" loading="lazy" width="22" height="22"
+                class="ft-list-photoinfo__img" alt="alt text" title="title text">
+
+              El periódico
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="ft-org-masthead__box">
+        <div class="ft-mol-rrss-inline ft-mol-rrss-inline--center">
+          <div class="ft-mol-rrss-inline__items">
+            <a href="#" class="ft-btn-rrss ft-btn-rrss--twitter" title="Twitter" target="”_blank”" rel="nofollow">
+              <span class="ft-mol-rrss ft-mol-rrssTwitter--default ft-btn-rrss__icon"></span>
+              <span class="ft-btn-rrss__text"> RRSS Twitter </span>
+            </a>
+            <a href="#" class="ft-btn-rrss ft-btn-rrss--facebook" title="Facebook" target="”_blank”" rel="nofollow">
+              <span class="ft-mol-rrss ft-mol-rrssFacebook--default ft-btn-rrss__icon"></span>
+              <span class="ft-btn-rrss__text"> RRSS Facebook </span>
+            </a>
+            <a href="#" class="ft-btn-rrss ft-btn-rrss--email" title="Email" target="”_blank”" rel="nofollow">
+              <span class="ft-mol-rrss ft-mol-rrssEmail--default ft-btn-rrss__icon"></span>
+              <span class="ft-btn-rrss__text"> RRSS Email </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!--fin header-->
+  <!-- LAYOUT -->
+  <article class="ft-layout-grid-flex">
+    <!--Destacado con un elemento -->
+    <div class="ft-layout-grid-flex__row ft-layout-grid-flex__rowIs-fullwidth ft-helper-bgPink-pangramax">
+      <div class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__col-addsContent--L">
+        <div class="ft-mol-subheader ft-mol-subheader--pangramax">
+          <div class="ft-mol-subheader__header">
+            <h2 class="ft-mol-subheader__title">Pangramax</h2>
+            <time class="ft-mol-subheader__time" itemprop="datePublished"
+              datetime="2011-11-18T14:54:39+00:00">01/07/2025</time>
+          </div>
+          <div class="ft-mol-subheader__img">
+            <a href="#">
+              <img src="../../cds-statics/assets/img/icons/pangramax-mini.svg" loading="lazy" width="22" height="22"
+                class="ft-helper-img-rd" alt="alt text" title="title text">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ORG: toolbar -->
+    <div class="ft-org-toolbar">
+      <!-- MOL: toolbar -->
+      <div class="ft-mol-toolbar ft-mol-toolbar--pangramax" role="toolbar" aria-label="Opciones del juego">
+        <div class="ft-mol-toolbar__inner">
+          <ul class="ft-mol-toolbar__list">
+            <!-- Volver (botón simple) -->
+            <li class="ft-mol-toolbar__item ft-mol-toolbar__itemBack">
+              <button type="button" class="ft-mol-toolbar__button">
+                <svg xmlns="http://www.w3.org/2000/svg" class="ft-mol-toolbar__icon" width="26" height="27"
+                  viewBox="0 0 26 27" fill="none">
+                  <path
+                    d="M6.48134 14.8657C5.84499 14.1673 5.83885 13.0958 6.46737 12.3903L6.53236 12.3211L17.2183 1.48402C17.8496 0.84376 18.8789 0.837948 19.5174 1.47107C20.1558 2.10422 20.1616 3.13655 19.5303 3.77682L9.83508 13.6093L19.5174 23.2102C20.1558 23.8434 20.1616 24.8757 19.5303 25.516C18.899 26.1563 17.8696 26.162 17.2312 25.5289L6.54697 14.9343L6.48134 14.8657Z"
+                    fill="currentColor"></path>
+                </svg>
+                <span class="ft-mol-toolbar__label"></span>
+              </button>
+            </li>
+            <!-- Ayuda (botón simple) -->
+            <li class="ft-mol-toolbar__item">
+              <button aria-controls="modalBottom" aria-haspopup="dialog" class="ft-mol-toolbar__button ft-btn" data-target="modalBottom" data-toggle="ft-mol-modal" name="modal-trigger" title="Abrir modal para juegos" type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" class="ft-mol-toolbar__icon" width="26" height="26"
+                  viewBox="0 0 26 26" fill="none">
+                  <g clip-path="url(#clip0_7468_544)">
+                    <path
+                      d="M23.5003 13C23.5003 7.20097 18.7993 2.49996 13.0003 2.49996C7.20134 2.49996 2.50033 7.20097 2.50033 13C2.50033 18.799 7.20134 23.5 13.0003 23.5C18.7993 23.5 23.5003 18.799 23.5003 13ZM25.8337 13C25.8337 20.0876 20.088 25.8333 13.0003 25.8333C5.91267 25.8333 0.166992 20.0876 0.166992 13C0.166992 5.91231 5.91267 0.166626 13.0003 0.166626C20.088 0.166626 25.8337 5.91231 25.8337 13Z"
+                      fill="currentColor"></path>
+                    <path
+                      d="M10.5425 6.6379C11.4926 6.07952 12.61 5.87566 13.6962 6.06197C14.7823 6.2483 15.7675 6.81285 16.4772 7.65588C17.1866 8.49853 17.575 9.56511 17.5738 10.6665L17.5698 10.8323C17.4913 12.5258 16.2202 13.6516 15.3043 14.2622C14.7961 14.601 14.2963 14.8505 13.928 15.0142C13.7422 15.0968 13.5856 15.1592 13.4728 15.2022C13.4164 15.2237 13.3706 15.2405 13.3373 15.2523C13.3206 15.2582 13.3071 15.263 13.2968 15.2666C13.2917 15.2683 13.2872 15.2694 13.2837 15.2705C13.282 15.2711 13.2805 15.2718 13.2792 15.2723C13.2785 15.2725 13.278 15.2726 13.2775 15.2728L13.2769 15.2734C13.2765 15.2735 13.2761 15.2733 12.9072 14.1665L13.2757 15.2734C12.6646 15.477 12.0041 15.1468 11.8003 14.5357C11.5969 13.9254 11.9258 13.2657 12.5352 13.0608L12.5375 13.0603H12.5363C12.5369 13.0601 12.5375 13.0599 12.538 13.0597C12.5412 13.0586 12.5472 13.057 12.5557 13.054C12.5736 13.0476 12.6031 13.0365 12.6423 13.0215C12.7209 12.9916 12.8379 12.9451 12.9801 12.882C13.2681 12.754 13.6433 12.5653 14.01 12.3208C14.8145 11.7845 15.2405 11.2138 15.2405 10.6665V10.6648C15.2413 10.1138 15.0468 9.58019 14.6919 9.15865C14.3371 8.73718 13.8444 8.45484 13.3014 8.36169C12.7583 8.26858 12.1996 8.37077 11.7246 8.64994C11.2496 8.92915 10.8888 9.36753 10.706 9.88724C10.4921 10.495 9.82583 10.8143 9.21804 10.6005C8.61044 10.3866 8.2912 9.72076 8.50483 9.11307C8.87054 8.07345 9.59237 7.1963 10.5425 6.6379Z"
+                      fill="currentColor"></path>
+                    <path
+                      d="M13.0111 17.6666C13.6554 17.6666 14.1777 18.189 14.1777 18.8333C14.1777 19.4776 13.6554 20 13.0111 20H12.9997C12.3553 20 11.833 19.4776 11.833 18.8333C11.833 18.189 12.3553 17.6666 12.9997 17.6666H13.0111Z"
+                      fill="currentColor"></path>
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_7468_544">
+                      <rect width="26" height="26" fill="white"></rect>
+                    </clipPath>
+                  </defs>
+                </svg>
+                <span class="ft-mol-toolbar__label">Ayuda</span>
+              </button>
+            </li>
+            <div aria-describedby="modalBottomDesc" aria-labelledby="modalBottomTitle" aria-modal="true"
+                class="ft-mol-modal ft-mol-modal--bttm-cnt ft-mol-modal--maxheight ft-mol-modal-has--img ft-mol-modal--md" id="modalBottom" role="dialog">
+                <div class="ft-mol-modal__container">
+                    <div class="ft-mol-modal__window">
+                        <img alt="alt text" class="ft-mol-modal__img ft-mol-modal__img--rounded"
+                            src='data:image/svg+xml;utf8,<svg width="110" height="110" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="110" height="110" fill="%23AC65CA"/><path d="M54.8477 75.7598V54.4863H75.7598V72.8066C75.7596 74.4377 74.4377 75.7596 72.8066 75.7598H54.8477Z" fill="%23BDB2FF" stroke="black" stroke-width="1.52004"/><path d="M37.3032 75.7599C35.6114 75.7598 34.2397 74.3882 34.2397 72.6964V54.4864H55.1519V75.7599H37.3032Z" fill="white" stroke="black" stroke-width="1.52004"/><path d="M54.8477 34.3436V55.617H75.7598V37.4071C75.7598 35.7152 74.3881 34.3436 72.6963 34.3436H54.8477Z" fill="black" stroke="black" stroke-width="1.52004"/><path d="M37.3032 34.3436C35.6114 34.3437 34.2397 35.7153 34.2397 37.4071V55.617H55.1519V34.3436H37.3032Z" fill="%23AC65CA" stroke="black" stroke-width="1.52004"/><rect x="50.7603" y="71.4769" width="12.1224" height="2.42462" transform="rotate(180 50.7603 71.4769)" fill="black"/></svg>' />
+                        <div class="ft-mol-modal__header" id="modalBottomTitle">
+                            <h3 class="ft-mol-modal__title">
+                                Cómo jugar a Pangramax
+                            </h3>
+                        </div>
+                        <div class="ft-mol-modal__body" id="modalBottomDesc">
+                            <p class="ft-helper-fontSize-body-M--small">
+                                Usa todas las letras para descubrir las palabras que faltan y completar la frase del día.
+                                Puedes pedir un número limitado de pistas para resolverlo (hasta 3 veces) ¡Intenta usarlas sabiamente!
+                            </p>
+                            <p class="ft-helper-fontSize-body-M--small">
+                                Un número al final de una palabra sin desvelar indica el número de caracteres que tiene esa palabra
+                            </p>
+                            <p class="ft-helper-align-center">
+                                <svg width="164" height="44" viewBox="0 0 164 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M37.252 21.9004H28.9512V20.7383H37.252V21.9004ZM51.0801 21.9004H42.7793V20.7383H51.0801V21.9004ZM64.9082 21.9004H56.6074V20.7383H64.9082V21.9004ZM78.7363 21.9004H70.4355V20.7383H78.7363V21.9004ZM92.5645 21.9004H84.2637V20.7383H92.5645V21.9004ZM106.393 21.9004H98.0918V20.7383H106.393V21.9004ZM120.221 21.9004H111.92V20.7383H120.221V21.9004ZM134.049 21.9004H125.748V20.7383H134.049V21.9004Z"
+                                        fill="black"></path>
+                                    <rect x="144" y="2" width="20" height="20" rx="10" fill="#BDB2FF"></rect>
+                                    <path
+                                        d="M153.248 12.7204V12.6916C152.306 12.3048 151.835 11.6787 151.835 10.8132C151.835 10.1775 152.087 9.65472 152.593 9.24494C153.098 8.83134 153.751 8.62454 154.552 8.62454C155.367 8.62454 156.018 8.81794 156.505 9.20473C156.991 9.5877 157.234 10.0836 157.234 10.6926C157.234 11.5925 156.714 12.2551 155.672 12.6801V12.7031C156.231 12.8678 156.664 13.1397 156.97 13.5188C157.28 13.8941 157.435 14.3173 157.435 14.7884C157.435 15.516 157.165 16.0905 156.625 16.5117C156.089 16.933 155.339 17.1436 154.374 17.1436C153.539 17.1436 152.865 16.9387 152.352 16.529C151.842 16.1153 151.588 15.5696 151.588 14.8918C151.588 13.9076 152.141 13.1837 153.248 12.7204ZM155.528 10.8477C155.528 10.5681 155.438 10.346 155.258 10.1813C155.082 10.0128 154.847 9.92854 154.552 9.92854C154.264 9.92854 154.025 10.0166 153.834 10.1928C153.646 10.3651 153.552 10.5872 153.552 10.8591C153.552 11.3723 153.882 11.761 154.54 12.0253C155.199 11.7534 155.528 11.3608 155.528 10.8477ZM154.46 13.4097C153.69 13.7122 153.305 14.1756 153.305 14.7999C153.305 15.0986 153.422 15.3456 153.656 15.5409C153.893 15.7362 154.18 15.8339 154.517 15.8339C154.881 15.8339 155.174 15.7381 155.396 15.5466C155.618 15.3552 155.729 15.1024 155.729 14.7884C155.729 14.1603 155.306 13.7008 154.46 13.4097Z"
+                                        fill="#555555"></path>
+                                </svg>
+                            </p>
+                            <p class="ft-helper-fontSize-body-M--small">
+                                Presta atención al código de colores para resolver el reto:
+                            </p>
+                            <ul class="ft-list ft-list--has-icon ft-helper-fontSize-body-M--small">
+                                <li class="ft-list__item">
+                                    <img src="data:image/svg+xml;utf8,&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;25&quot; height=&quot;25&quot; viewBox=&quot;0 0 25 25&quot; fill=&quot;none&quot;&gt;&lt;g opacity=&quot;0.3&quot;&gt;&lt;rect y=&quot;0.000854492&quot; width=&quot;25&quot; height=&quot;24.1935&quot; rx=&quot;12.0968&quot; fill=&quot;%23BDB2FF&quot;/&gt;&lt;path d=&quot;M18.7051 10.4656H15.6947C15.6397 10.0761 15.5274 9.73015 15.3579 9.42773C15.1884 9.12073 14.9707 8.85955 14.705 8.64419C14.4392 8.42883 14.1322 8.26388 13.784 8.14933C13.4403 8.03477 13.0669 7.9775 12.6636 7.9775C11.9351 7.9775 11.3004 8.15849 10.7598 8.52048C10.2191 8.87788 9.7998 9.40024 9.50197 10.0876C9.20413 10.7703 9.05521 11.5997 9.05521 12.5756C9.05521 13.5791 9.20413 14.4222 9.50197 15.105C9.80439 15.7877 10.2259 16.3032 10.7666 16.6514C11.3073 16.9997 11.9328 17.1738 12.643 17.1738C13.0416 17.1738 13.4105 17.1211 13.7496 17.0157C14.0932 16.9103 14.398 16.7568 14.6637 16.5552C14.9295 16.349 15.1494 16.0993 15.3235 15.806C15.5022 15.5128 15.626 15.1783 15.6947 14.8026L18.7051 14.8163C18.6272 15.4624 18.4325 16.0855 18.1209 16.6858C17.8139 17.2815 17.3992 17.8153 16.8769 18.2872C16.3591 18.7546 15.7405 19.1258 15.0211 19.4007C14.3063 19.671 13.4976 19.8062 12.5949 19.8062C11.3394 19.8062 10.2168 19.5221 9.22704 18.9539C8.24189 18.3858 7.46293 17.5633 6.89016 16.4865C6.32198 15.4097 6.03789 14.1061 6.03789 12.5756C6.03789 11.0406 6.32656 9.73474 6.90391 8.65794C7.48126 7.58114 8.2648 6.76095 9.25453 6.19735C10.2443 5.62916 11.3577 5.34507 12.5949 5.34507C13.4105 5.34507 14.1666 5.45963 14.863 5.68873C15.5641 5.91784 16.185 6.25233 16.7257 6.69221C17.2664 7.12751 17.7062 7.66133 18.0453 8.29366C18.389 8.92599 18.6089 9.64997 18.7051 10.4656Z&quot; fill=&quot;black&quot;/&gt;&lt;/g&gt;&lt;/svg&gt;"
+                                        alt="alt text" title="title text" width="24" height="24" class="ft-list-photoinfo__img">
+                                    Letra acertada. No aparece más veces
+                                </li>
+                                <li class="ft-list__item">
+                                    <img src="data:image/svg+xml;utf8,&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;25&quot; height=&quot;25&quot; viewBox=&quot;0 0 25 25&quot; fill=&quot;none&quot;&gt;&lt;rect width=&quot;25&quot; height=&quot;24.1935&quot; rx=&quot;12.0968&quot; fill=&quot;%23F2F2F2&quot;/&gt;&lt;path d=&quot;M7.82428 18.8065V4.73021H13.3778C14.4408 4.73021 15.3481 4.92037 16.0996 5.30068C16.8556 5.67642 17.4307 6.21023 17.8247 6.90213C18.2234 7.58945 18.4227 8.39819 18.4227 9.32836C18.4227 10.2631 18.2211 11.0673 17.8179 11.7408C17.4146 12.4098 16.8304 12.923 16.0652 13.2804C15.3046 13.6378 14.3836 13.8165 13.3022 13.8165H9.58381V11.4247H12.8211C13.3893 11.4247 13.8612 11.3468 14.2369 11.191C14.6127 11.0352 14.8922 10.8015 15.0755 10.4899C15.2633 10.1783 15.3573 9.79115 15.3573 9.32836C15.3573 8.86098 15.2633 8.46692 15.0755 8.14617C14.8922 7.82543 14.6104 7.58257 14.2301 7.41762C13.8543 7.24808 13.3801 7.16331 12.8073 7.16331H10.8004V18.8065H7.82428ZM15.426 12.4007L18.9244 18.8065H15.6391L12.2162 12.4007H15.426Z&quot; fill=&quot;black&quot;/&gt;&lt;/svg&gt;"
+                                        alt="alt text" title="title text" width="24" height="24" class="ft-list-photoinfo__img">
+                                    Letra elegible (Es parte de la solución)
+                                </li>
+                                <li class="ft-list__item">
+                                    <img src="data:image/svg+xml;utf8,&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;27&quot; height=&quot;27&quot; viewBox=&quot;0 0 27 27&quot; fill=&quot;none&quot;&gt;&lt;rect x=&quot;1&quot; y=&quot;1&quot; width=&quot;25&quot; height=&quot;24.1935&quot; rx=&quot;12.0968&quot; fill=&quot;%23F2F2F2&quot; stroke=&quot;%23BDB2FF&quot; stroke-width=&quot;2&quot;/&gt;&lt;path d=&quot;M8.56911 19.8065V18.0401L15.5935 8.18393H8.55536V5.73021H19.3325V7.49661L12.3012 17.3527H19.3462V19.8065H8.56911Z&quot; fill=&quot;black&quot;/&gt;&lt;/svg&gt;"
+                                        alt="alt text" title="title text" width="27" height="27" class="ft-list-photoinfo__img">
+                                    Letra revelada al pedir una pista
+                                </li>
+                            </ul>
+                            <p class="ft-helper-fontSize-body-M--small">
+                                Pulsa en el icono
+                                <svg class="ft-helper-img-intext" width="18" height="19" viewBox="0 0 18 19" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M3.48328 7.4645C3.21283 8.42052 3.18359 9.43142 3.39845 10.4023C3.6133 11.3732 4.06484 12.2709 4.70923 13.0122C5.35352 13.7534 6.16937 14.3138 7.07961 14.6432C7.50452 14.7969 7.72435 15.266 7.57061 15.6909C7.41687 16.1158 6.94778 16.3356 6.52287 16.1819C5.34789 15.7568 4.29941 15.035 3.47425 14.0858C2.64919 13.1366 2.07403 11.9909 1.80074 10.7559C1.52747 9.521 1.56457 8.23557 1.90872 7.01905C2.25168 5.80674 2.88889 4.70077 3.76296 3.80435L5.66563 1.73402H3.164C2.71213 1.73402 2.34582 1.36771 2.34582 0.915837C2.34582 0.463967 2.71213 0.0976562 3.164 0.0976562H7.52877C7.98064 0.0976563 8.34695 0.463967 8.34695 0.915837V5.37862C8.34695 5.83049 7.98064 6.1968 7.52877 6.1968C7.0769 6.1968 6.71059 5.83049 6.71059 5.37862V3.01525L4.95938 4.92077C4.9536 4.92706 4.94772 4.93326 4.94175 4.93937C4.2561 5.64006 3.75372 6.50854 3.48328 7.4645Z"
+                                        fill="black"></path>
+                                    <path
+                                        d="M11.2568 15.18V12.8167C11.2568 12.3648 10.8904 11.9985 10.4386 11.9985C9.9867 11.9985 9.62039 12.3648 9.62039 12.8167V17.2728C9.62026 17.2896 9.62064 17.3065 9.62155 17.3233C9.62656 17.4182 9.64775 17.5089 9.68241 17.5925C9.72657 17.6994 9.79418 17.7985 9.88492 17.8819C9.96375 17.9543 10.053 18.0084 10.1473 18.0443C10.2376 18.0787 10.3355 18.0976 10.4379 18.0977H14.8033C15.2552 18.0977 15.6215 17.7313 15.6215 17.2795C15.6215 16.8276 15.2552 16.4613 14.8033 16.4613H12.3017L14.2043 14.3911C15.0784 13.4946 15.7156 12.3887 16.0585 11.1763C16.4027 9.95981 16.4398 8.67439 16.1665 7.43948C15.8932 6.20452 15.3181 5.05876 14.493 4.10963C13.6678 3.1604 12.6194 2.4386 11.4444 2.01348C11.0195 1.85974 10.5504 2.07957 10.3966 2.50448C10.2429 2.92939 10.4627 3.39848 10.8876 3.55222C11.7979 3.88156 12.6137 4.44201 13.258 5.18319C13.9024 5.92447 14.3539 6.82216 14.5688 7.79304C14.7837 8.76397 14.7544 9.77487 14.484 10.7309C14.2135 11.6869 13.7112 12.5553 13.0255 13.256C13.0195 13.2621 13.0137 13.2683 13.0079 13.2746L11.2568 15.18Z"
+                                        fill="black"></path>
+                                </svg>
+                                para mezclar las letras y el sistema propondrá aleatoriamente un orden distinto.
+                            </p>
+                            <p class="ft-helper-fontSize-body-M--small">
+                                Cada día tienes una nueva oportunidad de poner a prueba tu vocabulario. ¡No te olvides de volver mañana!
+                            </p>
+                        </div>
+                        <div class="ft-mol-modal__footer">
+                            <button class="ft-btn-nav ft-btn-nav--close ft-mol-modal__close" data-dismiss="ft-mol-modal"
+                                name="close-button" title="Cerrar ventana emergente" type="button">
+                                <span class="ft-btn-nav__text">
+                                    Cerrar
+                                </span>
+                                <span class="ft-btn-nav__icon"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pista (menu button con acciones) -->
+            <li class="ft-mol-toolbar__item">
+              <div class="ft-mol-dropdown ft-mol-dropdown--is-list-rgt ft-mol-dropdown--has-btn-nav">
+                <button type="button" class="ft-btn-nav ft-btn-nav--more-v ft-mol-dropdown__trigger"
+                  onclick="toggleDropdown(event)" aria-haspopup="true" aria-expanded="false" id="ft-dropdown-trigger-3"
+                  aria-controls="ft-dropdown-list-3" title="Abrir menú desplegable">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="ft-mol-toolbar__icon" width="28" height="28"
+                    viewBox="0 0 28 28" fill="none">
+                    <path
+                      d="M24.4998 14C24.4998 8.20097 19.7988 3.49996 13.9998 3.49996C8.20085 3.49996 3.49984 8.20097 3.49984 14C3.49984 19.7989 8.20085 24.5 13.9998 24.5C19.7988 24.5 24.4998 19.7989 24.4998 14ZM26.8332 14C26.8332 21.0876 21.0875 26.8333 13.9998 26.8333C6.91218 26.8333 1.1665 21.0876 1.1665 14C1.1665 6.9123 6.91218 1.16663 13.9998 1.16663C21.0875 1.16663 26.8332 6.9123 26.8332 14Z"
+                      fill="currentColor"></path>
+                    <path
+                      d="M10.265 15.632V15.6315L10.2684 15.6355C10.2753 15.6442 10.289 15.6603 10.3082 15.6833C10.3469 15.7294 10.4097 15.8015 10.4951 15.8907C10.6669 16.07 10.9253 16.3135 11.2596 16.5566C11.9328 17.0462 12.8635 17.5 14.0002 17.5C15.137 17.5 16.0676 17.0462 16.7409 16.5566C17.0752 16.3135 17.3335 16.07 17.5054 15.8907C17.5908 15.8015 17.6535 15.7294 17.6922 15.6833C17.7115 15.6603 17.7251 15.6442 17.7321 15.6355L17.7344 15.6326C18.1211 15.1178 18.8518 15.0138 19.367 15.4002C19.8823 15.7868 19.9866 16.518 19.6 17.0334L18.6669 16.3333C19.5478 16.994 19.5969 17.0315 19.5994 17.034L19.5989 17.0351C19.5985 17.0356 19.5981 17.0363 19.5977 17.0368C19.5968 17.0381 19.5954 17.0393 19.5943 17.0408C19.592 17.0438 19.5895 17.0475 19.5863 17.0516C19.5798 17.0601 19.5713 17.0709 19.5613 17.0835C19.5411 17.1089 19.514 17.143 19.4798 17.1838C19.4114 17.2653 19.3145 17.3756 19.1904 17.5051C18.943 17.7632 18.5813 18.1032 18.1138 18.4433C17.1828 19.1204 15.78 19.8333 14.0002 19.8333C12.2204 19.8333 10.8176 19.1204 9.8867 18.4433C9.4191 18.1032 9.05742 17.7632 8.81004 17.5051C8.68593 17.3756 8.58905 17.2653 8.52065 17.1838C8.4864 17.143 8.4593 17.1089 8.43919 17.0835C8.42916 17.0709 8.42061 17.0601 8.41412 17.0516C8.41098 17.0475 8.40845 17.0438 8.40615 17.0408C8.405 17.0393 8.40366 17.0381 8.40273 17.0368C8.40233 17.0363 8.40196 17.0356 8.40159 17.0351L8.40102 17.034C8.40353 17.0315 8.45266 16.994 9.33356 16.3333L8.40045 17.0334C8.0139 16.518 8.11814 15.7868 8.63344 15.4002C9.14833 15.014 9.87802 15.1181 10.265 15.632Z"
+                      fill="currentColor"></path>
+                    <path
+                      d="M10.5073 9C11.3317 9 12 9.67157 12 10.5C12 11.3284 11.3317 12 10.5073 12H10.4927C9.66831 12 9 11.3284 9 10.5C9 9.67157 9.66831 9 10.4927 9H10.5073Z"
+                      fill="currentColor"></path>
+                    <path
+                      d="M19 10C19.5523 10 20 10.4477 20 11C20 11.5523 19.5523 12 19 12H17C16.4477 12 16 11.5523 16 11C16 10.4477 16.4477 10 17 10H19Z"
+                      fill="currentColor"></path>
+                  </svg>
+
+                  <span class="ft-btn-nav__text">Pista</span>
+                  <span class="ft-btn-nav__icon" aria-hidden="true"></span>
+                </button>
+
+                <ul class="ft-mol-dropdown__list" role="menu" hidden="" id="ft-dropdown-list-3"
+                  aria-labelledby="ft-dropdown-trigger-3" aria-hidden="true">
+                  <li class="ft-mol-dropdown__item" role="none">
+                    <button type="button" class="ft-mol-dropdown__link" role="menuitem">
+                      Revelar letra
+                      <span class="ft-tag ft-tag--sm">3/3
+                        disponibles</span>
+                    </button>
+                  </li>
+                  <li class="ft-mol-dropdown__item" role="none">
+                    <button type="button" class="ft-mol-dropdown__link" role="menuitem" disabled="">
+                      Revelar palabra
+                      <span class="ft-tag ft-tag--sm">3/3
+                        disponibles</span>
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- end // MOL: toolbar -->
+      </div>
+    </div>
+    <!-- end // ORG: toolbar -->
+    <div class="ft-layout-grid-flex__row">
+
+      <div class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__col-addsContent--L">
+        <div class="ft-helper-display-flex ft-helper-display-flex--center ft-list ft-list--has-icon">
+          <div class="ft-helper-bgPink-pangramax-500 ft-helper-display-flex ft-helper-display-flex--middle ft-helper-property-round-xs ft-helper-spacer-inner-xxs ft-list__item">
+            <img src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2722%27%20height%3D%2722%27%20viewBox%3D%270%200%2022%2022%27%20fill%3D%27none%27%3E%3Crect%20width%3D%2722%27%20height%3D%2722%27%20rx%3D%2711%27%20fill%3D%27white%27/%3E%3Cpath%20d%3D%27M15.4346%209.74465C15.4346%2011.2374%2014.7205%2012.3858%2013.6341%2013.142C13.3811%2013.3179%2013.2546%2013.4059%2013.1922%2013.5065C13.1303%2013.606%2013.1084%2013.738%2013.0662%2014.0006L13.0325%2014.2049C12.9582%2014.6666%2012.9206%2014.8974%2012.7631%2015.0345C12.6057%2015.1717%2012.3785%2015.1717%2011.9236%2015.1717H10.4548C9.99992%2015.1717%209.77275%2015.1717%209.6153%2015.0345C9.45786%2014.8974%209.42074%2014.6666%209.34539%2014.2049L9.31278%2014.0006C9.27005%2013.7385%209.24924%2013.6072%209.18739%2013.5077C9.12553%2013.4082%208.99845%2013.3191%208.74485%2013.1409C7.67027%2012.3847%207%2011.2368%207%209.74465C7%207.3106%208.88824%205.33594%2011.2173%205.33594C11.5007%205.33563%2011.7833%205.3651%2012.0608%205.42388M12.3455%2015.1717V15.7502C12.3455%2016.2958%2012.3455%2016.5683%2012.1807%2016.7378C12.016%2016.9074%2011.7511%2016.9074%2011.2209%2016.9074C10.6906%2016.9074%2010.4258%2016.9074%2010.261%2016.7378C10.0963%2016.5683%2010.0963%2016.2958%2010.0963%2015.7502V15.1717M14.0324%205.33594L14.1775%205.7392C14.3676%206.26802%2014.4626%206.53242%2014.6498%206.72509C14.8377%206.91833%2015.0946%207.01611%2015.6086%207.21167L16.0005%207.36094L15.6086%207.51021C15.0946%207.70577%2014.8377%207.80354%2014.6504%207.99621C14.4626%208.18945%2014.3676%208.45386%2014.1775%208.98267L14.0324%209.38594L13.8874%208.98267C13.6973%208.45386%2013.6023%208.18945%2013.415%207.99679C13.2272%207.80354%2012.9702%207.70577%2012.4563%207.51021L12.0643%207.36094L12.4563%207.21167C12.9702%207.01611%2013.2272%206.91833%2013.4145%206.72567C13.6023%206.53242%2013.6973%206.26802%2013.8874%205.7392L14.0324%205.33594Z%27%20stroke%3D%27black%27%20stroke-width%3D%270.964313%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27/%3E%3C/svg%3E" alt="alt text" title="title text" width="22" height="22" class="ft-list-photoinfo__img">
+            <span class="ft-helper-fontSize-body-S--small">
+              Usa las letras para descubrir las palabras ocultas en la frase del día
+            </span>
+          </div>
+        </div>
+        <div class="ft-org-game">
+          <!-- cabecera juego -->
+          <div class="ft-org-game__header">
+            <blockquote class="ft-org-game__quote" aria-hidden="true">
+              <div class="ft-org-game__quoteArea"> Sólo es posible actuar
+                <div class="ft-org-game__quoteText">
+
+                  <span class="ft-org-game__quoteLetter ft-org-game__quoteLetter--isActive"
+                    alt="Letra 1 de la palabra 1">a</span>
+                  <span class="ft-org-game__quoteLetter" alt="Letra 1 de la palabra 1">b</span>
+                  <span class="ft-org-game__quoteLetter" alt="Letra 1 de la palabra 1">c</span>
+                  <span class="ft-org-game__quoteLetter" alt="Letra 1 de la palabra 1">d</span>
+                  <span class="ft-org-game__quoteLetter" alt="Letra 1 de la palabra 1">_</span>
+                  <span class="ft-org-game__quoteLetter" alt="Letra 1 de la palabra 1">_</span>
+                  <span class="ft-org-game__quoteLetter" alt="Letra 1 de la palabra 1">_</span>
+                  <span class="ft-org-game__quoteLetter" alt="Letra 1 de la palabra 1">_</span>
+                  <span class="ft-org-game__quoteNumber">6</span>
+                </div>
+                y se intenta comprender los
+                <div class="ft-org-game__quoteText">
+
+                  <span class="ft-org-game__quoteLetter" alt="Letra 1 de la palabra 1">_</span>
+                  <span class="ft-org-game__quoteLetter" alt="Letra 1 de la palabra 1">_</span>
+                  <span class="ft-org-game__quoteLetter" alt="Letra 1 de la palabra 1">_</span>
+                  <span class="ft-org-game__quoteLetter" alt="Letra 1 de la palabra 1">_</span>
+                  <span class="ft-org-game__quoteNumber">6</span>
+                </div>
+                y sentimientos de nuestro
+                <div class="ft-org-game__quoteText">
+
+                  <span class="ft-org-game__quoteLetter" alt="Letra 1 de la palabra 1">_</span>
+                  <span class="ft-org-game__quoteLetter" alt="Letra 1 de la palabra 1">_</span>
+                  <span class="ft-org-game__quoteLetter" alt="Letra 1 de la palabra 1">_</span>
+                  <span class="ft-org-game__quoteLetter" alt="Letra 1 de la palabra 1">_</span>
+                  <span class="ft-org-game__quoteNumber">6</span>
+                </div>
+                , como si viéramos el <span class="ft-org-game__quoteSolved" aria-label="Palabra resuelta">cielo</span>
+                con sus ojos.
+              </div>
+
+              <div class="ft-org-game__quoteAuthor">
+                -Abraham Lincoln
+              </div>
+            </blockquote>
+          </div>
+          <!-- game__input -->
+          <div class="ft-org-game__input ft-org-game__input--pipe" data-empty="true" data-focus="false">
+            <div class="ft-mol-form">
+              <div id="gameInput" class="ft-mol-form__input" type="text" inputmode="none" readonly tabindex="-1"
+                aria-hidden="true" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></div>
+              <label class="ft-mol-form__label">Label</label>
+              <p class="ft-mol-form__supporting-text">
+                <span class="ft-mol-form__supporting-message">Mensaje de error</span>
+              </p>
+            </div>
+          </div>
+          <div class="ft-org-game__alert ft-org-game__alert--is-open ft-org-game__alert--is-ok" role="alert">
+            <dotlottie-player src="/cds-statics/assets/img/lotties/game-is-ok.lottie" class="ft-lottie" autoplay loop>
+            </dotlottie-player>
+            <span class="ft-org-game__alertText">
+              Correcto, has adivinado una palabra
+            </span>
+          </div>
+          <div class="ft-org-game__alert ft-org-game__alert--is-open ft-org-game__alert--is-error" role="alert">
+            <dotlottie-player src="/cds-statics/assets/img/lotties/game-is-error.lottie" class="ft-lottie" autoplay
+              loop>
+            </dotlottie-player>
+            <span class="ft-org-game__alertText">
+              La palabra contiene letras no permitidas
+            </span>
+          </div>
+          <div class="ft-org-game__alert ft-org-game__alert--is-open ft-org-game__alert--is-warning" role="alert">
+            <dotlottie-player src="/cds-statics/assets/img/lotties/game-is-warning.lottie" class="ft-lottie" autoplay
+              loop>
+            </dotlottie-player>
+            <span class="ft-org-game__alertText">
+              Ya has encontrado esta palabra
+            </span>
+          </div>
+          <!-- Teclado -->
+          <div class="ft-org-game__keyboard" role="group" aria-label="Teclado de letras">
+            <button type="button" class="ft-org-game__key" aria-label="O">O</button>
+            <button type="button" class="ft-org-game__key" aria-label="A">A</button>
+            <button type="button" class="ft-org-game__key" aria-label="L">L</button>
+            <button type="button" class="ft-org-game__key ft-org-game__key--active" aria-label="I">I</button>
+            <button type="button" class="ft-org-game__key" aria-label="A">A</button>
+            <button type="button" class="ft-org-game__key" aria-label="B">B</button>
+            <button type="button" class="ft-org-game__key ft-org-game__key--disabled" aria-label="R" disabled>R</button>
+            <button type="button" class="ft-org-game__key" aria-label="A">A</button>
+            <button type="button" class="ft-org-game__key ft-org-game__key--outlined" aria-label="Z">Z</button>
+            <button type="button" class="ft-org-game__key" aria-label="R">R</button>
+            <button type="button" class="ft-org-game__key" aria-label="M">M</button>
+            <button type="button" class="ft-org-game__key" aria-label="B">B</button>
+          </div>
+          <!-- Botones -->
+          <div class="ft-mol-btnGroup ft-mol-btnGroup--cnt">
+            <button type="button"  class="ft-btn ft-btn--secondary ft-btn--md ft-btn-is--disabled ft-btn-is--disabledSecondary"
+              title="title text" target="_self">
+              Eliminar
+            </button>
+            <button type="button" name="go-to" class="ft-btn-nav ft-btn-nav--md ft-btn-nav--reload ft-btn-nav--bordered"
+              title="title text">
+              <span class="ft-btn-nav__text">
+                Actualizar
+              </span>
+              <span class="ft-btn-nav__icon"></span>
+            </button>
+            <button type="button"  class="ft-btn ft-btn--secondary ft-btn--md" title="title text" target="_self">
+              Confirmar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Fin destacado con un elementos -->
+   <!--Pie -->
+    <footer id="footer-media" class="footer-media--pasatiempos  ft-helper-hide-sm" role="contentinfo" aria-label="Información del pie de página">
+      <h2 class="ft-helper-hide">Información de pie de página</h2>
+  
+      <div class="footer-mediaTop">
+          <a data-edition-homelink="data-edition-homelink" title="El Periódico" href="/es/" aria-current="page">
+              <img width="263" height="65" loading="lazy" alt="El Periódico2"
+                  src="../../cds-statics/assets/img/logos/logoEpColor.svg">
+          </a>
+  
+          <div class="rrss" aria-label="Redes sociales de El Periódico">
+              <a class="btn" href="#" rel="noopener noreferrer nofollow" target="_blank"
+                  aria-label="WhatsApp de El Periódico">
+                  <span class="icon icon-Whatsapp" aria-hidden="true"></span>
+              </a>
+              <a class="btn" href="https://www.facebook.com/elperiodico.catalunya" rel="noopener noreferrer nofollow"
+                  target="_blank" hreflang="es" aria-label="Facebook de El Periódico">
+                  <span class="icon icon-Facebook" aria-hidden="true"></span>
+              </a>
+              <a class="btn" href="https://twitter.com/elperiodico" rel="noopener noreferrer nofollow" target="_blank"
+                  hreflang="es" aria-label="Twitter de El Periódico">
+                  <span class="icon icon-Twitter" aria-hidden="true"></span>
+              </a>
+              <a class="btn" href="https://www.instagram.com/elperiodico_cas/" rel="noopener noreferrer nofollow"
+                  target="_blank" hreflang="es" aria-label="Instagram de El Periódico">
+                  <span class="icon icon-Instagram" aria-hidden="true"></span>
+              </a>
+          </div>
+  
+          <h3 class="ft-helper-hide">Enlaces institucionales</h3>
+          <nav aria-label="Enlaces institucionales">
+              <ul class="lnk">
+                  <li><a href="https://www.elperiodico.com/es/quienessomos.shtml" rel="nofollow noopener" target="_blank"
+                          hreflang="es" title="Quiénes somos">
+                          Quiénes somos
+                      </a></li>
+                  <li><a href="https://www.elperiodico.com/es/contacto.shtml" rel="nofollow noopener" target="_blank"
+                          hreflang="es" title="Contacto">
+                          Contacto
+                      </a></li>
+                  <li><a href="https://www.elperiodico.com/es/rss/portada_rss.shtml" rel="nofollow noopener"
+                          target="_blank" hreflang="es" title="RSS">
+                          RSS
+                      </a></li>
+                  <li><a href="https://www.elperiodico.com/es/mapa-sitio.shtml" rel="nofollow noopener" target="_blank"
+                          hreflang="es" title="Mapa del sitio">
+                          Mapa del sitio
+                      </a></li>
+                  <li><a href="https://www.prensaiberica360.es/?_sid=1686819132" rel="nofollow noopener" target="_blank"
+                          hreflang="es" title="Publicidad">
+                          Publicidad
+                      </a></li>
+                  <li><a href="https://www.elperiodico.com/es/avisolegal.shtml" rel="nofollow noopener" target="_blank"
+                          hreflang="es" title="Aviso legal">
+                          Aviso legal
+                      </a></li>
+                  <li><a href="https://www.prensaiberica.es/politica-de-privacidad-resumida/?_sid=1686819132"
+                          rel="nofollow noopener" target="_blank" hreflang="es" title="Política de privacidad y cookies">
+                          Política de privacidad y cookies
+                      </a></li>
+                  <li><a href="javascript: Didomi.preferences.show();" rel="nofollow noopener"
+                          title="Preferencias de Privacidad">
+                          Preferencias de Privacidad
+                      </a></li>
+              </ul>
+          </nav>
+      </div>
+  
+      <div class="footer-mediaMiddle">
+          <address>
+              <p>El Periódico de Catalunya, S.L.U</p>
+              <a href="https://estaticos-cdn.lne.es/images/footer/prensa-iberica-360.png?id=00bc9e3946af531b5a7b"
+                  rel="noopener" target="_blank" hreflang="es" title="Prensa Ibérica">
+                  <img width="114" height="73" loading="lazy" alt="Prensa Ibérica"
+                      src="https://estaticos-cdn.lne.es/images/footer/prensa-iberica-360.png?id=00bc9e3946af531b5a7b"
+                      title="Prensa Ibérica">
+              </a>
+          </address>
+      </div>
+  
+      <div class="footer-mediaBottom">
+          <p>Otras webs de Prensa Ibérica Media:</p>
+          <ul>
+              <li class="titular">
+                  Titular 1
+              </li>
+              <li><a rel="nofollow" target="_blank" title="Casa Gourmet"
+                      href="https://www.casagourmet.es/?_sid=1686737966">
+                      Casa Gourmet
+                  </a>
+              </li>
+              <li><a rel="nofollow" target="_blank" title="Coche de ocasión" href="https://ocasion.neomotor.com/">
+                      Coche de ocasión
+                  </a>
+              </li>
+              <li><a rel="nofollow" target="_blank" title="Código Nuevo"
+                      href="https://www.codigonuevo.com/?_sid=1686737966">
+                      Código Nuevo
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Cuore"
+                      href="https://www.elperiodico.com/cuore/?_sid=1686737966">
+                      Cuore
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Diari de Girona"
+                      href="https://www.diaridegirona.cat/?_sid=1686737966">
+                      Diari de Girona
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Diario de Córdoba"
+                      href="https://www.diariocordoba.com/?_sid=1686737966">
+                      Diario de Córdoba
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Diario de Ibiza"
+                      href="https://www.diariodeibiza.es/?_sid=1686737966">
+                      Diario de Ibiza
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Diario de Mallorca"
+                      href="https://www.diariodemallorca.es/?_sid=1686737966">
+                      Diario de Mallorca
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="El Correo Gallego"
+                      href="https://www.elcorreogallego.es/?_sid=1686737966">
+                      El Correo Gallego
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="El Día Tenerife" href="https://www.eldia.es/?_sid=1686737966">
+                      El Día Tenerife
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="El Periódico de Aragón"
+                      href="https://www.elperiodicodearagon.com/?_sid=1686737966">
+                      El Periódico de Aragón
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="El Periódico de Catalunya"
+                      href="https://www.elperiodico.com/es/?_sid=1686737966">
+                      El Periódico de Catalunya
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="El Periódico de España"
+                      href="https://www.epe.es/es/?_sid=1686737966">
+                      El Periódico de España
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="El Periódico de Extremadura"
+                      href="http://www.elperiodicoextremadura.com/?_sid=1686737966">
+                      El Periódico de Extremadura
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="El Periódico Mediterráneo"
+                      href="https://www.elperiodicomediterraneo.com/?_sid=1686737966">
+                      El Periódico Mediterráneo
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Faro de Vigo"
+                      href="https://www.farodevigo.es/?_sid=1686737966">
+                      Faro de Vigo
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Fórmula 1" href="https://formula1.lne.es/?_sid=1686737966">
+                      Fórmula 1
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Goya" href="https://www.premios-cine.com/goya/">
+                      Goya
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Iberempleos" href="https://www.iberempleos.es/">
+                      Iberempleos
+                  </a></li>
+              <li class="titular">
+                  Titular 2
+              </li>
+              <li><a rel="nofollow" target="_blank" title="Información" href="https://www.diarioinformacion.com/">
+                      Información
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Información TV" href="http://www.informaciontv.es/">
+                      Información TV
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="La Crónica de Badajoz"
+                      href="https://www.lacronicabadajoz.com/">
+                      La Crónica de Badajoz
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="La Nueva España Asturias"
+                      href="https://www.lne.es/asturias/?_sid=1686737966">
+                      La Nueva España Asturias
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="La Opinión de A Coruña"
+                      href="https://www.laopinioncoruna.es/?_sid=1686737966">
+                      La Opinión de A Coruña
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="La Opinión de Murcia"
+                      href="https://www.laopiniondemurcia.es/?_sid=1686737966">
+                      La Opinión de Murcia
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="La Opinión de Málaga"
+                      href="https://www.laopiniondemalaga.es/?_sid=1686737966">
+                      La Opinión de Málaga
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="La Opinión El correo de Zamora"
+                      href="https://www.laopiniondezamora.es/?_sid=1686737966">
+                      La Opinión El correo de Zamora
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="La Provincia Diario de Las Palmas"
+                      href="https://www.laprovincia.es/?_sid=1686737966">
+                      La Provincia Diario de Las Palmas
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Levante El Mercantil Valenciano"
+                      href="https://www.levante-emv.com/?_sid=1686737966">
+                      Levante El Mercantil Valenciano
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Levante TV" href="http://www.informaciontv.es/">
+                      Levante TV
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="L'Empordà Figueres"
+                      href="https://www.emporda.info/?_sid=1686737966">
+                      L'Empordà Figueres
+                  </a></li>
+              <li class="titular">
+                  Titular 3
+              </li>
+              <li><a rel="nofollow" target="_blank" title="Mallorca Zeitung Mallorca"
+                      href="https://www.mallorcazeitung.es/?_sid=1686737966">
+                      Mallorca Zeitung Mallorca
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Neomotor" href="https://neomotor.epe.es/?_sid=1686737966">
+                      Neomotor
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Oscars" href="https://www.premios-cine.com/oscars/">
+                      Oscars
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Regió 7 Manresa"
+                      href="https://www.regio7.cat/?_sid=1686737966">
+                      Regió Manresa
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Sport" href="https://www.sport.es/">
+                      Sport
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Stilo" href="https://www.stilo.es/?_sid=1686737966">
+                      Stilo
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Superdeporte Valencia"
+                      href="https://www.superdeporte.es/?_sid=1686737966">
+                      Superdeporte Valencia
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Tendencias 21" href="https://www.sport.es/es/tendencias21/">
+                      Tendencias 21
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Tu casa" href="https://www.tucasa.com/">
+                      Tu casa
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Medio Ambiente" href="https://www.sport.es/es/medio-ambiente/">
+                      Medio Ambiente
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Viajar" href="https://viajar.elperiodico.com/?_sid=1686737966">
+                      Viajar
+                  </a></li>
+              <li><a rel="nofollow" target="_blank" title="Woman Madame Figaro" href="https://www.woman.es/">
+                      Woman Madame Figaro
+                  </a></li>
+          </ul>
+      </div>
+    </footer>
+  </article>
+  <!-- JS: masthead -->
+  <script rel="modulepreload" src="../../cds-statics/js/affix/affix.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/headers/masthead.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/sticking/fourty-header-sticky.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/switch/fourty-js-switch-2024.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/form/fourty-js-form-combo-search.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/sidenav/fourty-js-sidenav-default.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/modal/fourty-js-popover.js"></script>
+  <script src="../../cds-statics/js/tapbar/fourty-js-tapbar.js"></script>
+             <script src="/cds-statics/js/timer/fourty-js-timer.js" defer></script>
+
+  <!-- JS:  dropdown -->
+  <script rel="modulepreload" src="../../cds-statics/js/dropdown/fortty-js-dropdown-simple.js"></script>
+
+  <!-- JS:  modal -->
+  <script rel="modulepreload" src="../../cds-statics/js/modal/fourty-js-modal.js"></script>
+
+  <!-- JS:  smoothscrollbar -->
+  <script rel="modulepreload" src="../../cds-statics/js/scroll/smooth-scrollbar/smooth-scrollbar.js"></script>
+  <script rel="modulepreload" src="../../cds-statics/js/scroll/smooth-scrollbar/smooth-scrollbar-functions.js"></script>
+
+  <!-- JS: lottie-->
+  <script rel="modulepreload" src="../../cds-statics/js/lottie/fourty-js-lottie.js" type="module"></script>
+
+  <!-- JS: game__input -->
+  <script rel="modulepreload" src="../../cds-statics/js/game/game-input-pipe.js"></script>
+
+</body>
+
+</html>

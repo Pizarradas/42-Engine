@@ -1,0 +1,552 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>42DS | Layouts | Cerca FASE 2: Inicio</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"><!-- CSS: settings -->
+    <link href="../../cds-statics/css/brands/ux/setting.css" id="brandStyles-root" rel="stylesheet" type="text/css">
+    <!-- CSS: library multibrand -->
+    <link href="../../cds-statics/css/ux-index.css" id="brandStyles" rel="stylesheet" type="text/css">
+    <!-- FAVICON -->
+    <link href="../favicon.png" rel="icon" type="image/png">
+</head>
+
+<body class="fourty ft-brand-ep ft-skin ft-skin--cerca ft-skin--cerca-buscador minimal-header" id="header-sticky"
+    data-showroom-skin="layout">
+    <!-- grid -->
+    <div class="ft-layout-grid-flex">
+        <!-- Comienzo del layout -->
+        <article class="ft-layout-grid-flex__row">
+            <!--Contenido central -->
+            <div class="ft-layout-grid-flex__colXs-12">
+                <div class="ft-layout-grid-flex__nested">
+                    <!-- 
+
+    ================================================
+
+                    CERCA - ESTRUCTURA PREPARADA PARA DATOS JSON MASIVOS
+
+                    ================================================
+
+                    
+
+                    Esta estructura HTML está completamente preparada para trabajar con
+
+                    grandes volúmenes de datos JSON. Todos los elementos tienen:
+
+                    
+
+                    ✅ IDs ÚNICOS: Para manipulación directa del DOM
+
+                    ✅ Atributos data-*: Para fácil acceso desde JavaScript
+
+                    ✅ Estructura semántica: Para SEO y accesibilidad
+
+                    ✅ Contenedores claros: Para inyección dinámica de contenido
+
+                    ✅ Estados preparados: Loading, empty, error
+
+                    ✅ Schema.org: Para datos estructurados
+
+                    
+
+                    ESTRUCTURA PRINCIPAL:
+
+                    1. Hero/Bienvenida (ft-org-hero-welcome)
+
+                    2. Buscador autocomplete (ft-org-search-autocomplete)
+
+                       - Formulario con atributos data-search-*
+
+                       - Contenedor de resultados (#cerca-results-wrapper)
+
+                       - Estados: loading, empty, error
+
+                    3. Comunidades autónomas (ft-org-regions-list)
+
+                       - Lista preparada para recibir datos JSON
+
+                       - Cada localidad con data-tag-id único
+
+                    4. Sugerencias (ft-org-suggestions-chips)
+
+                       - Lista preparada para localidades sugeridas
+
+                    5. Resultados de artículos (ft-org-articles-results)
+
+                       - Contenedor vacío listo para inyección masiva
+
+                       - Paginación/infinite scroll preparada
+
+                    
+
+                    SELECTORES PRINCIPALES PARA DESARROLLO:
+
+                    - Formulario: #cerca-search-form
+
+                    - Input búsqueda: #cerca-localidades
+
+                    - Resultados autocomplete: #cerca-results-list
+
+                    - Lista comunidades: #cerca-regions-list-content
+
+                    - Lista sugerencias: #cerca-suggestions-list
+
+                    - Contenedor artículos: #cerca-articles-list
+
+                    - Estados: #cerca-results-loading, #cerca-results-empty, #cerca-results-error
+
+                -->
+                    <!-- CERCA -->
+                    <!-- cerca: bienvenida -->
+                    <div class="ft-org-hero-welcome">
+                        <div class="ft-org-hero-welcome__content">
+                            <h2 class="ft-helper-fontSize-heading-M ft-helper-text-align-center">Mis lugares, mis
+                                noticias</h2>
+                            <div aria-controls="" aria-label="Barra de desplazamiento horizontal"
+                                aria-orientation="horizontal" data-scrollbar="" data-scrollbar-announce-scroll="true"
+                                data-scrollbar-axis="x" data-scrollbar-remove-inline-styles="true"
+                                data-scrollbar-wheel-to-x="true" role="scrollbar">
+                                <div class="ft-scrollbar__container">
+                                    <ul aria-label="Listado de localidades favoritas" role="list">
+                                        <li class="ft-tag ft-tag--chip ft-tag--sm" data-tag-context="filter-bar"
+                                            data-tag-id="all" data-tag-state="selected" data-tag-type="filter"><button
+                                                aria-label="Mostrar todas las localidades" aria-pressed="true"
+                                                class="ft-btn" title="Mostrar todas las localidades"
+                                                type="button">Todos</button></li>
+                                        <li class="ft-tag ft-tag--chip ft-tag--sm" data-analytics-action="fav_toggle"
+                                            data-analytics-category="localidades" data-analytics-label="Barbastro"
+                                            data-tag-context="favorites-selector" data-tag-id="loc-aragon-barbastro"
+                                            data-tag-region="Aragón" data-tag-state="deletable"
+                                            data-tag-type="location"><button
+                                                aria-label="Eliminar Barbastro de tus localidades favoritas"
+                                                aria-pressed="false" class="ft-btn" tabindex="0"
+                                                title="Eliminar Barbastro de tus localidades favoritas"
+                                                type="button">Barbastro</button></li>
+                                        <li class="ft-tag ft-tag--chip ft-tag--sm" data-analytics-action="fav_toggle"
+                                            data-analytics-category="localidades" data-analytics-label="Sevilla"
+                                            data-tag-context="favorites-selector" data-tag-id="loc-andalucia-sevilla"
+                                            data-tag-region="Andalucía" data-tag-state="deletable"
+                                            data-tag-type="location"><button
+                                                aria-label="Eliminar Sevilla de tus localidades favoritas"
+                                                aria-pressed="false" class="ft-btn" tabindex="0"
+                                                title="Eliminar Sevilla de tus localidades favoritas"
+                                                type="button">Sevilla</button></li>
+                                        <li class="ft-tag ft-tag--chip ft-tag--sm" data-analytics-action="fav_toggle"
+                                            data-analytics-category="localidades" data-analytics-label="Madrid"
+                                            data-tag-context="favorites-selector" data-tag-id="loc-madrid-madrid"
+                                            data-tag-region="Comunidad de Madrid" data-tag-state="deletable"
+                                            data-tag-type="location"><button
+                                                aria-label="Eliminar Madrid de tus localidades favoritas"
+                                                aria-pressed="false" class="ft-btn" tabindex="0"
+                                                title="Eliminar Madrid de tus localidades favoritas"
+                                                type="button">Madrid</button></li>
+                                        <li class="ft-tag ft-tag--chip ft-tag--sm" data-analytics-action="fav_toggle"
+                                            data-analytics-category="localidades" data-analytics-label="Barcelona"
+                                            data-tag-context="favorites-selector" data-tag-id="loc-cataluna-barcelona"
+                                            data-tag-region="Cataluña" data-tag-state="deletable"
+                                            data-tag-type="location"><button
+                                                aria-label="Eliminar Barcelona de tus localidades favoritas"
+                                                aria-pressed="false" class="ft-btn" tabindex="0"
+                                                title="Eliminar Barcelona de tus localidades favoritas"
+                                                type="button">Barcelona</button></li>
+                                        <li class="ft-tag ft-tag--chip ft-tag--sm" data-analytics-action="fav_toggle"
+                                            data-analytics-category="localidades" data-analytics-label="Valencia"
+                                            data-tag-context="favorites-selector" data-tag-id="loc-valenciana-valencia"
+                                            data-tag-region="Comunidad Valenciana" data-tag-state="deletable"
+                                            data-tag-type="location"><button
+                                                aria-label="Eliminar Valencia de tus localidades favoritas"
+                                                aria-pressed="false" class="ft-btn" tabindex="0"
+                                                title="Eliminar Valencia de tus localidades favoritas"
+                                                type="button">Valencia</button></li>
+                                        <li class="ft-tag ft-tag--chip ft-tag--sm" data-analytics-action="fav_toggle"
+                                            data-analytics-category="localidades" data-analytics-label="Vigo"
+                                            data-tag-context="favorites-selector" data-tag-id="loc-galicia-vigo"
+                                            data-tag-region="Galicia" data-tag-state="deletable"
+                                            data-tag-type="location"><button
+                                                aria-label="Eliminar Vigo de tus localidades favoritas"
+                                                aria-pressed="false" class="ft-btn" tabindex="0"
+                                                title="Eliminar Vigo de tus localidades favoritas"
+                                                type="button">Vigo</button></li>
+                                        <li class="ft-tag ft-tag--chip ft-tag--sm" data-analytics-action="fav_toggle"
+                                            data-analytics-category="localidades" data-analytics-label="Bilbao"
+                                            data-tag-context="favorites-selector" data-tag-id="loc-pais-vasco-bilbao"
+                                            data-tag-region="País Vasco" data-tag-state="deletable"
+                                            data-tag-type="location"><button
+                                                aria-label="Eliminar Bilbao de tus localidades favoritas"
+                                                aria-pressed="false" class="ft-btn" tabindex="0"
+                                                title="Eliminar Bilbao de tus localidades favoritas"
+                                                type="button">Bilbao</button></li>
+                                        <li class="ft-tag ft-tag--chip ft-tag--sm" data-analytics-action="fav_toggle"
+                                            data-analytics-category="localidades" data-analytics-label="Valladolid"
+                                            data-tag-context="favorites-selector"
+                                            data-tag-id="loc-castilla-leon-valladolid" data-tag-region="Castilla y León"
+                                            data-tag-state="deletable" data-tag-type="location"><button
+                                                aria-label="Eliminar Valladolid de tus localidades favoritas"
+                                                aria-pressed="false" class="ft-btn" tabindex="0"
+                                                title="Eliminar Valladolid de tus localidades favoritas"
+                                                type="button">Valladolid</button></li>
+                                        <li class="ft-tag ft-tag--chip ft-tag--sm" data-analytics-action="fav_toggle"
+                                            data-analytics-category="localidades"
+                                            data-analytics-label="Las Palmas de Gran Canaria"
+                                            data-tag-context="favorites-selector" data-tag-id="loc-canarias-las-palmas"
+                                            data-tag-region="Canarias" data-tag-state="deletable"
+                                            data-tag-type="location"><button
+                                                aria-label="Eliminar Las Palmas de Gran Canaria de tus localidades favoritas"
+                                                aria-pressed="false" class="ft-btn" tabindex="0"
+                                                title="Eliminar Las Palmas de Gran Canaria de tus localidades favoritas"
+                                                type="button">Las Palmas</button></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="ft-helper-align-center">
+                                <button class="ft-link ft-link--secondary ft-link--decoration ft-helper-fontSize-body-M"
+                                    title=" title text" type="button">Añadir o editar mis favoritas</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- cerca: buscador -->
+                    <div class="ft-org-search-autocomplete">
+                        <div class="ft-org-search-autocomplete__content">
+                            <!-- feeds: row -->
+                            <div class="ft-layout-grid-flex__row">
+                                  <!-- alert -->
+                            <span class="ft-text-alert ft-text-alert--is-bordered ft-text-alert--is-guided">
+                                <span class="ft-text-alert__subtext ft-helper-fontSize-body-M ft-helper-fontWeight-500">
+                                    No hay noticias para esta localidad :-(
+                                </span>
+                            </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- cerca: sugerencias -->
+                    <div class="ft-org-suggestions-chips" data-suggestions-container="true" data-suggestions-count="0"
+                        data-suggestions-loaded="false" id="cerca-suggestions-chips">
+                        <div class="ft-org-suggestions-chips__content">
+                            <h2 class="ft-helper-fontSize-heading-XS ft-helper-text-align-center">
+                                ¿Quieres añadir más localidades?
+                            </h2>
+                            <div class="ft-mol-btnGroup ft-mol-btnGroup--cnt">
+                                <button class="ft-btn ft-btn--primary ft-btn--md" title="title text"
+                                    type="button">Explóralas todas</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--  END // CERCA -->
+                </div>
+            </div>
+        </article><!--Publi Footer (cuando aplique)
+
+        <div class="ft-ad ft-ad==footer">
+
+            <div class="ft-ad==footer__content">
+
+                <div class="ft-ad==footer__embed">
+
+                    <aside class="ft-helper-hide-md">
+
+                        <img src="../../cds-statics/assets/img/banners/ad-footer==mobile.svg" width="768" height="87" alt="banner" class="ft-helper-img-rd">
+
+                    </aside>
+
+                    <aside class="ft-helper-hide-mo">
+
+                        <img src="../../cds-statics/assets/img/banners/ad-footer.png" width="768" height="87" alt="banner" class="ft-helper-img-rd">
+
+                    </aside>
+
+                </div>
+
+                <button type="button" name="close-button" class="ft-btn-nav ft-btn-nav==close ft-popover-close-trigger" title="title text">
+
+                    <span class="ft-btn-nav__text">
+
+                        Cerrar
+
+                    </span>
+
+                    <span class="ft-btn-nav__icon"></span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+        Fin Publi Footer -->
+        <!-- Pie -->
+        <footer aria-label="Información del pie de página" id="footer-media" role="contentinfo">
+            <h2 class="ft-helper-hide">Información de pie de página</h2>
+            <div class="footer-mediaTop">
+                <a aria-current="page" data-edition-homelink="data-edition-homelink" href="/es/"
+                    title="El Periódico"><img alt="El Periódico2" height="65" loading="lazy"
+                        src="../../cds-statics/assets/img/logos/logoEpColor.svg" width="263"></a>
+                <div aria-label="Redes sociales de El Periódico" class="rrss">
+                    <a aria-label="WhatsApp de El Periódico" class="btn" href="#" rel="noopener noreferrer nofollow"
+                        target="_blank"><span aria-hidden="true" class="icon icon-Whatsapp"></span></a> <a
+                        aria-label="Facebook de El Periódico" class="btn"
+                        href="https://www.facebook.com/elperiodico.catalunya" hreflang="es"
+                        rel="noopener noreferrer nofollow" target="_blank"><span aria-hidden="true"
+                            class="icon icon-Facebook"></span></a> <a aria-label="Twitter de El Periódico" class="btn"
+                        href="https://twitter.com/elperiodico" hreflang="es" rel="noopener noreferrer nofollow"
+                        target="_blank"><span aria-hidden="true" class="icon icon-Twitter"></span></a> <a
+                        aria-label="Instagram de El Periódico" class="btn"
+                        href="https://www.instagram.com/elperiodico_cas/" hreflang="es"
+                        rel="noopener noreferrer nofollow" target="_blank"><span aria-hidden="true"
+                            class="icon icon-Instagram"></span></a>
+                </div>
+                <h3 class="ft-helper-hide">Enlaces institucionales</h3>
+                <nav aria-label="Enlaces institucionales">
+                    <ul class="lnk">
+                        <li>
+                            <a href="https://www.elperiodico.com/es/quienessomos.shtml" hreflang="es"
+                                rel="nofollow noopener" target="_blank" title="Quiénes somos">Quiénes somos</a>
+                        </li>
+                        <li>
+                            <a href="https://www.elperiodico.com/es/contacto.shtml" hreflang="es"
+                                rel="nofollow noopener" target="_blank" title="Contacto">Contacto</a>
+                        </li>
+                        <li>
+                            <a href="https://www.elperiodico.com/es/rss/portada_rss.shtml" hreflang="es"
+                                rel="nofollow noopener" target="_blank" title="RSS">RSS</a>
+                        </li>
+                        <li>
+                            <a href="https://www.elperiodico.com/es/mapa-sitio.shtml" hreflang="es"
+                                rel="nofollow noopener" target="_blank" title="Mapa del sitio">Mapa del sitio</a>
+                        </li>
+                        <li>
+                            <a href="https://www.prensaiberica360.es/?_sid=1686819132" hreflang="es"
+                                rel="nofollow noopener" target="_blank" title="Publicidad">Publicidad</a>
+                        </li>
+                        <li>
+                            <a href="https://www.elperiodico.com/es/avisolegal.shtml" hreflang="es"
+                                rel="nofollow noopener" target="_blank" title="Aviso legal">Aviso legal</a>
+                        </li>
+                        <li>
+                            <a href="https://www.prensaiberica.es/politica-de-privacidad-resumida/?_sid=1686819132"
+                                hreflang="es" rel="nofollow noopener" target="_blank"
+                                title="Política de privacidad y cookies">Política de privacidad y cookies</a>
+                        </li>
+                        <li>
+                            <a href="javascript:%20Didomi.preferences.show();" rel="nofollow noopener"
+                                title="Preferencias de Privacidad">Preferencias de Privacidad</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer-mediaMiddle">
+                <address>
+                    <p>El Periódico de Catalunya, S.L.U</p><a
+                        href="https://estaticos-cdn.lne.es/images/footer/prensa-iberica-360.png?id=00bc9e3946af531b5a7b"
+                        hreflang="es" rel="noopener" target="_blank" title="Prensa Ibérica"><img alt="Prensa Ibérica"
+                            height="73" loading="lazy"
+                            src="https://estaticos-cdn.lne.es/images/footer/prensa-iberica-360.png?id=00bc9e3946af531b5a7b"
+                            title="Prensa Ibérica" width="114"></a>
+                </address>
+            </div>
+            <div class="footer-mediaBottom">
+                <p>Otras webs de Prensa Ibérica Media:</p>
+                <ul>
+                    <li class="titular">Titular 1</li>
+                    <li>
+                        <a href="https://www.casagourmet.es/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="Casa Gourmet">Casa Gourmet</a>
+                    </li>
+                    <li>
+                        <a href="https://ocasion.neomotor.com/" rel="nofollow" target="_blank"
+                            title="Coche de ocasión">Coche de ocasión</a>
+                    </li>
+                    <li>
+                        <a href="https://www.codigonuevo.com/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="Código Nuevo">Código Nuevo</a>
+                    </li>
+                    <li>
+                        <a href="https://www.elperiodico.com/cuore/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="Cuore">Cuore</a>
+                    </li>
+                    <li>
+                        <a href="https://www.diaridegirona.cat/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="Diari de Girona">Diari de Girona</a>
+                    </li>
+                    <li>
+                        <a href="https://www.diariocordoba.com/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="Diario de Córdoba">Diario de Córdoba</a>
+                    </li>
+                    <li>
+                        <a href="https://www.diariodeibiza.es/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="Diario de Ibiza">Diario de Ibiza</a>
+                    </li>
+                    <li>
+                        <a href="https://www.diariodemallorca.es/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="Diario de Mallorca">Diario de Mallorca</a>
+                    </li>
+                    <li>
+                        <a href="https://www.elcorreogallego.es/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="El Correo Gallego">El Correo Gallego</a>
+                    </li>
+                    <li>
+                        <a href="https://www.eldia.es/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="El Día Tenerife">El Día Tenerife</a>
+                    </li>
+                    <li>
+                        <a href="https://www.elperiodicodearagon.com/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="El Periódico de Aragón">El Periódico de Aragón</a>
+                    </li>
+                    <li>
+                        <a href="https://www.elperiodico.com/es/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="El Periódico de Catalunya">El Periódico de Catalunya</a>
+                    </li>
+                    <li>
+                        <a href="https://www.epe.es/es/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="El Periódico de España">El Periódico de España</a>
+                    </li>
+                    <li>
+                        <a href="http://www.elperiodicoextremadura.com/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="El Periódico de Extremadura">El Periódico de Extremadura</a>
+                    </li>
+                    <li>
+                        <a href="https://www.elperiodicomediterraneo.com/?_sid=1686737966" rel="nofollow"
+                            target="_blank" title="El Periódico Mediterráneo">El Periódico Mediterráneo</a>
+                    </li>
+                    <li>
+                        <a href="https://www.farodevigo.es/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="Faro de Vigo">Faro de Vigo</a>
+                    </li>
+                    <li>
+                        <a href="https://formula1.lne.es/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="Fórmula 1">Fórmula 1</a>
+                    </li>
+                    <li>
+                        <a href="https://www.premios-cine.com/goya/" rel="nofollow" target="_blank"
+                            title="Goya">Goya</a>
+                    </li>
+                    <li>
+                        <a href="https://www.iberempleos.es/" rel="nofollow" target="_blank"
+                            title="Iberempleos">Iberempleos</a>
+                    </li>
+                    <li class="titular">Titular 2</li>
+                    <li>
+                        <a href="https://www.diarioinformacion.com/" rel="nofollow" target="_blank"
+                            title="Información">Información</a>
+                    </li>
+                    <li>
+                        <a href="http://www.informaciontv.es/" rel="nofollow" target="_blank"
+                            title="Información TV">Información TV</a>
+                    </li>
+                    <li>
+                        <a href="https://www.lacronicabadajoz.com/" rel="nofollow" target="_blank"
+                            title="La Crónica de Badajoz">La Crónica de Badajoz</a>
+                    </li>
+                    <li>
+                        <a href="https://www.lne.es/asturias/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="La Nueva España Asturias">La Nueva España Asturias</a>
+                    </li>
+                    <li>
+                        <a href="https://www.laopinioncoruna.es/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="La Opinión de A Coruña">La Opinión de A Coruña</a>
+                    </li>
+                    <li>
+                        <a href="https://www.laopiniondemurcia.es/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="La Opinión de Murcia">La Opinión de Murcia</a>
+                    </li>
+                    <li>
+                        <a href="https://www.laopiniondemalaga.es/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="La Opinión de Málaga">La Opinión de Málaga</a>
+                    </li>
+                    <li>
+                        <a href="https://www.laopiniondezamora.es/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="La Opinión El correo de Zamora">La Opinión El correo de Zamora</a>
+                    </li>
+                    <li>
+                        <a href="https://www.laprovincia.es/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="La Provincia Diario de Las Palmas">La Provincia Diario de Las Palmas</a>
+                    </li>
+                    <li>
+                        <a href="https://www.levante-emv.com/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="Levante El Mercantil Valenciano">Levante El Mercantil Valenciano</a>
+                    </li>
+                    <li>
+                        <a href="http://www.informaciontv.es/" rel="nofollow" target="_blank" title="Levante TV">Levante
+                            TV</a>
+                    </li>
+                    <li>
+                        <a href="https://www.emporda.info/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="L'Empordà Figueres">L'Empordà Figueres</a>
+                    </li>
+                    <li class="titular">Titular 3</li>
+                    <li>
+                        <a href="https://www.mallorcazeitung.es/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="Mallorca Zeitung Mallorca">Mallorca Zeitung Mallorca</a>
+                    </li>
+                    <li>
+                        <a href="https://neomotor.epe.es/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="Neomotor">Neomotor</a>
+                    </li>
+                    <li>
+                        <a href="https://www.premios-cine.com/oscars/" rel="nofollow" target="_blank"
+                            title="Oscars">Oscars</a>
+                    </li>
+                    <li>
+                        <a href="https://www.regio7.cat/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="Regió 7 Manresa">Regió Manresa</a>
+                    </li>
+                    <li>
+                        <a href="https://www.sport.es/" rel="nofollow" target="_blank" title="Sport">Sport</a>
+                    </li>
+                    <li>
+                        <a href="https://www.stilo.es/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="Stilo">Stilo</a>
+                    </li>
+                    <li>
+                        <a href="https://www.superdeporte.es/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="Superdeporte Valencia">Superdeporte Valencia</a>
+                    </li>
+                    <li>
+                        <a href="https://www.sport.es/es/tendencias21/" rel="nofollow" target="_blank"
+                            title="Tendencias 21">Tendencias 21</a>
+                    </li>
+                    <li>
+                        <a href="https://www.tucasa.com/" rel="nofollow" target="_blank" title="Tu casa">Tu casa</a>
+                    </li>
+                    <li>
+                        <a href="https://www.sport.es/es/medio-ambiente/" rel="nofollow" target="_blank"
+                            title="Medio Ambiente">Medio Ambiente</a>
+                    </li>
+                    <li>
+                        <a href="https://viajar.elperiodico.com/?_sid=1686737966" rel="nofollow" target="_blank"
+                            title="Viajar">Viajar</a>
+                    </li>
+                    <li>
+                        <a href="https://www.woman.es/" rel="nofollow" target="_blank" title="Woman Madame Figaro">Woman
+                            Madame Figaro</a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JS: masthead -->
+    <script rel="modulepreload" src="../../cds-statics/js/affix/affix.js">
+    </script>
+    <script rel="modulepreload" src="../../cds-statics/js/headers/masthead.js">
+    </script>
+    <script rel="modulepreload" src="../../cds-statics/js/sticking/fourty-header-sticky.js">
+    </script>
+    <script rel="modulepreload" src="../../cds-statics/js/form/fourty-js-form-combo-search.js">
+    </script>
+    <script rel="modulepreload" src="../../cds-statics/js/sidenav/fourty-js-sidenav-default.js">
+    </script>
+    <script rel="modulepreload" src="../../cds-statics/js/modal/fourty-js-popover.js">
+    </script>
+    <script rel="modulepreload" src="../../cds-statics/js/dropdown/fortty-js-dropdown-simple.js">
+    </script>
+
+    <!-- JS: smoothscroll -->
+    <script defer src="../../cds-statics/js/scroll/smooth-scrollbar/smooth-scrollbar.js">
+    </script>
+    <script defer src="../../cds-statics/js/scroll/smooth-scrollbar/smooth-scrollbar-functions.js">
+    </script>
+</body>
+
+</html>

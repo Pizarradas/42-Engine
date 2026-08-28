@@ -1,0 +1,1566 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <title>
+        42DS | Templates: Noticia
+    </title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <!-- CSS: settings -->
+    <link href="../../cds-statics/css/brands/ux/setting.css" id="brandStyles-root" rel="stylesheet" type="text/css" />
+    <!-- CSS: library multibrand -->
+    <link href="../../cds-statics/css/ux-index.css" id="brandStyles" rel="stylesheet" type="text/css" />
+    <!-- CSS: header -->
+    <link href="../../cds-statics/css/brands/ep/organism/header-multibrand.css" rel="stylesheet" type="text/css" />
+    <!-- FAVICON -->
+    <link href="../favicon.png" rel="icon" type="image/png" />
+</head>
+
+<body class="fourty ft-brand-ux ft-skin ft-skin--showroom"
+    data-showroom-skin="layout">
+    <!--header-->
+    <header>
+        <!-- Cabecera normal -->
+        <div class="ft-org-masthead ft-org-masthead--branded">
+            <div class="ft-org-masthead__top">
+                <div class="ft-org-masthead__top-left">
+                    <a href="/es/" class="ft-org-masthead__top-left-logo" title="El Periódico de España">
+                    </a>
+                    <div class="ft-date ft-date--inline">
+                        <div class="ft-date__text">
+                            <time class="ft-date__textTime" itemprop="datePublished"
+                                datetime="2025-03-17T04:50:43+01:00">17 MAR 2025</time>
+                        </div>
+                        <time class="ft-date__reload" itemprop="dateModified"
+                            datetime="2025-03-17T06:11:15+01:00">Actualizada 6:11</time>
+                    </div>
+                </div>
+                <div class="ft-org-masthead__top-right">
+
+                    <div class="sticky" id="hero">
+                        <style tp-style="template-custom-style" type="text/css">
+                            .tp-container-inner {
+                                display: flex;
+                                flex-direction: row;
+                                height: 25px;
+                                max-height: 25px;
+                                align-items: center;
+                                border-radius: 5rem;
+                                width: auto !important;
+                                justify-content: flex-start;
+                            }
+
+                            body {
+                                background: transparent !important;
+                                margin: 0
+                            }
+
+                            .sticky-text {
+                                font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+                                font-weight: normal;
+                                letter-spacing: 0;
+                                font-size: 12px;
+                                line-height: 14px;
+                                color: white;
+                                margin: 0px;
+                            }
+
+                            .sticky__content {
+                                display: flex;
+                                flex-direction: row;
+                                background-color: transparent;
+                                height: 25px;
+                                max-height: 25px;
+                                align-items: center;
+                                width: 100%;
+                                position: relative;
+                                justify-content: center;
+                            }
+
+                            .ft-brand-ep .sticky-text {
+                                color: black;
+                            }
+
+                            .ft-brand-ep.economia .sticky-text,
+                            .ft-brand-ep.gastronomia .sticky-text,
+                            .ft-brand-ep.libros .sticky-text,
+                            .ft-brand-ep.esncial .sticky-text {
+                                color: white;
+                            }
+
+                            .ft-brand-regionales .sticky-text,
+                            .ft-brand-epe .sticky-text,
+                            .ft-brand-sport .sticky-text,
+                            .ft-brand-sport.esncial .sticky-text {
+                                color: white;
+                            }
+
+                            .ft-brand-regionales.la-nueva-espana.asturiasexterior .sticky-text,
+                            .ft-brand-regionales.diari-de-girona.gironadelicia .sticky-text {
+                                color: black;
+                            }
+
+                            .sticky-text__bold {
+                                font-weight: bold;
+                            }
+
+                            .sticky-link {
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                bottom: 0;
+                                left: 0;
+                                overflow: hidden;
+                                text-indent: 101%;
+                                white-space: nowrap;
+                                margin: auto;
+                                height: 100%;
+                                width: 100%;
+                                border-width: 0;
+                                opacity: 0;
+                                z-index: 1;
+                            }
+
+                            .sticky-button {
+                                background-color: white;
+                                color: black;
+                                font-weight: bold;
+                                padding: .1rem .5rem;
+                                border-radius: .3rem;
+                                margin-left: .3rem;
+                            }
+
+                            .ft-brand-ep .sticky-button,
+                            .ft-brand-regionales.gironadelicia .sticky-button {
+                                background-color: black;
+                                color: white;
+                            }
+                        </style>
+                        <p class="sticky-text">Accede a tu <span class="sticky-text__bold">ejemplar diario</span> <span
+                                class="sticky-button">Kiosco</span>
+                        </p>
+
+                        <a class="sticky-link" data-vars-event-cat="piano link" external-event="marketing=base-pm1A"
+                            href="https://micuenta.lne.es/tp/suscripcion/galeria?marketing=base-pm1A" rel="nofollow"
+                            target="_blank" title="link title"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="ft-org-masthead__main">
+                <div class="ft-org-masthead__menu">
+                    <button type="button" class="ft-org-masthead__menu-button" id="toggle">
+                        <span class="ft-org-masthead__menu-buttonIcon"></span>
+                    </button>
+                </div>
+                <div class="ft-org-masthead__logo">
+                    <h1 class="ft-org-masthead__logo-img">
+                        <a href="/es/" class="ft-org-masthead__logo-link" title="Title Text">
+                            <span class="ft-org-masthead--hide">el periódico</span>
+                        </a>
+                    </h1>
+                    <div class="ft-org-masthead__logo-lang">
+                        <button type="button" onclick="triggerDropdownLanguage()" class="ft-org-masthead__logo-button"
+                            id="activeLanguage" data-active=".com">.com</button>
+                        <ul class="ft-org-masthead__dropdown" id="languageDropdown">
+                            <li class="ft-list__item"><a href="https://www.elperiodico.cat/ca/"
+                                    class="ft-org-masthead__dropdown-link">.cat</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="ft-org-masthead__area">
+                    <button class="ft-org-masthead__area--search">
+                    </button>
+                    <div class="ft-mol-dropdown">
+                        <button class="ft-org-masthead__area--login ft-mol-dropdown__trigger"
+                            onclick="toggleDropdown(event)" aria-haspopup="true" aria-expanded="false"
+                            title="Abrir menú desplegable" id="ft-dropdown-trigger-3" aria-controls="ft-dropdown-list-3"">
+
+                                             
+        <ul class=" ft-mol-dropdown__list ft-mol-dropdown--has-icons" role="menu" aria-hidden="true"
+                            id="ft-dropdown-list-1" aria-labelledby="ft-dropdown-trigger-1" hidden="">
+                            <li class="ft-mol-dropdown__item">
+                                <a class="ft-mol-dropdown__link" href="#" target="_self" title="Archivo" tabindex="-1">
+                                    <img src="/cds-statics/assets/img/icons/icon-user-masterhead.svg" alt="" width="18"
+                                        height="19" loading="eager" class="ft-mol-dropdown__icon">
+                                    Mi cuenta
+                                </a>
+                            </li>
+                            <li class="ft-mol-dropdown__item ft-mol-dropdown__item--active">
+                                <a class="ft-mol-dropdown__link" href="#" target="_self" title="Archivo" tabindex="-1">
+                                    <img src="/cds-statics/assets/img/icons/nav-solid-suscription.svg" alt="" width="18"
+                                        height="19" loading="eager" class="ft-mol-dropdown__icon">
+                                    Suscribete
+                                </a>
+                            </li>
+                            <li class="ft-mol-dropdown__item">
+                                <a class="ft-mol-dropdown__link" href="#" target="_self" title="Archivo" tabindex="-1">
+                                    <img src="/cds-statics/assets/img/icons/icon-credit-card-masterhead.svg" alt=""
+                                        width="18" height="19" loading="eager" class="ft-mol-dropdown__icon">
+                                    Mi suscripción
+                                </a>
+                            </li>
+                            <li class="ft-mol-dropdown__item" role="none">
+                                <a class="ft-mol-dropdown__link" role="menuitem" href="#" target="_self"
+                                    title="title text" tabindex="-1">
+
+                                    <img src="/cds-statics/assets/img/icons/nav-solid-light-save.svg" alt="" width="21"
+                                        height="21" loading="eager" class="ft-mol-dropdown__icon">
+
+
+                                    Mis noticias guardadas</a>
+                            </li>
+                            <li class="ft-mol-dropdown__item" role="none">
+                                <a class="ft-mol-dropdown__link" role="menuitem" href="#" target="_self"
+                                    title="title text" tabindex="-1">
+                                    <img src="/cds-statics/assets/img/icons/nav-solid-light-plus.svg" alt="" width="20"
+                                        height="21" loading="eager" class="ft-mol-dropdown__icon">
+
+                                    Mi Medio</a>
+                            </li>
+                            <li class="ft-mol-dropdown__item" role="none">
+                                <a class="ft-mol-dropdown__link" role="menuitem" href="#" target="_self"
+                                    title="title text" tabindex="-1">
+                                    <img src="/cds-statics/assets/img/icons/icon-kiosk-masterhead.svg" alt="" width="20"
+                                        height="21" loading="eager" class="ft-mol-dropdown__icon">
+
+                                    Kiosko</a>
+                            </li>
+                            <li class="ft-mol-dropdown__item" role="none">
+                                <a class="ft-mol-dropdown__link" role="menuitem" href="#" target="_self"
+                                    title="title text" tabindex="-1">
+                                    <img src="/cds-statics/assets/img/icons/nav-solid-light-newsletter.svg" alt=""
+                                        width="20" height="21" loading="eager" class="ft-mol-dropdown__icon">
+
+                                    Newsletters</a>
+                            </li>
+                            <li class="ft-mol-dropdown__item" role="none">
+                                <a class="ft-mol-dropdown__link" role="menuitem" href="#" target="_self"
+                                    title="title text" tabindex="-1">
+                                    <img src="/cds-statics/assets/img/icons/nav-solid-light-pasatiempos.svg" alt=""
+                                        width="20" height="21" loading="eager" class="ft-mol-dropdown__icon">
+
+                                    Jugar</a>
+                            </li>
+                            <li class="ft-mol-dropdown__item" role="none">
+                                <a class="ft-mol-dropdown__link" role="menuitem" href="#" target="_self"
+                                    title="title text" tabindex="-1">
+                                    <img src="/cds-statics/assets/img/icons/icon-close-user-masterhead.svg" alt=""
+                                        width="20" height="21" loading="eager" class="ft-mol-dropdown__icon">
+
+                                    Cerrar sesión</a>
+                            </li>
+                            </ul>
+
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <nav class="ft-org-masthead__nav">
+                <ul class="ft-org-masthead__list">
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            <img src="../../cds-statics/assets/img/logos/logo-prueba2.svg" width="85" height="40">
+                        </a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            Enlace 2
+                        </a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            Enlace 3
+                        </a>
+                    </li>
+
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            Enlace 7
+                        </a>
+                    </li>
+                    <li class="ft-org-masthead__item ft-org-masthead__item--live">
+                        <a href="/es/directos/" class="ft-org-masthead__link" title="Directos"> Directos </a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            Enlace 8
+                        </a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            Enlace 9
+                        </a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            Enlace 10
+                        </a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            Enlace 11
+                        </a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            Enlace 12
+                        </a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            Enlace 13
+                        </a>
+                    </li>
+                </ul>
+                <a href="#" class="ft-org-masthead__branded">Ofrecido por <img
+                        src="../../cds-statics/assets/img/logos/logo-prueba.svg"></a>
+            </nav>
+            <nav class="ft-org-masthead__nav ft-org-masthead__nav--mobile">
+                <ul class="ft-org-masthead__list">
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            <img src="../../cds-statics/assets/img/logos/logo-prueba2.svg" width="85" height="40">
+                        </a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link ft-org-masthead__link--active" title="Title text">
+                            Enlace 2 Mobile
+                        </a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            Enlace 3 Mobile
+                        </a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            Enlace 4 Mobile
+                        </a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            Enlace 5 Mobile
+                        </a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            Enlace 6 Mobile
+                        </a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            Enlace 7 Mobile
+                        </a>
+                    </li>
+                    <li class="ft-org-masthead__item ft-org-masthead__item--live">
+                        <a href="/es/directos/" class="ft-org-masthead__link" title="Directos"> Directos </a>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="ft-org-masthead__subnav">
+                <ul class="ft-org-masthead__list">
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            Ediciones digitales:
+                        </a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            Siero
+                        </a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            Llanera
+                        </a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            Villaviciosa
+                        </a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            Grado
+                        </a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            Salas
+                        </a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            Ribera de Arriba
+                        </a>
+                    </li>
+                    <li class="ft-org-masthead__item">
+                        <a href="#" class="ft-org-masthead__link" title="Title text">
+                            La Corredoria
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Cabecera fija -->
+        <div class="ft-org-masthead ft-org-masthead--fix">
+            <div class="ft-org-masthead__main">
+                <div class="ft-org-masthead__menu">
+                    <button type="button" class="ft-org-masthead__menu-button" id="toggle">
+                        <span class="ft-org-masthead__menu-buttonIcon"></span>
+                    </button>
+                </div>
+                <div class="ft-org-masthead__logo">
+                    <h2 class="ft-org-masthead__logo-img">
+                        <a href="/es/" class="ft-org-masthead__logo-link" title="El Periódico">
+                            <span class="ft-org-masthead--hide">el periódico</span>
+                        </a>
+                    </h2>
+                    <div class="ft-org-masthead__logo-lang">
+                        <button type="button" onclick="triggerDropdownLanguage()" class="ft-org-masthead__logo-button"
+                            id="activeLanguage" data-active=".com">.com</button>
+                        <ul class="ft-org-masthead__dropdown" id="languageDropdown">
+                            <li class="ft-list__item"><a href="https://www.elperiodico.cat/ca/"
+                                    class="ft-org-masthead__dropdown-link">.cat</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="ft-org-masthead__area">
+                    <button class="ft-org-masthead__area--search">
+
+                    </button>
+                    <div class="ft-mol-dropdown">
+                        <button class="ft-org-masthead__area--login ft-mol-dropdown__trigger"
+                            onclick="toggleDropdown(event)" aria-haspopup="true" aria-expanded="false"
+                            title="Abrir menú desplegable" id="ft-dropdown-trigger-1"
+                            aria-controls="ft-dropdown-list-1" "="">
+
+                                             
+        <ul class=" ft-mol-dropdown__list ft-mol-dropdown--has-icons" role="menu" aria-hidden="true"
+                            id="ft-dropdown-list-1" aria-labelledby="ft-dropdown-trigger-1" hidden="">
+                            <li class="ft-mol-dropdown__item">
+                                <a class="ft-mol-dropdown__link" href="#" target="_self" title="Archivo" tabindex="-1">
+                                    <img src="/cds-statics/assets/img/icons/icon-user-masterhead.svg" alt="" width="18"
+                                        height="19" loading="eager" class="ft-mol-dropdown__icon">
+                                    Mi cuenta
+                                </a>
+                            </li>
+                            <li class="ft-mol-dropdown__item ft-mol-dropdown__item--active">
+                                <a class="ft-mol-dropdown__link" href="#" target="_self" title="Archivo" tabindex="-1">
+                                    <img src="/cds-statics/assets/img/icons/nav-solid-suscription.svg" alt="" width="18"
+                                        height="19" loading="eager" class="ft-mol-dropdown__icon">
+                                    Suscribete
+                                </a>
+                            </li>
+                            <li class="ft-mol-dropdown__item">
+                                <a class="ft-mol-dropdown__link" href="#" target="_self" title="Archivo" tabindex="-1">
+                                    <img src="/cds-statics/assets/img/icons/icon-credit-card-masterhead.svg" alt=""
+                                        width="18" height="19" loading="eager" class="ft-mol-dropdown__icon">
+                                    Mi suscripción
+                                </a>
+                            </li>
+                            <li class="ft-mol-dropdown__item" role="none">
+                                <a class="ft-mol-dropdown__link" role="menuitem" href="#" target="_self"
+                                    title="title text" tabindex="-1">
+
+                                    <img src="/cds-statics/assets/img/icons/nav-solid-light-save.svg" alt="" width="21"
+                                        height="21" loading="eager" class="ft-mol-dropdown__icon">
+
+
+                                    Mis noticias guardadas</a>
+                            </li>
+                            <li class="ft-mol-dropdown__item" role="none">
+                                <a class="ft-mol-dropdown__link" role="menuitem" href="#" target="_self"
+                                    title="title text" tabindex="-1">
+                                    <img src="/cds-statics/assets/img/icons/nav-solid-light-plus.svg" alt="" width="20"
+                                        height="21" loading="eager" class="ft-mol-dropdown__icon">
+
+                                    Mi Medio</a>
+                            </li>
+                            <li class="ft-mol-dropdown__item" role="none">
+                                <a class="ft-mol-dropdown__link" role="menuitem" href="#" target="_self"
+                                    title="title text" tabindex="-1">
+                                    <img src="/cds-statics/assets/img/icons/icon-kiosk-masterhead.svg" alt="" width="20"
+                                        height="21" loading="eager" class="ft-mol-dropdown__icon">
+
+                                    Kiosko</a>
+                            </li>
+                            <li class="ft-mol-dropdown__item" role="none">
+                                <a class="ft-mol-dropdown__link" role="menuitem" href="#" target="_self"
+                                    title="title text" tabindex="-1">
+                                    <img src="/cds-statics/assets/img/icons/nav-solid-light-newsletter.svg" alt=""
+                                        width="20" height="21" loading="eager" class="ft-mol-dropdown__icon">
+
+                                    Newsletters</a>
+                            </li>
+                            <li class="ft-mol-dropdown__item" role="none">
+                                <a class="ft-mol-dropdown__link" role="menuitem" href="#" target="_self"
+                                    title="title text" tabindex="-1">
+                                    <img src="/cds-statics/assets/img/icons/nav-solid-light-pasatiempos.svg" alt=""
+                                        width="20" height="21" loading="eager" class="ft-mol-dropdown__icon">
+
+                                    Jugar</a>
+                            </li>
+                            <li class="ft-mol-dropdown__item" role="none">
+                                <a class="ft-mol-dropdown__link" role="menuitem" href="#" target="_self"
+                                    title="title text" tabindex="-1">
+                                    <img src="/cds-statics/assets/img/icons/icon-close-user-masterhead.svg" alt=""
+                                        width="20" height="21" loading="eager" class="ft-mol-dropdown__icon">
+
+                                    Cerrar sesión</a>
+                            </li>
+                            </ul>
+
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="progress-bar" class="ft-org-masthead__progress-bar"></div>
+        </div>
+        <!-- Menú Lateral Único -->
+        <div class="ft-org-masthead ft-org-masthead--side" id="sideMenu">
+            <div class="ft-org-masthead__main">
+                <div class="ft-org-masthead__menu">
+                    <button type="button" class="ft-org-masthead__menu-button" id="toggle">
+                        <span class="ft-org-masthead__menu-buttonIcon"></span>
+                    </button>
+                </div>
+
+                <div class="ft-org-masthead__logo">
+                    <div class="ft-org-masthead__logo-img">
+                        <a href="/es/" class="ft-org-masthead__logo-link" title="El Periódico">
+                            <span class="ft-org-masthead--hide">el periódico</span>
+                        </a>
+                    </div>
+                    <div class="ft-org-masthead__logo-lang">
+                        <button type="button" onclick="triggerDropdownLanguage()" class="ft-org-masthead__logo-button"
+                            id="activeLanguage" data-active=".com">.com</button>
+                        <ul class="ft-org-masthead__dropdown" id="languageDropdown">
+                            <li class="ft-list__item"><a href="https://www.elperiodico.cat/ca/"
+                                    class="ft-org-masthead__dropdown-link">.cat</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="ft-org-masthead__area">
+                    <button class="ft-org-masthead__area--search">
+
+                    </button>
+                    <div class="ft-mol-dropdown">
+                        <button class="ft-org-masthead__area--login ft-mol-dropdown__trigger"
+                            onclick="toggleDropdown(event)" aria-haspopup="true" aria-expanded="false"
+                            title="Abrir menú desplegable" id="ft-dropdown-trigger-1"
+                            aria-controls="ft-dropdown-list-1" "="">
+
+                                             
+        <ul class=" ft-mol-dropdown__list ft-mol-dropdown--has-icons" role="menu" aria-hidden="true"
+                            id="ft-dropdown-list-1" aria-labelledby="ft-dropdown-trigger-1" hidden="">
+                            <li class="ft-mol-dropdown__item">
+                                <a class="ft-mol-dropdown__link" href="#" target="_self" title="Archivo" tabindex="-1">
+                                    <img src="/cds-statics/assets/img/icons/icon-user-masterhead.svg" alt="" width="18"
+                                        height="19" loading="eager" class="ft-mol-dropdown__icon">
+                                    Mi cuenta
+                                </a>
+                            </li>
+                            <li class="ft-mol-dropdown__item ft-mol-dropdown__item--active">
+                                <a class="ft-mol-dropdown__link" href="#" target="_self" title="Archivo" tabindex="-1">
+                                    <img src="/cds-statics/assets/img/icons/nav-solid-suscription.svg" alt="" width="18"
+                                        height="19" loading="eager" class="ft-mol-dropdown__icon">
+                                    Suscribete
+                                </a>
+                            </li>
+                            <li class="ft-mol-dropdown__item">
+                                <a class="ft-mol-dropdown__link" href="#" target="_self" title="Archivo" tabindex="-1">
+                                    <img src="/cds-statics/assets/img/icons/icon-credit-card-masterhead.svg" alt=""
+                                        width="18" height="19" loading="eager" class="ft-mol-dropdown__icon">
+                                    Mi suscripción
+                                </a>
+                            </li>
+                            <li class="ft-mol-dropdown__item" role="none">
+                                <a class="ft-mol-dropdown__link" role="menuitem" href="#" target="_self"
+                                    title="title text" tabindex="-1">
+
+                                    <img src="/cds-statics/assets/img/icons/nav-solid-light-save.svg" alt="" width="21"
+                                        height="21" loading="eager" class="ft-mol-dropdown__icon">
+
+
+                                    Mis noticias guardadas</a>
+                            </li>
+                            <li class="ft-mol-dropdown__item" role="none">
+                                <a class="ft-mol-dropdown__link" role="menuitem" href="#" target="_self"
+                                    title="title text" tabindex="-1">
+                                    <img src="/cds-statics/assets/img/icons/nav-solid-light-plus.svg" alt="" width="20"
+                                        height="21" loading="eager" class="ft-mol-dropdown__icon">
+
+                                    Mi Medio</a>
+                            </li>
+                            <li class="ft-mol-dropdown__item" role="none">
+                                <a class="ft-mol-dropdown__link" role="menuitem" href="#" target="_self"
+                                    title="title text" tabindex="-1">
+                                    <img src="/cds-statics/assets/img/icons/icon-kiosk-masterhead.svg" alt="" width="20"
+                                        height="21" loading="eager" class="ft-mol-dropdown__icon">
+
+                                    Kiosko</a>
+                            </li>
+                            <li class="ft-mol-dropdown__item" role="none">
+                                <a class="ft-mol-dropdown__link" role="menuitem" href="#" target="_self"
+                                    title="title text" tabindex="-1">
+                                    <img src="/cds-statics/assets/img/icons/nav-solid-light-newsletter.svg" alt=""
+                                        width="20" height="21" loading="eager" class="ft-mol-dropdown__icon">
+
+                                    Newsletters</a>
+                            </li>
+                            <li class="ft-mol-dropdown__item" role="none">
+                                <a class="ft-mol-dropdown__link" role="menuitem" href="#" target="_self"
+                                    title="title text" tabindex="-1">
+                                    <img src="/cds-statics/assets/img/icons/nav-solid-light-pasatiempos.svg" alt=""
+                                        width="20" height="21" loading="eager" class="ft-mol-dropdown__icon">
+
+                                    Jugar</a>
+                            </li>
+                            <li class="ft-mol-dropdown__item" role="none">
+                                <a class="ft-mol-dropdown__link" role="menuitem" href="#" target="_self"
+                                    title="title text" tabindex="-1">
+                                    <img src="/cds-statics/assets/img/icons/icon-close-user-masterhead.svg" alt=""
+                                        width="20" height="21" loading="eager" class="ft-mol-dropdown__icon">
+
+                                    Cerrar sesión</a>
+                            </li>
+                            </ul>
+
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="ft-org-masthead__box ft-org-masthead__box--white">
+                <div class="form-field">
+                    <div class="select-wrapper">
+                        <select required>
+                            <option value="" disabled selected></option>
+                            <option value="opcion1">Opción 1</option>
+                            <option value="opcion2">Opción 2</option>
+                            <option value="opcion3">Opción 3</option>
+                        </select>
+                        <label>Selecciona una opción</label>
+                        <span class="select-arrow"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="ft-org-masthead__box ft-org-masthead__box--white">
+                <h2 class="ft-org-masthead__title">Secciones</h2>
+                <nav aria-label="Menú principal" class="ft-org-masthead__acordeon">
+                    <ul class="ft-org-masthead__acordeon-list ft-org-masthead__acordeon-list--nivel-1">
+                        <li class="ft-org-masthead__acordeon-item">
+                            <button class="ft-org-masthead__acordeon-toggle" aria-expanded="false"
+                                aria-controls="submenu-1">
+                                Asturias
+                            </button>
+                            <ul id="submenu-1"
+                                class="ft-org-masthead__acordeon-list ft-org-masthead__acordeon-list--nivel-2" hidden>
+                                <li class="ft-org-masthead__acordeon-item">
+                                    <a class="ft-org-masthead__acordeon-link ft-org-masthead__acordeon-linkTitle"
+                                        href="/ruta-1-3">Portada Asturias</a>
+                                </li>
+                                <li class="ft-org-masthead__acordeon-item">
+                                    <button class="ft-org-masthead__acordeon-toggle" aria-expanded="false"
+                                        aria-controls="submenu-1-2">
+                                        Asturias Exterior
+                                    </button>
+                                    <ul id="submenu-1-2"
+                                        class="ft-org-masthead__acordeon-list ft-org-masthead__acordeon-list--nivel-3"
+                                        hidden>
+                                        <li class="ft-org-masthead__acordeon-item"><a
+                                                class="ft-org-masthead__acordeon-link ft-org-masthead__acordeon-linkTitle"
+                                                href="/ruta-1-2-1">
+                                                Portada Asturias Exterior</a></li>
+                                        <li class="ft-org-masthead__acordeon-item"><a
+                                                class="ft-org-masthead__acordeon-link" href="/ruta-1-2-2">Subsección
+                                                Subnivel 1.2.2</a></li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="ft-org-masthead__acordeon-item">
+                            <button class="ft-org-masthead__acordeon-toggle" aria-expanded="false"
+                                aria-controls="submenu-2">
+                                Sección 2
+
+                            </button>
+                            <ul id="submenu-2"
+                                class="ft-org-masthead__acordeon-list ft-org-masthead__acordeon-list--nivel-2" hidden>
+                                <li class="ft-org-masthead__acordeon-item"><a class="ft-org-masthead__acordeon-link"
+                                        href="/ruta-2-1">Subsección 2.1</a></li>
+                                <li class="ft-org-masthead__acordeon-item"><a class="ft-org-masthead__acordeon-link"
+                                        href="/ruta-2-1">Subsección 2.2</a></li>
+                            </ul>
+                        </li>
+                        <li class="ft-org-masthead__acordeon-item">
+                            <button class="ft-org-masthead__acordeon-toggle" aria-expanded="false"
+                                aria-controls="submenu-3">
+                                Sección 3
+
+                            </button>
+                            <ul id="submenu-3"
+                                class="ft-org-masthead__acordeon-list ft-org-masthead__acordeon-list--nivel-2" hidden>
+                                <li class="ft-org-masthead__acordeon-item"><a class="ft-org-masthead__acordeon-link"
+                                        href="/ruta-2-1">Subsección 3.1</a></li>
+                                <li class="ft-org-masthead__acordeon-item"><a class="ft-org-masthead__acordeon-link"
+                                        href="/ruta-2-1">Subsección 3.2</a></li>
+                            </ul>
+                        </li>
+                        <li class="ft-org-masthead__acordeon-item">
+                            <a class="ft-org-masthead__acordeon-link">
+                                Sección 4
+                            </a>
+
+                        </li>
+                        <li class="ft-org-masthead__acordeon-item">
+                            <button class="ft-org-masthead__acordeon-toggle" aria-expanded="false"
+                                aria-controls="submenu-5">
+                                Sección 5
+                            </button>
+                            <ul id="submenu-5"
+                                class="ft-org-masthead__acordeon-list ft-org-masthead__acordeon-list--nivel-2" hidden>
+                                <li class="ft-org-masthead__acordeon-item"><a class="ft-org-masthead__acordeon-link"
+                                        href="/ruta-2-1">Subsección 5.1</a></li>
+                                <li class="ft-org-masthead__acordeon-item"><a class="ft-org-masthead__acordeon-link"
+                                        href="/ruta-2-1">Subsección 5.2</a></li>
+                            </ul>
+                        </li>
+                        <li class="ft-org-masthead__acordeon-item">
+                            <button class="ft-org-masthead__acordeon-toggle" aria-expanded="false"
+                                aria-controls="submenu-6">
+                                Sección 6
+                            </button>
+                            <ul id="submenu-6"
+                                class="ft-org-masthead__acordeon-list ft-org-masthead__acordeon-list--nivel-2" hidden>
+                                <li class="ft-org-masthead__acordeon-item"><a class="ft-org-masthead__acordeon-link"
+                                        href="/ruta-2-1">Subsección 5.1</a></li>
+                                <li class="ft-org-masthead__acordeon-item"><a class="ft-org-masthead__acordeon-link"
+                                        href="/ruta-2-1">Subsección 5.2</a></li>
+                            </ul>
+                        </li>
+                        <li class="ft-org-masthead__acordeon-item">
+                            <button class="ft-org-masthead__acordeon-toggle" aria-expanded="false"
+                                aria-controls="submenu-7">
+                                Sección 7
+                            </button>
+                            <ul id="submenu-7"
+                                class="ft-org-masthead__acordeon-list ft-org-masthead__acordeon-list--nivel-2" hidden>
+                                <li class="ft-org-masthead__acordeon-item"><a class="ft-org-masthead__acordeon-link"
+                                        href="/ruta-2-1">Subsección 5.1</a></li>
+                                <li class="ft-org-masthead__acordeon-item"><a class="ft-org-masthead__acordeon-link"
+                                        href="/ruta-2-1">Subsección 5.2</a></li>
+                            </ul>
+                        </li>
+                        <li class="ft-org-masthead__acordeon-item">
+                            <button class="ft-org-masthead__acordeon-toggle" aria-expanded="false"
+                                aria-controls="submenu-8">
+                                <svg class="ft-org-masthead__acordeon-toggleImg" width="15" height="15"
+                                    viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M7.59511 1.39615L8.84631 5.24696C9.03374 5.82379 9.57127 6.21434 10.1778 6.21434H14.2268C14.2637 6.21434 14.2791 6.22419 14.2871 6.23042C14.2991 6.23971 14.3134 6.25733 14.3219 6.28344C14.3304 6.30954 14.3292 6.33218 14.3249 6.34676C14.3221 6.35653 14.3154 6.37355 14.2856 6.39524L11.0099 8.77517C10.5192 9.13168 10.3139 9.76359 10.5013 10.3404L11.7525 14.1912C11.7639 14.2263 11.7593 14.244 11.7558 14.2536C11.7507 14.2679 11.7384 14.2869 11.7162 14.303C11.6939 14.3192 11.6721 14.325 11.6569 14.3255C11.6467 14.3258 11.6285 14.3247 11.5986 14.303L8.3229 11.9231C7.83222 11.5666 7.16778 11.5666 6.6771 11.9231L3.4014 14.303C3.37154 14.3247 3.35331 14.3258 3.34313 14.3255C3.32795 14.325 3.30605 14.3192 3.28385 14.303C3.26164 14.2869 3.24929 14.2679 3.24416 14.2536C3.24072 14.244 3.23611 14.2263 3.24752 14.1912L4.49872 10.3404C4.68615 9.76359 4.48083 9.13167 3.99014 8.77517L0.714445 6.39524C0.684584 6.37354 0.677924 6.35653 0.675071 6.34676C0.670813 6.33218 0.669636 6.30954 0.678119 6.28344C0.686601 6.25733 0.700859 6.23971 0.712873 6.23042C0.720929 6.22419 0.736315 6.21434 0.773226 6.21434H4.82221C5.42873 6.21434 5.96627 5.82379 6.15369 5.24696L7.40489 1.39615C7.4163 1.36104 7.43042 1.34945 7.43883 1.34372C7.45138 1.33516 7.47255 1.32705 7.5 1.32705C7.52745 1.32705 7.54861 1.33516 7.56116 1.34372C7.56958 1.34945 7.5837 1.36105 7.59511 1.39615Z"
+                                        stroke="currentcolor" stroke-width="1.3" />
+                                </svg>
+                                Sección 8
+                            </button>
+                            <ul id="submenu-8"
+                                class="ft-org-masthead__acordeon-list ft-org-masthead__acordeon-list--nivel-2" hidden>
+                                <li class="ft-org-masthead__acordeon-item"><a class="ft-org-masthead__acordeon-link"
+                                        href="/ruta-2-1">Subsección 5.1</a></li>
+                                <li class="ft-org-masthead__acordeon-item"><a class="ft-org-masthead__acordeon-link"
+                                        href="/ruta-2-1">Subsección 5.2</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="ft-org-masthead__box">
+                <div class="ft-org-masthead__section">
+                    <a href="#" class="ft-org-masthead__link">
+                        <img class="" src="/cds-statics/assets/img/icons/sopa-letras-PRUEBA.svg" width="120"
+                            height="75">
+                    </a>
+                    <p class="ft-org-masthead__subtitle ft-org-masthead__subtitle--center">Sopa de letras</p>
+                </div>
+                <div class="ft-org-masthead__section">
+                    <a href="#" class="ft-org-masthead__link">
+                        <img class="" src="/cds-statics/assets/img/icons/wordle-PRUEBA.svg" width="120" height="75">
+                    </a>
+                    <p class="ft-org-masthead__subtitle ft-org-masthead__subtitle--center">Wordle</p>
+                </div>
+            </div>
+            <div class="ft-org-masthead__box ft-org-masthead__box--white">
+                <h2 class="ft-org-masthead__title">La newsletter del Director</h2>
+                <div class="ft-mol-authors ft-mol-authors--horizontal ft-mol-authors--reduced js-prism">
+                    <div class="ft-mol-authors__photo">
+                        <a href="layout-noticia-Woman.html" title="title" target="_self">
+                            <img src="https://estaticos-cdn.prensaiberica.es/clip/3a5b2a1b-70e3-4746-a273-67c33eb9016e_source-aspect-ratio_default_0.jpg"
+                                width="60" height="60" class="ft-helper-img-rd alt=" alt="" text"="" title="title text">
+                        </a>
+                    </div>
+                    <div class="ft-mol-authors__content">
+                        <h2 class="ft-mol-authors__contentName">
+                            <a href="layout-noticia-Woman.html" class="ft-link ft-link--secondary" target="_self">
+                                Joan Vehils
+                            </a>
+                        </h2>
+                        <p class="ft-mol-authors__contentCategory">
+                            <a href="#" class="ft-link ft-link--tertiary" title="title text">
+                                Director de Sport
+                            </a>
+                        </p>
+                        <p class="ft-mol-authors__contentText">
+                            Recibe en tu correo una selección de las noticias más importantes del director
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="ft-org-masthead__box">
+                <div class="ft-mol-ticker ft-mol-ticker--news" role="region" aria-label="Es Noticia">
+                    <span class="ft-mol-ticker__heading" id="tickerNewsHeading">Es Noticia:</span>
+                    <div class="ft-mol-ticker__scroll" aria-labelledby="tickerNewsHeading" aria-live="polite"
+                        aria-atomic="true">
+                        <a href="#" class="ft-mol-ticker__item" title="title text" target="_self">
+                            <strong class="ft-mol-ticker__txt">Lorem ipsum dolor sit amet</strong>
+                        </a>
+                        <a href="#" class="ft-mol-ticker__item" title="title text" target="_self">
+                            <strong class="ft-mol-ticker__txt">Lorem ipsum dolor sit amet</strong>
+                        </a>
+                        <a href="#" class="ft-mol-ticker__item" title="title text" target="_self">
+                            <strong class="ft-mol-ticker__txt">Lorem ipsum dolor sit amet</strong>
+                        </a>
+                        <a href="#" class="ft-mol-ticker__item" title="title text" target="_self">
+                            <strong class="ft-mol-ticker__txt">Lorem ipsum dolor sit amet</strong>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="ft-org-masthead__box">
+                <div class="ft-mol-rrss-inline ft-mol-rrss-inline--center">
+                    <div class="ft-mol-rrss-inline__items">
+                        <a href="#" class="ft-btn-rrss ft-btn-rrss--twitter" title="Twitter" target="”_blank”"
+                            rel="nofollow">
+                            <span class="ft-mol-rrss ft-mol-rrssTwitter--default ft-btn-rrss__icon"></span>
+                            <span class="ft-btn-rrss__text">
+                                RRSS Twitter
+                            </span>
+                        </a>
+                        <a href="#" class="ft-btn-rrss ft-btn-rrss--facebook" title="Facebook" target="”_blank”"
+                            rel="nofollow">
+                            <span class="ft-mol-rrss ft-mol-rrssFacebook--default ft-btn-rrss__icon"></span>
+                            <span class="ft-btn-rrss__text">
+                                RRSS Facebook
+                            </span>
+                        </a>
+                        <a href="#" class="ft-btn-rrss ft-btn-rrss--email" title="Email" target="”_blank”"
+                            rel="nofollow">
+                            <span class="ft-mol-rrss ft-mol-rrssEmail--default ft-btn-rrss__icon"></span>
+                            <span class="ft-btn-rrss__text">
+                                RRSS Email
+                            </span>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+    <!--fin header-->
+    <!-- LAYOUT -->
+    <div class="ft-layout-grid-flex">
+        <!-- Breadcrumb -->
+        <div class="ft-org-breadcrumb">
+            <nav class="ft-mol-breadcrumb ft-mol-breadcrumb-has--lvl">
+                <ul class="ft-mol-breadcrumb__list">
+                    <li class="ft-mol-breadcrumb__item">
+                        <a href="#" class="ft-mol-breadcrumb__link" title="title text" target="_self">
+                            <span class="ft-mol-breadcrumb__lvl">
+                                Nivel 1
+                            </span>
+                        </a>
+                    </li>
+                    <li class="ft-mol-breadcrumb__item">
+                        <a href="#" class="ft-mol-breadcrumb__link" title="title text" target="_self">
+                            <span class="ft-mol-breadcrumb__lvl">
+                                Nivel 2
+                            </span>
+                        </a>
+                    </li>
+                    <li class="ft-mol-breadcrumb__item ft-mol-breadcrumb__itemIs-not-link">
+                        <span class="ft-mol-breadcrumb__lvl">
+                            Nivel 3
+                        </span>
+                    </li>
+                </ul>
+                <ul class="ft-mol-breadcrumb-links-support">
+                    <li class="ft-mol-breadcrumb-links-support__item">
+                        <a href="#" class="ft-mol-breadcrumb-links-support__link" title="title text" target="_self">
+                            Link Number 1
+                        </a>
+                    </li>
+                    <li class="ft-mol-breadcrumb-links-support__item">
+                        <a href="#" class="ft-mol-breadcrumb-links-support__link" title="title text" target="_self">
+                            Link Number 2
+                        </a>
+                    </li>
+                    <li class="ft-mol-breadcrumb-links-support__item">
+                        <a href="#" class="ft-mol-breadcrumb-links-support__link" title="title text" target="_self">
+                            Link Number 3
+                        </a>
+                    </li>
+                    <li class="ft-mol-breadcrumb-links-support__item">
+                        <a href="#" class="ft-mol-breadcrumb-links-support__link" title="title text" target="_self">
+                            Link Number 4
+                        </a>
+                    </li>
+                    <li class="ft-mol-breadcrumb-links-support__item">
+                        <a href="#" class="ft-mol-breadcrumb-links-support__link" title="title text" target="_self">
+                            Link Number 5
+                        </a>
+                    </li>
+                    <li class="ft-mol-breadcrumb-links-support__item">
+                        <a href="#" class="ft-mol-breadcrumb-links-support__link" title="title text" target="_self">
+                            Link Number 6
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Fin Breadcrumb -->
+        <!-- Sky left -->
+        <aside
+            class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__colMd-2 ft-helper-hide-sm ft-layout-grid-flex__col-addsLeft"
+            style="height: 5519px;">
+            <div>
+                <img alt="" src="../../cds-statics/assets/img/banners/ad-sky-left.jpg">
+            </div>
+        </aside>
+        <!-- final Sky left -->
+        <!-- Sky Right -->
+        <aside
+            class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__colMd-2 ft-helper-hide-sm ft-layout-grid-flex__col-addsRight"
+            style="height: 5519px;">
+            <div>
+                <img alt="" src="../../cds-statics/assets/img/banners/ad-sky-right.jpg">
+            </div>
+        </aside>
+        <!-- Fin Sky Right -->
+        <!-- Comienzo del layout -->
+        <article class="ft-layout-grid-flex__row">
+            <div class="ft-layout-grid-flex__colXs-12 ft-layout-grid-flex__colMd-8 ft-layout-grid-flex__colLg-8 ft-layout-grid-flex__col-addsContent"
+                style="min-height:1000px;">
+                <!-- Megabanner Sticky-->
+                <aside class="ft-ad ft-ad--mega ft-ad--megaNotext ft-helper-hide-xs">
+                    <div class="ft-ad--sticky">
+                        <img src="../../cds-statics/assets/img/banners/ad-990x250.gif" alt="megabanner"
+                            class="ft-helper-img-rd">
+                    </div>
+                </aside>
+                <!-- fin Megabanner -->
+                <div class="ft-layout-grid-flex__nested">
+                    <div class="ft-layout-grid-flex__row">
+                        <div class="ft-layout-grid-flex__colXs-12">
+                            <!-- Viajar -->
+                            <div class="html-data"><!---->
+                                <div>
+                                    <!-- code: top -->
+                                    <div class="ft-helper-spacer-gap-t-xs">
+                                        <div data-lang="es" data-media="revistas">
+                                            <!-- STYLES: quiénes somos -->
+                                            <link
+                                                href="https://estaticos-cdn.elperiodico.com/statics/42DS/externals/regionales/quienes-somos/styles.css"
+                                                rel="stylesheet">
+
+                                            <!-- HTML: texto introductorio -->
+                                            <p class="ft-text">
+                                                <!-- dinamic html: csv ui text -->
+                                                <span data-uitext="quienes_somos_intro">Para dar cumplimiento a lo
+                                                    establecido
+                                                    en la Ley 34/2002, de 11 de julio, de servicios de la sociedad de la
+                                                    información y de comercio electrónico (“LSSI”) y en el Reglamento
+                                                    Europeo
+                                                    2024/1083, sobre la Libertad de los Medios de Comunicación (“EMFA”
+                                                    por sus
+                                                    siglas en inglés), a continuación se indican los datos de
+                                                    información
+                                                    general de este sitio web:</span>
+                                            </p>
+
+                                            <!-- HTML: listado de datos, información empresarial -->
+                                            <ul class="ft-list ft-list ft-list--primary ft-list--chevron">
+                                                <li class="ft-list__item" data-company-info="legal_name">
+                                                    <strong data-i18n-system="label_legal_name">Titular:</strong>
+                                                    <span data-company-info-data="legal_name">EDICIONES REUNIDAS,
+                                                        S.A.</span>
+                                                </li>
+                                                <li class="ft-list__item" data-company-info="address">
+                                                    <strong data-i18n-system="label_address">Dirección:</strong>
+                                                    <span data-company-info-data="address">Avenida de la Gran Vía de
+                                                        l'Hospitalet, 163-167, 08908 L'Hospitalet de Llobregat</span>
+                                                </li>
+                                                <li class="ft-list__item" data-company-info="registration_details">
+                                                    <strong data-i18n-system="label_registration_details">Datos
+                                                        registrales:</strong>
+                                                    <span data-company-info-data="registration_details">Registro
+                                                        Mercantil de
+                                                        Barcelona, Tomo 30329, Folio 159, Hoja B-14.163, Inscripción
+                                                        46</span>
+                                                </li>
+                                                <li class="ft-list__item" data-company-info="cif_id"
+                                                    style="display: none;">
+                                                    <strong data-i18n-system="label_cif_id">CIF:</strong>
+                                                    <span data-company-info-data="cif_id"></span>
+                                                </li>
+                                                <li class="ft-list__item" data-company-info="phone_number">
+                                                    <strong data-i18n-system="label_phone_number">Teléfono:</strong>
+                                                    <span data-company-info-data="phone_number">915 863 300</span>
+                                                </li>
+                                                <li class="ft-list__item" data-company-info="email">
+                                                    <strong data-i18n-system="label_email">Contacto:</strong>
+                                                    <span data-company-info-data="email">viajar@revistaviajar.es</span>
+                                                </li>
+                                                <li class="ft-list__item" data-company-info="staff_director">
+                                                    <strong data-i18n-system="label_staff_director">Director/a:</strong>
+                                                    <span data-company-info-data="staff_director">Josep M. Palau
+                                                        Riberaygua</span>
+                                                </li>
+                                                <li class="ft-list__item" data-company-info="account_holder">
+                                                    <strong data-i18n-system="label_account_holders">Titulares
+                                                        reales:</strong>
+                                                    <span data-company-info-data="account_holder">D. Francisco Javier
+                                                        Moll De
+                                                        Miguel y Dª. María Aránzazu Sarasola Ormazábal</span>
+                                                </li>
+                                                <li class="ft-list__item" data-company-info="indirect_owner">
+                                                    <strong data-i18n-system="label_indirect_owner">Titular
+                                                        indirecto:</strong>
+                                                    <span data-company-info-data="indirect_owner">Prensa Ibérica Media,
+                                                        S.L.
+                                                        S.L.</span>
+                                                </li>
+                                            </ul>
+
+                                            <!-- HTML: Fondos públicos -->
+                                            <p class="ft-text">
+                                                <!-- dinamic html: csv ui text -->
+                                                <span data-uitext="quienes_somos_fondos_publicos">Importe total anual
+                                                    bruto de
+                                                    fondos públicos destinados a publicidad estatal asignados en el
+                                                    ejercicio
+                                                    anterior (2024):</span>
+                                                <em data-company-info="importe_neto_fondos">416.828,00 €</em>
+                                            </p>
+
+                                            <!-- HTML: Ingresos de publicidad -->
+                                            <p class="ft-text">
+                                                <!-- dinamic html: csv ui text -->
+                                                <span data-uitext="quienes_somos_ingresos_publicidad">Importe total
+                                                    anual bruto
+                                                    de los ingresos de la publicidad recibidos de autoridades o
+                                                    entidades
+                                                    públicas de terceros países en el ejercicio anterior (2024):</span>
+                                                <em data-company-info="importe_neto_publicidad">1.400,00 €</em>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <!-- END // code: top -->
+                                </div>
+                            </div>
+                            <!-- Woman -->
+                            <div class="html-data"><!---->
+                                <div>
+                                    <div class="ft-helper-spacer-gap-t-xs">
+                                        <div data-lang="es" data-media="revistas">
+                                            <p class="ft-text">Para dar cumplimiento a lo establecido en la Ley 34/2002,
+                                                de 11 de
+                                                julio, de servicios de la sociedad de la
+                                                información y de comercio electrónico (“LSSI”) y en el Reglamento
+                                                Europeo 2024/1083, sobre la Libertad de los
+                                                Medios de Comunicación (“EMFA” por sus siglas en inglés), a
+                                                continuación se indican los datos de información
+                                                general de este sitio web:
+                                            </p>
+
+                                            <br>
+
+                                            <ul class="ft-list ft-list ft-list--primary ft-list--chevron">
+                                                <li class="ft-list__item"><strong>Titular</strong>: EDICIONES REUNIDAS,
+                                                    S.A.</li>
+                                                <li class="ft-list__item"><strong>Dirección</strong>: Avenida de la Gran
+                                                    Vía de
+                                                    l'Hospitalet, 163-167, 08908 L'Hospitalet de Llobregat
+                                                </li>
+                                                <li class="ft-list__item"><strong>Datos Registrales</strong>: Registro
+                                                    Mercantil de
+                                                    Barcelona, Tomo 30329, Folio 159, Hoja B-14.163,
+                                                    Inscripción 46</li>
+                                                <li class="ft-list__item"><strong>Teléfono</strong>: 915.863.300</li>
+                                                <li class="ft-list__item"><strong>Contacto</strong>: woman@grupozeta.es
+                                                </li>
+                                                <li class="ft-list__item"><strong>Director/a</strong>: Mayka Sánchez
+                                                    Pastor</li>
+                                                <li class="ft-list__item"> <strong>Titulares reales</strong>: D.
+                                                    Francisco Javier Moll De
+                                                    Miguel y Dª. María Aránzazu Sarasola
+                                                    Ormazábal </li>
+                                                <li class="ft-list__item"><strong>Titular indirecto</strong>: Prensa
+                                                    Ibérica Media, S.L.
+                                                </li>
+                                            </ul>
+
+                                            <br>
+
+                                            <p class="ft-text"><strong>Importe total anual bruto de fondos públicos
+                                                    destinados a
+                                                    publicidad estatal asignados en el ejercicio anterior
+                                                    (2024):</strong> 129.199,00 €
+                                            </p>
+
+                                            <p class="ft-text"> <strong>Importe total anual bruto de los ingresos de la
+                                                    publicidad
+                                                    recibidos de autoridades o entidades públicas de
+                                                    terceros países en el ejercicio anterior (2024):
+                                                </strong>2.000,00 €</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ft-layout-grid-flex__row">
+                        <div class="ft-layout-grid-flex__colXs-12">
+                            <!-- Viajar -->
+                            <div class="html-data"><!---->
+                                <div><!-- code: bottom -->
+                                    <div class="quienes-somos-bottom">
+                                        <hr class="ft-helper-divider-line ft-helper-divider-line--mediumGrey">
+                                        <!-- //// redacción EL PERIÓDICO //// -->
+                                        <h2 class="ft-helper-spacer-gap-t-xs ft-helper-fontSize-heading-XXS">
+                                            REVISTA VIAJAR
+                                        </h2>
+
+                                        <div class="ft-text">
+                                            <p>
+                                                <strong>Director:</strong> Josep M. Palau Riberaygua
+                                                jmpalau@revistaviajar.es <br>
+
+
+
+                                                <strong>Director Digital:</strong> Álvaro Martínez
+                                                amartinez@revistaviajar.es<br>
+
+                                                <strong>Redactora Jefe:</strong>
+                                                María Escribano mescribano@revistaviajar.es<br>
+
+                                                <strong>Redactora:</strong>
+
+                                                <strong>Edición Gráfica:</strong> Virginia Lázaro
+                                                vlazaro@grupozeta.es<br>
+
+                                                <strong>Diseño:</strong> Noelia Corbatón, Arantza Antero y Natalia
+                                                Cristóbal<br>
+
+                                                <strong>Revista:</strong> viajardigital@grupozeta.es<br>
+
+                                                <strong>Dirección:</strong> C/ Pedro Muñoz Seca, 4. 28001. Madrid.<br>
+
+                                                <strong>Tel:</strong> 91 586 36 30 · Fax: 91 586 34 11<br>
+                                            </p>
+
+                                            <h2 class="ft-helper-spacer-gap-t-xs ft-helper-fontSize-heading-XXS">
+                                                UNIDAD DE REVISTAS
+                                            </h2>
+
+                                            <p>
+                                                <strong>Director General de Revistas:</strong> Óscar Voltas<br>
+                                                <strong>Directora Comercial:</strong> Ana Belén Cruz<br>
+                                                <strong>Directora de Marketing:</strong> María García Díez<br>
+                                                <strong>Directora de Producción:</strong> Victoria Ibáñez<br>
+                                                <strong>Chief Digital Officer:</strong> Arantxa Vázquez Rodríguez<br>
+                                                <strong>Suscripciones y Atención al lector:</strong> <br>
+                                                <a href="tel:+34915862220">915 862 220</a> de 09:00 a 14:00 h
+                                            </p>
+
+                                            <h2 class="ft-helper-spacer-gap-t-xs ft-helper-fontSize-heading-XXS">
+                                                PUBLICIDAD
+                                            </h2>
+                                            <h3 class="ft-helper-fontSize-body-XL">
+                                                <strong>Publicidad centro</strong>
+                                            </h3>
+                                            <p>
+                                                Ana Llorens acllorens@pi360.es <br>
+                                                Tel.: 91 586 97 57 <br>
+                                                Calle Pedro Muñoz Seca, 4. 28001 Madrid. <br>
+                                                Tel.: 91 586 33 00 <br>
+                                                Fax: 91 586 35 63. <br>
+                                                infopublirevistas@grupozeta.es<br>
+                                            </p>
+                                            <h3 class="ft-helper-fontSize-body-XL">
+                                                <strong>Cataluña y Baleares</strong>
+                                            </h3>
+                                            <p>
+                                                Verónica Boada vboada@grupozeta.es <br>
+                                                Tel.: 93 484 66 00<br>
+                                                Gran Via de l’Hospitalet, 163-167<br>
+                                                08908 L’Hospitalet de Llobregat (Barcelona) <br>
+                                            </p>
+                                            <h3 class="ft-helper-fontSize-body-XL">
+                                                <strong>Internacional</strong>
+                                            </h3>
+                                            <p>
+                                                Natalia Segovia nsegovia@pi360.es<br>
+                                                Tel.: 00 34 915 863 331<br>
+                                                Coordinación de Publicidad: Celia Sánchez<br>
+                                                <a
+                                                    href="mailto:publicidad.revistas@grupozeta.es">publicidad.revistas@grupozeta.es</a><br>
+                                            </p>
+                                            <h2 class="ft-helper-spacer-gap-t-xs ft-helper-fontSize-heading-XXS">
+                                                DATOS LEGALES DEL SITIO WEB
+                                            </h2>
+
+                                            <p>
+                                                Para dar cumplimiento a lo establecido en la Ley 34/2002...
+                                                <strong>Titular:</strong> Ediciones Reunidas, S.A.U.<br>
+                                                <strong>Datos Registrales:</strong> Registro Mercantil de
+                                                Barcelona...<br>
+                                                <strong>NIF: </strong>A-08435497<br>
+                                            </p>
+
+                                            <p>
+                                                <strong>Redacción Madrid:<br></strong> Calle de Pedro Muñoz Seca, 4.
+                                                28001 Madrid<br>
+                                                <strong>Tel: </strong><a href="tel:+34915863300">915.863.300</a><br>
+                                                <strong>Fax: </strong><a href="tel:+34915863411">915.863.411</a><br>
+                                            </p>
+                                            <p>
+                                                <strong>Redacción Barcelona:<br></strong> Gran Vía de L'Hospitalet
+                                                163-167<br>
+                                                <strong>Tel: </strong><a href="tel:+34934846600">934.846.600</a><br>
+                                                <strong>Fax: </strong><a href="tel:+34932324630">932.324.630</a><br>
+                                            </p>
+                                            <p>
+                                                <strong>Correo electrónico</strong>
+                                                <a href="mailto:viajar@revistaviajar.es">viajar@revistaviajar.es</a>
+                                            </p>
+                                        </div>
+                                        <!-- END // dirección -->
+
+                                        <!-- //// imagen decorativa //// -->
+                                        <div class="ft-layout-grid-flex__colXs-12 cronicas-img-decorativa">
+                                            <hr class="ft-helper-divider-spacer-xs">
+                                            <img class="ft-helper-display-block--center ft-helper-img-rd"
+                                                src="https://estaticos-cdn.elperiodico.com/statics/42DS/img/bgs/cronicas-listado--img-footer.svg"
+                                                style="display: block;" width="500" height="219" alt="Crónicas"
+                                                loading="lazy">
+                                        </div>
+                                        <!-- //// styles //// -->
+                                        <style>
+                                            .quienes-somos-bottom h2,
+                                            .quienes-somos-bottom a {
+                                                color: var(--color-primary);
+                                            }
+
+                                            .quienes-somos-bottom h2 {
+                                                margin-top: 4rem;
+                                                margin-bottom: 2rem;
+                                            }
+
+                                            .quienes-somos-bottom h3 {
+                                                margin-top: 2.5rem;
+                                                margin-bottom: 1rem;
+                                            }
+
+                                            .quienes-somos-bottom p {
+                                                font-size: 1.6rem;
+                                                line-height: 2;
+                                            }
+
+                                            .quienes-somos-bottom .ft-text {
+                                                margin-top: 0;
+                                                margin-bottom: 1rem;
+                                            }
+                                        </style>
+                                    </div>
+                                    <!-- END // code: bottom -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ft-layout-grid-flex__row">
+                        <div class="ft-layout-grid-flex__colXs-12">
+                            <!-- Woman -->
+                            <div class="html-data"><!---->
+                                <div><!-- code: bottom -->
+                                    <div class="quienes-somos-bottom">
+                                        <hr class="ft-helper-divider-line ft-helper-divider-line--mediumGrey">
+                                        <!-- //// redacción WOMAN //// -->
+                                        <h2 class="ft-helper-spacer-gap-t-xs ft-helper-fontSize-heading-XXS">
+                                            Redacción
+                                        </h2>
+
+                                        <ul class="ft-list ft-list ft-list--primary ft-list--chevron">
+                                            <li class="ft-list__item">DIRECTORA: <strong>Mayka Sánchez Pastor</strong>
+                                            </li>
+                                            <li class="ft-list__item">SUBDIRECTORA: <strong>Andrea Arabia</strong></li>
+                                            <li class="ft-list__item">DIRECTOR DE ARTE: <strong>Raúl Celestino</strong>
+                                            </li>
+                                            <li class="ft-list__item">DIRECTORA DE MODA: <strong>Marta Lasierra</strong>
+                                            </li>
+                                            <li class="ft-list__item">DIRECTORA woman.elperiodico.com: <strong>Andrea
+                                                    Arabia</strong></li>
+                                            <h3 class="ft-helper-fontSize-body-XL">Redactoras Jefes</h3>
+                                            <ul class="ft-list ft-list ft-list--primary ft-list--chevron">
+                                                <li class="ft-list__item"><strong>Myriam Serrano</strong> (Barcelona)
+                                                </li>
+                                                <li class="ft-list__item"><strong>Marta Bonilla</strong> (Madrid)</li>
+                                            </ul>
+                                            </li>
+
+                                            <h3 class="ft-helper-fontSize-body-XL">Redactores</h3>
+
+                                            <ul class="ft-list ft-list ft-list--primary ft-list--chevron">
+                                                <li class="ft-list__item"><strong>Patricia Álvarez-Palencia
+                                                    </strong>(Belleza)</li>
+                                                <li class="ft-list__item"><strong>Clara Hernández</strong> (Estilo de
+                                                    Vida)</li>
+                                                <li class="ft-list__item"><strong>Silvia Vázquez</strong> (Moda)</li>
+                                                <li class="ft-list__item"><strong>Tamara Conde</strong> (Moda)</li>
+                                                <li class="ft-list__item"><strong>Ester Aguado</strong> (Responsable de
+                                                    Actualidad y Reportajes)</li>
+                                                <li class="ft-list__item"><strong>Isabel Loscertales</strong>
+                                                    (Responsable de Ocio y Cultura)</li>
+
+                                                <li class="ft-list__item"><strong>Laura Potrony</strong> (Edición y
+                                                    Cierre)</li>
+
+                                            </ul>
+
+                                            <h3 class="ft-helper-fontSize-body-XL">Maquetación y diseño digital</h3>
+
+                                            <ul class="ft-list ft-list ft-list--primary ft-list--chevron">
+
+                                                <li class="ft-list__item">Óscar Alvárez</li>
+                                            </ul>
+
+
+                                            <h3 class="ft-helper-fontSize-body-XL">Producción</h3>
+
+                                            <ul class="ft-list ft-list ft-list--primary ft-list--chevron">
+                                                <li class="ft-list__item">Elena Gil</li>
+                                            </ul>
+
+                                            <h3 class="ft-helper-fontSize-body-XL">Edición gráfica</h3>
+
+                                            <ul class="ft-list ft-list ft-list--primary ft-list--chevron">
+                                                <li class="ft-list__item">Virginia Lázaro</li>
+                                            </ul>
+
+                                            <h2 class="ft-helper-spacer-gap-t-xs ft-helper-fontSize-heading-XXS">Área de
+                                                revistas</h2>
+
+                                            <ul class="ft-list ft-list ft-list--primary ft-list--chevron">
+                                                <li class="ft-list__item">DIRECTOR GENERAL DE REVISTAS: <strong>Óscar
+                                                        Voltas</strong></li>
+                                                <li class="ft-list__item">DIRECTORA COMERCIAL: <strong>Ana Belén
+                                                        Cruz</strong></li>
+
+                                                <li class="ft-list__item">DIRECTORA DE PRODUCCIÓN: <strong>Victoria
+                                                        Ibáñez</strong></li>
+                                                <li class="ft-list__item">SUSCRIPCIONES Y ATENCIÓN AL LECTOR: <a
+                                                        href="tel:+34902050445">902 050 445</a> de 09:00 a 14:00 h</li>
+                                            </ul>
+
+                                            <h2 class="ft-helper-spacer-gap-t-xs ft-helper-fontSize-heading-XXS">Datos
+                                                del sitio web</h2>
+                                            <div class="ft-text">
+                                                <p>Para dar cumplimiento a lo establecido en la Ley 34/2002, de 11 de
+                                                    julio, de Servicios de la Sociedad de la
+                                                    Información y de Comercio Electrónico, a continuación se indican los
+                                                    datos de información general de este
+                                                    sitio
+                                                    web:
+                                                </p>
+
+                                                <p>Titular: Ediciones Reunidas, S.A.U.</p>
+                                                <p>Datos registrales: Registro Mercantil de Barcelona, Tomo 20.931,
+                                                    Folio 161, Hoja B-14.163</p>
+                                                <p>NIF: A-08435497</p>
+
+                                                <p>REDACCIÓN MADRID:<br>
+                                                    Calle de Pedro Muñoz Seca, 4. 28001 Madrid (España) <br>
+                                                    Tel.- <a href="tel:+34915863300">915.863.300</a><br>
+                                                    Fax.- <a href="tel:+34915863411">915.863.411</a></p>
+
+                                                <p>REDACCIÓN BARCELONA:<br>
+                                                    Gran Vía de L'Hospitalet 163-167 08908 L´Hospitalet de Llobregat
+                                                    Barcelona<br>
+                                                    Tel.- <a href="tel:+34934846600">934.846.600</a><br>
+                                                    Fax.- <a href="tel:+34932324630">932.324.630</a></p>
+
+                                                <p>Correo electrónico: <a
+                                                        href="mailto: woman@grupozeta">woman@grupozeta.es</a></p>
+                                            </div>
+                                        </ul>
+                                        <!-- END // dirección -->
+
+                                        <!-- //// imagen decorativa //// -->
+                                        <div class="ft-layout-grid-flex__colXs-12 cronicas-img-decorativa">
+                                            <hr class="ft-helper-divider-spacer-xs">
+                                            <img class="ft-helper-display-block--center ft-helper-img-rd"
+                                                src="https://estaticos-cdn.elperiodico.com/statics/42DS/img/bgs/cronicas-listado--img-footer.svg"
+                                                style="display: block;" width="500" height="219" alt="Crónicas"
+                                                loading="lazy">
+                                        </div>
+                                        <!-- //// styles //// -->
+                                        <style>
+                                            .quienes-somos-bottom h2,
+                                            .quienes-somos-bottom a {
+                                                color: var(--color-primary);
+                                            }
+
+                                            .quienes-somos-bottom h2 {
+                                                margin-top: 4rem;
+                                                margin-bottom: 2rem;
+                                            }
+
+                                            .quienes-somos-bottom h3 {
+                                                margin-top: 2.5rem;
+                                                margin-bottom: 1rem;
+                                            }
+
+                                            .quienes-somos-bottom p {
+                                                font-size: 1.6rem;
+                                                line-height: 2;
+                                            }
+
+                                            .quienes-somos-bottom .ft-text {
+                                                margin-top: 0;
+                                                margin-bottom: 1rem;
+                                            }
+                                            .cronicas-img-decorativa{    display: flex;
+    justify-content: flex-end;}
+    .cronicas-img-decorativa img.ft-helper-display-block--center.ft-helper-img-rd{
+        width: 500px;
+    height: 219px;
+    }
+                                        </style>
+                                    </div>
+                                    <!-- END // code: bottom -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- TAPBAR -->
+            <nav class="ft-mol-tapbar" role="navigation" aria-label="Menú de navegación principal"
+                aria-orientation="horizontal" aria-controls="mainContent" aria-expanded="true" aria-live="polite"
+                aria-relevant="additions removals" tabindex="0" data-component="tapbar" data-version="1.1"
+                data-tracking="main-navigation" data-seo="main-navigation" data-category="navigation"
+                data-section="main-menu" itemscope="" itemtype="https://schema.org/SiteNavigationElement">
+
+                <!-- Container -->
+                <div class="ft-mol-tapbar__container" role="menubar" aria-label="Menú de navegación principal"
+                    aria-orientation="horizontal">
+
+                    <!-- Canvas -->
+                    
+
+                    <!-- Item: 01 -->
+                    <a href="#" class="ft-mol-tapbar__item ft-mol-tapbar__item--active" role="menuitem"
+                        aria-current="page" aria-label="Ir a Portada" data-tracking="tapbar-leer" tabindex="0">
+                        <span class="ft-mol-tapbar__icon-wrapper" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ft-mol-tapbar__icon" aria-labelledby="title-tapbar-icon-leer"><title id="title-tapbar-icon-leer">Lectura</title><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /><path d="M14 2v4a2 2 0 0 0 2 2h4" /><path d="M10 9H8" /><path d="M16 13H8" /><path d="M16 17H8" /></svg></span>
+                        <span class="ft-mol-tapbar__text">Leer</span>
+                    </a>
+
+
+                    <div class="ft-tooltip ft-tooltip--advice ft-tooltip--dark ft-tooltip--center ft-tooltip--sticky">
+                        <div class="ft-tooltip--top">
+                            <!-- Checkbox oculto xra la visibilidad -->
+                            <input type="checkbox" id="tooltip-toggle-2" class="ft-tooltip__checkbox" checked="">
+                            <!-- aquí va el elemento de donde queramos que salga el aviso , solo hay que poner la clase ft-tooltip__trigger-->
+
+                            <!-- Item: 02 -->
+                            <a href="#" class="ft-mol-tapbar__item ft-tooltip__trigger"
+                                aria-describedby="tooltip-advice-2" role="menuitem" aria-label="Ir a ubicación"
+                                data-tracking="tapbar-ubicacion" tabindex="0">
+                                <span class="ft-mol-tapbar__icon-wrapper" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ft-mol-tapbar__icon" aria-labelledby="title-tapbar-icon-ubicacion"><title id="title-tapbar-icon-ubicacion">Ubicación</title><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /><circle cx="12" cy="10" r="3" /></svg></span>
+                                <span class="ft-mol-tapbar__text">Cerca</span>
+                            </a>
+
+                            <!-- Contenido del tooltip -->
+                            <div id="tooltip-advice-2" class="ft-tooltip__content" role="tooltip">
+                                <!-- Botón -->
+                                <label class="ft-tooltip__close" for="tooltip-toggle-2" aria-label="Cerrar aviso">
+                                    <span class="ft-tooltip__closeText">Cerrar</span>
+                                </label>
+                                <p class="ft-tooltip__txt">
+                                    Elige tu zona y crea tu portada
+                                </p>
+                                <div class="ft-tooltip__action">
+                                    <a href="#" class="ft-tooltip__actionLink" title="title text" target="_self">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Item: 03 -->
+                    <a href="#" class="ft-mol-tapbar__item" role="menuitem" aria-label="Ir a Pasatiempos"
+                        data-tracking="tapbar-pasatiempos" tabindex="0">
+                        <span class="ft-mol-tapbar__icon-wrapper" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ft-mol-tapbar__icon" aria-labelledby="title-tapbar-icon-jugar"><title id="title-tapbar-icon-jugar">Dado</title><rect width="18" height="18" x="3" y="3" rx="2" ry="2" /><path d="M16 8h.01" /><path d="M8 8h.01" /><path d="M8 16h.01" /><path d="M16 16h.01" /><path d="M12 12h.01" /></svg></span>
+                        <span class="ft-mol-tapbar__text">Jugar</span>
+                    </a>
+                </div>
+            </nav>
+        </article>
+        <!-- Fin del layout  -->
+        <div class="ft-ad ft-ad--footer" style="bottom: 0px;">
+            <div class="ft-ad--footer__content">
+                <div class="ft-ad--footer__embed">
+                    <aside class="ft-helper-hide-md">
+                        <img src="../../cds-statics/assets/img/banners/ad-footer--mobile.svg" width="728" height="87"
+                            alt="banner" class="ft-helper-img-rd">
+                    </aside>
+                    <aside class="ft-helper-hide-mo">
+                        <img src="../../cds-statics/assets/img/banners/ad-footer.png" width="728" height="87"
+                            alt="banner" class="ft-helper-img-rd">
+                    </aside>
+                </div>
+                <button type="button" name="close-button" class="ft-btn-nav ft-btn-nav--close ft-popover-close-trigger"
+                    title="title text">
+                    <span class="ft-btn-nav__text">
+                        Cerrar
+                    </span>
+                    <span class="ft-btn-nav__icon"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script rel="modulepreload" src="../../cds-statics/js/headers/masthead.js"></script>
+    <script rel="modulepreload" src="../../cds-statics/js/sticking/fourty-ads_skys-sticky.js"></script>
+    <script rel="modulepreload" src="../../cds-statics/js/layout/fourty-js-layout.js"></script>
+    <script rel="modulepreload" src="../../cds-statics/js/modal/fourty-js-popover.js"></script>
+    <script rel="modulepreload" src="../../cds-statics/js/vendors/jquery-3.6.0.min.js"></script>
+    <script rel="modulepreload" src="../../cds-statics/js/switch/fourty-js-switch-2024.js"></script>
+    <script rel="modulepreload" src="../../cds-statics/js/sidenav/fourty-js-sidenav-default.js"></script>
+    <script rel="modulepreload" src="../../cds-statics/js/modal/fourty-js-modal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script rel="modulepreload" src="../../cds-statics/js/swiper-js/swiper-js.js"></script>
+    <script rel="modulepreload" src="../../cds-statics/js/tab/fourty-js-tabs.js"></script>
+    <script rel="modulepreload" src="../../cds-statics/js/poll/fourty-js-pollbox.js"></script>
+</body>
+
+</html>
