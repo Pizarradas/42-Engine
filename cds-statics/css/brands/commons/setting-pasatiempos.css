@@ -1,0 +1,72 @@
+:root {
+  --color-crucigrama: #ffd507;
+  --color-crucigrama--medium: #fdffb6;
+  --color-crucigrama--light: #fff9da;
+  --color-wordle: #de324c;
+  --color-wordle--medium: #ffadad;
+  --color-wordle--light: #ffe6e6;
+  --color-sopa: #f4895f;
+  --color-sopa--medium: #ffd6a5;
+  --color-sopa--light: #fff3e4;
+  --color-sudoku: #95cf92;
+  --color-sudoku--medium: #d6fbcf;
+  --color-sudoku--light: #eff8ef;
+  --color-cuadronumerico: #369acc;
+  --color-cuadronumerico--medium: #9bf6ff;
+  --color-cuadronumerico--light: #e1fcff;
+  --color-pangramax: #ac65ca;
+  --color-pangramax--medium: #bdb2ff;
+  --color-pangramax--light: #ebe8ff;
+  --color-saltaminas: #d63f8c;
+  --color-saltaminas--medium: #f5addb;
+  --color-saltaminas--light: #fce6f4;
+  --color-timequest: #cc8553;
+  --color-timequest--medium: #dec3b0;
+  --color-timequest--light: #f5ede7;
+  --color-cuatroencampo: #6ca450;
+  --color-cuatroencampo--medium: #cde0c1;
+  --color-cuatroencampo--light: #e6efe0;
+  --color-porra: #ec0918;
+
+  --color-crucigrama-dm: var(--color-white-dm);
+  --color-crucigrama--light-dm: #ccc;
+  --color-wordle-dm: var(--color-white-dm);
+  --color-wordle--light-dm: #ccc;
+  --color-sopa-dm: var(--color-white-dm);
+  --color-sopa--light-dm: #ccc;
+  --color-sudoku-dm: var(--color-white-dm);
+  --color-sudoku--light-dm: #ccc;
+  --color-cuadronumerico-dm: var(--color-white-dm);
+  --color-cuadronumerico--light-dm: #ccc;
+  --color-pangramax-dm: var(--color-white-dm);
+  --color-pangramax--light-dm: #ccc;
+  --color-saltaminas-dm: var(--color-white-dm);
+  --color-saltaminas--light-dm: #ccc;
+  --color-timequest-dm: var(--color-white-dm);
+  --color-timequest--light-dm: #ccc;
+  --color-cuatroencampo-dm: var(--color-white-dm);
+  --color-cuatroencampo--light-dm: #ccc;
+  --color-porra-dm: var(--color-white-dm);
+}
+
+[data-theme="dark"] {
+  --color-crucigrama-dm: var(--color-white-dm);
+  --color-crucigrama--light-dm: #ccc;
+  --color-wordle-dm: var(--color-white-dm);
+  --color-wordle--light-dm: #ccc;
+  --color-sopa-dm: var(--color-white-dm);
+  --color-sopa--light-dm: #ccc;
+  --color-sudoku-dm: var(--color-white-dm);
+  --color-sudoku--light-dm: #ccc;
+  --color-cuadronumerico-dm: var(--color-white-dm);
+  --color-cuadronumerico--light-dm: #ccc;
+  --color-pangramax-dm: var(--color-white-dm);
+  --color-pangramax--light-dm: #ccc;
+  --color-saltaminas-dm: var(--color-white-dm);
+  --color-saltaminas--light-dm: #ccc;
+  --color-timequest-dm: var(--color-white-dm);
+  --color-timequest--light-dm: #ccc;
+  --color-cuatroencampo-dm: var(--color-white-dm);
+  --color-cuatroencampo--light-dm: #ccc;
+  --color-porra-dm: var(--color-white-dm);
+}

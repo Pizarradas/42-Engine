@@ -1,0 +1,8 @@
+
+@font-face {
+  font-family: "Google-BreeSerif--Regular";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../../../fonts/google-breeSerif/BreeSerif-Regular.woff2") format("woff2"), url("../../../fonts/google-breeSerif/BreeSerif-Regular.woff") format("woff"), url("../fonts/google-breeSerif/BreeSerif-Regular.ttf") format("truetype");
+  font-display: swap;
+}
