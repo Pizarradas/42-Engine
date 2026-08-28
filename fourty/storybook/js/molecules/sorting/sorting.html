@@ -1,0 +1,104 @@
+<!--
+  sorting.html — códigos HTML originales de Sorting (.ft-mol-sorting)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS:
+  añade / edita / quita bloques <template data-story="Nombre"> con HTML PLANO
+  (clases .ft-* reales). El motor los publica en el subgrupo "Markup".
+  Markup tomado de fourty/molecules/molecule-sorting.html.
+  ─────────────────────────────────────────────────────────────────────────
+-->
+<template data-story="Base">
+  <div class="ft-mol-sorting" role="region" aria-label="Ranking">
+    <div class="ft-mol-sorting__header">
+      <h2 class="ft-mol-sorting__title">Grupo B</h2>
+      <a class="ft-link ft-link--tertiary ft-link--decoration" href="#">Editar</a>
+    </div>
+    <ul>
+      <li class="ft-mol-sorting__list">
+        <div class="ft-mol-sorting__info">
+          <span class="ft-mol-sorting__infoNumber">#1</span>
+          <img src="/cds-statics/assets/img/icons/icon-medalla-oro.svg" alt="medalla oro" width="20" height="20" class="ft-helper-img-rd">
+          <h3 class="ft-mol-sorting__infoName">Nombre 1</h3>
+        </div>
+        <div class="ft-mol-sorting__status">
+          <span class="ft-mol-sorting__statusBadge">Clasificado</span>
+          <span class="ft-mol-sorting__statusPoints">55 pts esta jornada</span>
+        </div>
+      </li>
+      <li class="ft-mol-sorting__list">
+        <div class="ft-mol-sorting__info">
+          <span class="ft-mol-sorting__infoNumber">#2</span>
+          <img src="/cds-statics/assets/img/icons/icon-medalla-plata.svg" alt="medalla plata" width="20" height="20" class="ft-helper-img-rd">
+          <h3 class="ft-mol-sorting__infoName">Nombre 2</h3>
+        </div>
+        <div class="ft-mol-sorting__status">
+          <span class="ft-mol-sorting__statusBadge">Clasificado</span>
+          <span class="ft-mol-sorting__statusPoints">55 pts esta jornada</span>
+        </div>
+      </li>
+      <li class="ft-mol-sorting__list ft-mol-sorting__list--active">
+        <div class="ft-mol-sorting__info">
+          <span class="ft-mol-sorting__infoNumber">#3</span>
+          <img src="/cds-statics/assets/img/icons/icon-medalla-bronce.svg" alt="medalla bronce" width="20" height="20" class="ft-helper-img-rd">
+          <h3 class="ft-mol-sorting__infoName">Nombre 3</h3>
+        </div>
+        <div class="ft-mol-sorting__status">
+          <span class="ft-mol-sorting__statusBadge">Clasificado</span>
+          <span class="ft-mol-sorting__statusPoints">55 pts esta jornada</span>
+        </div>
+      </li>
+      <li class="ft-mol-sorting__list ft-mol-sorting__list--primary">
+        <div class="ft-mol-sorting__info">
+          <span class="ft-mol-sorting__infoNumber">#4</span>
+          <h3 class="ft-mol-sorting__infoName">Nombre 4</h3>
+        </div>
+        <div class="ft-mol-sorting__status">
+          <span class="ft-mol-sorting__statusBadge ft-mol-sorting__statusBadge--green">Clasificado</span>
+          <span class="ft-mol-sorting__statusPoints">55 pts esta jornada</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</template>
+
+<!-- Modo equipo: muestra el badge de estado y oculta el número -->
+<template data-story="Equipo (--team)">
+  <div class="ft-mol-sorting ft-mol-sorting--team" role="region" aria-label="Clasificación">
+    <div class="ft-mol-sorting__header">
+      <h2 class="ft-mol-sorting__title">Liga regular</h2>
+      <a class="ft-link ft-link--tertiary ft-link--decoration" href="#">Editar</a>
+    </div>
+    <ul>
+      <li class="ft-mol-sorting__list ft-mol-sorting__list--primary">
+        <div class="ft-mol-sorting__info">
+          <span class="ft-mol-sorting__infoNumber">#1</span>
+          <h3 class="ft-mol-sorting__infoName">Equipo A</h3>
+        </div>
+        <div class="ft-mol-sorting__status">
+          <span class="ft-mol-sorting__statusBadge ft-mol-sorting__statusBadge--green">Asciende</span>
+          <span class="ft-mol-sorting__statusPoints">72 pts</span>
+        </div>
+      </li>
+      <li class="ft-mol-sorting__list ft-mol-sorting__list--secondary">
+        <div class="ft-mol-sorting__info">
+          <span class="ft-mol-sorting__infoNumber">#2</span>
+          <h3 class="ft-mol-sorting__infoName">Equipo B</h3>
+        </div>
+        <div class="ft-mol-sorting__status">
+          <span class="ft-mol-sorting__statusBadge">Play-off</span>
+          <span class="ft-mol-sorting__statusPoints">68 pts</span>
+        </div>
+      </li>
+      <li class="ft-mol-sorting__list ft-mol-sorting__list--tertiary">
+        <div class="ft-mol-sorting__info">
+          <span class="ft-mol-sorting__infoNumber">#3</span>
+          <h3 class="ft-mol-sorting__infoName">Equipo C</h3>
+        </div>
+        <div class="ft-mol-sorting__status">
+          <span class="ft-mol-sorting__statusBadge ft-mol-sorting__statusBadge--red">Desciende</span>
+          <span class="ft-mol-sorting__statusPoints">21 pts</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</template>

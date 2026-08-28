@@ -1,0 +1,54 @@
+<!--
+  score.html — códigos HTML originales de Score (.ft-mol-score)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS:
+  añade / edita / quita bloques <template data-story="Nombre"> con HTML PLANO
+  (clases .ft-* reales). El motor los publica en el subgrupo "Markup".
+  Markup tomado de fourty/molecules/molecule-score.html.
+  ─────────────────────────────────────────────────────────────────────────
+-->
+<template data-story="Base">
+  <div class="ft-mol-score" role="region" aria-label="Marcador del partido">
+    <div class="ft-mol-score__name" aria-label="Equipo local: BAY">
+      <span class="ft-mol-score__nameBackground">
+        <img class="ft-mol-score__nameImage" width="35" height="35" loading="lazy" alt="Escudo de BAY" src="https://est.sport.es/img/modulos-deportivos/resultados/soccer/img/juventus.png">
+      </span>
+      <p class="ft-mol-score__nameText">BAY</p>
+    </div>
+    <div class="ft-mol-score__condition" aria-label="Resultado final: BAY 123 - 234 CPH">
+      <div class="ft-mol-score__conditionPlay" aria-hidden="true">FINALIZADO</div>
+      <div class="ft-mol-score__conditionNumber" aria-hidden="true">
+        <span>123</span><span>-</span><span>234</span>
+      </div>
+    </div>
+    <div class="ft-mol-score__name" aria-label="Equipo visitante: CPH">
+      <span class="ft-mol-score__nameBackground">
+        <img class="ft-mol-score__nameImage" width="35" height="35" loading="lazy" alt="Escudo de CPH" src="https://estaticos-cdn.prensaiberica.es/epi/public/file/2021/0324/05/barca-4ccd3bc.png">
+      </span>
+      <p class="ft-mol-score__nameText">CPH</p>
+    </div>
+  </div>
+</template>
+
+<template data-story="En directo (--playing)">
+  <div class="ft-mol-score ft-mol-score--playing" role="region" aria-label="Marcador del partido">
+    <div class="ft-mol-score__name" aria-label="Equipo local: BAY">
+      <span class="ft-mol-score__nameBackground">
+        <img class="ft-mol-score__nameImage" width="35" height="35" loading="lazy" alt="Escudo de BAY" src="https://est.sport.es/img/modulos-deportivos/resultados/soccer/img/juventus.png">
+      </span>
+      <p class="ft-mol-score__nameText">BAY</p>
+    </div>
+    <div class="ft-mol-score__condition" aria-label="Resultado en directo: BAY 1 - 0 CPH">
+      <div class="ft-mol-score__conditionPlay" aria-hidden="true">DIRECTO</div>
+      <div class="ft-mol-score__conditionNumber" aria-hidden="true">
+        <span>1</span><span>-</span><span>0</span>
+      </div>
+    </div>
+    <div class="ft-mol-score__name" aria-label="Equipo visitante: CPH">
+      <span class="ft-mol-score__nameBackground">
+        <img class="ft-mol-score__nameImage" width="35" height="35" loading="lazy" alt="Escudo de CPH" src="https://estaticos-cdn.prensaiberica.es/epi/public/file/2021/0324/05/barca-4ccd3bc.png">
+      </span>
+      <p class="ft-mol-score__nameText">CPH</p>
+    </div>
+  </div>
+</template>

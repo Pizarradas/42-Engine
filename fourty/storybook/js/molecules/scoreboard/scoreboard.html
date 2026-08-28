@@ -1,0 +1,75 @@
+<!--
+  scoreboard.html — códigos HTML originales de Scoreboard (.ft-mol-scoreboard)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS:
+  añade / edita / quita bloques <template data-story="Nombre"> con HTML PLANO
+  (clases .ft-* reales). El motor los publica en el subgrupo "Markup".
+  Markup tomado de fourty/molecules/molecule-scoreboard.html.
+  ─────────────────────────────────────────────────────────────────────────
+-->
+<template data-story="Base">
+  <div class="ft-mol-scoreboard" role="region" aria-label="Marcador del partido">
+    <div class="ft-mol-scoreboard__col-lft" aria-label="Equipo local">
+      <div class="ft-mol-scoreboard__brief">
+        <span class="ft-mol-scoreboard__club">Borussia Mönchengladbach</span>
+        <ul class="ft-mol-scoreboard-event-list">
+          <li class="ft-mol-scoreboard-event-list__item">Pedri <time datetime="2022-05-17T12:00">90'</time></li>
+          <li class="ft-mol-scoreboard-event-list__item">Frenkie de Jong <time datetime="2022-05-17T12:00">78'</time></li>
+          <li class="ft-mol-scoreboard-event-list__item">Pedri <time datetime="2022-05-17T12:00">45'</time></li>
+        </ul>
+      </div>
+      <div class="ft-mol-scoreboard__shield">
+        <img src="/cds-statics/assets/img/team-shields/spain/sporting-gijon.svg" class="ft-helper-img-rd" title="Sporting de Gijón" alt="Escudo Sporting de Gijón" />
+      </div>
+    </div>
+    <div class="ft-mol-scoreboard__col-cnt" aria-label="Resultado: 2 - 0, Fin del partido">
+      <span class="ft-mol-scoreboard__score">2</span>
+      <span class="ft-mol-scoreboard__score">0</span>
+      <time datetime="2022-05-17T12:00" class="ft-mol-scoreboard__state">Fin</time>
+    </div>
+    <div class="ft-mol-scoreboard__col-rgt" aria-label="Equipo visitante">
+      <div class="ft-mol-scoreboard__brief">
+        <span class="ft-mol-scoreboard__club">FC Barcelona</span>
+        <ul class="ft-mol-scoreboard-event-list">
+          <li class="ft-mol-scoreboard-event-list__item">Lewandowski <time datetime="2022-05-17T12:00">12'</time></li>
+        </ul>
+      </div>
+      <div class="ft-mol-scoreboard__shield">
+        <img src="/cds-statics/assets/img/team-shields/spain/fc-barcelona.svg" class="ft-helper-img-rd" title="FC Barcelona" alt="Escudo FC Barcelona" />
+      </div>
+    </div>
+  </div>
+</template>
+
+<template data-story="Interactivo (--interactive)">
+  <div class="ft-mol-scoreboard ft-mol-scoreboard--interactive" role="region" aria-label="Marcador del partido editable">
+    <div class="ft-mol-scoreboard__col-lft" aria-label="Equipo local">
+      <div class="ft-mol-scoreboard__brief">
+        <span class="ft-mol-scoreboard__club">Borussia Mönchengladbach</span>
+      </div>
+      <div class="ft-mol-scoreboard__shield">
+        <img src="/cds-statics/assets/img/team-shields/spain/sporting-gijon.svg" class="ft-helper-img-rd" title="Sporting de Gijón" alt="Escudo Sporting de Gijón" />
+      </div>
+    </div>
+    <div class="ft-mol-scoreboard__col-cnt" aria-label="Resultado editable">
+      <div class="ft-mol-scoreboard__btn-group">
+        <button type="button" name="Más" class="ft-btn-nav ft-btn-nav--circle ft-btn-nav--plus ft-helper-bgColor-background-lightGrey" title="Sumar"><span class="ft-btn-nav__text">Más</span><span class="ft-btn-nav__icon"></span></button>
+        <button type="button" name="Menos" class="ft-btn-nav ft-btn-nav--circle ft-btn-nav--minus ft-helper-bgColor-background-lightGrey" title="Restar"><span class="ft-btn-nav__text">Menos</span><span class="ft-btn-nav__icon"></span></button>
+      </div>
+      <span class="ft-mol-scoreboard__score">2</span>
+      <span class="ft-mol-scoreboard__score">0</span>
+      <div class="ft-mol-scoreboard__btn-group">
+        <button type="button" name="Más" class="ft-btn-nav ft-btn-nav--circle ft-btn-nav--plus ft-helper-bgColor-background-lightGrey" title="Sumar"><span class="ft-btn-nav__text">Más</span><span class="ft-btn-nav__icon"></span></button>
+        <button type="button" name="Menos" class="ft-btn-nav ft-btn-nav--circle ft-btn-nav--minus ft-helper-bgColor-background-lightGrey" title="Restar"><span class="ft-btn-nav__text">Menos</span><span class="ft-btn-nav__icon"></span></button>
+      </div>
+    </div>
+    <div class="ft-mol-scoreboard__col-rgt" aria-label="Equipo visitante">
+      <div class="ft-mol-scoreboard__brief">
+        <span class="ft-mol-scoreboard__club">FC Barcelona</span>
+      </div>
+      <div class="ft-mol-scoreboard__shield">
+        <img src="/cds-statics/assets/img/team-shields/spain/fc-barcelona.svg" class="ft-helper-img-rd" title="FC Barcelona" alt="Escudo FC Barcelona" />
+      </div>
+    </div>
+  </div>
+</template>

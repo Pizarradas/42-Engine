@@ -1,0 +1,63 @@
+<!--
+  sticky-panel.html — códigos HTML originales de Sticky Panel (.ft-mol-sticky-panel)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS:
+  añade / edita / quita bloques <template data-story="Nombre"> con HTML PLANO
+  (clases .ft-* reales). El motor los publica en el subgrupo "Markup".
+  Markup tomado de fourty/molecules/molecule-sticky-panel.html.
+  Nota: el panel nace oculto; se añade --open para mostrarlo (aquí ya incluido).
+  ─────────────────────────────────────────────────────────────────────────
+-->
+<template data-story="Superior (--top)">
+  <div class="ft-mol-sticky-panel ft-mol-sticky-panel--top ft-mol-sticky-panel--open" data-sticky-panel="true">
+    <div class="ft-mol-sticky-panel__container">
+      <div class="ft-mol-sticky-panel__header">
+        <p class="ft-mol-sticky-panel__message">Panel sticky superior</p>
+      </div>
+      <div class="ft-mol-sticky-panel__body">
+        <p class="ft-helper-fontSize-body-M">Este es un ejemplo de panel sticky que se ancla en la parte superior de la pantalla.</p>
+      </div>
+      <div class="ft-mol-sticky-panel__footer">
+        <div class="ft-mol-sticky-panel__actions">
+          <button class="ft-btn ft-btn--primary ft-btn--sm" title="Cerrar panel" type="button">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template data-story="Inferior (--bttm)">
+  <div class="ft-mol-sticky-panel ft-mol-sticky-panel--bttm ft-mol-sticky-panel--open" data-sticky-panel="true">
+    <div class="ft-mol-sticky-panel__container">
+      <div class="ft-mol-sticky-panel__header">
+        <p class="ft-mol-sticky-panel__message">Panel sticky inferior</p>
+      </div>
+      <div class="ft-mol-sticky-panel__body">
+        <p class="ft-helper-fontSize-body-M">Este es un ejemplo de panel sticky que se ancla en la parte inferior de la pantalla.</p>
+      </div>
+      <div class="ft-mol-sticky-panel__footer">
+        <div class="ft-mol-sticky-panel__actions">
+          <button class="ft-btn ft-btn--primary ft-btn--sm" title="Cerrar panel" type="button">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template data-story="Superior y corto (--top --short)">
+  <div class="ft-mol-sticky-panel ft-mol-sticky-panel--top ft-mol-sticky-panel--short ft-mol-sticky-panel--open" data-sticky-panel="true">
+    <div class="ft-mol-sticky-panel__container">
+      <div class="ft-mol-sticky-panel__header">
+        <p class="ft-mol-sticky-panel__message">Panel sticky corto</p>
+      </div>
+      <div class="ft-mol-sticky-panel__body">
+        <p class="ft-helper-fontSize-body-M">Versión estrecha del panel anclado en la parte superior.</p>
+      </div>
+      <div class="ft-mol-sticky-panel__footer">
+        <div class="ft-mol-sticky-panel__actions">
+          <button class="ft-btn ft-btn--primary ft-btn--sm" title="Cerrar panel" type="button">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

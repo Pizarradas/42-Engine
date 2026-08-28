@@ -1,0 +1,38 @@
+<!--
+  relatedSlider.html — códigos HTML originales de Related Slider (.ft-mol-relatedSlider)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS:
+  añade / edita / quita bloques <template data-story="Nombre"> con HTML PLANO
+  (clases .ft-* reales). El motor los publica en el subgrupo "Markup".
+  Markup tomado de fourty/molecules/molecule-relatedSlider.html.
+  Nota: el deslizamiento lo aporta Swiper/Glide (no cargado aquí) → slides apilados.
+  ─────────────────────────────────────────────────────────────────────────
+-->
+<template data-story="Base (swiper)">
+  <div class="ft-mol-relatedSlider" role="region" aria-roledescription="carrusel" aria-labelledby="relatedSliderHeadingMk">
+    <h4 id="relatedSliderHeadingMk" class="ft-mol-relatedSlider__header">Noticias relacionadas</h4>
+    <div class="swiper mySwiperRelatedSlider">
+      <ul class="swiper-wrapper">
+        <li class="swiper-slide">
+          <p class="ft-mol-relatedSlider__text"><a class="ft-link ft-link--primary" href="#" title="Epígrafe">Epígrafe</a></p>
+          <p class="ft-mol-relatedSlider__title"><a class="ft-link ft-link--secondary" href="#" title="Cambia el formato de la F1 en Bakú por el GP de Azerbaiyán">Cambia el formato de la F1 en Bakú por el GP de Azerbaiyán: así será la novedosa carrera esprint</a></p>
+        </li>
+        <li class="swiper-slide">
+          <p class="ft-mol-relatedSlider__text">Epígrafe</p>
+          <p class="ft-mol-relatedSlider__title"><a class="ft-link ft-link--secondary" href="#" title="Cambia el formato de la F1 en Bakú por el GP de Azerbaiyán">Cambia el formato de la F1 en Bakú por el GP de Azerbaiyán: así será la novedosa carrera esprint</a></p>
+        </li>
+        <li class="swiper-slide">
+          <p class="ft-mol-relatedSlider__text">Epígrafe</p>
+          <p class="ft-mol-relatedSlider__title"><a class="ft-link ft-link--secondary" href="#" title="Cambia el formato de la F1 en Bakú por el GP de Azerbaiyán">Cambia el formato de la F1 en Bakú por el GP de Azerbaiyán: así será la novedosa carrera esprint</a></p>
+        </li>
+        <li class="swiper-slide">
+          <p class="ft-mol-relatedSlider__text">Epígrafe</p>
+          <p class="ft-mol-relatedSlider__title"><a class="ft-link ft-link--secondary" href="#" title="Cambia el formato de la F1 en Bakú por el GP de Azerbaiyán">Cambia el formato de la F1 en Bakú por el GP de Azerbaiyán: así será la novedosa carrera esprint</a></p>
+        </li>
+      </ul>
+      <button class="swiper-button-next"></button>
+      <button class="swiper-button-prev"></button>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</template>
