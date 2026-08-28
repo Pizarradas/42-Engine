@@ -1,0 +1,115 @@
+<!--
+  authors.html — códigos HTML originales de Authors (.ft-mol-authors)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS.
+  Markup tomado de fourty/molecules/molecule-authors.html. Las variantes
+  --reduced, --background y --bordered son aditivas por CSS (misma estructura,
+  el SCSS oculta/recoloca piezas), por eso comparten el cuerpo del bloque Base.
+  ─────────────────────────────────────────────────────────────────────────
+-->
+<template data-story="Base">
+  <div class="ft-mol-authors">
+    <div class="ft-mol-authors__main">
+      <a href="#" class="ft-mol-authors__photo" title="title" target="_self">
+        <img src="https://estaticos-cdn.prensaiberica.es/clip/3a5b2a1b-70e3-4746-a273-67c33eb9016e_source-aspect-ratio_default_0.jpg" width="60" height="60" class="ft-mol-authors__photoImage ft-helper-img-rd" alt="" title="title text">
+      </a>
+      <div class="ft-mol-authors__mainInfo">
+        <h1 class="ft-mol-authors__name">Andrea De Los Santos</h1>
+        <h2 class="ft-mol-authors__category">Lorem ipsum Subategory</h2>
+        <div class="ft-mol-authors__rrss">
+          <a title="Facebook" target="_blank" rel="nofollow" href="#"><i class="ft-mol-rrss ft-mol-rrssFacebook--default"></i></a><a title="Twitter" target="_blank" rel="nofollow" href="#"><i class="ft-mol-rrss ft-mol-rrssTwitter--default"></i></a>
+          <a title="Whatsapp" target="_blank" rel="nofollow" href="#"><i class="ft-mol-rrss ft-mol-rrssWhatsapp--default"></i></a>
+          <a title="Mailto" target="_blank" rel="nofollow" href="#"><i class="ft-mol-rrss ft-mol-rrss--txt ft-mol-rrssEmail--default">Contacto</i></a>
+        </div>
+      </div>
+    </div>
+    <div class="ft-mol-authors__content">
+      <p class="ft-mol-authors__contentDescription">Descripción autor lorem ipsum dolor sit amet consectetur. In quis nulla et ut enim sollicitudin amet amet.</p>
+      <div class="ft-mol-tagsNews">
+        <p class="ft-mol-tagsNews__title">Escribe sobre</p>
+        <ul class="ft-mol-tagsNews__tags">
+          <li class="ft-tag ft-tag--sm ft-tag--linkBasis"><a href="#" target="_self" title="Trenes" class="ft-link ft-link--secondary" rel="">Trenes</a></li>
+          <li class="ft-tag ft-tag--sm ft-tag--linkBasis"><a href="#" target="_self" title="Metro" class="ft-link ft-link--secondary" rel="">Metro</a></li>
+          <li class="ft-tag ft-tag--sm ft-tag--linkBasis"><a href="#" target="_self" title="Cercanías" class="ft-link ft-link--secondary" rel="">Cercanías</a></li>
+          <li class="ft-tag ft-tag--sm ft-tag--linkBasis"><a href="#" target="_self" title="Transporte" class="ft-link ft-link--secondary" rel="">Transporte</a></li>
+        </ul>
+      </div>
+      <p class="ft-mol-authors__contentText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tincidunt nisi ut ex mollis luctus. Quisque euismod nunc eu ante viverra, ac eleifend diam euismod.</p>
+    </div>
+  </div>
+</template>
+
+<template data-story="Horizontal (--horizontal)">
+  <div class="ft-mol-authors ft-mol-authors--horizontal">
+    <div class="ft-mol-authors__main">
+      <a href="#" class="ft-mol-authors__photo" title="title" target="_self">
+        <img src="https://estaticos-cdn.prensaiberica.es/clip/3a5b2a1b-70e3-4746-a273-67c33eb9016e_source-aspect-ratio_default_0.jpg" width="60" height="60" class="ft-mol-authors__photoImage ft-helper-img-rd" alt="" title="title text">
+      </a>
+      <div class="ft-mol-authors__mainInfo">
+        <h1 class="ft-mol-authors__name">Andrea De Los Santos</h1>
+        <h2 class="ft-mol-authors__category">Lorem ipsum Subategory</h2>
+        <div class="ft-mol-authors__rrss">
+          <a title="Facebook" target="_blank" rel="nofollow" href="#"><i class="ft-mol-rrss ft-mol-rrssFacebook--default"></i></a><a title="Twitter" target="_blank" rel="nofollow" href="#"><i class="ft-mol-rrss ft-mol-rrssTwitter--default"></i></a>
+          <a title="Mailto" target="_blank" rel="nofollow" href="#"><i class="ft-mol-rrss ft-mol-rrss--txt ft-mol-rrssEmail--default">Contacto</i></a>
+        </div>
+      </div>
+    </div>
+    <div class="ft-mol-authors__content">
+      <p class="ft-mol-authors__contentDescription">Descripción autor lorem ipsum dolor sit amet consectetur. In quis nulla et ut enim sollicitudin amet amet.</p>
+      <p class="ft-mol-authors__contentText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tincidunt nisi ut ex mollis luctus.</p>
+    </div>
+  </div>
+</template>
+
+<template data-story="Premium (--premium)">
+  <div class="ft-mol-authors ft-mol-authors--premium">
+    <div class="ft-mol-authors__main">
+      <a href="#" class="ft-mol-authors__photo" title="title" target="_self">
+        <img src="https://estaticos-cdn.prensaiberica.es/clip/3a5b2a1b-70e3-4746-a273-67c33eb9016e_source-aspect-ratio_default_0.jpg" width="60" height="60" class="ft-mol-authors__photoImage ft-helper-img-rd" alt="" title="title text">
+      </a>
+      <div class="ft-mol-authors__mainInfo">
+        <h1 class="ft-mol-authors__name">Andrea De Los Santos</h1>
+        <h2 class="ft-mol-authors__category">Lorem ipsum Subategory</h2>
+      </div>
+    </div>
+    <div class="ft-mol-authors__content">
+      <h3 class="ft-mol-authors__contentQuote">“Lorem ipsum dolor sit amet, consectetur adipiscing elit.”</h3>
+      <p class="ft-mol-authors__contentText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tincidunt nisi ut ex mollis luctus.</p>
+    </div>
+  </div>
+</template>
+
+<template data-story="Con fondo (--background)">
+  <div class="ft-mol-authors ft-mol-authors--background">
+    <div class="ft-mol-authors__main">
+      <a href="#" class="ft-mol-authors__photo" title="title" target="_self">
+        <img src="https://estaticos-cdn.prensaiberica.es/clip/3a5b2a1b-70e3-4746-a273-67c33eb9016e_source-aspect-ratio_default_0.jpg" width="60" height="60" class="ft-mol-authors__photoImage ft-helper-img-rd" alt="" title="title text">
+      </a>
+      <div class="ft-mol-authors__mainInfo">
+        <h1 class="ft-mol-authors__name">Andrea De Los Santos</h1>
+        <h2 class="ft-mol-authors__category">Lorem ipsum Subategory</h2>
+      </div>
+    </div>
+    <div class="ft-mol-authors__content">
+      <p class="ft-mol-authors__contentDescription">Descripción autor lorem ipsum dolor sit amet consectetur.</p>
+      <p class="ft-mol-authors__contentText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tincidunt nisi ut ex mollis luctus.</p>
+    </div>
+  </div>
+</template>
+
+<template data-story="Reducido (--reduced)">
+  <div class="ft-mol-authors ft-mol-authors--horizontal ft-mol-authors--reduced">
+    <div class="ft-mol-authors__main">
+      <a href="#" class="ft-mol-authors__photo" title="title" target="_self">
+        <img src="https://estaticos-cdn.prensaiberica.es/clip/3a5b2a1b-70e3-4746-a273-67c33eb9016e_source-aspect-ratio_default_0.jpg" width="60" height="60" class="ft-mol-authors__photoImage ft-helper-img-rd" alt="" title="title text">
+      </a>
+      <div class="ft-mol-authors__mainInfo">
+        <h1 class="ft-mol-authors__name">Andrea De Los Santos</h1>
+        <h2 class="ft-mol-authors__category">Lorem ipsum Subategory</h2>
+      </div>
+    </div>
+    <div class="ft-mol-authors__content">
+      <p class="ft-mol-authors__contentDescription">Descripción autor lorem ipsum dolor sit amet consectetur.</p>
+    </div>
+  </div>
+</template>

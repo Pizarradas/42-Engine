@@ -1,0 +1,40 @@
+<!--
+  carousel.html — código HTML original de Carousel (.ft-mol-carousel)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS.
+  Markup tomado VERBATIM de fourty/molecules/molecule-carousel.html.
+  Carrusel CSS-only (radios + :has()). Ver el aviso de inconsistencia de
+  clases del SCSS en el overview del componente.
+  ─────────────────────────────────────────────────────────────────────────
+-->
+<template data-story="Base">
+  <div class="ft-mol-carousel" role="region" aria-roledescription="carrusel" aria-labelledby="carouselHeading">
+    <h2 id="carouselHeading" class="ft-mol-carousel__header">Imágenes destacadas</h2>
+    <div class="ft-mol-carousel__wrapper">
+      <div class="ft-mol-carousel__content">
+        <label class="ft-mol-carousel__nav ft-mol-carousel__nav--prev" for="radio2"></label>
+        <label class="ft-mol-carousel__nav ft-mol-carousel__nav--next" for="radio1"></label>
+        <figure class="ft-mol-carousel__img"><img src="https://images.unsplash.com/photo-1675426513908-75bf6aaee78c?crop=entropy&amp;cs=srgb&amp;fm=jpg&amp;ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODY4MzU1MzV8&amp;ixlib=rb-4.0.3&amp;q=85" alt="Image Description"></figure>
+      </div>
+    </div>
+    <div class="ft-mol-carousel__wrapper">
+      <div class="ft-mol-carousel__content">
+        <label class="ft-mol-carousel__nav ft-mol-carousel__nav--prev" for="radio0"></label>
+        <label class="ft-mol-carousel__nav ft-mol-carousel__nav--next" for="radio2"></label>
+        <figure class="ft-mol-carousel__img"><img src="https://images.unsplash.com/photo-1684417211736-e114089d26ec?crop=entropy&amp;cs=srgb&amp;fm=jpg&amp;ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODY4MzU1MzV8&amp;ixlib=rb-4.0.3&amp;q=85" alt="Image Description"></figure>
+      </div>
+    </div>
+    <div class="ft-mol-carousel__wrapper">
+      <div class="ft-mol-carousel__content">
+        <label class="ft-mol-carousel__nav ft-mol-carousel__nav--prev" for="radio1"></label>
+        <label class="ft-mol-carousel__nav ft-mol-carousel__nav--next" for="radio0"></label>
+        <figure class="ft-mol-carousel__img"><img src="https://images.unsplash.com/photo-1685122956432-54551948f8fe?crop=entropy&amp;cs=srgb&amp;fm=jpg&amp;ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODY4MzU1MzV8&amp;ixlib=rb-4.0.3&amp;q=85" alt="Image Description"></figure>
+      </div>
+    </div>
+    <div class="ft-mol-carousel__pagination">
+      <input type="radio" id="radio0" name="selectedImage" checked="checked">
+      <input type="radio" id="radio1" name="selectedImage">
+      <input type="radio" id="radio2" name="selectedImage">
+    </div>
+  </div>
+</template>

@@ -1,0 +1,117 @@
+<!--
+  accordion.html — códigos HTML originales de Accordion (.ft-mol-accordion)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS:
+  añade / edita / quita bloques <template data-story="Nombre"> con HTML PLANO
+  (clases .ft-* reales). El motor los publica en el subgrupo "Markup".
+  Markup tomado de fourty/molecules/molecule-accordion.html (variantes HTML5).
+  Rutas de assets normalizadas ../../cds-statics → /cds-statics.
+  ─────────────────────────────────────────────────────────────────────────
+-->
+<template data-story="Base">
+  <div class="ft-mol-accordion" role="region" aria-labelledby="accordion-principal-title">
+    <details class="ft-mol-accordion__details" open>
+      <summary class="ft-mol-accordion__summary" id="accordion-summary-1" aria-controls="accordion-panel-1">
+        Acordeon1
+        <p class="ft-mol-accordion__subtitle">
+          Lorem <a href="#" class="ft-link" title="title text" target="_self">ispum dolor</a> sit amet
+        </p>
+      </summary>
+      <div class="ft-mol-accordion__text" id="accordion-panel-1" role="region" aria-labelledby="accordion-summary-1">
+        <p class="ft-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry...</p>
+      </div>
+    </details>
+    <details class="ft-mol-accordion__details">
+      <summary class="ft-mol-accordion__summary" id="accordion-summary-2" aria-controls="accordion-panel-2">
+        Acordeon2
+        <p class="ft-mol-accordion__subtitle">
+          Lorem <a href="#" class="ft-link" title="title text" target="_self">ispum dolor</a> sit amet
+        </p>
+      </summary>
+      <div class="ft-mol-accordion__text" id="accordion-panel-2" role="region" aria-labelledby="accordion-summary-2">
+        <p class="ft-text">Something small enough to escape casual notice.</p>
+      </div>
+    </details>
+  </div>
+</template>
+
+<template data-story="Pequeño (--xs)">
+  <div class="ft-mol-accordion ft-mol-accordion--xs" role="region" aria-labelledby="accordion-xs-title">
+    <details class="ft-mol-accordion__details" open>
+      <summary class="ft-mol-accordion__summary" id="accordion-xs-summary-1" aria-controls="accordion-xs-panel-1">
+        Acordeon1
+        <p class="ft-mol-accordion__subtitle">
+          Lorem <a href="#" class="ft-link" title="title text" target="_self">ispum dolor</a> sit amet
+        </p>
+      </summary>
+      <div class="ft-mol-accordion__text" id="accordion-xs-panel-1" role="region" aria-labelledby="accordion-xs-summary-1">
+        <p class="ft-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry...</p>
+      </div>
+    </details>
+    <details class="ft-mol-accordion__details">
+      <summary class="ft-mol-accordion__summary" id="accordion-xs-summary-2" aria-controls="accordion-xs-panel-2">
+        Acordeon2
+        <p class="ft-mol-accordion__subtitle">
+          Lorem <a href="#" class="ft-link" title="title text" target="_self">ispum dolor</a> sit amet
+        </p>
+      </summary>
+      <div class="ft-mol-accordion__text" id="accordion-xs-panel-2" role="region" aria-labelledby="accordion-xs-summary-2">
+        <p class="ft-text">Something small enough to escape casual notice.</p>
+      </div>
+    </details>
+  </div>
+</template>
+
+<template data-story="Con icono (--has-icon)">
+  <div class="ft-mol-accordion ft-mol-accordion--has-icon" role="region" aria-labelledby="accordion-icon-title">
+    <details class="ft-mol-accordion__details" open>
+      <summary class="ft-mol-accordion__summary" id="accordion-icon-summary-1" aria-controls="accordion-icon-panel-1">
+        <img src="/cds-statics/assets/img/icons/ft-list-functions-icon-template.svg" alt="" width="18" height="13" class="ft-mol-accordion__icon" aria-hidden="true">
+        Acordeon1
+        <p class="ft-mol-accordion__subtitle">
+          Lorem <a href="#" class="ft-link" title="title text">ispum dolor</a> sit amet
+        </p>
+      </summary>
+      <div class="ft-mol-accordion__text" id="accordion-icon-panel-1" role="region" aria-labelledby="accordion-icon-summary-1">
+        <p class="ft-text">Contenido del acordeón con icono.</p>
+      </div>
+    </details>
+    <details class="ft-mol-accordion__details">
+      <summary class="ft-mol-accordion__summary" id="accordion-icon-summary-2" aria-controls="accordion-icon-panel-2">
+        <img src="/cds-statics/assets/img/icons/ft-list-functions-icon-template.svg" alt="" width="18" height="13" class="ft-mol-accordion__icon" aria-hidden="true">
+        Acordeon2
+        <p class="ft-mol-accordion__subtitle">
+          Lorem <a href="#" class="ft-link" title="title text">ispum dolor</a> sit amet
+        </p>
+      </summary>
+      <div class="ft-mol-accordion__text" id="accordion-icon-panel-2" role="region" aria-labelledby="accordion-icon-summary-2">
+        <p class="ft-text">Contenido del acordeón con icono.</p>
+      </div>
+    </details>
+  </div>
+</template>
+
+<template data-story="Icono + dato a la derecha (--has-icon --has-data-rgt)">
+  <div class="ft-mol-accordion ft-mol-accordion--has-icon ft-mol-accordion--has-data-rgt" role="region" aria-labelledby="accordion-data-title">
+    <details class="ft-mol-accordion__details" open>
+      <summary class="ft-mol-accordion__summary" id="accordion-data-summary-1" aria-controls="accordion-data-panel-1">
+        <img src="/cds-statics/assets/img/icons/ft-list-functions-icon-template.svg" alt="" width="18" height="13" class="ft-mol-accordion__icon" aria-hidden="true">
+        Accordion trigger number 1 text size test
+        <span class="ft-mol-accordion__data-rgt" aria-hidden="true">XX,XX</span>
+      </summary>
+      <div class="ft-mol-accordion__text" id="accordion-data-panel-1" role="region" aria-labelledby="accordion-data-summary-1">
+        <p class="ft-text">Contenido con datos a la derecha e icono.</p>
+      </div>
+    </details>
+    <details class="ft-mol-accordion__details">
+      <summary class="ft-mol-accordion__summary" id="accordion-data-summary-2" aria-controls="accordion-data-panel-2">
+        <img src="/cds-statics/assets/img/icons/ft-list-functions-icon-template.svg" alt="" width="18" height="13" class="ft-mol-accordion__icon" aria-hidden="true">
+        Accordion trigger number 2 text size test
+        <span class="ft-mol-accordion__data-rgt" aria-hidden="true">XX,XX</span>
+      </summary>
+      <div class="ft-mol-accordion__text" id="accordion-data-panel-2" role="region" aria-labelledby="accordion-data-summary-2">
+        <p class="ft-text">Contenido con datos a la derecha e icono.</p>
+      </div>
+    </details>
+  </div>
+</template>

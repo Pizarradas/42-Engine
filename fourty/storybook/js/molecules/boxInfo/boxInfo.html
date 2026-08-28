@@ -1,0 +1,116 @@
+<!--
+  boxInfo.html — códigos HTML originales de Box Info (.ft-mol-boxInfo)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS.
+  Markup tomado de fourty/molecules/molecule-boxInfo.html (variantes HTML5).
+  Rutas de assets normalizadas ../../cds-statics → /cds-statics.
+  ─────────────────────────────────────────────────────────────────────────
+-->
+<template data-story="Base">
+  <div class="ft-mol-boxInfo">
+    <div class="ft-img">
+      <img src="/cds-statics/assets/img/templates/ft-mol-boxinfo70x95.svg" width="70" height="95" loading="lazy" class="ft-helper-img-rd" alt="alt text" title="title text">
+    </div>
+    <div class="ft-mol-boxInfo__content">
+      <p class="ft-text">Certificado autorresponsable de movilidad COVID de la ciudad de Vigo en PDF lorem ipsum dolorem est</p>
+      <a href="#" class="ft-btn ft-btn--secondary ft-btn--sm" title="title text" target="_self">Ver PDF</a>
+    </div>
+  </div>
+</template>
+
+<template data-story="Texto enriquecido (--richtext)">
+  <div class="ft-mol-boxInfo ft-mol-boxInfo--richtext">
+    <div class="ft-img">
+      <img src="/cds-statics/assets/img/templates/ft-mol-boxinfo111x159.svg" width="111" height="159" loading="lazy" class="ft-helper-img-rd" alt="alt text" title="title text">
+    </div>
+    <div class="ft-mol-boxInfo__content">
+      <h2 class="ft-helper-fontSize-heading-XXS ft-helper-spacer-t-0">A chorus line</h2>
+      <p class="ft-text"><strong>¿Donde?</strong> Teatro Tívoli</p>
+      <p class="ft-text"><strong>¿Cuándo?</strong> Miércoles y Jueves (20.30h), Viernes, Sábado y Domingo (21:30)</p>
+      <p class="ft-text"><strong>Precio</strong> de 21 a 65 euros30</p>
+      <a href="#" class="ft-btn ft-btn--secondary ft-btn--sm" title="title text" target="_self">Más información</a>
+    </div>
+  </div>
+</template>
+
+<!-- Aviso destacado con __head/__title y pico inferior -->
+<template data-story="En medio (--between)">
+  <div class="ft-mol-boxInfo ft-mol-boxInfo--between">
+    <div class="ft-mol-boxInfo__content">
+      <h3 class="ft-mol-boxInfo--between__head">ENTRE<b>TODOS</b></h3>
+      <h4 class="ft-mol-boxInfo--between__title">Publica una carta del lector</h4>
+      <p class="ft-text">Escribe un post para publicar en la edición impresa y en la web</p>
+      <a href="#" class="ft-btn ft-btn--tertiary ft-btn--sm" title="title text" target="_self">Participa</a>
+    </div>
+  </div>
+</template>
+
+<!-- Categoría: header con imagen + título, listas -->
+<template data-story="Categoría (--ranking)">
+  <div class="ft-mol-boxInfo ft-mol-boxInfo--ranking ft-mol-boxInfo--rankingPrimary">
+    <div class="ft-mol-boxInfo__content">
+      <img src="/cds-statics/assets/img/templates/ft-mol-ranking.jpeg" class="ft-mol-boxInfo--ranking__headerHasimage" title="ranking">
+      <h3 class="ft-mol-boxInfo--ranking__headerHastitle">
+        <a href="#" class="ft-link ft-link--secondary">‘La Pared’</a>
+      </h3>
+    </div>
+    <p class="ft-text">
+      Lorem Ipsum is simply dummy <span class="ft-helper-fontWeight-800">text of the printing and typesetting industry</span>.
+      <a href="#" class="ft-link ft-link--decoration">Lorem Ipsum </a> has been the industry's standard dummy text ever since the 1500s.
+    </p>
+    <ul class="ft-list ft-list--primary">
+      <li class="ft-list__item">Lorem ipsum dolor est</li>
+      <li class="ft-list__item">Lorem ipsum dolor est</li>
+      <li class="ft-list__item"><a href="#" class="ft-list__link" title="title text" target="_self">Lorem ipsum dolor est</a></li>
+    </ul>
+    <ol class="ft-list ft-list--numbered">
+      <li class="ft-list__item">Lorem ipsum dolor est</li>
+      <li class="ft-list__item">Lorem ipsum dolor est</li>
+      <li class="ft-list__item"><a href="#" class="ft-list__link" title="title text" target="_self">Lorem ipsum dolor est</a></li>
+    </ol>
+  </div>
+</template>
+
+<!-- Puntuación: imagen + número + header + subtítulo (float) -->
+<template data-story="Puntuación (--score)">
+  <div class="ft-mol-boxInfo ft-mol-boxInfo--score">
+    <img src="/cds-statics/assets/img/avatars/user-default.svg" class="ft-mol-boxInfo--score__image" title="score">
+    <span class="ft-mol-boxInfo--score__number">8</span>
+    <h3 class="ft-mol-boxInfo--score__header"> Ronald Araujo, defensa</h3>
+    <p class="ft-mol-boxInfo--score__subtitle">Pluriempleado</p>
+    <p class="ft-text">
+      Lorem Ipsum is simply dummy <span class="ft-helper-fontWeight-800">text of the printing and typesetting industry</span>.
+      <a href="#" class="ft-link ft-link--decoration">Lorem Ipsum </a> has been the industry's standard dummy text ever since the 1500s.
+    </p>
+  </div>
+</template>
+
+<!-- Fe de errores: fondo gris, sin barra superior -->
+<template data-story="Errata (--erratum)">
+  <div class="ft-mol-boxInfo ft-mol-boxInfo--erratum">
+    <div class="ft-mol-boxInfo__content">
+      <h3 class="ft-helper-fontSize-body-L ft-helper-fontWeight-800 ft-helper-spacer-t-0"><sup>*</sup>Fe de errores</h3>
+      <p class="ft-text">
+        Lorem Ipsum is simply dummy <span class="ft-helper-fontWeight-800">text of the printing and typesetting industry</span>.
+        <a href="#" class="ft-link ft-link--decoration">Lorem Ipsum </a> has been the industry's standard dummy text ever since the 1500s.
+      </p>
+      <ul class="ft-list ft-list--primary">
+        <li class="ft-list__item">Lorem ipsum dolor est</li>
+        <li class="ft-list__item">Lorem ipsum dolor est</li>
+        <li class="ft-list__item"><a href="#" class="ft-list__link" title="title text" target="_self">Lorem ipsum dolor est</a></li>
+      </ul>
+    </div>
+  </div>
+</template>
+
+<!-- Compacto en una fila -->
+<template data-story="En línea (--inline)">
+  <div class="ft-mol-boxInfo ft-mol-boxInfo--inline">
+    <div class="ft-mol-boxInfo__content">
+      <div class="ft-helper-display-flex ft-helper-display-flex--column">
+        <p class="ft-helper-fontSize-body-S">Te faltan 2 partidos del Grupo B</p>
+      </div>
+      <a href="#" class="ft-btn ft-btn--secondary ft-btn--xs" title="title text" target="_self">Continuar mi porra</a>
+    </div>
+  </div>
+</template>

@@ -1,0 +1,163 @@
+<!--
+  breadcrumb.html — códigos HTML originales vigentes de Breadcrumb (.ft-mol-breadcrumb)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS.
+  Ajustado a la versión actual del parcial tras la limpieza del SCSS:
+  base, -has--home, -has--lvl, -has--1-lvl y casuísticas todavía vivas.
+  ─────────────────────────────────────────────────────────────────────────
+-->
+<template data-story="Base">
+  <ul class="ft-mol-breadcrumb">
+    <li class="ft-mol-breadcrumb__item"><a href="#" class="ft-mol-breadcrumb__link" title="title text" target="_self">Nivel 1</a></li>
+    <li class="ft-mol-breadcrumb__item"><a href="#" class="ft-mol-breadcrumb__link" title="title text" target="_self">Nivel 2</a></li>
+    <li class="ft-mol-breadcrumb__item"><a href="#" class="ft-mol-breadcrumb__link" title="title text" target="_self">Nivel 3</a></li>
+    <li class="ft-mol-breadcrumb__item"><a href="#" class="ft-mol-breadcrumb__link" title="title text" target="_self">Nivel 4</a></li>
+    <li class="ft-mol-breadcrumb__item">Nivel 5</li>
+  </ul>
+</template>
+
+<template data-story="Con home (-has--home)">
+  <ul class="ft-mol-breadcrumb ft-mol-breadcrumb-has--home">
+    <li class="ft-mol-breadcrumb__item"><a href="#" class="ft-mol-breadcrumb__link" title="title text" target="_self"><span class="ft-mol-breadcrumb__lvl">Nivel 1</span></a></li>
+    <li class="ft-mol-breadcrumb__item"><a href="#" class="ft-mol-breadcrumb__link" title="title text" target="_self"><span class="ft-mol-breadcrumb__lvl">Nivel 2</span></a></li>
+    <li class="ft-mol-breadcrumb__item"><a href="#" class="ft-mol-breadcrumb__link" title="title text" target="_self"><span class="ft-mol-breadcrumb__lvl">Nivel 3</span></a></li>
+    <li class="ft-mol-breadcrumb__item"><a href="#" class="ft-mol-breadcrumb__link" title="title text" target="_self">Nivel 4</a></li>
+    <li class="ft-mol-breadcrumb__item">Nivel 5</li>
+  </ul>
+</template>
+
+<template data-story="Con niveles (-has--lvl)">
+  <nav class="ft-mol-breadcrumb ft-mol-breadcrumb-has--lvl">
+    <ul class="ft-mol-breadcrumb__list">
+      <li class="ft-mol-breadcrumb__item"><a href="#" class="ft-mol-breadcrumb__link" title="title text" target="_self"><span class="ft-mol-breadcrumb__lvl">Nivel 1</span></a></li>
+      <li class="ft-mol-breadcrumb__item"><a href="#" class="ft-mol-breadcrumb__link" title="title text" target="_self"><span class="ft-mol-breadcrumb__lvl">Nivel 2</span></a></li>
+      <li class="ft-mol-breadcrumb__item ft-mol-breadcrumb__itemIs-not-link"><span class="ft-mol-breadcrumb__lvl">Nivel 3</span></li>
+    </ul>
+    <ul class="ft-mol-breadcrumb-links-support">
+      <li class="ft-mol-breadcrumb-links-support__item"><a href="#" class="ft-mol-breadcrumb-links-support__link" title="title text" target="_self">Link Number 1</a></li>
+      <li class="ft-mol-breadcrumb-links-support__item"><a href="#" class="ft-mol-breadcrumb-links-support__link" title="title text" target="_self">Link Number 2</a></li>
+      <li class="ft-mol-breadcrumb-links-support__item"><a href="#" class="ft-mol-breadcrumb-links-support__link" title="title text" target="_self">Link Number 3</a></li>
+      <li class="ft-mol-breadcrumb-links-support__item"><a href="#" class="ft-mol-breadcrumb-links-support__link" title="title text" target="_self">Link Number 4</a></li>
+      <li class="ft-mol-breadcrumb-links-support__item"><a href="#" class="ft-mol-breadcrumb-links-support__link" title="title text" target="_self">Link Number 5</a></li>
+    </ul>
+  </nav>
+</template>
+
+<template data-story="Con niveles, contiene enlace (-has--lvl)">
+  <nav class="ft-mol-breadcrumb ft-mol-breadcrumb-has--lvl">
+    <ul class="ft-mol-breadcrumb__list">
+      <li class="ft-mol-breadcrumb__item"><a href="#" class="ft-mol-breadcrumb__link" title="title text" target="_self"><span class="ft-mol-breadcrumb__lvl">Nivel 1</span></a></li>
+      <li class="ft-mol-breadcrumb__item"><a href="#" class="ft-mol-breadcrumb__link" title="title text" target="_self"><span class="ft-mol-breadcrumb__lvl">Nivel 2</span></a></li>
+      <li class="ft-mol-breadcrumb__item ft-mol-breadcrumb__itemIs-not-link"><span class="ft-mol-breadcrumb__lvl"><a class="ft-link ft-link--secondary" href="#">Nivel 3</a></span></li>
+    </ul>
+    <ul class="ft-mol-breadcrumb-links-support">
+      <li class="ft-mol-breadcrumb-links-support__item"><a href="#" class="ft-mol-breadcrumb-links-support__link" title="title text" target="_self">Link Number 1</a></li>
+      <li class="ft-mol-breadcrumb-links-support__item"><a href="#" class="ft-mol-breadcrumb-links-support__link" title="title text" target="_self">Link Number 2</a></li>
+      <li class="ft-mol-breadcrumb-links-support__item"><a href="#" class="ft-mol-breadcrumb-links-support__link" title="title text" target="_self">Link Number 3</a></li>
+      <li class="ft-mol-breadcrumb-links-support__item"><a href="#" class="ft-mol-breadcrumb-links-support__link" title="title text" target="_self">Link Number 4</a></li>
+      <li class="ft-mol-breadcrumb-links-support__item"><a href="#" class="ft-mol-breadcrumb-links-support__link" title="title text" target="_self">Link Number 5</a></li>
+    </ul>
+  </nav>
+</template>
+
+<template data-story="Un solo nivel (-has--lvl, -has--1-lvl)">
+  <nav class="ft-mol-breadcrumb ft-mol-breadcrumb-has--lvl ft-mol-breadcrumb-has--1-lvl">
+    <ul class="ft-mol-breadcrumb__list">
+      <li class="ft-mol-breadcrumb__item ft-mol-breadcrumb__itemIs-not-link"><a href="#" class="ft-link ft-link--secondary"><span class="ft-mol-breadcrumb__lvl">Nivel 1</span></a></li>
+    </ul>
+    <ul class="ft-mol-breadcrumb-links-support">
+      <li class="ft-mol-breadcrumb-links-support__item"><a href="#" class="ft-mol-breadcrumb-links-support__link" title="title text" target="_self">Link Number 1</a></li>
+      <li class="ft-mol-breadcrumb-links-support__item"><a href="#" class="ft-mol-breadcrumb-links-support__link" title="title text" target="_self">Link Number 2</a></li>
+      <li class="ft-mol-breadcrumb-links-support__item"><a href="#" class="ft-mol-breadcrumb-links-support__link" title="title text" target="_self">Link Number 3</a></li>
+      <li class="ft-mol-breadcrumb-links-support__item"><a href="#" class="ft-mol-breadcrumb-links-support__link" title="title text" target="_self">Link Number 4</a></li>
+    </ul>
+  </nav>
+</template>
+
+<template data-story="Cuidamostusalud">
+  <div class="cuidamostusalud">
+    <nav class="ft-mol-breadcrumb ft-mol-breadcrumb-has--lvl ft-mol-breadcrumb-has--1-lvl">
+      <ul class="ft-mol-breadcrumb__list">
+        <li class="ft-mol-breadcrumb__item ft-mol-breadcrumb__itemIs-not-link"><a href="#" class="ft-link ft-link--secondary"><span class="ft-mol-breadcrumb__lvl">Título de encabezamiento</span></a></li>
+      </ul>
+      <ul class="ft-mol-breadcrumb-links-support">
+        <li class="ft-mol-breadcrumb-links-support__item"><a href="#" class="ft-mol-breadcrumb-links-support__link" title="title text" target="_self">Item 1</a></li>
+        <li class="ft-mol-breadcrumb-links-support__item"><a href="#" class="ft-mol-breadcrumb-links-support__link" title="title text" target="_self">Item 2</a></li>
+        <li class="ft-mol-breadcrumb-links-support__item"><a href="#" class="ft-mol-breadcrumb-links-support__link" title="title text" target="_self">Item 3</a></li>
+      </ul>
+    </nav>
+  </div>
+</template>
+
+<template data-story="Casuística EP">
+  <div class="hospitalet">
+    <nav class="ft-mol-breadcrumb ft-mol-breadcrumb-has--lvl ft-mol-breadcrumb-has--1-lvl">
+      <ul class="ft-mol-breadcrumb__list">
+        <li class="ft-mol-breadcrumb__item ft-mol-breadcrumb__itemIs-not-link"><a href="#" class="ft-link ft-link--secondary"><span class="ft-mol-breadcrumb__lvl">Título de encabezamiento</span></a></li>
+      </ul>
+      <ul class="ft-mol-breadcrumb-links-support">
+        <li class="ft-mol-breadcrumb-links-support__item"><a href="#" class="ft-mol-breadcrumb-links-support__link" title="title text" target="_self">Link Number 1</a></li>
+        <li class="ft-mol-breadcrumb-links-support__item"><a href="#" class="ft-mol-breadcrumb-links-support__link" title="title text" target="_self">Link Number 2</a></li>
+        <li class="ft-mol-breadcrumb-links-support__item"><a href="#" class="ft-mol-breadcrumb-links-support__link" title="title text" target="_self">Link Number 3</a></li>
+      </ul>
+    </nav>
+  </div>
+</template>
+
+<template data-story="Casuística EPE">
+  <div class="activos">
+    <nav class="ft-mol-breadcrumb ft-mol-breadcrumb-has--lvl ft-mol-breadcrumb-has--1-lvl">
+      <ul class="ft-mol-breadcrumb__list">
+        <li class="ft-mol-breadcrumb__item ft-mol-breadcrumb__itemIs-not-link"><span class="ft-mol-breadcrumb__lvl">Título de encabezamiento</span></li>
+      </ul>
+      <ul class="ft-mol-breadcrumb-links-support">
+        <li class="ft-mol-breadcrumb-links-support__item"><a href="#" class="ft-mol-breadcrumb-links-support__link" title="title text" target="_self">Item 1</a></li>
+        <li class="ft-mol-breadcrumb-links-support__item"><a href="#" class="ft-mol-breadcrumb-links-support__link" title="title text" target="_self">Item 2</a></li>
+        <li class="ft-mol-breadcrumb-links-support__item"><a href="#" class="ft-mol-breadcrumb-links-support__link" title="title text" target="_self">Item 3</a></li>
+      </ul>
+    </nav>
+  </div>
+</template>
+
+<template data-story="Casuística Sport · neomotorsport">
+  <div class="neomotorsport">
+    <nav class="ft-mol-breadcrumb ft-mol-breadcrumb-has--lvl">
+      <ul class="ft-mol-breadcrumb__list">
+        <li class="ft-mol-breadcrumb__item"><a href="#" class="ft-mol-breadcrumb__link" title="title text" target="_self"><span class="ft-mol-breadcrumb__lvl">Pretítulo</span></a></li>
+        <li class="ft-mol-breadcrumb__item ft-mol-breadcrumb__itemIs-not-link"><span class="ft-mol-breadcrumb__lvl">Título de encabezamiento</span></li>
+      </ul>
+      <ul class="ft-mol-breadcrumb-links-support">
+        <li class="ft-mol-breadcrumb-links-support__item"><a href="#" class="ft-mol-breadcrumb-links-support__link" title="title text" target="_self">Item 1</a></li>
+        <li class="ft-mol-breadcrumb-links-support__item"><a href="#" class="ft-mol-breadcrumb-links-support__link" title="title text" target="_self">Item 2</a></li>
+        <li class="ft-mol-breadcrumb-links-support__item"><a href="#" class="ft-mol-breadcrumb-links-support__link" title="title text" target="_self">Item 3</a></li>
+      </ul>
+    </nav>
+  </div>
+</template>
+
+<template data-story="Casuística Sport · areajugones">
+  <div class="areajugones">
+    <nav class="ft-mol-breadcrumb ft-mol-breadcrumb-has--lvl">
+      <ul class="ft-mol-breadcrumb__list">
+        <li class="ft-mol-breadcrumb__item"><a href="#" class="ft-mol-breadcrumb__link" title="title text" target="_self"><span class="ft-mol-breadcrumb__lvl">Pretítulo</span></a></li>
+        <li class="ft-mol-breadcrumb__item ft-mol-breadcrumb__itemIs-not-link"><span class="ft-mol-breadcrumb__lvl">Título de encabezamiento</span></li>
+      </ul>
+      <ul class="ft-mol-breadcrumb-links-support">
+        <li class="ft-mol-breadcrumb-links-support__item"><a href="#" class="ft-mol-breadcrumb-links-support__link" title="title text" target="_self">Item 1</a></li>
+        <li class="ft-mol-breadcrumb-links-support__item"><a href="#" class="ft-mol-breadcrumb-links-support__link" title="title text" target="_self">Item 2</a></li>
+        <li class="ft-mol-breadcrumb-links-support__item"><a href="#" class="ft-mol-breadcrumb-links-support__link" title="title text" target="_self">Item 3</a></li>
+      </ul>
+    </nav>
+  </div>
+</template>
+
+<template data-story="Casuística Sport · apuestas">
+  <div class="apuestasdeportivas">
+    <nav class="ft-mol-breadcrumb ft-mol-breadcrumb-has--lvl ft-mol-breadcrumb-has--1-lvl">
+      <ul class="ft-mol-breadcrumb__list">
+        <li class="ft-mol-breadcrumb__item ft-mol-breadcrumb__itemIs-not-link"><a href="#" class="ft-link ft-link--secondary"><span class="ft-mol-breadcrumb__lvl">Título apuestas / Pronósticos</span></a></li>
+      </ul>
+      <a href="#" class="ft-mol-breadcrumb__mask-link" title="title text" target="_self">Link top apuestas</a>
+    </nav>
+  </div>
+</template>

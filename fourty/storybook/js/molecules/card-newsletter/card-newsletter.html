@@ -1,0 +1,79 @@
+<!--
+  card-newsletter.html — códigos HTML originales de Card Newsletter (.ft-mol-card-newsletter)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS.
+  Markup tomado de fourty/molecules/molecule-card-newsletter.html.
+  Cada bloque se acota a un ancho de tarjeta (~420px), su contexto real de grid.
+  El switch .btn-bool es CSS-only; el alta real necesita JS del consumidor
+  (data-actas / data-mlid / data-mln).
+  ─────────────────────────────────────────────────────────────────────────
+-->
+<template data-story="Base">
+  <div style="max-width:420px;width:100%;">
+    <article class="ft-mol-card-newsletter" role="article">
+      <div class="ft-mol-card-newsletter__top">
+        <ul aria-label="Etiquetas">
+          <li class="ft-tag">Exclusiva suscriptores</li>
+        </ul>
+        <div class="subscribe">
+          <label>Recibir gratis</label>
+          <div class="btn-bool false" data-actas="newsletter-check" data-mlid="1132" data-mln="ML_NL_NewsletterDirector">
+            <input type="checkbox">
+            <div class="btn-position"></div>
+          </div>
+        </div>
+      </div>
+      <div class="ft-mol-card-newsletter__content">
+        <figure class="ft-img">
+          <img src="/cds-statics/assets/img/avatars/ft-mol-card-newsletter--ferran-boiza.png" alt="" width="90" height="90" loading="eager" class="ft-helper-img-rd">
+          <figcaption>
+            <p class="ft-helper-fontColor-quaternary ft-helper-fontSize-body-S ft-helper-spacer-t-xxs">Ferran Boiza</p>
+          </figcaption>
+        </figure>
+        <div class="ft-mol-card-newsletter__text">
+          <h3 id="title-escano0" class="ft-helper-fontSize-heading-XXS">Escaño 0</h3>
+          <p class="ft-helper-fontSize-body-L">Al final de la semana, <strong>Ferran Boiza</strong>, director adjunto del diario en Madrid, te refresca los temas imprescindibles en política y tribunales.</p>
+          <dl class="ft-list">
+            <dt class="ft-list__item">Diario (LU-VI)</dt>
+            <dd class="ft-list__item"><a class="ft-link ft-link--primary" href="#">Ver ejemplo</a></dd>
+          </dl>
+        </div>
+      </div>
+    </article>
+  </div>
+</template>
+
+<template data-story="Premium (--is-premium)">
+  <div style="max-width:420px;width:100%;">
+    <article class="ft-mol-card-newsletter ft-mol-card-newsletter--is-premium" role="article">
+      <div class="ft-mol-card-newsletter__top">
+        <ul aria-label="Etiquetas">
+          <li class="ft-tag">Exclusiva suscriptores</li>
+        </ul>
+        <div class="subscribe">
+          <label>Recibir gratis</label>
+          <div class="btn-bool false" data-actas="newsletter-check" data-mlid="1132" data-mln="ML_NL_NewsletterDirector">
+            <input type="checkbox">
+            <div class="btn-position"></div>
+          </div>
+        </div>
+      </div>
+      <div class="ft-mol-card-newsletter__content">
+        <figure class="ft-img">
+          <img src="/cds-statics/assets/img/avatars/ft-mol-card-newsletter--ferran-boiza.png" alt="" width="90" height="90" loading="eager" class="ft-helper-img-rd">
+          <figcaption>
+            <p class="ft-helper-fontColor-quaternary ft-helper-fontSize-body-S ft-helper-spacer-t-xxs">Ferran Boiza</p>
+          </figcaption>
+        </figure>
+        <div class="ft-mol-card-newsletter__text">
+          <h3 class="ft-helper-fontSize-heading-XXS">Escaño 0</h3>
+          <p class="ft-helper-fontSize-body-L">Al final de la semana, <strong>Ferran Boiza</strong>, director adjunto del diario en Madrid, te refresca los temas imprescindibles en política y tribunales.</p>
+          <dl class="ft-list">
+            <dt class="ft-list__item">Diario (LU-VI)</dt>
+            <dd class="ft-list__item"><a class="ft-link ft-link--primary" href="#">Ver ejemplo</a></dd>
+          </dl>
+        </div>
+      </div>
+    </article>
+  </div>
+</template>

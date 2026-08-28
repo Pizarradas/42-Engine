@@ -1,0 +1,89 @@
+<!--
+  countdown.html — códigos HTML originales de Countdown (.ft-mol-countdown)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS.
+  Markup tomado de fourty/molecules/molecule-countdown.html. Rutas /cds-statics.
+  Los valores #days/#hours/#minutes los actualiza un timer en producción.
+  ─────────────────────────────────────────────────────────────────────────
+-->
+<template data-story="Base">
+  <div class="ft-mol-countdown">
+    <div class="ft-mol-countdown__lft">
+      <picture>
+        <source media="(min-width: 768px)" srcset="/cds-statics/assets/img/templates/ft-mol-countdown--image.svg">
+        <img src="/cds-statics/assets/img/templates/ft-mol-countdown--image.svg" width="230" height="80" loading="lazy" class="ft-helper-img-rd" alt="alt text" title="title text">
+      </picture>
+    </div>
+    <div class="ft-mol-countdown__cnt">
+      <div class="ft-mol-countdown__cntContent">
+        <h2 class="ft-mol-countdown__cntContent-title">El torneo comenzará en</h2>
+        <ul id="countdown" class="ft-mol-countdown__cntContent-count">
+          <li class="ft-mol-countdown__cntContent-text"><span class="ft-mol-countdown__cntContent-textInner" id="days">160</span>DIAS</li>
+          <li class="ft-mol-countdown__cntContent-text"><span class="ft-mol-countdown__cntContent-textInner" id="hours">18</span>HORAS</li>
+          <li class="ft-mol-countdown__cntContent-text"><span class="ft-mol-countdown__cntContent-textInner" id="minutes">49</span>MINUTOS</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-mol-countdown__rgt">
+      <picture>
+        <source media="(min-width: 768px)" srcset="/cds-statics/assets/img/templates/ft-mol-countdown--image.svg">
+        <img src="/cds-statics/assets/img/templates/ft-mol-countdown--image.svg" width="230" height="80" loading="lazy" class="ft-helper-img-rd" alt="alt text" title="title text">
+      </picture>
+    </div>
+  </div>
+</template>
+
+<template data-story="Tipo fondo (--bg)">
+  <div class="ft-mol-countdown ft-mol-countdown--bg">
+    <div class="ft-mol-countdown__lft">
+      <picture>
+        <source media="(min-width: 768px)" srcset="/cds-statics/assets/img/templates/ft-mol-countdown--image.svg">
+        <img src="/cds-statics/assets/img/templates/ft-mol-countdown--image.svg" width="230" height="80" loading="lazy" class="ft-helper-img-rd" alt="alt text" title="title text">
+      </picture>
+    </div>
+    <div class="ft-mol-countdown__cnt">
+      <div class="ft-mol-countdown__cntContent">
+        <h2 class="ft-mol-countdown__cntContent-title">El torneo comenzará en</h2>
+        <ul id="countdown" class="ft-mol-countdown__cntContent-count">
+          <li class="ft-mol-countdown__cntContent-text"><span class="ft-mol-countdown__cntContent-textInner" id="days">160</span>DIAS</li>
+          <li class="ft-mol-countdown__cntContent-text"><span class="ft-mol-countdown__cntContent-textInner" id="hours">18</span>HORAS</li>
+          <li class="ft-mol-countdown__cntContent-text"><span class="ft-mol-countdown__cntContent-textInner" id="minutes">49</span>MINUTOS</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-mol-countdown__rgt">
+      <picture>
+        <source media="(min-width: 768px)" srcset="/cds-statics/assets/img/templates/ft-mol-countdown--image.svg">
+        <img src="/cds-statics/assets/img/templates/ft-mol-countdown--image.svg" width="230" height="80" loading="lazy" class="ft-helper-img-rd" alt="alt text" title="title text">
+      </picture>
+    </div>
+  </div>
+</template>
+
+<!-- --custom: arte de fondo tras el contador (visible ≥768px) -->
+<template data-story="Personalizado (--custom)">
+  <div class="ft-mol-countdown ft-mol-countdown--custom">
+    <div class="ft-mol-countdown__lft">
+      <picture>
+        <source media="(min-width: 768px)" srcset="/cds-statics/assets/img/templates/ft-mol-countdown--image.svg">
+        <img src="/cds-statics/assets/img/templates/ft-mol-countdown--image.svg" width="230" height="80" loading="lazy" class="ft-helper-img-rd" alt="alt text" title="title text">
+      </picture>
+    </div>
+    <div class="ft-mol-countdown__cnt">
+      <div class="ft-mol-countdown__cntContent">
+        <h2 class="ft-mol-countdown__cntContent-title">El torneo comenzará en</h2>
+        <ul id="countdown" class="ft-mol-countdown__cntContent-count">
+          <li class="ft-mol-countdown__cntContent-text"><span class="ft-mol-countdown__cntContent-textInner" id="days">160</span>DIAS</li>
+          <li class="ft-mol-countdown__cntContent-text"><span class="ft-mol-countdown__cntContent-textInner" id="hours">18</span>HORAS</li>
+          <li class="ft-mol-countdown__cntContent-text"><span class="ft-mol-countdown__cntContent-textInner" id="minutes">49</span>MINUTOS</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-mol-countdown__rgt">
+      <picture>
+        <source media="(min-width: 768px)" srcset="/cds-statics/assets/img/templates/ft-mol-countdown--image.svg">
+        <img src="/cds-statics/assets/img/templates/ft-mol-countdown--image.svg" width="230" height="80" loading="lazy" class="ft-helper-img-rd" alt="alt text" title="title text">
+      </picture>
+    </div>
+  </div>
+</template>

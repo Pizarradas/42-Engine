@@ -1,0 +1,73 @@
+<!--
+  action-bar.html — códigos HTML originales de Action Bar (.ft-mol-action-bar)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS:
+  añade / edita / quita bloques <template data-story="Nombre"> con HTML PLANO
+  (clases .ft-* reales). El motor los publica en el subgrupo "Markup".
+  Markup tomado de fourty/molecules/molecule-action-bar.html.
+
+  Nota: el "Demo interactivo" del showroom requiere GSAP + el controller
+  FTMolActionBar (autoinit por [data-action-bar-auto]); el storybook es
+  zero-toolchain y no carga ese JS. La story interactiva "Base" reproduce
+  los estados del contador con el control "count".
+  ─────────────────────────────────────────────────────────────────────────
+-->
+<template data-story="Base">
+  <div class="ft-mol-action-bar" role="toolbar" aria-label="Ver 3 elementos seleccionados">
+    <div class="ft-mol-action-bar__actions">
+      <button type="button" class="ft-mol-action-bar__review" aria-label="Ver 3 elementos seleccionados">
+        <span class="ft-mol-action-bar__badge" aria-hidden="true">3</span>
+        <span class="ft-mol-action-bar__review-text">Ver seleccionadas</span>
+      </button>
+      <button type="button" class="ft-mol-action-bar__button">Continuar</button>
+    </div>
+  </div>
+</template>
+
+<!-- Posicional: --sticky ancla la barra al viewport (position:fixed, abajo-centro) -->
+<template data-story="Anclada (--sticky)">
+  <div class="ft-mol-action-bar ft-mol-action-bar--sticky" role="toolbar" aria-label="Ver 8 elementos seleccionados">
+    <div class="ft-mol-action-bar__actions">
+      <button type="button" class="ft-mol-action-bar__review" aria-label="Ver 8 elementos seleccionados">
+        <span class="ft-mol-action-bar__badge" aria-hidden="true">8</span>
+        <span class="ft-mol-action-bar__review-text">Ver seleccionadas</span>
+      </button>
+      <button type="button" class="ft-mol-action-bar__button">Ver mi portada</button>
+    </div>
+  </div>
+</template>
+
+<!-- Estado vacío: el controller añade __badge--empty cuando count === 0 -->
+<template data-story="Vacía (__badge--empty)">
+  <div class="ft-mol-action-bar" role="toolbar" aria-label="Ver 0 elementos seleccionados">
+    <div class="ft-mol-action-bar__actions">
+      <button type="button" class="ft-mol-action-bar__review" aria-label="Ver 0 elementos seleccionados">
+        <span class="ft-mol-action-bar__badge ft-mol-action-bar__badge--empty" aria-hidden="true">0</span>
+        <span class="ft-mol-action-bar__review-text">Localidades seleccionadas</span>
+      </button>
+      <button type="button" class="ft-mol-action-bar__button">Ver mi portada</button>
+    </div>
+  </div>
+</template>
+
+<!-- Config JS-driven del demo (autoinit por data-attrs). Estática aquí: sin GSAP/controller
+     el contador no cambia, pero documenta los data-attrs reales de producción. -->
+<template data-story="Config autoinit (data-action-bar-*)">
+  <div class="ft-mol-action-bar"
+    data-action-bar-auto
+    data-action-bar-count="0"
+    data-action-bar-action-label="Ver mi portada"
+    data-action-bar-empty-text="Localidades seleccionadas"
+    data-action-bar-filled-text="Ver seleccionadas"
+    data-action-bar-plural="items"
+    data-action-bar-singular="item"
+    role="toolbar" aria-label="Selección de items">
+    <div class="ft-mol-action-bar__actions">
+      <button type="button" class="ft-mol-action-bar__review">
+        <span class="ft-mol-action-bar__badge" aria-hidden="true">0</span>
+        <span class="ft-mol-action-bar__review-text">Localidades seleccionadas</span>
+      </button>
+      <button type="button" class="ft-mol-action-bar__button">Ver mi portada</button>
+    </div>
+  </div>
+</template>

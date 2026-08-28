@@ -1,0 +1,107 @@
+<!--
+  az-list.html — códigos HTML originales de A-Z List (.ft-mol-az-list)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS.
+  Markup tomado de fourty/molecules/molecule-az-list.html. Rutas de assets
+  ya en /cds-statics. El <style> de abajo (top-level, fuera de los <template>)
+  reproduce el contenedor de altura limitada donde vive la molécula y el motor
+  lo inyecta como estilo compartido del componente (incluida la story Base).
+  ─────────────────────────────────────────────────────────────────────────
+-->
+<style>
+  /* Contexto real: la A-Z List vive en un contenedor con altura limitada
+     (p.ej. el __body de un modal). Reproducimos ese scroll para que el rail
+     y el título sticky tengan sentido. Experimental/contextual: no es markup. */
+  .ft-mol-az-list {
+    max-height: 32rem;
+    overflow-y: auto;
+    background-color: #fff;
+    border-radius: 0.6rem;
+    padding: 0 1.5rem;
+  }
+</style>
+
+<template data-story="Base (título + rail)">
+  <div class="ft-mol-az-list" aria-labelledby="azListBaseTitle">
+    <h3 class="ft-mol-az-list__title" id="azListBaseTitle">Comunidad Valenciana</h3>
+    <div class="ft-mol-az-list__layout">
+      <ul class="ft-mol-az-list__list ft-list ft-list--primary ft-list--add ft-list--has-icon" role="list" aria-labelledby="azListBaseTitle">
+        <li class="ft-mol-az-list__group" role="presentation">A</li>
+        <li class="ft-list__item" tabindex="0">
+          <img class="ft-list-photoinfo__img" src="/cds-statics/assets/img/icons/tag-pin--grey.svg" width="34" height="34" alt="" loading="lazy">
+          <span class="ft-mol-az-list__name">Alicante</span>
+          <span class="ft-mol-az-list__region">Provincia</span>
+          <span class="ft-btn-nav ft-btn-nav--plus ft-btn-nav--bordered" aria-hidden="true"><span class="ft-btn-nav__icon"></span></span>
+        </li>
+        <li class="ft-list__item" tabindex="0">
+          <img class="ft-list-photoinfo__img" src="/cds-statics/assets/img/icons/tag-pin--grey.svg" width="34" height="34" alt="" loading="lazy">
+          <span class="ft-mol-az-list__name">Altea</span>
+          <span class="ft-mol-az-list__region">Alicante</span>
+          <span class="ft-btn-nav ft-btn-nav--plus ft-btn-nav--bordered" aria-hidden="true"><span class="ft-btn-nav__icon"></span></span>
+        </li>
+        <li class="ft-mol-az-list__group" role="presentation">B</li>
+        <li class="ft-list__item" tabindex="0">
+          <img class="ft-list-photoinfo__img" src="/cds-statics/assets/img/icons/tag-pin--grey.svg" width="34" height="34" alt="" loading="lazy">
+          <span class="ft-mol-az-list__name">Benidorm</span>
+          <span class="ft-mol-az-list__region">Alicante</span>
+          <span class="ft-btn-nav ft-btn-nav--plus ft-btn-nav--bordered" aria-hidden="true"><span class="ft-btn-nav__icon"></span></span>
+        </li>
+        <li class="ft-mol-az-list__group" role="presentation">C</li>
+        <li class="ft-list__item" tabindex="0">
+          <img class="ft-list-photoinfo__img" src="/cds-statics/assets/img/icons/tag-pin--grey.svg" width="34" height="34" alt="" loading="lazy">
+          <span class="ft-mol-az-list__name">Castellón de la Plana</span>
+          <span class="ft-mol-az-list__region">Provincia</span>
+          <span class="ft-btn-nav ft-btn-nav--plus ft-btn-nav--bordered" aria-hidden="true"><span class="ft-btn-nav__icon"></span></span>
+        </li>
+        <li class="ft-mol-az-list__group" role="presentation">V</li>
+        <li class="ft-list__item" tabindex="0">
+          <img class="ft-list-photoinfo__img" src="/cds-statics/assets/img/icons/tag-pin--grey.svg" width="34" height="34" alt="" loading="lazy">
+          <span class="ft-mol-az-list__name">Valencia</span>
+          <span class="ft-mol-az-list__region">Provincia</span>
+          <span class="ft-btn-nav ft-btn-nav--plus ft-btn-nav--bordered" aria-hidden="true"><span class="ft-btn-nav__icon"></span></span>
+        </li>
+      </ul>
+      <nav class="ft-mol-az-list__rail" aria-label="Índice alfabético">
+        <span class="ft-mol-az-list__rail-bubble" aria-hidden="true"></span>
+        <button type="button" class="ft-mol-az-list__rail-letter" aria-label="Saltar a A">A</button>
+        <button type="button" class="ft-mol-az-list__rail-letter" aria-label="Saltar a B">B</button>
+        <button type="button" class="ft-mol-az-list__rail-letter" aria-label="Saltar a C">C</button>
+        <button type="button" class="ft-mol-az-list__rail-letter" aria-label="Saltar a V">V</button>
+      </nav>
+    </div>
+  </div>
+</template>
+
+<template data-story="Simple (sin título ni rail)">
+  <div class="ft-mol-az-list">
+    <ul class="ft-mol-az-list__list ft-list ft-list--primary ft-list--add ft-list--has-icon" role="list">
+      <li class="ft-list__item" tabindex="0">
+        <img class="ft-list-photoinfo__img" src="/cds-statics/assets/img/icons/tag-pin--grey.svg" width="34" height="34" alt="" loading="lazy">
+        <span class="ft-mol-az-list__name">Benidorm</span>
+        <span class="ft-mol-az-list__region">Alicante</span>
+        <span class="ft-btn-nav ft-btn-nav--plus ft-btn-nav--bordered" aria-hidden="true"><span class="ft-btn-nav__icon"></span></span>
+      </li>
+      <li class="ft-list__item" tabindex="0">
+        <img class="ft-list-photoinfo__img" src="/cds-statics/assets/img/icons/tag-pin--grey.svg" width="34" height="34" alt="" loading="lazy">
+        <span class="ft-mol-az-list__name">Castellón de la Plana</span>
+        <span class="ft-mol-az-list__region">Provincia</span>
+        <span class="ft-btn-nav ft-btn-nav--plus ft-btn-nav--bordered" aria-hidden="true"><span class="ft-btn-nav__icon"></span></span>
+      </li>
+      <li class="ft-list__item" tabindex="0">
+        <img class="ft-list-photoinfo__img" src="/cds-statics/assets/img/icons/tag-pin--grey.svg" width="34" height="34" alt="" loading="lazy">
+        <span class="ft-mol-az-list__name">Valencia</span>
+        <span class="ft-mol-az-list__region">Provincia</span>
+        <span class="ft-btn-nav ft-btn-nav--plus ft-btn-nav--bordered" aria-hidden="true"><span class="ft-btn-nav__icon"></span></span>
+      </li>
+    </ul>
+  </div>
+</template>
+
+<template data-story="Estado vacío (__empty)">
+  <div class="ft-mol-az-list">
+    <ul class="ft-mol-az-list__list ft-list ft-list--primary ft-list--add ft-list--has-icon" role="list" hidden></ul>
+    <div class="ft-mol-az-list__empty" role="status">
+      <span class="ft-helper-fontSize-body-L--small">No hemos encontrado resultados para ese término.</span>
+    </div>
+  </div>
+</template>

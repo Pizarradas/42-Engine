@@ -1,0 +1,66 @@
+<!--
+  bar.html — códigos HTML originales de Bar (.ft-mol-bar)
+  ─────────────────────────────────────────────────────────────────────────
+  FUENTE DE VERDAD del markup, editable por cualquier front SIN tocar JS.
+  Markup tomado de fourty/molecules/molecule-bar.html. El ancho/color del
+  relleno son style inline (data del consumidor).
+  ─────────────────────────────────────────────────────────────────────────
+-->
+<template data-story="Tamaño XS (--xs)">
+  <div class="ft-mol-bar ft-mol-bar--xs">
+    <div class="ft-mol-bar__info">
+      <h4 class="ft-mol-bar__title">PSOE</h4>
+      <span class="ft-mol-bar__votes">1.600.450</span>
+    </div>
+    <div class="ft-mol-bar__background">
+      <div class="ft-mol-bar__background-inProgress" style="background-color: #E30613; width: 80%;"></div>
+    </div>
+  </div>
+</template>
+
+<template data-story="Tamaño LG (--lg)">
+  <div class="ft-mol-bar ft-mol-bar--lg">
+    <div class="ft-mol-bar__info">
+      <h4 class="ft-mol-bar__title">PSOE</h4>
+      <span class="ft-mol-bar__votes">1.600.450</span>
+    </div>
+    <div class="ft-mol-bar__background">
+      <div class="ft-mol-bar__background-inProgress" style="background-color: #E30613; width: 80%;"></div>
+    </div>
+  </div>
+</template>
+
+<!-- Apilados: varios tramos en una misma pista (flex) -->
+<template data-story="Apilados (--stacked)">
+  <div class="ft-mol-bar ft-mol-bar--stacked">
+    <div class="ft-mol-bar__info"></div>
+    <div class="ft-mol-bar__background">
+      <div class="ft-mol-bar__background-inProgress" style="background-color: #ff0; width: 50%;"></div>
+      <div class="ft-mol-bar__background-inProgress" style="background-color: #f0f; width: 20%;"></div>
+      <div class="ft-mol-bar__background-inProgress" style="background-color: #0ff; width: 30%;"></div>
+    </div>
+  </div>
+</template>
+
+<!-- Dato dentro de la pista + bloque de usuario -->
+<template data-story="Data inside (--data-inside)">
+  <div class="ft-mol-bar ft-mol-bar--xs ft-mol-bar--data-inside" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="Porra del Mundial: 80% completado">
+    <div class="ft-mol-bar__info">
+      <h4 class="ft-mol-bar__title">Mi porra del Mundial</h4>
+    </div>
+    <div class="ft-mol-bar__background">
+      <span class="ft-mol-bar__data"><strong>20%</strong> completado</span>
+      <div class="ft-mol-bar__background-inProgress" style="background-color: rgba(0, 0, 0, 0.6); width: 20%;"></div>
+    </div>
+    <div class="ft-mol-bar__user">
+      <button type="button" name="user-button" class="ft-btn-nav ft-btn-nav--user ft-btn-nav--bordered" title="Usuario">
+        <span class="ft-btn-nav__text">Usuario</span>
+        <span class="ft-btn-nav__icon"></span>
+      </button>
+      <button type="button" name="user-button" class="ft-btn-nav ft-btn-nav--bordered" title="Usuario">
+        <span class="ft-btn-nav__text">Usuario</span>
+        <span class="ft-helper-fontSize-body-XL--small">SC</span>
+      </button>
+    </div>
+  </div>
+</template>
