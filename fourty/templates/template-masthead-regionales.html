@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>42DS | Template: Masthead Regionales</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="brandStyles-root" rel="stylesheet" href="../../cds-statics/css/brands/regionales/setting.css"
+        type="text/css">
+    <link id="brandStyles" rel="stylesheet" href="../../cds-statics/css/regionales-index.css" type="text/css">
+    <link rel="icon" href="../favicon.png" type="image/png">
+    <style>
+        body {
+            margin: 0;
+            background: #f3f0ea;
+            color: #1d1d1d;
+            font-family: Georgia, "Times New Roman", serif;
+        }
+
+        .masthead-regionales-demo {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 2rem 1rem 7rem;
+        }
+
+        .masthead-regionales-demo__intro {
+            margin: 0 auto 2rem;
+            max-width: 100%;
+            font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
+    helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial,
+    sans-serif;
+        }
+
+        .masthead-regionales-demo__intro h1 {
+            margin: 0 0 0.75rem;
+            font-size: 2rem;
+            line-height: 1.1;
+        }
+
+        .masthead-regionales-demo__intro p {
+            margin: 0;
+            font-size: 1.4rem;
+            line-height: 2;
+        }
+
+        .masthead-regionales-demo__grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .masthead-case {
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 1rem;
+            background: rgba(255, 255, 255, 0.72);
+            overflow: hidden;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .masthead-case__meta {
+            padding: 1rem 1rem 0.75rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(249, 247, 243, 0.92));
+        }
+
+        .masthead-case__meta h2 {
+            margin: 0 0 0.25rem;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .masthead-case__meta p,
+        .masthead-case__meta code {
+            margin: 0;
+            font-size: 0.92rem;
+            line-height: 1.5;
+        }
+
+        .masthead-case__viewport {
+            padding: 1rem;
+            background: #fff;
+        }
+
+        .masthead-case__stack {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .masthead-preview {
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 0.9rem;
+            overflow: hidden;
+            background: #fff;
+        }
+
+        .masthead-preview__meta {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            background: #faf8f4;
+        }
+
+        .masthead-preview__meta h3 {
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.2;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .masthead-preview__page {
+            background:
+                linear-gradient(180deg, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0)),
+                #fff;
+        }
+
+        .masthead-preview--fixed .ft-org-masthead--fix {
+            position: relative;
+            top: auto;
+            left: auto;
+            right: auto;
+            visibility: visible;
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .masthead-preview--fixed .ft-org-masthead--fix .ft-org-masthead__progress-bar {
+            width: 100%;
+        }
+
+        .masthead-preview__note {
+            padding: 1rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+            color: rgba(0, 0, 0, 0.72);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .masthead-preview__note p {
+            margin: 0;
+        }
+
+        .masthead-preview--fixed .ft-org-masthead--branded,
+        .masthead-preview--fixed .ft-org-masthead--side {
+            display: none;
+        }
+
+        .masthead-preview--side .masthead-preview__page {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            min-height: 28rem;
+            max-height: 28rem;
+            overflow: hidden;
+            background: #f6f6f6;
+        }
+
+        .masthead-preview--side .ft-org-masthead--side {
+            position: relative;
+            inset: auto;
+            display: block;
+            width: min(100%, 360px);
+            max-width: 360px;
+            height: auto;
+            min-height: 28rem;
+            transform: none;
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .sticky-text {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            font-size: 12px;
+            line-height: 14px;
+            color: white;
+        }
+
+        .sticky-text__bold {
+            font-weight: 700;
+        }
+
+        .sticky-link {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            text-indent: 101%;
+            white-space: nowrap;
+            opacity: 0;
+        }
+
+        .sticky-button {
+            display: inline-block;
+            margin-left: 0.3rem;
+            padding: 0.1rem 0.5rem;
+            border-radius: 0.3rem;
+            background-color: white;
+            color: black;
+            font-weight: 700;
+        }
+
+        .ft-brand-regionales.la-nueva-espana.asturiasexterior .sticky-text,
+        .ft-brand-regionales.diari-de-girona.gironadelicia .sticky-text {
+            color: black;
+        }
+
+        .ft-brand-regionales.gironadelicia .sticky-button {
+            background-color: black;
+            color: white;
+        }
+
+        .ft-brand-ep .sticky-text {
+            color: black;
+        }
+
+        .ft-brand-ep.economia .sticky-text,
+        .ft-brand-ep.gastronomia .sticky-text,
+        .ft-brand-ep.libros .sticky-text,
+        .ft-brand-ep.motor .sticky-text,
+        .ft-brand-ep.shopping .sticky-text {
+            color: white;
+        }
+
+        .ft-brand-ep .sticky-button {
+            background-color: black;
+            color: white;
+        }
+
+        .ft-brand-epe .sticky-text {
+            color: black;
+        }
+
+        .ft-brand-sport .sticky-text {
+            color: white;
+        }
+
+        .ft-brand-revistas.woman .sticky-text {
+            color: black;
+        }
+
+        .ft-brand-revistas.cuore .sticky-text,
+        .ft-brand-revistas.stilo .sticky-text,
+        .ft-brand-revistas.viajar .sticky-text,
+        .ft-brand-revistas.esncial .sticky-text {
+            color: black;
+        }
+
+        .masthead-brand-switcher {
+            position: fixed;
+            right: 1rem;
+            bottom: 1rem;
+            z-index: 9999;
+            display: grid;
+            gap: 0.75rem;
+            width: min(100%, 30rem);
+            padding: 1rem;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 1rem;
+            background: rgba(255, 255, 255, 0.94);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+            backdrop-filter: blur(12px);
+        }
+
+        .masthead-brand-switcher__grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.75rem;
+        }
+
+        .masthead-brand-switcher__field {
+            margin: 0;
+            width: 100%;
+        }
+
+        .masthead-brand-switcher__field .ft-mol-form__label {
+            display: inline-flex;
+            padding: 0.2rem 0.55rem;
+            top: -0.8rem;
+            left: 1.2rem;
+            font-size: 0.72rem;
+            line-height: 1;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: rgba(0, 0, 0, 0.62);
+            background: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 999px;
+        }
+
+        .masthead-brand-switcher__select {
+            min-width: 0;
+            width: 100%;
+            color: #1d1d1d;
+            box-shadow: none;
+        }
+
+        .masthead-brand-switcher__field .ft-mol-form__select {
+            padding-right: 3.5rem;
+            border-color: rgba(0, 0, 0, 0.12);
+            background-color: #fff;
+            box-shadow: none;
+        }
+
+        .masthead-brand-switcher__field .ft-mol-form__select:focus {
+            box-shadow: 0 0 0 0.3rem rgba(0, 0, 0, 0.08);
+        }
+
+        .masthead-user-state__label {
+            display: inline-block;
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        @media (max-width: 767px) {
+            .masthead-regionales-demo {
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            .masthead-regionales-demo__intro {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            .masthead-case {
+                border-radius: 0;
+                border-left: 0;
+                border-right: 0;
+            }
+
+            .masthead-case__viewport {
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            .masthead-preview {
+                border-left: 0;
+                border-right: 0;
+                border-radius: 0;
+            }
+
+            .masthead-brand-switcher {
+                right: 0.75rem;
+                left: 0.75rem;
+                bottom: 0.75rem;
+                border-radius: 1rem;
+                width: auto;
+            }
+
+            .masthead-brand-switcher__select {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="masthead-regionales-demo">
+        <section class="masthead-regionales-demo__intro">
+            <h1 id="brandTitle">Masthead Regionales · casuística viva</h1>
+            <p id="brandDescription">
+                Esta página repite el masthead de Regionales con las combinaciones excepcionales localizadas en
+                <code>_masthead.scss</code> y reflejadas en Storybook. Cada casuística se descompone en tres previews
+                independientes: <code>Normal</code>, <code>Fixed</code> y <code>Minimal header</code>.
+            </p>
+        </section>
+
+        <section id="mastheadRegionalesCases" class="masthead-regionales-demo__grid" aria-label="Casuísticas Regionales">
+        </section>
+    </main>
+
+    <div class="masthead-brand-switcher">
+        <div class="masthead-brand-switcher__grid">
+            <div class="masthead-brand-switcher__field ft-mol-form ft-mol-form--has-label ft-mol-form-dropdown">
+                <select id="brandSelector" class="masthead-brand-switcher__select ft-mol-form__select">
+                    <option value="regionales">Regionales</option>
+                    <option value="ep">El Periódico</option>
+                    <option value="epe">El Periódico de España</option>
+                    <option value="sport">Sport</option>
+                    <option value="woman">Woman</option>
+                    <option value="cuore">Cuore</option>
+                    <option value="stilo">Stilo</option>
+                    <option value="viajar">Viajar</option>
+                </select>
+                <label class="ft-mol-form__label" for="brandSelector">Selecciona marca</label>
+            </div>
+
+            <div class="masthead-brand-switcher__field ft-mol-form ft-mol-form--has-label ft-mol-form-dropdown">
+                <select id="userStateSelector" class="masthead-brand-switcher__select ft-mol-form__select">
+                    <option value="login">Login</option>
+                    <option value="logged">Logged</option>
+                </select>
+                <label class="ft-mol-form__label" for="userStateSelector">Estado</label>
+            </div>
+        </div>
+    </div>
+
+    <template id="mastheadRegionalesTemplate">
+        <div class="masthead-case__page fourty ft-brand-regionales la-nueva-espana" data-showroom-skin="layout">
+            <header>
+                <div class="ft-org-masthead ft-org-masthead--branded">
+                    <div class="ft-org-masthead__top">
+                        <div class="ft-org-masthead__top-left">
+                            <a href="/es/" class="ft-org-masthead__top-left-logo" title="Cabecera regional"></a>
+                            <div class="ft-date ft-date--inline">
+                                <div class="ft-date__text">
+                                    <time class="ft-date__textTime" itemprop="datePublished"
+                                        datetime="2026-07-02T09:00:00+02:00">02 JUL 2026</time>
+                                </div>
+                                <time class="ft-date__reload" itemprop="dateModified"
+                                    datetime="2026-07-02T10:45:00+02:00">Actualizada 10:45</time>
+                            </div>
+                        </div>
+                        <div class="ft-org-masthead__top-right">
+                            <div class="sticky">
+                                <p class="sticky-text">Accede a tu <span class="sticky-text__bold">ejemplar diario</span>
+                                    <span class="sticky-button">Kiosco</span>
+                                </p>
+                                <a class="sticky-link" href="#" rel="nofollow" target="_blank"
+                                    title="Promoción kiosco">Promoción kiosco</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ft-org-masthead__main">
+                        <div class="ft-org-masthead__menu">
+                            <button type="button" class="ft-org-masthead__menu-button">
+                                <span class="ft-org-masthead__menu-buttonIcon"></span>
+                            </button>
+                        </div>
+
+                        <div class="ft-org-masthead__logo">
+                            <h1 class="ft-org-masthead__logo-img">
+                                <a href="/es/" class="ft-org-masthead__logo-link" title="Cabecera regional">
+                                    <span class="ft-org-masthead--hide">cabecera regional</span>
+                                </a>
+                            </h1>
+                            <div class="ft-org-masthead__logo-lang">
+                                <button type="button" class="ft-org-masthead__logo-button" data-active=".com">.com</button>
+                                <ul class="ft-org-masthead__dropdown">
+                                    <li><a href="#" class="ft-org-masthead__dropdown-link">.cat</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="ft-org-masthead__area">
+                            <button class="ft-org-masthead__area--search" type="button"></button>
+                            <div class="ft-mol-dropdown">
+                                <button class="ft-org-masthead__area--login ft-mol-dropdown__trigger" type="button"
+                                    data-user-state-button
+                                    aria-haspopup="true" aria-expanded="false" title="Abrir menú desplegable">
+                                    <span class="ft-org-masthead--hide">Abrir menú de usuario</span>
+                                    <span class="masthead-user-state__label" data-user-state-label hidden>BC</span>
+                                </button>
+                                <ul class="ft-mol-dropdown__list ft-mol-dropdown--has-icons" role="menu" aria-hidden="true"
+                                    hidden>
+                                    <li class="ft-mol-dropdown__item">
+                                        <a class="ft-mol-dropdown__link" href="#" target="_self" title="Mi cuenta">
+                                            <img src="/cds-statics/assets/img/icons/nav-solid-light-user.svg" alt=""
+                                                width="18" height="22" loading="eager" class="ft-mol-dropdown__icon">
+                                            Mi cuenta
+                                        </a>
+                                    </li>
+                                    <li class="ft-mol-dropdown__item">
+                                        <a class="ft-mol-dropdown__link" href="#" target="_self" title="Guardadas">
+                                            <img src="/cds-statics/assets/img/icons/nav-solid-light-save.svg" alt=""
+                                                width="21" height="21" loading="eager" class="ft-mol-dropdown__icon">
+                                            Mis noticias guardadas
+                                        </a>
+                                    </li>
+                                    <li class="ft-mol-dropdown__item">
+                                        <a class="ft-mol-dropdown__link" href="#" target="_self" title="Mi medio">
+                                            <img src="/cds-statics/assets/img/icons/nav-solid-light-plus.svg" alt=""
+                                                width="20" height="21" loading="eager" class="ft-mol-dropdown__icon">
+                                            Mi medio
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <nav class="ft-org-masthead__nav">
+                        <ul class="ft-org-masthead__list">
+                            <li class="ft-org-masthead__item">
+                                <a href="#" class="ft-org-masthead__link" title="Patrocinio">
+                                    <img src="../../cds-statics/assets/img/logos/logo-prueba2.svg" width="85" height="40"
+                                        alt="Logo patrocinio">
+                                </a>
+                            </li>
+                            <li class="ft-org-masthead__item"><a href="#" class="ft-org-masthead__link">Portada</a></li>
+                            <li class="ft-org-masthead__item"><a href="#" class="ft-org-masthead__link">Local</a></li>
+                            <li class="ft-org-masthead__item"><a href="#" class="ft-org-masthead__link">Economía</a></li>
+                            <li class="ft-org-masthead__item ft-org-masthead__item--live">
+                                <a href="#" class="ft-org-masthead__link">Directos</a>
+                            </li>
+                            <li class="ft-org-masthead__item"><a href="#" class="ft-org-masthead__link">Opinión</a></li>
+                            <li class="ft-org-masthead__item"><a href="#" class="ft-org-masthead__link">Servicios</a></li>
+                        </ul>
+                        <a href="#" class="ft-org-masthead__branded">Ofrecido por <img
+                                src="../../cds-statics/assets/img/logos/logo-prueba.svg" alt="Logo patrocinador"></a>
+                    </nav>
+
+                    <nav class="ft-org-masthead__nav ft-org-masthead__nav--mobile">
+                        <ul class="ft-org-masthead__list">
+                            <li class="ft-org-masthead__item">
+                                <a href="#" class="ft-org-masthead__link" title="Patrocinio">
+                                    <img src="../../cds-statics/assets/img/logos/logo-prueba2.svg" width="85" height="40"
+                                        alt="Logo patrocinio mobile">
+                                </a>
+                            </li>
+                            <li class="ft-org-masthead__item">
+                                <a href="#" class="ft-org-masthead__link ft-org-masthead__link--active">Portada</a>
+                            </li>
+                            <li class="ft-org-masthead__item"><a href="#" class="ft-org-masthead__link">Local</a></li>
+                            <li class="ft-org-masthead__item"><a href="#" class="ft-org-masthead__link">Economía</a></li>
+                            <li class="ft-org-masthead__item ft-org-masthead__item--live">
+                                <a href="#" class="ft-org-masthead__link">Directos</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <nav class="ft-org-masthead__subnav">
+                        <ul class="ft-org-masthead__list">
+                            <li class="ft-org-masthead__item"><a href="#" class="ft-org-masthead__link">Ediciones
+                                    digitales:</a></li>
+                            <li class="ft-org-masthead__item"><a href="#" class="ft-org-masthead__link">Siero</a></li>
+                            <li class="ft-org-masthead__item"><a href="#" class="ft-org-masthead__link">Llanera</a></li>
+                            <li class="ft-org-masthead__item"><a href="#" class="ft-org-masthead__link">Villaviciosa</a>
+                            </li>
+                            <li class="ft-org-masthead__item"><a href="#" class="ft-org-masthead__link">La Corredoria</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="ft-org-masthead ft-org-masthead--fix">
+                    <div class="ft-org-masthead__main">
+                        <div class="ft-org-masthead__menu">
+                            <button type="button" class="ft-org-masthead__menu-button">
+                                <span class="ft-org-masthead__menu-buttonIcon"></span>
+                            </button>
+                        </div>
+
+                        <div class="ft-org-masthead__logo">
+                            <h2 class="ft-org-masthead__logo-img">
+                                <a href="/es/" class="ft-org-masthead__logo-link" title="Cabecera regional sticky">
+                                    <span class="ft-org-masthead--hide">cabecera regional sticky</span>
+                                </a>
+                            </h2>
+                            <div class="ft-org-masthead__logo-lang">
+                                <button type="button" class="ft-org-masthead__logo-button" data-active=".com">.com</button>
+                                <ul class="ft-org-masthead__dropdown">
+                                    <li><a href="#" class="ft-org-masthead__dropdown-link">.cat</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="ft-org-masthead__area">
+                            <button class="ft-org-masthead__area--search" type="button"></button>
+                            <div class="ft-mol-dropdown">
+                                <button class="ft-org-masthead__area--login ft-mol-dropdown__trigger" type="button"
+                                    data-user-state-button
+                                    aria-haspopup="true" aria-expanded="false" title="Abrir menú desplegable">
+                                    <span class="ft-org-masthead--hide">Abrir menú de usuario</span>
+                                    <span class="masthead-user-state__label" data-user-state-label hidden>BC</span>
+                                </button>
+                                <ul class="ft-mol-dropdown__list ft-mol-dropdown--has-icons" role="menu" aria-hidden="true"
+                                    hidden>
+                                    <li class="ft-mol-dropdown__item">
+                                        <a class="ft-mol-dropdown__link" href="#" target="_self" title="Mi cuenta">
+                                            <img src="/cds-statics/assets/img/icons/nav-solid-light-user.svg" alt=""
+                                                width="18" height="22" loading="eager" class="ft-mol-dropdown__icon">
+                                            Mi cuenta
+                                        </a>
+                                    </li>
+                                    <li class="ft-mol-dropdown__item">
+                                        <a class="ft-mol-dropdown__link" href="#" target="_self" title="Kiosco">
+                                            <img src="/cds-statics/assets/img/icons/icon-kiosk-masterhead.svg" alt=""
+                                                width="20" height="21" loading="eager" class="ft-mol-dropdown__icon">
+                                            Kiosco
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="progress-bar" class="ft-org-masthead__progress-bar"></div>
+                </div>
+
+                <div class="ft-org-masthead ft-org-masthead--side">
+                    <div class="ft-org-masthead__main">
+                        <div class="ft-org-masthead__menu">
+                            <button type="button" class="ft-org-masthead__menu-button close-btn" aria-label="Cerrar menú">
+                                <span class="ft-org-masthead__menu-buttonIcon"></span>
+                            </button>
+                        </div>
+                        <div class="ft-org-masthead__logo">
+                            <div class="ft-org-masthead__logo-img">
+                                <a href="/es/" class="ft-org-masthead__logo-link" title="Cabecera regional panel">
+                                    <span class="ft-org-masthead--hide">cabecera regional panel</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ft-org-masthead__area">
+                            <div class="ft-mol-dropdown">
+                                <button class="ft-org-masthead__area--login ft-mol-dropdown__trigger" type="button"
+                                    data-user-state-button
+                                    aria-haspopup="true" aria-expanded="false" title="Abrir menú desplegable">
+                                    <span class="ft-org-masthead--hide">Abrir menú de usuario</span>
+                                    <span class="masthead-user-state__label" data-user-state-label hidden>BC</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </header>
+
+        </div>
+    </template>
+
+    <script>
+        (function () {
+            const RAW_REGIONALES_CASES = `
+ft-brand-regionales la-provincia-diario-de-las-palmas
+ft-brand-regionales la-provincia-diario-de-las-palmas cerca minimal-header
+
+ft-brand-regionales diari-de-girona
+ft-brand-regionales diari-de-girona cerca minimal-header
+ft-brand-regionales diari-de-girona economia
+ft-brand-regionales diari-de-girona elbaixemporda
+ft-brand-regionales diari-de-girona gironadelicia
+ft-brand-regionales diari-de-girona pasatiempos minimal-header
+
+ft-brand-regionales diario-cordoba
+ft-brand-regionales diario-cordoba cerca minimal-header
+ft-brand-regionales diario-cordoba altoguadalquivir
+ft-brand-regionales diario-cordoba cerca minimal-header
+ft-brand-regionales diario-cordoba pasatiempos minimal-header
+
+ft-brand-regionales diario-de-ibiza
+ft-brand-regionales diario-de-ibiza cerca minimal-header
+ft-brand-regionales diario-de-ibiza diariodeformentera
+ft-brand-regionales diario-de-ibiza diariodesantaeularia
+ft-brand-regionales diario-de-ibiza livingibiza
+ft-brand-regionales diario-de-ibiza pasatiempos minimal-header
+
+ft-brand-regionales diario-de-mallorca
+ft-brand-regionales diario-de-mallorca cerca minimal-header
+ft-brand-regionales diario-de-mallorca cronicadepalma
+ft-brand-regionales diario-de-mallorca cronicauib
+ft-brand-regionales diario-de-mallorca diariodeandratx
+ft-brand-regionales diario-de-mallorca ido
+ft-brand-regionales diario-de-mallorca mallorcadelicia
+ft-brand-regionales diario-de-mallorca pasatiempos minimal-header
+
+ft-brand-regionales diario-informacion
+ft-brand-regionales diario-informacion cerca minimal-header
+ft-brand-regionales diario-informacion cronicadelaprovinciadealicante
+ft-brand-regionales diario-informacion lacronicadeorihuela
+ft-brand-regionales diario-informacion informaciontv
+ft-brand-regionales diario-informacion lacronicadecalp
+ft-brand-regionales diario-informacion lacronicadeelche
+ft-brand-regionales diario-informacion lacronicadeelda
+ft-brand-regionales diario-informacion lacronicadelalacanti
+ft-brand-regionales diario-informacion cronicasdelanucia
+ft-brand-regionales diario-informacion pasatiempos minimal-header
+
+ft-brand-regionales el-correo-de-andalucia
+ft-brand-regionales el-correo-de-andalucia cerca minimal-header
+ft-brand-regionales el-correo-de-andalucia larecogia
+ft-brand-regionales el-correo-de-andalucia pasatiempos minimal-header
+
+ft-brand-regionales el-correo-gallego
+ft-brand-regionales el-correo-gallego cerca minimal-header
+ft-brand-regionales el-correo-gallego pasatiempos minimal-header
+
+ft-brand-regionales el-dia-la-opinion-de-tenerife
+ft-brand-regionales el-dia-la-opinion-de-tenerife cerca minimal-header
+ft-brand-regionales el-dia-la-opinion-de-tenerife pasatiempos minimal-header
+
+ft-brand-regionales el-periodico-de-aragon
+ft-brand-regionales el-periodico-de-aragon cerca minimal-header
+ft-brand-regionales el-periodico-de-aragon campodebelchite
+ft-brand-regionales el-periodico-de-aragon campodeborja
+ft-brand-regionales el-periodico-de-aragon campodecarinena
+ft-brand-regionales el-periodico-de-aragon cerca minimal-header
+ft-brand-regionales el-periodico-de-aragon cuencasmineras
+ft-brand-regionales el-periodico-de-aragon ejeaysuspueblos
+ft-brand-regionales el-periodico-de-aragon huesca
+ft-brand-regionales el-periodico-de-aragon lacronicadevaldejalon
+ft-brand-regionales el-periodico-de-aragon pasatiempos minimal-header
+ft-brand-regionales el-periodico-de-aragon riberaaltadelebro
+ft-brand-regionales el-periodico-de-aragon riberadenavarra
+
+ft-brand-regionales el-periodico-extremadura
+ft-brand-regionales el-periodico-extremadura cerca minimal-header
+ft-brand-regionales el-periodico-extremadura pasatiempos minimal-header
+ft-brand-regionales el-periodico-extremadura cronicadeltajosalor
+
+ft-brand-regionales el-periodico-mediterraneo
+ft-brand-regionales el-periodico-mediterraneo altopalancia
+ft-brand-regionales el-periodico-mediterraneo cerca minimal-header
+ft-brand-regionales el-periodico-mediterraneo pasatiempos minimal-header
+
+ft-brand-regionales emporda
+ft-brand-regionales emporda cerca minimal-header
+ft-brand-regionales emporda pasatiempos minimal-header
+
+ft-brand-regionales faro-de-vigo
+ft-brand-regionales faro-de-vigo cerca minimal-header
+ft-brand-regionales faro-de-vigo pasatiempos minimal-header
+
+ft-brand-regionales la-cronica-de-badajoz
+ft-brand-regionales la-cronica-de-badajoz almendralejo
+ft-brand-regionales la-cronica-de-badajoz cerca minimal-header
+ft-brand-regionales la-cronica-de-badajoz cronicadelaprovinciadebadajoz
+ft-brand-regionales la-cronica-de-badajoz cronicapuebladelacalzada
+ft-brand-regionales la-cronica-de-badajoz pasatiempos minimal-header
+ft-brand-regionales la-cronica-de-badajoz villafrancadelosbarros
+
+ft-brand-regionales la-nueva-espana
+ft-brand-regionales la-nueva-espana adelantados
+ft-brand-regionales la-nueva-espana asturiasexterior
+ft-brand-regionales la-nueva-espana canalparlamento
+ft-brand-regionales la-nueva-espana cangasdelnarcea
+ft-brand-regionales la-nueva-espana castrillon
+ft-brand-regionales la-nueva-espana cerca minimal-header
+ft-brand-regionales la-nueva-espana clublanuevaespana
+ft-brand-regionales la-nueva-espana corvera
+ft-brand-regionales la-nueva-espana elllano
+ft-brand-regionales la-nueva-espana gijonoeste
+ft-brand-regionales la-nueva-espana grado
+ft-brand-regionales la-nueva-espana lacorredoria
+ft-brand-regionales la-nueva-espana laviana
+ft-brand-regionales la-nueva-espana llanera
+ft-brand-regionales la-nueva-espana luarcavaldes
+ft-brand-regionales la-nueva-espana oviedo
+ft-brand-regionales la-nueva-espana pasatiempos minimal-header
+ft-brand-regionales la-nueva-espana premiosprincesa
+ft-brand-regionales la-nueva-espana riberadearriba
+ft-brand-regionales la-nueva-espana salas
+ft-brand-regionales la-nueva-espana siero
+ft-brand-regionales la-nueva-espana tineo
+ft-brand-regionales la-nueva-espana villaviciosa
+
+ft-brand-regionales la-opinion-a-coruna
+ft-brand-regionales la-opinion-a-coruna cerca minimal-header
+ft-brand-regionales la-opinion-a-coruna pasatiempos minimal-header
+
+ft-brand-regionales la-opinion-correo-de-zamora
+ft-brand-regionales la-opinion-correo-de-zamora aliste
+ft-brand-regionales la-opinion-correo-de-zamora benavente
+ft-brand-regionales la-opinion-correo-de-zamora sanabria
+ft-brand-regionales la-opinion-correo-de-zamora cerca minimal-header
+ft-brand-regionales la-opinion-correo-de-zamora pasatiempos minimal-header
+ft-brand-regionales la-opinion-correo-de-zamora toro
+
+ft-brand-regionales la-opinion-de-malaga
+ft-brand-regionales la-opinion-de-malaga alhaurindelatorre
+ft-brand-regionales la-opinion-de-malaga cangasdelnarcea
+ft-brand-regionales la-opinion-de-malaga cerca minimal-header
+ft-brand-regionales la-opinion-de-malaga coin
+ft-brand-regionales la-opinion-de-malaga pasatiempos minimal-header
+ft-brand-regionales la-opinion-de-malaga torremolinos
+
+ft-brand-regionales la-opinion-de-murcia
+ft-brand-regionales la-opinion-de-murcia cerca minimal-header
+ft-brand-regionales la-opinion-de-murcia pasatiempos minimal-header
+
+ft-brand-regionales la-provincia-diario-de-las-palmas
+ft-brand-regionales la-provincia-diario-de-las-palmas cerca minimal-header
+ft-brand-regionales la-provincia-diario-de-las-palmas pasatiempos minimal-header
+
+ft-brand-regionales levante-el-mercantil-valenciano
+ft-brand-regionales levante-el-mercantil-valenciano cerca minimal-header
+ft-brand-regionales levante-el-mercantil-valenciano lacronicadalbal
+ft-brand-regionales levante-el-mercantil-valenciano lacronicadealdaia
+ft-brand-regionales levante-el-mercantil-valenciano lacronicadealfafar
+ft-brand-regionales levante-el-mercantil-valenciano lacronicadealzira
+ft-brand-regionales levante-el-mercantil-valenciano lacronicadebenifairodelesvalls
+ft-brand-regionales levante-el-mercantil-valenciano lacronicadebenissa
+ft-brand-regionales levante-el-mercantil-valenciano lacronicadebenitatxell
+ft-brand-regionales levante-el-mercantil-valenciano lacronicadebetera
+ft-brand-regionales levante-el-mercantil-valenciano lacronicadeburjassot
+ft-brand-regionales levante-el-mercantil-valenciano lacronicadecalp
+ft-brand-regionales levante-el-mercantil-valenciano lacronicadecatarroja
+ft-brand-regionales levante-el-mercantil-valenciano lacronicadegodella
+ft-brand-regionales levante-el-mercantil-valenciano lacronicadelanucia
+ft-brand-regionales levante-el-mercantil-valenciano lacronicadelaprovinciadevalencia
+ft-brand-regionales levante-el-mercantil-valenciano lacronicadelliria
+ft-brand-regionales levante-el-mercantil-valenciano lacronicadepaiporta
+ft-brand-regionales levante-el-mercantil-valenciano lacronicadepaterna
+ft-brand-regionales levante-el-mercantil-valenciano lacronicadepego
+ft-brand-regionales levante-el-mercantil-valenciano lacronicadepicassent
+ft-brand-regionales levante-el-mercantil-valenciano lacronicadepucol
+ft-brand-regionales levante-el-mercantil-valenciano lacronicaderibarojadeturia
+ft-brand-regionales levante-el-mercantil-valenciano lacronicadetorrent
+ft-brand-regionales levante-el-mercantil-valenciano lacronicadevilamarxant
+ft-brand-regionales levante-el-mercantil-valenciano lacronicadevillamarchante
+ft-brand-regionales levante-el-mercantil-valenciano pasatiempos minimal-header
+
+ft-brand-regionales mallorca-zeitung
+ft-brand-regionales mallorca-zeitung cerca minimal-header
+ft-brand-regionales mallorca-zeitung pasatiempos minimal-header
+
+ft-brand-regionales regio7
+ft-brand-regionales regio7 anoia
+ft-brand-regionales regio7 cerca minimal-header
+ft-brand-regionales regio7 diaridigualada
+ft-brand-regionales regio7 pasatiempos minimal-header
+ft-brand-regionales regio7 salut
+
+ft-brand-regionales superdeporte
+ft-brand-regionales superdeporte cerca minimal-header
+ft-brand-regionales superdeporte pasatiempos minimal-header
+            `;
+
+            const RAW_EP_CASES = `
+ft-brand-ep
+ft-brand-ep badalona
+ft-brand-ep castelldefels
+ft-brand-ep cerca minimal-header
+ft-brand-ep cornella
+ft-brand-ep economia
+ft-brand-ep esplugues
+ft-brand-ep gastronomia
+ft-brand-ep gava
+ft-brand-ep granollers
+ft-brand-ep hospitalet
+ft-brand-ep libros
+ft-brand-ep martorell
+ft-brand-ep mataro
+ft-brand-ep molletdelvalles
+ft-brand-ep motor
+ft-brand-ep parets
+ft-brand-ep pasatiempos minimal-header
+ft-brand-ep rubi
+ft-brand-ep sabadell
+ft-brand-ep santacoloma
+ft-brand-ep santboi
+ft-brand-ep santcugat
+ft-brand-ep shopping
+ft-brand-ep tarragona
+ft-brand-ep viladecans
+ft-brand-ep vilanovailageltru
+            `;
+
+            const RAW_EPE_CASES = `
+ft-brand-epe
+ft-brand-epe alcaladehenares
+ft-brand-epe arganzuela
+ft-brand-epe carabanchel
+ft-brand-epe cerca minimal-header
+ft-brand-epe latina
+ft-brand-epe mostoles
+ft-brand-epe pasatiempos minimal-header
+ft-brand-epe pozuelodealarcon
+            `;
+
+            const RAW_SPORT_CASES = `
+ft-brand-sport
+ft-brand-sport aniversario
+ft-brand-sport pasatiempos minimal-header
+ft-brand-sport shopping
+            `;
+
+            const RAW_WOMAN_CASES = `
+ft-brand-revistas woman
+ft-brand-revistas woman pasatiempos minimal-header
+ft-brand-revistas woman shopping
+            `;
+
+            const RAW_CUORE_CASES = `
+ft-brand-revistas cuore
+ft-brand-revistas cuore compras
+ft-brand-revistas cuore pasatiempos minimal-header
+            `;
+
+            const RAW_STILO_CASES = `
+ft-brand-revistas stilo
+ft-brand-revistas stilo compras
+ft-brand-revistas stilo pasatiempos minimal-header
+            `;
+
+            const RAW_VIAJAR_CASES = `
+ft-brand-revistas viajar
+ft-brand-revistas viajar escapatecerca minimal-header-lorem
+ft-brand-revistas viajar pasatiempos minimal-header
+            `;
+
+            const BRANDS = {
+                regionales: {
+                    key: "regionales",
+                    label: "Regionales",
+                    className: "ft-brand-regionales",
+                    stylesRoot: "../../cds-statics/css/brands/regionales/setting.css",
+                    stylesIndex: "../../cds-statics/css/regionales-index.css",
+                    description: "Esta página repite el masthead de Regionales con las combinaciones excepcionales localizadas en <code>_masthead.scss</code> y reflejadas en Storybook. Cada casuística se descompone en tres previews independientes: <code>Normal</code>, <code>Fixed</code> y <code>Minimal header</code>.",
+                    rawCases: RAW_REGIONALES_CASES
+                },
+                ep: {
+                    key: "ep",
+                    label: "El Periódico",
+                    className: "ft-brand-ep",
+                    stylesRoot: "../../cds-statics/css/brands/ep/setting.css",
+                    stylesIndex: "../../cds-statics/css/ep-index.css",
+                    description: "Esta página repite el masthead de El Periódico con sus variaciones editoriales y locales. Cada casuística se descompone en tres previews independientes: <code>Normal</code>, <code>Fixed</code> y <code>Minimal header</code>.",
+                    rawCases: RAW_EP_CASES
+                },
+                epe: {
+                    key: "epe",
+                    label: "El Periódico de España",
+                    className: "ft-brand-epe",
+                    stylesRoot: "../../cds-statics/css/brands/epe/setting.css",
+                    stylesIndex: "../../cds-statics/css/epe-index.css",
+                    description: "Esta página repite el masthead de El Periódico de España con sus variaciones territoriales. Cada casuística se descompone en tres previews independientes: <code>Normal</code>, <code>Fixed</code> y <code>Minimal header</code>.",
+                    rawCases: RAW_EPE_CASES
+                },
+                sport: {
+                    key: "sport",
+                    label: "Sport",
+                    className: "ft-brand-sport",
+                    stylesRoot: "../../cds-statics/css/brands/sport/setting.css",
+                    stylesIndex: "../../cds-statics/css/sport-index.css",
+                    description: "Esta página repite el masthead de Sport con sus variaciones editoriales. Cada casuística se descompone en tres previews independientes: <code>Normal</code>, <code>Fixed</code> y <code>Minimal header</code>.",
+                    rawCases: RAW_SPORT_CASES
+                },
+                woman: {
+                    key: "woman",
+                    label: "Woman",
+                    className: "ft-brand-revistas",
+                    stylesRoot: "../../cds-statics/css/brands/revistas/setting-woman.css",
+                    stylesIndex: "../../cds-statics/css/revistas-index.css",
+                    description: "Esta página repite el masthead de Woman con sus variaciones editoriales. Cada casuística se descompone en tres previews independientes: <code>Normal</code>, <code>Fixed</code> y <code>Minimal header</code>.",
+                    rawCases: RAW_WOMAN_CASES
+                },
+                cuore: {
+                    key: "cuore",
+                    label: "Cuore",
+                    className: "ft-brand-revistas",
+                    stylesRoot: "../../cds-statics/css/brands/revistas/setting-cuore.css",
+                    stylesIndex: "../../cds-statics/css/revistas-index.css",
+                    description: "Esta página repite el masthead de Cuore con sus variaciones editoriales. Cada casuística se descompone en tres previews independientes: <code>Normal</code>, <code>Fixed</code> y <code>Minimal header</code>.",
+                    rawCases: RAW_CUORE_CASES
+                },
+                stilo: {
+                    key: "stilo",
+                    label: "Stilo",
+                    className: "ft-brand-revistas",
+                    stylesRoot: "../../cds-statics/css/brands/revistas/setting-stilo.css",
+                    stylesIndex: "../../cds-statics/css/revistas-index.css",
+                    description: "Esta página repite el masthead de Stilo con sus variaciones editoriales. Cada casuística se descompone en tres previews independientes: <code>Normal</code>, <code>Fixed</code> y <code>Minimal header</code>.",
+                    rawCases: RAW_STILO_CASES
+                },
+                viajar: {
+                    key: "viajar",
+                    label: "Viajar",
+                    className: "ft-brand-revistas",
+                    stylesRoot: "../../cds-statics/css/brands/revistas/setting-viajar.css",
+                    stylesIndex: "../../cds-statics/css/revistas-index.css",
+                    description: "Esta página repite el masthead de Viajar con sus variaciones editoriales. Cada casuística se descompone en tres previews independientes: <code>Normal</code>, <code>Fixed</code> y <code>Minimal header</code>.",
+                    rawCases: RAW_VIAJAR_CASES
+                }
+            };
+
+            const host = document.getElementById("mastheadRegionalesCases");
+            const template = document.getElementById("mastheadRegionalesTemplate");
+            const brandTitle = document.getElementById("brandTitle");
+            const brandDescription = document.getElementById("brandDescription");
+            const brandSelector = document.getElementById("brandSelector");
+            const userStateSelector = document.getElementById("userStateSelector");
+            const brandStylesRoot = document.getElementById("brandStyles-root");
+            const brandStyles = document.getElementById("brandStyles");
+            let currentUserState = userStateSelector ? userStateSelector.value : "login";
+
+            function buildCase(brand, caseConfig, index) {
+                const section = document.createElement("section");
+                section.className = "masthead-case";
+
+                const meta = document.createElement("div");
+                meta.className = "masthead-case__meta";
+                meta.innerHTML = `
+                    <h2>${caseConfig.title}</h2>
+                    <p>${caseConfig.description}</p>
+                    <p><code>fourty ${brand.className} ${caseConfig.classes.join(" ")}</code></p>
+                `;
+
+                const viewport = document.createElement("div");
+                viewport.className = "masthead-case__viewport";
+                const stack = document.createElement("div");
+                stack.className = "masthead-case__stack";
+
+                const page = template.content.firstElementChild.cloneNode(true);
+                page.className = `masthead-case__page fourty ${brand.className} ${caseConfig.classes.join(" ")}`;
+                page.dataset.caseId = `case-${index + 1}`;
+
+                namespaceCase(page, index + 1);
+                applyUserStateToScope(page, currentUserState);
+                stack.appendChild(createVariantPreview("Normal", page, {
+                    brand,
+                    pageClasses: caseConfig.classes,
+                    sourceSelector: ".ft-org-masthead--branded",
+                    note: "Vista base del masthead con la cabecera completa del medio."
+                }));
+                stack.appendChild(createVariantPreview("Fixed", page, {
+                    brand,
+                    pageClasses: caseConfig.classes,
+                    sourceSelector: ".ft-org-masthead--fix",
+                    variantClass: "masthead-preview--fixed",
+                    note: "Vista aislada de la capa fija, mostrada de forma independiente."
+                }));
+                stack.appendChild(createVariantPreview("Minimal header", page, {
+                    brand,
+                    pageClasses: ["minimal-header", ...caseConfig.classes],
+                    sourceSelector: ".ft-org-masthead--branded",
+                    variantClass: "masthead-preview--minimal",
+                    note: "Mismo masthead base bajo el ancestro `.minimal-header`."
+                }));
+                stack.appendChild(createVariantPreview("Side menu", page, {
+                    brand,
+                    pageClasses: caseConfig.classes,
+                    sourceSelector: ".ft-org-masthead--side",
+                    variantClass: "masthead-preview--side",
+                    note: "Vista fija del lateral desplegado, recortada para revisar mejor su tramo superior.",
+                    onClone: (clone) => {
+                        clone.classList.add("active");
+                    }
+                }));
+
+                viewport.appendChild(stack);
+                section.appendChild(meta);
+                section.appendChild(viewport);
+
+                return section;
+            }
+
+            function namespaceCase(page, index) {
+                page.querySelectorAll("[id]").forEach((node) => {
+                    node.id = `${node.id}-${index}`;
+                });
+
+                page.querySelectorAll("[aria-controls]").forEach((node) => {
+                    node.setAttribute("aria-controls", `${node.getAttribute("aria-controls")}-${index}`);
+                });
+            }
+
+            function uniqueClasses(classes) {
+                return [...new Set(classes.filter(Boolean))];
+            }
+
+            function humanizeCase(classes) {
+                return classes
+                    .map((token) => token.replace(/-/g, " "))
+                    .join(" · ");
+            }
+
+            function parseCases(brand) {
+                return Array.from(
+                    new Map(
+                        brand.rawCases
+                            .split("\n")
+                            .map((entry) => entry.replace(/\(.*?\)/g, " ").trim())
+                            .filter(Boolean)
+                            .map((entry) => entry.replace(brand.className, "").replace(/\s+/g, " ").trim())
+                            .map((entry) => {
+                                const classes = uniqueClasses(entry.split(" "));
+                                const key = classes.join(" ");
+                                return [
+                                    key,
+                                    {
+                                        title: humanizeCase(classes.length ? classes : ["base"]),
+                                        description: `Masthead ${brand.label}: \`${key || "base"}\`.`,
+                                        classes
+                                    }
+                                ];
+                            })
+                    ).values()
+                ).sort((a, b) => a.title.localeCompare(b.title, "es"));
+            }
+
+            function createVariantPreview(title, page, config) {
+                const preview = document.createElement("article");
+                preview.className = `masthead-preview ${config.variantClass || ""}`.trim();
+
+                const previewMeta = document.createElement("div");
+                previewMeta.className = "masthead-preview__meta";
+                previewMeta.innerHTML = `<h3>${title}</h3>`;
+
+                const previewPage = document.createElement("div");
+                previewPage.className = `masthead-preview__page fourty ${config.brand.className} ${uniqueClasses(config.pageClasses).join(" ")}`;
+
+                const sourceNode = page.querySelector(config.sourceSelector);
+                if (sourceNode) {
+                    const clone = sourceNode.cloneNode(true);
+                    if (config.sourceSelector === ".ft-org-masthead--fix") {
+                        clone.classList.add("visible");
+                    }
+                    if (typeof config.onClone === "function") {
+                        config.onClone(clone);
+                    }
+                    previewPage.appendChild(clone);
+                }
+
+                const previewNote = document.createElement("div");
+                previewNote.className = "masthead-preview__note";
+                previewNote.innerHTML = `<p>${config.note}</p>`;
+
+                preview.appendChild(previewMeta);
+                preview.appendChild(previewPage);
+                preview.appendChild(previewNote);
+
+                return preview;
+            }
+
+            function applyUserStateToScope(scope, state) {
+                const isLogged = state === "logged";
+
+                scope.querySelectorAll("[data-user-state-button]").forEach((button) => {
+                    button.classList.toggle("ft-org-masthead__area--logged", isLogged);
+
+                    const label = button.querySelector("[data-user-state-label]");
+
+                    if (!label) return;
+
+                    label.hidden = !isLogged;
+                    label.textContent = isLogged ? "BC" : "";
+                });
+            }
+
+            function renderBrand(brandKey) {
+                const brand = BRANDS[brandKey];
+                const cases = parseCases(brand);
+
+                brandStylesRoot.href = brand.stylesRoot;
+                brandStyles.href = brand.stylesIndex;
+                brandTitle.textContent = `Masthead ${brand.label} · casuística viva`;
+                brandDescription.innerHTML = brand.description;
+                host.setAttribute("aria-label", `Casuísticas ${brand.label}`);
+                host.innerHTML = "";
+
+                cases.forEach((caseConfig, index) => {
+                    host.appendChild(buildCase(brand, caseConfig, index));
+                });
+            }
+
+            brandSelector.addEventListener("change", (event) => {
+                renderBrand(event.target.value);
+            });
+
+            userStateSelector.addEventListener("change", (event) => {
+                currentUserState = event.target.value;
+                applyUserStateToScope(host, currentUserState);
+            });
+
+            renderBrand(brandSelector.value);
+        })();
+    </script>
+</body>
+
+</html>
