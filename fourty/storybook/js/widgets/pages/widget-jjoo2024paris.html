@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>42DS Storybook | Juegos Olímpicos 2024</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="brandStyles-root" rel="stylesheet" href="/cds-statics/css/brands/ux/setting.css">
+    <link id="brandStyles" rel="stylesheet" href="/cds-statics/css/ux-index.css">
+    <style>body{margin:0}</style>
+</head>
+<body class="fourty ft-brand-ux ft-skin ft-skin--showroom">
+<style>
+                        :root {
+                          --font-stack: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+                        }
+                      
+                        .idalgo {
+                          color: white;
+                          font-family: var(--font-01);
+                          font-size: var(--font-size);
+                        }
+                      
+                        .idalgo * {
+                          box-sizing: border-box;
+                          text-decoration: unset;
+                        }
+                      
+                        .idalgo.widget {
+                          border: none;
+                          border-radius: 0 0 12px 12px;
+                        }
+                      
+                        .idalgo.sport_olympics_calendars {
+                          position: relative;
+                          display: flex;
+                          flex-direction: column;
+                          padding: 0;
+                          background-color: #0078D0;
+                        }
+                      
+                        .idalgo h2.title.widget {
+                          display: none;
+                        }
+                      
+                        .idalgo.sport_olympics_calendars>.date {
+                          display: flex;
+                          flex-direction: row;
+                          align-items: center;
+                          padding: 8px;
+                          box-sizing: content-box;
+                          height: fit-content;
+                          font-size: 10px;
+                          line-height: 14px;
+                        }
+                      
+                        .idalgo.sport_olympics_calendars[data-orientation="landscape"]>.date {
+                          justify-content: start;
+                          border: none;
+                        }
+                      
+                        .idalgo.sport_olympics_calendars>.date>time {
+                          display: block;
+                          font-weight: normal;
+                        }
+                      
+                        .idalgo.sport_olympics_calendars>.date>span {
+                          display: none;
+                        }
+                      
+                        .idalgo.sport_olympics_calendars>.container {
+                          overflow: scroll;
+                          scrollbar-width: none;
+                          scroll-behavior: smooth;
+                        }
+                      
+                        .idalgo.sport_olympics_calendars[data-orientation="landscape"]>.container {
+                          position: relative;
+                          margin: 0 40px;
+                          height: 84px;
+                        }
+                      
+                        .idalgo ul {
+                          list-style: none outside none;
+                          padding: 0;
+                          margin: 0;
+                        }
+                      
+                        .idalgo.sport_olympics_calendars[data-orientation="landscape"]>.container>.games {
+                          position: absolute;
+                          display: flex;
+                          flex-direction: row;
+                        }
+                      
+                        .idalgo.sport_olympics_calendars>.container>.games>li {
+                          width: 100%;
+                        }
+                      
+                        .idalgo.sport_olympics_calendars>.container>.games .game {
+                          position: relative;
+                          box-sizing: border-box;
+                          column-gap: 8px;
+                          align-items: center;
+                        }
+                      
+                        .idalgo.sport_olympics_calendars[data-orientation="landscape"]>.container>.games .game {
+                          display: grid;
+                          grid-template-rows: unset;
+                          grid-template-columns: unset;
+                          width: max-content;
+                          min-width: 150px;
+                          height: 76px;
+                          margin: 0 0 0 8px;
+                          padding: 4px 8px;
+                          border: 1px solid rgba(255, 255, 255, .25);
+                          border-radius: 6px;
+                          background-color: #004DA2;
+                        }
+                      
+                        .idalgo.sport_olympics_calendars[data-orientation="landscape"]>.container>.games .game:first-child {
+                          margin: 0;
+                        }
+                      
+                        .idalgo.sport_olympics_calendars[data-orientation="landscape"]>.container>.games .game>.time {
+                          grid-column: 1;
+                          grid-row: 1;
+                          justify-self: start;
+                          font-size: 12px;
+                          font-weight: bold;
+                          line-height: 20px;
+                        }
+                      
+                        .idalgo.sport_olympics_calendars[data-orientation="landscape"]>.container>.games .game>.sp1 {
+                          font-size: 12px;
+                          font-weight: bold;
+                          line-height: 20px;
+                          grid-column: 1;
+                          grid-row: 1;
+                          padding-left: 35px;
+                        }
+                      
+                        .idalgo.sport_olympics_calendars[data-orientation="landscape"]>.container>.games .game>.sp1::before {
+                          content: "|";
+                          padding-right: 4px;
+                          font-size: 14px;
+                        }
+                      
+                        .idalgo.sport_olympics_calendars[data-orientation="landscape"]>.container>.games .game>.sp2 {
+                          font-size: 11px;
+                          line-height: 20px;
+                          grid-column: 1;
+                          grid-row: 2;
+                        }
+                      
+                        .idalgo.sport_olympics_calendars>.container>.games .game>.sp3 {
+                          display: flex;
+                          align-items: center;
+                          font-weight: bold;
+                        }
+                      
+                        .idalgo.sport_olympics_calendars[data-orientation="landscape"]>.container>.games .game>.sp3 {
+                          font-size: 11px;
+                          line-height: 20px;
+                          grid-column: 1;
+                          grid-row: 3;
+                        }
+                      
+                        .idalgo.sport_olympics_calendars>.container>.games .game>.sp3>img {
+                          height: 20px;
+                          width: 20px;
+                          outline: 1px solid white;
+                          border-radius: 50%;
+                          margin-right: 4px;
+                          object-fit: cover;
+                        }
+                      
+                        .idalgo.sport_olympics_calendars>.container>.games .game>.sp3>abbr {
+                          visibility: hidden;
+                          width: 8px;
+                          margin: 0;
+                        }
+                      
+                        .idalgo.sport_olympics_calendars[data-orientation="landscape"]>.empty {
+                          display: none;
+                        }
+                      
+                        .idalgo.sport_olympics_calendars[data-orientation="landscape"]>.finished {
+                          display: none;
+                        }
+                      
+                        .idalgo.widget>.widget.foot {
+                          position: absolute;
+                          top: 0;
+                          right: 0;
+                          margin: 0;
+                        }
+                      
+                        .idalgo .button {
+                          display: flex;
+                          justify-content: center;
+                          align-items: center;
+                          height: auto;
+                          width: fit-content;
+                          padding: 8px;
+                          align-self: center;
+                          color: white;
+                          font-size: 10px;
+                          line-height: 14px;
+                          border: none;
+                          background-color: transparent;
+                          cursor: pointer;
+                          transition: none;
+                          text-align: center;
+                        }
+                      
+                        .idalgo a[href] {
+                          opacity: .5;
+                          text-decoration: underline;
+                        }
+                      
+                        .idalgo a[href]:hover {
+                          opacity: 1;
+                          text-decoration: underline;
+                        }
+                      
+                        .idalgo .button:hover {
+                          background-color: transparent;
+                        }
+                      
+                        .idalgo.scroll {
+                          position: absolute;
+                          display: flex;
+                          flex-direction: row;
+                          align-items: center;
+                          left: 0;
+                          right: 0;
+                          top: 48px;
+                          padding: 0;
+                        }
+                      
+                        .idalgo.scroll>.nav {
+                          justify-content: space-between;
+                          flex: 1;
+                          order: 1;
+                          display: flex;
+                          height: 40px;
+                          align-items: center;
+                        }
+                      
+                        .idalgo.scroll>.nav>button {
+                          background-color: transparent;
+                          border: none;
+                          height: 40px;
+                          padding: 0;
+                          cursor: pointer;
+                        }
+                      
+                        .idalgo.scroll[data-scroll-orientation="landscape"]>.nav>button.previous>svg {
+                          transform: rotate(0.5turn);
+                        }
+                      
+                        .idalgo.scroll>.nav>button>svg {
+                          stroke: white;
+                          opacity: .7;
+                        }
+                      
+                        .idalgo.scroll>.nav>button>svg:hover {
+                          stroke: white;
+                          opacity: 1;
+                        }
+                      
+                        .idalgo.scroll>.nav>button>svg:active {
+                          opacity: 1;
+                        }
+                      
+                        .idalgo.scroll>.nav>button>svg>circle {
+                          display: none;
+                        }
+                      
+                        .idalgo.scroll>.nav>span {
+                          display: none;
+                        }
+                        
+                        @media (min-width: 768px) {
+                          .idalgo.sport_olympics_calendars {
+                            padding: 0 12px;
+                          }
+                      
+                          .idalgo.sport_olympics_calendars>.date {
+                            font-size: 14px;
+                          }
+                      
+                          .idalgo.widget>.widget.foot {
+                            margin: 0 12px;
+                          }
+                      
+                          .idalgo .button {
+                            font-size: 12px;
+                          }
+                      
+                          .idalgo.scroll {
+                            padding: 0 12px;
+                          }
+                        }
+                      </style>
+                      <div class="idalgo sport_olympics_calendars widget" data-date="2024-07-27" data-count="117" data-type="calendar"
+                        data-orientation="landscape" data-lastday="0" data-loaded="true">
+                        <h2 class="title widget"><span>Proximas pruebas</span><span>OG-MST2</span>
+                        </h2>
+                        <div class="date"><time datetime="2024-07-27T00:00:00+02:00" data-format="l j F Y">sábado 27 julio 2024</time><span
+                            data-element="count" data-count-label="[num] evento(s) por venir">117 evento(s) por venir</span>
+                        </div>
+                        <div class="container">
+                          <ul class="games" data-games="1" style="transition: opacity 0.2s ease-in-out 0s;">
+                            <li class="game"><time class="time" datetime="2024-07-27T09:00:00+02:00" data-format="H:i">09:00</time><span
+                                class="sp1">Fútbol</span><span class="sp2">Masculino - Grupo B - #3</span>
+                              <div class="sp3"><img src="https://media.api.idalgo.info/Country/svg/country_112.svg" loading="lazy" width="24"
+                                  height="17" aria-hidden="true"><span>Nueva Zelanda</span><abbr title="contra">/</abbr><img
+                                  src="https://media.api.idalgo.info/Country/svg/country_158.svg" loading="lazy" width="24" height="17"
+                                  aria-hidden="true"><span>Honduras</span>
+                              </div>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T09:15:00+02:00" data-format="H:i">09:15</time><span
+                                class="sp1">Fútbol</span><span class="sp2">Masculino - Grupo C - #4</span>
+                              <div class="sp3"><img src="https://media.api.idalgo.info/Country/svg/country_40.svg" loading="lazy" width="24"
+                                  height="17" aria-hidden="true"><span>Australia</span><abbr title="contra">/</abbr><img
+                                  src="https://media.api.idalgo.info/Country/svg/country_3.svg" loading="lazy" width="24" height="17"
+                                  aria-hidden="true"><span>España</span>
+                              </div>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T09:30:00+02:00" data-format="H:i">09:30</time><span
+                                class="sp1">Fútbol</span><span class="sp2">Masculino - Grupo B - #4</span>
+                              <div class="sp3"><img src="https://media.api.idalgo.info/Country/svg/country_14.svg" loading="lazy" width="24"
+                                  height="17" aria-hidden="true"><span>Rumania</span><abbr title="contra">/</abbr><img
+                                  src="https://media.api.idalgo.info/Country/svg/country_53.svg" loading="lazy" width="24" height="17"
+                                  aria-hidden="true"><span>Corea del Sur</span>
+                              </div>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #1</span><span class="sp3">-60&nbsp;kg
+                                masculinos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #14</span><span class="sp3">-48&nbsp;kg
+                                femeninos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #18</span><span class="sp3">-60&nbsp;kg
+                                masculinos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #17</span><span class="sp3">-48&nbsp;kg
+                                femeninos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #17</span><span class="sp3">-60&nbsp;kg
+                                masculinos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #16</span><span class="sp3">-48&nbsp;kg
+                                femeninos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/16 de fnal - #16</span><span class="sp3">-48&nbsp;kg
+                                femeninos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #16</span><span class="sp3">-60&nbsp;kg
+                                masculinos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/16 de fnal - #16</span><span class="sp3">-60&nbsp;kg
+                                masculinos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #15</span><span class="sp3">-48&nbsp;kg
+                                femeninos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #15</span><span class="sp3">-60&nbsp;kg
+                                masculinos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #14</span><span class="sp3">-60&nbsp;kg
+                                masculinos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #19</span><span class="sp3">-60&nbsp;kg
+                                masculinos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/16 de fnal - #14</span><span class="sp3">-60&nbsp;kg
+                                masculinos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #13</span><span class="sp3">-48&nbsp;kg
+                                femeninos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #13</span><span class="sp3">-60&nbsp;kg
+                                masculinos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #12</span><span class="sp3">-48&nbsp;kg
+                                femeninos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/16 de fnal - #12</span><span class="sp3">-48&nbsp;kg
+                                femeninos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #12</span><span class="sp3">-60&nbsp;kg
+                                masculinos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/16 de fnal - #12</span><span class="sp3">-60&nbsp;kg
+                                masculinos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #11</span><span class="sp3">-48&nbsp;kg
+                                femeninos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #11</span><span class="sp3">-60&nbsp;kg
+                                masculinos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/16 de fnal - #11</span><span class="sp3">-60&nbsp;kg
+                                masculinos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #10</span><span class="sp3">-48&nbsp;kg
+                                femeninos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #10</span><span class="sp3">-60&nbsp;kg
+                                masculinos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/16 de fnal - #10</span><span class="sp3">-60&nbsp;kg
+                                masculinos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #18</span><span class="sp3">-48&nbsp;kg
+                                femeninos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #20</span><span class="sp3">-60&nbsp;kg
+                                masculinos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #19</span><span class="sp3">-48&nbsp;kg
+                                femeninos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #26</span><span class="sp3">-48&nbsp;kg
+                                femeninos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #32</span><span class="sp3">-60&nbsp;kg
+                                masculinos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #31</span><span class="sp3">-48&nbsp;kg
+                                femeninos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #31</span><span class="sp3">-60&nbsp;kg
+                                masculinos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #30</span><span class="sp3">-48&nbsp;kg
+                                femeninos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #30</span><span class="sp3">-60&nbsp;kg
+                                masculinos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #29</span><span class="sp3">-48&nbsp;kg
+                                femeninos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #29</span><span class="sp3">-60&nbsp;kg
+                                masculinos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #28</span><span class="sp3">-48&nbsp;kg
+                                femeninos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #28</span><span class="sp3">-60&nbsp;kg
+                                masculinos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #27</span><span class="sp3">-48&nbsp;kg
+                                femeninos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #27</span><span class="sp3">-60&nbsp;kg
+                                masculinos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #26</span><span class="sp3">-60&nbsp;kg
+                                masculinos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #9</span><span class="sp3">-60&nbsp;kg
+                                masculinos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #25</span><span class="sp3">-48&nbsp;kg
+                                femeninos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #25</span><span class="sp3">-60&nbsp;kg
+                                masculinos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #24</span><span class="sp3">-48&nbsp;kg
+                                femeninos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #24</span><span class="sp3">-60&nbsp;kg
+                                masculinos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #23</span><span class="sp3">-48&nbsp;kg
+                                femeninos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #23</span><span class="sp3">-60&nbsp;kg
+                                masculinos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #22</span><span class="sp3">-48&nbsp;kg
+                                femeninos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #22</span><span class="sp3">-60&nbsp;kg
+                                masculinos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #21</span><span class="sp3">-48&nbsp;kg
+                                femeninos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #21</span><span class="sp3">-60&nbsp;kg
+                                masculinos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #20</span><span class="sp3">-48&nbsp;kg
+                                femeninos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #9</span><span class="sp3">-48&nbsp;kg
+                                femeninos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #32</span><span class="sp3">-48&nbsp;kg
+                                femeninos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #4</span><span class="sp3">-48&nbsp;kg
+                                femeninos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #7</span><span class="sp3">-48&nbsp;kg
+                                femeninos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/16 de fnal - #6</span><span class="sp3">-60&nbsp;kg
+                                masculinos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #6</span><span class="sp3">-60&nbsp;kg
+                                masculinos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #6</span><span class="sp3">-48&nbsp;kg
+                                femeninos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #5</span><span class="sp3">-48&nbsp;kg
+                                femeninos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #5</span><span class="sp3">-60&nbsp;kg
+                                masculinos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/16 de fnal - #4</span><span class="sp3">-60&nbsp;kg
+                                masculinos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #4</span><span class="sp3">-60&nbsp;kg
+                                masculinos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #7</span><span class="sp3">-60&nbsp;kg
+                                masculinos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/16 de fnal - #4</span><span class="sp3">-48&nbsp;kg
+                                femeninos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #3</span><span class="sp3">-48&nbsp;kg
+                                femeninos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #2</span><span class="sp3">-48&nbsp;kg
+                                femeninos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #2</span><span class="sp3">-60&nbsp;kg
+                                masculinos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/16 de fnal - #2</span><span class="sp3">-60&nbsp;kg
+                                masculinos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/16 de fnal - #8</span><span class="sp3">-60&nbsp;kg
+                                masculinos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #8</span><span class="sp3">-60&nbsp;kg
+                                masculinos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/16 de fnal - #8</span><span class="sp3">-48&nbsp;kg
+                                femeninos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #8</span><span class="sp3">-48&nbsp;kg
+                                femeninos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #1</span><span class="sp3">-48&nbsp;kg
+                                femeninos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Remo</span><span class="sp2">Ronda preliminar - #1</span><span class="sp3">Skiff masculino</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T10:00:00+02:00" data-format="H:i">10:00</time><span
+                                class="sp1">Judo</span><span class="sp2">1/32 de final - #3</span><span class="sp3">-60&nbsp;kg
+                                masculinos</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T12:25:00+02:00" data-format="H:i">12:25</time><span
+                                class="sp1">Remo</span><span class="sp2">Series - #2</span><span class="sp3">Skiff masculino</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T12:30:00+02:00" data-format="H:i">12:30</time><span
+                                class="sp1">Remo</span><span class="sp2">Series - #4</span><span class="sp3">Skiff masculino</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T12:35:00+02:00" data-format="H:i">12:35</time><span
+                                class="sp1">Remo</span><span class="sp2">Ronda preliminar - #2</span><span class="sp3">Skiff masculino</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T12:40:00+02:00" data-format="H:i">12:40</time><span
+                                class="sp1">Remo</span><span class="sp2">Series - #2</span><span class="sp3">Doble scull masculino</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T12:45:00+02:00" data-format="H:i">12:45</time><span
+                                class="sp1">Remo</span><span class="sp2">Series - #4</span><span class="sp3">Doble scull masculino</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T12:55:00+02:00" data-format="H:i">12:55</time><span
+                                class="sp1">Remo</span><span class="sp2">Series - #6</span><span class="sp3">Doble scull masculino</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T13:00:00+02:00" data-format="H:i">13:00</time><span
+                                class="sp1">Remo</span><span class="sp2">Series - #7</span><span class="sp3">Doble scull masculino</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T13:05:00+02:00" data-format="H:i">13:05</time><span
+                                class="sp1">Remo</span><span class="sp2">Series - #8</span><span class="sp3">Doble scull masculino</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T13:10:00+02:00" data-format="H:i">13:10</time><span
+                                class="sp1">Remo</span><span class="sp2">Ronda preliminar</span><span class="sp3">Doble scull masculino</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T13:15:00+02:00" data-format="H:i">13:15</time><span
+                                class="sp1">Remo</span><span class="sp2">Series - #2</span><span class="sp3">Cuatro con timonel
+                                masculino</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T13:20:00+02:00" data-format="H:i">13:20</time><span
+                                class="sp1">Remo</span><span class="sp2">Series - #4</span><span class="sp3">Cuatro con timonel
+                                masculino</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T13:25:00+02:00" data-format="H:i">13:25</time><span
+                                class="sp1">Remo</span><span class="sp2">Series - #5</span><span class="sp3">Cuatro con timonel
+                                masculino</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T13:30:00+02:00" data-format="H:i">13:30</time><span
+                                class="sp1">Remo</span><span class="sp2">Series - #6</span><span class="sp3">Cuatro con timonel
+                                masculino</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T13:35:00+02:00" data-format="H:i">13:35</time><span
+                                class="sp1">Remo</span><span class="sp2">Series - #7</span><span class="sp3">Cuatro con timonel
+                                masculino</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T13:40:00+02:00" data-format="H:i">13:40</time><span
+                                class="sp1">Remo</span><span class="sp2">Series - #8</span><span class="sp3">Cuatro con timonel
+                                masculino</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T13:45:00+02:00" data-format="H:i">13:45</time><span
+                                class="sp1">Remo</span><span class="sp2">Ronda preliminar - #1</span><span class="sp3">Cuatro con timonel
+                                masculino</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T13:50:00+02:00" data-format="H:i">13:50</time><span
+                                class="sp1">Remo</span><span class="sp2">Ronda preliminar - #2</span><span class="sp3">Cuatro con timonel
+                                masculino</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T13:55:00+02:00" data-format="H:i">13:55</time><span
+                                class="sp1">Remo</span><span class="sp2">Series - #2</span><span class="sp3">Skiff femenino</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T14:00:00+02:00" data-format="H:i">14:00</time><span
+                                class="sp1">Remo</span><span class="sp2">Series - #4</span><span class="sp3">Skiff femenino</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T14:05:00+02:00" data-format="H:i">14:05</time><span
+                                class="sp1">Remo</span><span class="sp2">Ronda preliminar - #1</span><span class="sp3">Skiff femenino</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T14:10:00+02:00" data-format="H:i">14:10</time><span
+                                class="sp1">Remo</span><span class="sp2">Ronda preliminar - #2</span><span class="sp3">Skiff femenino</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T14:15:00+02:00" data-format="H:i">14:15</time><span
+                                class="sp1">Remo</span><span class="sp2">Series - #2</span><span class="sp3">Doble scull femenino</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T14:20:00+02:00" data-format="H:i">14:20</time><span
+                                class="sp1">Remo</span><span class="sp2">Series - #4</span><span class="sp3">Doble scull femenino</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T14:30:00+02:00" data-format="H:i">14:30</time><span
+                                class="sp1">Remo</span><span class="sp2">Series - #6</span><span class="sp3">Doble scull femenino</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T14:35:00+02:00" data-format="H:i">14:35</time><span
+                                class="sp1">Remo</span><span class="sp2">Series - #7</span><span class="sp3">Doble scull femenino</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T14:40:00+02:00" data-format="H:i">14:40</time><span
+                                class="sp1">Remo</span><span class="sp2">Series - #8</span><span class="sp3">Doble scull femenino</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T14:45:00+02:00" data-format="H:i">14:45</time><span
+                                class="sp1">Remo</span><span class="sp2">Ronda preliminar - #1</span><span class="sp3">Doble scull
+                                femenino</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T14:50:00+02:00" data-format="H:i">14:50</time><span
+                                class="sp1">Remo</span><span class="sp2">Ronda preliminar - #2</span><span class="sp3">Doble scull
+                                femenino</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T14:55:00+02:00" data-format="H:i">14:55</time><span
+                                class="sp1">Remo</span><span class="sp2">Series - #2</span><span class="sp3">Cuatro con timonel
+                                femenino</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T15:00:00+02:00" data-format="H:i">15:00</time><span
+                                class="sp1">Remo</span><span class="sp2">Series - #4</span><span class="sp3">Cuatro con timonel
+                                femenino</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T15:05:00+02:00" data-format="H:i">15:05</time><span
+                                class="sp1">Remo</span><span class="sp2">Series - #5</span><span class="sp3">Cuatro con timonel
+                                femenino</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T15:10:00+02:00" data-format="H:i">15:10</time><span
+                                class="sp1">Remo</span><span class="sp2">Series - #6</span><span class="sp3">Cuatro con timonel
+                                femenino</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T15:15:00+02:00" data-format="H:i">15:15</time><span
+                                class="sp1">Remo</span><span class="sp2">Series - #7</span><span class="sp3">Cuatro con timonel
+                                femenino</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T15:20:00+02:00" data-format="H:i">15:20</time><span
+                                class="sp1">Remo</span><span class="sp2">Series - #8</span><span class="sp3">Cuatro con timonel
+                                femenino</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T15:25:00+02:00" data-format="H:i">15:25</time><span
+                                class="sp1">Remo</span><span class="sp2">Ronda preliminar - #1</span><span class="sp3">Cuatro con timonel
+                                femenino</span>
+                            </li>
+                            <li class="game"><time class="time" datetime="2024-07-27T15:30:00+02:00" data-format="H:i">15:30</time><span
+                                class="sp1">Remo</span><span class="sp2">Ronda preliminar - #2</span><span class="sp3">Cuatro con timonel
+                                femenino</span>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="empty"><span>No quedan pruebas por venir</span><svg viewBox="0 0 105 104" aria-hidden="true">
+                            <path
+                              d="M95.5144 60.1187C97.0236 52.4438 97.0236 44.5485 95.5144 36.8736C95.2567 35.4724 95.5403 34.0256 96.3079 32.8254C97.7066 30.6181 98.2674 27.9825 97.8885 25.397C97.6205 23.5081 96.8704 21.72 95.7105 20.2052C94.5506 18.6905 93.02 17.5001 91.2663 16.7488C89.5126 15.9975 87.5949 15.7107 85.6982 15.9161C83.8014 16.1214 81.9895 16.8119 80.4372 17.9211C79.7844 18.4137 79.0305 18.7555 78.2298 18.9218C77.4291 19.088 76.6015 19.0747 75.8066 18.8827C60.5267 14.8816 44.4742 14.881 29.1941 18.8811C28.4006 19.0763 27.5735 19.0918 26.7732 18.9266C25.9729 18.7613 25.2196 18.4194 24.5683 17.9258C22.4784 16.4295 19.9341 15.705 17.3695 15.8759C14.8049 16.0468 12.3792 17.1025 10.5064 18.8628C8.63352 20.6231 7.42972 22.9789 7.10044 25.5279C6.77117 28.077 7.33684 30.6613 8.70089 32.8398C9.46963 34.0342 9.75018 35.4782 9.48458 36.8736C7.97543 44.5485 7.97543 52.4438 9.48458 60.1187C9.75028 61.5199 9.46614 62.9696 8.69114 64.1669C7.29243 66.3741 6.73163 69.0098 7.11057 71.5952C8.01903 79.647 18.1682 83.9587 24.562 79.0709C25.2142 78.5779 25.9678 78.2359 26.7683 78.0696C27.5688 77.9034 28.3963 77.917 29.1909 78.1095C30.7197 78.5128 32.2625 78.8654 33.7906 79.1764C36.0391 81.9763 38.8873 84.2357 42.1253 85.7883C45.3633 87.3408 48.9085 88.1468 52.4994 88.1468C56.0904 88.1468 59.6355 87.3408 62.8735 85.7883C66.1115 84.2358 68.9598 81.9763 71.2083 79.1765C72.7364 78.8656 74.2789 78.513 75.8049 78.1111C76.5984 77.9154 77.4256 77.8996 78.226 78.0649C79.0264 78.2301 79.7797 78.5724 80.4308 79.0664C82.3084 80.4183 84.5647 81.1436 86.8784 81.1389C89.5534 81.134 92.1374 80.1673 94.1587 78.4151C96.18 76.663 97.5038 74.2424 97.8884 71.5952C98.2672 69.0085 97.7059 66.3718 96.3063 64.1637C95.5396 62.9643 95.2566 61.5187 95.5144 60.1187ZM54.1245 84.8144V81.8134C54.1245 81.3824 53.9533 80.9691 53.6486 80.6643C53.3438 80.3596 52.9305 80.1884 52.4995 80.1884C52.0685 80.1884 51.6552 80.3596 51.3505 80.6643C51.0457 80.9691 50.8745 81.3824 50.8745 81.8134V84.8144C45.9414 84.4224 41.3095 82.2851 37.8101 78.786C34.3107 75.2869 32.173 70.6552 31.7806 65.7221H34.7832C35.2089 65.714 35.6143 65.5392 35.9125 65.2354C36.2106 64.9315 36.3776 64.5227 36.3776 64.097C36.3776 63.6713 36.2106 63.2626 35.9124 62.9587C35.6142 62.6549 35.2088 62.4801 34.7831 62.4721H31.7806C32.1727 57.5387 34.3102 52.9066 37.8097 49.4072C41.3091 45.9078 45.9412 43.7702 50.8745 43.3781V46.3808C50.8745 46.8118 51.0457 47.2251 51.3505 47.5298C51.6552 47.8346 52.0685 48.0058 52.4995 48.0058C52.9305 48.0058 53.3438 47.8346 53.6486 47.5298C53.9533 47.2251 54.1245 46.8118 54.1245 46.3808V43.3781C59.0579 43.7702 63.69 45.9078 67.1894 49.4072C70.6888 52.9066 72.8264 57.5387 73.2185 62.4721H70.2158C69.79 62.4799 69.3843 62.6546 69.086 62.9585C68.7877 63.2624 68.6205 63.6713 68.6206 64.0971C68.6206 64.523 68.7877 64.9318 69.0861 65.2357C69.3844 65.5396 69.7901 65.7142 70.2159 65.7221H73.2185C72.8261 70.6552 70.6883 75.2869 67.1889 78.786C63.6896 82.2851 59.0576 84.4224 54.1245 84.8144ZM92.3247 37.4988C93.7529 44.7608 93.7529 52.2314 92.3247 59.4934C91.9104 61.7082 92.3516 63.9977 93.5593 65.8998C94.222 66.9974 94.6082 68.2395 94.6847 69.5194C94.7612 70.7992 94.5258 72.0785 93.9986 73.2472C93.4714 74.4159 92.6683 75.4392 91.6582 76.2289C90.6482 77.0186 89.4615 77.5512 88.2001 77.7809C87.1793 77.9548 86.1342 77.9244 85.1253 77.6915C84.1163 77.4586 83.1636 77.0279 82.3223 76.4242C81.0999 75.5524 79.6837 74.9912 78.1959 74.7889C76.7081 74.5866 75.1934 74.7493 73.7826 75.263C82.3225 59.8015 70.2497 39.7158 52.4991 40.046C34.7532 39.7125 22.6728 59.8076 31.2166 75.2625C29.8041 74.75 28.2883 74.5884 26.7995 74.7916C25.3108 74.9948 23.8937 75.5568 22.6702 76.429C21.8289 77.0308 20.8768 77.4601 19.8688 77.6921C18.8608 77.9241 17.8168 77.9544 16.7971 77.781C15.1613 77.4879 13.6582 76.6905 12.4983 75.5004C11.3384 74.3104 10.5798 72.7873 10.3288 71.1445C10.0603 69.3255 10.4509 67.4704 11.4301 65.9141C12.6531 64.0127 13.0986 61.714 12.6743 59.4934C11.246 52.2314 11.246 44.7608 12.6743 37.4988C13.0985 35.284 12.6565 32.9909 11.4397 31.0924C10.4545 29.5331 10.0604 27.6725 10.3288 25.8477C10.5799 24.2047 11.3387 22.6815 12.4989 21.4914C13.6591 20.3013 15.1626 19.504 16.7987 19.2112C17.8195 19.0383 18.8644 19.0692 19.8732 19.3021C20.8821 19.535 21.8348 19.9652 22.6766 20.568C23.7185 21.3345 24.9162 21.8623 26.1849 22.114C27.4536 22.3658 28.7621 22.3353 30.0177 22.0248C44.758 18.1676 60.2428 18.1681 74.9829 22.0265C76.2398 22.3352 77.5491 22.3641 78.8184 22.1113C80.0877 21.8585 81.286 21.3301 82.3287 20.5633C83.1702 19.962 84.1224 19.5329 85.1303 19.3009C86.1382 19.0689 87.1821 19.0384 88.2019 19.2113C89.8376 19.5044 91.3407 20.3019 92.5006 21.4919C93.6605 22.682 94.4191 24.2051 94.6701 25.8478C94.9387 27.6714 94.5451 29.5309 93.5609 31.0894C92.3523 32.9923 91.9105 35.2829 92.3247 37.4988Z">
+                            </path>
+                            <path
+                              d="M52.4992 51.6033C52.2858 51.6031 52.0744 51.6451 51.8772 51.7267C51.68 51.8083 51.5008 51.928 51.3499 52.0789C51.199 52.2299 51.0793 52.4091 50.9976 52.6063C50.916 52.8035 50.8741 53.0148 50.8742 53.2283V62.115L42.9761 58.0382C42.5942 57.8503 42.1538 57.8197 41.7495 57.9529C41.3453 58.0862 41.0094 58.3727 40.8141 58.7509C40.6187 59.1291 40.5796 59.5688 40.7049 59.9756C40.8303 60.3824 41.1102 60.7238 41.4845 60.9264L50.1871 65.4174C50.5987 65.6255 51.0566 65.7252 51.5175 65.7071C51.9784 65.6891 52.427 65.5538 52.8211 65.3141C53.2152 65.0744 53.5416 64.7382 53.7697 64.3373C53.9977 63.9363 54.1197 63.4839 54.1242 63.0226V53.2283C54.1243 53.0148 54.0824 52.8035 54.0008 52.6063C53.9191 52.4091 53.7994 52.2299 53.6485 52.0789C53.4976 51.928 53.3184 51.8083 53.1212 51.7267C52.924 51.6451 52.7126 51.6031 52.4992 51.6033Z">
+                            </path>
+                      
+                            <path
+                              d="M95.5144 60.1187C97.0236 52.4438 97.0236 44.5485 95.5144 36.8736C95.2567 35.4724 95.5403 34.0256 96.3079 32.8254C97.7066 30.6181 98.2674 27.9825 97.8885 25.397C97.6205 23.5081 96.8704 21.72 95.7105 20.2052C94.5506 18.6905 93.02 17.5001 91.2663 16.7488C89.5126 15.9975 87.5949 15.7107 85.6982 15.9161C83.8014 16.1214 81.9895 16.8119 80.4372 17.9211C79.7844 18.4137 79.0305 18.7555 78.2298 18.9218C77.4291 19.088 76.6015 19.0747 75.8066 18.8827C60.5267 14.8816 44.4742 14.881 29.1941 18.8811C28.4006 19.0763 27.5735 19.0918 26.7732 18.9266C25.9729 18.7613 25.2196 18.4194 24.5683 17.9258C22.4784 16.4295 19.9341 15.705 17.3695 15.8759C14.8049 16.0468 12.3792 17.1025 10.5064 18.8628C8.63352 20.6231 7.42972 22.9789 7.10044 25.5279C6.77117 28.077 7.33684 30.6613 8.70089 32.8398C9.46963 34.0342 9.75018 35.4782 9.48458 36.8736C7.97543 44.5485 7.97543 52.4438 9.48458 60.1187C9.75028 61.5199 9.46614 62.9696 8.69114 64.1669C7.29243 66.3741 6.73163 69.0098 7.11057 71.5952C8.01903 79.647 18.1682 83.9587 24.562 79.0709C25.2142 78.5779 25.9678 78.2359 26.7683 78.0696C27.5688 77.9034 28.3963 77.917 29.1909 78.1095C30.7197 78.5128 32.2625 78.8654 33.7906 79.1764C36.0391 81.9763 38.8873 84.2357 42.1253 85.7883C45.3633 87.3408 48.9085 88.1468 52.4994 88.1468C56.0904 88.1468 59.6355 87.3408 62.8735 85.7883C66.1115 84.2358 68.9598 81.9763 71.2083 79.1765C72.7364 78.8656 74.2789 78.513 75.8049 78.1111C76.5984 77.9154 77.4256 77.8996 78.226 78.0649C79.0264 78.2301 79.7797 78.5724 80.4308 79.0664C82.3084 80.4183 84.5647 81.1436 86.8784 81.1389C89.5534 81.134 92.1374 80.1673 94.1587 78.4151C96.18 76.663 97.5038 74.2424 97.8884 71.5952C98.2672 69.0085 97.7059 66.3718 96.3063 64.1637C95.5396 62.9643 95.2566 61.5187 95.5144 60.1187ZM54.1245 84.8144V81.8134C54.1245 81.3824 53.9533 80.9691 53.6486 80.6643C53.3438 80.3596 52.9305 80.1884 52.4995 80.1884C52.0685 80.1884 51.6552 80.3596 51.3505 80.6643C51.0457 80.9691 50.8745 81.3824 50.8745 81.8134V84.8144C45.9414 84.4224 41.3095 82.2851 37.8101 78.786C34.3107 75.2869 32.173 70.6552 31.7806 65.7221H34.7832C35.2089 65.714 35.6143 65.5392 35.9125 65.2354C36.2106 64.9315 36.3776 64.5227 36.3776 64.097C36.3776 63.6713 36.2106 63.2626 35.9124 62.9587C35.6142 62.6549 35.2088 62.4801 34.7831 62.4721H31.7806C32.1727 57.5387 34.3102 52.9066 37.8097 49.4072C41.3091 45.9078 45.9412 43.7702 50.8745 43.3781V46.3808C50.8745 46.8118 51.0457 47.2251 51.3505 47.5298C51.6552 47.8346 52.0685 48.0058 52.4995 48.0058C52.9305 48.0058 53.3438 47.8346 53.6486 47.5298C53.9533 47.2251 54.1245 46.8118 54.1245 46.3808V43.3781C59.0579 43.7702 63.69 45.9078 67.1894 49.4072C70.6888 52.9066 72.8264 57.5387 73.2185 62.4721H70.2158C69.79 62.4799 69.3843 62.6546 69.086 62.9585C68.7877 63.2624 68.6205 63.6713 68.6206 64.0971C68.6206 64.523 68.7877 64.9318 69.0861 65.2357C69.3844 65.5396 69.7901 65.7142 70.2159 65.7221H73.2185C72.8261 70.6552 70.6883 75.2869 67.1889 78.786C63.6896 82.2851 59.0576 84.4224 54.1245 84.8144ZM92.3247 37.4988C93.7529 44.7608 93.7529 52.2314 92.3247 59.4934C91.9104 61.7082 92.3516 63.9977 93.5593 65.8998C94.222 66.9974 94.6082 68.2395 94.6847 69.5194C94.7612 70.7992 94.5258 72.0785 93.9986 73.2472C93.4714 74.4159 92.6683 75.4392 91.6582 76.2289C90.6482 77.0186 89.4615 77.5512 88.2001 77.7809C87.1793 77.9548 86.1342 77.9244 85.1253 77.6915C84.1163 77.4586 83.1636 77.0279 82.3223 76.4242C81.0999 75.5524 79.6837 74.9912 78.1959 74.7889C76.7081 74.5866 75.1934 74.7493 73.7826 75.263C82.3225 59.8015 70.2497 39.7158 52.4991 40.046C34.7532 39.7125 22.6728 59.8076 31.2166 75.2625C29.8041 74.75 28.2883 74.5884 26.7995 74.7916C25.3108 74.9948 23.8937 75.5568 22.6702 76.429C21.8289 77.0308 20.8768 77.4601 19.8688 77.6921C18.8608 77.9241 17.8168 77.9544 16.7971 77.781C15.1613 77.4879 13.6582 76.6905 12.4983 75.5004C11.3384 74.3104 10.5798 72.7873 10.3288 71.1445C10.0603 69.3255 10.4509 67.4704 11.4301 65.9141C12.6531 64.0127 13.0986 61.714 12.6743 59.4934C11.246 52.2314 11.246 44.7608 12.6743 37.4988C13.0985 35.284 12.6565 32.9909 11.4397 31.0924C10.4545 29.5331 10.0604 27.6725 10.3288 25.8477C10.5799 24.2047 11.3387 22.6815 12.4989 21.4914C13.6591 20.3013 15.1626 19.504 16.7987 19.2112C17.8195 19.0383 18.8644 19.0692 19.8732 19.3021C20.8821 19.535 21.8348 19.9652 22.6766 20.568C23.7185 21.3345 24.9162 21.8623 26.1849 22.114C27.4536 22.3658 28.7621 22.3353 30.0177 22.0248C44.758 18.1676 60.2428 18.1681 74.9829 22.0265C76.2398 22.3352 77.5491 22.3641 78.8184 22.1113C80.0877 21.8585 81.286 21.3301 82.3287 20.5633C83.1702 19.962 84.1224 19.5329 85.1303 19.3009C86.1382 19.0689 87.1821 19.0384 88.2019 19.2113C89.8376 19.5044 91.3407 20.3019 92.5006 21.4919C93.6605 22.682 94.4191 24.2051 94.6701 25.8478C94.9387 27.6714 94.5451 29.5309 93.5609 31.0894C92.3523 32.9923 91.9105 35.2829 92.3247 37.4988Z">
+                            </path>
+                            <path
+                              d="M52.4992 51.6033C52.2858 51.6031 52.0744 51.6451 51.8772 51.7267C51.68 51.8083 51.5008 51.928 51.3499 52.0789C51.199 52.2299 51.0793 52.4091 50.9976 52.6063C50.916 52.8035 50.8741 53.0148 50.8742 53.2283V62.115L42.9761 58.0382C42.5942 57.8503 42.1538 57.8197 41.7495 57.9529C41.3453 58.0862 41.0094 58.3727 40.8141 58.7509C40.6187 59.1291 40.5796 59.5688 40.7049 59.9756C40.8303 60.3824 41.1102 60.7238 41.4845 60.9264L50.1871 65.4174C50.5987 65.6255 51.0566 65.7252 51.5175 65.7071C51.9784 65.6891 52.427 65.5538 52.8211 65.3141C53.2152 65.0744 53.5416 64.7382 53.7697 64.3373C53.9977 63.9363 54.1197 63.4839 54.1242 63.0226V53.2283C54.1243 53.0148 54.0824 52.8035 54.0008 52.6063C53.9191 52.4091 53.7994 52.2299 53.6485 52.0789C53.4976 51.928 53.3184 51.8083 53.1212 51.7267C52.924 51.6451 52.7126 51.6031 52.4992 51.6033Z">
+                            </path>
+                          </svg>
+                        </div>
+                        <div class="finished"><span>Los OG-MST2 de Paris 2024 se han acabado</span><img
+                            src="https://media.api.idalgo.info/Sport/finished.svg" loading="lazy" width="305" height="204" aria-hidden="true">
+                        </div>
+                        <a class="button widget foot" href="/es/og-mst2/calendario">Calendario completo</a>
+                        <div class="idalgo scroll" data-scroll-orientation="landscape" data-scroll-status="1" data-loaded="true">
+                          <div class="nav"><button class="previous" type="button" data-scroll-previous="" aria-label=""><svg
+                                viewBox="0 0 30 30">
+                                <circle cx="15" cy="15" r="14"></circle>
+                                <polyline points="12,8 20,15 12,22" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                                  fill="none"></polyline>
+                              </svg></button><span class="counter"><span data-scroll-counter="">1</span><span>/</span><span
+                                data-scroll-total="">14</span></span><button class="next" type="button" data-scroll-next="" aria-label=""><svg
+                                viewBox="0 0 30 30">
+                                <circle cx="15" cy="15" r="14"></circle>
+                                <polyline points="12,8 20,15 12,22" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                                  fill="none"></polyline>
+                              </svg></button>
+                          </div>
+                        </div>
+                      </div>
+</body>
+</html>

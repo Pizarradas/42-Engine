@@ -1,0 +1,52 @@
+<!-- Markup canónico de los tags base · Setup / Reset.
+     CERO clases .ft-*: estos templates documentan los tags HTML desnudos. -->
+
+<template data-story="Titulares (h1..h6)">
+    <h1>Heading H1 · Apertura</h1>
+    <h2>Heading H2 · Subtítulo</h2>
+    <h3>Heading H3 · Apartado</h3>
+    <h4>Heading H4</h4>
+    <h5>Heading H5</h5>
+    <h6>Heading H6</h6>
+</template>
+
+<template data-story="Párrafo con énfasis">
+    <p>Párrafo con <strong>strong</strong>, <em>em</em>, <small>small</small>, una <abbr title="HyperText Markup Language">abbr</abbr>, una <mark>mark</mark> y <code>código</code>.</p>
+</template>
+
+<template data-story="Listas">
+    <ul>
+        <li>UL sin estilos del navegador</li>
+        <li>list-style: none aplicado por reset</li>
+    </ul>
+    <ol>
+        <li>OL conserva numeración</li>
+        <li>Pero sin padding-left por defecto</li>
+    </ol>
+</template>
+
+<template data-story="Form mínimo">
+    <form onsubmit="event.preventDefault()">
+        <label for="m-input">Email</label>
+        <input id="m-input" type="email" placeholder="tu@email.com">
+        <button type="submit">Suscribirme</button>
+    </form>
+</template>
+
+<template data-story="Tabla">
+    <table>
+        <thead>
+            <tr><th>Columna A</th><th>Columna B</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Dato 1</td><td>Dato 2</td></tr>
+            <tr><td>Dato 3</td><td>Dato 4</td></tr>
+        </tbody>
+    </table>
+</template>
+
+<template data-story="HR">
+    <p>Antes</p>
+    <hr>
+    <p>Después</p>
+</template>
