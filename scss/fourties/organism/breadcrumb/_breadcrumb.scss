@@ -1,0 +1,438 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// ft-org-breadcrumb
+// ===============================================
+.ft-org-breadcrumb {
+  $self: &;
+  @include margin(null 0 1.5rem 0);
+  background-color: var(--color-white);
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  // @if $brand: sport
+  @if $brand ==sport {
+    box-shadow: 1px 9px 10px -8px rgba(0, 0, 0, 0.16);
+
+    // behavior in ancestor: .sport.aniversario'
+    @include behavior-in-ancestors(".sport[class*='aniversario']") {
+      @include border-width(0);
+      background-color: var(--color-black);
+    }
+  }
+
+  // .ft
+  .ft {
+    // &-list
+    &-list-block {
+      @include margin(0 null null 0);
+      width: auto;
+
+      // &__txt
+      &__txt {
+        @include font--body-M;
+      }
+
+      // &__item
+      &__item {
+        @include margin(0 2rem 0 null);
+        width: auto;
+      }
+    }
+
+    // &-mol
+    &-mol {
+      // &-breadcrumb
+      &-breadcrumb {
+        @include margin(null auto null auto);
+        @include padding(null 1.1rem);
+        max-width: 1280px;
+
+        @include min-screen(1280px) {
+          @include padding(null 0);
+        }
+
+        // &-is
+        &-is {
+          // &--sectioned
+          &--sectioned {
+            // .ft-mol-breadcrumb__mask
+            .ft-mol-breadcrumb__mask {
+              @include position(relative, null -1.1rem null null);
+
+              @include min-screen(1280px) {
+                right: 0;
+              }
+            }
+          }
+        }
+
+        // &-has--lvl
+        &-has--lvl {
+          // .ft
+          .ft {
+            // &-mol-breadcrumb
+            &-mol-breadcrumb {
+              // &__item
+              &__item {
+                width: auto;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // &--is
+  &--is {
+    // &-bg
+    &-bg {
+      background-color: var(--color-tertiary);
+
+      // .ft
+      .ft {
+        // &-mol
+        &-mol {
+          // &-breadcrumb
+          &-breadcrumb {
+            // &-section
+            &-section {
+              // &__previous
+              &__previous {
+                color: var(--color-white);
+
+                // behavior: brand(ux)
+                @if $brand ==ux {
+                  color: var(--color-black);
+                }
+              }
+
+              // &__title
+              &__title {
+                color: var(--color-white);
+
+                // behavior: brand(ux)
+                @if $brand ==ux {
+                  color: var(--color-black);
+                }
+              }
+            }
+
+            // &-link-support
+            &-links-support {
+              // &__link
+              &__link {
+                color: var(--color-white);
+
+                // behavior: brand(ux)
+                @if $brand ==ux {
+                  color: var(--color-black);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Special behavior: brand-sport / elcornerdepronosticos
+// ===============================================
+@if $brand ==sport {
+  // &.elcornerdepronosticos
+  .elcornerdepronosticos {
+    // .ft-org-breadcrumb
+    .ft-org-breadcrumb {
+      background-color: var(--color-black);
+    }
+  }
+}
+
+// Special behavior: brand-sport / eurocopa
+// ===============================================
+@if $brand ==sport {
+  // &.eurocopa
+  .eurocopa {
+    // .ft
+    .ft {
+      // &-mol-breadcrumb
+      &-mol-breadcrumb {
+        background-color: var(--color-eurocopa2024-blue);
+
+        @include min-screen(768px) {
+          @include padding(null 0 null null);
+          background-color: transparent;
+        }
+
+        @include min-screen(1280px) {
+          @include padding(null 1.1rem null null);
+        }
+
+        // &-has
+        &-has {
+          // &--lvl
+          &--lvl {
+            // &:before
+            &:before {
+              background-color: transparent;
+            }
+
+            // [class*="__link"]
+            [class*="__link"],
+            [class*="__lvl"] {
+              color: var(--color-white);
+            }
+
+            // [class*="__link"]
+            [class*="__link"] {
+              // &:after
+              &:after {
+                filter: map-filters(whites, brand--all);
+              }
+            }
+
+            // [class*="-links-support"]
+            [class*="-links-support"] {
+              background-color: var(--color-eurocopa2024-blue);
+
+              @include min-screen(1280px) {
+                background-color: transparent;
+              }
+            }
+          }
+        }
+      }
+
+      // &-org-breadcrumb
+      &-org-breadcrumb {
+        @include min-screen(768px) {
+          background: var(--color-eurocopa2024-blue)
+            url("#{$images-path}/bgs/ft-mol-breadcrumb-euro2024.png") no-repeat
+            right -20rem top -8.7rem;
+        }
+      }
+    }
+  }
+  // &.mundialfutbol
+  .mundialfutbol, .seleccion {
+    // .ft
+    .ft {
+      // &-mol-breadcrumb
+      &-mol-breadcrumb {
+        background-color: transparent;
+
+        @include min-screen(768px) {
+          @include padding(null 0 null null);
+        }
+
+        @include min-screen(1280px) {
+          @include padding(null 1.1rem null null);
+        }
+
+        //  &-has
+        &-has {
+          // &--lvl
+          &--lvl {
+            // &:before
+            &:before {
+              background-color: transparent;
+            }
+          }
+        }
+      }
+
+      // &-org-breadcrumb
+      &-org-breadcrumb {
+         background-color: var(--color-lightGrey);
+          background-image: 
+            url("#{$images-path}/bgs/bg_breadcrumb_mundial.png");
+          background-repeat: no-repeat;
+          background-position: right 0rem top 0rem;
+          background-size: 130px auto;
+        @include min-screen(768px) {
+          background-size: 238px auto;
+        }
+        @include min-screen(1024px) {
+          background-size: auto 140px;
+        }
+      }
+    }
+  }
+
+}
+
+// Special behavior: brand-regionales / asturiasexterior
+// ===============================================
+@if $brand ==regionales {
+  // &.asturiasexterior
+  .asturiasexterior {
+    // .ft
+    .ft {
+      // &-org-breadcrumb
+      &-org-breadcrumb {
+        background-color: var(--color-asturiasexterior-grey);
+        @include border-style(solid null solid null);
+        @include border_width(.1rem null .1rem null);
+        @include border-color(var(--color-white) null null null);
+      }
+    }
+  }
+
+/*   // &.diario-de-mallorca
+  .diario-de-mallorca {
+    // &.ido
+    &.ido {
+      // .ft
+      .ft {
+        // &-org-breadcrumb
+        &-org-breadcrumb {
+          background-color: var(--color-diario-de-mallorca-ido);
+
+          // *
+          * {
+            color: var(--color-white);
+          }
+
+          // [class*="ft-mol-breadcrumb-has--lvl"]
+          [class*="ft-mol-breadcrumb-has--lvl"] {
+            // [class*="ft-mol-breadcrumb__link"]
+            [class*="ft-mol-breadcrumb__link"] {
+              // &:after
+              &:after {
+                filter: brightness(0) invert(1);
+              }
+            }
+          }
+        }
+      }
+    }
+  } */
+
+ /*  // &.gironadelicia
+  .gironadelicia {
+    // .ft
+    .ft {
+      // &-org-breadcrumb
+      &-org-breadcrumb {
+        background-color: var(--color-gironadelicia);
+
+        // .ft-mol-breadcrumb__item
+        .ft-mol-breadcrumb__item {
+          color: var(--color-gironadelicia-white);
+
+          .ft-link--secondary {
+            color: var(--color-gironadelicia-white);
+          }
+        }
+
+        // .ft-mol-breadcrumb-has--lvl
+        .ft-mol-breadcrumb-has--lvl {
+          border-bottom-color: transparent;
+
+          // .ft-mol-breadcrumb-links-support__link
+          .ft-mol-breadcrumb-links-support__link {
+            color: var(--color-gironadelicia-white);
+          }
+        }
+      }
+    }
+  } */
+
+/* // .diario-de-mallorca
+  .diario-de-mallorca.mallorcadelicia {
+    // .ft-org-breadcrumb
+    .ft-org-breadcrumb {
+      // .ft-mol-breadcrumb-has--lvl
+      .ft-mol-breadcrumb {
+        // &-has--lvl
+        &-has--lvl {
+          @include padding(0.8rem null null null);
+          border-bottom-width: 0;
+
+          @include min-screen(1024px) {
+            @include padding(2.5rem null null null);
+          }
+
+          // [class*="__itemIs-not-link"]
+          [class*="__itemIs-not-link"] {
+            text-indent: -999px;
+          }
+
+          // [class*="__list"]
+          [class*="__list"] {
+            @include position(relative, null null null null);
+            flex-basis: 100%;
+
+            // &::before
+            &:before {
+              content: "";
+              @include position(absolute, 0 0 0 0);
+              @include margin(auto);
+              @include size(20.5rem, 2.5rem);
+              background: url("#{$images-path}/logos/logo-multibrand-mallorca-delicia.svg")
+                no-repeat
+                center /
+                contain;
+
+              @include min-screen(1024px) {
+                @include size(40rem, 4rem);
+              }
+            }
+
+            // [class*="__link"]
+            [class*="__link"]:first-of-type {
+              @include hide-visually;
+            }
+          }
+
+          // [class*="-links-support"]
+          [class*="-links-support"] {
+            justify-content: center;
+            @include min-screen(1024px) {
+              @include position(relative, null null null null);
+            }
+
+            @include min-screen(1024px) {
+              @include margin(1rem null null null);
+            }
+          }
+
+          // .ft-mol-breadcrumb-links-support
+          .ft-mol-breadcrumb-links-support {
+            // &::before
+            &::before {
+              @include min-screen(1024px) {
+                content: "";
+                @include position(absolute, 0.5rem 0 null 0);
+                @include margin(null auto null auto);
+                @include size(100%, 0.1rem);
+                pointer-events: none;
+                background-color: var(--color-mediumGrey);
+              }
+            }
+          }
+
+          // [class*="__mask-link"]
+          [class*="__mask-link"] {
+            @include hide-visually("unhide");
+            @include position(absolute, -2.5rem 0 0 0);
+            @include margin(auto);
+            @include size(10.5rem, 3.5rem);
+            text-indent: -9999px;
+            z-index: 2;
+
+            @include min-screen(1024px) {
+              width: 15.5rem;
+            }
+          }
+        }
+      }
+    }
+  } */
+}

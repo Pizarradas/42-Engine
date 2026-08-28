@@ -1,0 +1,99 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+
+// .ft-org-authors
+// ===============================================
+.ft-org-accordion {
+  $self: &;
+
+  .ft-mol-accordion__summary {
+    @include padding(0 null 0 null);
+
+    &:after{
+      top: 2.2rem;
+
+       // min-screen(768px)
+        @include min-screen(768px) {
+          top: 0
+        }
+    }
+  }
+
+  .ft-mol-sorting {
+    &__status {
+      flex-direction: row-reverse;
+
+      &Points {
+        @include margin(null null null 3.6rem);
+
+        // min-screen(768px)
+        @include min-screen(768px) {
+          @include margin(null null null 0);
+        }
+      }
+    }
+
+    &__infoNumber {
+      @include padding(1rem);
+      @include font--body-M--small;
+      @include fontBold;
+      background-color: var(--color-lightGrey);
+      color: var(--color-black);
+      border: 1px solid var(--color-mediumGrey);
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+    }
+
+    &__infoName {
+      @include fontBold;
+    }
+
+    &__list {
+      flex-direction: column;
+      gap: 0;
+      align-items: flex-start;
+      @include padding(1rem null);
+
+      // min-screen(768px)
+      @include min-screen(768px) {
+        flex-direction: row;
+        gap: 1rem;
+        align-items: center;
+        @include padding(0 null);
+      }
+    }
+  }
+
+  .ft-mol-lnkbox {
+    background-color: var(--color-lightGrey);
+    @include padding(0 1rem 1rem 1rem);
+
+    &__data {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__data-title,
+    &__data-subtitle {
+      @include margin(.5rem 0);
+      align-items: center;
+    }
+
+    &__data-title {
+      .ft-helper-img-rd {
+        width: 10px;
+        height: 10px;
+        @include margin(null .5rem null null)
+      }
+    }
+  }
+}

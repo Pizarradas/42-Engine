@@ -1,0 +1,308 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// .ft-org
+// ===============================================
+.ft-org {
+
+  // &-container — Contenedor genérico de sección a ancho completo del
+  // viewport. Sirve de "scaffold" reutilizable para bloques que necesitan
+  // un fondo edge-to-edge, un contenido centrado y/o transiciones
+  // onduladas entre secciones. Es agnóstico de su contenido: cualquier
+  // organismo o conjunto de moléculas puede vivir dentro.
+  //
+  // Modificadores disponibles:
+  //   &--welcome      → contenedor del hero CERCA, fija min-height
+  //   &--chips        → fondo gris claro + layout flex centrado
+  //   &--curved       → transición ondulada (combinar con --curved-bottom
+  //                     o --curved-top según donde quede la curva)
+  //   &--seeker       → buscador con panel predictivo
+  //                     (host de .ft-mol-form--has-predictive)
+  //   &--communities  → listado por comunidad/categoría + modal de selección
+  // ===============================================
+  &-container {
+    width: 100%;
+
+    // &__content — wrapper interno centrado. Cualquier hijo del bloque
+    // que necesite alinearse a una columna debe envolverse aquí.
+    &__content {
+      @include margin(null auto null auto);
+      width: 100%;
+    }
+
+    // &--welcome — variante de hero CERCA: garantiza una altura mínima
+    // visible mientras carga contenido y crece en desktop para dar
+    // presencia al statement principal.
+    &--welcome {
+
+      // .ft-org-container__content
+      .ft-org-container__content {
+        min-height: 15rem;
+
+        @include min-screen(1024px) {
+          min-height: 20rem;
+        }
+      }
+    }
+
+    // &--chips — variante de listado horizontal de chips ("Las más
+    // buscadas"). Fondo gris claro edge-to-edge, contenido centrado
+    // tanto vertical como horizontalmente, y wrap a múltiples líneas
+    // cuando los chips no caben.
+    &--chips {
+      display: flex;
+      background-color: var(--color-lightGrey);
+
+      // .ft-org-container__content
+      .ft-org-container__content {
+        @include margin(null null 1rem null);
+        display: flex;
+        flex-wrap: wrap;
+        flex-basis: 100%;
+        align-content: center;
+        justify-content: center;
+        min-height: 10rem;
+      }
+
+      // h1-h6 — el titular ocupa toda la línea para que los chips
+      // bajen a la siguiente fila; sin esto, el flex acomodaría título
+      // y chips en la misma fila y el contenido se "colaría" al lado
+      // del titular.
+      h1, h2, h3, h4, h5, h6 {
+        flex-basis: 100%;
+      }
+
+      // ul — cualquier wrapper de chips anidado (típicamente un <ul>
+      // flex emitido por el consumidor o por una molécula chip-list)
+      // hereda el centrado horizontal. El --chips ya centra su __content,
+      // pero las listas anidadas mantienen su propio eje de alineación
+      // hasta que se le da un valor explícito.
+      ul {
+        justify-content: center;
+      }
+    }
+
+    // &--curved — transición ondulada entre secciones. Genera un pseudo
+    // ::after con un SVG en forma de curva que sangra a edge-to-edge
+    // (left/right calc() para escapar del max-width del padre). Se
+    // combina con --curved-bottom o --curved-top según dónde deba
+    // aparecer la curva respecto al bloque.
+    &--curved {
+      @include position(relative, null null null null);
+
+      // &::after — el SVG ondulado. Por defecto se posiciona en top:0.
+      &::after {
+        @include position(absolute, null null null null);
+        content: "";
+        pointer-events: none;
+        z-index: 1;
+        left: calc((100vw - 100%) / -2);
+        right: calc((100vw - 100%) / -2);
+        width: auto;
+        height: 13.6rem;
+        background: url('data:image/svg+xml;charset=utf-8,%3Csvg viewBox=%220 0 1440 160%22 xmlns=%22http://www.w3.org/2000/svg%22 preserveAspectRatio=%22none%22%3E%3Cpath d=%22M0,160 C480,0 960,0 1440,160 L1440,0 L0,0 Z%22 fill=%22%23F2F2F2%22/%3E%3C/svg%3E') no-repeat left top;
+        background-size: 100% 5rem;
+
+        @include min-screen(1024px) {
+          background-size: 100% 12rem;
+        }
+      }
+    }
+
+    // &--curved-bottom — la curva queda en el borde inferior del bloque
+    // (rota el SVG y lo ancla al bottom). Se usa junto a --curved.
+    &--curved-bottom::after {
+      transform: rotate(180deg);
+      top: auto;
+      bottom: 0;
+    }
+
+    // &--curved-top — la curva sobresale por debajo del bloque, apuntando
+    // hacia abajo, para entrar en el siguiente bloque. Se usa junto a
+    // --curved.
+    &--curved-top::after {
+      transform: rotate(180deg) scaleY(-1);
+      top: 100%;
+      bottom: auto;
+    }
+
+    // &--seeker — Buscador con panel predictivo. Hosting genérico para la
+    // molécula .ft-mol-form--has-predictive (panel desplegable con
+    // secciones, headings y links de sugerencia). Aplica un layout
+    // centrado, ancho máximo controlado (65rem) y altura mínima reservada
+    // para que el campo no salte cuando el panel se despliega.
+    &--seeker {
+      @include position(relative, null null null null);
+      @include padding(null 1rem null 1rem);
+      @include margin(0 auto 1.5rem auto);
+      max-width: 65rem;
+      min-height: 13rem;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      color: color-mix(in srgb, var(--color-black) 86%, var(--color-primary));
+      line-height: 1.5;
+
+      @include min-screen(1024px) {
+        @include margin(null null 0 null);
+        @include padding(null null 0 null);
+        min-height: 20rem;
+        align-items: center;
+      }
+
+      // *, *::before, *::after — box-sizing recursivo: el modifier mezcla
+      // layouts flex con padding ancho fijo (65rem) y necesita que
+      // cualquier descendiente respete ese contrato.
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      // p — los párrafos descriptivos del CTA ("¿Todavía no las has
+      // encontrado?") quedan pegados al campo de búsqueda.
+      p {
+        @include margin(null null 0 null);
+        @include padding(null null 0 null);
+      }
+
+      // .ft-org-container__content — override del genérico: en --seeker
+      // el contenido lleva padding lateral en mobile y flex-basis 100%
+      // para ocupar todo el ancho disponible del flex.
+      .ft-org-container__content {
+        @include padding(null 0.6rem null 0.6rem);
+        flex-basis: 100%;
+
+        @include min-screen(1024px) {
+          @include padding(null 0 null 0);
+        }
+      }
+
+      // .ft-org-container__form — <form> que envuelve el campo. Sólo
+      // establece el contexto de positioning relativo; el dropdown del
+      // campo se ancla a la molécula ft-mol-form, no al form.
+      .ft-org-container__form {
+        @include position(relative, null null null null);
+      }
+
+      // .ft-org-container__field — host de la molécula
+      // .ft-mol-form--has-predictive. Ocupa el ancho completo, anulando
+      // el max-width nativo de la molécula para que el campo respete el
+      // contenedor del modifier.
+      .ft-org-container__field {
+        @include position(relative, null null null null);
+        width: 100%;
+        max-width: none;
+
+        // .ft-mol-form__input
+        .ft-mol-form__input {
+          width: 100%;
+          max-width: none;
+        }
+      }
+
+      // .ft-mol-form__label — el input de búsqueda usa label flotante en
+      // itálica como detalle visual ligado a este flujo predictivo.
+      .ft-mol-form__label {
+        font-style: italic;
+        font-size: 1.4rem;
+        line-height: 1.8;
+      }
+    }
+
+    // &--communities — Listado por comunidad/categoría como punto de
+    // entrada alternativo al buscador. Reúne cards (ft-mol-lnkbox--card)
+    // que abren un modal de selección. Hermano natural de --seeker
+    // (mismo flujo conceptual: elegir un destino dentro de una lista
+    // jerarquizada).
+    &--communities {
+      color: color-mix(in srgb, var(--color-black) 86%, var(--color-primary));
+      line-height: 1.5;
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      @include min-screen(768px) {
+        @include padding(4rem 2.4rem 5.6rem 2.4rem);
+      }
+
+      @include min-screen(1024px) {
+        @include padding(3.2rem null null null);
+        border-bottom: 0;
+      }
+
+      // .ft-mol-form__label — el buscador interno del modal (filtra
+      // dentro de la comunidad/categoría seleccionada) hereda el mismo
+      // detalle visual del label flotante en itálica.
+      .ft-mol-form__label {
+        font-style: italic;
+        font-size: 1.4rem;
+        line-height: 1.8;
+      }
+
+      // .ft-org-container__content — override del genérico: aplica
+      // padding lateral en mobile, se centra y crece hasta 128rem en
+      // desktop.
+      .ft-org-container__content {
+        @include margin(1.5rem auto 0 auto);
+        @include padding(null 0.8rem 4.8rem 0.8rem);
+        width: 100%;
+
+        @include min-screen(1024px) {
+          @include margin(0 null null null);
+          @include padding(null 3.2rem 7.2rem 3.2rem);
+          max-width: 128rem;
+        }
+      }
+
+      // .ft-org-container__title — único focal point textual del bloque.
+      // Escala 26→30→34 según breakpoint para reforzar la jerarquía
+      // visual.
+      .ft-org-container__title {
+        @include margin(0 null 1.5rem null);
+        font-size: 1.625rem;
+        font-weight: 700;
+        letter-spacing: -0.025em;
+        line-height: 1.2;
+        color: color-mix(in srgb, var(--color-black) 86%, var(--color-primary));
+        text-align: center;
+
+        @include min-screen(768px) {
+          @include margin(null null 2.8rem null);
+          font-size: 1.875rem;
+        }
+
+        @include min-screen(1024px) {
+          @include margin(null null 3.6rem null);
+          font-size: 2.125rem;
+          letter-spacing: -0.03em;
+          line-height: 2.4rem;
+        }
+      }
+
+      // .ft-layout-grid-flex__nested:has(.ft-mol-lnkbox--card)
+      // Cards de comunidad: usan la molécula canónica ft-mol-lnkbox--card.
+      // El modifier sólo aporta el gutter vertical del grid (la columna
+      // 42DS no aporta row-gap).
+      .ft-layout-grid-flex__nested:has(.ft-mol-lnkbox--card) {
+        row-gap: 1.6rem;
+
+        @include min-screen(768px) {
+          row-gap: 2.2rem;
+        }
+      }
+
+      // El layout del modal interno (header con back-button + form de
+      // búsqueda) vive en la propia molécula ft-mol-modal vía su
+      // modifier -has--back. El consumidor sólo necesita aplicar
+      // .ft-mol-modal-has--back al elemento .ft-mol-modal del overlay.
+    }
+
+  }
+}

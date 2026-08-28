@@ -1,0 +1,199 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+
+// .ft-org-author
+// ===============================================
+.ft-org-author
+{
+  $self: &;
+
+@include margin(null null 4rem null);
+
+  // .ft 
+  .ft
+  {
+
+    // &-layout
+    &-layout-grid-flex
+    {
+
+      // &__nested
+      &__nested
+      {
+        @include min-screen(1024px)
+        {
+          align-items: flex-start;
+        }
+      }
+    }
+
+    // &-mol
+    &-mol
+    {
+
+      // &-author
+      &-author
+      {
+
+        // &:not(.ft-mol-author--is-highlighted)
+        &:not(.ft-mol-author--is-highlighted)
+        {
+          @include margin(0 null null null);
+
+        }
+      }
+    }
+  }
+
+  // &--is
+  &--is
+  {
+
+    // &-scrollable
+    &-scrollable
+    {
+
+      // .ft
+      .ft
+      {
+
+        // &-layout
+        &-layout-grid-flex
+        {
+
+          // &__nested
+          &__nested
+          {
+            flex-wrap: nowrap;
+          }
+
+          // &__colXs
+          &__colXs
+          {
+
+            // &-12
+            &-12
+            {
+              flex-shrink: 0;
+              flex-basis: 30%;
+
+              @include min-screen(480px)
+              {
+                flex-basis: 20%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // &--has
+  &--has
+  {
+
+    // &-highlighted
+    &-highlighted
+    {
+      @include min-screen(1024px)
+      {
+        display: flex;
+      }
+
+      // .ft
+      .ft
+      {
+
+        // &-layout
+        &-layout-grid-flex
+        {
+
+          // &__colXs
+          &__colXs
+          {
+
+            // &-12 {
+            &-12
+            {
+
+              // &:first-child
+              &:first-child
+              {
+                @include min-screen(1024px)
+                {
+                  @include border-top-radius(0.5rem);
+                  @include border-bottom-radius(0.5rem);
+                  display: flex;
+                  height: 100%;
+                  background-color: var(--color-lightGrey);
+                }
+              }
+
+              // &:not(:first-child)
+              &:not(:first-child)
+              {
+                @include min-screen(1024px)
+                {
+                  @include margin(null null 3rem null);
+                }
+
+                // .ft
+                .ft
+                {
+
+                  // &-mol
+                  &-mol
+                  {
+
+                    // &-author
+                    &-author
+                    {
+                      @include min-screen(1024px)
+                      {
+                        @include margin(3rem null null null);
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        // &-mol
+        &-mol
+        {
+
+          // &-author
+          &-author
+          {
+
+            // &--is
+            &--is
+            {
+
+              // &-highlighted
+              &-highlighted
+              {
+                @include min-screen(1024px)
+                {
+                  @include margin(auto null auto null);
+                }
+
+                // &:after
+                &:after
+                {
+                  bottom: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

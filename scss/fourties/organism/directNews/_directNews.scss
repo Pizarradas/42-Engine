@@ -1,0 +1,289 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// FT-ORG-DIRECTNEWS
+// ===============================================
+.ft-org-directNews
+{
+  $self: &;
+  @include margin(2.5rem null 2.5rem null);
+  @include padding(1.3rem);
+  @include border-color(var(--color-lightGrey));
+  @include border-style(solid);
+  @include border-width(0.1rem);
+  @include border-top-radius(0.5rem);
+  @include border-bottom-radius(0.5rem);
+  box-shadow: 2px 2px 15px -6px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+
+  @include min-screen(768px)
+  {
+    @include margin(2.5rem 2rem 2.5rem null);
+    @include padding(2rem);
+  }
+
+  // .ft
+  // ---------------------------------------------
+  .ft
+  {
+
+    // &-helper
+    &-helper
+    {
+
+      // &-divider
+      &-divider
+      {
+
+        // &-spacer-xxs
+        &-spacer-xxs
+        {
+          @include padding(1.5rem 0 0 0);
+        }
+      }
+    }
+
+    // &-mol
+    &-mol
+    {
+
+      // &-writer
+      &-writer
+      {
+        @include margin(0);
+      }
+    }
+
+    // &-date
+    &-date
+    {
+    align-items: flex-start;
+    }
+
+  }
+
+  // &__header
+  // ---------------------------------------------
+  &__header
+  {
+    @include padding(0 0 2rem 0);
+
+    // &Title
+    &Title
+    {
+
+      @include font--body-XXL;
+      @include fontBold;
+      @include margin(.5rem null null null);
+      color: var(--color-primary);
+    }
+  }
+
+  // &__opening
+  // ---------------------------------------------
+  &__opening
+  {
+    @include padding(0);
+
+    // .ft
+    .ft
+    {
+      &-img
+      {
+        @include padding(0 0 2rem 0);
+      }
+    }
+
+    // figcaption
+    figcaption
+    {
+      @include padding(0);
+    }
+  }
+
+  // &__main
+  // ---------------------------------------------
+  &__main
+  {
+    @include padding(0);
+
+    // .ft
+    .ft
+    {
+
+      // &-text
+      &-text
+      {
+        @include margin(0 null null null);
+      }
+
+      // &-mol
+      &-mol
+      {
+
+        // &-related
+        &-related
+        {
+          @include margin(0 null 4rem null);
+
+          // &__title
+          &__title
+          {
+            @include margin(0 null 1rem null);
+            @include font--body-XL;
+            @include fontBold;
+          }
+        }
+      }
+      // &-img
+      &-img{
+        // figcaption
+        figcaption {
+          @include margin(null null 2rem null); 
+        }
+      }
+    }
+  } 
+
+  // &__footer
+  // ---------------------------------------------
+  &__footer
+  {
+    display: flex;
+    flex-direction: row;
+    @include padding(0);
+
+    // .ft
+    .ft
+    {
+
+      // &-mol
+      &-mol
+      {
+
+        // &-rrss
+        &-rrss
+        {
+          @include margin(null 1rem null null);
+        }
+      }
+    }
+  }
+
+  // &--important
+  // ---------------------------------------------
+  &--important
+  {
+    @include border-color(var(--color-primary));
+    @include border-width(0.2rem);
+  }
+
+  // &--updates
+  // ---------------------------------------------
+  &--updates
+  {
+    @include position(relative, null null null null);
+    @include margin(null 0 null 0);
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    // .ft
+    .ft
+    {
+
+      // &-date
+      &-date
+      {
+
+        // &__text
+        &__text
+        {
+          font-size: 2rem;
+          line-height: 2.2rem;
+          font-weight: 700;
+          color: var(--color-primary);
+        }
+      }
+    }
+
+    // #{ $self }
+    #{ $self }
+    {
+
+      // &__header
+      &__header
+      {
+        flex-basis: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: flex-start;
+
+        @include min-screen(1024px)
+        {
+          @include padding(null 5rem null null);
+          flex: 1;
+        }
+
+        // img
+        img
+        {
+          align-self: flex-start;
+        }
+      }
+
+      // &__main
+      &__main
+      {
+        flex-basis: 100%;
+
+        @include min-screen(1024px)
+        {
+          flex-basis: calc(100% - 15rem);
+        }
+      }
+
+      // &__footer
+      &__footer
+      {
+        flex-basis: 100%;
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  // &--is
+  // ---------------------------------------------
+  &--is
+  {
+
+    // &-highlighted
+    &-highlighted
+    {
+      @include margin(null null null 1.2rem);
+      @include border-style(solid);
+      @include border-width(0.1rem);
+      @include border-color(var(--color-primary));
+      @include border-left-radius(0);
+
+      @include min-screen(1024px)
+      {
+        @include margin(null null null 0);
+      }
+
+      // &:after
+      &:after
+      {
+        content: "";
+        @include position(absolute, -0.1rem null null -1.4rem);
+        @include size(1.4rem, 5rem);
+        @include border-left-radius(0.5rem);
+        background-color: var(--color-primary);
+      }
+    }
+  }
+}

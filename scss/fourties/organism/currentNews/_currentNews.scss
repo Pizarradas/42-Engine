@@ -1,0 +1,64 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// .ft-org-currentNews
+// ===============================================
+.ft-org-currentNews
+{
+  $self: &;
+@include border-style(solid null);
+@include border-width(.2rem null);
+@include border-color(var(--color-primary) null);
+background: rgb(17, 17, 17);
+    background: linear-gradient(180deg, rgba(17, 17, 17, 1) 0%, rgba(17, 17, 17, 1) 64%, rgba(242, 242, 242, 1) 72%);
+@include position(relative, null);
+@include padding(null null 2.5rem null);
+@include margin(2rem null 2.5rem null);
+
+
+
+ 
+// &:after
+    &:after
+    {
+        content: "";
+        @include position(absolute,null 1rem 1rem null);
+        background-image: url("#{$images-path}/icons/icon-scroll.svg");
+        width: 14px;
+        height: 28px;
+        z-index: 2000;
+    }
+// &__image
+    &__image
+    {
+        @include margin (-4rem null 0 null);
+        @include padding(null null null 2rem);
+    }
+    // &__title
+    &__title{ 
+
+        @include font--heading-XXS;
+        @include padding(1rem 1rem 1rem 2rem);
+    @include margin (-1rem null 0 null);
+    color:var(--color-white);
+    // .ft-link--primary
+    .ft-link--primary{
+        color:var(--color-white);
+        //  &:hover
+        &:hover{
+            color:var(--color-mediumGrey);
+        }
+    }
+    }
+    &__txt
+    {
+        @include font--body-S;
+        @include padding(1rem 1rem 1rem 2rem);
+        @include margin (-1rem null 0 null);
+        color: var(--color-white);
+    }
+ 
+} 

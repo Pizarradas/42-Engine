@@ -1,0 +1,111 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// .ft-org-boxfeatures
+// ===============================================
+.ft-org-boxfeatures {
+  // .ft
+  .ft {
+    // &-list 
+    &-list {
+      @include margin(1rem null null null);
+
+      // &-functions
+      &-functions { 
+        // a
+        a {
+          // &:hover
+          &:hover {
+            @include min-screen(1024px) {
+              text-decoration: underline; 
+            }
+          }
+        }
+
+        // &__item
+        &__item {
+          // &:first-child
+          &:first-child {
+            @include padding(null null 1.5rem null);
+            @include border-style(null null solid null);
+            @include border-width(0.1rem);
+
+            // .ft
+            .ft {
+              // &-mol
+              &-mol {
+                // &-dropdown
+                &-dropdown { 
+                  @include min-screen(1024px) {
+                    @include margin(null null null .5rem);
+                  }
+                }
+              }
+            }
+
+            // [class*="__txt"] 
+            [class*="__txt"] {
+              @include font--body-L--small;
+              font-weight: bold;
+              color: var(--color-primary); 
+            }
+          }
+
+          // &:not(:first-child)
+          &:not(:first-child) {
+            @include margin(null null null 1rem); 
+          }
+        }
+      }
+    }
+  }
+
+  // &__item
+  &__item {
+    @include padding(null 0.8rem 1rem .8rem);
+    @include min-screen(1024px) {
+      @include padding(null 5rem null 5rem);
+      border-radius: .5rem; 
+    }
+
+    // &:nth-child(even)
+    &:nth-child(even) {
+      // [class*="__item"]
+      [class*="__item"] {
+        // &:first-child
+        &:first-child {
+          @include border-color(var(--color-mediumGrey));
+        }
+      }
+    }
+
+    // &:nth-child(odd)
+    &:nth-child(odd) {
+      background-color: var(--color-lightGrey);
+
+      // [class*="__item"]
+      [class*="__item"] {
+        // &:first-child
+        &:first-child {
+          @include border-color(var(--color-white));
+        }
+      }
+    }
+
+    // &:not(:nth-child(even))
+    &:not(:nth-child(even)) {
+      @include padding(1.8rem null null null);
+    }
+
+    // &:not(:nth-child(odd))
+    &:not(:nth-child(odd)) {
+      @include padding(1.2rem null null null);
+      @include min-screen(1024px) {
+        @include padding(1.25rem null 1.25rem null); 
+      }
+    }
+  }
+}

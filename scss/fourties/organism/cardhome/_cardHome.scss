@@ -1,0 +1,2523 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// FT-ORG-CARDHOME
+// ===============================================
+.ft-org-cardHome {
+  @include margin(1rem null 2rem null);
+  @include padding(null null 2rem null);
+  @include border-style(null null solid null);
+  @include border-width(null null 0.1rem null);
+  @include border-color(null null var(--color-mediumGrey) null);
+  @include position(relative, null null null null);
+  display: flex;
+  flex-direction: row;
+  flex-basis: 100%;
+
+  @if $brand ==revistas {
+    @include border-color(null null var(--color-lightGrey) null);
+  }
+
+  @include min-screen(768px) {
+    @include border-style(null null none null);
+    @include padding(null null 0 null);
+    @include margin(2rem null 3rem null);
+    min-height: fit-content;
+    flex-direction: column;
+
+    @if $brand ==revistas {
+      @include padding(null null 2rem null);
+      @include margin(null null 3rem null);
+    }
+  }
+
+  @include min-screen(950px) {
+    @if $brand ==revistas {
+      min-height: stretch;
+    }
+  }
+
+  // &:last-child
+  &:last-child {
+
+    // @include behavior-parent(ft-helper-bgColor-black)
+    @include behavior-parent(ft-helper-bgColor-black) {
+      @include margin(null null 0 null);
+    }
+
+    // @include behavior-parent(ft-helper-bgColor-background-lightGrey)
+    @include behavior-parent(ft-helper-bgColor-background-lightGrey) {
+      @include margin(null null 0 null);
+    }
+
+    // @include behavior-parent(ft-layout-grid-flex__rowMaxgrid)
+    @include behavior-parent(ft-layout-grid-flex__rowMaxgrid) {
+      @include margin(null null 2rem null);
+      @include border-style(null null none null);
+      @include border-width(null null 0 null);
+
+      // behavior: bg(Color-black)
+      @include behavior-parent-nested(ft-helper-bgColor-black) {
+        @include border-style(null null solid null);
+        @include border-width(null null 0.1rem null);
+        @include border-color(null null var(--color-darkGrey) null);
+
+        @include min-screen(768px) {
+          @include border-style(null null none null);
+          @include border-width(null null 0 null);
+        }
+      }
+    }
+  }
+
+  // &::after
+  &::after {
+
+    // @if $brand(revistas)
+    @if $brand ==revistas {
+      content: "";
+      background: linear-gradient(90deg, #000 25px, #d7d7d7 26px, #d7d7d7);
+      bottom: 0;
+      display: block;
+      height: 1px;
+      left: 0;
+      position: absolute;
+      width: 100%;
+    }
+
+    &:only-child {
+      content: none;
+    }
+  }
+
+  // .ft-mol-label
+  .ft-mol-label {
+    @include margin(0);
+  }
+
+  // .ft-embed
+  .ft-embed {
+      min-width: 38%;
+      margin: 0 1.5rem 1.5rem 0;
+      //para web
+      @include min-screen(768px) {
+        min-width: 50%;
+        @include margin(0 0 1rem 0);
+      }
+  }
+
+  // .ft-embed__item
+  .ft-embed__item {
+    @include position(relative, null);
+    border-width: 0;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+  }
+
+  // .ft-embed__item iframe
+  .ft-embed__item iframe {
+    @include position(absolute, 0 null null 0);
+    min-height: fit-content;
+    width: 100%;
+    height: 100%;
+  }
+
+  //.ft-mol-headband--branded
+  // ---------------------------------------------
+  .ft-mol-headband--branded {
+    @include padding(0 null 0.4rem null);
+    @include margin(0);
+    @include position(absolute, -2.7rem null null 0);
+    background-color: var(--color-white);
+    z-index: 20;
+    border: 0px none;
+//para web
+    @include min-screen(768px) {
+      font-family: var(--font-primary);
+      padding-bottom: 0.6rem;
+      top: -2.5rem;
+    }
+
+    :before {
+      content: "";
+      @include position(absolute, null 1rem -1rem null);
+      width: 0;
+      height: 0;
+      border-top: 10px solid white;
+      border-right: 25px solid transparent;
+
+      @include min-screen(768px) {
+        filter: drop-shadow(0px 2px 0px rgba(0, 0, 0, 0.05));
+      }
+    }
+
+    // .ft-mol-headband__img
+    .ft-mol-headband__img {
+      max-height: 20px;
+
+      @include min-screen(768px) {
+        max-height: 24px;
+      }
+    }
+  }
+
+  // &--premium
+  // ---------------------------------------------
+  &--premium {
+
+    // .ft-org-cardHome
+    &.ft-org-cardHome {
+
+      // &--xlg
+      &--xlg {
+
+        // .ft-org-cardHome__mainTitle
+        .ft-org-cardHome__mainTitle {
+
+          // &:before
+          &:before {
+            @include margin(null);
+            background-size: contain;
+            min-width: 4.5rem;
+            height: 3.5rem;
+            top: 4px;
+
+            @include min-screen(768px) {
+              top: 0px;
+            }
+
+            // @if $brand ==:revistas
+            @if $brand ==revistas {
+              display: none;
+            }
+          }
+        }
+      }
+
+      // &--lg
+      &--lg {
+
+        // .ft-org-cardHome__mainTitle
+        .ft-org-cardHome__mainTitle {
+
+          // &:before
+          &:before {
+            @include margin(null);
+            background-size: contain;
+            min-width: 3.5rem;
+            height: 2.5rem;
+            top: 0.2rem;
+
+            @include min-screen(768px) {
+              min-width: 4rem;
+              height: 3rem;
+            }
+
+            // @if $brand ==:revistas
+            @if $brand ==revistas {
+              display: none;
+            }
+          }
+        }
+      }
+
+      //  &--md, // &--sm
+      &--md {
+
+        // .ft-org-cardHome__mainTitle
+        .ft-org-cardHome__mainTitle {
+
+          // &:before
+          &:before {
+            @include margin(null);
+            background-size: contain;
+            min-width: 2.2rem;
+            height: 1.5rem;
+            top: 0.1rem;
+
+            @include min-screen(768px) {
+              min-width: 2.2rem;
+              height: 1.6rem;
+            }
+          }
+        }
+      }
+
+      //  &--md, // &--sm
+
+      &--sm {
+
+        // .ft-org-cardHome__mainTitle
+        .ft-org-cardHome__mainTitle {
+
+          // &:before
+          &:before {
+            @include margin(null);
+            background-size: contain;
+            min-width: 2.2rem;
+            height: 1.5rem;
+            top: 0.1rem;
+
+            @include min-screen(768px) {
+              min-width: 2rem;
+              height: 1.6rem;
+            }
+          }
+        }
+      }
+
+      // &--xs
+      &--xs {
+
+        // .ft-org-cardHome__mainTitle
+        .ft-org-cardHome__mainTitle {
+
+          // &:before
+          &:before {
+            background-size: contain;
+            min-width: 2rem;
+            height: 1.5rem;
+            top: 0;
+
+            @include min-screen(768px) {
+              top: 2px;
+            }
+          }
+        }
+      }
+
+      &--featured {
+
+        // &.ft-org-cardHome
+        &.ft-org-cardHome {
+
+          //  &--md
+          &--md,
+          &--sm {
+
+            // .ft-org-cardHome__mainTitle
+            .ft-org-cardHome__mainTitle {
+              @include font--weight-700;
+               // @if $brand ==:revistas
+                @if $brand ==revistas {
+                  @include font--weight-500;
+                }
+
+              // &:before
+              &:before {
+                @include margin(null);
+                background-size: contain;
+                min-width: 3rem;
+                height: 2.5rem;
+
+                @include min-screen(768px) {
+                  min-width: 2.2rem;
+                  height: 1.6rem;
+                }
+              }
+            }
+          }
+
+          // &--xs
+          &--xs {
+
+            // .ft-org-cardHome__mainTitle
+            .ft-org-cardHome__mainTitle {
+
+              // &:before
+              &:before {
+                background-size: contain;
+                min-width: 3.5rem;
+                height: 2.5rem;
+
+                @include min-screen(768px) {
+                  min-width: 2rem;
+                  height: 1.5rem;
+                  top: 2px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      // .ft-org-cardHome__mainTitle
+      .ft-org-cardHome__mainTitle {
+
+        // &:before
+        &:before {
+          @include position(relative, null null null 0);
+          content: "";
+          z-index: 10;
+          display: inline-block;
+
+          // @if $brand ==:revistas
+          @if $brand ==revistas {
+            display: none;
+          }
+
+          // @if $brand == ep
+          @if $brand ==ep {
+            background-image: url(#{$images-path}/logos/logoEPplus2.svg);
+            background-repeat: no-repeat;
+          }
+
+          // @if $brand ==epe
+          @if $brand ==epe {
+            background-image: url(#{$images-path}/logos/logoEPEplus2.svg);
+            background-repeat: no-repeat;
+          }
+
+          // @if $brand ==regionales
+          @if $brand ==regionales {
+            background-image: url(#{$images-path}/logos/logo-regionalesPlus2.svg);
+            background-repeat: no-repeat;
+          }
+
+          // @if $brand ==sport
+          @if $brand ==sport {
+            background-image: url(#{$images-path}/logos/logo-SportPlus2.svg);
+            background-repeat: no-repeat;
+          }
+
+          // @if $brand ==:ux
+          @if $brand ==ux {
+            background-image: url(#{$images-path}/logos/logoEPplus2.svg);
+            background-repeat: no-repeat;
+          }
+        }
+      }
+    }
+  }
+
+  // &--branded
+  // ---------------------------------------------
+  &--branded {
+    @include position(relative, null null null null);
+    @include font--body-S--small;
+    @include Branded;
+
+    @include min-screen(768px) {
+      background-color: var(--color-lightGrey);
+      @include padding(1.8rem 1.2rem 1.2rem 1.2rem);
+    }
+
+    // .ft-org-cardHome__mainTitle
+    .ft-org-cardHome__mainTitle {
+
+      // .ft-link
+      .ft-link {
+        @include Branded;
+        font-weight: 600;
+      }
+    }
+
+    // &__noMark
+    &__noMark {
+      @include fontStack;
+      font-weight: 600;
+
+      @include min-screen(768px) {
+        background-color: var(--color-white);
+        @include padding(0 0 0 0);
+      }
+
+      // .ft-org-cardHome__mainTitle
+      .ft-org-cardHome__mainTitle {
+
+        // .ft-link
+        .ft-link {
+          @include fontStack;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  &--full {
+    @include position(relative, null null null null);
+    @include padding(0 0 0 0);
+    @include margin(0 null 2rem null);
+    border: 0 none;
+    min-height: 85vh;
+    height: 85vh;
+    overflow: hidden;
+
+    &::after {
+      content: none;
+    }
+
+    @include min-screen(768px) {
+      @include margin(null null 0 null);
+      min-height: 75vh;
+      height: 75vh;
+    }
+
+    .ft-org-cardHome__main {
+      @include position(absolute, null null 20px null);
+      margin: 0 auto;
+      text-align: center;
+      place-self: center;
+      width: 100%;
+      background: linear-gradient(to top,
+          rgba(0, 0, 0, 1) 0%,
+          rgba(0, 0, 0, 0.6) 60%,
+          rgba(0, 0, 0, 0) 100%);
+      @include padding(30px null 30px 0);
+
+      .ft-mol-writer__titleOpinion {
+        .ft-link {
+          color: color-mix(in srgb, var(--color-white), black 5%);
+        }
+      }
+
+      @include min-screen(768px) {
+        @include position(absolute, null null 26px null);
+      }
+    }
+
+    .ft-org-cardHome__mainPretitle,
+    .ft-org-cardHome__mainTitle,
+    .ft-org-cardHome__mainText {
+      color: color-mix(in srgb, var(--color-white), black 5%);
+      @include padding(null 2rem null 2rem);
+    }
+
+    .ft-org-cardHome__mainText {
+      @include padding(0 2rem 0 2rem);
+
+      @include min-screen(768px) {
+        @include padding(0 10rem 0 10rem);
+      }
+    }
+
+    .ft-org-cardHome__mainTitle {
+      color: color-mix(in srgb, var(--color-white), black 1%);
+    }
+
+    .ft-org-cardHome__mainPretitle {
+      @include margin(null null 1rem null);
+
+      .ft-link--secondary {
+        color: color-mix(in srgb, var(--color-white), black 5%);
+      }
+    }
+
+    .ft-mol-writer--cardHome {
+      place-self: center;
+
+      .ft-mol-writer__item {
+        margin: 0 auto;
+      }
+    }
+
+    .ft-date {
+      color: color-mix(in srgb, var(--color-white), black 5%);
+
+      &__textPlace {
+        &::before {
+          left: -9px;
+          right: auto;
+          color: color-mix(in srgb, var(--color-white), black 5%);
+        }
+      }
+    }
+
+    .ft-org-cardHome__media {
+      height: 100vh;
+
+      .ft-img {
+        .ft-helper-img-rd {
+          height: 100vh;
+
+          // @include behavior-parent-nested
+          @include behavior-parent-nested(ft-org-cardHome--featured) {
+            height: 100vh;
+          }
+        }
+      }
+    }
+
+    .ft-mol-figcaption {
+      text-align: right;
+      @include position(absolute, null 0 -0.5rem null);
+      z-index: 99;
+      color: var(--color-mediumGrey);
+      background: var(--color-white);
+      @include padding(0.5rem 1rem 0.5rem 0.5rem);
+      width: 100%;
+    }
+  }
+
+  // &__media
+  // ---------------------------------------------
+  &__media {
+    flex-basis: 40%;
+
+    @include behavior-parent(fourty) {
+      @include margin(0 2rem 1rem null);
+
+      @include min-screen(768px) {
+        flex-basis: 90%;
+        @include margin(0 0 1rem null);
+      }
+    }
+
+    @include behavior-parent(ft-org-cardHome--Vfeatured) {
+      @include margin(0 0 1rem null);
+    }
+
+    @include behavior-parent(ft-org-cardHome--discover) {
+      @include margin(0);
+    }
+
+    // .ft-img
+    .ft-img {
+      @include position(relative, null null);
+      display: block;
+
+.ft-helper-img-rd {
+        aspect-ratio: 1/1;
+        width: 100%;
+        object-fit: cover;
+        min-height: 0px;
+
+        // behavior-parent ft-org-cardHome--featured
+        @include behavior-parent(ft-org-cardHome--featured) {
+          aspect-ratio: 16/9;
+          height: auto;
+
+          // @if $brand(revistas)
+          @if $brand ==revistas {
+            aspect-ratio: 1/1;
+            object-position: 50% 50%;
+          }
+
+          @include behavior-parent-nested(ft-org-cardHome--lg) {
+
+            // @if $brand(revistas)
+            @if $brand ==revistas {
+              aspect-ratio: 1/1;
+              object-position: 50% 50%;
+
+              // min-screen(768px)
+              @include min-screen(768px) {
+                aspect-ratio: 16/9;
+                object-position: 50% 50%;
+              }
+            }
+          }
+
+          @include behavior-parent-nested(ft-org-cardHome--xlg) {
+
+            // @if $brand(revistas)
+            @if $brand ==revistas {
+              aspect-ratio: 1/1;
+              object-position: 50% 50%;
+
+              // min-screen(768px)
+              @include min-screen(768px) {
+                aspect-ratio: 16/9;
+                object-position: 50% 50%;
+              }
+            }
+          }
+        }
+        // behavior-parent ft-org-multiBox__scroll--85
+        @include behavior-parent(ft-org-multiBox__scroll--85) {
+          aspect-ratio: 1/1;
+          // min-screen(768px)
+              @include min-screen(768px) {
+                aspect-ratio: 16/9;
+              }
+        }
+        // behavior-parent ft-mol-rankingNews--XL
+        @include behavior-parent(ft-mol-rankingNews--XL) {
+          aspect-ratio: 16/9;
+        }
+
+        // behavior-parent ft-mol-rankingNews--XL
+        @include behavior-parent(ft-org-cardHome--discover) {
+          @include border-top-radius(1rem);
+        }
+
+        // behavior-parent ft-org-cardHome--sm
+        @include behavior-parent(ft-org-cardHome--sm) {
+
+          // @if $brand(revistas)
+          @if $brand ==revistas {
+            @include behavior-parent(videos) {
+              aspect-ratio: 1/1;
+
+              @include min-screen(768px) {
+                aspect-ratio: 16/9;
+              }
+            }
+          }
+        }
+
+
+        // behavior-parent ft-org-cardHome--Vfeatured
+        @include behavior-parent(ft-org-cardHome--Vfeatured) {
+          aspect-ratio: inherit;
+          width: 230px;
+          height: auto;
+        }
+
+        // behavior-parent ft-org-cardHome--featuredRow
+        @include behavior-parent(ft-org-cardHome--featuredRow) {
+          aspect-ratio: 16/9;
+
+          // @if $brand(revistas)
+          @if $brand ==revistas {
+            aspect-ratio: 1/1;
+            object-position: 50% 50%;
+          }
+        }
+
+        // min-screen(768px)
+        @include min-screen(768px) {
+          aspect-ratio: 16/9;
+          min-height: 0;
+
+          // @if $brand(revistas)
+          @if $brand ==revistas {
+            aspect-ratio: 1/1;
+            object-position: 50% 50%;
+          }
+
+          // behavior-parent ft-org-cardHome--Vfeatured
+          @include behavior-parent(ft-org-cardHome--Vfeatured) {
+            aspect-ratio: inherit;
+            min-height: 0;
+            width: 230px;
+            height: 409px;
+          }
+        }
+      }
+    }
+
+    // .ft-mol-label
+    .ft-mol-label {
+      @include position(absolute, 0.5rem 0 null null);
+      @include margin(0);
+
+      @include min-screen(768px) {
+        @include position(absolute, 1rem 0 null null);
+      }
+
+      // &__content
+      &__content {
+        @include border-color(var(--color-white));
+        @include margin(null 0.5rem null null);
+        background-color: rgba(0, 0, 0, 0.5);
+
+        // min-screen(768px)
+        @include min-screen(768px) {
+          @include margin(null 1rem null null);
+        }
+      }
+
+      // &__title
+      &__title {
+        color: var(--color-white);
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        overflow: hidden;
+
+        // behavior-parent(ft-org-cardHome--featured)
+        @include behavior-parent(ft-org-cardHome--featured) {
+          @include font--body-L--small;
+          @include fontBold;
+          @include hide-visually("unhide");
+        }
+      }
+    }
+
+    // &Video
+    &Video {
+
+      // .ft-img
+      .ft-img {
+
+        // &:before
+        &:before {
+          content: "";
+          display: inline-flex;
+          width: 100%;
+          z-index: 1;
+
+          @include behavior-parent(ft-org-cardHome--xlg) {
+            @include position(absolute, 50% null null 50%);
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background-image: url(#{$images-path}/icons/icon-mediaVideo.svg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+              @if $brand ==revistas {
+                width: 50px;
+                height: 50px;
+               }
+
+            @include min-screen(768px) {
+              width: 60px;
+              height: 60px;
+               
+            }
+          }
+
+          @include behavior-parent(ft-org-cardHome--lg) {
+            @include position(absolute, 50% null null 50%);
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background-image: url(#{$images-path}/icons/icon-mediaVideo.svg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            @if $brand ==revistas {
+                width: 50px;
+                height: 50px;
+               }
+
+            @include min-screen(768px) {
+              width: 54px;
+              height: 54px;
+              @if $brand ==revistas {
+                  width: 60px;
+                  height: 60px;
+                }
+              }
+          }
+
+          @include behavior-parent(ft-org-cardHome--md) {
+            @include position(absolute, 50% null null 50%);
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background-image: url(#{$images-path}/icons/icon-mediaVideo.svg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+              //revistas
+               @if $brand ==revistas {
+                @include behavior-parent-nested(ft-org-cardHome--featured){
+                   width: 50px;
+                  height: 50px;
+                }
+               
+               }
+             // min-screen(768px)
+            @include min-screen(768px) {
+              @if $brand ==revistas {
+                width: 50px;
+                height: 50px;
+               }
+            }
+          }
+
+          @include behavior-parent(ft-org-cardHome--sm) {
+            @include position(absolute, 50% null null 50%);
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background-image: url(#{$images-path}/icons/icon-mediaVideo.svg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            //revistas
+                @if $brand ==revistas {
+                @include behavior-parent-nested(ft-org-cardHome--featured){
+                   width: 50px;
+                  height: 50px;
+                }
+              }
+
+            // min-screen(768px)
+            @include min-screen(768px) {
+              width: 35px;
+              height: 35px;
+              @if $brand ==revistas {
+                width: 50px;
+                height: 50px;
+               }
+            }
+          }
+
+          @include behavior-parent(ft-org-cardHome--xs) {
+            @include position(absolute, 50% null null 50%);
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background-image: url(#{$images-path}/icons/icon-mediaVideo.svg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+
+             //revistas
+                @if $brand ==revistas {
+                @include behavior-parent-nested(ft-org-cardHome--featured){
+                   width: 50px;
+                  height: 50px;
+                }
+              }
+
+            // min-screen(768px)
+            @include min-screen(768px) {
+              @include position(absolute, null 0 0 null);
+              transform: inherit;
+              left: initial;
+              top: initial;
+              width: 26px;
+              height: 26px;
+              background-image: url(#{$images-path}/icons/icon-mediaVideo-xs.svg);
+              background-size: cover;
+              background-repeat: no-repeat;
+              background-position: center;
+     
+              @if $brand ==revistas {
+                width: 35px;
+                height: 35px;
+                border-radius:60px;
+                @include position(absolute, auto .8rem .8rem auto);
+               }
+
+            }
+          }
+        }
+      }
+    }
+
+    // &Gallery
+    &Gallery {
+
+      // .ft-img
+      .ft-img {
+
+        // &:before
+        &:before {
+          content: "";
+          display: inline-flex;
+          z-index: 1;
+            @include position(absolute, 50% null null 50%);
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background-image: url(#{$images-path}/icons/icon-mediaGallery.svg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+
+             @if $brand ==revistas {
+              @include position(absolute, auto .8rem .8rem auto);
+               transform: translate(0, 0);
+              border-radius: 60px;
+              height: 50px;
+              width: 50px;
+              background-color: hsla(0,0%,100%,.8);
+              transition: background-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+              z-index: 1;
+               background-image: url(#{$images-path}/icons/icon-mediaGalleryRevistas.svg);
+               background-size: 3rem;
+               @include min-screen(768px) {
+                  @include position(absolute, auto 2rem 2rem auto);
+                }
+             }
+
+
+          @include behavior-parent(ft-org-cardHome--xlg) {
+
+            @include min-screen(768px) {
+              width: 60px;
+              height: 60px;
+              
+            }
+          }
+
+          @include behavior-parent(ft-org-cardHome--lg) {
+
+            @include min-screen(768px) {
+              width: 54px;
+              height: 54px;
+               @if $brand ==revistas {
+                width: 60px;
+                height: 60px;
+               }
+            }
+          }
+
+          @include behavior-parent(ft-org-cardHome--md) {
+             
+             @include min-screen(768px) {
+               @if $brand ==revistas {
+                            @include position(absolute, auto 1.5rem 1.5rem auto);
+                            height: 50px;
+                            width: 50px;
+                            background-size: 3rem;
+             }
+            }
+          }
+
+          @include behavior-parent(ft-org-cardHome--sm) {
+
+
+            // min-screen(768px)
+            @include min-screen(768px) {
+              width: 35px;
+              height: 35px;
+
+                @if $brand ==revistas {
+                            @include position(absolute, auto 1rem 1rem auto);
+                            height: 50px;
+                            width: 50px;
+                            background-size: 3rem;
+             }
+            }
+          }
+
+          @include behavior-parent(ft-org-cardHome--xs) {
+
+            // min-screen(768px)
+            @include min-screen(768px) {
+              @include position(absolute, null 0 0 null);
+              transform: inherit;
+              left: initial;
+              top: initial;
+              width: 26px;
+              height: 26px;
+              background-image: url(#{$images-path}/icons/icon-mediaGallery-xs.svg);
+              background-size: cover;
+              background-repeat: no-repeat;
+              background-position: center;
+
+             @if $brand ==revistas {
+              @include position(absolute, auto .8rem .8rem auto);
+               transform: translate(0, 0);
+              border-radius: 60px;
+              height: 35px;
+              width: 35px;
+              background-color: hsla(0,0%,100%,.8);
+              transition: background-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+              z-index: 1;
+               background-image: url(#{$images-path}/icons/icon-mediaGalleryRevistas.svg);
+               background-size: 2rem;
+             }
+            }
+          }
+        }
+ //&:hover &:before
+        &:hover{
+        &:before{
+          @if $brand ==revistas {
+          background-color: #fff;
+          }
+  }
+}
+      }
+    }
+
+    //  &Audio
+    &Audio {
+
+      // .ft-img
+      .ft-img {
+
+        // &:before
+        &:before {
+          content: "";
+          display: inline-flex;
+          width: 100%;
+
+          @include behavior-parent(ft-org-cardHome--xlg) {
+            @include position(absolute, 50% null null 50%);
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background-image: url(#{$images-path}/icons/icon-mediaAudio.svg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+
+            @include min-screen(768px) {
+              width: 60px;
+              height: 60px;
+            }
+          }
+
+          @include behavior-parent(ft-org-cardHome--lg) {
+            @include position(absolute, 50% null null 50%);
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background-image: url(#{$images-path}/icons/icon-mediaAudio.svg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+
+            @include min-screen(768px) {
+              width: 54px;
+              height: 54px;
+            }
+          }
+
+          @include behavior-parent(ft-org-cardHome--md) {
+            @include position(absolute, 50% null null 50%);
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background-image: url(#{$images-path}/icons/icon-mediaAudio.svg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+          }
+
+          @include behavior-parent(ft-org-cardHome--sm) {
+            @include position(absolute, 50% null null 50%);
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background-image: url(#{$images-path}/icons/icon-mediaAudio.svg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+
+            // min-screen(768px)
+            @include min-screen(768px) {
+              width: 35px;
+              height: 35px;
+            }
+          }
+
+          @include behavior-parent(ft-org-cardHome--xs) {
+            @include position(absolute, 50% null null 50%);
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background-image: url(#{$images-path}/icons/icon-mediaAudio.svg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+
+            // min-screen(768px)
+            @include min-screen(768px) {
+              @include position(absolute, null 0 0 null);
+              transform: initial;
+              left: initial;
+              top: initial;
+              width: 26px;
+              height: 26px;
+              background-image: url(#{$images-path}/icons/icon-mediaAudio-xs.svg);
+              background-size: cover;
+              background-repeat: no-repeat;
+              background-position: center;
+            }
+          }
+        }
+      }
+    }
+
+    //Button 
+    // ESTILOS PARA EL MUNDIAL
+    &Button
+    {
+      display:block;
+      @include margin(1rem null null null);
+      //.ft-btn
+      .ft-btn{
+        background-color: var(--color-lightGrey);
+        @include position(relative, null);
+        border-color: var(--color-mediumGrey);
+        border-width:.1rem;
+        //before con imagen
+        &:before{
+          content: "";
+            @include position(absolute, null null 0 0);
+            background-image: url(#{$images-path}/bgs/bg_breadcrumb_mundial.png);
+            background-repeat: no-repeat;
+            width: 45px;
+            height: 23px;
+            background-size: 45px 24px;
+            overflow: hidden;
+            border-radius: 50px 50px;
+            transform: scaleX(-1);
+            background-position: 14px;
+        }
+      }
+      //.ft-btn--xs
+      .ft-btn--xs{
+        @include padding (0.15rem 1rem .15rem 3.5rem);
+      }
+    } 
+  }
+    // FIN ESTILOS PARA EL MUNDIAL
+    // ESTILOS PARA EL MUNDIAL
+    &:has(.ft-org-cardHome__mediaButton) {
+      .ft-mol-score .ft-mol-score__name{
+        padding-bottom: 0;
+      }
+    }
+    &:has(.ft-org-cardHome__mediaButton) {
+      .ft-mol-score .ft-mol-score__condition{
+        margin-bottom: 0;
+      }
+    }
+//FIN ESTILOS PARA EL MUNDIAL
+
+
+  // &__main
+  // ---------------------------------------------
+  &__main {
+    flex-basis: 60%;
+    @include padding(0);
+    white-space: normal;
+
+    // @include behavior-parent(ft-org-cardHome--Vfeatured)
+    @include behavior-parent(ft-org-cardHome--Vfeatured, ft-org-cardHome--Hfeatured) {
+      @include margin(null 2rem null null);
+
+      // @if $brand(revistas)
+      @if $brand ==revistas {
+        @include padding(0 1.2rem);
+      }
+      @include min-screen(768px) {
+        @include margin(null 0 null null);
+      }
+    }
+
+    // @include behavior-parent(ft-layout-grid-flex__rowMaxgrid)
+    @include behavior-parent(ft-layout-grid-flex__rowMaxgrid) {
+      @include padding(0 0 1rem 0);
+    }
+
+    // @include behavior-parent(ft-org-cardHome--discover)
+    @include behavior-parent(ft-org-cardHome--discover) {
+      @include padding(1.5rem 1rem);
+    }
+
+    @include min-screen(768px) {
+      flex-basis: 100%;
+    }
+
+    // &--align
+    &--align {
+
+      // &Center
+      &Center {
+        text-align: center;
+      }
+    }
+
+    // &Pretitle
+    &Pretitle {
+      @include margin(0 null 0 null);
+      text-transform: uppercase;
+      color: var(--color-quaternary);
+      @include font--body-S--small;
+
+      @if $brand ==revistas {
+        @include margin(0 null 1.5rem null);
+        display: none;
+      }
+
+      // behavior: bg(Color-black)
+      @include behavior-ft-helper-bg(Color-black) {
+        color: var(--color-white);
+      }
+
+      // .ft-link--secondary
+      .ft-link--secondary {
+        color: var(--color-quaternary);
+
+        // @if $brand ==regionales
+        @if $brand ==regionales {
+
+          // behavior-parent(asturiasexterior)
+          @include behavior-parent(asturiasexterior) {
+            @include position(relative, null null null null);
+            @include padding(null null null 1rem);
+            font-weight: 400;
+            color: var(--color-black);
+          }
+        }
+
+        // &:before
+        &:before {
+          content: "";
+          display: none;
+
+          // @if $brand ==regionales
+          @if $brand ==regionales {
+
+            // behavior-parent(asturiasexterior)
+            @include behavior-parent(asturiasexterior) {
+              @include position(absolute, 0 null null 0);
+              @include size(0.3rem, 100%);
+              display: block;
+              background-color: var(--color-asturiasexterior-green);
+              border-radius: 2px;
+            }
+          }
+        }
+
+        // behavior: bg(Color-black)
+        @include behavior-ft-helper-bg(Color-black) {
+          color: var(--color-white);
+        }
+
+        // :hover
+        &:hover {
+          color: var(--color-primary);
+        }
+      }
+    }
+
+    // &Related
+    &Related {
+      @include padding(1rem null null null);
+      @include position(relative, null null null);
+      @include margin(null null 1rem null);
+      @include font--body-M--small;
+      font-weight: 400;
+
+      // @if $brand ==: revistas
+      @if $brand ==revistas {
+        @include padding(0.5rem null null null);
+      }
+
+      // behavior: bg(Color-black)
+      @include behavior-ft-helper-bg(Color-black) {
+        color: var(--color-white);
+      }
+
+      // &:first-of-type
+      &:first-of-type {
+        @include margin(2.5rem null null null);
+      }
+
+      // &::marker
+      &::marker {
+        color: var(--color-primary);
+      }
+
+      // &:before
+      &:before {
+        content: "";
+        @include position(absolute, 0 null null null);
+        @include border-color(var(--color-primary) null null null);
+        @include border-style(solid null null null);
+        @include border-width(0.2rem null null null);
+        width: 3rem;
+      }
+
+      // behavior-parent ft-org-cardHome--xs
+      @include behavior-parent(ft-org-cardHome--xs) {
+        @include font--body-S--small;
+        @include fontBold;
+
+        // &:before
+        &:before {
+          @include position(absolute, 0.5rem null null 0);
+        }
+      }
+
+      //&--premium
+      &--premium {
+
+        // &:before
+        &:after {
+          @include position(absolute, 1.2rem null null 0);
+          content: "";
+          z-index: 10;
+          display: inline-block;
+          background-size: contain;
+          min-width: 1.5rem;
+          height: 1.3rem;
+
+          // @if $brand ==: ep
+          @if $brand ==revistas {
+            display: none;
+          }
+
+          // @if $brand ==: ep
+          @if $brand ==ep {
+            background-image: url(#{$images-path}/logos/logoEPplus2.svg);
+            background-repeat: no-repeat;
+          }
+
+          // @if $brand ==:epe
+          @if $brand ==epe {
+            background-image: url(#{$images-path}/logos/logoEPEplus2.svg);
+            background-repeat: no-repeat;
+          }
+
+          // @if $brand ==:regionales
+          @if $brand ==regionales {
+            background-image: url(#{$images-path}/logos/logo-regionalesPlus2.svg);
+            background-repeat: no-repeat;
+          }
+
+          // @if $brand ==:sport
+          @if $brand ==sport {
+            background-image: url(#{$images-path}/logos/logo-SportPlus2.svg);
+            background-repeat: no-repeat;
+          }
+
+          // @if $brand ==:ux
+          @if $brand ==ux {
+            background-image: url(#{$images-path}/logos/logoEPplus2.svg);
+            background-repeat: no-repeat;
+          }
+        }
+
+        // ft-link--secondary
+        .ft-link--secondary {
+          @include padding(null null null 2rem);
+
+          // @if $brand ==: ep
+          @if $brand ==revistas {
+            @include padding(null null null 0);
+          }
+        }
+      }
+
+      // ft-helper-fontSize-body-S--small
+      .ft-helper-fontSize-body-S--small {
+        @include position(relative, null);
+        @include margin(0);
+        @include padding(0 0 0 1.5rem);
+
+        // &:before
+        &:before {
+          content: "|";
+          color: var(--color-darkGrey);
+          height: 1.4rem;
+          @include position(absolute, 0 null null 0.5rem);
+        }
+      }
+    }
+
+    // &Title
+    &Title {
+      @include margin(0.5rem null 0.5rem null);
+      @include fontPrimary;
+      @include font--weight-700;
+      
+
+      // behavior-parent ft-org-cardHome--xlg
+      @include behavior-parent(ft-org-cardHome--xlg) {
+        @include font--heading-XXL;
+
+        // @include behavior-parent-nested
+        @include behavior-parent-nested(ft-org-cardHome--featured) {
+          @include font--heading-XXL;
+           @if $brand ==revistas{
+            @include font--heading-XL;
+            @include font--weight-500;
+           }
+        }
+
+        @if $brand ==revistas {
+          text-align: center;
+          @include font--heading-XL;
+           @include font--weight-500;
+        }
+
+
+      }
+
+      // behavior-parent ft-org-cardHome--lg
+      @include behavior-parent(ft-org-cardHome--lg) {
+        // @include font--heading-L;
+        @include font--heading-XXS;
+
+        // @include min-screen(768px)
+        @include min-screen(768px) {
+          @include font--heading-M;
+
+          // @include behavior-parent-nested
+          @include behavior-parent-nested(ft-org-cardHome--featured) {
+            @include font--heading-M;
+             @if $brand ==revistas{
+              @include font--weight-500;
+           }
+          }
+
+          @if $brand ==revistas {
+            text-align: center;
+            @include font--weight-500;
+          }
+        }
+      }
+
+      // behavior-parent ft-org-cardHome--md
+      @include behavior-parent(ft-org-cardHome--md) {
+        @include font--heading-XXS;
+        @if $brand ==revistas {
+                @include font--weight-500;
+              }
+
+        // pagina de cerca --discover
+        @include behavior-parent-nested(ft-org-cardHome--discover) {
+          @include font--body-XL;
+          @include fontBold;
+        }
+
+        // @include min-screen(768px)
+        @include min-screen(768px) {
+
+          // @include behavior-parent-nested
+          @include behavior-parent-nested(ft-org-cardHome--featured) {
+            @include font--heading-XXS;
+              @if $brand ==revistas {
+                @include font--weight-500;
+              }
+          }
+
+          // pagina de cerca --discover
+          @include behavior-parent-nested(ft-org-cardHome--discover) {
+            @include font--heading-XXS;
+          }
+        }
+      }
+
+      // behavior-parent ft-org-cardHome--sm
+      @include behavior-parent(ft-org-cardHome--sm) {
+        @include font--heading-XXS;
+
+        @if $brand ==revistas {
+          @include font--heading-XS;
+          @include fontPrimary;
+          @include font--weight-500;
+        }
+
+        // @include min-screen(768px)
+        @include min-screen(768px) {
+          @include font--body-L--small;
+          @include fontPrimary;
+          @include font--weight-700;
+
+          @if $brand ==revistas {
+            @include font--heading-XXS;
+            @include font--weight-500;
+          }
+
+          // @include behavior-parent-nested
+          @include behavior-parent-nested(ft-org-cardHome--featured) {
+            @include font--body-L--small;
+            @include fontPrimary;
+            @include font--weight-700;
+
+            @if $brand ==revistas {
+              @include font--heading-XXS;
+              @include font--weight-500;
+            }
+          }
+        }
+      }
+
+      // behavior-parent ft-org-cardHome--xs
+      @include behavior-parent(ft-org-cardHome--xs) {
+        @include font--heading-XXS;
+
+        @if $brand ==revistas {
+          @include font--heading-XS;
+          @include fontPrimary;
+          @include font--weight-500;
+        }
+
+        // @include min-screen(768px)
+        @include min-screen(768px) {
+          @include font--body-M--small;
+          @include fontPrimary;
+          @include font--weight-600;
+
+          @if $brand ==revistas {
+            @include font--body-L--small;
+            @include fontPrimary;
+            @include font--weight-500;
+          }
+
+          // @include behavior-parent-nested
+          @include behavior-parent-nested(ft-org-cardHome--featured) {
+            @include font--body-M--small;
+            @include fontPrimary;
+            @include font--weight-600;
+
+            @if $brand ==revistas {
+              @include font--body-L--small;
+              @include fontPrimary;
+              @include font--weight-500;
+            }
+          }
+        }
+      }
+
+      // behavior-parent ft-org-cardHome--discover
+      @include behavior-parent(ft-org-cardHome--discover) {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        -webkit-line-clamp: 4;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        // @include min-screen(768px)
+        @include min-screen(768px) {
+          -webkit-line-clamp: 3;
+          height: 67px;
+        }
+      }
+
+      // .ft-link
+      .ft-link {
+
+        // behavior-parent ft-org-cardHome--branded
+        @include behavior-parent(ft-org-cardHome--branded) {
+          @include Branded;
+          @include font--weight-700;
+          @if $brand ==revistas {
+                @include font--weight-500;
+          }
+
+          @include min-screen(768px) {
+            @include fontPrimary;
+          }
+        }
+
+        // behavior-parent ft-org-cardHome--branded
+        @include behavior-parent(ft-org-cardHome--branded__noMark) {
+          @include fontStack;
+          @include font--weight-700;
+           @if $brand ==revistas {
+                @include font--weight-500;
+          }
+        }
+      }
+
+      // @if $brand(revistas)
+      @if $brand ==revistas {
+        @include margin(0 null 2rem null);
+        @include font--weight-500;
+      }
+
+      @if $brand ==ep {
+        @include fontPrimary;
+        @include font--weight-700;
+      }
+    }
+
+    // &Text
+    &Text {
+      @include margin(1rem null);
+      color: var(--color-quaternary);
+
+      // behavior: bg(Color-black)
+      @include behavior-ft-helper-bg(Color-black) {
+        color: var(--color-white);
+      }
+
+      // behavior-parent ft-org-cardHome--xlg
+      @include behavior-parent(ft-org-cardHome--xlg) {
+        @include font--body-XL;
+      }
+
+      // behavior-parent ft-org-cardHome--lg
+      @include behavior-parent(ft-org-cardHome--lg) {
+        @include font--body-L;
+      }
+
+      // behavior-parent ft-org-cardHome--md
+      @include behavior-parent(ft-org-cardHome--md) {
+        @include font--body-M;
+      }
+
+      // behavior-parent ft-org-cardHome--sm
+      @include behavior-parent(ft-org-cardHome--sm) {
+        @include font--body-M;
+      }
+
+      // behavior-parent ft-org-cardHome--xs
+      @include behavior-parent(ft-org-cardHome--xs) {
+        @include font--body-S;
+      }
+
+      // behavior-parent ft-org-cardHome--row
+      @include behavior-parent(ft-org-cardHome--row) {
+        @include margin(0 null 1rem null);
+      }
+    }
+
+    // .ft-mol-writer__titleOpinion
+    .ft-mol-writer__titleOpinion {
+      @include font--body-S--small;
+    }
+
+    .ft-mol-rrss {
+      @include margin(null 1rem null null);
+    }
+
+    // .ft-mol-headband--branded
+    .ft-mol-headband--branded {
+      @include position(relative, null null null initial);
+      @include padding(0 null null null);
+      display: flex;
+      background-color: transparent;
+
+      // .ft-mol-headband__title:before, .ft-mol-headband__logo:before, .ft-mol-headband__logo a:before
+      .ft-mol-headband__title:before,
+      .ft-mol-headband__logo:before,
+      .ft-mol-headband__logo a:before {
+        display: none;
+      }
+
+      // .ft-mol-headband__logo
+      .ft-mol-headband__logo {
+        @include margin(null null null 0);
+        text-transform: uppercase;
+      }
+
+      // .ft-mol-headband__title
+      .ft-mol-headband__title {
+        @include margin(null 0 null null);
+      }
+
+      /* Caso 1: tiene título + logo */
+      &:has(.ft-mol-headband__title):has(.ft-mol-headband__logo) {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+      }
+
+      /* Caso 2: solo tiene logo */
+      &:has(.ft-mol-headband__logo):not(:has(.ft-mol-headband__title)) {
+        flex-direction: row;
+        justify-content: flex-start;
+
+        .ft-mol-headband__logo a {
+          margin-right: auto;
+        }
+      }
+    }
+  }
+
+  // &__footer
+  // ---------------------------------------------
+  &__footer {
+    @include padding(0 1rem 1rem 1rem);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    white-space: nowrap;
+    gap: 0.8rem;
+
+    // max 360
+    @include min-screen(360px) {
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
+  }
+
+  // &__date
+  // ---------------------------------------------
+  &__date {
+    @include font--body-S--small;
+    @include position(relative, 0 null null 0);
+    @include padding(null null null 1.8rem);
+    color: var(--color-quaternary);
+    @include margin(0.5rem null null null);
+    display: flex;
+
+    @include behavior-parent(ft-org-cardHome--discover) {
+      @include margin(0 null null null);
+    }
+
+    // min 360
+    @include min-screen(360px) {
+      @include margin(0 null null null);
+    }
+
+    &:before {
+      content: "";
+      width: 1.5rem;
+      height: 1.5rem;
+      @include position(absolute, 0 null null 0);
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M7.5 13.75C4.04813 13.75 1.25 10.9519 1.25 7.5C1.25 4.04813 4.04813 1.25 7.5 1.25C10.9519 1.25 13.75 4.04813 13.75 7.5C13.75 10.9519 10.9519 13.75 7.5 13.75ZM7.5 12.5C8.82608 12.5 10.0979 11.9732 11.0355 11.0355C11.9732 10.0979 12.5 8.82608 12.5 7.5C12.5 6.17392 11.9732 4.90215 11.0355 3.96447C10.0979 3.02678 8.82608 2.5 7.5 2.5C6.17392 2.5 4.90215 3.02678 3.96447 3.96447C3.02678 4.90215 2.5 6.17392 2.5 7.5C2.5 8.82608 3.02678 10.0979 3.96447 11.0355C4.90215 11.9732 6.17392 12.5 7.5 12.5ZM8.125 7.5H10.625V8.75H6.875V4.375H8.125V7.5Z" fill="%23666666"/></svg>');
+      background-position: left center;
+      background-size: cover;
+    }
+  }
+
+  // &__label
+  // ---------------------------------------------
+  &__label {
+    @include font--body-XS--small;
+    @include padding(0.3rem 1rem);
+    color: var(--color-black);
+    background-color: var(--color-lightGrey);
+    border-radius: 2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  // &__medio
+  // ---------------------------------------------
+  &__medio {
+    @include font--body-S--small;
+    color: var(--color-quaternary);
+    display: block;
+    min-width: 0;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 20px;
+    line-height: 20px;
+
+    &Img {
+      border-radius: 50%;
+      @include margin(null 0.3rem 0.2rem null);
+    }
+  }
+
+  //  .ft-helper-divider-spacer-xxs
+  // ---------------------------------------------
+  .ft-helper-divider-spacer-xxs {
+    @include padding(1.5rem 0 0 0);
+  }
+
+  // &--md
+  // ---------------------------------------------
+  &--md {
+
+    // .ft-mol-label
+    .ft-mol-label {
+
+      // &__title
+      &__title {
+        @include hide-visually;
+
+        @include min-screen(768px) {
+          @include font--body-M--small;
+          @include fontBold;
+          @include hide-visually("unhide");
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+
+        // página de cerca
+        @include behavior-parent(ft-org-search-autocomplete__content) {
+          @include font--body-S--small;
+          @include fontBold;
+
+          // desktop
+          @include min-screen(768px) {
+            @include font--body-M--small;
+          }
+        }
+      }
+
+      // &__image
+      &__image {
+        width: 1.8rem;
+        height: auto;
+
+        @include min-screen(768px) {
+          width: 2.3rem;
+        }
+      }
+    }
+  }
+
+  // &--sm
+  // ---------------------------------------------
+  &--sm {
+
+    // .ft-mol-label
+    .ft-mol-label {
+
+      // &__title
+      &__title {
+        @include font--body-S--small;
+        @include fontBold;
+        @include hide-visually;
+
+        @include min-screen(768px) {
+          @include hide-visually("unhide");
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+      }
+
+      // &__image
+      &__image {
+        width: 1.6rem;
+        height: auto;
+      }
+    }
+  }
+
+  // &--xs
+  // ---------------------------------------------
+  &--xs {
+
+    // .ft-mol-label
+    .ft-mol-label {
+      top: 0.3rem;
+
+      // &__content
+      &__content {
+        @include margin(0 0.3rem 0 0);
+        @include padding(0);
+
+        @if $brand ==ep {
+          @include border-width(0);
+          @include padding(0.17rem 0.16rem 0.2rem 0.15rem);
+          @include border-top-radius(0.3rem);
+          @include border-right-radius(0.3rem);
+          @include border-bottom-radius(0.3rem);
+          @include border-left-radius(0.3rem);
+        }
+
+        @if $brand ==epe {
+          @include border-width(0);
+          @include padding(0.17rem 0.16rem 0.2rem 0.15rem);
+          @include border-top-radius(0.3rem);
+          @include border-right-radius(0.3rem);
+          @include border-bottom-radius(0.3rem);
+          @include border-left-radius(0.3rem);
+        }
+
+        @if $brand ==regionales {
+          @include border-width(0);
+          @include padding(0.17rem 0.16rem 0.2rem 0.15rem);
+          @include border-top-radius(0.3rem);
+          @include border-right-radius(0.3rem);
+          @include border-bottom-radius(0.3rem);
+          @include border-left-radius(0.3rem);
+        }
+
+        @if $brand ==ux {
+          @include border-width(0);
+          @include padding(0.17rem 0.16rem 0.2rem 0.15rem);
+          @include border-top-radius(0.3rem);
+          @include border-right-radius(0.3rem);
+          @include border-bottom-radius(0.3rem);
+          @include border-left-radius(0.3rem);
+        }
+      }
+
+      // &__title
+      &__title {
+        @include font--body-XS--small;
+        @include fontBold;
+        @include hide-visually;
+
+        // &__title
+        @include min-screen(768px) {
+          @include hide-visually("unhide");
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+      }
+
+      // &__image
+      &__image {
+        width: 1.4rem;
+        height: auto;
+
+        @include min-screen(768px) {
+          width: 1.6rem;
+        }
+      }
+
+      // &--advice
+      &--advice {
+        &:before {
+          left: 0.7rem;
+        }
+      }
+    }
+
+  // ESTILOS PARA EL MUNDIAL
+    .ft-btn__hide{
+       display:none;
+    }
+  }
+
+  // &--featured
+  // ---------------------------------------------
+  &--featured {
+    flex-direction: column;
+
+    // .ft-org-cardHome
+    .ft-org-cardHome {
+      &__media {
+        flex-basis: 100%;
+        @include margin(0 0 1rem null);
+
+        //pagina de cerca
+        @include behavior-parent-nested(ft-org-cardHome--discover) {
+          @include margin(0);
+        }
+      }
+
+      // &__main
+      &__main {
+        flex-basis: 100%;
+
+        &Title {
+          @include font--heading-L;
+  //revistas
+           @if $brand ==revistas {
+            @include font--weight-500;
+          }
+
+          //pagina de cerca
+          @include behavior-parent-nested(ft-org-cardHome--discover) {
+            @include font--body-XL;
+            @include fontBold;
+
+            //min-screen(768px)
+            @include min-screen(768px) {
+              @include font--heading-XXS;
+              //revistas
+               @if $brand ==revistas {
+                @include font--weight-500;
+                }
+            }
+          }
+        }
+      }
+    }
+
+    // &.ft-org-cardHome--md
+    &.ft-org-cardHome--md {
+
+      // .ft-mol-label__title
+      .ft-mol-label__title {
+        @include min-screen(768px) {
+          @include font--body-M--small;
+          @include fontBold;
+        }
+      }
+    }
+
+    // &.ft-org-cardHome--sm
+    &.ft-org-cardHome--sm {
+
+      // .ft-mol-label__title
+      .ft-mol-label__title {
+        @include min-screen(768px) {
+          @include font--body-S--small;
+          @include fontBold;
+        }
+      }
+    }
+
+    // &.ft-org-cardHome--xs
+    &.ft-org-cardHome--xs {
+
+      // .ft-mol-label__title
+      .ft-mol-label__title {
+        @include min-screen(768px) {
+          @include font--body-XS--small;
+          @include fontBold;
+        }
+      }
+    }
+  }
+
+  // &--featuredRow
+  // ---------------------------------------------
+  &--featuredRow {
+    flex-direction: column;
+    @include border-style(null null none null);
+    @include padding(null null 0 null);
+
+    @include min-screen(768px) {
+      flex-direction: row-reverse;
+    }
+
+    // .ft-org-cardHome
+    .ft-org-cardHome {
+      &__main {
+        padding: 1rem 0;
+
+        @include min-screen(768px) {
+          padding: 0 2rem 0 0;
+        }
+      }
+    }
+  }
+
+  // &--Vfeatured
+  // ---------------------------------------------
+  &--Vfeatured {
+    @include border-style(null null none null);
+    @include padding(null null 0 null);
+    @include margin(null 1.1rem 0 null);
+    min-width: 49%;
+    display: block;
+
+    // @if $brand(revistas)
+    @if $brand ==revistas {
+      background-color: var(--color-lightGrey);
+    }
+
+    @include min-screen(768px) {
+      @include margin(null 2rem 0 null);
+      min-width: 23.5%;
+    }
+  }
+
+    // &--Hfeatured
+  // ---------------------------------------------
+  &--Hfeatured {
+    @include border-style(null null none null);
+    @include padding(null null 0 null);
+    @include margin(null 1.1rem 0 null);
+    min-width: 60%;
+    display: block;
+
+    // @if $brand(revistas)
+    @if $brand ==revistas {
+      background-color: var(--color-lightGrey);
+    }
+
+    @include min-screen(768px) {
+      @include margin(null 2rem 0 null);
+      min-width: 20.5%;
+    }
+  }
+
+  // &--reverse
+  // ---------------------------------------------
+  &--reverse {
+    flex-direction: column-reverse;
+  }
+
+  // &--row
+  // ---------------------------------------------
+  &--row {
+    flex-direction: row;
+    @include margin(null null 3.5rem null);
+
+    //.ft-org-cardHome--branded
+    &.ft-org-cardHome--branded {
+      .ft-org-cardHome__main {
+        @include margin(1rem null null null);
+      }
+    }
+
+    //.ft-org-cardHome--featured
+    &.ft-org-cardHome--featured {
+      flex-direction: column;
+
+      //min-screen(768px)
+      @include min-screen(768px) {
+        flex-direction: row;
+      }
+
+      .ft-org-cardHome__media {
+        flex-basis: 90%;
+        @include margin(0 0 1rem 0);
+
+        //min-screen(768px)
+        @include min-screen(768px) {
+          flex-direction: row;
+          @include margin(0 1.5rem 0 0);
+        }
+      }
+    }
+
+    // .ft-embed
+    .ft-embed {
+      min-width: 46%;
+      margin: 0 1.5rem 1.5rem 0;
+    }
+
+    .ft-org-cardHome__media {
+      @include margin(0 1.5rem null null);
+    }
+  }
+
+  // &--col
+  // ---------------------------------------------
+  &--col {
+    flex-direction: column;
+  }
+
+  // &--hide
+  // ---------------------------------------------
+  &--hide {
+
+    // &Image
+    &Image {
+
+      //.ft-org-cardHome
+      .ft-org-cardHome {
+
+        //&__media
+        &__media {
+          display: none;
+        }
+
+        //&__main
+        &__main {
+          flex-basis: 100%;
+        }
+      }
+    }
+
+    // &Imagemobile
+    &Imagemobile {
+
+      //.ft-org-cardHome
+      .ft-org-cardHome {
+
+        //&__media
+        &__media {
+          display: none;
+
+          @include min-screen(768px) {
+            display: block;
+          }
+        }
+
+        //&__main
+        &__main {
+          flex-basis: 100%;
+        }
+      }
+    }
+  }
+
+  // .ft-mol-author
+  .ft-mol-author {
+    @include margin(2rem null null null);
+  }
+
+  .ft-mol-writer--cardHome {
+    @include margin(null);
+
+    // @if $brand(revistas)
+    @if $brand ==revistas {
+      display: none;
+    }
+  }
+
+  // .ft-mol-writer--cardHome
+  .ft-date {
+    /* Cambios 6305 
+		display: none;
+		*/
+    @include margin(null null 0 null);
+  }
+
+  &:not(:has(.ft-mol-writer__item)) .ft-date {
+    .ft-date__textPlace {
+      @include margin(null null null 0);
+
+      // &:before
+      &:before {
+        content: none;
+      }
+    }
+  }
+
+  // ESTILOS PARA EL MUNDIAL
+  .ft-btn__hide{
+   display:none;
+   @include behavior-parent-nested(ft-org-cardHome--featured)
+     {
+        display:inherit;
+         @include margin(null null null .3rem);
+      }
+  
+    @include min-screen(768px) {
+     display:inherit;
+     @include margin(null null null .3rem);
+      @include behavior-parent-nested(ft-org-cardHome--xs){
+        display:none;
+      }
+      
+    }          
+  }
+  .ft-btn{
+    display:flex;
+    width: fit-content;
+    text-align: center;
+    margin: 0px auto;}
+  // &--show
+  // ---------------------------------------------
+  &--show {
+
+    // &Date
+    &Date {
+
+      // .ft
+      .ft {
+
+        // &-date
+        &-date {
+          @include margin(null null 1.5rem null);
+          display: block;
+        }
+      }
+    }
+  }
+
+  // &--textonly
+  // ---------------------------------------------
+  &--textonly {
+    @include margin(1.5rem null 1.5rem null);
+    @include padding(null null 1rem null);
+    @include border-style(null null solid null);
+    @include border-width(null null 0.1rem null);
+    @include border-color(null null var(--color-mediumGrey) null);
+
+    // header
+    header {
+      order: 2;
+      flex-basis: 100%;
+    }
+
+    // .ft
+    .ft {
+
+      // &-date
+      &-date {
+        @include margin(null null 0 null);
+        display: flex;
+        color: var(--color-white);
+        background-color: var(--color-primary);
+        border-radius: 0.4rem;
+
+        // &__text
+        &__text {
+          @include padding(0.2rem 0.6rem);
+          display: flex;
+
+          // &Time
+          &Time {
+            display: flex;
+            @include margin(null null null 0.5rem);
+          }
+        }
+
+        // &__reload
+        &__reload {
+          display: none;
+        }
+      }
+
+      // &-mol
+      &-mol {
+
+        // &-writer
+        &-writer {
+          order: 1;
+          flex-basis: auto;
+
+          // &__item
+          &__item {
+            display: none;
+          }
+        }
+      }
+    }
+
+    // [class*="__main"]
+    [class*="__main"] {
+      flex-basis: 100%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    // [class*="__mainTitle"]
+    [class*="__mainTitle"] {
+      @include position(relative, null null null null);
+      @include margin(1rem null null null);
+      flex-wrap: nowrap;
+    }
+
+    // [class*="__mainPretitle"]
+    [class*="__mainPretitle"] {
+
+      // .ft
+      .ft {
+
+        // &-link
+        &-link {
+
+          // &--secondary
+          &--secondary {
+            color: var(--color-darkGrey);
+          }
+        }
+      }
+    }
+
+    // [class*="__media"], [class*="__mainText"]
+    [class*="__media"],
+    [class*="__mainText"],
+    [class*="__mainRelated"] {
+      display: none;
+    }
+  }
+
+  // &--discover
+  &--discover {
+    @include padding(null null 0 null);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-lightGrey);
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+    // &.ft-org-cardHome--branded
+    &.ft-org-cardHome--branded {
+
+      // .ft-mol
+      .ft-mol {
+
+        // &-label
+        &-label {
+
+          // &__content
+          &__content {
+            border-color: transparent;
+            color: var(--color-darkrey);
+            background-color: var(--color-lightGrey);
+          }
+
+          // &__title
+          &__title {
+            color: var(--color-black);
+          }
+        }
+
+        // &-headband
+        &-headband {
+          @include padding(0.6rem null null null);
+
+          // &--branded
+          &--branded {
+            @include padding(0 null null null);
+          }
+        }
+      }
+
+      // @supports selector(:has(*))
+      @supports selector(:has(*)) {
+
+        // &:has(.ft-mol-headband--branded)
+        &:has(.ft-mol-headband--branded) {
+          @include padding(0 null null null);
+          background-color: transparent;
+          border-color: var(--color-mediumGrey);
+          box-shadow: none;
+
+          // .ft-mol
+          .ft-mol {
+
+            // &-label
+            &-label {
+              display: none;
+            }
+
+            // &-headband
+            &-headband {
+
+              // &--branded
+              &--branded {
+                @include padding(null 1.2rem null 1.2rem);
+                top: 0;
+                border-top-right-radius: 1rem;
+                border-top-left-radius: 1rem;
+              }
+            }
+          }
+
+          // .ft-mol-headband--branded
+          .ft-mol-headband--branded {
+            padding-right: 0;
+            padding-left: 0;
+          }
+
+          // .ft-org-cardHome
+          .ft-org-cardHome {
+
+            // &__media
+            &__media {
+              @include min-screen(768px) {
+                @include margin(null -1.1rem null -1.1rem);
+              }
+            }
+
+            // &__main
+            &__main {
+              @include min-screen(768px) {
+                @include padding(null 0 null 0);
+                min-height: 14.5rem;
+              }
+            }
+
+            // &__footer
+            &__footer {
+              display: none;
+
+              @include min-screen(768px) {
+                @include padding(null 0 null 0);
+              }
+            }
+          }
+        }
+
+        // &:not(:has(.ft-mol-headband--branded))
+        &:not(:has(.ft-mol-headband--branded)) {
+          @include padding(0 0 null 0);
+          background-color: transparent;
+          box-shadow: none;
+          border-color: var(--color-mediumGrey);
+
+          // .ft-mol
+          .ft-mol {
+
+            // &-label
+            &-label {
+              display: none;
+            }
+          }
+
+          // .ft-org-cardHome
+          .ft-org-cardHome {
+
+            // &__footer
+            &__footer {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
