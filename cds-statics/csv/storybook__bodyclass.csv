@@ -1,0 +1,250 @@
+item,body_class,item_update,region_name,region_code,ds__group,is_combinable,is_associated,media_associated
+Apartura 100%,apertura100,12/02/2026,ALL,ALL,ALL,TRUE,FALSE,
+Article Preview,article-preview,12/02/2026,ALL,ALL,ALL,TRUE,FALSE,
+Board Preview,board-preview,12/02/2026,ALL,ALL,ALL,TRUE,FALSE,
+Cerca,cerca,12/02/2026,ALL,ALL,ALL,TRUE,FALSE,
+Cerca Config,cerca-config,12/02/2026,ALL,ALL,ALL,TRUE,FALSE,
+Cerca Feed,cerca-feed,12/02/2026,ALL,ALL,ALL,TRUE,FALSE,
+Compras,compras,12/02/2026,ALL,ALL,REVISTAS,FALSE,TRUE,Cuore
+Compras,compras,12/02/2026,ALL,ALL,REVISTAS,FALSE,TRUE,Stilo
+Compras,compras,12/02/2026,ALL,ALL,REVISTAS,FALSE,TRUE,Woman
+Cuore,cuore,12/02/2026,ALL,ALL,REVISTAS,FALSE,FALSE,
+Directo,directo,12/02/2026,ALL,ALL,ALL,TRUE,FALSE,
+Directo Deportivo,directodeportivo,12/02/2026,ALL,ALL,ALL,TRUE,FALSE,
+DS Logged,ds-logged,12/02/2026,ALL,ALL,ALL,TRUE,FALSE,
+Editorial,editorial,12/02/2026,ALL,ALL,ALL,TRUE,FALSE,
+Escaparate Cerca,escapate_cerca,12/02/2026,ALL,ALL,REVISTAS,FALSE,TRUE,Viajar
+Explicativa,explicativa,12/02/2026,ALL,ALL,ALL,TRUE,FALSE,
+Fourty,fourty,12/02/2026,ALL,ALL,ALL,TRUE,FALSE,
+Galería Horizontal,galeriah,12/02/2026,ALL,ALL,ALL,TRUE,FALSE,
+Galería Vertical,galeriav,12/02/2026,ALL,ALL,ALL,TRUE,FALSE,
+Minimal Header,minimal-header,12/02/2026,ALL,ALL,ALL,TRUE,FALSE,
+Multimedia Debajo del Titular,multimediadebajotitular,12/02/2026,ALL,ALL,ALL,TRUE,FALSE,
+Noticia,noticia,12/02/2026,ALL,ALL,ALL,TRUE,FALSE,
+Opinión,opinion,12/02/2026,ALL,ALL,ALL,TRUE,FALSE,
+Pasatiempos,pasatiempos,12/02/2026,ALL,ALL,REVISTAS,FALSE,TRUE,Cuore
+Pasatiempos,pasatiempos,12/02/2026,ALL,ALL,REVISTAS,FALSE,TRUE,Stilo
+Pasatiempos,pasatiempos,12/02/2026,ALL,ALL,REVISTAS,FALSE,TRUE,Viajar
+Pasatiempos,pasatiempos,12/02/2026,ALL,ALL,REVISTAS,FALSE,TRUE,Woman
+Portada,portada,12/02/2026,ALL,ALL,ALL,TRUE,FALSE,
+Portadilla Automática,portadilla-automatica,12/02/2026,ALL,ALL,ALL,TRUE,FALSE,
+Portadilla Manual,portadilla-manual,12/02/2026,ALL,ALL,ALL,TRUE,FALSE,
+Premium,premium,12/02/2026,ALL,ALL,ALL,TRUE,FALSE,
+Reportaje,reportaje,12/02/2026,ALL,ALL,ALL,TRUE,FALSE,
+Shopping,shopping,12/02/2026,ALL,ALL,REVISTAS,FALSE,TRUE,Woman
+Skin,ft-skin,12/02/2026,ALL,ALL,ALL,TRUE,FALSE,
+Skin Cerca,ft-skin--cerca,12/02/2026,ALL,ALL,ALL,TRUE,FALSE,
+Skin Cerca Buscador,ft-skin--cerca-buscador,12/02/2026,ALL,ALL,ALL,TRUE,FALSE,
+Stilo,stilo,12/02/2026,ALL,ALL,REVISTAS,FALSE,FALSE,
+Tag,tag,12/02/2026,ALL,ALL,ALL,TRUE,FALSE,
+Tiene Tapbar,has-tapbar,12/02/2026,ALL,ALL,ALL,TRUE,FALSE,
+Viajar,viajar,12/02/2026,ALL,ALL,REVISTAS,FALSE,FALSE,
+Vídeos,videos,12/02/2026,ALL,ALL,ALL,TRUE,FALSE,
+Woman,woman,12/02/2026,ALL,ALL,REVISTAS,FALSE,FALSE,
+Alhaurín de la Torre,alhaurindelatorre,12/02/2026,Andalucía,AND,REGIONALES,FALSE,TRUE,La Opinión de Málaga
+Alto Guadalquivir,altoguadalquivir,12/02/2026,Andalucía,AND,REGIONALES,FALSE,TRUE,Diario Córdoba
+Cerca,cerca,12/02/2026,Andalucía,AND,REGIONALES,FALSE,TRUE,Diario Córdoba
+Cerca,cerca,12/02/2026,Andalucía,AND,REGIONALES,FALSE,TRUE,El Correo de Andalucía
+Cerca,cerca,12/02/2026,Andalucía,AND,REGIONALES,FALSE,TRUE,La Opinión de Málaga
+Coín,coin,12/02/2026,Andalucía,AND,REGIONALES,FALSE,TRUE,La Opinión de Málaga
+Diario de Córdoba,diario-cordoba,12/02/2026,Andalucía,AND,REGIONALES,FALSE,FALSE,
+El Correo de Andalucía,el-correo-de-andalucia,12/02/2026,Andalucía,AND,REGIONALES,FALSE,FALSE,
+La Opinión de Málaga,la-opinion-de-malaga,12/02/2026,Andalucía,AND,REGIONALES,FALSE,FALSE,
+La Recogía,la-recogia,12/02/2026,Andalucía,AND,REGIONALES,FALSE,TRUE,El Correo de Andalucía
+Pasatiempos,pasatiempos,12/02/2026,Andalucía,AND,REGIONALES,FALSE,TRUE,Diario Córdoba
+Pasatiempos,pasatiempos,12/02/2026,Andalucía,AND,REGIONALES,FALSE,TRUE,El Correo de Andalucía
+Pasatiempos,pasatiempos,12/02/2026,Andalucía,AND,REGIONALES,FALSE,TRUE,La Opinión de Málaga
+Torremolinos,torremolinos,12/02/2026,Andalucía,AND,REGIONALES,FALSE,TRUE,La Opinión de Málaga
+Campo de Belchite,campodebelchite,12/02/2026,Aragón,AR,REGIONALES,FALSE,TRUE,El Periódico de Aragón
+Campo de Borja,campodeborja,12/02/2026,Aragón,AR,REGIONALES,FALSE,TRUE,El Periódico de Aragón
+Campo de Cariñena,campodecarinena,12/02/2026,Aragón,AR,REGIONALES,FALSE,TRUE,El Periódico de Aragón
+Cerca,cerca,12/02/2026,Aragón,AR,REGIONALES,FALSE,TRUE,El Periódico de Aragón
+Cuencas Mineras,cuencasmineras,12/02/2026,Aragón,AR,REGIONALES,FALSE,TRUE,El Periódico de Aragón
+Ejea y sus Pueblos,ejeaysuspueblos,12/02/2026,Aragón,AR,REGIONALES,FALSE,TRUE,El Periódico de Aragón
+El Periódico de Aragón,el-periodico-de-aragon,12/02/2026,Aragón,AR,REGIONALES,FALSE,FALSE,
+Huesca,huesca,12/02/2026,Aragón,AR,REGIONALES,FALSE,TRUE,El Periódico de Aragón
+La Crónica de Valdejalón,lacronicadevaldejalon,12/02/2026,Aragón,AR,REGIONALES,FALSE,TRUE,El Periódico de Aragón
+Pasatiempos,pasatiempos,12/02/2026,Aragón,AR,REGIONALES,FALSE,TRUE,El Periódico de Aragón
+Ribera Alta del Ebro,riberaaltadelebro,12/02/2026,Aragón,AR,REGIONALES,FALSE,TRUE,El Periódico de Aragón
+Ribera de Navarra,riberadenavarra,12/02/2026,Aragón,AR,REGIONALES,FALSE,TRUE,El Periódico de Aragón
+Adelantados,adelantados,12/02/2026,Asturias,AST,REGIONALES,FALSE,TRUE,La Nueva España
+Asturias Exterior,asturiasexterior,12/02/2026,Asturias,AST,REGIONALES,FALSE,TRUE,La Nueva España
+Canal Parlamento,canalparlamento,12/02/2026,Asturias,AST,REGIONALES,FALSE,TRUE,La Nueva España
+Cangas del Narcea,cangasdelnarcea,12/02/2026,Asturias,AST,REGIONALES,FALSE,TRUE,La Nueva España
+Castrillón,castrillon,12/02/2026,Asturias,AST,REGIONALES,FALSE,TRUE,La Nueva España
+Cerca,cerca,12/02/2026,Asturias,AST,REGIONALES,FALSE,TRUE,La Nueva España
+Club La Nueva España,clublanuevaespana,12/02/2026,Asturias,AST,REGIONALES,FALSE,TRUE,La Nueva España
+Corvera,corvera,12/02/2026,Asturias,AST,REGIONALES,FALSE,TRUE,La Nueva España
+El Llano,elllano,12/02/2026,Asturias,AST,REGIONALES,FALSE,TRUE,La Nueva España
+Gijón Oeste,gijonoeste,12/02/2026,Asturias,AST,REGIONALES,FALSE,TRUE,La Nueva España
+Grado,grado,12/02/2026,Asturias,AST,REGIONALES,FALSE,TRUE,La Nueva España
+La Corredoria,lacorredoria,12/02/2026,Asturias,AST,REGIONALES,FALSE,TRUE,La Nueva España
+La Nueva España,la-nueva-espana,12/02/2026,Asturias,AST,REGIONALES,FALSE,FALSE,
+Laviana,laviana,12/02/2026,Asturias,AST,REGIONALES,FALSE,TRUE,La Nueva España
+Llanera,llanera,12/02/2026,Asturias,AST,REGIONALES,FALSE,TRUE,La Nueva España
+Luarca-Valdés,luarcavaldes,12/02/2026,Asturias,AST,REGIONALES,FALSE,TRUE,La Nueva España
+Oviedo,oviedo,12/02/2026,Asturias,AST,REGIONALES,FALSE,TRUE,La Nueva España
+Pasatiempos,pasatiempos,12/02/2026,Asturias,AST,REGIONALES,FALSE,TRUE,La Nueva España
+Premios Princesa,premiosprincesa,12/02/2026,Asturias,AST,REGIONALES,FALSE,TRUE,La Nueva España
+Ribera de Arriba,riberadearriba,12/02/2026,Asturias,AST,REGIONALES,FALSE,TRUE,La Nueva España
+Salas,salas,12/02/2026,Asturias,AST,REGIONALES,FALSE,TRUE,La Nueva España
+Siero,siero,12/02/2026,Asturias,AST,REGIONALES,FALSE,TRUE,La Nueva España
+Villaviciosa,villaviciosa,12/02/2026,Asturias,AST,REGIONALES,FALSE,TRUE,La Nueva España
+Cerca,cerca,12/02/2026,Canarias,CAN,REGIONALES,FALSE,TRUE,El Día
+Cerca,cerca,12/02/2026,Canarias,CAN,REGIONALES,FALSE,TRUE,La Provincia
+El Día,el-dia-la-opinion-de-tenerife,12/02/2026,Canarias,CAN,REGIONALES,FALSE,FALSE,
+La Provincia,la-provincia-diario-de-las-palmas,12/02/2026,Canarias,CAN,REGIONALES,FALSE,FALSE,
+Pasatiempos,pasatiempos,12/02/2026,Canarias,CAN,REGIONALES,FALSE,TRUE,El Día
+Pasatiempos,pasatiempos,12/02/2026,Canarias,CAN,REGIONALES,FALSE,TRUE,La Provincia
+Aliste,aliste,12/02/2026,Castilla y León,CYL,REGIONALES,FALSE,TRUE,La Opinión de Zamora
+Benavente,benavente,12/02/2026,Castilla y León,CYL,REGIONALES,FALSE,TRUE,La Opinión de Zamora
+Cerca,cerca,12/02/2026,Castilla y León,CYL,REGIONALES,FALSE,TRUE,La Opinión de Zamora
+La Opinión de Zamora,la-opinion-correo-de-zamora,12/02/2026,Castilla y León,CYL,REGIONALES,FALSE,FALSE,
+Pasatiempos,pasatiempos,12/02/2026,Castilla y León,CYL,REGIONALES,FALSE,TRUE,La Opinión de Zamora
+Toro,toro,12/02/2026,Castilla y León,CYL,REGIONALES,FALSE,TRUE,La Opinión de Zamora
+Aniversario,aniversario,12/02/2026,Cataluña,CA,SPORT,FALSE,TRUE,Sport
+Anoia,anoia,12/02/2026,Cataluña,CA,REGIONALES,FALSE,TRUE,Regio 7
+Badalona,badalona,12/02/2026,Cataluña,CA,EP,FALSE,TRUE,El Periódico
+Castelldefels,castelldefels,12/02/2026,Cataluña,CA,EP,FALSE,TRUE,El Periódico
+Cerca,cerca,12/02/2026,Cataluña,CA,EP,FALSE,TRUE,El Periódico
+Cerca,cerca,12/02/2026,Cataluña,CA,REGIONALES,FALSE,TRUE,Diari de Girona
+Cerca,cerca,12/02/2026,Cataluña,CA,REGIONALES,FALSE,TRUE,Empordà
+Cerca,cerca,12/02/2026,Cataluña,CA,REGIONALES,FALSE,TRUE,Regio 7
+Cornella,cornella,12/02/2026,Cataluña,CA,EP,FALSE,TRUE,El Periódico
+Diari d'Igualada,diaridigualada,12/02/2026,Cataluña,CA,REGIONALES,FALSE,TRUE,Regio 7
+Diario de Girona,diari-de-girona,12/02/2026,Cataluña,CA,REGIONALES,FALSE,FALSE,
+Economia,economia,12/02/2026,Cataluña,CA,EP,FALSE,TRUE,El Periódico
+Economía,economia,12/02/2026,Cataluña,CA,REGIONALES,FALSE,TRUE,Diari de Girona
+El Baix Empordà,elbaixemporda,12/02/2026,Cataluña,CA,REGIONALES,FALSE,TRUE,Diari de Girona
+El Periódico de Cataluña,ft-brand-ep,25/06/2026,Cataluña,CA,EP,FALSE,FALSE,
+Empordà,emporda,12/02/2026,Cataluña,CA,REGIONALES,FALSE,FALSE,
+Esplugues,esplugues,12/02/2026,Cataluña,CA,EP,FALSE,TRUE,El Periódico
+Gastronomia,gastronomia,12/02/2026,Cataluña,CA,EP,FALSE,TRUE,El Periódico
+Gava,gava,12/02/2026,Cataluña,CA,EP,FALSE,TRUE,El Periódico
+Girona Delicia,gironadelicia,12/02/2026,Cataluña,CA,REGIONALES,FALSE,TRUE,Diari de Girona
+Granollers,granollers,12/02/2026,Cataluña,CA,EP,FALSE,TRUE,El Periódico
+Hospitalet,hospitalet,12/02/2026,Cataluña,CA,EP,FALSE,TRUE,El Periódico
+Libros,libros,12/02/2026,Cataluña,CA,EP,FALSE,TRUE,El Periódico
+Martorell,martorell,12/02/2026,Cataluña,CA,EP,FALSE,TRUE,El Periódico
+Mataro,mataro,12/02/2026,Cataluña,CA,EP,FALSE,TRUE,El Periódico
+Molletdelvalles,molletdelvalles,12/02/2026,Cataluña,CA,EP,FALSE,TRUE,El Periódico
+Motor,motor,12/02/2026,Cataluña,CA,EP,FALSE,TRUE,El Periódico
+Parets,parets,12/02/2026,Cataluña,CA,EP,FALSE,TRUE,El Periódico
+Pasatiempos,pasatiempos,12/02/2026,Cataluña,CA,EP,FALSE,TRUE,El Periódico
+Pasatiempos,pasatiempos,12/02/2026,Cataluña,CA,SPORT,FALSE,TRUE,Sport
+Pasatiempos,pasatiempos,12/02/2026,Cataluña,CA,REGIONALES,FALSE,TRUE,Diari de Girona
+Pasatiempos,pasatiempos,12/02/2026,Cataluña,CA,REGIONALES,FALSE,TRUE,Empordà
+Pasatiempos,pasatiempos,12/02/2026,Cataluña,CA,REGIONALES,FALSE,TRUE,Regio 7
+Regio7,regio7,12/02/2026,Cataluña,CA,REGIONALES,FALSE,FALSE,
+Rubi,rubi,12/02/2026,Cataluña,CA,EP,FALSE,TRUE,El Periódico
+Sabadell,sabadell,12/02/2026,Cataluña,CA,EP,FALSE,TRUE,El Periódico
+Salut,salut,12/02/2026,Cataluña,CA,REGIONALES,FALSE,TRUE,Regio 7
+Santacoloma,santacoloma,12/02/2026,Cataluña,CA,EP,FALSE,TRUE,El Periódico
+Santboi,santboi,12/02/2026,Cataluña,CA,EP,FALSE,TRUE,El Periódico
+Santcugat,santcugat,12/02/2026,Cataluña,CA,EP,FALSE,TRUE,El Periódico
+Shopping,shopping,12/02/2026,Cataluña,CA,EP,FALSE,TRUE,El Periódico
+Shopping,shopping,12/02/2026,Cataluña,CA,SPORT,FALSE,TRUE,Sport
+Sport,sport,12/02/2026,Cataluña,CA,SPORT,FALSE,FALSE,Sport
+Tarragona,tarragona,12/02/2026,Cataluña,CA,EP,FALSE,TRUE,El Periódico
+Terrassa,terrassa,12/02/2026,Cataluña,CA,EP,FALSE,TRUE,El Periódico
+Viladecans,viladecans,12/02/2026,Cataluña,CA,EP,FALSE,TRUE,El Periódico
+Vilanovailageltru,vilanovailageltru,12/02/2026,Cataluña,CA,EP,FALSE,TRUE,El Periódico
+Alcalá de Henares,alcaladehenares,12/02/2026,Comunidad de Madrid,MAD,EPE,FALSE,TRUE,El Periódico de España
+Arganzuela,arganzuela,12/02/2026,Comunidad de Madrid,MAD,EPE,FALSE,TRUE,El Periódico de España
+Carabanchel,carabanchel,12/02/2026,Comunidad de Madrid,MAD,EPE,FALSE,TRUE,El Periódico de España
+Cerca,cerca,12/02/2026,Comunidad de Madrid,MAD,EPE,FALSE,TRUE,El Periódico de España
+El periódico de España,ft-brand-epe,12/02/2026,Comunidad de Madrid,MAD,EPE,FALSE,FALSE,El Periódico de España
+Latina,latina,12/02/2026,Comunidad de Madrid,MAD,EPE,FALSE,TRUE,El Periódico de España
+Móstoles,mostoles,12/02/2026,Comunidad de Madrid,MAD,EPE,FALSE,TRUE,El Periódico de España
+Pasatiempos,pasatiempos,12/02/2026,Comunidad de Madrid,MAD,EPE,FALSE,TRUE,El Periódico de España
+Pozuelo de Alarcón,pozuelodealarcon,12/02/2026,Comunidad de Madrid,MAD,EPE,FALSE,TRUE,El Periódico de España
+Toledo,toledo,12/02/2026,Comunidad de Madrid,MAD,EPE,FALSE,TRUE,El Periódico de España
+Alto Palancia,altopalancia,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,TRUE,El Periódico del Mediterráneo
+Cerca,cerca,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,TRUE,Diario Información
+Cerca,cerca,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,TRUE,El Periódico del Mediterráneo
+Cerca,cerca,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,TRUE,Levante-El Mercantil Valenciano
+Cerca,cerca,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,TRUE,Superdeporte
+Crónica de la Provincia de Alicante,cronicadelaprovinciadealicante,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,TRUE,Diario Información
+Diario Información,diario-informacion,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,FALSE,
+El Mercantil Valenciano,levante-el-mercantil-valenciano,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,FALSE,
+El Periódico del Mediterráneo,el-periodico-mediterraneo,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,FALSE,
+Elda,elda,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,TRUE,Diario Información
+Información TV,informaciontv,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,TRUE,Diario Información
+La Crónica de Albal,lacronicadalbal,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,TRUE,Levante-El Mercantil Valenciano
+La Crónica de Aldaia,lacronicadealdaia,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,TRUE,Levante-El Mercantil Valenciano
+La Crónica de Alfafar,lacronicadealfafar,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,TRUE,Levante-El Mercantil Valenciano
+La Crónica de Alzira,lacronicadealzira,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,TRUE,Levante-El Mercantil Valenciano
+La Crónica de Benifairó de les Valls,lacronicadebenifairodelesvalls,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,TRUE,Levante-El Mercantil Valenciano
+La Crónica de Benissa,lacronicadebenissa,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,TRUE,Levante-El Mercantil Valenciano
+La Crónica de Benitatxell,lacronicadebenitatxell,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,TRUE,Levante-El Mercantil Valenciano
+La Crónica de Bétera,lacronicadebetera,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,TRUE,Levante-El Mercantil Valenciano
+La Crónica de Burjassot,lacronicadeburjassot,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,TRUE,Levante-El Mercantil Valenciano
+La Crónica de Calp,lacronicadecalp,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,TRUE,Diario Información
+La Crónica de Calp,lacronicadecalp,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,TRUE,Levante-El Mercantil Valenciano
+La Crónica de Catarroja,lacronicadecatarroja,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,TRUE,Levante-El Mercantil Valenciano
+La Crónica de Elche,lacronicadeelche,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,TRUE,Diario Información
+La Crónica de Godella,lacronicadegodella,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,TRUE,Levante-El Mercantil Valenciano
+La Crónica de l'Alacantí,lacronicadelalacanti,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,TRUE,Diario Información
+La Crónica de La Nucía,lacronicadelanucia,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,TRUE,Diario Información
+La Crónica de La Nucía,lacronicadelanucia,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,TRUE,Levante-El Mercantil Valenciano
+La Crónica de la Provincia de Alicante,lacronicadelaprovinciadealicante,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,TRUE,Diario Información
+La Crónica de la Provincia de Valencia,lacronicadelaprovinciadevalencia,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,TRUE,Levante-El Mercantil Valenciano
+La Crónica de Llíria,lacronicadelliria,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,TRUE,Levante-El Mercantil Valenciano
+La Crónica de Orihuela,lacronicadeorihuela,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,TRUE,Diario Información
+La Crónica de Paiporta,lacronicadepaiporta,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,TRUE,Levante-El Mercantil Valenciano
+La Crónica de Paterna,lacronicadepaterna,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,TRUE,Levante-El Mercantil Valenciano
+La Crónica de Pego,lacronicadepego,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,TRUE,Levante-El Mercantil Valenciano
+La Crónica de Picassent,lacronicadepicassent,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,TRUE,Levante-El Mercantil Valenciano
+La Crónica de Puçol,lacronicadepucol,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,TRUE,Levante-El Mercantil Valenciano
+La Crónica de Riba-roja de Túria,lacronicaderibarojadeturia,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,TRUE,Levante-El Mercantil Valenciano
+La Crónica de Torrent,lacronicadetorrent,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,TRUE,Levante-El Mercantil Valenciano
+La Crónica de Vilamarxant,lacronicadevilamarxant,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,TRUE,Levante-El Mercantil Valenciano
+La Crónica de Villamarchante,lacronicadevillamarchante,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,TRUE,Levante-El Mercantil Valenciano
+Pasatiempos,pasatiempos,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,TRUE,Diario Información
+Pasatiempos,pasatiempos,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,TRUE,El Periódico del Mediterráneo
+Pasatiempos,pasatiempos,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,TRUE,Levante-El Mercantil Valenciano
+Pasatiempos,pasatiempos,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,TRUE,Superdeporte
+Superdeporte,superdeporte,12/02/2026,Comunidad Valenciana,VC,REGIONALES,FALSE,FALSE,
+Almendralejo,almendralejo,12/02/2026,Extremadura,EX,REGIONALES,FALSE,TRUE,La Crónica de Badajoz
+Cerca,cerca,12/02/2026,Extremadura,EX,REGIONALES,FALSE,TRUE,El Periódico de Extremadura
+Cerca,cerca,12/02/2026,Extremadura,EX,REGIONALES,FALSE,TRUE,La Crónica de Badajoz
+Crónica de la Provincia de Badajoz,cronicadelaprovinciadebadajoz,12/02/2026,Extremadura,EX,REGIONALES,FALSE,TRUE,La Crónica de Badajoz
+Crónica del Tajo-Salor,cronicadeltajosalor,12/02/2026,Extremadura,EX,REGIONALES,FALSE,TRUE,El Periódico de Extremadura
+Crónica Puebla de la Calzada,cronicapuebladelacalzada,12/02/2026,Extremadura,EX,REGIONALES,FALSE,TRUE,La Crónica de Badajoz
+El Periódico de Extremadura,el-periodico-extremadura,12/02/2026,Extremadura,EX,REGIONALES,FALSE,FALSE,
+La Crónica de Badajoz,la-cronica-de-badajoz,12/02/2026,Extremadura,EX,REGIONALES,FALSE,FALSE,
+Pasatiempos,pasatiempos,12/02/2026,Extremadura,EX,REGIONALES,FALSE,TRUE,El Periódico de Extremadura
+Pasatiempos,pasatiempos,12/02/2026,Extremadura,EX,REGIONALES,FALSE,TRUE,La Crónica de Badajoz
+Villafranca de los Barros,villafrancadelosbarros,12/02/2026,Extremadura,EX,REGIONALES,FALSE,TRUE,La Crónica de Badajoz
+Cerca,cerca,12/02/2026,Galicia,GAL,REGIONALES,FALSE,TRUE,El Correo Gallego
+Cerca,cerca,12/02/2026,Galicia,GAL,REGIONALES,FALSE,TRUE,Faro de Vigo
+Cerca,cerca,12/02/2026,Galicia,GAL,REGIONALES,FALSE,TRUE,La Opinión A Coruña
+El Correo Gallego,el-correo-gallego,12/02/2026,Galicia,GAL,REGIONALES,FALSE,FALSE,
+Faro de Vigo,faro-de-vigo,12/02/2026,Galicia,GAL,REGIONALES,FALSE,FALSE,
+La Opinión de A Coruña,la-opinion-a-coruna,12/02/2026,Galicia,GAL,REGIONALES,FALSE,FALSE,
+Pasatiempos,pasatiempos,12/02/2026,Galicia,GAL,REGIONALES,FALSE,TRUE,El Correo Gallego
+Pasatiempos,pasatiempos,12/02/2026,Galicia,GAL,REGIONALES,FALSE,TRUE,Faro de Vigo
+Pasatiempos,pasatiempos,12/02/2026,Galicia,GAL,REGIONALES,FALSE,TRUE,La Opinión A Coruña
+Cerca,cerca,12/02/2026,Islas Baleares,IB,REGIONALES,FALSE,TRUE,Diario de Ibiza
+Cerca,cerca,12/02/2026,Islas Baleares,IB,REGIONALES,FALSE,TRUE,Diario de Mallorca
+Cerca,cerca,12/02/2026,Islas Baleares,IB,REGIONALES,FALSE,TRUE,Mallorca Zeitung
+Crónica de Palma,cronicadepalma,12/02/2026,Islas Baleares,IB,REGIONALES,FALSE,TRUE,Diario de Mallorca
+Diario de Andratx,diariodeandratx,12/02/2026,Islas Baleares,IB,REGIONALES,FALSE,TRUE,Diario de Mallorca
+Diario de Formentera,diariodeformentera,12/02/2026,Islas Baleares,IB,REGIONALES,FALSE,TRUE,Diario de Ibiza
+Diario de Ibiza,diario-de-ibiza,12/02/2026,Islas Baleares,IB,REGIONALES,FALSE,FALSE,
+Diario de Mallorca,diario-de-mallorca,12/02/2026,Islas Baleares,IB,REGIONALES,FALSE,FALSE,
+Diario de Santa Eulària,diariodesantaeularia,12/02/2026,Islas Baleares,IB,REGIONALES,FALSE,TRUE,Diario de Ibiza
+Ido,ido,12/02/2026,Islas Baleares,IB,REGIONALES,FALSE,TRUE,Diario de Mallorca
+Living Ibiza,livingibiza,12/02/2026,Islas Baleares,IB,REGIONALES,FALSE,TRUE,Diario de Ibiza
+Mallorca Delicia,mallorcadelicia,12/02/2026,Islas Baleares,IB,REGIONALES,FALSE,TRUE,Diario de Mallorca
+Mallorca Zeitung,mallorca-zeitung,12/02/2026,Islas Baleares,IB,REGIONALES,FALSE,FALSE,
+Pasatiempos,pasatiempos,12/02/2026,Islas Baleares,IB,REGIONALES,FALSE,TRUE,Diario de Ibiza
+Pasatiempos,pasatiempos,12/02/2026,Islas Baleares,IB,REGIONALES,FALSE,TRUE,Diario de Mallorca
+Pasatiempos,pasatiempos,12/02/2026,Islas Baleares,IB,REGIONALES,FALSE,TRUE,Mallorca Zeitung
+Deia,deia,12/02/2026,País Vasco,PV,REGIONALES,FALSE,FALSE,
+Noticias de Álava,alava,12/02/2026,País Vasco,PV,REGIONALES,FALSE,FALSE,
+Noticias de Gipuzkoa,gipuzkoa,12/02/2026,País Vasco,PV,REGIONALES,FALSE,FALSE,
+Noticias de Navarra,navarra,12/02/2026,País Vasco,PV,REGIONALES,FALSE,FALSE,
+Cerca,cerca,12/02/2026,Región de Murcia,MUR,REGIONALES,FALSE,TRUE,La Opinión de Murcia
+La Opinión de Murcia,la-opinion-de-murcia,12/02/2026,Región de Murcia,MUR,REGIONALES,FALSE,FALSE,
+Pasatiempos,pasatiempos,12/02/2026,Región de Murcia,MUR,REGIONALES,FALSE,TRUE,La Opinión de Murcia

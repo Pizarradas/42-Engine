@@ -1,0 +1,946 @@
+name,region,is__cronicas,media__associated,is__featured,url
+Adamuz,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/alto-guadalquivir/adamuz/
+Aguilar de la Frontera,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/aguilar/
+Alcaracejos,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/alcaracejos/
+Alhaurín De La Torre,Andalucía,FALSE,laopiniondemalaga,TRUE,https://www.laopiniondemalaga.es/malaga/alhaurin-de-la-torre/
+Alhaurín El Grande,Andalucía,FALSE,laopiniondemalaga,FALSE,https://www.laopiniondemalaga.es/malaga/alhaurin-el-grande/
+Almedinilla,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/almedinilla/
+Almodóvar del Río,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/almodovar/
+Antequera,Andalucía,FALSE,laopiniondemalaga,FALSE,https://www.laopiniondemalaga.es/malaga/antequera/
+Añora,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/anora/
+Archidona,Andalucía,FALSE,laopiniondemalaga,FALSE,https://www.laopiniondemalaga.es/malaga/archidona/
+Baena,Andalucía,FALSE,diariocordoba,TRUE,https://www.diariocordoba.com/cordoba/baena/
+Belalcázar,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/belalcazar/
+Belmez,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/belmez/
+Benalmádena,Andalucía,FALSE,laopiniondemalaga,TRUE,https://www.laopiniondemalaga.es/costa-sol-occidental/benalmadena/
+Benamejí,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/benameji/
+Bujalance,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/alto-guadalquivir/bujalance/
+Cabra,Andalucía,TRUE,diariocordoba,TRUE,https://www.diariocordoba.com/cordoba/cabra/
+Campillos,Andalucía,FALSE,laopiniondemalaga,FALSE,https://www.laopiniondemalaga.es/malaga/campillos/
+Cañete de las Torres,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/alto-guadalquivir/canete/
+Carcabuey,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/carcabuey/
+Cardeña,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/cardena/
+Cártama,Andalucía,TRUE,laopiniondemalaga,FALSE,https://www.laopiniondemalaga.es/malaga/cartama/
+Castro del Río,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/castro-rio/
+Coín,Andalucía,FALSE,laopiniondemalaga,FALSE,https://www.laopiniondemalaga.es/malaga/coin/
+Comarca de Antequera,Andalucía,FALSE,laopiniondemalaga,FALSE,https://www.laopiniondemalaga.es/malaga/comarca-antequera/
+Conquista,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/conquista/
+Córdoba,Andalucía,FALSE,diariocordoba,TRUE,https://www.diariocordoba.com/cordoba/cordoba/
+Costa del Sol Occidental,Andalucía,FALSE,laopiniondemalaga,FALSE,https://www.laopiniondemalaga.es/costa-sol-occidental/
+Crónica del Centro,Andalucía,TRUE,diariocordoba,FALSE,https://www.diariocordoba.com/cronica-del-centro/
+Doña Mencía,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/dona-mencia/
+Dos Torres,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/dos-torres/
+El Carpio,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/alto-guadalquivir/carpio/
+El Guijo,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/guijo/
+El Viso de los Pedroches,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/viso/
+Encinas Reales,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/encinas-reales/
+Espejo,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/espejo/
+Espiel,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/espiel/
+Estepona,Andalucía,FALSE,laopiniondemalaga,TRUE,https://www.laopiniondemalaga.es/costa-sol-occidental/estepona/
+Fernán Núñez,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/fernan-nunez/
+Fuengirola,Andalucía,FALSE,laopiniondemalaga,TRUE,https://www.laopiniondemalaga.es/costa-sol-occidental/fuengirola/
+Fuente Carreteros,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/fuente-carreteros/
+Fuente Obejuna,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/fuente-obejuna/
+Fuente Palmera,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/fuente-palmera/
+Fuente Tójar,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/fuente-tojar/
+Guadalcázar,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/guadalcazar/
+Guadalteba,Andalucía,FALSE,laopiniondemalaga,FALSE,https://www.laopiniondemalaga.es/malaga/guadalteba/
+Hinojosa del Duque,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/hinojosa-duque/
+Hornachuelos,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/hornachuelos/
+Iznájar,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/iznajar/
+La Axarquía,Andalucía,FALSE,laopiniondemalaga,FALSE,https://www.laopiniondemalaga.es/axarquia/
+La Carlota,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/carlota/
+La Granjuela,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/granjuela/
+La Guijarrosa,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/guijarrosa/
+La Rambla,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/rambla/
+La Victoria,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/victoria/
+Los Blázquez,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/blazquez/
+Lucena,Andalucía,TRUE,diariocordoba,TRUE,https://www.diariocordoba.com/cordoba/lucena/
+Málaga,Andalucía,FALSE,laopiniondemalaga,TRUE,https://www.laopiniondemalaga.es/malaga/
+Marbella,Andalucía,FALSE,laopiniondemalaga,TRUE,https://www.laopiniondemalaga.es/marbella/
+Mijas,Andalucía,FALSE,laopiniondemalaga,TRUE,https://www.laopiniondemalaga.es/costa-sol-occidental/mijas/
+Montemayor,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/montemayor/
+Montilla,Andalucía,TRUE,diariocordoba,TRUE,https://www.diariocordoba.com/cordoba/montilla/
+Montoro,Andalucía,TRUE,diariocordoba,FALSE,https://www.diariocordoba.com/alto-guadalquivir/montoro/
+Monturque,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/monturque/
+Nerja,Andalucía,FALSE,laopiniondemalaga,FALSE,https://www.laopiniondemalaga.es/axarquia/nerja/
+Nororma,Andalucía,FALSE,laopiniondemalaga,FALSE,https://www.laopiniondemalaga.es/malaga/comarca-nororma/
+Nueva Carteya,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/nueva-carteya/
+Obejo,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/obejo/
+Palenciana,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/palenciana/
+Palma del Río,Andalucía,TRUE,diariocordoba,TRUE,https://www.diariocordoba.com/cordoba/palma-rio/
+Pedroche,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/pedroche/
+Peñarroya-Pueblonuevo,Andalucía,FALSE,diariocordoba,TRUE,https://www.diariocordoba.com/cordoba/penarroya-pueblonuevo/
+Posadas,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/posadas/
+Pozoblanco,Andalucía,TRUE,diariocordoba,TRUE,https://www.diariocordoba.com/cordoba/pozoblanco/
+Priego,Andalucía,FALSE,diariocordoba,TRUE,https://www.diariocordoba.com/cordoba/priego/
+Puente Genil,Andalucía,FALSE,diariocordoba,TRUE,https://www.diariocordoba.com/cordoba/puente-genil/
+Rincón de La Victoria,Andalucía,FALSE,laopiniondemalaga,TRUE,https://www.laopiniondemalaga.es/axarquia/rincon-de-la-victoria/
+Ronda,Andalucía,FALSE,laopiniondemalaga,FALSE,https://www.laopiniondemalaga.es/malaga/ronda/
+Rute,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/rute/
+S.S. de los Ballesteros,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/san-sebastian-ballesteros/
+Santa Eufemia,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/santa-eufemia/
+Santaella,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/santaella/
+Serrania de Las Nieves,Andalucía,FALSE,laopiniondemalaga,FALSE,https://www.laopiniondemalaga.es/malaga/serrania-nieves/
+Serrania de Ronda,Andalucía,FALSE,laopiniondemalaga,FALSE,https://www.laopiniondemalaga.es/malaga/serrania-ronda/
+Sevilla,Andalucía,FALSE,elcorreoweb,FALSE,https://www.elcorreoweb.es/sevilla/provincia-de-sevilla/
+Torrecampo,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/torrecampo/
+Torremolinos,Andalucía,TRUE,laopiniondemalaga,TRUE,https://www.laopiniondemalaga.es/costa-sol-occidental/torremolinos/
+Torrox,Andalucía,FALSE,laopiniondemalaga,FALSE,https://www.laopiniondemalaga.es/axarquia/torrox/
+Valenzuela,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/valenzuela/
+Valle Guadalhorce,Andalucía,FALSE,laopiniondemalaga,FALSE,https://www.laopiniondemalaga.es/malaga/comarca-valle-guadalhorce/
+Valsequillo,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/valsequillo/
+Vélez-Málaga,Andalucía,FALSE,laopiniondemalaga,TRUE,https://www.laopiniondemalaga.es/axarquia/velez-malaga/
+Villa del Río,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/alto-guadalquivir/villa-rio/
+Villaharta,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/villaharta/
+Villanueva de Córdoba,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/villanueva-cordoba/
+Villanueva del Duque,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/villanueva-duque/
+Villanueva del Rey,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/villanueva-rey/
+Villaralto,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/villaralto/
+Villaviciosa,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/villaviciosa-cordoba/
+Zuheros,Andalucía,FALSE,diariocordoba,FALSE,https://www.diariocordoba.com/cordoba/zuheros/
+Alagón,Aragón,FALSE,elperiodicodearagon,FALSE,https://www.elperiodicodearagon.com/aragon/alagon/
+Albalate del Arzobispo,Aragón,FALSE,elperiodicodearagon,FALSE,https://www.elperiodicodearagon.com/aragon/albalate-del-arzobispo/
+Albarracín,Aragón,FALSE,elperiodicodearagon,FALSE,https://www.elperiodicodearagon.com/aragon/albarracin/
+Alcañiz,Aragón,FALSE,elperiodicodearagon,TRUE,https://www.elperiodicodearagon.com/aragon/alcaniz/
+Alcorisa,Aragón,FALSE,elperiodicodearagon,FALSE,https://www.elperiodicodearagon.com/aragon/alcorisa/
+Andorra,Aragón,FALSE,elperiodicodearagon,TRUE,https://www.elperiodicodearagon.com/aragon/andorra/
+Barbastro,Aragón,FALSE,elperiodicodearagon,TRUE,https://www.elperiodicodearagon.com/aragon/barbastro/
+Binéfar,Aragón,FALSE,elperiodicodearagon,FALSE,https://www.elperiodicodearagon.com/aragon/binefar/
+Cadrete,Aragón,FALSE,elperiodicodearagon,FALSE,https://www.elperiodicodearagon.com/aragon/cadrete/
+Calamocha,Aragón,FALSE,elperiodicodearagon,FALSE,https://www.elperiodicodearagon.com/aragon/calamocha/
+Calatayud,Aragón,FALSE,elperiodicodearagon,TRUE,https://www.elperiodicodearagon.com/aragon/calatayud/
+Campo de Belchite,Aragón,TRUE,elperiodicodearagon,FALSE,https://www.elperiodicodearagon.com/zaragoza/campo-de-belchite/
+Campo de Borja,Aragón,TRUE,elperiodicodearagon,FALSE,https://www.elperiodicodearagon.com/aragon/campo-de-borja/
+Campo de Cariñena,Aragón,TRUE,elperiodicodearagon,FALSE,https://www.elperiodicodearagon.com/aragon/campo-de-carinena/
+Canfranc,Aragón,FALSE,elperiodicodearagon,FALSE,https://www.elperiodicodearagon.com/aragon/canfranc/
+Caspe,Aragón,FALSE,elperiodicodearagon,TRUE,https://www.elperiodicodearagon.com/aragon/caspe/
+Cella,Aragón,FALSE,elperiodicodearagon,FALSE,https://www.elperiodicodearagon.com/aragon/cella/
+Cuarte de Huerva,Aragón,FALSE,elperiodicodearagon,FALSE,https://www.elperiodicodearagon.com/aragon/cuarte-de-huerva/
+Cuencas Mineras,Aragón,TRUE,elperiodicodearagon,FALSE,https://www.elperiodicodearagon.com/aragon/cuencas-mineras/
+Daroca,Aragón,FALSE,elperiodicodearagon,FALSE,https://www.elperiodicodearagon.com/aragon/daroca/
+Ejea y sus Pueblos,Aragón,TRUE,elperiodicodearagon,TRUE,https://www.elperiodicodearagon.com/aragon/ejea-pueblos/
+Épila,Aragón,FALSE,elperiodicodearagon,FALSE,https://www.elperiodicodearagon.com/aragon/epila/
+Figueruelas,Aragón,FALSE,elperiodicodearagon,FALSE,https://www.elperiodicodearagon.com/aragon/figueruelas/
+Fraga,Aragón,FALSE,elperiodicodearagon,TRUE,https://www.elperiodicodearagon.com/aragon/fraga/
+Fuendetodos,Aragón,FALSE,elperiodicodearagon,FALSE,https://www.elperiodicodearagon.com/aragon/fuendetodos/
+Gallur,Aragón,FALSE,elperiodicodearagon,FALSE,https://www.elperiodicodearagon.com/aragon/gallur/
+Híjar,Aragón,FALSE,elperiodicodearagon,FALSE,https://www.elperiodicodearagon.com/aragon/hijar/
+Huesca,Aragón,TRUE,elperiodicodearagon,TRUE,https://www.elperiodicodearagon.com/aragon/huesca/
+Jaca,Aragón,FALSE,elperiodicodearagon,TRUE,https://www.elperiodicodearagon.com/aragon/jaca/
+La Muela,Aragón,FALSE,elperiodicodearagon,FALSE,https://www.elperiodicodearagon.com/aragon/la-muela/
+María de Huerva,Aragón,FALSE,elperiodicodearagon,FALSE,https://www.elperiodicodearagon.com/aragon/maria-de-huerva/
+Monzón,Aragón,FALSE,elperiodicodearagon,TRUE,https://www.elperiodicodearagon.com/aragon/monzon/
+Ribera Alta del Ebro,Aragón,TRUE,elperiodicodearagon,FALSE,https://www.elperiodicodearagon.com/zaragoza/ribera-alta-del-ebro/
+Sallent de Gállego,Aragón,FALSE,elperiodicodearagon,FALSE,https://www.elperiodicodearagon.com/aragon/sallent-de-gallego/
+San Mateo,Aragón,FALSE,elperiodicodearagon,FALSE,https://www.elperiodicodearagon.com/aragon/san-mateo/
+Sariñena,Aragón,FALSE,elperiodicodearagon,FALSE,https://www.elperiodicodearagon.com/aragon/sarinena/
+Tamarite,Aragón,FALSE,elperiodicodearagon,FALSE,https://www.elperiodicodearagon.com/aragon/tamarite/
+Tarazona,Aragón,FALSE,elperiodicodearagon,TRUE,https://www.elperiodicodearagon.com/aragon/tarazona/
+Tauste,Aragón,FALSE,elperiodicodearagon,FALSE,https://www.elperiodicodearagon.com/aragon/tauste/
+Teruel,Aragón,FALSE,elperiodicodearagon,TRUE,https://www.elperiodicodearagon.com/aragon/teruel/teruel/
+Utebo,Aragón,FALSE,elperiodicodearagon,TRUE,https://www.elperiodicodearagon.com/aragon/utebo/
+Utrillas,Aragón,FALSE,elperiodicodearagon,FALSE,https://www.elperiodicodearagon.com/aragon/utrillas/
+Valdejalón,Aragón,TRUE,elperiodicodearagon,FALSE,https://www.elperiodicodearagon.com/zaragoza/valdejalon/
+Villanueva de Sigena,Aragón,FALSE,elperiodicodearagon,FALSE,https://www.elperiodicodearagon.com/aragon/villanueva-de-sigena/
+Zaragoza,Aragón,FALSE,elperiodicodearagon,TRUE,https://www.elperiodicodearagon.com/aragon/zaragoza/
+Zuera,Aragón,FALSE,elperiodicodearagon,FALSE,https://www.elperiodicodearagon.com/aragon/zuera/
+Allande,Asturias,FALSE,lne,FALSE,https://www.lne.es/occidente/allande/
+Aller,Asturias,FALSE,lne,FALSE,https://www.lne.es/cuencas/aller/
+Amieva,Asturias,FALSE,lne,FALSE,https://www.lne.es/oriente/amieva/
+Avilés,Asturias,FALSE,lne,TRUE,https://www.lne.es/aviles/
+Belmonte de Miranda,Asturias,FALSE,lne,FALSE,https://www.lne.es/occidente/belmonte-de-miranda/
+Bimenes,Asturias,FALSE,lne,FALSE,https://www.lne.es/centro/bimenes/
+Boal,Asturias,FALSE,lne,FALSE,https://www.lne.es/occidente/boal/
+Cabrales,Asturias,FALSE,lne,FALSE,https://www.lne.es/oriente/cabrales/
+Cabranes,Asturias,FALSE,lne,FALSE,https://www.lne.es/centro/cabranes/
+Candamo,Asturias,FALSE,lne,FALSE,https://www.lne.es/centro/candamo/
+Cangas de Onís,Asturias,FALSE,lne,FALSE,https://www.lne.es/oriente/cangas-de-onis/
+Cangas del Narcea,Asturias,TRUE,lne,FALSE,https://www.lne.es/occidente/cangas-del-narcea/
+Carreño,Asturias,FALSE,lne,FALSE,https://www.lne.es/centro/carreno/
+Caso,Asturias,FALSE,lne,FALSE,https://www.lne.es/cuencas/caso/
+Castrillón,Asturias,FALSE,lne,TRUE,https://www.lne.es/aviles/castrillon/
+Castropol,Asturias,FALSE,lne,FALSE,https://www.lne.es/occidente/castropol/
+Coaña,Asturias,FALSE,lne,FALSE,https://www.lne.es/occidente/coana/
+Colunga,Asturias,FALSE,lne,FALSE,https://www.lne.es/oriente/colunga/
+Corvera de Asturias,Asturias,FALSE,lne,TRUE,https://www.lne.es/aviles/corvera-de-asturias/
+Cudillero,Asturias,FALSE,lne,FALSE,https://www.lne.es/occidente/cudillero/
+Degaña,Asturias,FALSE,lne,FALSE,https://www.lne.es/occidente/degana/
+El Franco,Asturias,FALSE,lne,FALSE,https://www.lne.es/occidente/el-franco/
+Gijón,Asturias,FALSE,lne,TRUE,https://www.lne.es/gijon/
+Gozón,Asturias,FALSE,lne,TRUE,https://www.lne.es/aviles/gozon/
+Grado,Asturias,TRUE,lne,FALSE,https://www.lne.es/centro/grado/
+Grandas de Salime,Asturias,FALSE,lne,FALSE,https://www.lne.es/occidente/grandas-de-salime/
+Ibias,Asturias,FALSE,lne,FALSE,https://www.lne.es/occidente/ibias/
+Illas,Asturias,FALSE,lne,FALSE,https://www.lne.es/aviles/illas/
+La Calzada,Asturias,TRUE,lne,FALSE,https://www.lne.es/gijon/gijon-oeste/la-calzada/
+La Corredoria,Asturias,TRUE,lne,FALSE,https://www.lne.es/oviedo/la-corredoria/
+Langreo,Asturias,FALSE,lne,TRUE,https://www.lne.es/cuencas/langreo/
+Laviana,Asturias,FALSE,lne,FALSE,https://www.lne.es/cuencas/laviana/
+Lena,Asturias,FALSE,lne,FALSE,https://www.lne.es/cuencas/lena/
+Llanera,Asturias,TRUE,lne,FALSE,https://www.lne.es/llanera/
+Llanes,Asturias,FALSE,lne,FALSE,https://www.lne.es/oriente/llanes/
+Mieres,Asturias,FALSE,lne,TRUE,https://www.lne.es/cuencas/mieres/
+Morcín,Asturias,FALSE,lne,FALSE,https://www.lne.es/cuencas/morcin/
+Muros de Nalón,Asturias,FALSE,lne,FALSE,https://www.lne.es/centro/muros-de-nalon/
+Nava,Asturias,FALSE,lne,FALSE,https://www.lne.es/centro/nava/
+Navia,Asturias,FALSE,lne,FALSE,https://www.lne.es/occidente/navia/
+Noreña,Asturias,FALSE,lne,FALSE,https://www.lne.es/centro/norena/
+Onís,Asturias,FALSE,lne,FALSE,https://www.lne.es/oriente/onis/
+Oviedo,Asturias,FALSE,lne,TRUE,https://www.lne.es/oviedo/oviedo/
+Parres,Asturias,FALSE,lne,FALSE,https://www.lne.es/oriente/parres/
+Peñamera Alta,Asturias,FALSE,lne,FALSE,https://www.lne.es/oriente/penamera-alta/
+Peñamera Baja,Asturias,FALSE,lne,FALSE,https://www.lne.es/oriente/penamera-baja/
+Piloña,Asturias,FALSE,lne,FALSE,https://www.lne.es/oriente/pilona/
+Ponga,Asturias,FALSE,lne,FALSE,https://www.lne.es/oriente/ponga/
+Pravia,Asturias,FALSE,lne,FALSE,https://www.lne.es/centro/pravia/
+Proaza,Asturias,FALSE,lne,FALSE,https://www.lne.es/centro/proaza/
+Quirós,Asturias,FALSE,lne,FALSE,https://www.lne.es/centro/quiros/
+Ribadedeva,Asturias,FALSE,lne,FALSE,https://www.lne.es/oriente/ribadedeva/
+Ribadesella,Asturias,FALSE,lne,FALSE,https://www.lne.es/oriente/ribadesella/
+Ribera de Arriba,Asturias,TRUE,lne,FALSE,https://www.lne.es/ribera-de-arriba/
+Riosa,Asturias,FALSE,lne,FALSE,https://www.lne.es/cuencas/riosa/
+Salas,Asturias,TRUE,lne,FALSE,https://www.lne.es/occidente/salas/
+San Martín del Rey Aurelio,Asturias,FALSE,lne,TRUE,https://www.lne.es/cuencas/san-martin-del-rey-aurelio/
+San Tirso de Abres,Asturias,FALSE,lne,FALSE,https://www.lne.es/occidente/san-tirso-de-abres/
+Santa Eulalia de Oscos,Asturias,FALSE,lne,FALSE,https://www.lne.es/occidente/santa-eulalia-de-oscos/
+Sariego,Asturias,FALSE,lne,FALSE,https://www.lne.es/centro/sariego/
+Siero,Asturias,TRUE,lne,FALSE,https://www.lne.es/siero/
+Sobrescobio,Asturias,FALSE,lne,FALSE,https://www.lne.es/cuencas/sobrescobio/
+Somiedo,Asturias,FALSE,lne,FALSE,https://www.lne.es/occidente/somiedo/
+Soto del Barco,Asturias,FALSE,lne,TRUE,https://www.lne.es/aviles/soto-del-barco/
+Tapia de Casariego,Asturias,FALSE,lne,FALSE,https://www.lne.es/occidente/tapia-de-casariego/
+Taramundi,Asturias,FALSE,lne,FALSE,https://www.lne.es/occidente/taramundi/
+Teverga,Asturias,FALSE,lne,FALSE,https://www.lne.es/centro/teverga/
+Tineo,Asturias,FALSE,lne,FALSE,https://www.lne.es/occidente/tineo/
+Valdés,Asturias,FALSE,lne,FALSE,https://www.lne.es/occidente/valdes/
+Vegadeo,Asturias,FALSE,lne,FALSE,https://www.lne.es/occidente/vegadeo/
+Villaviciosa,Asturias,TRUE,lne,FALSE,https://www.lne.es/villaviciosa/
+Villayón,Asturias,FALSE,lne,FALSE,https://www.lne.es/occidente/villayon/
+Yernes y Tameza,Asturias,FALSE,lne,FALSE,https://www.lne.es/centro/yernes-y-tameza/
+Adeje,Canarias,FALSE,eldia,TRUE,https://www.eldia.es/tenerife/adeje/
+Agaete,Canarias,FALSE,laprovincia,FALSE,https://www.laprovincia.es/gran-canaria/agaete/
+Agüimes,Canarias,FALSE,laprovincia,TRUE,https://www.laprovincia.es/gran-canaria/aguimes/
+Alajeró,Canarias,FALSE,eldia,FALSE,https://www.eldia.es/la-gomera/alajero/
+Antigua,Canarias,FALSE,laprovincia,FALSE,https://www.laprovincia.es/fuerteventura/antigua/
+Arafo,Canarias,FALSE,eldia,FALSE,https://www.eldia.es/tenerife/arafo/
+Arico,Canarias,FALSE,eldia,FALSE,https://www.eldia.es/tenerife/arico/
+Arona,Canarias,FALSE,eldia,TRUE,https://www.eldia.es/tenerife/arona/
+Arrecife,Canarias,FALSE,laprovincia,TRUE,https://www.laprovincia.es/lanzarote/arrecife/
+Artenara,Canarias,FALSE,laprovincia,FALSE,https://www.laprovincia.es/gran-canaria/artenara/
+Arucas,Canarias,FALSE,laprovincia,TRUE,https://www.laprovincia.es/gran-canaria/arucas/
+Barlovento,Canarias,FALSE,eldia,FALSE,https://www.eldia.es/la-palma/barlovento/
+Breña Alta,Canarias,FALSE,eldia,FALSE,https://www.eldia.es/la-palma/brena-alta/
+Breña Baja,Canarias,FALSE,eldia,FALSE,https://www.eldia.es/la-palma/brena-baja/
+Buenavista del Norte,Canarias,FALSE,eldia,FALSE,https://www.eldia.es/tenerife/buenavista-del-norte/
+Candelaria,Canarias,FALSE,eldia,TRUE,https://www.eldia.es/tenerife/candelaria/
+El Pinar,Canarias,FALSE,eldia,FALSE,https://www.eldia.es/el-hierro/el-pinar/
+El Rosario,Canarias,FALSE,eldia,FALSE,https://www.eldia.es/tenerife/el-rosario/
+El Sauzal,Canarias,FALSE,eldia,FALSE,https://www.eldia.es/tenerife/el-sauzal/
+El Tanque,Canarias,FALSE,eldia,FALSE,https://www.eldia.es/tenerife/el-tanque/
+Fasnia,Canarias,FALSE,eldia,FALSE,https://www.eldia.es/tenerife/fasnia/
+Firgas,Canarias,FALSE,laprovincia,FALSE,https://www.laprovincia.es/gran-canaria/firgas/
+Fuencaliente,Canarias,FALSE,eldia,FALSE,https://www.eldia.es/la-palma/fuencaliente/
+Gáldar,Canarias,FALSE,laprovincia,TRUE,https://www.laprovincia.es/gran-canaria/galdar/
+Garachico,Canarias,FALSE,eldia,FALSE,https://www.eldia.es/tenerife/garachico/
+Garafía,Canarias,FALSE,eldia,FALSE,https://www.eldia.es/la-palma/garafia/
+Granadilla de Abona,Canarias,FALSE,eldia,TRUE,https://www.eldia.es/tenerife/granadilla-de-abona/
+Guía de Isora,Canarias,FALSE,eldia,FALSE,https://www.eldia.es/tenerife/guia-de-isora/
+Güímar,Canarias,FALSE,eldia,FALSE,https://www.eldia.es/tenerife/guimar/
+Haría,Canarias,FALSE,laprovincia,FALSE,https://www.laprovincia.es/lanzarote/haria/
+Hermigua,Canarias,FALSE,eldia,FALSE,https://www.eldia.es/la-gomera/hermigua/
+Icod de los Vinos,Canarias,FALSE,eldia,FALSE,https://www.eldia.es/tenerife/icod-de-los-vinos/
+Ingenio,Canarias,FALSE,laprovincia,TRUE,https://www.laprovincia.es/gran-canaria/ingenio/
+La Aldea de San Nicolás,Canarias,FALSE,laprovincia,FALSE,https://www.laprovincia.es/gran-canaria/la-aldea-de-san-nicolas/
+La Frontera,Canarias,FALSE,eldia,FALSE,https://www.eldia.es/el-hierro/la-frontera/
+La Guancha,Canarias,FALSE,eldia,FALSE,https://www.eldia.es/tenerife/la-guancha/
+La Matanza de Acentejo,Canarias,FALSE,eldia,FALSE,https://www.eldia.es/tenerife/la-matanza-de-acentejo/
+La Oliva,Canarias,FALSE,laprovincia,FALSE,https://www.laprovincia.es/fuerteventura/la-oliva/
+La Orotava,Canarias,FALSE,eldia,TRUE,https://www.eldia.es/tenerife/la-orotava/
+La Victoria de Acentejo,Canarias,FALSE,eldia,FALSE,https://www.eldia.es/tenerife/la-victoria-de-acentejo/
+Las Palmas de Gran Canaria,Canarias,FALSE,laprovincia,TRUE,https://www.laprovincia.es/gran-canaria/las-palmas-de-gran-canaria/
+Los Realejos,Canarias,FALSE,eldia,TRUE,https://www.eldia.es/tenerife/los-realejos/
+Los Silos,Canarias,FALSE,eldia,FALSE,https://www.eldia.es/tenerife/los-silos/
+Mogán,Canarias,FALSE,laprovincia,FALSE,https://www.laprovincia.es/gran-canaria/mogan/
+Moya,Canarias,FALSE,laprovincia,FALSE,https://www.laprovincia.es/gran-canaria/moya/
+Pájara,Canarias,FALSE,laprovincia,FALSE,https://www.laprovincia.es/fuerteventura/pajara/
+Puerto de la Cruz,Canarias,FALSE,eldia,TRUE,https://www.eldia.es/tenerife/puerto-de-la-cruz/
+Puerto del Rosario,Canarias,FALSE,laprovincia,TRUE,https://www.laprovincia.es/fuerteventura/puerto-del-rosario/
+Puntagorda,Canarias,FALSE,eldia,FALSE,https://www.eldia.es/la-palma/puntagorda/
+San Andrés y Sauces,Canarias,FALSE,eldia,FALSE,https://www.eldia.es/la-palma/san-andres-y-sauces/
+San Bartolomé,Canarias,FALSE,laprovincia,FALSE,https://www.laprovincia.es/lanzarote/san-bartolome/
+San Bartolomé de Tirajana,Canarias,FALSE,laprovincia,TRUE,https://www.laprovincia.es/gran-canaria/san-bartolome-de-tirajana/
+San Cristóbal de la Laguna,Canarias,FALSE,eldia,TRUE,https://www.eldia.es/tenerife/la-laguna/
+San Juan de la Rambla,Canarias,FALSE,eldia,FALSE,https://www.eldia.es/tenerife/san-juan-de-la-rambla/
+San Miguel de Abona,Canarias,FALSE,eldia,FALSE,https://www.eldia.es/tenerife/san-miguel-de-abona/
+San Sebastián de La Gomera,Canarias,FALSE,eldia,FALSE,https://www.eldia.es/la-gomera/san-sebastian-de-la-gomera/
+Santa Brígida,Canarias,FALSE,laprovincia,FALSE,https://www.laprovincia.es/gran-canaria/santa-brigida/
+Santa Cruz de La Palma,Canarias,FALSE,eldia,FALSE,https://www.eldia.es/la-palma/santa-cruz-de-la-palma/
+Santa Cruz de Tenerife,Canarias,FALSE,eldia,TRUE,https://www.eldia.es/tenerife/santa-cruz-de-tenerife/
+Santa Lucía de Tirajana,Canarias,FALSE,laprovincia,TRUE,https://www.laprovincia.es/gran-canaria/santa-lucia-de-tirajana/
+Santa María de Guía de Gran Canaria,Canarias,FALSE,laprovincia,FALSE,https://www.laprovincia.es/gran-canaria/santa-maria-de-guia-de-gran-canaria/
+Santa Úrsula,Canarias,FALSE,eldia,FALSE,https://www.eldia.es/tenerife/santa-ursula/
+Santiago del Teide,Canarias,FALSE,eldia,FALSE,https://www.eldia.es/tenerife/santiago-del-teide/
+Tacoronte,Canarias,FALSE,eldia,FALSE,https://www.eldia.es/tenerife/tacoronte/
+Tazacorte,Canarias,FALSE,eldia,FALSE,https://www.eldia.es/la-palma/tazacorte/
+Tegueste,Canarias,FALSE,eldia,FALSE,https://www.eldia.es/tenerife/tegueste/
+Teguise,Canarias,FALSE,laprovincia,FALSE,https://www.laprovincia.es/lanzarote/teguise/
+Tejeda,Canarias,FALSE,laprovincia,FALSE,https://www.laprovincia.es/gran-canaria/tejeda/
+Telde,Canarias,FALSE,laprovincia,TRUE,https://www.laprovincia.es/gran-canaria/telde/
+Teror,Canarias,FALSE,laprovincia,FALSE,https://www.laprovincia.es/gran-canaria/teror/
+Tías,Canarias,FALSE,laprovincia,FALSE,https://www.laprovincia.es/lanzarote/tias/
+Tijarafe,Canarias,FALSE,eldia,FALSE,https://www.eldia.es/la-palma/tijarafe/
+Tinajo,Canarias,FALSE,laprovincia,FALSE,https://www.laprovincia.es/lanzarote/tinajo/
+Valleseco,Canarias,FALSE,laprovincia,FALSE,https://www.laprovincia.es/gran-canaria/valleseco/
+Valsequillo de Gran Canaria,Canarias,FALSE,laprovincia,FALSE,https://www.laprovincia.es/gran-canaria/valsequillo-de-gran-canaria/
+Vega de San Mateo,Canarias,FALSE,laprovincia,FALSE,https://www.laprovincia.es/gran-canaria/vega-de-san-mateo/
+Vilaflor,Canarias,FALSE,eldia,FALSE,https://www.eldia.es/tenerife/vilaflor/
+Villa de Mazo,Canarias,FALSE,eldia,FALSE,https://www.eldia.es/la-palma/villa-de-mazo/
+Yaiza,Canarias,FALSE,laprovincia,FALSE,https://www.laprovincia.es/lanzarote/yaiza/
+Alcañices,Castilla y León,FALSE,laopiniondezamora,FALSE,https://www.laopiniondezamora.es/zamora/alcanices/
+Benavente,Castilla y León,TRUE,laopiniondezamora,TRUE,https://www.laopiniondezamora.es/benavente/
+Bermillo de Sayago,Castilla y León,FALSE,laopiniondezamora,FALSE,https://www.laopiniondezamora.es/zamora/bermillo-de-sayago/
+Camarzana de Tera,Castilla y León,FALSE,laopiniondezamora,FALSE,https://www.laopiniondezamora.es/benavente/camarzana-de-tera/
+Carbajales de Alba,Castilla y León,FALSE,laopiniondezamora,FALSE,https://www.laopiniondezamora.es/zamora/carbajales-de-alba/
+Coreses,Castilla y León,FALSE,laopiniondezamora,FALSE,https://www.laopiniondezamora.es/zamora/coreses/
+Fermoselle,Castilla y León,FALSE,laopiniondezamora,FALSE,https://www.laopiniondezamora.es/zamora/fermoselle/
+Fuentesaúco,Castilla y León,FALSE,laopiniondezamora,TRUE,https://www.laopiniondezamora.es/zamora/fuentesauco/
+Galende,Castilla y León,FALSE,laopiniondezamora,FALSE,https://www.laopiniondezamora.es/zamora/galende/
+Morales del Vino,Castilla y León,FALSE,laopiniondezamora,TRUE,https://www.laopiniondezamora.es/zamora/morales-del-vino/
+Puebla de Sanabria,Castilla y León,FALSE,laopiniondezamora,TRUE,https://www.laopiniondezamora.es/zamora/puebla-de-sanabria/
+Rabanales,Castilla y León,FALSE,laopiniondezamora,FALSE,https://www.laopiniondezamora.es/zamora/rabanales/
+San Cristobal de Entreviñas,Castilla y León,FALSE,laopiniondezamora,TRUE,https://www.laopiniondezamora.es/tags/san-cristobal-de-entrevinas/
+Toro,Castilla y León,TRUE,laopiniondezamora,TRUE,https://www.laopiniondezamora.es/toro/
+Villalpando,Castilla y León,FALSE,laopiniondezamora,FALSE,https://www.laopiniondezamora.es/zamora/villalpando/
+Villaralbo,Castilla y León,FALSE,laopiniondezamora,TRUE,https://www.laopiniondezamora.es/zamora/villaralbo/
+Villardeciervos,Castilla y León,FALSE,laopiniondezamora,FALSE,https://www.laopiniondezamora.es/zamora/villardeciervos/
+Zamora,Castilla y León,FALSE,laopiniondezamora,TRUE,https://www.laopiniondezamora.es/zamora/
+Anglès,Cataluña,FALSE,diaridegirona,FALSE,https://www.diaridegirona.cat/selva/angles/
+Artés,Cataluña,FALSE,regio7,FALSE,https://www.regio7.cat/bages/artes/
+Avià,Cataluña,FALSE,regio7,FALSE,https://www.regio7.cat/bergueda/avia/
+Badalona,Cataluña,TRUE,elperiodico,TRUE,https://www.elperiodico.com/es/badalona/
+Balsareny,Cataluña,FALSE,regio7,FALSE,https://www.regio7.cat/bages/balsareny/
+Banyoles,Cataluña,FALSE,diaridegirona,TRUE,https://www.diaridegirona.cat/comarques/banyoles/
+Barcelona,Cataluña,FALSE,elperiodico,TRUE,https://www.elperiodico.com/es/barcelona/
+Begur,Cataluña,FALSE,diaridegirona,FALSE,https://www.diaridegirona.cat/baix-emporda/begur/
+Bellver de Cerdanya,Cataluña,FALSE,regio7,FALSE,https://www.regio7.cat/cerdanya-alt-urgell/bellver-de-cerdanya/
+Berga,Cataluña,FALSE,regio7,TRUE,https://www.regio7.cat/bergueda/berga/
+Besalú,Cataluña,FALSE,diaridegirona,FALSE,https://www.diaridegirona.cat/comarques/besalu/
+Bescanó,Cataluña,FALSE,diaridegirona,FALSE,https://www.diaridegirona.cat/comarques/bescano/
+Blanes,Cataluña,FALSE,diaridegirona,TRUE,https://www.diaridegirona.cat/selva/blanes/
+Cadaqués,Cataluña,FALSE,diaridegirona,FALSE,https://www.diaridegirona.cat/alt-emporda/cadaques/
+Camprodon,Cataluña,FALSE,diaridegirona,FALSE,https://www.diaridegirona.cat/comarques/camprodon/
+Cardona,Cataluña,FALSE,regio7,FALSE,https://www.regio7.cat/bages/cardona/
+Cassà de la Selva,Cataluña,FALSE,diaridegirona,FALSE,https://www.diaridegirona.cat/comarques/cassa-de-la-selva/
+Castell-Platja d'Aro,Cataluña,FALSE,diaridegirona,FALSE,https://www.diaridegirona.cat/baix-emporda/castell-platja-daro/
+Castellbell i el Vilar,Cataluña,FALSE,regio7,FALSE,https://www.regio7.cat/bages/castellbell-i-el-vilar/
+Castelldefels,Cataluña,FALSE,elperiodico,TRUE,https://www.elperiodico.com/es/castelldefels/
+Castelló d'Empúries,Cataluña,FALSE,diaridegirona,FALSE,https://www.diaridegirona.cat/alt-emporda/castello-dempuries/
+Castelló d'Empúries,Cataluña,TRUE,emporda,TRUE,https://www.emporda.info/comarca/castello-d-empuries/
+Cornellà,Cataluña,TRUE,elperiodico,TRUE,https://www.elperiodico.com/es/cornella/
+El Prat de Llobregat,Cataluña,FALSE,elperiodico,TRUE,https://www.elperiodico.com/es/el-prat-de-llobregat/
+Esparreguera,Cataluña,FALSE,regio7,FALSE,https://www.regio7.cat/anoia-baix-llobregat/esparreguera/
+Esplugues,Cataluña,TRUE,elperiodico,TRUE,https://www.elperiodico.com/es/esplugues/
+Figueres,Cataluña,FALSE,diaridegirona,TRUE,https://www.diaridegirona.cat/alt-emporda/figueres/
+Figueres,Cataluña,FALSE,emporda,TRUE,https://www.emporda.info/comarca/figueres/
+Forallac,Cataluña,FALSE,diaridegirona,FALSE,https://www.diaridegirona.cat/baix-emporda/forallac/
+Gavà,Cataluña,TRUE,elperiodico,TRUE,https://www.elperiodico.com/es/gava/
+Girona,Cataluña,FALSE,diaridegirona,TRUE,https://www.diaridegirona.cat/girona/
+Gironella,Cataluña,FALSE,regio7,FALSE,https://www.regio7.cat/bergueda/gironella/
+Granollers,Cataluña,TRUE,elperiodico,TRUE,https://www.elperiodico.com/es/granollers/
+Igualada,Cataluña,FALSE,regio7,TRUE,https://www.regio7.cat/anoia-baix-llobregat/igualada/
+L'Escala,Cataluña,FALSE,diaridegirona,FALSE,https://www.diaridegirona.cat/alt-emporda/lescala/
+L'Escala,Cataluña,TRUE,emporda,TRUE,https://www.emporda.info/comarca/l-escala/
+L'Hospitalet,Cataluña,TRUE,elperiodico,TRUE,https://www.elperiodico.com/es/hospitalet/
+La Bisbal d'Empordà,Cataluña,FALSE,diaridegirona,FALSE,https://www.diaridegirona.cat/baix-emporda/la-bisbal-demporda/
+La Jonquera,Cataluña,FALSE,emporda,TRUE,https://www.emporda.info/comarca/la-jonquera/
+La Seu d'Urgell,Cataluña,FALSE,regio7,TRUE,https://www.regio7.cat/cerdanya-alt-urgell/la-seu-d-urgell/
+Les Planes d'Hostoles,Cataluña,FALSE,diaridegirona,FALSE,https://www.diaridegirona.cat/comarques/les-planes-dhostoles/
+Llagostera,Cataluña,FALSE,diaridegirona,FALSE,https://www.diaridegirona.cat/comarques/llagostera/
+Llançà,Cataluña,FALSE,diaridegirona,FALSE,https://www.diaridegirona.cat/alt-emporda/llanca/
+Llançà,Cataluña,FALSE,emporda,TRUE,https://www.emporda.info/tags/llanca/
+Llí­via,Cataluña,FALSE,regio7,FALSE,https://www.regio7.cat/cerdanya-alt-urgell/llivia/
+Lloret de Mar,Cataluña,FALSE,diaridegirona,TRUE,https://www.diaridegirona.cat/selva/lloret-de-mar/
+Manresa,Cataluña,FALSE,regio7,TRUE,https://www.regio7.cat/manresa/manresa/
+Martorell,Cataluña,FALSE,elperiodico,TRUE,https://www.elperiodico.com/es/martorell/
+Martorell,Cataluña,FALSE,regio7,FALSE,https://www.regio7.cat/anoia-baix-llobregat/martorell/
+Mataró,Cataluña,TRUE,elperiodico,TRUE,https://www.elperiodico.com/es/mataro/
+Moià,Cataluña,FALSE,regio7,TRUE,https://www.regio7.cat/moianes/moia/
+Mollet del Vallès,Cataluña,TRUE,elperiodico,TRUE,https://www.elperiodico.com/es/mollet-del-valles/
+Navarcles,Cataluña,FALSE,regio7,FALSE,https://www.regio7.cat/bages/navarcles/
+Navàs,Cataluña,FALSE,regio7,FALSE,https://www.regio7.cat/bages/navas/
+Olot,Cataluña,FALSE,diaridegirona,TRUE,https://www.diaridegirona.cat/comarques/olot/
+Palafrugell,Cataluña,FALSE,diaridegirona,TRUE,https://www.diaridegirona.cat/baix-emporda/palafrugell/
+Palamós,Cataluña,FALSE,diaridegirona,FALSE,https://www.diaridegirona.cat/baix-emporda/palamos/
+Pals,Cataluña,FALSE,diaridegirona,FALSE,https://www.diaridegirona.cat/baix-emporda/pals/
+Parets,Cataluña,TRUE,elperiodico,TRUE,https://www.elperiodico.com/es/parets/
+Piera,Cataluña,FALSE,regio7,FALSE,https://www.regio7.cat/anoia-baix-llobregat/piera/
+Porqueres,Cataluña,FALSE,diaridegirona,FALSE,https://www.diaridegirona.cat/comarques/porqueres/
+Port de la Selva,Cataluña,FALSE,diaridegirona,FALSE,https://www.diaridegirona.cat/alt-emporda/port-de-la-selva/
+Portbou,Cataluña,FALSE,diaridegirona,FALSE,https://www.diaridegirona.cat/alt-emporda/portbou/
+Puig-reig,Cataluña,FALSE,regio7,FALSE,https://www.regio7.cat/bergueda/puig-reig/
+Puigcerdà,Cataluña,FALSE,diaridegirona,FALSE,https://www.diaridegirona.cat/comarques/puigcerda/
+Puigcerdà,Cataluña,FALSE,regio7,TRUE,https://www.regio7.cat/cerdanya-alt-urgell/puigcerda/
+Reus,Cataluña,FALSE,elperiodico,TRUE,https://www.elperiodico.com/es/reus/
+Ripoll,Cataluña,FALSE,diaridegirona,FALSE,https://www.diaridegirona.cat/comarques/ripoll/
+Roses,Cataluña,FALSE,diaridegirona,TRUE,https://www.diaridegirona.cat/alt-emporda/roses/
+Roses,Cataluña,TRUE,emporda,TRUE,https://www.emporda.info/comarca/roses/
+Rubí,Cataluña,TRUE,elperiodico,TRUE,https://www.elperiodico.com/es/rubi/
+Sabadell,Cataluña,TRUE,elperiodico,TRUE,https://www.elperiodico.com/es/sabadell/
+Sallent,Cataluña,FALSE,regio7,FALSE,https://www.regio7.cat/bages/sallent/
+Salt,Cataluña,FALSE,diaridegirona,TRUE,https://www.diaridegirona.cat/girona/salt/
+San Boi,Cataluña,TRUE,elperiodico,TRUE,https://www.elperiodico.com/es/sant-boi/
+Sant Cugat,Cataluña,FALSE,elperiodico,TRUE,https://www.elperiodico.com/es/sant-cugat/
+Sant Feliu de Guíxols,Cataluña,FALSE,diaridegirona,TRUE,https://www.diaridegirona.cat/baix-emporda/sant-feliu-de-guixols/
+Sant Fruitós de Bages,Cataluña,FALSE,regio7,TRUE,https://www.regio7.cat/bages/sant-fruitos-de-bages/
+Sant Gregori,Cataluña,FALSE,diaridegirona,FALSE,https://www.diaridegirona.cat/comarques/sant-gregori/
+Sant Joan de les Abadesses,Cataluña,FALSE,diaridegirona,FALSE,https://www.diaridegirona.cat/comarques/sant-joan-de-les-abadesses/
+Sant Joan de Vilatorrada,Cataluña,FALSE,regio7,TRUE,https://www.regio7.cat/bages/sant-joan-de-vilatorrada/
+Sant Joan les Fonts,Cataluña,FALSE,diaridegirona,FALSE,https://www.diaridegirona.cat/comarques/sant-joan-les-fonts/
+Sant Julià de Ramis,Cataluña,FALSE,diaridegirona,FALSE,https://www.diaridegirona.cat/comarques/sant-julia-de-ramis/
+Sant Llorenç de Morunys,Cataluña,FALSE,regio7,TRUE,https://www.regio7.cat/solsones/sant-llorenc-de-morunys/
+Sant Pere Pescador,Cataluña,FALSE,diaridegirona,FALSE,https://www.diaridegirona.cat/alt-emporda/sant-pere-pescador/
+Sant Vicenç de Castellet,Cataluña,FALSE,regio7,FALSE,https://www.regio7.cat/bages/sant-vicenc-de-castellet/
+Santa Coloma,Cataluña,FALSE,elperiodico,TRUE,https://www.elperiodico.com/es/santa-coloma/
+Santa Coloma de Farners,Cataluña,FALSE,diaridegirona,FALSE,https://www.diaridegirona.cat/selva/santa-coloma-de-farners/
+Santa Cristina d'Aro,Cataluña,FALSE,diaridegirona,FALSE,https://www.diaridegirona.cat/baix-emporda/santa-cristina-daro/
+Santpedor,Cataluña,FALSE,regio7,FALSE,https://www.regio7.cat/bages/santpedor/
+Sarrià de Ter,Cataluña,FALSE,diaridegirona,FALSE,https://www.diaridegirona.cat/girona/sarria-de-ter/
+Solsona,Cataluña,FALSE,regio7,TRUE,https://www.regio7.cat/solsones/solsona/
+Súria,Cataluña,FALSE,regio7,FALSE,https://www.regio7.cat/bages/suria/
+Tarragona,Cataluña,TRUE,elperiodico,TRUE,https://www.elperiodico.com/es/tarragona/
+Terrassa,Cataluña,FALSE,elperiodico,TRUE,https://www.elperiodico.com/es/terrassa/
+Torroella de Montgrí,Cataluña,FALSE,diaridegirona,FALSE,https://www.diaridegirona.cat/baix-emporda/torroella-de-montgri/
+Tossa de Mar,Cataluña,FALSE,diaridegirona,FALSE,https://www.diaridegirona.cat/selva/tossa-de-mar/
+Vidreres,Cataluña,FALSE,diaridegirona,FALSE,https://www.diaridegirona.cat/selva/vidreres/
+Viladecans,Cataluña,TRUE,elperiodico,TRUE,https://www.elperiodico.com/es/viladecans/
+Vilafant,Cataluña,FALSE,diaridegirona,FALSE,https://www.diaridegirona.cat/alt-emporda/vilafant/
+Vilafant,Cataluña,FALSE,emporda,TRUE,https://www.emporda.info/tags/vilafant/
+Vilanova i la Geltrú,Cataluña,FALSE,elperiodico,TRUE,https://www.elperiodico.com/es/vilanova-i-la-geltru/
+Ademuz,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/comarcas/ademuz/
+Agost,Comunidad Valenciana,FALSE,informacion,FALSE,https://www.informacion.es/alacanti/agost/
+Aielo de Malferit,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/costera/aielo-de-malferit/
+Alacante/Alacant,Comunidad Valenciana,FALSE,informacion,TRUE,https://www.informacion.es/alicante/alicante-ciudad/
+Alacantí,Comunidad Valenciana,FALSE,informacion,FALSE,https://www.informacion.es/alacanti/
+Alaquàs,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/horta/alaquas/
+Albal,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/horta/albal/
+Albatera,Comunidad Valenciana,FALSE,informacion,FALSE,https://www.informacion.es/vega-baja/albatera/
+Alberic,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/ribera/alberic/
+Albocasser,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/albocasser/
+Alcala de Xivert,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/alcala-de-xivert/
+Alcalà de Xivert,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/castello/alcala-de-xivert/
+Alcoy/Alcoi,Comunidad Valenciana,FALSE,informacion,TRUE,https://www.informacion.es/alicante/alcoy/
+Alcudia de Veo,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/alcudia-de-veo/
+Aldaia,Comunidad Valenciana,FALSE,levante-emv,TRUE,https://www.levante-emv.com/horta/aldaia/
+Alfafar,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/horta/alfafar/
+Alfondeguilla,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/alfondeguilla/
+Algemesi,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/ribera/algemesi/
+Algimia de Almomacid,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/algimia-de-almomacid/
+Alginet,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/ribera/alginet/
+Almassora,Comunidad Valenciana,FALSE,elperiodicomediterraneo,TRUE,https://www.elperiodicomediterraneo.com/castello/almassora/
+Almenara,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/almenara/
+Almenara,Comunidad Valenciana,TRUE,levante-emv,FALSE,https://www.levante-emv.com/castello/almenara/
+Almoradí,Comunidad Valenciana,FALSE,informacion,FALSE,https://www.informacion.es/vega-baja/almoradi/
+Almussafes,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/ribera/almussafes/
+Altea,Comunidad Valenciana,FALSE,informacion,FALSE,https://www.informacion.es/benidorm/altea/
+Altura,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/altura/
+Alzira,Comunidad Valenciana,FALSE,levante-emv,TRUE,https://www.levante-emv.com/ribera/alzira/
+Arañuel,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/aranuel/
+Ares del Maestrat,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/ares-del-maestrat/
+Artana,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/artana/
+Aspe,Comunidad Valenciana,FALSE,informacion,FALSE,https://www.informacion.es/elda/aspe/
+Ayódar,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/ayodar/
+Ayora,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/comarcas/ayora/
+Azuébar,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/azuebar/
+Baix Vinalopó,Comunidad Valenciana,FALSE,informacion,FALSE,https://www.informacion.es/baix-vinalopo/
+Barracas,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/barracas/
+Bejís,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/bejis/
+Bellreguard,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/safor/bellreguard/
+Benafigos,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/benafigos/
+Benaguasil,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/comarcas/benaguasil/
+Benassal,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/benassal/
+Benejúzar,Comunidad Valenciana,FALSE,informacion,FALSE,https://www.informacion.es/vega-baja/benejuzar/
+Benetússer,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/horta/benetusser/
+Benicarló,Comunidad Valenciana,FALSE,elperiodicomediterraneo,TRUE,https://www.elperiodicomediterraneo.com/castello/benicarlo/
+Benicarló,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/castello/benicarlo/
+Benicasim La Centinela,Comunidad Valenciana,TRUE,elperiodicomediterraneo,TRUE,https://www.elperiodicomediterraneo.com/castello/benicassim/
+Benicàssim,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/castello/benicassim/
+Benidorm,Comunidad Valenciana,FALSE,informacion,TRUE,https://www.informacion.es/alicante/benidorm/
+Benissa,Comunidad Valenciana,FALSE,informacion,FALSE,https://www.informacion.es/marina-alta/benissa/
+Benissa,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/marina/benissa/
+Benlloc,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/benlloc/
+Bétera,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/comarcas/betera/
+Betxí,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/betxi/
+Betxí,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/castello/betxi/
+Bigastro,Comunidad Valenciana,FALSE,informacion,FALSE,https://www.informacion.es/vega-baja/bigastro/
+Bocairent,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/costera/bocairent/
+Borriol,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/borriol/
+Buñol,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/comarcas/bunol/
+Burjassot,Comunidad Valenciana,FALSE,levante-emv,TRUE,https://www.levante-emv.com/horta/burjassot/
+Burriana,Comunidad Valenciana,FALSE,elperiodicomediterraneo,TRUE,https://www.elperiodicomediterraneo.com/castello/burriana/
+Cabanes,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/cabanes/
+Càlig,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/calig/
+Callosa de Segura,Comunidad Valenciana,FALSE,informacion,FALSE,https://www.informacion.es/vega-baja/callosa-de-segura/
+Calp,Comunidad Valenciana,FALSE,informacion,FALSE,https://www.informacion.es/marina-alta/calp/
+Camp de Túria,Comunidad Valenciana,TRUE,levante-emv,FALSE,https://www.levante-emv.com/comunitat-valenciana/camp-de-turia/
+Canals,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/costera/canals/
+Canet d'en Berenguer,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/morvedre/canet-d-en-berenguer/
+Canet lo Roig,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/canet-lo-roig/
+Carcaixent,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/ribera/carcaixent/
+Carlet,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/ribera/carlet/
+Castalla,Comunidad Valenciana,FALSE,informacion,FALSE,https://www.informacion.es/alcoy/castalla/
+Castell de Cabres,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/castell-de-cabres/
+Castellfort,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/castellfort/
+Castellnovo,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/castellnovo/
+Castelló,Comunidad Valenciana,FALSE,elperiodicomediterraneo,TRUE,https://www.elperiodicomediterraneo.com/castello/
+Castillo de la Villamalefa,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/castillo-de-la-villamalefa/
+Catarroja,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/horta/catarroja/
+Catí,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/cati/
+Catral,Comunidad Valenciana,FALSE,informacion,FALSE,https://www.informacion.es/vega-baja/catral/
+Cervera del Maestre,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/cervera-del-maestre/
+Cheste,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/comarcas/cheste/
+Chiva,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/comarcas/chiva/
+Cinctorres,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/cinctorres/
+Cirat,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/cirat/
+Cocentaina,Comunidad Valenciana,FALSE,informacion,FALSE,https://www.informacion.es/alcoy/cocentaina/
+Cofrentes,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/comarcas/cofrentes/
+Cox,Comunidad Valenciana,FALSE,informacion,FALSE,https://www.informacion.es/vega-baja/cox/
+Crevillent,Comunidad Valenciana,FALSE,informacion,FALSE,https://www.informacion.es/baix-vinalopo/crevillent/
+Culla,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/culla/
+Cullera,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/ribera/cullera/
+Dénia,Comunidad Valenciana,FALSE,informacion,FALSE,https://www.informacion.es/marina-alta/denia/
+Dénia,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/marina/denia/
+El Camp de Morvedre,Comunidad Valenciana,TRUE,levante-emv,FALSE,https://www.levante-emv.com/morvedre/
+El Campello,Comunidad Valenciana,FALSE,informacion,TRUE,https://www.informacion.es/alacanti/el-campello/
+El Poble Nou de Benitatxell,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/marina/el-poble-nou-de-benitatxell/
+El Toro,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/el-toro/
+Elche/Elx,Comunidad Valenciana,FALSE,informacion,TRUE,https://www.informacion.es/alicante/elche/
+Elda,Comunidad Valenciana,FALSE,informacion,TRUE,https://www.informacion.es/alicante/elda/
+Enguera,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/costera/enguera/
+Estivella,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/morvedre/estivella/
+Fanzara,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/fanzara/
+Faura,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/morvedre/faura/
+Figueroles,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/figueroles/
+Finestrat,Comunidad Valenciana,FALSE,informacion,FALSE,https://www.informacion.es/benidorm/finestrat/
+Foios,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/horta/foios/
+Forcall,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/forcall/
+Fuente la Reina,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/fuente-la-reina/
+Gaibiel,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/gaibiel/
+Gandia,Comunidad Valenciana,FALSE,levante-emv,TRUE,https://www.levante-emv.com/safor/gandia/
+Gata de Gorgos,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/marina/gata/
+Geldo,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/geldo/
+Gilet,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/morvedre/gilet/
+Godella,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/horta/godella/
+Guardamar del Segura,Comunidad Valenciana,FALSE,informacion,FALSE,https://www.informacion.es/vega-baja/guardamar-del-segura/
+Ibi,Comunidad Valenciana,FALSE,informacion,FALSE,https://www.informacion.es/alcoy/ibi/
+Jávez/Xàbia,Comunidad Valenciana,FALSE,informacion,FALSE,https://www.informacion.es/marina-alta/xabia/
+Jérica,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/jerica/
+L'Alcora,Comunidad Valenciana,TRUE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/lalcora/
+L'Alcúdia,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/ribera/l-alcudia/
+L'Alcúdia de Crespins,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/costera/l-alcudia-de-crespins/
+L’Alfàs del Pi,Comunidad Valenciana,FALSE,informacion,FALSE,https://www.informacion.es/benidorm/l-alfas-del-pi/
+L'Eliana,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/comarcas/l-eliana/
+L’Horta,Comunidad Valenciana,TRUE,levante-emv,FALSE,https://www.levante-emv.com/horta/
+La Crónica de L'Alacantí,Comunidad Valenciana,TRUE,informacion,FALSE,https://www.informacion.es/la-cronica-de-alacanti/
+La Font de la Figuera,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/costera/la-font-de-la-figuera/
+La Jana,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/la-jana/
+La Llosa,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/la-llosa/
+La Llosa de Ranes,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/costera/la-llosa-de-ranes/
+La Marina,Comunidad Valenciana,TRUE,levante-emv,FALSE,https://www.levante-emv.com/marina/
+La Mata,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/la-mata/
+La Nucia,Comunidad Valenciana,FALSE,informacion,FALSE,https://www.informacion.es/benidorm/la-nucia/
+La Pobla de Benifassa,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/la-pobla-de-benifassa/
+La Pobla Tornesa,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/la-pobla-tornesa/
+La Ribera,Comunidad Valenciana,TRUE,levante-emv,FALSE,https://www.levante-emv.com/ribera/
+La Safor,Comunidad Valenciana,TRUE,levante-emv,FALSE,https://www.levante-emv.com/safor/
+La Salzadella,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/la-salzadella/
+La Serra d'en Galceran,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/la-serra-den-galceran/
+La Todolella,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/la-todolella/
+La Vall d'Uixó,Comunidad Valenciana,TRUE,elperiodicomediterraneo,TRUE,https://www.elperiodicomediterraneo.com/castello/la-vall-duixo/
+La Vila Joiosa,Comunidad Valenciana,FALSE,informacion,FALSE,https://www.informacion.es/benidorm/la-vila-joiosa/
+La Vilavella,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/la-vilavella/
+Les Alqueries,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/les-alqueries/
+Les Coves de Vinroma,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/les-coves-de-vinroma/
+Les Useres,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/les-useres/
+Llíria,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/comarcas/lliria/
+Llucena,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/llucena/
+Los Barrios de Alicante,Comunidad Valenciana,TRUE,informacion,FALSE,https://www.informacion.es/la-cronica-barrios-alicante/
+Ludiente,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/ludiente/
+Manises,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/horta/manises/
+Marina Alta,Comunidad Valenciana,FALSE,informacion,FALSE,https://www.informacion.es/marina-alta/
+Massamagrell,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/horta/massamagrell/
+Matet,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/matet/
+Mislata,Comunidad Valenciana,FALSE,levante-emv,TRUE,https://www.levante-emv.com/horta/mislata/
+Moixent,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/costera/moixent/
+Moncada,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/horta/moncada/
+Moncofa,Comunidad Valenciana,TRUE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/moncofa/
+Moncofa,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/castello/moncofa/
+Monforte del Cid,Comunidad Valenciana,FALSE,informacion,FALSE,https://www.informacion.es/elda/monforte-del-cid/
+Monóvar,Comunidad Valenciana,FALSE,informacion,FALSE,https://www.informacion.es/elda/monovar/
+Montan,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/montan/
+Montanejos,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/montanejos/
+Montesa,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/costera/montesa/
+Montserrat,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/ribera/montserrat/
+Morella,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/morella/
+Mutxamel,Comunidad Valenciana,FALSE,informacion,FALSE,https://www.informacion.es/alacanti/mutxamel/
+Nàquera,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/comarcas/naquera/
+Navajas,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/navajas/
+Navarrés,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/costera/navarres/
+Novelda,Comunidad Valenciana,FALSE,informacion,FALSE,https://www.informacion.es/elda/novelda/
+Nules,Comunidad Valenciana,TRUE,elperiodicomediterraneo,TRUE,https://www.elperiodicomediterraneo.com/castello/nules/
+Olocau del Rey,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/olocau-del-rey/
+Onda,Comunidad Valenciana,FALSE,elperiodicomediterraneo,TRUE,https://www.elperiodicomediterraneo.com/castello/onda/
+Onda,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/castello/onda/
+Ondara,Comunidad Valenciana,FALSE,informacion,FALSE,https://www.informacion.es/marina-alta/ondara/
+Ondara,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/marina/ondara/
+Onil,Comunidad Valenciana,FALSE,informacion,FALSE,https://www.informacion.es/alcoy/onil/
+Ontinyent,Comunidad Valenciana,FALSE,levante-emv,TRUE,https://www.levante-emv.com/costera/ontinyent/
+Orihuela,Comunidad Valenciana,FALSE,informacion,TRUE,https://www.informacion.es/vega-baja/orihuela/
+Oropesa,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/oropesa/
+Orpesa,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/castello/orpesa/
+Paiporta,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/horta/paiporta/
+Palanques,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/palanques/
+Paterna,Comunidad Valenciana,FALSE,levante-emv,TRUE,https://www.levante-emv.com/horta/paterna/
+Pedralba,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/comarcas/pedralba/
+Pedreguer,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/marina/pedreguer/
+Pego,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/marina/pego/
+Peñíscola,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/penyiscola/
+Peñíscola,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/castello/peniscola/
+Petrer,Comunidad Valenciana,FALSE,informacion,FALSE,https://www.informacion.es/elda/petrer/
+Picanya,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/horta/picanya/
+Picassent,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/horta/picassent/
+Pilar De La Horadada,Comunidad Valenciana,FALSE,informacion,FALSE,https://www.informacion.es/vega-baja/pilar-de-la-horadada/
+Pinoso,Comunidad Valenciana,FALSE,informacion,FALSE,https://www.informacion.es/elda/pinoso/
+Portell,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/portell/
+Puçol,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/horta/pucol/
+Quart de Poblet,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/horta/quart-de-poblet/
+Requena,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/comarcas/requena/
+Requena-Utiel,Comunidad Valenciana,TRUE,levante-emv,FALSE,https://www.levante-emv.com/comunitat-valenciana/requena-utiel/
+Riba-Roja de Túria,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/comarcas/riba-roja-de-turia/
+Ribesalbes,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/ribesalbes/
+Rocafort,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/horta/rocafort/
+Rojales,Comunidad Valenciana,FALSE,informacion,FALSE,https://www.informacion.es/vega-baja/rojales/
+Rossell,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/rossell/
+Sagunt,Comunidad Valenciana,FALSE,levante-emv,TRUE,https://www.levante-emv.com/morvedre/sagunt/
+San Antonio de Benagéber,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/comarcas/san-antonio-de-benageber/
+San Vicente del Raspeig,Comunidad Valenciana,FALSE,informacion,TRUE,https://www.informacion.es/alacanti/san-vicente-del-raspeig/
+Sant Joan d’Alacant,Comunidad Valenciana,FALSE,informacion,TRUE,https://www.informacion.es/alacanti/sant-joan-d-alacant/
+Sant Joan de Moro,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/sant-joan-de-moro/
+Sant Mateu,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/sant-mateu/
+Sant Rafael,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/sant-rafael/
+Santa Magdalena,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/santa-magdalena/
+Santa Pola,Comunidad Valenciana,FALSE,informacion,FALSE,https://www.informacion.es/baix-vinalopo/santa-pola/
+Sax,Comunidad Valenciana,FALSE,informacion,FALSE,https://www.informacion.es/elda/sax/
+Sedavi,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/horta/sedavi/
+Segorbe,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/segorbe/
+Silla,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/horta/silla/
+Sollana,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/ribera/sollana/
+Soneja,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/soneja/
+Sorita,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/sorita/
+Sueca,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/ribera/sueca/
+Suera,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/suera/
+Tales,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/tales/
+Tavernes de la Valldigna,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/safor/tavernes-de-la-valldigna/
+Teresa,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/teresa/
+Teulada,Comunidad Valenciana,FALSE,informacion,FALSE,https://www.informacion.es/marina-alta/teulada-moraira/
+Teulada,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/marina/teulada/
+Tírig,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/tirig/
+Torás,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/toras/
+Torreblanca,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/torreblanca/
+Torreblanca,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/castello/torreblanca/
+Torrent,Comunidad Valenciana,FALSE,levante-emv,TRUE,https://www.levante-emv.com/horta/torrent/
+Torrevieja,Comunidad Valenciana,FALSE,informacion,TRUE,https://www.informacion.es/vega-baja/torrevieja/
+Traiguera,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/traiguera/
+Turís,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/ribera/turis/
+Utiel,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/comarcas/utiel/
+València,Comunidad Valenciana,FALSE,levante-emv,TRUE,https://www.levante-emv.com/valencia/
+Vall d'Alba,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/vall-dalba/
+Vallat,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/vallat/
+Vega Baja,Comunidad Valenciana,FALSE,informacion,FALSE,https://www.informacion.es/vega-baja/
+Vila-Real,Comunidad Valenciana,FALSE,elperiodicomediterraneo,TRUE,https://www.elperiodicomediterraneo.com/castello/vila-real/
+Vilafamés,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/vilafames/
+Vilafranca,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/vilafranca/
+Vilamarxant,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/comarcas/vilamarxant/
+Villahermosa del Río,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/villahermosa-del-rio/
+Villamalur,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/villamalur/
+Villanueva de Viver,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/villanueva-de-viver/
+Villar del Arzobispo,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/comarcas/villar-del-arzobispo/
+Villena,Comunidad Valenciana,FALSE,informacion,FALSE,https://www.informacion.es/elda/villena/
+Villores,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/villores/
+Vinaròs,Comunidad Valenciana,FALSE,elperiodicomediterraneo,TRUE,https://www.elperiodicomediterraneo.com/castello/vinaros/
+Vinaròs,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/castello/vinaros/
+Vistabella del Maestrat,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/vistabella-del-maestrat/
+Viver,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/viver/
+Xàbia,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/marina/xabia/
+Xàtiva,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/costera/xativa/
+Xert,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/xert/
+Xilxes,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/xilxes/
+Xirivella,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/horta/xirivella/
+Xixona,Comunidad Valenciana,FALSE,informacion,FALSE,https://www.informacion.es/alacanti/xixona/
+Xodos,Comunidad Valenciana,FALSE,elperiodicomediterraneo,FALSE,https://www.elperiodicomediterraneo.com/castello/xodos/
+Zarra,Comunidad Valenciana,FALSE,levante-emv,FALSE,https://www.levante-emv.com/comarcas/zarra/
+Almaraz,Extremadura,FALSE,elperiodicoextremadura,FALSE,https://www.elperiodicoextremadura.com/caceres/almaraz/
+Almendralejo,Extremadura,TRUE,lacronicabadajoz,FALSE,https://www.lacronicabadajoz.com/badajoz/almendralejo/
+Arroyo de la Luz,Extremadura,FALSE,elperiodicoextremadura,FALSE,https://www.elperiodicoextremadura.com/caceres/arroyo-de-la-luz/
+Badajoz,Extremadura,FALSE,elperiodicoextremadura,TRUE,https://www.elperiodicoextremadura.com/badajoz/
+Badajoz,Extremadura,FALSE,lacronicabadajoz,FALSE,https://www.lacronicabadajoz.com/badajoz/
+Cabezuela del Valle,Extremadura,FALSE,elperiodicoextremadura,FALSE,https://www.elperiodicoextremadura.com/caceres/cabezuela-del-valle/
+Cáceres,Extremadura,FALSE,elperiodicoextremadura,TRUE,https://www.elperiodicoextremadura.com/caceres-local/
+Campo de Arañuelo,Extremadura,FALSE,elperiodicoextremadura,FALSE,https://www.elperiodicoextremadura.com/extremadura/campo-de-aranuelo/
+Casar de Cáceres,Extremadura,FALSE,elperiodicoextremadura,FALSE,https://www.elperiodicoextremadura.com/caceres/casar-de-caceres/
+Coria,Extremadura,FALSE,elperiodicoextremadura,TRUE,https://www.elperiodicoextremadura.com/caceres/coria/
+Cuacos de Yuste,Extremadura,FALSE,elperiodicoextremadura,FALSE,https://www.elperiodicoextremadura.com/caceres/cuacos-de-yuste/
+Don Benito,Extremadura,FALSE,lacronicabadajoz,FALSE,https://www.lacronicabadajoz.com/tags/don-benito/
+Extremadura,Extremadura,FALSE,elperiodicoextremadura,TRUE,https://www.elperiodicoextremadura.com/extremadura/
+Garrovillas de Alconétar,Extremadura,FALSE,elperiodicoextremadura,FALSE,https://www.elperiodicoextremadura.com/caceres/garrovillas-de-alconetar/
+Gata,Extremadura,FALSE,elperiodicoextremadura,FALSE,https://www.elperiodicoextremadura.com/caceres/gata/
+Guadalupe,Extremadura,FALSE,elperiodicoextremadura,FALSE,https://www.elperiodicoextremadura.com/caceres/guadalupe/
+Hervás,Extremadura,FALSE,elperiodicoextremadura,FALSE,https://www.elperiodicoextremadura.com/caceres/hervas/
+Jaraíz de la Vera,Extremadura,FALSE,elperiodicoextremadura,FALSE,https://www.elperiodicoextremadura.com/caceres/jaraiz-de-la-vera/
+Jarandilla de la Vera,Extremadura,FALSE,elperiodicoextremadura,FALSE,https://www.elperiodicoextremadura.com/caceres/jarandilla-de-la-vera/
+Jerez de los Caballeros,Extremadura,FALSE,lacronicabadajoz,FALSE,https://www.lacronicabadajoz.com/tags/jerez-de-los-caballeros/
+Jerte,Extremadura,FALSE,elperiodicoextremadura,FALSE,https://www.elperiodicoextremadura.com/caceres/jerte/
+Logrosán,Extremadura,FALSE,elperiodicoextremadura,FALSE,https://www.elperiodicoextremadura.com/caceres/logrosan/
+Malpartida de Cáceres,Extremadura,TRUE,elperiodicoextremadura,FALSE,https://www.elperiodicoextremadura.com/caceres/malpartida-de-caceres/
+Mérida,Extremadura,FALSE,elperiodicoextremadura,TRUE,https://www.elperiodicoextremadura.com/merida/
+Miajadas,Extremadura,FALSE,elperiodicoextremadura,FALSE,https://www.elperiodicoextremadura.com/caceres/miajadas/
+Monesterio,Extremadura,FALSE,lacronicabadajoz,FALSE,https://www.lacronicabadajoz.com/tags/monesterio/
+Monfragüe,Extremadura,FALSE,elperiodicoextremadura,FALSE,https://www.elperiodicoextremadura.com/extremadura/monfrague/
+Montánchez,Extremadura,FALSE,elperiodicoextremadura,FALSE,https://www.elperiodicoextremadura.com/caceres/montanchez/
+Moraleja,Extremadura,FALSE,elperiodicoextremadura,FALSE,https://www.elperiodicoextremadura.com/caceres/moraleja/
+Navalmoral de la Mata,Extremadura,FALSE,elperiodicoextremadura,TRUE,https://www.elperiodicoextremadura.com/caceres/navalmoral-de-la-mata/
+Pinofranqueado,Extremadura,FALSE,elperiodicoextremadura,FALSE,https://www.elperiodicoextremadura.com/caceres/pinofranqueado/
+Piornal,Extremadura,FALSE,elperiodicoextremadura,FALSE,https://www.elperiodicoextremadura.com/caceres/piornal/
+Plasencia,Extremadura,FALSE,elperiodicoextremadura,TRUE,https://www.elperiodicoextremadura.com/caceres/plasencia/
+Talayuela,Extremadura,FALSE,elperiodicoextremadura,FALSE,https://www.elperiodicoextremadura.com/caceres/talayuela/
+Trujillo,Extremadura,FALSE,elperiodicoextremadura,TRUE,https://www.elperiodicoextremadura.com/caceres/trujillo/
+Villafranca de los Barros,Extremadura,TRUE,lacronicabadajoz,FALSE,https://www.lacronicabadajoz.com/badajoz/villafranca-de-los-barros/
+Villanueva de la Serena,Extremadura,FALSE,lacronicabadajoz,FALSE,https://www.lacronicabadajoz.com/tags/villanueva-de-la-serena/
+Zafra,Extremadura,FALSE,lacronicabadajoz,FALSE,https://www.lacronicabadajoz.com/tags/zafra/
+A Cañiza,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/comarcas/a-caniza/
+A Coruña,Galicia,FALSE,laopinioncoruna,TRUE,https://www.laopinioncoruna.es/galicia/coruna/a-coruna/
+A Estrada,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/deza-tabeiros-montes/a-estrada/
+A Guarda,Galicia,FALSE,farodevigo,TRUE,https://www.farodevigo.es/comarcas/a-guarda/
+A Illa de Arousa,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/arousa/a-illa-de-arousa/
+A Lama,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/pontevedra/a-lama/
+A Laracha,Galicia,FALSE,elcorreogallego,FALSE,https://www.elcorreogallego.es/bergantinos/a-laracha/
+A Laracha,Galicia,FALSE,laopinioncoruna,TRUE,https://www.laopinioncoruna.es/galicia/gran-coruna/a-laracha/
+A Pobla do Caramiñal,Galicia,FALSE,elcorreogallego,FALSE,https://www.elcorreogallego.es/barbanza/a-pobla-do-caraminal/
+Abegondo,Galicia,FALSE,laopinioncoruna,TRUE,https://www.laopinioncoruna.es/galicia/gran-coruna/abegondo/
+Agolada,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/deza-tabeiros-montes/agolada/
+Allariz,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/ourense/allariz/
+Ames,Galicia,FALSE,elcorreogallego,TRUE,https://www.elcorreogallego.es/compostela/ames/
+Aranga,Galicia,FALSE,laopinioncoruna,FALSE,https://www.laopinioncoruna.es/galicia/gran-coruna/aranga/
+Arbo,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/comarcas/arbo/
+Arteixo,Galicia,FALSE,laopinioncoruna,TRUE,https://www.laopinioncoruna.es/galicia/gran-coruna/arteixo/
+Arzúa,Galicia,FALSE,elcorreogallego,FALSE,https://www.elcorreogallego.es/ordes-arzua/arzua/
+As Neves,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/comarcas/as-neves/
+Baiona,Galicia,FALSE,farodevigo,TRUE,https://www.farodevigo.es/comarcas/baiona/
+Barro,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/pontevedra/barro/
+Bergondo,Galicia,FALSE,laopinioncoruna,TRUE,https://www.laopinioncoruna.es/galicia/gran-coruna/bergondo/
+Betanzos,Galicia,FALSE,laopinioncoruna,TRUE,https://www.laopinioncoruna.es/galicia/gran-coruna/betanzos/
+Boiro,Galicia,FALSE,elcorreogallego,FALSE,https://www.elcorreogallego.es/barbanza/boiro/
+Boqueixón,Galicia,FALSE,elcorreogallego,FALSE,https://www.elcorreogallego.es/compostela/boqueixon/
+Brión,Galicia,FALSE,elcorreogallego,TRUE,https://www.elcorreogallego.es/compostela/brion/
+Bueu,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/o-morrazo/bueu/
+Cabana de Bergantiños,Galicia,FALSE,elcorreogallego,FALSE,https://www.elcorreogallego.es/bergantinos/cabana-de-bergantinos/
+Caldas de Reis,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/pontevedra/caldas-de-reis/
+Cambados,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/arousa/cambados/
+Cambre,Galicia,FALSE,laopinioncoruna,TRUE,https://www.laopinioncoruna.es/galicia/gran-coruna/cambre/
+Campo Lameiro,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/pontevedra/campo-lameiro/
+Cangas,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/o-morrazo/cangas/
+Carballo,Galicia,FALSE,elcorreogallego,FALSE,https://www.elcorreogallego.es/bergantinos/carballo/
+Carnota,Galicia,FALSE,elcorreogallego,FALSE,https://www.elcorreogallego.es/a-costa-da-morte/carnota/
+Carral,Galicia,FALSE,laopinioncoruna,FALSE,https://www.laopinioncoruna.es/galicia/gran-coruna/carral/
+Catoira,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/arousa/catoira/
+Celanova,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/ourense/celanova/
+Cerceda,Galicia,FALSE,laopinioncoruna,TRUE,https://www.laopinioncoruna.es/galicia/gran-coruna/cerceda/
+Coirós,Galicia,FALSE,laopinioncoruna,FALSE,https://www.laopinioncoruna.es/galicia/gran-coruna/coiros/
+Comarca da Limia,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/ourense/comarca-da-limia/
+Comarca de Allariz Maceda,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/ourense/comarca-de-allariz-maceda/
+Comarca de Terra de Trives,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/ourense/comarca-de-terra-de-trives/
+Comarca de Valdeorras,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/ourense/comarca-de-valdeorras/
+Comarca de Verín,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/ourense/comarca-de-verin/
+Comarca do Carballino,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/comarca-do-carballino/
+Comarca do Ribeiro,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/ourense/comarca-do-ribeiro/
+Comarca Terra De Celanova,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/ourense/comarca-terra-de-celanova/
+Corcubión,Galicia,FALSE,elcorreogallego,FALSE,https://www.elcorreogallego.es/a-costa-da-morte/corcubion/
+Coristanco,Galicia,FALSE,elcorreogallego,FALSE,https://www.elcorreogallego.es/bergantinos/coristanco/
+Covelo,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/comarcas/covelo/
+Crecente,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/comarcas/crecente/
+Culleredo,Galicia,FALSE,laopinioncoruna,TRUE,https://www.laopinioncoruna.es/galicia/gran-coruna/culleredo/
+Cuntis,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/pontevedra/cuntis/
+Curtis,Galicia,FALSE,laopinioncoruna,TRUE,https://www.laopinioncoruna.es/galicia/gran-coruna/curtis/
+Dozón,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/deza-tabeiros-montes/dozon/
+Dumbría,Galicia,FALSE,elcorreogallego,FALSE,https://www.elcorreogallego.es/a-costa-da-morte/dumbria/
+Forcarei,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/deza-tabeiros-montes/forcarei/
+Fornelos de Montes,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/comarcas/fornelos-de-montes/
+Frades,Galicia,FALSE,elcorreogallego,FALSE,https://www.elcorreogallego.es/ordes-arzua/frades/
+Gondomar,Galicia,FALSE,farodevigo,TRUE,https://www.farodevigo.es/comarcas/gondomar/
+Irixoa,Galicia,FALSE,laopinioncoruna,FALSE,https://www.laopinioncoruna.es/galicia/gran-coruna/irixoa/
+Lalín,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/deza-tabeiros-montes/lalin/
+Laxe,Galicia,FALSE,elcorreogallego,FALSE,https://www.elcorreogallego.es/bergantinos/laxe/
+Lousame,Galicia,FALSE,elcorreogallego,FALSE,https://www.elcorreogallego.es/barbanza/lousame/
+Malpica,Galicia,FALSE,elcorreogallego,FALSE,https://www.elcorreogallego.es/bergantinos/malpica/
+Marín,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/pontevedra/marin/
+Mazaricos,Galicia,FALSE,elcorreogallego,FALSE,https://www.elcorreogallego.es/a-costa-da-morte/mazaricos/
+Meaño,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/arousa/meano/
+Meis,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/arousa/meis/
+Melide,Galicia,FALSE,elcorreogallego,FALSE,https://www.elcorreogallego.es/ordes-arzua/melide/
+Miño,Galicia,FALSE,laopinioncoruna,FALSE,https://www.laopinioncoruna.es/galicia/gran-coruna/mino/
+Moaña,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/o-morrazo/moana/
+Mondariz,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/comarcas/mondariz/
+Mondariz Balneario,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/comarcas/mondariz-balneario/
+Moraña,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/pontevedra/morana/
+Mos,Galicia,FALSE,farodevigo,TRUE,https://www.farodevigo.es/comarcas/mos/
+Muros,Galicia,FALSE,elcorreogallego,FALSE,https://www.elcorreogallego.es/barbanza/muros/
+Muxía,Galicia,FALSE,elcorreogallego,FALSE,https://www.elcorreogallego.es/a-costa-da-morte/muxia/
+Negreira,Galicia,FALSE,elcorreogallego,FALSE,https://www.elcorreogallego.es/compostela/negreira/
+Nigrán,Galicia,FALSE,farodevigo,TRUE,https://www.farodevigo.es/comarcas/nigran/
+Noia,Galicia,FALSE,elcorreogallego,TRUE,https://www.elcorreogallego.es/barbanza/noia/
+O Carballiño,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/ourense/o-carballino/
+O Grove,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/arousa/o-grove/
+O Pino,Galicia,FALSE,elcorreogallego,FALSE,https://www.elcorreogallego.es/ordes-arzua/o-pino/
+O Porriño,Galicia,FALSE,farodevigo,TRUE,https://www.farodevigo.es/comarcas/o-porrino/
+O Rosal,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/comarcas/o-rosal/
+Oia,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/comarcas/oia/
+Oleiros,Galicia,FALSE,laopinioncoruna,TRUE,https://www.laopinioncoruna.es/galicia/gran-coruna/oleiros/
+Ordes,Galicia,FALSE,elcorreogallego,FALSE,https://www.elcorreogallego.es/ordes-arzua/ordes/
+Oroso,Galicia,FALSE,elcorreogallego,TRUE,https://www.elcorreogallego.es/ordes-arzua/oroso/
+Ourense,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/galicia/ourense/
+Outes,Galicia,FALSE,elcorreogallego,FALSE,https://www.elcorreogallego.es/barbanza/outes/
+Oza-Cesuras,Galicia,FALSE,laopinioncoruna,FALSE,https://www.laopinioncoruna.es/galicia/gran-coruna/oza-cesuras/
+Paderne,Galicia,FALSE,laopinioncoruna,FALSE,https://www.laopinioncoruna.es/galicia/gran-coruna/paderne/
+Padrón,Galicia,FALSE,elcorreogallego,TRUE,https://www.elcorreogallego.es/compostela/padron/
+Pazos de Borbén,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/comarcas/pazos-de-borben/
+Poio,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/pontevedra/poio/
+Ponte Caldelas,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/pontevedra/ponte-caldelas/
+Ponteareas,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/comarcas/ponteareas/
+Ponteceso,Galicia,FALSE,elcorreogallego,FALSE,https://www.elcorreogallego.es/bergantinos/ponteceso/
+Pontecesures,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/arousa/pontecesures/
+Pontevedra,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/galicia/pontevedra/
+Portas,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/pontevedra/portas/
+Porto do Son,Galicia,FALSE,elcorreogallego,FALSE,https://www.elcorreogallego.es/barbanza/porto-do-son/
+Redondela,Galicia,FALSE,farodevigo,TRUE,https://www.farodevigo.es/comarcas/redondela/
+Rianxo,Galicia,FALSE,elcorreogallego,FALSE,https://www.elcorreogallego.es/barbanza/rianxo/
+Ribadumia,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/arousa/ribadumia/
+Ribeira,Galicia,FALSE,elcorreogallego,TRUE,https://www.elcorreogallego.es/barbanza/ribeira/
+Rodeiro,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/deza-tabeiros-montes/rodeiro/
+Rois,Galicia,FALSE,elcorreogallego,FALSE,https://www.elcorreogallego.es/compostela/rois/
+Sada,Galicia,FALSE,laopinioncoruna,TRUE,https://www.laopinioncoruna.es/galicia/gran-coruna/sada/
+Salceda de Caselas,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/comarcas/salceda-de-caselas/
+Salvaterra,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/comarcas/salvaterra/
+Santa Comba,Galicia,FALSE,elcorreogallego,FALSE,https://www.elcorreogallego.es/compostela/santa-coloma/
+Santiago,Galicia,FALSE,elcorreogallego,TRUE,https://www.elcorreogallego.es/santiago/
+Sanxenxo,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/pontevedra/sanxenxo/
+Silleda,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/deza-tabeiros-montes/silleda/
+Soutomaior,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/comarcas/soutomaior/
+Teo,Galicia,FALSE,elcorreogallego,TRUE,https://www.elcorreogallego.es/compostela/teo/
+Tomiño,Galicia,FALSE,farodevigo,TRUE,https://www.farodevigo.es/comarcas/tomino/
+Tordoia,Galicia,FALSE,elcorreogallego,FALSE,https://www.elcorreogallego.es/ordes-arzua/tordoia/
+Touro,Galicia,FALSE,elcorreogallego,FALSE,https://www.elcorreogallego.es/ordes-arzua/touro/
+Tui,Galicia,FALSE,farodevigo,TRUE,https://www.farodevigo.es/comarcas/tui/
+Val do Dubra,Galicia,FALSE,elcorreogallego,FALSE,https://www.elcorreogallego.es/compostela/val-do-dubra/
+Valga,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/arousa/valga/
+Vedra,Galicia,FALSE,elcorreogallego,FALSE,https://www.elcorreogallego.es/compostela/vedra/
+Verín,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/ourense/verin/
+Vigo,Galicia,FALSE,farodevigo,TRUE,https://www.farodevigo.es/gran-vigo/vigo/
+Vila de Cruces,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/deza-tabeiros-montes/vila-de-cruces/
+Vilaboa,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/pontevedra/vilaboa/
+Vilagarcía de Arousa,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/arousa/vilagarcia-de-arousa/
+Vilanova de Arousa,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/arousa/vilanova-de-arousa/
+Vilasantar,Galicia,FALSE,laopinioncoruna,FALSE,https://www.laopinioncoruna.es/galicia/gran-coruna/vilasantar/
+Vimianzo,Galicia,FALSE,elcorreogallego,FALSE,https://www.elcorreogallego.es/a-costa-da-morte/vimianzo/
+Xinzo de Limia,Galicia,FALSE,farodevigo,FALSE,https://www.farodevigo.es/ourense/xinzo/
+Algaida,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/algaida/
+Andratx,Islas Baleares,FALSE,diariodeibiza,TRUE,https://www.diariodeibiza.es/tags/andratx/
+Andratx,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/andratx/
+Ariany,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/ariany/
+Artà,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/arta/
+Banyalbufar,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/banyalbufar/
+Binissalem,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/binissalem/
+Búger,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/buger/
+Bunyola,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/bunyola/
+Calvià,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/calvia/
+Campos,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/campos/
+Capdepera,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/capdepera/
+Consell,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/consell/
+Costitx,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/costitx/
+Escorca,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/escorca/
+Esporles,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/esporles/
+Estellencs,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/estellencs/
+Felanitx,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/felanitx/
+Formentera,Islas Baleares,FALSE,diariodeibiza,TRUE,https://www.diariodeibiza.es/formentera/
+Ibiza,Islas Baleares,FALSE,diariodeibiza,TRUE,https://www.diariodeibiza.es/ibiza/
+Inca,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/inca/
+Lloret de Vistalegre,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/lloret-de-vistalegre/
+Lloseta,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/lloseta/
+Llubí,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/llubi/
+Llucmajor,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/llucmajor/
+Manacor,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/manacor/
+Mancor de la Vall,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/mancor-de-la-vall/
+Maria de la Salut,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/maria-de-la-salut/
+Marratxí­,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/marratxi/
+Montuïri,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/montuiri/
+Muro,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/muro/
+Palma de Mallorca,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/palma-de-mallorca/
+Petra,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/petra/
+Pollença,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/pollenca/
+Porreres,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/porreres/
+Puigpunyent,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/puigpunyent/
+Sa Pobla,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/sa-pobla/
+Sant Antoni,Islas Baleares,FALSE,diariodeibiza,TRUE,https://www.diariodeibiza.es/pitiuses-balears/sant-antoni/
+Sant Joan,Islas Baleares,FALSE,diariodeibiza,TRUE,https://www.diariodeibiza.es/pitiuses-balears/sant-joan/
+Sant Joan,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/sant-joan/
+Sant Josep,Islas Baleares,FALSE,diariodeibiza,TRUE,https://www.diariodeibiza.es/pitiuses-balears/sant-josep/
+Sant Llorenç des Cardassar,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/sant-llorenc-des-cardassar/
+Santa Eulària,Islas Baleares,TRUE,diariodeibiza,TRUE,https://www.diariodeibiza.es/pitiuses-balears/santa-eularia/
+Santa Margalida,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/santa-margalida/
+Santa Maria del Camí,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/santa-maria-del-cami/
+Selva,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/selva/
+Sencelles,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/sencelles/
+Ses Salines,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/ses-salines/
+Sineu,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/sineu/
+Sóller,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/soller/
+Son Servera,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/son-servera/
+Valldemossa,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/valldemossa/
+Vilafranca de Bonany,Islas Baleares,FALSE,diariodemallorca,FALSE,https://www.diariodemallorca.es/mallorca/vilafranca-de-bonany/
+Alcalá de Henares,Madrid,TRUE,elperiodicodeespaña,TRUE,https://www.epe.es/es/madrid/alcala-de-henares/
+Arganzuela,Madrid,TRUE,elperiodicodeespaña,TRUE,https://www.epe.es/es/madrid/arganzuela/
+Carabanchel,Madrid,TRUE,elperiodicodeespaña,TRUE,https://www.epe.es/es/madrid/carabanchel/
+Latina,Madrid,TRUE,elperiodicodeespaña,TRUE,https://www.epe.es/es/madrid/latina/
+Madrid,Madrid,FALSE,elperiodicodeespaña,TRUE,https://www.epe.es/es/madrid/
+Pozuelo de Alarcón,Madrid,TRUE,elperiodicodeespaña,TRUE,https://www.epe.es/es/madrid/pozuelo-de-alarcon/
+Toledo,Madrid,TRUE,elperiodicodeespaña,TRUE,https://www.epe.es/es/toledo/
+Abarán,Murcia,FALSE,laopiniondemurcia,FALSE,https://www.laopiniondemurcia.es/municipios/abaran/
+Águilas,Murcia,FALSE,laopiniondemurcia,TRUE,https://www.laopiniondemurcia.es/municipios/aguilas/
+Albudeite,Murcia,FALSE,laopiniondemurcia,FALSE,https://www.laopiniondemurcia.es/municipios/albudeite/
+Alcantarilla,Murcia,FALSE,laopiniondemurcia,TRUE,https://www.laopiniondemurcia.es/municipios/alcantarilla/
+Aledo,Murcia,FALSE,laopiniondemurcia,FALSE,https://www.laopiniondemurcia.es/municipios/aledo/
+Alguazas,Murcia,FALSE,laopiniondemurcia,FALSE,https://www.laopiniondemurcia.es/municipios/alguazas/
+Alhama de Murcia,Murcia,FALSE,laopiniondemurcia,FALSE,https://www.laopiniondemurcia.es/municipios/alhama-de-murcia/
+Beniel,Murcia,FALSE,laopiniondemurcia,FALSE,https://www.laopiniondemurcia.es/municipios/beniel/
+Blanca,Murcia,FALSE,laopiniondemurcia,FALSE,https://www.laopiniondemurcia.es/municipios/blanca/
+Bullas,Murcia,FALSE,laopiniondemurcia,FALSE,https://www.laopiniondemurcia.es/municipios/bullas/
+Calasparra,Murcia,FALSE,laopiniondemurcia,FALSE,https://www.laopiniondemurcia.es/municipios/calasparra/
+Caravaca de la Cruz,Murcia,FALSE,laopiniondemurcia,FALSE,https://www.laopiniondemurcia.es/municipios/caravaca-de-la-cruz/
+Cartagena,Murcia,FALSE,laopiniondemurcia,TRUE,https://www.laopiniondemurcia.es/municipios/cartagena/
+Cehegín,Murcia,FALSE,laopiniondemurcia,FALSE,https://www.laopiniondemurcia.es/municipios/cehegin/
+Cieza,Murcia,FALSE,laopiniondemurcia,TRUE,https://www.laopiniondemurcia.es/municipios/cieza/
+Las Torres de Cotillas,Murcia,FALSE,laopiniondemurcia,FALSE,https://www.laopiniondemurcia.es/municipios/las-torres-de-cotillas/
+Librilla,Murcia,FALSE,laopiniondemurcia,FALSE,https://www.laopiniondemurcia.es/municipios/librilla/
+Lorca,Murcia,FALSE,laopiniondemurcia,TRUE,https://www.laopiniondemurcia.es/municipios/lorca/
+Lorquí,Murcia,FALSE,laopiniondemurcia,FALSE,https://www.laopiniondemurcia.es/municipios/lorqui/
+Los Alcázares,Murcia,FALSE,laopiniondemurcia,FALSE,https://www.laopiniondemurcia.es/municipios/los-alcazares/
+Mazarrón,Murcia,FALSE,laopiniondemurcia,FALSE,https://www.laopiniondemurcia.es/municipios/mazarron/
+Molina de Segura,Murcia,FALSE,laopiniondemurcia,TRUE,https://www.laopiniondemurcia.es/municipios/molina-de-segura/
+Mula,Murcia,FALSE,laopiniondemurcia,FALSE,https://www.laopiniondemurcia.es/municipios/mula/
+Murcia,Murcia,FALSE,laopiniondemurcia,TRUE,https://www.laopiniondemurcia.es/municipios/murcia/
+Ojós,Murcia,FALSE,laopiniondemurcia,FALSE,https://www.laopiniondemurcia.es/municipios/ojos/
+Pliego,Murcia,FALSE,laopiniondemurcia,FALSE,https://www.laopiniondemurcia.es/municipios/pliego/
+Ricote,Murcia,FALSE,laopiniondemurcia,FALSE,https://www.laopiniondemurcia.es/municipios/ricote/
+San Javier,Murcia,FALSE,laopiniondemurcia,TRUE,https://www.laopiniondemurcia.es/municipios/san-javier/
+San Pedro del Pinatar,Murcia,FALSE,laopiniondemurcia,FALSE,https://www.laopiniondemurcia.es/municipios/san-pedro-del-pinatar/
+Torre Pacheco,Murcia,FALSE,laopiniondemurcia,TRUE,https://www.laopiniondemurcia.es/municipios/torre-pacheco/
+Totana,Murcia,FALSE,laopiniondemurcia,TRUE,https://www.laopiniondemurcia.es/municipios/totana/
+Yecla,Murcia,FALSE,laopiniondemurcia,FALSE,https://www.laopiniondemurcia.es/municipios/yecla/

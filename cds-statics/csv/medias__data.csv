@@ -1,0 +1,25 @@
+region,media__associated,has__municipality,url__municipality
+Andalucía,diariocordoba,TRUE,https://www.diariocordoba.com/municipios.html
+Andalucía,elcorreoweb,FALSE,
+Andalucía,laopiniondemalaga,TRUE,https://www.laopiniondemalaga.es/municipios.html
+Andalucía,laopiniondemurcia,TRUE,https://www.laopiniondemurcia.es/municipios.html
+Aragón,elperiodicodearagon,TRUE,https://www.elperiodicodearagon.com/municipios.html
+Asturias,lne,FALSE,
+Canarias,eldia,TRUE,https://www.eldia.es/municipios.html
+Canarias,laprovincia,TRUE,https://www.laprovincia.es/municipios.html
+Castilla y León,laopiniondezamora,TRUE,https://www.laopiniondezamora.es/municipios.html
+Cataluña,diaridegirona,TRUE,https://www.diaridegirona.cat/municipis.html
+Cataluña,elperiodico,FALSE,
+Cataluña,emporda,TRUE,https://www.emporda.info/municipis.html
+Cataluña,regio7,TRUE,https://www.regio7.cat/municipis.html
+Comunidad Valenciana,elperiodicomediterraneo,TRUE,https://www.elperiodicomediterraneo.com/municipios.html
+Comunidad Valenciana,informacion,FALSE,
+Comunidad Valenciana,levante-emv,TRUE,https://www.levante-emv.com/municipios.html
+Extremadura,elperiodicoextremadura,TRUE,https://www.elperiodicoextremadura.com/municipios.html
+Extremadura,lacronicabadajoz,TRUE,https://www.lacronicabadajoz.com/municipios/
+Galicia,elcorreogallego,FALSE,
+Galicia,farodevigo,TRUE,https://www.farodevigo.es/municipios.html
+Galicia,laopinioncoruna,TRUE,https://www.laopinioncoruna.es/municipios.html
+Islas Baleares,diariodeibiza,TRUE,https://www.diariodeibiza.es/municipios.html
+Islas Baleares,diariodemallorca,TRUE,https://www.diariodemallorca.es/municipios.html
+Madrid,elperiodicodeespaña,FALSE,

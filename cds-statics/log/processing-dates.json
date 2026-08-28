@@ -1,0 +1,91 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-07-10T08:46:56.793Z",
+  "processingDates": {
+    "ux-index": {
+      "lastProcessed": "2026-07-10T08:43:13.828Z",
+      "step2": "2026-07-10T08:42:05.810Z",
+      "step3": "2026-07-10T08:43:13.828Z",
+      "step4": "2026-02-23T10:32:36.787Z"
+    },
+    "sport-index": {
+      "lastProcessed": "2026-07-10T08:44:47.440Z",
+      "step2": "2026-07-10T08:43:19.800Z",
+      "step3": "2026-07-10T08:44:47.440Z",
+      "step4": "2026-02-23T10:33:01.779Z"
+    },
+    "revistas-index": {
+      "lastProcessed": "2026-07-10T08:44:58.406Z",
+      "step2": "2026-07-10T08:44:50.158Z",
+      "step3": "2026-07-10T08:44:58.406Z",
+      "step4": "2026-02-23T10:33:27.418Z"
+    },
+    "regionales-index": {
+      "lastProcessed": "2026-07-10T08:45:21.710Z",
+      "step2": "2026-07-10T08:45:01.198Z",
+      "step3": "2026-07-10T08:45:21.710Z",
+      "step4": "2026-02-23T10:33:54.033Z"
+    },
+    "ep-index": {
+      "lastProcessed": "2026-07-10T08:45:35.888Z",
+      "step2": "2026-07-10T08:45:24.627Z",
+      "step3": "2026-07-10T08:45:35.888Z",
+      "step4": "2026-02-23T10:34:35.093Z"
+    },
+    "epe-index": {
+      "lastProcessed": "2026-07-10T08:46:20.801Z",
+      "step2": "2026-07-10T08:45:46.009Z",
+      "step3": "2026-07-10T08:46:20.801Z",
+      "step4": "2026-02-23T10:35:20.481Z"
+    },
+    "amp-ep-index": {
+      "lastProcessed": "2026-07-10T08:46:31.307Z",
+      "step2": "2026-07-10T08:46:28.111Z",
+      "step3": null,
+      "step4": "2026-07-10T08:46:31.307Z"
+    },
+    "amp-cuore-index": {
+      "lastProcessed": "2026-07-10T08:46:39.820Z",
+      "step2": "2026-07-10T08:46:36.560Z",
+      "step3": null,
+      "step4": "2026-07-10T08:46:39.820Z"
+    },
+    "amp-epe-index": {
+      "lastProcessed": "2026-07-10T08:46:27.008Z",
+      "step2": "2026-07-10T08:46:23.853Z",
+      "step3": null,
+      "step4": "2026-07-10T08:46:27.008Z"
+    },
+    "amp-regionales-index": {
+      "lastProcessed": "2026-07-10T08:46:35.533Z",
+      "step2": "2026-07-10T08:46:32.300Z",
+      "step3": null,
+      "step4": "2026-07-10T08:46:35.533Z"
+    },
+    "amp-sport-index": {
+      "lastProcessed": "2026-07-10T08:46:56.766Z",
+      "step2": "2026-07-10T08:46:53.510Z",
+      "step3": null,
+      "step4": "2026-07-10T08:46:56.766Z"
+    },
+    "amp-viajar-index": {
+      "lastProcessed": "2026-07-10T08:46:52.474Z",
+      "step2": "2026-07-10T08:46:49.289Z",
+      "step3": null,
+      "step4": "2026-07-10T08:46:52.474Z"
+    },
+    "amp-woman-index": {
+      "lastProcessed": "2026-07-10T08:46:48.304Z",
+      "step2": "2026-07-10T08:46:45.146Z",
+      "step3": null,
+      "step4": "2026-07-10T08:46:48.304Z"
+    },
+    "amp-stilo-index": {
+      "lastProcessed": "2026-07-10T08:46:44.026Z",
+      "step2": "2026-07-10T08:46:40.851Z",
+      "step3": null,
+      "step4": "2026-07-10T08:46:44.026Z"
+    }
+  },
+  "description": "Fechas de último procesamiento de archivos CSS Layout. Este archivo se guarda automáticamente y puede ser compartido entre usuarios."
+}
