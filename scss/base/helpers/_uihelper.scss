@@ -1,0 +1,14 @@
+// MIXIN: HELPER-UI-HELPER-HIDDEN-ACCESIBLE
+// ===============================================
+@mixin helper-ui-helper-hidden-accesible() {
+
+  // .UI-HELPER-HIDDEN-ACCESIBLE
+  // ---------------------------------------------
+  .ui-helper-hidden-accessible {
+    @include position(absolute, null null null -999em);
+  }
+  // ---------------------------------------------
+
+// END // MIXIN: HELPER-UI-HELPER-HIDDEN-ACCESIBLE
+};
+// ===============================================

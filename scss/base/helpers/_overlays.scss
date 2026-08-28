@@ -1,0 +1,41 @@
+// MIXIN HELPER: OVERLAYS
+// ===============================================
+@mixin ft-helper-overlays()
+{
+
+  // .FT-HELPER-OVERLAY
+  // ---------------------------------------------
+  .ft-helper-overlay
+  {
+
+    // &-modal
+    &-modal
+    {
+      // generals
+      @include position(fixed, 0 0 0 0);
+      @include margin(auto);
+      z-index: 100;
+      display: none;
+      opacity: 0.7;
+      width: 100%;
+      height: 100%;
+      background-color: var(--color-black);
+
+      // &--visible
+      &--visible
+      {
+        display: block;
+      }
+
+      // end // &-modal
+    }
+
+    // END // .FT-HELPER-OVERLAY
+  }
+
+  // ---------------------------------------------
+
+  // END // MIXIN HELPER: OVERLAYS
+}
+
+// ===============================================

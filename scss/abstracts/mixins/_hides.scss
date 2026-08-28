@@ -1,0 +1,8 @@
+// MIXIN HIDE: --TEXT
+// ===============================================
+@mixin hide--text() {
+  overflow: hidden;
+  text-indent: 101%;
+  white-space: nowrap;
+}
+// ===============================================

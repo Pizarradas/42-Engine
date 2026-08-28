@@ -1,0 +1,341 @@
+// FONT FACE
+// ===============================================
+// https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6
+
+// String Replace
+@function str-replace($string, $search, $replace: "")
+{
+  $index: str-index($string, $search);
+
+  @if $index
+  {
+    @return str-slice($string, 1, $index - 1)+$replace (+ str-replace(str-slice($string, $index + str-length($search)),
+        $search,
+        $replace ));
+  }
+
+  @return $string;
+}
+
+// Font family
+@mixin font-family($name,
+  $path,
+  $weight: null,
+  $style: null,
+  $exts: eot woff2 woff ttf svg)
+{
+  $src: null;
+
+  $extmods: (
+    eot: "?",
+    svg: "#" + str-replace($name, " ", "_"),
+  );
+
+$formats: (
+  otf: "opentype",
+  ttf: "truetype",
+);
+
+@each $ext in $exts
+{
+  $extmod: if(map-has-key($extmods, $ext),
+      $ext + map-get($extmods, $ext),
+      $ext );
+  $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+  $src: append($src,
+      url(quote($path + "." + $extmod)) format(quote($format)),
+    comma);
+}
+
+@font-face
+{
+  font-family: quote($name);
+  font-style: $style;
+  font-weight: $weight;
+  src: $src;
+  font-display: swap;
+}
+
+@content;
+}
+
+// FONT-SETUP
+// ===============================================
+@mixin font-setup( // ARGUMENTS
+
+  $font-setup--fontStyle: null,
+  $font-setup--fontVariant: null,
+  $font-setup--fontWeight: null,
+  $font-setup--fontSizeLineHeight: null,
+  $font-setup--fontFamily: null)
+{
+  // GENERALS // 	example: italic small-caps bold 2.2rem/2.4rem "Google-Montserrat--regular", Arial, sans-serif;
+  font: $font-setup--fontStyle // font-style
+  $font-setup--fontVariant // font-variant
+  #{$font-setup--fontWeight} // font-weight
+  #{$font-setup--fontSizeLineHeight} // font-size / line-height
+  $font-setup--fontFamily; // font-family
+}
+
+// FONT WEIGHTS
+// ===============================================
+
+// font--weight-800
+@mixin font--weight-800()
+{
+  font-weight: bold;
+}
+
+// fontStack
+@mixin fontStack()
+{
+  font-family: var(--font-stack);
+  font-weight: normal;
+}
+
+// fontBold
+@mixin fontBold()
+{
+  font-weight: bold;
+}
+
+@mixin fontPrimary()
+{
+  font-family: var(--font-primary);
+}
+
+@mixin fontMediaSans()
+{
+  font-family: var(--font-secondary);
+  letter-spacing: 0.15rem;
+}
+
+// Branded
+@mixin Branded()
+{
+  font-family: var(--font-branded);
+}
+
+// FONT SIZES
+// ===============================================
+// font--display-L
+@mixin font--display-L()
+{
+  @include fontPrimary;
+  font-size: 5rem;
+  line-height: 5rem;
+  letter-spacing: 0;
+
+}
+
+// font--display-M
+@mixin font--display-M()
+{
+  @include fontPrimary;
+  font-size: 5rem;
+  line-height: 5rem;
+  letter-spacing: 0;
+}
+
+// font--display-S
+@mixin font--display-S()
+{
+  @include fontPrimary;
+  font-size: 4.6rem;
+  line-height: 4.6rem;
+  letter-spacing: 0;
+}
+
+// font--heading-XXL
+@mixin font--heading-XXL()
+{
+  @include fontPrimary;
+  font-size: 4rem;
+  line-height: 4rem;
+  letter-spacing: 0;
+}
+
+// font--heading-XL
+@mixin font--heading-XL()
+{
+  @include fontPrimary;
+  font-size: 3.2rem;
+  line-height: 3.4rem;
+  letter-spacing: 0;
+}
+
+// font--heading-L
+@mixin font--heading-L()
+{
+  @include fontPrimary;
+  font-size: 2.8rem;
+  line-height: 3rem;
+  letter-spacing: 0;
+}
+
+// font--heading-M
+@mixin font--heading-M()
+{
+  @include fontPrimary;
+  font-size: 2.4rem;
+  line-height: 2.6rem;
+  letter-spacing: 0;
+}
+
+// font--heading-S
+@mixin font--heading-S()
+{
+  @include fontPrimary;
+  font-size: 2rem;
+  line-height: 2.2rem;
+  letter-spacing: 0;
+
+}
+
+// font--heading-XS
+@mixin font--heading-XS()
+{
+  @include fontPrimary;
+  font-size: 2rem;
+  line-height: 2.2rem;
+  letter-spacing: 0;
+
+}
+
+// font--heading-XXS
+@mixin font--heading-XXS()
+{
+  @include fontPrimary;
+  font-size: 1.8rem;
+  line-height: 2rem;
+  letter-spacing: 0;
+
+}
+
+// font--body-XXL
+@mixin font--body-XXL()
+{
+  @include fontStack;
+  font-size: 1.8rem;
+  line-height: 2.6rem;
+  letter-spacing: 0;
+
+}
+
+@mixin font--body-XXL--small()
+{
+  @include fontStack;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  letter-spacing: 0;
+}
+
+// font--body-XL
+@mixin font--body-XL()
+{
+  @include fontStack;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  letter-spacing: 0;
+}
+
+// font--body-XL-small
+@mixin font--body-XL--small()
+{
+  @include fontStack;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  letter-spacing: 0;
+
+}
+
+// font--body-L
+@mixin font--body-L()
+{
+  @include fontStack;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  letter-spacing: 0;
+}
+
+// font--body-L
+@mixin font--body-L--small()
+{
+  @include fontStack;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  letter-spacing: 0;
+
+}
+
+// font--body-M
+@mixin font--body-M()
+{
+  @include fontStack;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  letter-spacing: 0;
+}
+
+// font--body-M
+@mixin font--body-M--small()
+{
+  @include fontStack;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  letter-spacing: 0;
+}
+
+// font--body-S
+@mixin font--body-S()
+{
+  @include fontStack;
+  font-size: 1.2rem;
+  line-height: 2rem;
+  letter-spacing: 0;
+}
+
+/// font--body-S
+@mixin font--body-S--small()
+{
+  @include fontStack;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  letter-spacing: 0;
+}
+
+// font--body-XS
+@mixin font--body-XS()
+{
+  @include fontStack;
+  font-size: 1rem;
+  line-height: 1.8rem;
+  letter-spacing: 0;
+}
+
+// font--body-XS
+@mixin font--body-XS--small()
+{
+  @include fontStack;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  letter-spacing: 0;
+}
+
+// font--body-XS
+@mixin font--body-XXS()
+{
+  @include fontStack;
+  font-size: .9rem;
+  line-height: 1.4rem;
+  letter-spacing: 0;
+}
+
+// font--body-XS
+@mixin font--body-XXS--small()
+{
+  @include fontStack;
+  font-size: .9rem;
+  line-height: 1.1rem;
+  letter-spacing: 0;
+}

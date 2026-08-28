@@ -1,0 +1,203 @@
+// MIXIN BEHAVIOR: BRAND
+// ================================================
+@mixin behavior-brand($behavior-brand--name) {
+  @at-root .ft-brand-#{$behavior-brand--name} #{&} {
+    @content;
+  }
+}
+
+// MIXIN BEHAVIOR: PARENT
+// ================================================
+@mixin behavior-parent($behavior-parent--class...) {
+  @each $class in $behavior-parent--class {
+    @at-root .#{$class} #{&} {
+      @content;
+    }
+  }
+}
+
+// MIXIN BEHAVIOR: PARENT NESTED (multi-class support)
+// ===================================================
+@mixin behavior-parent-nested($behavior-parent-nested--class...) {
+  @each $class in $behavior-parent-nested--class {
+    @at-root .#{$class}#{&} {
+      @content;
+    }
+  }
+}
+
+// Para selectores complejos
+@mixin behavior-parent-selector($selectors...) {
+  @each $selector in $selectors {
+    @at-root #{$selector} #{&} {
+      @content;
+    }
+  }
+}
+
+// MIXIN BEHAVIOR: AFFIX
+// ================================================
+@mixin behavior-affix($behavior-affix--container) {
+  @at-root [data-fix="#{$behavior-affix--container}"].ft-helper-affix {
+    @content;
+  }
+}
+
+// MIXIN BEHAVIOR: AFFIX
+// ================================================
+@mixin behavior-affix-top($behavior-affix--top) {
+  @at-root [data-fix="#{$behavior-affix--top}"]#{&} {
+    @content;
+  }
+}
+
+// MIXIN BEHAVIOR: FT-BTN--PULSE
+// ================================================
+@mixin behavior-ft-btn--pulse( // ARGUMENTS
+
+  $btn-pulse-behavior--hover-focus--mobile-background-color: null,
+  $btn-pulse-behavior--hover-focus--mobile-text-color: null,
+  $btn-pulse-behavior--hover-focus--border-color: null,
+  $btn-pulse-behavior--hover-focus--desktop-text-color: null,
+  $btn-pulse-behavior--hover-focus--desktop-background-color: null,
+  $btn-pulse-behavior--focus--desktop-outline-width: null,
+  $btn-pulse-behavior--focus--desktop-outline-style: null,
+  $btn-pulse-behavior--focus--desktop-outline-color: null,
+  $btn-pulse-behavior--focus--desktop-outline-offset: null,
+  $btn-pulse-behavior--active--mobile-background-color: null,
+  $btn-pulse-behavior--active--border-color: null,
+  $btn-pulse-behavior--active--text-color: null,
+  $btn-pulse-behavior--active--desktop-background-color: null,
+  $btn-pulse-behavior--disable--txt-color: null,
+  $btn-pulse-behavior--disable--background-color: null,
+) {
+
+  // &:HOVER
+  &:hover {
+    // generals
+    background: $btn-pulse-behavior--hover-focus--mobile-background-color radial-gradient(circle, transparent 1%, $btn-pulse-behavior--hover-focus--mobile-background-color 1%) center/15000%;
+    color: $btn-pulse-behavior--hover-focus--mobile-text-color;
+
+    @include min-screen(1024px) {
+      // @include min-screen(1024px)
+      @include border-color($btn-pulse-behavior--hover-focus--border-color $btn-pulse-behavior--hover-focus--border-color $btn-pulse-behavior--hover-focus--border-color $btn-pulse-behavior--hover-focus--border-color);
+      color: $btn-pulse-behavior--hover-focus--desktop-text-color;
+      background-color: $btn-pulse-behavior--hover-focus--desktop-background-color;
+      // end // generals
+    }
+
+    // END // &:HOVER
+  }
+
+  // &:FOCUS-VISIBLE
+  &:focus-visible {
+    // generals
+    background: $btn-pulse-behavior--hover-focus--mobile-background-color radial-gradient(circle, transparent 1%, $btn-pulse-behavior--hover-focus--mobile-background-color 1%) center/15000%;
+    color: $btn-pulse-behavior--hover-focus--mobile-text-color;
+    text-decoration: none;
+
+    @include min-screen(1024px) {
+      // @include min-screen(1024px)
+      @include border-color($btn-pulse-behavior--hover-focus--border-color $btn-pulse-behavior--hover-focus--border-color $btn-pulse-behavior--hover-focus--border-color $btn-pulse-behavior--hover-focus--border-color);
+      color: $btn-pulse-behavior--hover-focus--desktop-text-color;
+      background-color: $btn-pulse-behavior--hover-focus--desktop-background-color;
+      outline: $btn-pulse-behavior--focus--desktop-outline-width $btn-pulse-behavior--focus--desktop-outline-style $btn-pulse-behavior--focus--desktop-outline-color;
+      outline-offset: $btn-pulse-behavior--focus--desktop-outline-offset;
+
+      // end // generals
+    }
+
+    // END // &:FOCUS-VISIBLE
+  }
+
+  // &:ACTIVE
+  &:active {
+    // generals
+    transition: background 0s;
+    background-color: $btn-pulse-behavior--active--mobile-background-color;
+    background-size: 100%;
+
+    @include min-screen(1024px) {
+      // @include min-screen(1024px)
+      @include border-color($btn-pulse-behavior--active--border-color $btn-pulse-behavior--active--border-color $btn-pulse-behavior--active--border-color $btn-pulse-behavior--active--border-color);
+      color: $btn-pulse-behavior--active--text-color;
+      background-color: $btn-pulse-behavior--active--desktop-background-color;
+      background-image: none;
+      // end // generals
+    }
+
+    // END // &:ACTIVE
+  }
+
+  // &:DISABLED, &.DISABLED
+  &:disabled {
+    // generals
+    @include border-color(lighten (var(--color-black), 80%));
+    opacity: 1;
+    color: $btn-pulse-behavior--disable--txt-color;
+    background-color: $btn-pulse-behavior--disable--background-color;
+
+    // &:hover, &:focus
+    &:hover,
+    &:focus {
+      @include border-color(lighten (var(--color-black), 80%));
+      color: $btn-pulse-behavior--disable--txt-color;
+      background-color: $btn-pulse-behavior--disable--background-color;
+      background-image: none;
+      outline-width: 0;
+    }
+  }
+
+  // @content
+  @content;
+}
+
+// MIXIN BEHAVIOR: TEXT-SELECTION
+// ================================================
+@mixin behavior-text-selection( // ARGUMENTS
+
+  $behavior-text-selection--color,
+  $behavior-text-selection--background) {}
+
+// MIXIN BEHAVIOR: FT-HELPER-BG
+// ================================================
+@mixin behavior-ft-helper-bg( // ARGUMENTS
+
+  $behavior-ft-helper-bg--name) {
+
+  // @AT-ROOT .FT-HELPER-BG-(NAME--VARIANT)
+  @at-root .ft-helper-bg#{$behavior-ft-helper-bg--name} #{&} {
+    @content;
+  }
+}
+
+// MIXIN BEHAVIOR: IN ANCESTORS
+// ================================================
+@mixin behavior-in-ancestors($selectors) {
+  $depth: length($selectors);
+
+  @for $i from 1 through $depth {
+    $final_selector: nth($selectors, $i);
+
+    @at-root {
+      #{$final_selector} & {
+        @content;
+      }
+    }
+  }
+}
+
+/* HOW TO USE IN ANCESTORS MIXIN */
+/*
+.ft-layout-header-regionales__container {
+  @include behavior-in-ancestors('.la-nueva-espana.riberadearriba') {
+    background-color: red;
+  }
+  @include behavior-in-ancestors('.fourty.la-nueva-espana .class-father-1.class-father-2') {
+    background-color: blue;
+  }
+  @include behavior-in-ancestors('.diario-informacion') {
+    background-color: olive;
+  }
+}
+*/

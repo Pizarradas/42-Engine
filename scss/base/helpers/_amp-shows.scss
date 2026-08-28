@@ -1,0 +1,44 @@
+// MIXIN HELPER: SHOWS
+// ===============================================
+@mixin ft-helper-shows()
+{
+
+  // .FT-HELPER-SHOW
+  // ---------------------------------------------
+  .ft-helper-show
+  {
+
+    // &-block
+    &-block
+    {
+      display: block;
+    }
+
+    // &-flex
+    &-flex
+    {
+      display: flex;
+    }
+
+    // &-inline
+    &-inline
+    {
+
+      // &-block
+      &-block
+      {
+        display: inline-block;
+      }
+
+      // end // &Inline
+    }
+
+    // END // .FT-HELPER-SHOW
+  }
+
+  // ---------------------------------------------
+
+  // END // MIXIN HELPER: SHOWS
+}
+
+// ===============================================

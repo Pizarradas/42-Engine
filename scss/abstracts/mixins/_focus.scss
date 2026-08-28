@@ -1,0 +1,15 @@
+// MIXIN FOCUS: --CUSTOM
+// ===============================================
+@mixin focus--custom($outline-color) {
+
+  // GENERALS
+  @include min-screen(1280px) {
+    outline-width: .2rem;
+    outline-style: solid;
+    outline-offset: .2rem;
+    outline-color: $outline-color;
+  };
+
+// END // MIXIN FOCUS: --CUSTOM
+};
+// ===============================================

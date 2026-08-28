@@ -1,0 +1,76 @@
+// MIXIN HELPER: HIDES
+// ===============================================
+@mixin ft-helper-hides( // ARGUMENTS
+  $helper-hide-onscroll-property: all,
+  $helper-hide-onscroll-duration: 0.3s,
+  $helper-hide-onscroll-ease: linear // END // ARGUMENTS
+
+)
+{
+
+  // .FT-HELPER-HIDE
+  // ---------------------------------------------
+  .ft-helper-hide
+  {
+    // generals
+    @include hide-visually;
+
+    // &-mo
+    &-mo
+    {
+      // generals
+      @include hide-visually;
+
+
+
+      // end // &-mod
+    }
+
+    // &-xs
+    &-xs
+    {
+
+      // generals
+      @include max-screen(768px)
+      {
+        display: none;
+
+        // &.ft-ad
+        &.ft-ad
+        {
+          display: none;
+        }
+
+        // &.ft-ad--roba
+        &.ft-ad--roba
+        {
+          display: none;
+        }
+
+        //  &.ft-ad--intext
+        &.ft-ad--intext
+        {
+          display: none;
+        }
+
+        //  &.ft-ad--mega
+        &.ft-ad--mega
+        {
+          display: none;
+        }
+      }
+
+      //  &.ft-ad--roba
+
+      // end // &-xs
+    }
+
+    // END // .FT-HELPER-HIDE
+  }
+
+  // ---------------------------------------------
+
+  // END // MIXIN HELPER: HIDES
+}
+
+// ===============================================

@@ -1,0 +1,201 @@
+// FT-HELPER-DIVIDER
+// ===============================================
+@mixin ft-helper-divider()
+{
+
+  // .FT-HELPER-ALIGNMENT
+  .ft-helper-divider
+  {
+
+    // &-spacer
+    &-spacer
+    {
+
+      // &-xxs
+      &-xxs
+      {
+        @include padding(1.5rem null 1.5rem null);
+
+      }
+
+      // &-xs
+      &-xs
+      {
+        @include padding(1.5rem null 1.5rem null);
+
+      }
+
+      // &-sm
+      &-sm
+      {
+        @include padding(2rem null 2rem null);
+      }
+
+      // &-md
+      &-md
+      {
+        @include padding(3rem null 3rem null);
+
+      }
+
+      // &-lg
+      &-lg
+      {
+        @include padding(6rem null 6rem null);
+
+      }
+
+      // &-xlg
+      &-xlg
+      {
+        @include padding(7rem null 7rem null);
+
+      }
+    }
+
+    // &-line
+    &-line
+    {
+      width: 100%;
+
+      //:before
+      &:before
+      {
+        content: "";
+        @include border-style(solid);
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      &--50
+      {
+        &:before
+        {
+          @include margin(0 auto);
+          max-width: 50%;
+          text-align: center;
+        }
+      }
+
+      // &--thin
+      &--thin
+      {
+        &:before
+        {
+          @include border-width(0 0 0.1rem 0);
+        }
+      }
+
+      // &--thick
+      &--thick
+      {
+        &:before
+        {
+          @include border-width(0 0 0.5rem 0);
+        }
+      }
+
+      // &--dot
+      &--dot
+      {
+        &:before
+        {
+          @include border-style(dotted);
+          @include border-width(0 0 0.2rem 0);
+        }
+      }
+
+      // &--dash
+      &--dash
+      {
+        &:before
+        {
+          @include border-style(dashed);
+          @include border-width(0 0 0.1rem 0);
+        }
+      }
+
+      // &--black
+      &--black
+      {
+        &:before
+        {
+          color: var(--color-black);
+        }
+      }
+
+      // &--primary
+      &--primary
+      {
+        &:before
+        {
+          color: var(--color-primary);
+        }
+      }
+
+      // &--white
+      &--white
+      {
+        &:before
+        {
+          color: var(--color-white);
+        }
+      }
+
+      // &--darkGrey
+      &--darkGrey
+      {
+        &:before
+        {
+          color: var(--color-darkGrey);
+        }
+      }
+
+      // &--mediumGrey
+      &--mediumGrey
+      {
+        &:before
+        {
+          color: var(--color-mediumGrey);
+        }
+      }
+
+      // &--lightGrey
+      &--lightGrey
+      {
+        &:before
+        {
+          color: var(--color-lightGrey);
+        }
+      }
+    }
+
+    // &-img
+    &-img
+    {
+
+      // &--md
+      &--md
+      {
+
+        // .ft
+        .ft-img
+        {
+          max-width: 40rem;
+        }
+      }
+
+    }
+
+    // &--radius
+    &--radius
+    {
+      // &-
+      &-tr-bl
+      {
+        border-radius: 0 6rem;
+      }
+    }
+  }
+}

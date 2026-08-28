@@ -1,0 +1,197 @@
+// MIXIN HELPER: BACKGROUNDS
+// ===============================================
+@mixin ft-helper-backgrounds( // ARGUMENTS
+
+  $helper-set-brand: "",
+  $helper-backgroundsColor--primary: null,
+  $helper-backgroundsColor--secondary: null,
+  $helper-backgroundsColor--tertiary: null,
+  $helper-backgroundsColor--quaternary: null,
+  $helper-backgroundsColor--quinary: null,
+  $helper-backgroundsColor--senary: null,
+  $helper-backgroundsColor--septenary: null,
+  $helper-backgroundsColor--background-darkGrey: null,
+  $helper-backgroundsColor--background-mediumGrey: null,
+  $helper-backgroundsColor--background-lightGrey: null,
+  $helper-backgroundsColor--background-degraded3: null,
+  // END // ARGUMENTS
+)
+{
+
+  // .FT-HELPER-BG
+  // -------------------------------------------
+  .ft-helper-bg
+  {
+
+    // &Color
+    &Color
+    {
+
+      // &--black
+      &-black
+      {
+        // generals;
+        background-color: var(--color-black);
+
+        // *
+        *
+        {
+          color: var(--color-white);
+        }
+
+        // end // &--black
+      }
+
+      // &--white
+      &-white
+      {
+        // generals;
+        background-color: var(--color-white);
+
+        // *
+        *
+        {
+          color: var(--color-black);
+        }
+
+        // end // &--white
+      }
+
+      // end // &Color
+    }
+
+    // &Opacity
+    &Opacity
+    {
+
+      // &Blacks
+      &Black
+      {
+
+        // &-500
+        &-500
+        {
+          background-color: rgba(0, 0, 0, 0.5);
+
+          .ft-link
+          {
+            color: var(--color-white);
+          }
+        }
+
+        // end // &Black
+      }
+
+
+      // end // &Opacity
+    }
+
+    // END // .FT-HELPER-BG
+  }
+
+  // -------------------------------------------
+
+  // SET BRAND
+  // -------------------------------------------
+  #{functionBrandSet($helper-set-brand)}
+  {
+
+    // .FT-HELPER-BG
+    .ft-helper-bg
+    {
+
+      // &Color
+      &Color
+      {
+
+        // &-primary
+        &-primary
+        {
+          background-color: $helper-backgroundsColor--primary;
+          color: var(--color-white);
+          // end // &-primary
+        }
+
+        // &-secondary
+        &-secondary
+        {
+          background-color: $helper-backgroundsColor--secondary;
+          color: var(--color-white);
+          // end // &-secondary
+        }
+
+        // &-tertiary
+        &-tertiary
+        {
+          background-color: $helper-backgroundsColor--tertiary;
+          color: var(--color-white);
+          // end // &-tertiary
+        }
+
+        // &-quaternary
+        &-quaternary
+        {
+          background-color: $helper-backgroundsColor--quaternary;
+          color: var(--color-white);
+          // end // &-quaternary
+        }
+
+        // &-quinary
+        &-quinary
+        {
+          background-color: $helper-backgroundsColor--quinary;
+          color: var(--color-white);
+          // end // &-quinary
+        }
+
+        // &-senary
+        &-senary
+        {
+          background-color: $helper-backgroundsColor--senary;
+          color: var(--color-white);
+          // end // &-senary
+        }
+        // &Background-darkGrey
+        &-background-darkGrey
+        {
+          background-color: $helper-backgroundsColor--background-darkGrey;
+          // end // &Background-darkGrey
+        }
+
+        // &background-mediumGrey
+        &-background-mediumGrey
+        {
+          background-color: $helper-backgroundsColor--background-mediumGrey;
+          // end // &background-mediumGrey
+        }
+
+        // &background-lightGrey
+        &-background-lightGrey
+        {
+          background-color: $helper-backgroundsColor--background-lightGrey;
+          // end // &background-lightGrey
+        }
+
+        // &background-degraded3
+        &-background-degraded3
+        {
+          background: $helper-backgroundsColor--background-degraded3;
+          color: var(--color-white);
+          // end // // &background-degraded3
+        }
+
+        // end // &Color
+      }
+
+      // END // .FT-HELPER-BG
+    }
+
+    // END // SET BRAND
+  }
+
+  // -------------------------------------------
+
+  // END // MIXIN HELPER: BACKGROUNDS
+}
+
+// ===============================================

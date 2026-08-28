@@ -1,0 +1,25 @@
+// MIXIN FT: ALIGN
+// ===============================================
+@mixin ft-helper-align() {
+  // .FT-HELPER-ALIGNMENT
+  .ft-helper-align {
+    // &-center
+    &-center {
+      @include margin(null auto null auto);
+      text-align: center;
+      justify-content: center;
+    }
+
+    // &-right
+    &-right {
+      text-align: right; 
+      justify-content: flex-end;
+    }
+
+    // &-left
+    &-left {
+      text-align: left;
+      justify-content: flex-start;
+    }
+  }
+}

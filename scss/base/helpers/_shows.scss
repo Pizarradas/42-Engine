@@ -1,0 +1,180 @@
+// MIXIN HELPER: SHOWS
+// ===============================================
+@mixin ft-helper-shows()
+{
+
+  // .FT-HELPER-SHOW
+  // ---------------------------------------------
+  .ft-helper-show
+  {
+
+    // &-block
+    &-block
+    {
+      display: block;
+    }
+
+    // &-flex
+    &-flex
+    {
+      display: flex;
+
+      // &-top
+      &-top
+      {
+        align-items: flex-start;
+      }
+
+      // &-middle
+      &-middle
+      {
+        align-items: center;
+      }
+
+      // &-bottom
+      &-bottom
+      {
+        align-items: flex-end;
+      }
+
+      // &-left
+      &-left
+      {
+        justify-content: flex-start;
+      }
+
+      // &-center
+      &-center
+      {
+        justify-content: center;
+      }
+
+      // &-right
+      &-right
+      {
+        justify-content: flex-end;
+      }
+
+      // &-spacebetween
+      &-spacebetween
+      {
+        justify-content: space-between;
+      }
+
+      // &-spacebetween
+      &-spacearound
+      {
+        justify-content: space-around;
+      }
+    }
+
+    // &-inline
+    &-inline
+    {
+
+      // &-block
+      &-block
+      {
+        display: inline-block;
+      }
+
+      // &-top
+      &-top
+      {
+        vertical-align: top;
+      }
+
+      // &-middle
+      &-middle
+      {
+        vertical-align: middle;
+      }
+
+      // &-bottom
+      &-bottom
+      {
+        vertical-align: bottom;
+      }
+
+      // end // &Inline
+    }
+
+    // &-mo
+    &-mo
+    {
+
+      // generals
+      @include min-screen(768px)
+      {
+        @include hide-visually;
+        left: -100%;
+      }
+
+      // end // &-mo
+    }
+
+    // &-sm
+    &-sm
+    {
+      // generals
+      @include hide-visually;
+
+      @include min-screen(768px)
+      {
+        @include hide-visually("unhide");
+      }
+
+      // end // &-sm
+    }
+
+    // &-md
+    &-md
+    {
+      // generals
+      @include hide-visually;
+
+      @include min-screen(1002px)
+      {
+        @include hide-visually("unhide");
+      }
+
+      // end // &-md
+    }
+
+    // &-lg
+    &-lg
+    {
+      // generals
+      @include hide-visually;
+
+      @include min-screen(1280px)
+      {
+        @include hide-visually("unhide");
+      }
+
+      // end // &-lg
+    }
+
+    // &-xlg
+    &-xlg
+    {
+      // generals
+      @include hide-visually;
+
+      @include min-screen(1440px)
+      {
+        @include hide-visually("unhide");
+      }
+
+      // end // &-xlg
+    }
+
+    // END // .FT-HELPER-SHOW
+  }
+
+  // ---------------------------------------------
+
+  // END // MIXIN HELPER: SHOWS
+}
+
+// ===============================================

@@ -1,0 +1,616 @@
+// FONT FACE v.1.1
+// ===============================================
+// https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6
+
+// String Replace
+@function str-replace($string, $search, $replace: "") {
+	$index: str-index($string, $search);
+
+	@if $index {
+		@return str-slice($string, 1, $index - 1) + $replace
+			(
+				+
+					str-replace(
+						str-slice($string, $index + str-length($search)),
+						$search,
+						$replace
+					)
+			);
+	}
+
+	@return $string;
+}
+
+// Font family
+@mixin font-family(
+	$name,
+	$path,
+	$weight: null,
+	$style: null,
+	$exts: eot woff2 woff ttf svg
+) {
+	$src: null;
+
+	$extmods: (
+		eot: "?",
+		svg: "#" + str-replace($name, " ", "_"),
+	);
+
+	$formats: (
+		otf: "opentype",
+		ttf: "truetype",
+	);
+
+	@each $ext in $exts {
+		$extmod: if(
+			map-has-key($extmods, $ext),
+			$ext + map-get($extmods, $ext),
+			$ext
+		);
+		$format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+		$src: append(
+			$src,
+			url(quote($path + "." + $extmod)) format(quote($format)),
+			comma
+		);
+	}
+
+	@font-face {
+		font-family: quote($name);
+		font-style: $style;
+		font-weight: $weight;
+		src: $src;
+		font-display: swap;
+	}
+
+	@content;
+}
+
+// FONT-SETUP
+// ===============================================
+@mixin font-setup(
+	// ARGUMENTS
+	$font-setup--fontStyle: null,
+	$font-setup--fontVariant: null,
+	$font-setup--fontWeight: null,
+	$font-setup--fontSizeLineHeight: null,
+	$font-setup--fontFamily: null
+) {
+	// GENERALS // 	example: italic small-caps bold 2.2rem/2.4rem "Google-Montserrat--regular", Arial, sans-serif;
+	font: $font-setup--fontStyle // font-style
+		$font-setup--fontVariant // font-variant
+		#{$font-setup--fontWeight} // font-weight
+		#{$font-setup--fontSizeLineHeight} // font-size / line-height
+		$font-setup--fontFamily; // font-family
+}
+
+// FONT WEIGHTS
+// ===============================================
+
+// FONT WEIGHTS
+// ===============================================
+// font--weight-500
+@mixin font--weight-500()
+{
+    font-weight: 500;
+}
+  
+// font--weight-600
+@mixin font--weight-600()
+{
+    font-weight: 600;
+}
+
+// font--weight-700
+@mixin font--weight-700()
+{
+    font-weight: 700; 
+}
+
+// font--weight-800
+@mixin font--weight-800()
+{
+    font-weight: bold;
+}
+
+// fontStack
+@mixin fontStack() {
+	font-family: var(--font-stack);
+	font-weight: normal;
+}
+
+// fontBold
+@mixin fontBold() {
+	font-weight: bold;
+
+	// @if $brand ==revistas
+	@if $brand ==revistas {
+		font-family: var(--font-primary--bold);
+	}
+}
+
+@mixin fontPrimary() {
+	font-family: var(--font-primary);
+}
+
+@mixin fontMediaSans() {
+	font-family: var(--font-secondary);
+	letter-spacing: 0.15rem;
+}
+
+// Branded
+@mixin Branded() {
+	font-family: var(--font-branded);
+	font-weight:400;
+}
+
+// FLUID FONT SIZES
+// Nueva capa progresiva con clamp(); no sustituye automaticamente los helpers legacy.
+// ===============================================
+@mixin font-fluid-size($min, $preferred, $max, $line-height) {
+	font-size: clamp(#{$min}, #{$preferred}, #{$max});
+	line-height: $line-height;
+}
+
+// font--fluid-heading-M
+@mixin font--fluid-heading-M() {
+	@include fontBold;
+	@include fontPrimary;
+	@include font-fluid-size(2.4rem, "1.8rem + 1.6vw", 2.8rem, 2.6rem);
+	letter-spacing: 0;
+}
+
+// font--fluid-heading-S
+@mixin font--fluid-heading-S() {
+	@include fontBold;
+	@include fontPrimary;
+	@include font-fluid-size(2.2rem, "1.75rem + 1.2vw", 2.6rem, 2.4rem);
+	letter-spacing: 0;
+}
+
+// font--fluid-heading-XS
+@mixin font--fluid-heading-XS() {
+	@include fontBold;
+	@include fontPrimary;
+	@include font-fluid-size(2rem, "1.6rem + 1vw", 2.4rem, 2.2rem);
+	letter-spacing: 0;
+}
+
+// font--fluid-heading-XXS
+@mixin font--fluid-heading-XXS() {
+	@include fontBold;
+	@include fontPrimary;
+	@include font-fluid-size(1.8rem, "1.45rem + 0.9vw", 2.2rem, 2rem);
+	letter-spacing: 0;
+}
+
+// font--fluid-body-L
+@mixin font--fluid-body-L() {
+	@include fontStack;
+	@include font-fluid-size(1.6rem, "1.45rem + 0.45vw", 1.8rem, 2.4rem);
+	letter-spacing: 0;
+}
+
+// font--fluid-body-M
+@mixin font--fluid-body-M() {
+	@include fontStack;
+	@include font-fluid-size(1.4rem, "1.25rem + 0.35vw", 1.6rem, 2.2rem);
+	letter-spacing: 0;
+}
+
+// font--fluid-body-S
+@mixin font--fluid-body-S() {
+	@include fontStack;
+	@include font-fluid-size(1.2rem, "1.1rem + 0.25vw", 1.4rem, 2rem);
+	letter-spacing: 0;
+}
+
+// FONT SIZES
+// ===============================================
+// font--display-L
+@mixin font--display-L() {
+	@include fontPrimary;
+	@include fontBold;
+	font-size: 5rem;
+	line-height: 5rem;
+	letter-spacing: 0;
+
+	// @if $brand ==revistas
+	@if $brand ==revistas {
+		font-family: var(--font-primary--bold);
+		line-height: 5.8rem;
+	} 
+
+	@include min-screen(768px) {
+		font-size: 7rem;
+		line-height: 7rem;
+
+	}
+}
+
+// font--display-M
+@mixin font--display-M() {
+	@include fontPrimary;
+	@include fontBold;
+	font-size: 5rem;
+	line-height: 5rem;
+	letter-spacing: 0;
+
+	// @if $brand ==revistas
+	@if $brand ==revistas {
+		font-family: var(--font-primary--bold);
+		line-height: 5.8rem;
+	}
+
+	@include min-screen(768px) {
+		font-size: 6.4rem;
+		line-height: 6.4rem;
+	}
+}
+
+// font--display-S
+@mixin font--display-S() {
+	@include fontPrimary;
+	@include fontBold;
+	font-size: 4.6rem;
+	line-height: 4.6rem;
+	letter-spacing: 0;
+
+	// @if $brand ==revistas
+	@if $brand ==revistas {
+		font-family: var(--font-primary--bold);
+		line-height: 5.4rem;
+	}
+
+	@include min-screen(768px) {
+		font-size: 5.6rem;
+		line-height: 5.6rem;
+	}
+}
+
+// font--heading-XXL
+@mixin font--heading-XXL() {
+	@include fontPrimary;
+	@include fontBold;
+	font-size: 4rem;
+	line-height: 4rem;
+	letter-spacing: 0;
+
+	// @if $brand ==revistas
+	@if $brand ==revistas {
+		font-family: var(--font-primary--bold);
+		line-height: 4.8rem;
+	}
+
+	@include min-screen(768px) {
+		font-size: 5rem;
+		line-height: 5rem;
+
+		// @if $brand ==revistas
+		@if $brand ==revistas {
+			line-height: 6.2rem;
+		}
+	}
+}
+
+// font--heading-XL
+@mixin font--heading-XL() {
+	@include fontPrimary;
+	@include fontBold;
+	font-size: 3.2rem;
+	line-height: 3.4rem;
+	letter-spacing: 0;
+
+	// @if $brand ==revistas
+	@if $brand ==revistas {
+		font-family: var(--font-primary--bold);
+		line-height: 4rem;
+	}
+
+	@include min-screen(768px) {
+		font-size: 4rem;
+		line-height: 4.2rem;
+
+		// @if $brand ==revistas
+		@if $brand ==revistas {
+			line-height: 5.2rem;
+		}
+	}
+}
+
+// font--heading-L
+@mixin font--heading-L() {
+	@include fontPrimary;
+	@include fontBold;
+	font-size: 2.8rem;
+	line-height: 3rem;
+	letter-spacing: 0;
+
+	// @if $brand ==revistas
+	@if $brand ==revistas {
+		font-family: var(--font-primary--bold);
+		line-height: 3.4rem;
+	}
+
+	// min-screen(768px)
+	@include min-screen(768px) {
+		font-size: 3.6rem;
+		line-height: 3.8rem;
+
+		// @if $brand ==revistas
+		@if $brand ==revistas {
+			line-height: 4.6rem;
+		}
+	}
+}
+
+// font--heading-M
+@mixin font--heading-M() {
+	@include fontBold;
+	@include fontPrimary;
+	font-size: 2.4rem;
+	line-height: 2.6rem;
+	letter-spacing: 0;
+
+	// @if $brand ==revistas
+	@if $brand ==revistas {
+		font-family: var(--font-primary--bold);
+		line-height: 3rem;
+	}
+
+	@include min-screen(768px) {
+		font-size: 3.2rem;
+		line-height: 3.4rem;
+
+		// @if $brand ==revistas
+		@if $brand ==revistas {
+			font-family: var(--font-primary--bold);
+			line-height: 4.2rem;
+		}
+	}
+}
+
+// font--heading-S
+@mixin font--heading-S() {
+	@include fontBold;
+	@include fontPrimary;
+	font-size: 2.2rem;
+	line-height: 2.4rem;
+	letter-spacing: 0;
+
+	// @if $brand ==revistas
+	@if $brand ==revistas {
+		font-family: var(--font-secondary);
+		line-height: 2.8rem;
+	}
+
+	// min-screen(768px)
+	@include min-screen(768px) {
+		font-size: 2.8rem;
+		line-height: 3rem;
+
+		// @if $brand ==revistas
+		@if $brand ==revistas {
+			line-height: 3.6rem;
+		}
+	}
+}
+
+// font--heading-XS
+@mixin font--heading-XS() {
+	@include fontBold;
+	@include fontPrimary;
+	font-size: 2rem;
+	line-height: 2.2rem;
+	letter-spacing: 0;
+
+	// @if $brand ==revistas
+	@if $brand ==revistas {
+		font-family: var(--font-secondary);
+		line-height: 2.8rem;
+	}
+
+	// min-screen(768px)
+	@include min-screen(768px) {
+		font-size: 2.4rem;
+		line-height: 2.6rem;
+
+		// @if $brand ==revistas
+		@if $brand ==revistas {
+			line-height: 3.2rem;
+		}
+	}
+}
+
+// font--heading-XXS
+@mixin font--heading-XXS() {	
+	@include fontBold;
+	@include fontPrimary;
+	font-size: 1.8rem;
+	line-height: 2rem;
+	letter-spacing: 0;
+
+	// @if $brand ==revistas
+	@if $brand ==revistas {
+		font-family: var(--font-primary--bold);
+		line-height: 2.4rem;
+	}
+
+	// min-screen(768px)
+	@include min-screen(768px) {
+		font-size: 2rem;
+		line-height: 2.2rem;
+
+		// @if $brand ==revistas
+		@if $brand ==revistas {
+			font-family: var(--font-primary--bold);
+			line-height: 2.6rem;
+		}
+	}
+}
+
+// font--body-XXL
+@mixin font--body-XXL() {
+	@include fontStack;
+	font-size: 1.8rem;
+	line-height: 2.6rem;
+	letter-spacing: 0;
+
+	@include min-screen(768px) {
+		line-height: 2.8rem;
+	}
+}
+
+@mixin font--body-XXL--small() {
+	@include fontStack;
+	font-size: 1.8rem;
+	line-height: 2.2rem;
+	letter-spacing: 0;
+
+	// min-screen(768px)
+	@include min-screen(768px) {
+		// @if $brand ==revistas
+		@if $brand ==revistas {
+			line-height: 2.6rem;
+		}
+	}
+}
+
+// font--body-XL
+@mixin font--body-XL() {
+	@include fontStack;
+	font-size: 1.6rem;
+	line-height: 2.2rem;
+	letter-spacing: 0;
+
+	// min-screen(768px)
+	@include min-screen(768px) {
+		font-size: 1.8rem;
+		line-height: 2.8rem;
+	}
+}
+
+// font--body-XL-small
+@mixin font--body-XL--small() {
+	@include fontStack;
+	font-size: 1.6rem;
+	line-height: 2rem;
+	letter-spacing: 0;
+
+	// @if $brand ==revistas
+	@if $brand ==revistas {
+		line-height: 2.4rem;
+	}
+	// min-screen(768px)
+	@include min-screen(768px) {
+		font-size: 1.8rem;
+		line-height: 2.2rem;
+		// @if $brand ==revistas
+		@if $brand ==revistas {
+			line-height: 2.6rem;
+		}
+	}
+}
+
+// font--body-L
+@mixin font--body-L() {
+	@include fontStack;
+	font-size: 1.6rem;
+	line-height: 2.4rem;
+	letter-spacing: 0;
+}
+
+// font--body-L
+@mixin font--body-L--small() {
+	@include fontStack;
+	font-size: 1.4rem;
+	line-height: 1.6rem;
+	letter-spacing: 0;
+
+	// @if $brand ==revistas
+	@if $brand ==revistas {
+		line-height: 2rem;
+	}
+	// min-screen(768px)
+	@include min-screen(768px) {
+		font-size: 1.6rem;
+		line-height: 2rem;
+	}
+}
+
+// font--body-M
+@mixin font--body-M() {
+	@include fontStack;
+	font-size: 1.4rem;
+	line-height: 2.2rem;
+	letter-spacing: 0;
+}
+
+// font--body-M
+@mixin font--body-M--small() {
+	@include fontStack;
+	font-size: 1.4rem;
+	line-height: 1.6rem;
+	letter-spacing: 0;
+
+	// @if $brand ==revistas
+	@if $brand ==revistas {
+		line-height: 2rem;
+	}
+
+	// min-screen(768px)
+	@include min-screen(768px) {
+		// @if $brand ==revistas
+		@if $brand ==revistas {
+			line-height: 2.2rem;
+		}
+	}
+}
+
+// font--body-S
+@mixin font--body-S() {
+	@include fontStack;
+	font-size: 1.2rem;
+	line-height: 2rem;
+	letter-spacing: 0;
+}
+
+/// font--body-S
+@mixin font--body-S--small() {
+	@include fontStack;
+	font-size: 1.2rem;
+	line-height: 1.4rem;
+	letter-spacing: 0;
+}
+
+// font--body-XS
+@mixin font--body-XS() {
+	@include fontStack;
+	font-size: 1rem;
+	line-height: 1.8rem;
+	letter-spacing: 0;
+}
+
+// font--body-XS
+@mixin font--body-XS--small() {
+	@include fontStack;
+	font-size: 1rem;
+	line-height: 1.2rem;
+	letter-spacing: 0;
+}
+
+// font--body-XS
+@mixin font--body-XXS() {
+	@include fontStack;
+	font-size: 0.9rem;
+	line-height: 1.4rem;
+	letter-spacing: 0;
+}
+
+// font--body-XS
+@mixin font--body-XXS--small() {
+	@include fontStack;
+	font-size: 0.9rem;
+	line-height: 1.1rem;
+	letter-spacing: 0;
+}

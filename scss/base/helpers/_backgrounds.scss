@@ -1,0 +1,545 @@
+// MIXIN HELPER: BACKGROUNDS
+// ===============================================
+@mixin ft-helper-backgrounds(
+  // ARGUMENTS
+  $helper-set-brand: "",
+  $helper-backgroundsColor--primary: null,
+  $helper-backgroundsColor--secondary: null,
+  $helper-backgroundsColor--tertiary: null,
+  $helper-backgroundsColor--quaternary: null,
+  $helper-backgroundsColor--quinary: null,
+  $helper-backgroundsColor--senary: null,
+  $helper-backgroundsColor--septenary: null,
+  $helper-backgroundsColor--background-darkGrey: null,
+  $helper-backgroundsColor--background-mediumGrey: null,
+  $helper-backgroundsColor--background-lightGrey: null,
+  $helper-backgroundsColor--background-degraded1: null,
+  $helper-backgroundsColor--background-degraded2: null,
+  $helper-backgroundsColor--background-degraded3: null
+) {
+  // .ft-helper-bg
+  // -------------------------------------------
+  .ft-helper-bg {
+    // &Color
+    &Color {
+      // &-black
+      &-black {
+        background-color: var(--color-black);
+
+        // *
+        * {
+          color: var(--color-white);
+        }
+
+        // &-opacity
+        &-opacity {
+          @each $label, $opacity in ("light": 0.25, "medium": 0.5, "dark": 0.75)
+          {
+            &-#{$label} {
+              @include position(relative, null null null null);
+              z-index: 0;
+
+              &:before {
+                content: "";
+                @include position(absolute, null null null null);
+                inset: 0;
+                z-index: -1;
+                pointer-events: none;
+                border-radius: inherit;
+                background-color: var(--color-black);
+                opacity: $opacity;
+              }
+            }
+          }
+        }
+      }
+
+      // &-white
+      &-white {
+        background-color: var(--color-white);
+
+        // *
+        * {
+          color: var(--color-black);
+        }
+
+        // &-opacity
+        &-opacity {
+          @each $label, $opacity in ("light": 0.25, "medium": 0.5, "dark": 0.75)
+          {
+            &-#{$label} {
+              @include position(relative, null null null null);
+              z-index: 0;
+
+              &:before {
+                content: "";
+                @include position(absolute, null null null null);
+                inset: 0;
+                z-index: -1;
+                pointer-events: none;
+                border-radius: inherit;
+                background-color: var(--color-white);
+                opacity: $opacity;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // &Blue
+    &Blue {
+      // &Fb
+      &Fb {
+        // &-500
+        &-500 {
+          background-color: var(--color-facebook);
+        }
+      }
+
+      // &Instagram
+      &Instagram {
+        &-500 {
+          background-color: var(--color-instagram);
+        }
+      }
+
+      // &Twitter
+      &Twitter {
+        &-500 {
+          background-color: var(--color-twitter);
+        }
+      }
+
+      // &Twitter
+      &Linkedin {
+        // &-500
+        &-500 {
+          background-color: var(--color-linkedin);
+        }
+      }
+
+      // &Cuadronumerico
+      &-cuadronumerico {
+        background-color: var(--color-cuadronumerico);
+
+        // &-500
+        &-500 {
+          background-color: var(--color-cuadronumerico--medium);
+        }
+      }
+
+    }
+
+    // &Red
+    &Red {
+      // &Pinterest
+      &Pinterest {
+        // &-500
+        &-500 {
+          background-color: var(--color-pinterest);
+        }
+      }
+
+      // &Youtube
+      &Youtube {
+        // &-500
+        &-500 {
+          background-color: var(--color-youtube);
+        }
+      }
+
+      // &wordle
+      &-wordle {
+         background-color: var(--color-wordle);
+        // &-500
+        &-500 {
+          background-color: var( --color-wordle--medium);
+        }
+      }
+
+      // &porra
+      &-porra {
+         background-color: var(--color-porra);
+      }
+    }
+
+    // &Green
+    &Green {
+      // &Whatsapp
+      &Whatsapp {
+        // &-500
+        &-500 {
+          background-color: var(--color-whatsapp);
+        }
+      }
+      // &-sudoku
+      &-sudoku {
+         background-color: var(--color-sudoku);
+        // &-500
+        &-500 {
+          background-color: var( --color-sudoku--medium);
+        }
+      }
+      // &-cuatroencampo
+      &-cuatroencampo {
+         background-color: var(--color-cuatroencampo);
+        // &-500
+        &-500 {
+          background-color: var( --color-cuatroencampo--medium);
+        }
+        // &-deg
+        &-deg {
+          background: linear-gradient(0deg, #6CA450 0%, #5A993D 46.41%, #44772C 96.53%);
+        }
+      }
+
+      @at-root {
+        .seleccion [class^="ft-helper-bgGreen-cuatroencampo"],
+        .seleccion [class*=" ft-helper-bgGreen-cuatroencampo"] {
+          background:
+            var(--color-game-light, #f1ede7)
+            url("#{$images-path}/decorative/ft-org-game-seleccion-bg.svg")
+            center
+            repeat;
+          background-size: 4rem 4rem;
+        }
+      }
+    }
+
+    // &Yellow
+    &Yellow {
+      // &snapchat
+      &Snapchat {
+        // &-500
+        &-500 {
+          background-color: var(--color-snapchat);
+        }
+      }
+      &-crucigrama{
+         background-color: var(--color-crucigrama);
+        // &-500
+        &-500 {
+          background-color: var( --color-crucigrama--medium);
+        }
+        // &-light
+        &-light {
+          background-color: var( --color-crucigrama--light);
+        }
+      }
+    }
+     // &Pink
+    &Pink {
+      // &-pangramax
+      &-pangramax {
+         background-color: var(--color-pangramax);
+        // &-500
+        &-500 {
+          background-color: var( --color-pangramax--medium);
+        }
+      }
+      // &-saltaminas
+      &-saltaminas {
+         background-color: var(--color-saltaminas);
+        // &-500
+        &-500 {
+          background-color: var( --color-saltaminas--medium);
+        }
+      }
+    }
+     // &Brown
+    &Brown {
+      // &-sopa
+      &-sopa {
+         background-color: var(--color-sopa);
+        // &-500
+        &-500 {
+          background-color: var( --color-sopa--medium);
+        }
+      }
+      // &-timequest
+      &-timequest {
+         background-color: var(--color-timequest);
+        // &-500
+        &-500 {
+          background-color: var( --color-timequest--medium);
+        }
+      }
+    }
+
+    // &Opacity
+    &Opacity {
+      // &Black
+      &Black {
+        // &-500
+        &-500 {
+          background-color: rgba(0, 0, 0, 0.5);
+
+          // .ft
+          .ft {
+            // &-link
+            &-link {
+              color: var(--color-white);
+
+              // &:hover
+              &:hover {
+                color: var(--color-white);
+              }
+            }
+          }
+        }
+      }
+
+      // &White
+      &White {
+        // &-500
+        &-500 {
+          background-color: rgba(255, 255, 255, 0.9);
+        }
+      }
+    }
+
+    // &Transparent
+    &Transparent {
+      // &-mo
+      &-mo {
+        @include breakpoint(mobileonly) {
+          background-color: transparent;
+        }
+      }
+
+      // &-sm
+      &-sm {
+        @include min-screen(768px) {
+          background-color: transparent;
+        }
+      }
+
+      // &-md
+      &-md {
+        @include min-screen(1024px) {
+          background-color: transparent;
+        }
+      }
+
+      // &-lg
+      &-lg {
+        @include min-screen(1280px) {
+          background-color: transparent;
+        }
+      }
+    }
+
+    // &Gradient
+    &Gradient {
+      // &-black
+      &-black {
+        // &-top
+        &-top {
+          background: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 1) 0%,
+            rgba(255, 255, 255, 0) 100%
+          );
+        }
+
+        // &-right
+        &-right {
+          background: linear-gradient(
+            to left,
+            rgba(0, 0, 0, 1) 0%,
+            rgba(255, 255, 255, 0) 100%
+          );
+        }
+
+        // &-bottom
+        &-bottom {
+          background: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 1) 0%,
+            rgba(255, 255, 255, 0) 100%
+          );
+        }
+
+        // &-left
+        &-left {
+          background: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 1) 0%,
+            rgba(255, 255, 255, 0) 100%
+          );
+        }
+      }
+
+      // &-white
+      &-white {
+        // &-top
+        &-top {
+          background: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 100%
+          );
+        }
+
+        // &-right
+        &-right {
+          background: linear-gradient(
+            to left,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 100%
+          );
+        }
+
+        // &-bottom
+        &-bottom {
+          background: linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 100%
+          );
+        }
+
+        // &-left
+        &-left {
+          background: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 100%
+          );
+        }
+      }
+    }
+  }
+
+  // SET BRAND
+  // -------------------------------------------
+  #{functionBrandSet($helper-set-brand)} {
+    // .ft-helper-bg
+    .ft-helper-bg {
+      // &Color
+      &Color {
+        // &-primary
+        &-primary {
+          background-color: $helper-backgroundsColor--primary;
+          color: var(--color-white);
+
+          // &-opacity
+          &-opacity {
+            @each $label,
+              $opacity in ("light": 0.25, "medium": 0.5, "dark": 0.75)
+            {
+              &-#{$label} {
+                @include position(relative, null null null null);
+                z-index: 0;
+
+                &::before {
+                  content: "";
+                  position: absolute;
+                  inset: 0;
+                  z-index: -1;
+                  pointer-events: none;
+                  border-radius: inherit;
+                  background-color: $helper-backgroundsColor--primary;
+                  opacity: $opacity;
+                }
+              }
+            }
+          }
+        }
+
+        // &-secondary
+        &-secondary {
+          background-color: $helper-backgroundsColor--secondary;
+          color: var(--color-white);
+        }
+
+        // &-tertiary
+        &-tertiary {
+          background-color: $helper-backgroundsColor--tertiary;
+          color: var(--color-white);
+        }
+
+        // &-quaternary
+        &-quaternary {
+          background-color: $helper-backgroundsColor--quaternary;
+          color: var(--color-white);
+        }
+
+        // &-quinary
+        &-quinary {
+          background-color: $helper-backgroundsColor--quinary;
+          color: var(--color-white);
+        }
+
+        // &-senary
+        &-senary {
+          background-color: $helper-backgroundsColor--senary;
+          color: var(--color-white);
+        }
+
+        // &-septenary
+        &-septenary {
+          background-color: $helper-backgroundsColor--septenary;
+          color: var(--color-white);
+        }
+
+        // &-alert
+        &-alert {
+          // &-success
+          &-success {
+            background-color: var(--color-functional-success);
+          }
+
+          // &-info
+          &-info {
+            background-color: var(--color-functional-info);
+          }
+          
+          // &-warning
+          &-warning {
+            background-color: var(--color-functional-warning);
+          }
+
+          // &-error
+          &-error {
+            background-color: var(--color-functional-error);
+          }
+        }
+
+        // &-background-darkGrey
+        &-background-darkGrey {
+          background-color: $helper-backgroundsColor--background-darkGrey;
+        }
+
+        // &-background-mediumGrey
+        &-background-mediumGrey {
+          background-color: $helper-backgroundsColor--background-mediumGrey;
+        }
+
+        // &-background-lightGrey
+        &-background-lightGrey {
+          background-color: $helper-backgroundsColor--background-lightGrey;
+        }
+
+        // &-background-degraded1
+        &-background-degraded1 {
+          background: $helper-backgroundsColor--background-degraded1;
+          color: var(--color-white);
+        }
+
+        // &-background-degraded2
+        &-background-degraded2 {
+          background: $helper-backgroundsColor--background-degraded2;
+          color: var(--color-white);
+        }
+
+        // &-background-degraded3
+        &-background-degraded3 {
+          background: $helper-backgroundsColor--background-degraded3;
+          color: var(--color-white);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,178 @@
+// MIXIN HELPER: SCROLL
+// ===============================================
+@mixin ft-helper-scroll() {
+
+    // .FT-HELPER-SCROLL
+    // ---------------------------------------------
+    .ft-helper-scroll {
+        //generals
+        display: flex;
+        overflow-x: scroll;
+        flex-direction: row;
+        cursor: grab;
+
+          // behavior: bg(Color-black)
+          @include behavior-ft-helper-bg(Color-black) {
+           @include margin(null null 1rem null);
+            }
+            @include behavior-parent-nested(ft-helper-scroll--100-mobileonly, ft-helper-scroll--50-mobileonly)
+                {
+                    overflow-x: scroll;
+                    @include min-screen(768px) {
+                        overflow-x: initial;
+                    }
+                }
+        // SCROLLBAR
+        &::-webkit-scrollbar {
+            // &:horizontal
+            &:horizontal {
+                height: 24px;
+
+                @include behavior-parent-nested(ft-helper-scroll--small) {
+                    height: 5px;
+                }
+
+                @include behavior-parent-nested(ft-helper-scroll--100-mobileonly)
+                {
+                   
+                     @include min-screen(768px) {
+                        height:0;
+                    }
+                }
+            }
+
+            // &-track
+            &-track {
+                background-color: transparent;
+                border-radius: 0;
+            }
+
+            // &-track-piece
+            &-track-piece {
+                background-clip: content-box;
+                border: 11px solid transparent;
+                border-radius: 0;
+
+                @include behavior-parent-nested(ft-helper-scroll--small) {
+                    border-width: 2px;
+                }
+
+                // behavior: bg(Color-black)
+                @include behavior-ft-helper-bg(Color-black) {
+                    background-color: var(--color-darkGrey);
+                }
+
+                // &:horizontal
+                &:horizontal {
+                    border-left: 0;
+                    border-right: 0;
+                }
+            }
+
+            // &-thumb
+            &-thumb {
+                background-clip: content-box;
+                border: 10px solid transparent;
+                border-radius: 0;
+
+                @include behavior-parent-nested(ft-helper-scroll--small) {
+                    border-width: 1px;
+                }
+                
+                // behavior: bg(Color-black)
+                @include behavior-ft-helper-bg(Color-black) {
+                    background-color: var(--color-darkGrey);
+                }
+                
+                // &:hover
+                &:hover {
+                    border: 10px solid transparent;
+    
+                    @include behavior-parent-nested(ft-helper-scroll--small) {
+                        border-width: 1px;
+                    }
+                    
+                    // behavior: bg(Color-black)
+                    @include behavior-ft-helper-bg(Color-black) {
+                        background-color: var(--color-lightGrey);
+                    }
+                }
+                // &:active
+                &:active {
+                    border: 8px solid transparent;
+    
+                    @include behavior-parent-nested(ft-helper-scroll--small) {
+                        border-width: 0;
+                    }
+
+                    // behavior: bg(Color-black)
+                    @include behavior-ft-helper-bg(Color-black) {
+                        background-color: var(--color-white);
+                    }
+                }
+                // &:horizontal
+                &:horizontal {
+                    border-left: 0;
+                    border-right: 0;
+                }
+            }
+
+            // END // SCROLLBAR
+        }
+
+        // &-STOP
+        &-stop {
+            overflow: hidden;
+            height: 100%;
+        }
+
+        // SIN ::-webkit-scrollbar
+        @supports not (selector(::-webkit-scrollbar-thumb)) {
+            scrollbar-width: thin;
+        }
+
+        &.ft-layout-grid-flex__nested {
+            flex-wrap: nowrap;
+        }
+
+        // &--100
+        &--100 {
+            * {
+                min-width: 100%;
+            }
+             // &-mobileonly
+              &-mobileonly{
+                  * {
+                     min-width: fit-content;
+                      overflow-x: visible;
+                    @include min-screen(768px) {
+                        overflow-x: initial;
+                        min-width: initial;
+                    }
+                }       
+            }
+        }
+
+        // &--50
+        &--50 {
+            * {
+                min-width: 50%;
+            }
+        }
+
+        // &--50
+        &--25 {
+            * {
+                min-width: 25%;
+            }
+        }
+
+        // END // .FT-HELPER-SCROLL
+    }
+
+    // ---------------------------------------------
+
+    // END // MIXIN HELPER: SCROLL
+}
+
+// ===============================================

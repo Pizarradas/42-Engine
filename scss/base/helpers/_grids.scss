@@ -1,0 +1,149 @@
+// MIXIN HELPER: GRIDS
+// ===============================================
+@mixin ft-helperGrids() {
+  // .ft-helper-grid
+  .ft-helper-grid {
+    // &-out
+    &-out {
+      // &-mo
+      &-mo {
+        @include margin(null -0.9rem null -0.9rem);
+        @include padding(null 0.9rem null 0.9rem);
+        @include min-screen(768px) {
+          @include margin(null 0 null 0);
+          @include padding(null 0 null 0);
+        }
+      }
+    }
+
+    // &-width
+    &-width {
+      &-1:not(.x) {
+        @include min-screen(1024px) {
+          max-width: 8.33333333%;
+          flex-basis: 8.33333333%;
+        }
+      }
+
+      // &-2
+      &-2:not(.x) {
+        @include min-screen(1024px) {
+          max-width: 16.66666667%;
+          flex-basis: 16.66666667%;
+        }
+      }
+
+      // &-3
+      &-3:not(.x) {
+        @include min-screen(1024px) {
+          max-width: 25%;
+          flex-basis: 25%;
+        }
+      }
+
+      // &-4
+      &-4:not(.x) {
+        @include min-screen(1024px) {
+          max-width: 33.33333333%;
+          flex-basis: 33.33333333%;
+        }
+      }
+
+      // &-5
+      &-5:not(.x) {
+        @include min-screen(1024px) {
+          max-width: 41.66666667%;
+          flex-basis: 41.66666667%;
+        }
+      }
+
+      // &-6
+      &-6:not(.x) {
+        @include min-screen(1024px) {
+          max-width: 50%;
+          flex-basis: 50%;
+        }
+      }
+
+      // &-7
+      &-7:not(.x) {
+        @include min-screen(1024px) {
+          max-width: 58.33333333%;
+          flex-basis: 58.33333333%;
+        }
+      }
+
+      // &-8
+      &-8:not(.x) {
+        @include min-screen(1024px) {
+          max-width: 66.66666667%;
+          flex-basis: 66.66666667%;
+        }
+      }
+
+      // &-9
+      &-9:not(.x) {
+        @include min-screen(1024px) {
+          max-width: 75%;
+          flex-basis: 75%;
+        }
+      }
+
+      // &-10
+      &-10:not(.x) {
+        @include min-screen(1024px) {
+          max-width: 83.33333333%;
+          flex-basis: 83.33333333%;
+        }
+      }
+
+      // &-11
+      &-11:not(.x) {
+        @include min-screen(1024px) {
+          max-width: 91.66666667%;
+          flex-basis: 91.66666667%;
+        }
+      }
+
+      // &-12
+      &-12:not(.x) {
+        @include min-screen(1024px) {
+          max-width: 100%;
+          flex-basis: 100%;
+        }
+      }
+    }
+  }
+
+  // [class*="ft-layout-grid-flex__col"][class*="ft-helper-grid-width-"] // inner spacers
+  [class*="ft-layout-grid-flex__col"][class*="ft-helper-grid-width-"] {
+    // &.ft-helper-spacer-inner-sm
+    &.ft-helper-spacer-inner-sm {
+      @include padding(2rem);
+
+      @include min-screen(768px) {
+        @include padding(3.5rem);
+      }
+    }
+
+    // &.ft-helper-spacer-inner-md
+    &.ft-helper-spacer-inner-md {
+      @include padding(3rem);
+
+      @include min-screen(768px) {
+        @include padding(6rem);
+      }
+    }
+
+    // &.ft-helper-spacer-inner-lg
+    &.ft-helper-spacer-inner-lg {
+      @include padding(6rem);
+
+      @include min-screen(768px) {
+        @include padding(8rem);
+      }
+    }
+  }
+}
+
+@include ft-helperGrids();

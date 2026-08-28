@@ -1,0 +1,934 @@
+// ABSTRACTS
+// ================================================
+@import "abstracts/abstracts";
+@import "vendors/bourbon/bourbon";
+
+// VARIABLES
+// ================================================
+// activación modo automático
+$enable-auto-dark-mode: false;
+
+// MIXIN:
+// ===============================================
+@mixin filter-to-white {
+  filter: brightness(0) invert(1);
+}
+
+@mixin filter-invert {
+  filter: invert(1);
+}
+
+@mixin filter-grayscale {
+  filter: grayscale(100%) brightness(2) contrast(1.4);
+}
+
+// MIXIN: dark mode
+// ===============================================
+@mixin dark-mode-items {
+  // TRANSITIONS
+  :where(*) {
+    transition: background-color 0.5s ease, color 0.4s ease,
+      border-color 0.4s ease;
+  }
+
+  // ::SELECTION
+  ::selection {
+    background-color: rgba(255, 221, 100, 0.35);
+    color: white;
+  }
+
+  // HELPERS
+  .ft-helper {
+    //  &-bgColor-background
+    &-bgColor-background {
+      // &-lightGrey
+      &-lightGrey {
+        color: var(--color-white-dm);
+      }
+    }
+
+    // &-divider
+    &-divider {
+      // &-line
+      &-line {
+        // &:before
+        &:before {
+          @include filter-to-white;
+        }
+      }
+    }
+  }
+
+  // ATOMS
+  .ft {
+    // &-btn
+    &-btn {
+      // &-rrss
+      &-rrss {
+        @include border-color(var(--color-black-dm));
+        background-color: var(--color-black-dm);
+
+        // &:hover, &:focus-visible
+        &:hover,
+        &:focus-visible {
+          background-color: var(--color-black-dm);
+        }
+
+        // &:focus-within
+        &:focus-within {
+          // [class*="__icon"]
+          [class*="__icon"] {
+            filter: initial;
+          }
+        }
+      }
+
+      // &-nav, &-help
+      &-nav,
+      &-help {
+        // svg
+        svg,
+        svg:before,
+        svg:after,
+        [class*="icon"]:before,
+        [class*="icon"]:after {
+          @include filter-to-white;
+        }
+
+        // &:hover, &:focus-visible
+        &:hover,
+        &:focus-visible {
+          background-color: var(--color-black-dm);
+          filter: initial;
+        }
+      }
+
+      // &-help
+      &-help {
+        // &:hover, &:focus-visible
+        &:hover,
+        &:focus-visible {
+          color: var(--color-white-dm);
+        }
+      }
+
+      // &__icon
+      &__icon {
+        @include filter-to-white;
+      }
+
+      // &--secondary
+      &--secondary {
+        // &-has
+        &-has {
+          // &--icon
+          &--icon {
+            // [class*="__icon"]
+            [class*="__icon"] {
+              @include filter-to-white;
+            }
+          }
+        }
+      }
+    }
+
+    // &-check
+    &-check {
+      // &__label
+      &__label {
+        // &:after
+        &:after {
+          background-color: transparent;
+        }
+      }
+
+      // &__input
+      &__input {
+        // &:checked
+        &:checked {
+          // + .ft-check__label::before
+          + .ft-check__label::before {
+            background-color: transparent;
+          }
+        }
+
+        // &:checked:disabled
+        &:checked:disabled {
+          // + .ft-check__label::after
+          + .ft-check__label::after {
+            @include filter-to-white;
+          }
+        }
+      }
+    }
+
+    // &-link
+    &-link {
+      // &--primary
+      &--primary {
+        color: var(--color-primary-dm);
+      }
+
+      // &--block
+      &--block {
+        // &:after
+        &:after {
+          @include filter-to-white;
+        }
+      }
+    }
+
+    // &-list
+    &-list {
+      // *, [class*="__item"], &-block__icon
+      *,
+      [class*="__item"] {
+        // &:before
+        &:before {
+          @include filter-to-white;
+        }
+      }
+
+      // svg
+      svg {
+        // path
+        path {
+          @include filter-to-white;
+        }
+      }
+
+      // &__link
+      &__link {
+        color: var(--color-black-dm);
+      }
+
+      // &-block__icon
+      &-block__icon {
+        @include filter-to-white;
+      }
+
+      // &-functions
+      &-functions {
+        // &__txt
+        &__txt {
+          // &::before
+          &:before {
+            @include filter-to-white;
+          }
+        }
+      }
+
+      // &:not()
+      &:not(.ft-list-photoinfo) img {
+        @include filter-to-white;
+      }
+    }
+
+    // &-skin
+    &-skin {
+      //  &--cerca
+      &--cerca {
+        // .ft-org-hero-welcome
+        .ft-org-hero-welcome {
+          background-color: var(--color-lightGrey-dm);
+        }
+
+        // .ft-org-hero-welcome::after, .ft-org-suggestions-chips::after, .ft-mol-sticky-panel__container::after
+        .ft-org-hero-welcome::after,
+        .ft-org-suggestions-chips::after,
+        .ft-mol-sticky-panel__container::after {
+          display: none;
+        }
+      }
+    }
+
+    // &-tag
+    &-tag {
+      // &:not(.ft-tag--status-primary):not(.ft-tag--status-secondary)
+      &:not(.ft-tag--status-primary):not(.ft-tag--status-secondary) {
+        color: white;
+        background-color: #111;
+      }
+
+      // &--status
+      &--status {
+        // &-primary, &-secondary
+        &-primary,
+        &-secondary {
+          // [class*="ft-link--secondary"]
+          [class*="ft-link--secondary"] {
+            color: black;
+          }
+        }
+      }
+
+      // &--chip
+      &--chip {
+        // &[data-tag-state="selected"]
+        &[data-tag-state="selected"] {
+          // .ft
+          .ft {
+            // &-tag
+            &-tag {
+              // &__tag
+              &__tag {
+                background-color: var(--color-primary-dark);
+                border-color: black;
+                color: var(--color-primary-dark);
+
+                // &:before - icono en before
+                &::before {
+                  filter: brightness(0) invert(1);
+                  opacity: 1;
+                }
+
+                // focus accesible en dark
+                &:focus-visible {
+                  box-shadow: 0 0 0 2px var(--color-primary-dark);
+                }
+
+                // hover en dark → más contraste
+                &:hover {
+                  background-color: black;
+                  border-color: var(--color-primary-dark);
+                }
+              }
+            }
+
+            // &-btn
+            &-btn {
+              // .has-star-overlay
+              &.has-star-overlay {
+                // svg path
+                svg path {
+                  stroke: #000;
+                  fill: #000;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // &-text
+    &-text {
+      // a
+      a {
+        color: white;
+      }
+
+      // &-alert
+      &-alert {
+        // &--is
+        &--is {
+          // &-info
+          &-info {
+            // &::before
+            &:before {
+              @include filter-to-white;
+            }
+          }
+        }
+      }
+    }
+
+    // &-trust
+    &-trust {
+      // img
+      img {
+        @include filter-to-white;
+      }
+    }
+  }
+
+  // MOLECULES
+  .ft-mol {
+    // &-author
+    &-author {
+      // &--premium
+      &--premium {
+        // [class*="ft-mol-author__quote"]
+        [class*="ft-mol-author__quote"] {
+          // a
+          a {
+            // &:before
+            &::before {
+              background-color: transparent;
+            }
+          }
+        }
+      }
+
+      // &--is
+      &--is {
+        // &-highlighted
+        &-highlighted {
+          // &:after
+          &::after {
+            @include filter-to-white;
+          }
+        }
+      }
+    }
+
+    // &-accordion
+    &-accordion {
+      // &__summary
+      &__summary {
+        border-color: var(--color-black-dm);
+
+        // &::after
+        &::after {
+          @include filter-to-white;
+        }
+
+        // &:hover, &:focus-visible
+        &:hover,
+        &:focus-visible {
+          // &::after
+          &::after {
+            @include filter-to-white;
+          }
+        }
+      }
+    }
+
+    // &-boxInfo
+    &-boxInfo {
+      // &--between
+      &--between {
+        // *
+        * {
+          color: var(--color-white-dm);
+        }
+
+        // [class*="__head"]
+        [class*="__head"] {
+          border-color: var(--color-white-dm);
+
+          // &::after
+          &::after {
+            border-color: var(--color-white-dm) transparent transparent;
+          }
+        }
+      }
+    }
+
+    // &-breadcrumb
+    &-breadcrumb {
+      // &-has
+      &-has {
+        // &--lvl
+        &--lvl {
+          // &::before
+          &::before {
+            @include filter-to-white;
+          }
+
+          // [class*="__list"]
+          [class*="__list"] {
+            &::before {
+              @include filter-to-white;
+            }
+          }
+        }
+      }
+    }
+
+    &-carousel {
+      // &__nav
+      &__nav {
+        // ::before
+        &::before {
+          @include filter-to-white;
+        }
+      }
+    }
+
+    // &-countdown
+    &-countdown {
+      // --custom
+      &--custom {
+        // [class*="__cntContent-title"]
+        [class*="__cntContent-title"] {
+          color: white;
+        }
+
+        // [class*="__cntContent-text"]
+        [class*="__cntContent-text"] {
+          color: black;
+        }
+      }
+    }
+
+    // &-form
+    &-form {
+      // &__input, &__select
+      &__input,
+      &__select {
+        color: var(--color-black-dm);
+
+        // &:focus
+        &:focus {
+          // [class*="ft-mol-form__label"]
+          [class*="ft-mol-form__label"] {
+            color: black;
+            background-color: var(--color-form-dm);
+          }
+        }
+
+        // &:disabled
+        &:disabled {
+          background-color: rgba(255, 255, 255, 0.3);
+        }
+      }
+    }
+
+    // &-headband
+    &-headband {
+      // &:not(.ft-mol-headband--news)
+      &:not(.ft-mol-headband--news) {
+        // [class*="__img"], [class*="__section-img"]
+        [class*="__img"],
+        [class*="__section-img"] {
+          @include filter-grayscale;
+        }
+      }
+
+      // &--section
+      &--section {
+        // &[class*="ft-mol-headband--has-logo"]
+        &[class*="ft-mol-headband--has-logo"] {
+          // [class*="ft-mol-headband__section-img"]
+          [class*="ft-mol-headband__section-img"] {
+            @include filter-to-white;
+          }
+        }
+      }
+    }
+
+    // &-lnkbox
+    &-lnkbox {
+      // &__container
+      &__container {
+        // &:after
+        &:after {
+          @include filter-to-white;
+        }
+      }
+    }
+
+    // &-multimedia
+    &-multimedia {
+      // *, [class*="ft-text"], [class*="ft-lnk"]
+      *,
+      [class*="ft-text"],
+      [class*="ft-lnk"] {
+        color: white;
+      }
+
+      // [class*="ft-btn--primary"]
+      [class*="ft-btn--primary"] {
+        color: initial;
+
+        //  [class*="ft-btn__icon"]
+        [class*="ft-btn__icon"] {
+          @include filter-invert;
+        }
+
+        // &:hover, &:focus-visible
+        &:hover,
+        &:focus-visible {
+          color: var(--color-black-dm);
+        }
+
+        // &[class*="ft-btn--primary-has--icon"]
+        &[class*="ft-btn--primary-has--icon"] {
+          // &:hover, &:focus-visible
+          &:hover,
+          &:focus-visible {
+            // path
+            path {
+              @include filter-invert;
+            }
+          }
+        }
+      }
+
+      // &__video
+      &__video {
+        // [class*="ft-mol-multimedia__footerIcon"]
+        [class*="ft-mol-multimedia__footerIcon"] {
+          // svg
+          svg {
+            @include filter-invert;
+          }
+
+          // &:hover, &:focus-visible
+          &:hover,
+          &:focus-visible {
+            background-color: black;
+
+            // svg
+            svg {
+              @include filter-to-white;
+            }
+          }
+        }
+      }
+    }
+
+    // &-quote
+    &-quote {
+      background-color: black;
+
+      // &:before
+      &:before {
+        @include filter-to-white;
+      }
+    }
+
+    // &-rrss
+    &-rrss {
+      // &::before
+      &::before {
+        @include filter-to-white;
+      }
+
+      // &-column, &-inline
+      &-column,
+      &-inline {
+        // [class*="ft-list-block__icon"]
+        [class*="ft-list-block__icon"] {
+          @include filter-to-white;
+        }
+      }
+    }
+
+    // &-score
+    &-score {
+      //  &__nameBackground
+      &__nameBackground {
+        background-color: var(--color-black-dm);
+      }
+    }
+
+    // &-scoreboard
+    &-scoreboard {
+      //  &__nameBackground
+      &__shield {
+        background-color: var(--color-black-dm);
+      }
+    }
+
+    // &-subtitle
+    &-subtitle {
+      // &:not(:only-of-type)
+      &:not(:only-of-type) {
+        // &:before
+        &:before {
+          @include filter-to-white;
+        }
+      }
+    }
+
+    // &-sticky-panel
+    &-sticky-panel {
+      background-color: black;
+
+      // ul:has(.ft-tag--chip)
+      ul:has(.ft-tag--chip) {
+        background-image: none;
+      }
+    }
+
+    // &-tapbar
+    &-tapbar {
+      box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.5);
+
+      // FONDO. En el modelo actual el fondo lo pinta el propio <nav> con un degradado
+      // (antes lo pintaban __container::before/::after y __canvas, hoy transparentes /
+      // display:none → sus overrides dark eran reglas muertas y se han retirado). Aquí se
+      // vira el degradado a la superficie OSCURA de marca: color-mix conserva el alfa del
+      // efecto glass y var(--color-white/lightGrey) ya resuelven a sus -dm en [data-theme=dark].
+      background: linear-gradient(180deg,
+        color-mix(in srgb, var(--color-white) 88%, transparent) 0%,
+        color-mix(in srgb, var(--color-lightGrey) 78%, transparent) 100%);
+
+      // &__icon
+      &__icon {
+        @include filter-to-white;
+      }
+
+      // &__text
+      &__text {
+        color: white;
+      }
+
+      // &__item
+      &__item {
+        color: var(--color-white);
+
+        // &--active
+        &--active {
+          // Círculo del activo: NEGRO PURO (#000) en dark (a petición), igual en todas las
+          // marcas. El icono va en blanco (filter-to-white de &__icon), así que un círculo
+          // oscuro conserva la MISMA lectura que en claro (círculo negro + icono blanco). Se
+          // usa #000 —no #111 ni --color-black— para que quede MÁS OSCURO que el fondo del
+          // <nav> en dark (≈#181a1b) y el disco del ítem señalado se distinga de la barra.
+          // Especificidad (0,3,1) > la de _tapbar.scss (0,2,1) → gana sin depender del orden.
+          .ft-mol-tapbar__icon-wrapper::after {
+            background-color: #000;
+          }
+
+          // [class*="__text"]
+          [class*="__text"] {
+            color: var(--color-black-dm);
+          }
+        }
+      }
+    }
+
+    // &-table
+    &-table {
+      // thead, tfoot
+      thead,
+      tfoot {
+        // tr th, tr td
+        tr th,
+        tr td {
+          color: var(--color-white-dm);
+          background-color: var(--color-black-dm);
+        }
+      }
+
+      // thead
+      thead {
+        // tr th
+        tr th {
+          // &:first-child
+          &:first-child {
+            color: var(--color-white-dm);
+            background-color: var(--color-black-dm);
+          }
+        }
+      }
+    }
+  }
+
+  // ORGANISM
+  .ft-org {
+    // &-cardHome
+    &-cardHome {
+      // &__media
+      &__media {
+        // [class*="ft-mol-label__title"]
+        [class*="ft-mol-label__title"] {
+          color: var(--color-black-dm);
+        }
+      }
+      // [class*="__mainRelated--premium"]
+      [class*="__mainRelated--premium"] {
+        // &::after
+        &:after {
+          @include filter-grayscale;
+        }
+      }
+
+      // &--premium
+      &--premium {
+        // [class*="ft-org-cardHome__mainTitle"]
+        [class*="ft-org-cardHome__mainTitle"] {
+          // &:before
+          &:before {
+          }
+        }
+      }
+    }
+
+    // &-masthead
+    &-masthead {
+      background-color: var(--color-white-dm);
+
+      // *
+      * {
+        color: var(--color-black-dm);
+
+        // &::before, &::after
+        &::before,
+        &::after {
+          @include filter-to-white;
+        }
+      }
+
+      // .sticky-text, .sticky-text__bold
+      .sticky-text,
+      .sticky-text__bold {
+        color: var(--color-white-dm);
+      }
+
+      // [class*="form-field"]
+      [class*="form-field"] {
+        // [class*="select-wrapper"]
+        [class*="select-wrapper"] {
+          // select, label
+          select,
+          label {
+            background-color: black;
+
+            // &:focus
+            &:focus {
+              // + select, + label
+              + select,
+              + label {
+                color: var(--color-form-dm);
+              }
+            }
+          }
+
+          // label
+          label {
+            color: var(--color-black-dm);
+          }
+
+          // select
+          select {
+            border-color: var(--color-white-dm);
+          }
+        }
+      }
+
+      // &__branded, &__top, &__top-right .sticky
+      &__branded,
+      &__top,
+      &__top-right .sticky {
+        background-color: var(--color-black-dm);
+      }
+
+      // &__menu-buttonIcon
+      &__menu-buttonIcon {
+        @include filter-to-white;
+      }
+
+      // &__nav
+      &__nav {
+        // .fourty &
+        .fourty & {
+          border-color: var(--color-black-dm);
+        }
+      }
+
+      // &__top
+      &__top {
+        @include min-screen(780px) {
+          background-color: initial;
+        }
+
+        // &::before
+        &::before {
+          border-top-color: var(--color-black-dm);
+          filter: none;
+        }
+      }
+
+      // &--side
+      &--side {
+        background-color: black;
+
+        // & .ft-org-masthead__main
+        & .ft-org-masthead__main {
+          background-color: initial;
+        }
+      }
+
+      // &__dropdown
+      &__dropdown {
+        background-color: white;
+
+        // &-link
+        &-link {
+          color: black;
+        }
+      }
+
+      // &__branded
+      &__branded {
+        color: black;
+
+        // &:before
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+
+  // BREADCRUMB: provisional, hasta rediseño de miga de pan
+  .balonmano .ft-mol-breadcrumb-has--lvl::before,
+  .baloncesto .ft-mol-breadcrumb-has--lvl::before,
+  .ciclismo .ft-mol-breadcrumb-has--lvl::before,
+  .golf .ft-mol-breadcrumb-has--lvl::before,
+  .hockey .ft-mol-breadcrumb-has--lvl::before,
+  .motor .ft-mol-breadcrumb-has--lvl::before,
+  .natacion .ft-mol-breadcrumb-has--lvl::before,
+  .nieve .ft-mol-breadcrumb-has--lvl::before,
+  .padel .ft-mol-breadcrumb-has--lvl::before,
+  .tenis .ft-mol-breadcrumb-has--lvl::before,
+  .atletismo .ft-mol-breadcrumb-has--lvl::before,
+  .boxeo .ft-mol-breadcrumb-has--lvl::before,
+  .deportes-extremos .ft-mol-breadcrumb-has--lvl::before,
+  .e-sports .ft-mol-breadcrumb-has--lvl::before,
+  .futbol-sala .ft-mol-breadcrumb-has--lvl::before,
+  .juegos-olimpicos .ft-mol-breadcrumb-has--lvl::before,
+  .nfl .ft-mol-breadcrumb-has--lvl::before,
+  .outdoor .ft-mol-breadcrumb-has--lvl::before,
+  .rugby .ft-mol-breadcrumb-has--lvl::before,
+  .esport-catala .ft-mol-breadcrumb-has--lvl::before,
+  .ufc .ft-mol-breadcrumb-has--lvl::before,
+  .vela .ft-mol-breadcrumb-has--lvl::before,
+  .wwe .ft-mol-breadcrumb-has--lvl::before,
+  .barca .ft-mol-breadcrumb-has--lvl::before,
+  .areajugones .ft-mol-breadcrumb-has--lvl::before,
+  .euroliga .ft-mol-breadcrumb-has--lvl::before {
+    filter: initial;
+  }
+
+  // FOOTER
+  #footer-media .footer-mediaTop img,
+  #footer-media .footer-mediaMiddle a img,
+  #footer-media .footer-mediaBottom ul li > a:hover:before {
+    @include filter-to-white;
+  }
+  #footer-media .footer-mediaBottom ul li > a:hover,
+  #footer-media .footer-mediaTop .lnk li a:hover {
+    color: var(--color-primary-dm);
+    border-color: var(--color-primary-dm);
+  }
+  #footer-media .footer-mediaTop .rrss .icon {
+    @include filter-grayscale;
+  }
+  #footer-media .footer-mediaTop .rrss .icon.icon-Twitter {
+    @include filter-invert();
+  }
+}
+
+// DARK MODE: AUTO / MANUAL
+// ===============================================
+@mixin dark-mode-wrapper {
+  @if $enable-auto-dark-mode {
+    @media (prefers-color-scheme: dark) {
+      @content;
+    }
+  }
+
+  [data-theme="dark"] {
+    @content;
+  }
+}
+
+// DARK MODE: COMPILER
+// ===============================================
+@include dark-mode-wrapper {
+  @include dark-mode-items();
+}

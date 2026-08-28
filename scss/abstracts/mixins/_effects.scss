@@ -1,0 +1,28 @@
+// MIXIN EFFECT: SHADOW--BOX
+// ===============================================
+@mixin effectShadow--box( // ARGMENTS
+
+  $effectShadow--boxAxisX: null,
+  $effectShadow--boxAxisY: null,
+  $effectShadow--boxBlur: null,
+  $effectShadow--boxColorRed: null,
+  $effectShadow--boxColorGreen: null,
+  $effectShadow--boxColorBlue: null,
+  $effectShadow--boxColorAlpha: null,
+  // END // ARGUMENTS
+)
+{
+  // GENERALS
+  box-shadow: $effectShadow--boxAxisX $effectShadow--boxAxisY $effectShadow--boxBlur $effectShadow--boxColorRed $effectShadow--boxColorGreen $effectShadow--boxColorBlue $effectShadow--boxColorAlpha;
+
+  // END // MIXIN EFFECT: SHADOW--BOX
+}
+
+// ===============================================
+
+// MIXIN EFFECT: GLOW--PRIMARY
+// ===============================================
+@mixin effectGlow--primary()
+{
+  box-shadow: 0 0 0.4rem 0 var(--color-primary);
+}

@@ -1,0 +1,15 @@
+// MIXIN TRANSITION: -button
+// ===============================================
+@mixin transition-button(
+  // ARGUMENTS
+  $transition-buttonBorderColorTime: null,
+  $transition-buttonBackgroundTime: null,
+  $transition-buttonColorTime: null,
+  // END // ARGUMENTS
+) {
+  @media (prefers-reduced-motion: no-preference) {
+    transition: border-color $transition-buttonBorderColorTime ease, background $transition-buttonBackgroundTime ease, color $transition-buttonColorTime ease;
+  }
+  // END // MIXIN TRANSITION: -button
+}
+// ===============================================

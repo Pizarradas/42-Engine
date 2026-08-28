@@ -1,0 +1,21 @@
+// MIXIN: HELPERCOLLAPSES
+// ===============================================
+@mixin ft-helper-collapses() {
+  // .FT-HELPER-COLLAPSE
+  // ---------------------------------------------
+  .ft-helper-collapse {
+    // GENERALS
+    display: none;
+
+    // &--SHOW
+    &--show {
+      display: block;
+    }
+
+    // END // .FT-HELPER-COLLAPSE
+  }
+  // ---------------------------------------------
+
+  // END // MIXIN: HELPERCOLLAPSES
+}
+// ===============================================

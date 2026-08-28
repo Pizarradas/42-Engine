@@ -1,0 +1,75 @@
+// MIXIN BEHAVIOR: BRAND
+// ================================================
+@mixin behavior-brand($behavior-brand--name)
+{
+  @at-root .ft-brand-#{$behavior-brand--name} #{&}
+  {
+    @content;
+  }
+}
+
+// MIXIN BEHAVIOR: PARENT
+// ================================================
+@mixin behavior-parent($behavior-parent--class)
+{
+  @at-root .#{$behavior-parent--class} #{&}
+  {
+    @content;
+  }
+}
+
+// MIXIN BEHAVIOR: PARENT NESTED
+// ================================================
+@mixin behavior-parent-nested($behavior-parent-nested--class)
+{
+  @at-root .#{$behavior-parent-nested--class}#{&}
+  {
+    @content;
+  }
+}
+
+
+
+// MIXIN BEHAVIOR: TEXT-SELECTION
+// ================================================
+@mixin behavior-text-selection( // ARGUMENTS
+
+  $behavior-text-selection--color,
+  $behavior-text-selection--background)
+{
+
+}
+
+// MIXIN BEHAVIOR: FT-HELPER-BG
+// ================================================
+@mixin behavior-ft-helper-bg( // ARGUMENTS
+
+  $behavior-ft-helper-bg--name)
+{
+
+  // @AT-ROOT .FT-HELPER-BG-(NAME--VARIANT)
+  @at-root .ft-helper-bg#{$behavior-ft-helper-bg--name} #{&}
+  {
+    @content;
+  }
+}
+
+// MIXIN BEHAVIOR: IN ANCESTORS
+// ================================================
+@mixin behavior-in-ancestors($selectors)
+{
+  $depth: length($selectors);
+
+  @for $i from 1 through $depth
+  {
+    $final_selector: nth($selectors, $i);
+
+    @at-root
+    {
+      #{$final_selector} &
+      {
+        @content;
+      }
+    }
+  }
+}

@@ -1,0 +1,77 @@
+// MIXIN HELPER: IMAGES
+// ===============================================
+@mixin ft-helper-images()
+{
+
+  // .FT-HELPER-IMG
+  // ---------------------------------------------
+  .ft-helper-img
+  {
+
+    // &-rd
+    &-rd
+    {
+      max-width: 100%;
+      height: auto;
+      display: block
+    }
+
+    // &-intext
+    &-intext
+    {
+      @include margin(null 1ex null 1ex);
+      vertical-align: middle;
+      max-height: 1lh;
+      width: auto;
+    }
+
+    // &-positioned
+    &-positioned
+    {
+      // generals
+      @include position(absolute, null null null null);
+
+      // &--top
+      &--top
+      {
+        top: 0;
+      }
+
+      // &--rgt
+      &--rgt
+      {
+        right: 0;
+      }
+
+      // &--bttm
+      &--bttm
+      {
+        bottom: 0;
+      }
+
+      // &--lft
+      &--lft
+      {
+        left: 0;
+      }
+
+      // &--cnt
+      &--cnt
+      {
+        @include margin(auto);
+        right: 0;
+        left: 0;
+      }
+
+      // end // &-positioned
+    }
+
+    // END // .FT-HELPER-IMG
+  }
+
+  // ---------------------------------------------
+
+  // END // MIXIN HELPER: IMAGES
+}
+
+// ===============================================

@@ -1,0 +1,7 @@
+// MIXIN ALIGNMENT: Block--center
+// ===============================================
+@mixin alignmentBlock--center() {
+  @include margin(null auto null auto);
+  display: block;
+}
+// ===============================================

@@ -1,0 +1,32 @@
+// MIXIN HELPER: ANCHORS
+// ===============================================
+@mixin ft-helperAnchors() {
+  // .FT-HELPERANCHOR
+  // ---------------------------------------------
+  .ft-helper-anchor {
+    // &-SPACER
+    &-spacer {
+      // &:BEFORE
+      &:before {
+        // generals
+        content: " ";
+        visibility: hidden;
+        display: block;
+        @include min-screen(768px) {
+          @include margin(-11.2rem null null null);
+          height: 11.2rem;
+        }
+
+        // END // &:BEFORE
+      }
+
+      // END // &-SPACER
+    }
+
+    // END // .FT-HELPERANCHOR
+  }
+  // ---------------------------------------------
+
+  // END // MIXIN HELPER: ANCHORS
+}
+// ===============================================

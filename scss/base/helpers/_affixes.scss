@@ -1,0 +1,81 @@
+// MIXIN HELPER: AFFIXES
+// ===============================================
+@mixin ft-helper-affixes() {
+  // .ft-helper-affix
+  // ---------------------------------------------
+  .ft-helper-affix {
+    @include position(fixed, null null null null);
+  }
+  // ---------------------------------------------
+
+  // .ft-helper-sticky-stack
+  // ---------------------------------------------
+  :root {
+    --sticky-stack-top: 0px;
+    --sticky-stack-shell-offset: 0px;
+  }
+
+  .ft-helper-sticky-stack {
+    min-width: 0;
+
+    &[data-sticky-stack-state="mirrored"] {
+      visibility: hidden;
+      pointer-events: none;
+    }
+  }
+
+  [data-sticky-stack-shell] {
+    position: fixed;
+    top: var(--sticky-stack-top);
+    right: 0;
+    left: 0;
+    z-index: 40;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
+
+  body[data-sticky-stack-active="true"] [data-sticky-stack-shell] {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  [data-sticky-stack-shell-inner] {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0.8rem 1.6rem;
+    background-color: var(--color-white);
+    box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.1);
+  }
+
+  [data-sticky-stack-shell-slot] {
+    width: 100%;
+    min-width: 0;
+
+    > * {
+      min-width: 0;
+      margin: 0;
+    }
+  }
+
+  [data-sticky-stack-shell-inner] [data-sticky-stack-overflow="x"] {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}

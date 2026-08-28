@@ -1,0 +1,17 @@
+// MIXIN CLICK-AREA
+// ===============================================
+@mixin min-click-area($bg-opacity: 0) {
+    @include position(relative, null null null null);
+    // &:after
+    &:after {
+      content: "";
+      @include position(absolute, 50% null null 50%);
+      @include size(100%);
+      transform: translate(-50%, -50%);
+      min-width:  44px;
+      min-height: 44px;
+      background-color: rgba(0, 0, 0, $bg-opacity);
+      border-radius: inherit;
+    }
+}
+// ===============================================

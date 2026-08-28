@@ -1,0 +1,36 @@
+// MIXIN HELPER: branded
+// ===============================================
+@mixin ft-helper-branded()
+{
+
+
+    // .ft-helper-branded
+    // ---------------------------------------------
+    .ft-helper-branded,
+    p.ft-helper-branded,
+    h1.ft-helper-branded,
+    h2.ft-helper-branded,
+    h3.ft-helper-branded,
+    h2.ft-helper-branded.ft-mol-subtitle,
+    .ft-text.ft-helper-branded
+    {
+        @include Branded;
+
+        *
+        {
+            @include Branded;
+        }
+
+        &[class^="ft-helper-fontSize-"]
+        {
+
+            @include Branded;
+
+            // end // &Hierarchy
+        }
+    }
+
+
+}
+
+// =============================================== 

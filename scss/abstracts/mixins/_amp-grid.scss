@@ -1,0 +1,28 @@
+// MIXIN GRID: -p-less-container
+// ===============================================
+@mixin grid-p-less-container()
+{
+
+  // generals
+  @include padding(null 1rem null 1rem);
+
+
+  // END // MIXIN GRID: -p-less-container
+}
+
+// ===============================================
+
+// MIXIN GRID: OUT OF CONTAINER
+// ===============================================
+@mixin grid-out-of-container()
+{
+
+  // generals
+  @include margin(null -1rem null -1rem);
+  @include padding(null 1rem null 1rem);
+
+
+  // MIXIN GRID: OUT OF CONTAINER
+}
+
+// ===============================================

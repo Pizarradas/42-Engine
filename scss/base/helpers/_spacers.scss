@@ -1,0 +1,666 @@
+// MIXIN HELPER: SPACERS
+// ===============================================
+@mixin ft-helper-spacers() {
+  // .ft-helper-spacer
+  .ft-helper-spacer {
+    // &-clear
+    &-clear {
+      display: block;
+      clear: both;
+    }
+
+    // &-y
+    &-y {
+      // &-0
+      &-0 {
+        @include margin(0 null 0 null);
+      }
+
+      // &-auto
+      &-auto {
+        @include margin(auto null auto null);
+      }
+
+      // &-xxs
+      &-xxs {
+        @include margin(0 null 0 null);
+        @include padding(1rem null 1rem null);
+      }
+
+      // &-xs
+      &-xs {
+        @include margin(0 null 0 null);
+        @include padding(1.5rem null 1.5rem null);
+
+        @include min-screen(768px) {
+          @include padding(2rem null 2rem null);
+        }
+      }
+
+      // &-sm
+      &-sm {
+        @include margin(0 null 0 null);
+        @include padding(2rem null 2rem null);
+
+        @include min-screen(768px) {
+          @include padding(3.5rem null 3.5rem null);
+        }
+      }
+
+      // &-md
+      &-md {
+        @include margin(0 null 0 null);
+        @include padding(3rem null 3rem null);
+
+        @include min-screen(768px) {
+          @include padding(6rem null 6rem null);
+        }
+      }
+
+      // &-lg
+      &-lg {
+        @include margin(0 null 0 null);
+        @include padding(6rem null 6rem null);
+
+        @include min-screen(768px) {
+          @include padding(8rem null 8rem null);
+        }
+      }
+
+      // &-xlg
+      &-xlg {
+        @include margin(0 null 0 null);
+        @include padding(7rem null 7rem null);
+
+        @include min-screen(768px) {
+          @include padding(10rem null 10rem null);
+        }
+      }
+    }
+
+    // &-b
+    &-b {
+      // &-0
+      &-0 {
+        @include margin(null null 0 null);
+      }
+
+      // &-auto
+      &-auto {
+        @include margin(null null auto null);
+      }
+
+      // &-xxs
+      &-xxs {
+        @include margin(0 null 0 null);
+        @include padding(null null 1rem null);
+      }
+
+      // &-xs
+      &-xs {
+        @include margin(0 null 0 null);
+        @include padding(null null 1.5rem null);
+
+        @include min-screen(768px) {
+          @include padding(null null 2rem null);
+        }
+      }
+
+      // &-sm
+      &-sm {
+        @include margin(0 null 0 null);
+        @include padding(null null 2rem null);
+
+        @include min-screen(768px) {
+          @include padding(null null 3.5rem null);
+        }
+      }
+
+      // &-md
+      &-md {
+        @include margin(0 null 0 null);
+        @include padding(null null 3rem null);
+
+        @include min-screen(768px) {
+          @include padding(null null 6rem null);
+        }
+      }
+
+      // &-lg
+      &-lg {
+        @include margin(0 null 0 null);
+        @include padding(null null 6rem null);
+
+        @include min-screen(768px) {
+          @include padding(null null 8rem null);
+        }
+      }
+
+      // &-xlg
+      &-xlg {
+        @include margin(0 null 0 null);
+        @include padding(null null 7rem null);
+
+        @include min-screen(768px) {
+          @include padding(null null 10rem null);
+        }
+      }
+
+      // &-vp
+      &-vp {
+        // &-10
+        &-10 {
+          @include margin(null null 10dvh null);
+          display: inline-block
+        }
+
+        // &-20
+        &-20 {
+          @include margin(null null 20dvh null);
+          display: inline-block
+        }
+        
+        // &-30
+        &-30 {
+          @include margin(null null 30dvh null);
+          display: inline-block
+        }
+        
+        // &-40
+        &-40 {
+          @include margin(null null 40dvh null);
+          display: inline-block
+        }
+        
+        // &-50
+        &-50 {
+          @include margin(null null 50dvh null);
+          display: inline-block
+        }
+
+        // &-60
+        &-60 {
+          @include margin(null null 60dvh null);
+          display: inline-block
+        }
+
+        // &-70
+        &-70 {
+          @include margin(null null 70dvh null);
+          display: inline-block
+        }
+
+        // &-80
+        &-80 {
+          @include margin(null null 80dvh null);
+          display: inline-block
+        }
+        
+        // &-90
+        &-90 {
+          @include margin(null null 90dvh null);
+          display: inline-block
+        }
+
+        // &-100
+        &-100 {
+          @include margin(null null 100dvh null); 
+          display: inline-block
+        }
+      }
+    }
+
+    // &-t
+    &-t {
+      // &-0
+      &-0 {
+        @include margin(0 null null null);
+      }
+
+      // &-auto
+      &-auto {
+        @include margin(auto null null null);
+      }
+
+      // &-xxs
+      &-xxs {
+        @include margin(0 null 0 null);
+        @include padding(0.8rem null null null);
+      }
+
+      // &-xs
+      &-xs {
+        @include margin(0 null 0 null);
+        @include padding(1.5rem null null null);
+
+        @include min-screen(768px) {
+          @include padding(2rem null null null);
+        }
+      }
+
+      // &-sm
+      &-sm {
+        @include margin(0 null 0 null);
+        @include padding(2rem null null null);
+
+        @include min-screen(768px) {
+          @include padding(3.5rem null null null);
+        }
+      }
+
+      // &-md
+      &-md {
+        @include margin(0 null 0 null);
+        @include padding(3rem null null null);
+
+        @include min-screen(768px) {
+          @include padding(6rem null null null);
+        }
+      }
+
+      // &-lg
+      &-lg {
+        @include margin(0 null 0 null);
+        @include padding(6rem null null null);
+
+        @include min-screen(768px) {
+          @include padding(8rem null null null);
+        }
+      }
+
+      // &-xlg
+      &-xlg {
+        @include margin(0 null 0 null);
+        @include padding(7rem null null null);
+
+        @include min-screen(768px) {
+          @include padding(10rem null null null);
+        }
+      }
+
+      // &-xxlg
+      &-xxlg {
+        @include margin(0 null 0 null);
+        @include padding(7rem null null null);
+
+        @include min-screen(768px) {
+          @include padding(11rem null null null);
+        }
+      }
+    }
+
+    // &-gap
+    &-gap {
+      // &-y
+      &-y {
+        // &-0
+        &-0 {
+          @include margin(0 null 0 null);
+        }
+
+        // &-xxs
+        &-xxs {
+          @include margin(1rem null 1rem null);
+        }
+
+        // &-xs
+        &-xs {
+          @include margin(1.5rem null 1.5rem null);
+
+          @include min-screen(768px) {
+            @include margin(2rem null 2rem null);
+          }
+        }
+
+        // &-sm
+        &-sm {
+          @include margin(2rem null 2rem null);
+
+          @include min-screen(768px) {
+            @include margin(3.5rem null 3.5rem null);
+          }
+        }
+
+        // &-md
+        &-md {
+          @include margin(3rem null 3rem null);
+
+          @include min-screen(768px) {
+            @include margin(6rem null 6rem null);
+          }
+        }
+
+        // &-lg
+        &-lg {
+          @include margin(6rem null 6rem null);
+
+          @include min-screen(768px) {
+            @include margin(8rem null 8rem null);
+          }
+        }
+
+        // &-xlg
+        &-xlg {
+          @include margin(7rem null 7rem null);
+
+          @include min-screen(768px) {
+            @include margin(10rem null 10rem null);
+          }
+        }
+      }
+
+      // &-b
+      &-b {
+        // &-xxs
+        &-xxs {
+          @include margin(null null 1rem null);
+        }
+
+        // &-xs
+        &-xs {
+          @include margin(null null 1.5rem null);
+
+          @include min-screen(768px) {
+            @include margin(null null 2rem null);
+          }
+        }
+
+        // &-sm
+        &-sm {
+          @include margin(null null 2rem null);
+
+          @include min-screen(768px) {
+            @include margin(null null 3.5rem null);
+          }
+        }
+
+        // &-md
+        &-md {
+          @include margin(null null 3rem null);
+
+          @include min-screen(768px) {
+            @include margin(null null 6rem null);
+          }
+        }
+
+        // &-lg
+        &-lg {
+          @include margin(null null 6rem null);
+
+          @include min-screen(768px) {
+            @include margin(null null 8rem null);
+          }
+        }
+
+        // &-xlg
+        &-xlg {
+          @include margin(null null 7rem null);
+
+          @include min-screen(768px) {
+            @include margin(null null 10rem null);
+          }
+        }
+      }
+
+      // &-t
+      &-t {
+        // &-xxs
+        &-xxs {
+          @include margin(1rem null null null);
+        }
+
+        // &-xs
+        &-xs {
+          @include margin(1.5rem null null null);
+
+          @include min-screen(768px) {
+            @include margin(2rem null null null);
+          }
+        }
+
+        // &-sm
+        &-sm {
+          @include margin(2rem null null null);
+
+          @include min-screen(768px) {
+            @include margin(3.5rem null null null);
+          }
+        }
+
+        // &-md
+        &-md {
+          @include margin(3rem null null null);
+
+          @include min-screen(768px) {
+            @include margin(6rem null null null);
+          }
+        }
+
+        // &-lg
+        &-lg {
+          @include margin(6rem null null null);
+
+          @include min-screen(768px) {
+            @include margin(8rem null null null);
+          }
+        }
+
+        // &-xlg
+        &-xlg {
+          @include margin(7rem null null null);
+
+          @include min-screen(768px) {
+            @include margin(10rem null null null);
+          }
+        }
+      }
+    }
+
+    // &-voffset
+    &-voffset {
+      // &-xs
+      &-xs {
+        @include margin(-0.5rem null 0 null);
+
+        @include min-screen(768px) {
+          @include margin(-1rem null null null);
+        }
+      }
+
+      // &-sm
+      &-sm {
+        @include margin(-2rem null 0 null);
+
+        @include min-screen(768px) {
+          @include margin(-2.3rem null null null);
+        }
+      }
+
+      // &-md
+      &-md {
+        @include margin(-4.5rem null 0 null);
+
+        @include min-screen(768px) {
+          @include margin(-5rem null null null);
+        }
+      }
+
+      // &-lg
+      &-lg {
+        @include margin(-6.5rem null 0 null);
+
+        @include min-screen(768px) {
+          @include margin(-7rem null null null);
+        }
+      }
+
+      // &-xlg
+      &-xlg {
+        @include margin(-8.5rem null 0 null);
+
+        @include min-screen(768px) {
+          @include margin(-10.1rem null null null);
+        }
+      }
+    }
+
+    // &-hoffset
+    &-hoffset {
+      // &-xs
+      &-xs {
+        @include margin(null null 0 0);
+
+        @include min-screen(768px) {
+          @include margin(null null null -1rem);
+        }
+      }
+
+      // &-sm
+      &-sm {
+        @include margin(null null 0 0);
+
+        @include min-screen(768px) {
+          @include margin(null null null -3rem);
+        }
+      }
+
+      // &-md
+      &-md {
+        @include margin(null null 0 0);
+
+        @include min-screen(768px) {
+          @include margin(null null null -5rem);
+        }
+      }
+
+      // &-lg
+      &-lg {
+        @include margin(null null 0 0);
+
+        @include min-screen(768px) {
+          @include margin(null null null -7rem);
+        }
+      }
+
+      // &-xlg
+      &-xlg {
+        @include margin(null null 0 0);
+
+        @include min-screen(768px) {
+          @include margin(null null null -9rem);
+        }
+      }
+    }
+
+    // &-inner
+    &-inner {
+      // &-y
+      &-y {
+        // &-0
+        &-0 {
+          @include padding(0 null 0 null);
+        }
+
+        // &-xxs
+        &-xxs {
+          @include padding(1rem null 1rem null);
+        }
+
+        // &-xs
+        &-xs {
+          @include padding(1.5rem null 1.5rem null);
+
+          @include min-screen(768px) {
+            @include padding(2rem null 2rem null);
+          }
+        }
+
+        // &-sm
+        &-sm {
+          @include padding(2rem null 2rem null);
+
+          @include min-screen(768px) {
+            @include padding(3.5rem null 3.5rem null);
+          }
+        }
+
+        // &-md
+        &-md {
+          @include padding(3rem null 3rem null);
+
+          @include min-screen(768px) {
+            @include padding(6rem null 6rem null);
+          }
+        }
+
+        // &-lg
+        &-lg {
+          @include padding(6rem null 6rem null);
+
+          @include min-screen(768px) {
+            @include padding(8rem null 8rem null);
+          }
+        }
+
+        // &-xlg
+        &-xlg {
+          @include padding(7rem null 7rem null);
+
+          @include min-screen(768px) {
+            @include padding(10rem null 10rem null);
+          }
+        }
+      }
+
+      // &-xxs
+      &-xxs {
+        @include padding(1rem);
+      }
+
+      // &-xs
+      &-xs {
+        @include padding(1.5rem);
+
+        @include min-screen(768px) {
+          @include padding(2rem);
+        }
+      }
+
+      // &-sm
+      &-sm {
+        @include padding(2rem);
+
+        @include min-screen(768px) {
+          @include padding(3.5rem);
+        }
+      }
+
+      // &-md
+      &-md {
+        @include padding(3rem);
+
+        @include min-screen(768px) {
+          @include padding(6rem);
+        }
+      }
+
+      // &-lg
+      &-lg {
+        @include padding(6rem);
+
+        @include min-screen(768px) {
+          @include padding(8rem);
+        }
+      }
+
+      // &-xlg
+      &-xlg {
+        @include padding(7rem);
+
+        @include min-screen(768px) {
+          @include padding(10rem);
+        }
+      }
+    }
+  }
+}

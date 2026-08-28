@@ -1,0 +1,63 @@
+// MIXIN HELPER: ANIMATIONS
+// ===============================================
+@mixin ft-helperAnimations()
+{
+
+  // .FT-HELPER-ANIMATION-FADEIN
+  // ---------------------------------------------
+  .ft-helper-animation-fadeIn
+  {
+    @include animate(fadeIn, 1.2s, cubic-bezier(0.25, 0.1, 0.25, .5), null, null, both);
+  }
+
+  // ---------------------------------------------
+
+  // .FT-HELPER-ANIMATION-FADEINTOP
+  // ---------------------------------------------
+  .ft-helper-animation-fadeInTop
+  {
+    @include animate(fadeInTop, 1.2s, cubic-bezier(0.39, 0.575, 0.565, 1), null, null, both);
+  }
+
+  // ---------------------------------------------
+
+  // .FT-HELPER-ANIMATION-FADEINRGT
+  // ---------------------------------------------
+  .ft-helper-animation-fadeInRgt
+  {
+    @include animate(fadeInRgt, 1.2s, cubic-bezier(0.39, 0.575, 0.565, 1), null, null, both);
+  }
+
+  // ---------------------------------------------
+
+  // .FT-HELPER-ANIMATION-FADEINBTTM
+  // ---------------------------------------------
+  .ft-helper-animation-fadeInBttm
+  {
+    @include animate(fadeInBttm, 1.2s, cubic-bezier(0.39, 0.575, 0.565, 1), null, null, both);
+  }
+
+  // ---------------------------------------------
+
+  // .FT-HELPER-ANIMATION-FADEINLFT
+  // ---------------------------------------------
+  .ft-helper-animation-fadeInLft
+  {
+    @include animate(fadeInLft, 1.2s, cubic-bezier(0.39, 0.575, 0.565, 1), null, null, both);
+  }
+
+  // ---------------------------------------------
+
+  // .FT-HELPER-ANIMATION-SCALEIN
+  // ---------------------------------------------
+  .ft-helper-animation-scaleIn
+  {
+    @include animate(scaleIn, 0.25s, cubic-bezier(0.25, 0.46, 0.45, 0.94), null, null, both);
+  }
+
+  // ---------------------------------------------
+
+  // END // MIXIN HELPER: FADES
+}
+
+// ===============================================

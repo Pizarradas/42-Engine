@@ -1,0 +1,208 @@
+// MIXIN HELPER: HIDES
+// ===============================================
+@mixin ft-helper-hides( // ARGUMENTS
+  $helper-hide-onscroll-property: all,
+  $helper-hide-onscroll-duration: 0.3s,
+  $helper-hide-onscroll-ease: linear // END // ARGUMENTS
+
+)
+{
+
+  // .FT-HELPER-HIDE
+  // ---------------------------------------------
+  .ft-helper-hide
+  {
+    // generals
+    @include hide-visually;
+
+    // &-mo
+    &-mo
+    {
+      // generals
+      display: none;
+
+      @include min-screen(767px)
+      {
+       display: initial;
+      }
+
+      // end // &-mod
+    }
+
+    // &-xs
+    &-xs
+    {
+
+      // generals
+      @include max-screen(767px)
+      {
+        display: none;
+
+        // &.ft-ad
+        &.ft-ad
+        {
+          display: none;
+        }
+
+        // &.ft-ad--roba
+        &.ft-ad--roba
+        {
+          display: none;
+        }
+
+        //  &.ft-ad--intext
+        &.ft-ad--intext
+        {
+          display: none;
+        }
+
+        //  &.ft-ad--mega
+        &.ft-ad--mega
+        {
+          display: none;
+        }
+        //  &.ft-mol-rrss-inline
+        &.ft-mol-rrss-inline
+        {
+          display: none;
+        }
+        
+      }
+
+      //  &.ft-ad--roba
+
+      // end // &-xs
+    }
+
+    // &-sm
+    &-sm
+    {
+
+
+
+      // generals
+      @include max-screen(1002px)
+      {
+        display: none;
+
+        // &.ft-ad
+        &.ft-ad
+        {
+          display: none;
+        }
+
+        // &.ft-ad--roba
+        &.ft-ad--roba
+        {
+          display: none;
+        }
+
+        //  &.ft-ad--intext
+        &.ft-ad--intext
+        {
+          display: none;
+        }
+
+        //  &.ft-ad--mega
+        &.ft-ad--mega
+        {
+          display: none;
+        }
+      }
+
+      // end // &-sm
+    }
+
+    // &-md
+    &-md
+    {
+
+      // generals
+      @include min-screen(768px)
+      {
+        display: none;
+
+        //  &.ft-ad
+        &.ft-ad
+        {
+          display: none;
+        }
+
+        //  &.ft-ad--roba
+        &.ft-ad--roba
+        {
+          display: none;
+        }
+
+        //  &.ft-ad--intext
+        &.ft-ad--intext
+        {
+          display: none;
+        }
+
+        //  &.ft-ad--mega
+        &.ft-ad--mega
+        {
+          display: none;
+        }
+                //  &.ft-mol-rrss-columnSticky
+        &.ft-mol-rrss-columnSticky
+        {
+          display: none;
+        }
+      }
+
+
+      // end // &-md
+    }
+
+    // &-lg
+    &-lg
+    {
+
+      // generals
+      @include min-screen(1280px)
+      {
+        display: none;
+      }
+
+      // end // &-lg
+    }
+
+    // &-onScroll
+    &-onScroll
+    {
+      @include position(fixed, 0 null null null);
+      width: 100%;
+      transition: $helper-hide-onscroll-property, $helper-hide-onscroll-duration $helper-hide-onscroll-ease;
+    }
+
+    // &Txt
+    &Txt
+    {
+      @include position(absolute, null null null null);
+      @include hide-text;
+      width: 0;
+    }
+    // &screenReader
+    &-screenReader
+    {
+      @include position(absolute, null null null null);
+      width: 1px;
+      height: 1px;
+      margin:-1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    // END // .FT-HELPER-HIDE
+  }
+
+  // ---------------------------------------------
+
+  // END // MIXIN HELPER: HIDES
+}
+
+// ===============================================

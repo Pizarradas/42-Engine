@@ -1,0 +1,49 @@
+// MIXIN HELPER: POSITION
+// ===============================================
+@mixin ft-helper-position()
+{
+
+  // .FT-HELPER-POSITION
+  // ---------------------------------------------
+  .ft-helper-position
+  {
+
+    // fixed
+    &-fixed
+    {
+      @include position(fixed, null null null null);
+    }
+
+    // relative
+    &-relative
+    {
+      @include position(relative, null null null null);
+    }
+
+    // absolute
+    &-absolute
+    {
+      @include position(absolute, null null null null);
+    }
+
+    // sticky
+    &-sticky
+    {
+      @include position(sticky, 0 null null null);
+      z-index: 9999;
+
+      @include behavior-parent(sticky)
+      {
+        @include position(sticky, 60px null null null);
+      }
+
+    }
+
+  }
+
+  // ---------------------------------------------
+
+  // END // MIXIN HELPER: POSITION
+}
+
+// ===============================================

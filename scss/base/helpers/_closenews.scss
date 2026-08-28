@@ -1,0 +1,41 @@
+// FT-HELPER-CLOSENEWS
+// ===============================================
+@mixin ft-helper-closenews()
+{
+
+  // .FT-HELPER-ALIGNMENT
+  // ---------------------------------------------
+  .ft-helper-closenews
+  {
+
+    // generals
+    @include position(relative, null);
+    max-height: 21.5rem;
+    overflow: hidden;
+
+    @include min-screen(768px)
+    {
+      @include padding(0 null 0 null);
+    }
+
+    // &:after
+    &:after
+    {
+      // generals
+      @include position(absolute, null null 0 null);
+      content: "";
+      height: 200px;
+      width: 100%;
+      display: block;
+      background: linear-gradient(180deg, rgba(140, 50, 50, 0) 0, hsla(0, 0%, 100%, .53) 10%, var(--color-white) 85%);
+      // end // ft-helper-closenews
+    }
+
+
+
+  }
+
+  // END // FT-HELPER-CLOSENEWS
+}
+
+// ===============================================

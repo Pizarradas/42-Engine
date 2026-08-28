@@ -1,0 +1,264 @@
+// MIXIN HELPER: SPACERS
+// ===============================================
+@mixin ft-helper-spacers()
+{
+
+  // .FT-HELPER-SPACER
+  // ---------------------------------------------
+  .ft-helper-spacer
+  {
+
+    // &-y
+    &-y
+    {
+
+      // &-0
+      &-0
+      {
+        @include margin(0 null 0 null);
+      }
+
+      // &-xxs
+      &-xxs
+      {
+        @include margin(0 null 0 null);
+        @include padding(1rem null 1rem null);
+      }
+
+      // &-xs
+      &-xs
+      {
+        // general
+        @include margin(0 null 0 null);
+        @include padding(1.5rem null 1.5rem null);
+
+        // end // &-xs
+      }
+
+      // &-sm
+      &-sm
+      {
+        // general
+        @include margin(0 null 0 null);
+        @include padding(2rem null 2rem null);
+
+
+
+        // end // &-xs
+      }
+
+      // &-md
+      &-md
+      {
+        // general
+        @include margin(0 null 0 null);
+        @include padding(3rem null 3rem null);
+
+
+        // end // &-md
+      }
+
+      // &-lg
+      &-lg
+      {
+        // general
+        @include margin(0 null 0 null);
+        @include padding(6rem null 6rem null);
+
+
+        // end // &-md
+      }
+
+      // &-xlg
+      &-xlg
+      {
+        // general
+        @include margin(0 null 0 null);
+        @include padding(7rem null 7rem null);
+
+
+
+        // end // &-md
+      }
+
+      // end // &-y
+    }
+
+    // &-b
+    &-b
+    {
+
+      // &-0
+      &-0
+      {
+        @include margin(null null 0 null);
+      }
+
+      // &-xxs
+      &-xxs
+      {
+        @include margin(0 null 0 null);
+        @include padding(null null 1rem null);
+      }
+
+      // &-xs
+      &-xs
+      {
+        // general
+        @include margin(0 null 0 null);
+        @include padding(null null 1.5rem null);
+
+
+
+        // end // &-xs
+      }
+
+      // &-sm
+      &-sm
+      {
+        // general
+        @include margin(0 null 0 null);
+        @include padding(null null 2rem null);
+
+
+
+        // end // &-xs
+      }
+
+      // &-md
+      &-md
+      {
+        // general
+        @include margin(0 null 0 null);
+        @include padding(null null 3rem null);
+
+
+
+        // end // &-md
+      }
+
+      // &-lg
+      &-lg
+      {
+        // general
+        @include margin(0 null 0 null);
+        @include padding(null null 6rem null);
+
+
+
+        // end // &-md
+      }
+
+      // &-xlg
+      &-xlg
+      {
+        // general
+        @include margin(0 null 0 null);
+        @include padding(null null 7rem null);
+
+
+        // end // &-md
+      }
+
+      // end // &-t
+    }
+
+    // &-t
+    &-t
+    {
+
+      // &-0
+      &-0
+      {
+        @include margin(0 null null null);
+      }
+
+      // &-xxs
+      &-xxs
+      {
+        @include margin(0 null 0 null);
+        @include padding(.8rem null null null);
+      }
+
+      // &-xs
+      &-xs
+      {
+        // general
+        @include margin(0 null 0 null);
+        @include padding(1.5rem null null null);
+
+
+
+        // end // &-xs
+      }
+
+      // &-sm
+      &-sm
+      {
+        // general
+        @include margin(0 null 0 null);
+        @include padding(2rem null null null);
+
+
+
+        // end // &-sm
+      }
+
+      // &-md
+      &-md
+      {
+        // general
+        @include margin(0 null 0 null);
+        @include padding(3rem null null null);
+
+
+        // end // &-md
+      }
+
+      // &-lg
+      &-lg
+      {
+        // general
+        @include margin(0 null 0 null);
+        @include padding(6rem null null null);
+
+
+
+        // end // &-lg
+      }
+
+      // &-xlg
+      &-xlg
+      {
+        // general
+        @include margin(0 null 0 null);
+        @include padding(7rem null null null);
+
+
+
+        // end // &-xlg
+      }
+
+      // &-xxlg
+      &-xxlg
+      {
+        // general
+        @include margin(0 null 0 null);
+        @include padding(7rem null null null);
+
+
+        // end // &-xlg
+      }
+
+      // end // &-t
+    }
+
+    // END // .FT-HELPER-SPACER
+  }
+
+  // ---------------------------------------------
+
+  // END // MIXIN HELPER: SPACERS
+}
+
+// ===============================================

@@ -1,0 +1,54 @@
+// MIXIN HELPER: TEXTS
+// ===============================================
+@mixin ft-helper-texts() {
+
+  // .FT-HELPER-TEXT
+  // ---------------------------------------------
+  .ft-helper-text {
+
+    // &-align
+    &-align {
+
+      // &-center
+      &-center {
+        text-align: center;
+      }
+
+      // &-right
+      &-right {
+        text-align: right;
+      }
+
+      // end // &-align
+    }
+
+    // &-transform
+    &-transform {
+
+      // &-uppercase
+      &-uppercase {
+        text-transform: uppercase;
+      }
+
+      // &-lowercase
+      &-lowercase {
+        text-transform: lowercase;
+      }
+
+      // &-capitalize
+      &-capitalize {
+        text-transform: capitalize;
+      }
+
+      // end // &-transform
+    }
+
+    // END // .FT-HELPER-TEXT
+  }
+
+  // ---------------------------------------------
+
+  // END // MIXIN HELPER: TEXTS
+}
+
+// ===============================================

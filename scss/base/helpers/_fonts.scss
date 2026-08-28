@@ -1,0 +1,662 @@
+// MIXIN HELPER: FONTS v1.1
+// ===============================================
+@mixin ft-helper-fonts(
+  // ARGUMENTS
+  $helper-set-brand: "",
+  $helper-color--primary: null,
+  $helper-color--secondary: null,
+  $helper-color--tertiary: null,
+  $helper-color--quaternary: null,
+  $helper-color--quinary: null,
+  $helper-color--senary: null,
+  $helper-color--septenary: null,
+  $helper-color--black: null,
+  $helper-color--white: null,
+  $helper-color--background-darkGrey: null,
+  $helper-color--background-mediumGrey: null,
+  $helper-color--background-lightGrey: null,
+  $helper-fontSize--display-L: null,
+  $helper-fontSize--display-M: null,
+  $helper-fontSize--display-S: null,
+  $helper-fontSize--heading-XXL: null,
+  $helper-fontSize--heading-XL: null,
+  $helper-fontSize--heading-L: null,
+  $helper-fontSize--heading-M: null,
+  $helper-fontSize--heading-S: null,
+  $helper-fontSize--heading-XS: null,
+  $helper-fontSize--heading-XXS: null,
+  $helper-fontSize--body-XL: null,
+  $helper-fontSize--body-L: null,
+  $helper-fontSize--body-M: null,
+  $helper-fontSize--body-S: null,
+  $helper-fontSize--body-XS: null,
+  $helper-weight--300: null,
+  $helper-weight--400: null,
+  $helper-weight--500: null,
+  $helper-weight--600: null,
+  $helper-weight--700: null,
+  $helper-weight--800: null,
+  $helper-type--italic: null,
+  $helper-type--balance: null
+) {
+  // .ft-helper-font
+  .ft-helper-font {
+    // &Color
+    &Color {
+      // &Black
+      &-black {
+        // generals
+        color: var(--color-black);
+      }
+
+      // &White
+      &-white {
+        color: var(--color-white);
+      }
+
+      // &-primary
+      &-primary {
+        color: var(--color-primary);
+
+        // behavior: bg(Color-black)
+        @include behavior-ft-helper-bg(Color-black) {
+          color: var(--color-white);
+        }
+      }
+
+      // &-secondary
+      &-secondary {
+        color: var(--color-secondary);
+
+        // behavior: bg(Color-black)
+        @include behavior-ft-helper-bg(Color-black) {
+          color: var(--color-white);
+        }
+      }
+
+      // &-tertiary
+      &-tertiary {
+        color: var(--color-tertiary);
+
+        // behavior: bg(Color-black)
+        @include behavior-ft-helper-bg(Color-black) {
+          color: var(--color-white);
+        }
+      }
+
+      // &-quaternary
+      &-quaternary {
+        color: var(--color-quaternary);
+
+        // behavior: bg(Color-black)
+        @include behavior-ft-helper-bg(Color-black) {
+          color: var(--color-white);
+        }
+      }
+
+      // &-quinary
+      &-quinary {
+        color: var(--color-quinary);
+
+        // behavior: bg(Color-black)
+        @include behavior-ft-helper-bg(Color-black) {
+          color: var(--color-white);
+        }
+      }
+
+      // &-senary
+      &-senary {
+        color: var(--color-senary);
+
+        // behavior: bg(Color-black)
+        @include behavior-ft-helper-bg(Color-black) {
+          color: var(--color-white);
+        }
+      }
+
+      // &-septenary
+      &-septenary {
+        color: var(--color-septenary);
+
+        // behavior: bg(Color-black)
+        @include behavior-ft-helper-bg(Color-black) {
+          color: var(--color-white);
+        }
+      }
+
+      // &-lightGrey
+      &-lightGrey {
+        color: var(--color-lightGrey);
+
+        // behavior: bg(Color-black)
+        @include behavior-ft-helper-bg(Color-black) {
+          color: var(--color-white);
+        }
+      }
+
+      // &-mediumGrey
+      &-mediumGrey {
+        color: var(--color-mediumGrey);
+
+        // behavior: bg(Color-black)
+        @include behavior-ft-helper-bg(Color-black) {
+          color: var(--color-white);
+        }
+      }
+
+      // &-darkGrey
+      &-darkGrey {
+        color: var(--color-darkGrey);
+
+        // behavior: bg(Color-black)
+        @include behavior-ft-helper-bg(Color-black) {
+          color: var(--color-white);
+        }
+      }
+    }
+
+    // &Size
+    &Size {
+      // &-display-L
+      &-display-L {
+        	// @if $brand ==revistas
+          @if $brand ==revistas {
+                @include font--display-L;
+                // behavior-parent(viajar)
+                @include behavior-parent(viajar) {
+                  @include position(relative, null null null null);
+
+                  // &:before
+                  &:before {
+                    content: "";
+                    @include position(absolute, -.5rem null null 0);
+                    @include size(2.4rem, 0.2rem);
+                    background-color: var(--color-primary);
+                  }
+                }
+              }
+      }
+
+      // &-display-M
+      &-display-M {
+        @include font--display-M;
+         // @if $brand ==:revistas
+                @if $brand ==revistas {
+                  @include font--weight-500;
+                }
+      }
+
+      // &-display-S
+      &-display-S {
+        @include font--display-S;
+        // @if $brand ==:revistas
+                @if $brand ==revistas {
+                  @include font--weight-500;
+                }
+      }
+
+      // &-heading-XXL
+      &-heading-XXL {
+        @include font--heading-XXL;
+         // @if $brand ==:revistas
+                @if $brand ==revistas {
+                  @include font--weight-500;
+                }
+      }
+
+      // &-heading-XL
+      &-heading-XL {
+        @include font--heading-XL;
+         // @if $brand ==:revistas
+                @if $brand ==revistas {
+                  @include font--weight-500;
+                }
+      }
+
+      // &-heading-L
+      &-heading-L {
+        @include font--heading-L;
+         // @if $brand ==:revistas
+                @if $brand ==revistas {
+                  @include font--weight-500;
+                }
+      }
+
+      // &-heading-M
+      &-heading-M {
+        @include font--heading-M;
+         // @if $brand ==:revistas
+                @if $brand ==revistas {
+                  @include font--weight-500;
+                }
+      }
+
+      // &-heading-S
+      &-heading-S {
+        @include font--heading-S;
+         // @if $brand ==:revistas
+                @if $brand ==revistas {
+                  @include font--weight-500;
+                }
+      }
+
+      // &-heading-XS
+      &-heading-XS {
+        @include font--heading-XS;
+         // @if $brand ==:revistas
+                @if $brand ==revistas {
+                  @include font--weight-500;
+                }
+      }
+
+      // &-heading-XXS
+      &-heading-XXS {
+        @include font--heading-XXS;
+         // @if $brand ==:revistas
+                @if $brand ==revistas {
+                  @include font--weight-500;
+                }
+      }
+
+      // &-body-XL
+      &-body-XL {
+        @include font--body-XL;
+      }
+
+      // &-body-XL--small
+      &-body-XL--small {
+        @include font--body-XL--small;
+      }
+
+      // &-body-L
+      &-body-L {
+        @include font--body-L;
+      }
+
+      // &-body-L--small
+      &-body-L--small {
+        @include font--body-L--small;
+      }
+
+      // &-body-M
+      &-body-M {
+        @include font--body-M;
+      }
+
+      // &-body-M--small
+      &-body-M--small {
+        @include font--body-M--small;
+      }
+
+      // &-body-S
+      &-body-S {
+        @include font--body-S;
+      }
+
+      // &-body-S--small
+      &-body-S--small {
+        @include font--body-S--small;
+      }
+
+      // &-body-XS
+      &-body-XS {
+        @include font--body-XS;
+      }
+
+      // &-body-XS--small
+      &-body-XS--small {
+        @include font--body-XS--small;
+      }
+
+      // &-fluid
+      // Nueva capa progresiva: solo aplica cuando se usa explicitamente.
+      &-fluid {
+        // &-heading
+        &-heading {
+          // &-M
+          &-M {
+            @include font--fluid-heading-M;
+          }
+
+          // &-S
+          &-S {
+            @include font--fluid-heading-S;
+          }
+
+          // &-XS
+          &-XS {
+            @include font--fluid-heading-XS;
+          }
+
+          // &-XXS
+          &-XXS {
+            @include font--fluid-heading-XXS;
+          }
+        }
+
+        // &-body
+        &-body {
+          // &-L
+          &-L {
+            @include font--fluid-body-L;
+          }
+
+          // &-M
+          &-M {
+            @include font--fluid-body-M;
+          }
+
+          // &-S
+          &-S {
+            @include font--fluid-body-S;
+          }
+        }
+      }
+    }
+
+    // &Weight
+    &Weight {
+      // &-300
+      &-300 {
+        font-family: $helper-weight--300;
+        font-weight: 300;
+      }
+
+      // &-400
+      &-400 {
+        font-family: $helper-weight--400;
+        font-weight: 400;
+      }
+
+      // &-500
+      &-500 {
+        font-family: $helper-weight--500;
+        font-weight: 500;
+      }
+
+      // &-600
+      &-600 {
+        font-family: $helper-weight--600;
+        font-weight: 600;
+      }
+
+      // &-700
+      &-700 {
+        font-family: $helper-weight--700;
+        font-weight: 700;
+      }
+
+      // &-800
+      &-800 {
+        font-family: $helper-weight--800;
+        font-weight: bold;
+      }
+    }
+
+    // &Type
+    &Type {
+      // &--italic
+      &--italic {
+        font-style: italic;
+      }
+
+      // &--balance
+      &--balance {
+        text-wrap: balance;
+      }
+
+      // &--underline
+      &--underline {
+        text-decoration: underline;
+      }
+
+      // &--uppercase
+      &--uppercase {
+        text-transform: uppercase;
+      }
+    }
+
+    // SET BRAND
+    // -------------------------------------------
+    #{functionBrandSet($helper-set-brand)} {
+      .ft-helper-font {
+        // &Color
+        &Color {
+          // &-black
+          &-black {
+            color: $helper-color--black;
+          }
+
+          // &-white
+          &-white {
+            color: $helper-color--white;
+          }
+
+          // &-sprimary
+          &-primary {
+            color: $helper-color--primary;
+          }
+
+          // &-secondary
+          &-secondary {
+            color: $helper-color--secondary;
+          }
+
+          // &-tertiary
+          &-tertiary {
+            color: $helper-color--tertiary;
+          }
+
+          // &-quaternary
+          &-quaternary {
+            color: $helper-color--quaternary;
+          }
+
+          // &-quinary
+          &-quinary {
+            color: $helper-color--quinary;
+          }
+
+          // &-senary
+          &-senary {
+            color: $helper-color--senary;
+          }
+
+          // &-septenary
+          &-septenary {
+            color: $helper-color--septenary;
+          }
+
+          // &-background-darkGrey
+          &-backgroundDarkGrey {
+            color: $helper-color--background-darkGrey;
+          }
+
+          // &-background-mediumGrey
+          &-backgroundMediumGrey {
+            color: $helper-color--background-mediumGrey;
+          }
+
+          // &-background-lightGrey
+          &-backgroundLightGrey {
+            color: $helper-color--background-lightGrey;
+          }
+        }
+
+        // &Size
+        &Size {
+          // &-display-L
+          &-display-L {
+            @include font--display-L;
+          }
+
+          // &-display-M
+          &-display-M {
+            @include font--display-M;
+          }
+
+          // &-display-S
+          &-display-S {
+            @include font--display-S;
+          }
+
+          // &-heading-XXL
+          &-heading-XXL {
+            @include font--heading-XXL;
+          }
+
+          // &-heading-XL
+          &-heading-XL {
+            @include font--heading-XL;
+          }
+
+          // &-heading-L
+          &-heading-L {
+            @include font--heading-L;
+          }
+
+          // &-heading-M
+          &-heading-M {
+            @include font--heading-M;
+          }
+
+          // &-heading-S
+          &-heading-S {
+            @include font--heading-S;
+          }
+
+          // &-heading-XS
+          &-heading-XS {
+            @include font--heading-XS;
+          }
+
+          // &-heading-XXS
+          &-heading-XXS {
+            @include font--heading-XXS;
+          }
+
+          // &-body-XL
+          &-body-XL {
+            @include font--body-XL;
+          }
+
+          // &-body-L
+          &-body-L {
+            @include font--body-L;
+          }
+
+          // &-body-M
+          &-body-M {
+            @include font--body-M;
+          }
+
+          // &-body-M--small
+          &-body-M--small {
+            @include font--body-M--small;
+          }
+
+          // &-body-S
+          &-body-S {
+            @include font--body-S;
+          }
+
+          // &-body-S--small
+          &-body-S--small {
+            @include font--body-S--small;
+          }
+
+          // &-body-XS
+          &-body-XS {
+            @include font--body-XS;
+          }
+
+          // &-body-XS--small
+          &-body-XS--small {
+            @include font--body-XS--small;
+          }
+
+          // &-fluid
+          // Nueva capa progresiva: no sustituye automaticamente los helpers legacy.
+          &-fluid {
+            // &-heading
+            &-heading {
+              // &-M
+              &-M {
+                @include font--fluid-heading-M;
+              }
+
+              // &-S
+              &-S {
+                @include font--fluid-heading-S;
+              }
+
+              // &-XS
+              &-XS {
+                @include font--fluid-heading-XS;
+              }
+
+              // &-XXS
+              &-XXS {
+                @include font--fluid-heading-XXS;
+              }
+            }
+
+            // &-body
+            &-body {
+              // &-L
+              &-L {
+                @include font--fluid-body-L;
+              }
+
+              // &-M
+              &-M {
+                @include font--fluid-body-M;
+              }
+
+              // &-S
+              &-S {
+                @include font--fluid-body-S;
+              }
+            }
+          }
+        }
+
+        // &Weight
+        &Weight {
+          // &-300
+          &-300 {
+            font-family: $helper-weight--300;
+            font-weight: 300;
+          }
+
+          // &-400
+          &-400 {
+            font-family: $helper-weight--400;
+            font-weight: 400;
+          }
+
+          // &-500
+          &-500 {
+            font-family: $helper-weight--500;
+            font-weight: 500;
+          }
+
+          // &-600
+          &-600 {
+            font-family: $helper-weight--600;
+          }
+
+          // &-700
+          &-700 {
+            font-family: $helper-weight--700;
+          }
+
+          // &-800
+          &-800 {
+            font-family: $helper-weight--800;
+          }
+        }
+      }
+    }
+  }
+}

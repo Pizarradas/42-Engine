@@ -1,0 +1,39 @@
+// MIXIN MASK: Mask setup
+// ===============================================
+@mixin mask-setup( // ARGUMENTS
+  $mask-setup--path: null,
+  $mask-setup--position: null,
+  $mask-setup--size: null,
+  $mask-setup--repeat: null,
+  $mask-setup--origin: null,
+  $mask-setup--clip: null,
+  $mask-setup--mode: null,
+  $mask-setup--composite: null,
+  // END // ARGUMENTS
+
+) {
+
+  // MASK SHORTHAND //
+
+  mask-image: url("#{$mask-setup--path}"); // img path
+  mask-position: $mask-setup--position; // position
+  mask-size: $mask-setup--size; // size
+  mask-repeat: $mask-setup--repeat; // repeat
+  mask-origin: $mask-setup--origin; // origin
+  mask-clip: $mask-setup--clip; // clip
+  mask-mode: $mask-setup--mode; // mode
+  mask-composite: $mask-setup--composite; // composite
+   
+  -webkit-mask-image: url("#{$mask-setup--path}"); // img path
+  -webkit-mask-position: $mask-setup--position; // position
+  -webkit-mask-size: $mask-setup--size; // size
+  -webkit-mask-repeat: $mask-setup--repeat; // repeat
+  -webkit-mask-origin: $mask-setup--origin; // origin
+  -webkit-mask-clip: $mask-setup--clip; // clip
+  -webkit-mask-mode: $mask-setup--mode; // mode
+  -webkit-mask-composite: $mask-setup--composite; // composite
+
+  // END // MIXIN MASK: Mask setup
+}
+
+// ===============================================

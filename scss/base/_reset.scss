@@ -1,0 +1,745 @@
+// RESETS
+// ===============================================
+
+// MIXIN: RESETS-BLOGAL
+// -----------------------------------------------
+@mixin resets-global( // ARGUMENTS
+  $resets-globalFontStyle--html: null,
+  $resets-globalFontVariant--html: null,
+  $resets-globalFontWeight--html: null,
+  $resets-globalFontFamily--html: null,
+  $resets-globalFontSize--body: null,
+  $resets-globalLineHeight--body: null,
+  $resets-globalFontColor--body: null,
+  $resets-globalletterSpacing--body: null,
+  $resets-globalBackgroundColor--body: null // END // ARGUMENTS
+
+) {
+
+  // *
+  * {
+    // generals
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-focus-ring-color: rgba(255, 255, 255, 0);
+    box-sizing: border-box;
+
+    // &:before 
+    &:before {
+      box-sizing: border-box;
+    }
+
+    // &:after
+    &:after {
+      box-sizing: border-box;
+    }
+
+    // END // *
+  }
+
+  // HTML
+  html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -ms-overflow-style: scrollbar;
+    font: $resets-globalFontStyle--html $resets-globalFontVariant--html $resets-globalFontWeight--html 62.5%/1.5 $resets-globalFontFamily--html;
+  }
+
+  .html-data {
+    display: block;
+    width: 100%;
+  }
+
+  // BODY
+  body {
+    @include margin(0);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: $resets-globalFontSize--body;
+    line-height: $resets-globalLineHeight--body;
+    color: $resets-globalFontColor--body;
+    letter-spacing: $resets-globalletterSpacing--body;
+    text-align: left;
+    background-color: $resets-globalBackgroundColor--body;
+
+
+  }
+
+  // END // MIXIN: RESETS-BLOGAL
+}
+
+// -----------------------------------------------
+
+// MIXIN: RESETS-CUSTOM
+// -----------------------------------------------
+@mixin resets-custom( // ARGUMENTS
+
+  $resets-custom--brand: null,
+  $resets-custom-fontFamily--primary: null,
+  $resets-custom-fontFamily--primaryRegular: null,
+  $resets-custom-fontFamily--secondary: null,
+  $resets-custom-fontFamily--tertiary: null,
+  $resets-custom-FontWeight--brand: null,
+  $resets-custom-fontColor--primary: null,
+  $resets-custom-fontColor--septenary: null,
+  $resets-custom-fontColor--octonary: null,
+  $resets-custom-textSelection--color: null,
+  $resets-custom-textSelectionBackground--color: null,
+  $resets-custom-linkSelection--color: null,
+  $resets-custom-linkSelectionBackground--color: null,
+  $resets-custom-scrollBar--width: null,
+  $resets-custom-scrollBar--vertical: null,
+  $resets-custom-scrollBar--horizontal: null,
+  $resets-custom-scrollBarTrack--radiusTop: null,
+  $resets-custom-scrollBarTrack--radiusBottom: null,
+  $resets-custom-scrollBarTrack--backgroundColor: null,
+  $resets-custom-scrollBarThumb--radiusTop: null,
+  $resets-custom-scrollBarThumb--radiusBottom: null,
+  $resets-custom-scrollBarThumb--backgroundColor: null,
+  $resets-custom-scrollBarThumb--borderStyle: null,
+  $resets-custom-scrollBarThumb--borderWidth: null,
+  $resets-custom-scrollBarThumb--borderColor: null,
+  $resets-custom-scrollBarThumb-hover: null,
+
+  // END // ARGUMENTS
+) {
+
+  // .BRAND
+  #{functionBrandSet($resets-custom--brand)} {
+
+    // DIALOG
+    dialog {
+      display: block;
+    }
+
+    // FIGURE
+    figure {
+      display: block;
+      @include margin(0);
+      @include padding(0);
+    }
+
+
+
+
+    // HGROUP
+    hgroup {
+      display: block;
+    }
+
+    // MAIN
+    main {
+      display: block;
+    }
+
+    // NAV
+    nav {
+      display: flex;
+    }
+
+
+    // SPAN
+    span {
+      @include behavior-text-selection($resets-custom-textSelection--color, $resets-custom-textSelectionBackground--color);
+    }
+
+    // DATA
+    data {
+      @include behavior-text-selection($resets-custom-textSelection--color, $resets-custom-textSelectionBackground--color);
+    }
+
+    // ADDRESS
+    address {
+      @include behavior-text-selection($resets-custom-textSelection--color, $resets-custom-textSelectionBackground--color);
+    }
+
+    // TIME
+    time {
+      @include behavior-text-selection($resets-custom-textSelection--color, $resets-custom-textSelectionBackground--color);
+    }
+
+    h1 {
+      @include behavior-text-selection($resets-custom-textSelection--color, $resets-custom-textSelectionBackground--color);
+      font-family: $resets-custom-fontFamily--primary;
+    }
+
+    h2 {
+      @include behavior-text-selection($resets-custom-textSelection--color, $resets-custom-textSelectionBackground--color);
+      font-family: $resets-custom-fontFamily--primaryRegular;
+    }
+
+    h3 {
+      @include behavior-text-selection($resets-custom-textSelection--color, $resets-custom-textSelectionBackground--color);
+      font-family: $resets-custom-fontFamily--primaryRegular;
+    }
+
+    h4 {
+      @include behavior-text-selection($resets-custom-textSelection--color, $resets-custom-textSelectionBackground--color);
+      font-family: $resets-custom-fontFamily--primaryRegular;
+    }
+
+    h5 {
+      @include behavior-text-selection($resets-custom-textSelection--color, $resets-custom-textSelectionBackground--color);
+      font-family: $resets-custom-fontFamily--primaryRegular;
+    }
+
+    h6 {
+      @include behavior-text-selection($resets-custom-textSelection--color, $resets-custom-textSelectionBackground--color);
+      font-family: $resets-custom-fontFamily--primaryRegular;
+    }
+
+    // PARAGRAPH
+    p {
+      @include behavior-text-selection($resets-custom-textSelection--color, $resets-custom-textSelectionBackground--color);
+      font-family: $resets-custom-fontFamily--secondary;
+    }
+
+    // STRONG
+    strong {
+      @include behavior-text-selection($resets-custom-textSelection--color, $resets-custom-textSelectionBackground--color);
+      font-family: $resets-custom-fontFamily--secondary;
+    }
+
+    // EM
+    em {
+      @include behavior-text-selection($resets-custom-textSelection--color, $resets-custom-textSelectionBackground--color);
+      font-family: $resets-custom-fontFamily--secondary;
+    }
+
+    // UL
+    ul {
+      list-style: none;
+      @include padding(null null null 0)
+    }
+
+    // UL
+    ol {
+      @include padding(null null null 0)
+    }
+
+    // LI
+    li {
+      @include behavior-text-selection($resets-custom-textSelection--color, $resets-custom-textSelectionBackground--color);
+      font-family: $resets-custom-fontFamily--secondary;
+    }
+
+    // DT
+    dt {
+      @include behavior-text-selection($resets-custom-textSelection--color, $resets-custom-textSelectionBackground--color);
+      font-family: $resets-custom-fontFamily--secondary;
+    }
+
+    // DD
+    dd {
+      @include behavior-text-selection($resets-custom-textSelection--color, $resets-custom-textSelectionBackground--color);
+      font-family: $resets-custom-fontFamily--secondary;
+    }
+
+    // MARK
+    mark {
+      @include behavior-text-selection($resets-custom-textSelection--color, $resets-custom-textSelectionBackground--color);
+    }
+
+    // u
+    u {
+      @include behavior-text-selection($resets-custom-textSelection--color, $resets-custom-textSelectionBackground--color);
+    }
+
+    // DEL
+    del {
+      @include behavior-text-selection($resets-custom-textSelection--color, $resets-custom-textSelectionBackground--color);
+    }
+
+    // A
+    a {
+      // generals
+      text-decoration: none;
+
+      // LINK SELECTION
+      @include behavior-text-selection($resets-custom-linkSelection--color, $resets-custom-linkSelectionBackground--color);
+
+      // &:HOVER
+      &:hover {
+        cursor: pointer;
+      }
+
+      // &:FOCUS
+      &:focus {
+        box-shadow: 0 0 0 rgb(255, 255, 255);
+      }
+
+      // &:ACTIVE
+      &:active {
+        cursor: pointer;
+      }
+
+      // END // ANCHOR
+    }
+
+    // BUTTON
+    button {
+      //  GENERALS
+      overflow: visible;
+      font-family: $resets-custom-fontFamily--secondary;
+      text-transform: none;
+      outline: none;
+
+      // &:hover
+      &:hover {
+        cursor: pointer;
+      }
+
+      // &:focus
+      &:focus {
+        box-shadow: 0 0 0 rgb(255, 255, 255);
+      }
+
+      // END // BUTTON
+    }
+
+    // HR
+    hr {
+      box-sizing: content-box;
+      height: 1px;
+      overflow: visible;
+      border: none;
+    }
+
+    // ABBR
+    abbr {
+
+      // &[title]
+      &[title] {
+        text-decoration: underline dotted;
+        cursor: help;
+        border-bottom: 0;
+      }
+
+      // &[data-original-title]
+      &[data-original-title] {
+        text-decoration: underline dotted;
+        cursor: help;
+        border-bottom: 0;
+      }
+
+      // END // ABBR
+    }
+
+    // ADDRESS
+    address {
+      @include margin(null null 1rem null);
+      font-style: normal;
+      line-height: inherit;
+    }
+
+    // BLOCKQUOTE
+    blockquote {
+      @include margin(null null null null);
+      margin-inline-start: unset;
+      margin-inline-end: 0px;
+    }
+
+    // DFN
+    dfn {
+      font-style: italic;
+    }
+
+    // SMALL
+    small {
+      @include behavior-text-selection($resets-custom-textSelection--color, $resets-custom-textSelectionBackground--color);
+      font-size: 80%;
+    }
+
+    // SUB
+    sub {
+      @include position(relative, null null -0.25rem null);
+      @include behavior-text-selection($resets-custom-textSelection--color, $resets-custom-textSelectionBackground--color);
+      font-size: 75%;
+      line-height: 0;
+      vertical-align: baseline;
+    }
+
+    // SUB
+    sup {
+      @include position(relative, -0.5em null null null);
+      @include behavior-text-selection($resets-custom-textSelection--color, $resets-custom-textSelectionBackground--color);
+      font-size: 75%;
+      line-height: 0;
+      vertical-align: baseline;
+    }
+
+    // CODE
+    code {
+      font-family: monospace, monospace;
+      font-size: 1em;
+    }
+
+    // KBD
+    kbd {
+      font-family: monospace, monospace;
+      font-size: 1em;
+    }
+
+    // SAMP
+    samp {
+      font-family: monospace, monospace;
+      font-size: 1em;
+    }
+
+    // PRE
+    pre {
+      @include margin(0 null 1rem null);
+      overflow: auto;
+      font-family: monospace, monospace;
+      font-size: 1em;
+      -ms-overflow-style: scrollbar;
+    }
+
+    // IMG
+    img {
+      vertical-align: middle;
+      border-style: none;
+    }
+
+    // SVG
+    svg:not(:root) {
+      overflow: hidden;
+    }
+
+    // CAPTION
+    caption {
+      @include padding(null 1rem null 1rem);
+      color: var(--color-tertiary);
+      text-align: left;
+      caption-side: bottom;
+    }
+
+    // OUTPUT
+    output {
+      display: inline-block;
+    }
+
+    // SUMMARY
+    summary {
+      display: block;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    // TEMPLATE
+    template {
+      display: none;
+    }
+
+    // VIDEO
+    video {
+      object-fit: cover;
+    }
+
+    // MAP
+    map {
+      @include margin(5rem null 5rem null);
+    }
+
+    // TABLE
+    table {
+      border-collapse: collapse;
+    }
+
+    // TH
+    th {
+      // generals
+      font-family: $resets-custom-fontFamily--secondary;
+
+      // text-selection
+      @include behavior-text-selection($resets-custom-textSelection--color, $resets-custom-textSelectionBackground--color);
+
+      // END // TH
+    }
+
+    // TD
+    td {
+      // text-selection
+      @include behavior-text-selection($resets-custom-textSelection--color, $resets-custom-textSelectionBackground--color);
+
+      // END // TD
+    }
+
+    // HIDDEN
+    [hidden] {
+      display: none;
+    }
+
+    // HIDDEN
+    [hidden="false"] {
+      display: block;
+    }
+
+    // [TYPE="RESET"]
+    [type="reset"] {
+      -webkit-appearance: button;
+    }
+
+    // [TYPE="BUTTON"]
+    [type="button"] {
+      -webkit-appearance: button;
+    }
+
+    // [TYPE="SUBMIT"]
+    [type="submit"] {
+      -webkit-appearance: button;
+    }
+
+    // [TYPE="NUMBER"]
+    [type="number"] {
+
+      // &::-webkit-inner-spin-button
+      &::-webkit-inner-spin-button {
+        height: auto;
+      }
+
+      // &::-webkit-outer-spin-button
+      &::-webkit-outer-spin-button {
+        height: auto;
+      }
+
+      // END // [TYPE="NUMBER"]
+    }
+
+    // [TYPE="SEARCH"]
+    [type="search"] {
+      // generals
+      outline-offset: -2px;
+      -webkit-appearance: none;
+
+      // &::-webkit-search-cancel-button
+      &::-webkit-search-cancel-button {
+        -webkit-appearance: none;
+      }
+
+      // &::-webkit-search-decoration
+      &::-webkit-search-decoration {
+        -webkit-appearance: none;
+      }
+
+      // END // [TYPE="SEARCH"]
+    }
+
+    // ::-WEBKIT-FILE-UPLOAD-BUTTON
+    ::-webkit-file-upload-button {
+      font: inherit;
+      -webkit-appearance: button;
+    }
+
+    // FIELDSET
+    fieldset {
+      @include margin(0);
+      @include padding(0);
+      min-width: 0;
+      border: 0;
+    }
+
+    // LEGEND
+    legend {
+      @include margin(0 0 0.5rem 0);
+      @include padding(1rem 0 0 0);
+      @include border-width(0);
+      width: 100%;
+      max-width: 100%;
+      font-family: $resets-custom-fontFamily--secondary;
+      font-size: 1.5rem;
+      line-height: 1.5rem;
+      color: var(--color-black);
+      text-align: left;
+      white-space: normal;
+    }
+
+    // LABEL
+    label {
+      @include behavior-text-selection($resets-custom-textSelection--color, $resets-custom-textSelectionBackground--color);
+      font-family: $resets-custom-fontFamily--secondary;
+
+      // @if $brand ==sport
+      @if $brand ==sport {
+        color: var(--color-black);
+      }
+
+      // @if $brand ==epe
+      @if $brand ==epe {
+        color: var(--color-black);
+      }
+
+      // @if $brand ==regionales
+      @if $brand ==regionales {
+        color: var(--color-black);
+      }
+
+      // @if $brand ==ux
+      @if $brand ==ux {
+        color: var(--color-black);
+      }
+    }
+
+    // SELECT
+    select {
+      // generals
+      -webkit-appearance: none;
+      font-family: $resets-custom-fontFamily--secondary;
+      text-transform: none;
+      border-radius: 0;
+
+      // ie fix // remove arrow select
+      &::-ms-expand {
+        display: none;
+      }
+
+      // END // SELECT
+    }
+
+    // OPTION
+    option {
+      // generals
+      color: var(--color-primary);
+      background-color: var(--color-white);
+      font-family: $resets-custom-fontFamily--secondary;
+
+      // &:disabled
+      &:disabled {
+        color: var(--color-quaternary);
+      }
+
+      // END // OPTION
+    }
+
+    // INPUT
+    input {
+      // generals
+      @include margin(0);
+      -webkit-appearance: none;
+      overflow: visible;
+      font-family: $resets-custom-fontFamily--secondary;
+      line-height: inherit;
+      border-radius: 0;
+
+      // type
+      &[type="radio"],
+      &[type="checkbox"] {
+        @include padding(0);
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      &[type="date"],
+      &[type="time"],
+      &[type="datetime-local"],
+      &[type="month"] {
+        -webkit-appearance: listbox;
+      }
+
+      // &[type="password"]::-ms-reveal
+      &[type="password"]::-ms-reveal {
+        display: none;
+      }
+
+      // &:-webkit-autofill // chrome focus reset
+      &:-webkit-autofill {
+        transition: background-color 600000s 0s, color 600000s 0s;
+      }
+
+      // END // INPUT
+    }
+
+    // OPTGROUP
+    optgroup {
+      @include margin(0);
+      font-family: $resets-custom-fontFamily--secondary;
+      font-size: inherit;
+      line-height: inherit;
+    }
+
+    // TEXTAREA
+    textarea {
+      @include margin(0);
+      @include padding(1rem null null null);
+      -webkit-appearance: none;
+      overflow: auto;
+      resize: vertical;
+      min-height: 13rem;
+      font-family: $resets-custom-fontFamily--secondary;
+      font-size: inherit;
+      line-height: inherit;
+      border-radius: 0;
+    }
+
+    // PROGRESS
+    progress {
+      vertical-align: baseline;
+    }
+
+    // [data-tooltip]
+    [data-tooltip] {
+
+      // &:after
+      &:after {
+        font-family: $resets-custom-fontFamily--primaryRegular;
+
+      }
+    }
+
+    // SCROLLBAR
+    ::-webkit-scrollbar {
+      // generals
+      width: $resets-custom-scrollBar--width;
+
+      // &:vertical
+      &:vertical {
+        width: 5px;
+      }
+
+      // &:horizontal
+      &:horizontal {
+        height: 5px;
+      }
+
+      // &-track
+      &-track-piece {
+        @include border-top-radius($resets-custom-scrollBarTrack--radiusTop);
+        @include border-bottom-radius($resets-custom-scrollBarTrack--radiusBottom);
+        background-color: $resets-custom-scrollBarTrack--backgroundColor;
+      }
+
+      // &-thumb
+      &-thumb {
+        // generals
+        @include border-top-radius($resets-custom-scrollBarThumb--radiusTop);
+        @include border-bottom-radius($resets-custom-scrollBarThumb--radiusBottom);
+        background-color: $resets-custom-scrollBarThumb--backgroundColor;
+        @include border-style($resets-custom-scrollBarThumb--borderStyle);
+        @include border-width($resets-custom-scrollBarThumb--borderWidth);
+        @include border-color($resets-custom-scrollBarThumb--borderColor);
+
+
+        // &:hover, &:active
+        &:hover,
+        &:active {
+          background-color: $resets-custom-scrollBarThumb-hover;
+        }
+
+        // end // &-thumb
+      }
+
+      // END // SCROLLBAR
+    }
+
+    // END // .BRAND
+  }
+
+  // @CONTENT
+  @content;
+
+  // END // MIXIN: RESET-GLOBAL
+}
+
+// -----------------------------------------------
+
+// ===============================================

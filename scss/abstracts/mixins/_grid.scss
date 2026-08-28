@@ -1,0 +1,38 @@
+// MIXIN GRID: -p-less-container
+// ===============================================
+@mixin grid-p-less-container() {
+
+  // generals
+  @include padding(null 1rem null 1rem);
+  @include min-screen(768px) {
+    @include padding(null 2rem null 2rem);
+  };
+  @include min-screen(1024px) {
+    @include padding(null 4rem null 4rem);
+  };
+  @include min-screen(1280px) {
+    @include padding(null 5rem null 5rem);
+  };
+  @include min-screen(1440px) {
+    @include padding(null 7rem null 7rem);
+  };
+
+// END // MIXIN GRID: -p-less-container
+}
+// ===============================================
+
+// MIXIN GRID: OUT OF CONTAINER
+// ===============================================
+@mixin grid-out-of-container() {
+
+  // generals
+  @include margin(null -1rem null -1rem);
+  @include padding(null 1rem null 1rem);
+  @include min-screen(768px) {
+    @include margin(null 0 null 0);
+    @include padding(null 0 null 0);
+  };
+
+// MIXIN GRID: OUT OF CONTAINER
+}
+// ===============================================

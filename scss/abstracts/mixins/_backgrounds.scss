@@ -1,0 +1,29 @@
+// MIXIN BACKGROUNDS: Background setup
+// ===============================================
+@mixin background-setup(
+
+  // ARGUMENTS
+  $background-setup--path: null,
+  $background-setup--positionAndSize: null,
+  $background-setup--repeat: null,
+  $background-setup--attachment: null,
+  $background-setup--origin: null,
+  $background-setup--clip: null,
+  $background-setup--color: null,
+  // END // ARGUMENTS
+
+) {
+
+  // BACKGROUND SHORTHAND // example: background: url('path') 0 0 / 100% no-repeat fixed padding-box content-box transparent;
+  background:
+    url("#{$background-setup--path}") // img path
+    #{$background-setup--positionAndSize} // position and size
+    $background-setup--repeat // repeat
+    $background-setup--attachment // attachment
+    $background-setup--origin // origin
+    $background-setup--clip // clip
+    $background-setup--color; // color
+
+// END // MIXIN BACKGROUNDS: Background setup
+}
+// ===============================================

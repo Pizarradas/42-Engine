@@ -1,0 +1,79 @@
+// MIXIN HELPER: PROPERTIES
+// ===============================================
+@mixin ft-helper-properties()
+{
+
+  // .ft-helper-property
+  .ft-helper-property
+  {
+    // &-round
+    &-round
+    {
+
+      // &-xlg
+      &-xlg
+      {
+        @include border-top-radius(1.5rem);
+        @include border-bottom-radius(1.5rem);
+      }
+    }
+
+    //  &--live
+    &--live
+    {
+      @include position(relative, null null null null);
+      @include margin(0);
+      @include padding(null null null 2rem);
+      background-size: 200%;
+      transition: all 0.5s;
+
+
+      // &:before,&:after
+      &:before
+      {
+        content: "";
+        @include position(absolute, 28% null null 0);
+        @include size(10px);
+        opacity: 1;
+        background-size: 100%;
+        border-radius: 50%;
+        animation: shift 1s cubic-bezier(0.36, 0, 0.66, -0.56) 0s infinite normal backwards;
+
+
+        // @if $brand(epe)
+        @include behavior-brand(epe)
+        {
+          box-shadow: 0px 0px 5px 3px var(--color-white);
+        }
+
+        // @if $brand(regionales)
+        @include behavior-brand(regionales)
+        {
+          box-shadow: 0px 0px 5px 3px var(--color-white);
+        }
+      }
+
+      // @keyframes shift
+      @keyframes shift
+      {
+        0%
+        {
+          opacity: 1;
+          background-color: var(--color-functional-error);
+        }
+
+        50%
+        {
+          opacity: 0.2;
+          background-color: var(--color-functional-error);
+        }
+
+        100%
+        {
+          opacity: 1;
+          background-color: var(--color-functional-error);
+        }
+      }
+    }
+  }
+}

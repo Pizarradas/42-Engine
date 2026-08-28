@@ -1,0 +1,27 @@
+// MIXIN HELPER: IMAGES
+// ===============================================
+@mixin ft-helper-images()
+{
+
+  // .FT-HELPER-IMG
+  // ---------------------------------------------
+  .ft-helper-img
+  {
+
+    // &-rd
+    &-rd
+    {
+      max-width: 100%;
+      height: auto;
+      display: block
+    }
+
+    // END // .FT-HELPER-IMG
+  }
+
+  // ---------------------------------------------
+
+  // END // MIXIN HELPER: IMAGES
+}
+
+// ===============================================

@@ -1,0 +1,220 @@
+// FUNCTIONS-BRANDING
+// ===============================================
+
+// .ft-brand-
+// ---------------------------------------------
+@function functionBrandSet($brand-set-string) {
+  @if $brand-set-string == "" {
+    @return unquote($brand-set-string);
+  } @else {
+    @return unquote(".ft-brand-" + $brand-set-string);
+  }
+}
+// ---------------------------------------------
+
+// ===============================================
+// DEEP MERGE HELPERS (para defaults + overrides)
+// ===============================================
+@function map-deep-merge($base, $overrides) {
+  $result: $base;
+
+  @each $key, $value in $overrides {
+    $base-value: map-get($result, $key);
+
+    @if type-of($base-value) == "map" and type-of($value) == "map" {
+      $result: map-merge(
+        $result,
+        ($key: map-deep-merge($base-value, $value))
+      );
+    } @else {
+      $result: map-merge($result, ($key: $value));
+    }
+  }
+
+  @return $result;
+}
+
+// Requiere:
+// - $brand-defaults
+// - $behavior-defaults
+@function build-brand-config($brand-config) {
+  $merged: map-deep-merge($brand-defaults, $brand-config);
+  $brand-behaviors: map-get($merged, behaviors);
+
+  @if $brand-behaviors == null {
+    $brand-behaviors: ();
+  }
+
+  $merged-behaviors: map-deep-merge($behavior-defaults, $brand-behaviors);
+
+  @return map-merge($merged, (behaviors: $merged-behaviors));
+}
+
+// ===============================================
+// BRAND FUNCTION
+// ===============================================
+@function brand($key, $behavior: null) {
+  @if not global-variable-exists("brand") {
+    @error "❌ Falta definir \$brand en este build (AMP o similar)";
+  }
+
+  $config: map-get($brands, $brand);
+
+  @if $config == null {
+    @error "❌ Marca '#{$brand}' no existe en \$brands";
+  }
+
+  @if $behavior == null {
+    @return map-get($config, $key);
+  }
+
+  $behaviors: map-get($config, behaviors);
+
+  @if $behaviors == null {
+    @return null;
+  }
+
+  $behavior-config: map-get($behaviors, $behavior);
+
+  @if $behavior-config == null {
+    @error "❌ Behavior '#{$behavior}' no existe en '#{$brand}'";
+  }
+
+  @return map-get($behavior-config, $key);
+}
+
+// ===============================================
+// BRAND MIXINS (simple values + nested behaviors)
+// ===============================================
+@function _brand-value($value, $as-url: false) {
+  @if $as-url {
+    @return unquote("url('#{$value}')");
+  }
+
+  @return $value;
+}
+
+@mixin _brand-behavior-overrides($config, $key, $property, $selector, $as-url: false) {
+  $behaviors: map-get($config, behaviors);
+
+  @if $behaviors != null {
+    @each $behavior-name, $behavior-config in $behaviors {
+      $next-selector: "#{$selector}.#{$behavior-name}";
+      $value: map-get($behavior-config, $key);
+
+      @if $value != null {
+        #{$next-selector} & {
+          #{$property}: _brand-value($value, $as-url);
+        }
+      }
+
+      @include _brand-behavior-overrides(
+        $behavior-config,
+        $key,
+        $property,
+        $next-selector,
+        $as-url
+      );
+    }
+  }
+}
+
+@mixin brand-by-body($key, $property, $as-url: false) {
+  @if not global-variable-exists("brand") {
+    @error "❌ Falta definir \$brand en este build";
+  }
+
+  $config: map-get($brands, $brand);
+
+  @if $config == null {
+    @error "❌ Marca '#{$brand}' no existe en \$brands";
+  }
+
+  $base-value: map-get($config, $key);
+
+  @if $base-value == null {
+    @error "❌ Key '#{$key}' no existe en la marca '#{$brand}'";
+  }
+
+  // SIN body: .ft-brand-sport, .ft-brand-regionales...
+  $root-selector: ".ft-brand-#{$brand}";
+
+  #{$root-selector} & {
+    #{$property}: _brand-value($base-value, $as-url);
+  }
+
+  @include _brand-behavior-overrides($config, $key, $property, $root-selector, $as-url);
+}
+
+// ===============================================
+// BRAND BY BODY MODE (mobile/desktop/minimal...)
+// valor esperado en $brands[$brand][$key]:
+// (default: ..., desktop: ..., minimal-header: ..., "minimal-header.desktop": ...)
+// ===============================================
+@function _split-dot($value) {
+  $out: ();
+  $rest: $value;
+  $idx: str-index($rest, ".");
+
+  @while $idx != null {
+    $out: append($out, str-slice($rest, 1, $idx - 1), comma);
+    $rest: str-slice($rest, $idx + 1);
+    $idx: str-index($rest, ".");
+  }
+
+  @return append($out, $rest, comma);
+}
+
+@mixin _emit-mode-rule($root, $mode-key, $property, $value) {
+  $tokens: _split-dot($mode-key);
+  $selector: $root;
+  $desktop: false;
+
+  @each $t in $tokens {
+    @if $t == "desktop" {
+      $desktop: true;
+    } @else if $t != "default" {
+      $selector: "#{$selector}.#{$t}";
+    }
+  }
+
+  @if $desktop {
+    @include min-screen(768px) {
+      #{$selector} &:not(.ft-org-masthead--side) {
+        #{$property}: $value;
+      }
+    }
+  } @else {
+    #{$selector} &:not(.ft-org-masthead--side) {
+      #{$property}: $value;
+    }
+  }
+}
+
+@mixin brand-by-body-mode($key, $property) {
+  @if not global-variable-exists("brand") {
+    @error "❌ Falta definir \$brand en este build";
+  }
+
+  $config: map-get($brands, $brand);
+
+  @if $config == null {
+    @error "❌ Marca '#{$brand}' no existe en \$brands";
+  }
+
+  $modes: map-get($config, $key);
+
+  @if type-of($modes) != "map" {
+    @error "❌ '#{$key}' en '#{$brand}' debe ser un map de modos";
+  }
+
+  $root: ".ft-brand-#{$brand}";
+
+  @if map-get($modes, default) == null {
+    @error "❌ '#{$key}' en '#{$brand}' debe incluir 'default'";
+  }
+
+  @each $mode-key, $value in $modes {
+    @include _emit-mode-rule($root, $mode-key, $property, $value);
+  }
+}
