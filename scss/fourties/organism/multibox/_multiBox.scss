@@ -1,0 +1,162 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// .ft-org-multiBox
+// ===============================================
+.ft-org-multiBox {
+  $self: &;
+  @include margin(2rem null 2rem null);
+  @include padding(1.5rem);
+  @include border-top-radius(.5rem);
+  @include border-right-radius(.5rem);
+  @include border-left-radius(.5rem);
+  @include border-bottom-radius(.5rem);
+  background-color: var(--color-black);
+  color: var(--color-white);
+
+  .ft-link--secondary { 
+    color: var(--color-white);
+  }
+
+  .ft-link--tertiary {
+    color: var(--color-white);
+  }
+
+  .ft-mol-headband--center {
+    @include margin(0 auto 1rem null);
+    @include padding(0rem 1rem 1rem);
+
+    
+    @if $brand ==sport {
+      border-color: var(--color-darkGrey);
+    }
+
+    
+  }
+
+  .ft-ad--mega {
+    @include margin(0 auto);
+    @include padding(0);
+    @include border-style(none);
+    @include border-width(0);
+    min-height: auto; 
+    max-height: fit-content;
+
+  }
+
+  .ft-org-cardHome {
+    @include border-style(none);
+    @include border-width(0);
+    @include margin(null null 0 null);
+    @include padding(null null 1rem null);
+    text-align: center;
+    margin: 0px auto;
+  }
+
+  .ft-org-cardHome__mainRelated {
+    text-align: left;
+  }
+
+  &__scroll {
+    @include padding(1rem 0 0 0);
+    width:100%;
+    display: flex;
+    overflow-x: auto;
+    flex-direction: row;
+    cursor: grab;
+
+    // &--100
+    &--100 {
+      * {
+        min-width: 100%;
+      }
+    }
+ // &--85
+    &--85 {
+      * {
+        min-width: 85%;
+      }
+    }
+    // &--50
+    &--50 {
+      * {
+        min-width: 50%;
+      }
+    }
+
+    // &--50
+    &--25 {
+      * {
+        min-width: 25%;
+      }
+    }
+
+    // SCROLLBAR
+    &::-webkit-scrollbar {
+      -webkit-overflow-scrolling: touch;
+
+ // &:horizontal
+ &:horizontal {
+  height: 24px;
+}
+
+// &-track
+&-track {
+  background-color: transparent;
+  border-radius: 0;
+}
+      // &-track-piece
+      &-track-piece {
+        background-clip: content-box; 
+        border: 11px solid transparent;
+        background-color: var(--color-darkGrey);
+// &:horizontal
+&:horizontal {
+  border-left: 0;
+  border-right: 0;
+}
+      }
+
+      // &-thumb
+      &-thumb {
+        background-clip: content-box;
+        border: 10px solid transparent;
+        border-radius: 0;
+        background-color: var(--color-primary);
+
+
+        // &:hover
+        &:hover {
+          border: 10px solid transparent;
+          background-color: var(--color-primary);
+
+        }
+
+        // &:active
+        &:active {
+          border: 8px solid transparent;
+          background-color: var(--color-primary);
+
+        }
+        // &:horizontal
+        &:horizontal {
+          border-left: 0;
+          border-right: 0;
+      }
+
+      }
+
+      // END // SCROLLBAR
+    }
+
+    &Content{
+      @include margin(null 1rem null null);
+    }
+  }
+
+
+
+}

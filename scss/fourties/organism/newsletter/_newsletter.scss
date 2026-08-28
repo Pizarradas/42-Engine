@@ -1,0 +1,182 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// .ft-org-newsletter
+// ===============================================
+.ft-org-newsletter {
+  @include position(relative, null null null null);
+  @include padding(2.4rem 1.6rem 6.4rem 1.6rem);
+  @include margin(1rem null 5rem null);
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--color-lightGrey);
+  @include min-screen(980px) {
+    @include padding(null null 4rem null);
+    @include margin(2rem null null null);
+  }
+
+  // &:after
+  &:after {
+    content: "";
+    @include position(absolute, null 0 -4.4rem null);
+    @include size(29.8rem, 7.8rem);
+    background-image: url("#{$images-path}/bgs/ft-org-newsletter--signature.svg");
+    background-repeat: no-repeat;
+    background-size: auto;
+    @include min-screen(980px) {
+      right: -20px;
+      bottom: -40px;
+    }
+  }
+
+  // .ft
+  .ft {
+    // &-text
+    &-text {
+      flex-basis: 100%;
+      @include font--body-M;
+      text-align: center;
+
+      // &:first-of-type
+      &:first-of-type {
+        @include min-screen(980px) {
+          @include margin(2.5rem null null null);
+        }
+      }
+    }
+
+    // &-mol
+    &-mol {
+      // &-headband
+      &-headband {
+        @include margin(0 null 0 null);
+        flex-basis: 100%;
+        justify-content: center;
+        text-align: center;
+      }
+
+      // &-masonry
+      &-masonry {
+        @include margin(3.4rem null 0 null);
+        flex-basis: 100%;
+        justify-content: center;
+        @include min-screen(768px) {
+          @include margin(2rem null null null);
+          flex: 1;
+          align-content: center;
+        }
+
+        // [class*="ft-helper-img-rd"]
+        [class*="ft-helper-img-rd"] {
+          transition: filter 0.25s ease-in-out;
+          object-fit: cover;
+          aspect-ratio: 16/9;
+          filter: grayscale(100%) brightness(110%);
+          @include min-screen(980px) {
+            height: 100%;
+            object-fit: unset;
+            aspect-ratio: auto;
+          }
+        }
+
+        // &__picture
+        &__picture {
+          @include margin(null null 2.4rem null);
+          @include min-screen(980px) {
+            flex-basis: 21.8rem;
+          }
+
+          // a
+          a {
+            height: 100%;
+            @include min-screen(1024px) {
+              height: 100%;
+            }
+          }
+
+          // picture
+          picture {
+            display: block;
+            @include min-screen(980px) {
+              height: 100%;
+            }
+          }
+        }
+
+        // &__contentTitle
+        &__contentTitle {
+          @include margin(1.2rem null);
+          font-style: italic;
+        }
+
+        // &__contentText
+        &__contentText {
+          color: var(--color-quaternary);
+        }
+
+        // &__content
+        &__content {
+          @include padding(null 1rem);
+          text-align: center;
+          @include min-screen(980px) {
+            @include padding(null null 0 null);
+          }
+        }
+
+        // &:hover
+        &:hover {
+          // [class*="ft-helper-img-rd"]
+          [class*="ft-helper-img-rd"] {
+            filter: none;
+          }
+        }
+      }
+    }
+  }
+
+  // &:has(.ft-mol-masonry)
+  &:has(.ft-mol-masonry) {
+    // .ft-mol-masonry
+    .ft-mol-masonry {
+      // &:not(.ft-org-newsletter .ft-mol-masonry ~ .ft-mol-masonry)
+      &:not(.ft-org-newsletter .ft-mol-masonry ~ .ft-mol-masonry) {
+        @include margin(0 null null null);
+        background-color: var(--color-white);
+        @media (min-width: 768px) {
+          @include padding(null null 0 null);
+        }
+        @media (min-width: 980px) {
+          @include margin(2.4rem null null null);
+          flex-basis: 25%;
+        }
+        @media (min-width: 1440px) {
+          max-width: 40vw;
+        }
+
+        // .ft-mol-masonry
+        .ft-mol-masonry {
+          // &__content
+          &__content {
+            @media (min-width: 768px) {
+              align-content: center;
+            }
+            @media (min-width: 980px) {
+              flex-basis: calc(100% - 218px);
+            }
+          }
+
+          // &__picture
+          &__picture {
+            @media (min-width: 980px) {
+              @include margin(null null 0 null);
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

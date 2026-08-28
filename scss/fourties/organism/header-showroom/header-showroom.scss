@@ -1,0 +1,1329 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// [data-showroom="nav"] — wrapper que aloja el fetch de nav.html
+// ===============================================
+// Reserva el espacio del nav antes de que el JS inyecte el HTML para
+// evitar CLS al pintar de golpe ~50 nodos. En mobile reserva la altura
+// del header colapsado; en desktop reserva el ancho del sidebar fijo
+// con su mismo background, así el wrapper se ve idéntico al nav final
+// hasta que llega el fetch.
+[data-showroom="nav"] {
+  display: block;
+  min-height: 48px;
+
+  @include min-screen(1280px) {
+    min-height: 100vh;
+    width: clamp(300px, 300px, 300px);
+    background-color: #111111;
+  }
+  @include min-screen(1920px) {
+    width: clamp(350px, 350px, 350px);
+  }
+
+  // Una vez cargado el nav real, el wrapper deja de reservar para no
+  // duplicar el ancho del sidebar (el .ft-org-header-showroom interno
+  // es position:fixed y ya ocupa el espacio).
+  &[data-nav-loaded="true"] {
+    @include min-screen(1280px) {
+      min-height: 0;
+      width: auto;
+      background-color: transparent;
+    }
+  }
+}
+
+// .ft-org-header-showroom
+// ===============================================
+.ft-org-header-showroom {
+  font-family: var(--font-stack);
+  // behavior-in-ancestors: en el contexto showroom (.fourty) el nav es una
+  // COLUMNA FLEX (3 zonas: header fijo · body con scroll · footer fijo). El
+  // flex debe declararse aquí porque `.fourty .ft-org-header-showroom` (0,2,0)
+  // gana en especificidad a las reglas `.ft-org-header-showroom` sueltas; si se
+  // dejaba `display: initial`, anulaba el `display: flex` y el layout de 3 zonas
+  // no se activaba (el footer no se anclaba abajo, el body no scrolleaba).
+  @include behavior-in-ancestors(".fourty") {
+    display: flex;
+    flex-direction: column;
+  }
+  @include min-screen(1280px) {
+    @include position(fixed, 0 null 0 0);
+    z-index: 9999;
+    // Columna flex de altura completa: header/footer fijos, body con scroll
+    // (ver sección "NAV — LAYOUT DE 3 ZONAS").
+    display: flex;
+    flex-direction: column;
+    // Recorta las zonas cuando el nav se pliega a max-width:0 (si no, header
+    // y footer —con ancho mínimo propio— se desbordan y asoman por el borde).
+    // No recorta la solapa: es position:fixed relativa al viewport y el nav no
+    // tiene transform, así que no es su bloque contenedor.
+    overflow: hidden;
+    min-height: 100vh;
+    width: clamp(300px, 300px, 300px);
+    background-color: #111111;
+  }
+  @include min-screen(1920px) {
+    width: clamp(350px, 350px, 350px);
+  }
+
+  // .ft
+  .ft {
+    // &-list
+    &-list {
+      @include position(absolute, null null null null);
+      @include padding(0);
+      overflow: hidden;
+      border: 0;
+      clip: rect(1px, 1px, 1px, 1px);
+      clip-path: inset(100%);
+      height: 1px;
+      width: 1px;
+      @include min-screen(1280px) {
+        @include position(sticky, 48px null null auto);
+        z-index: 3;
+        clip: auto;
+        clip-path: none;
+        overflow-y: auto;
+        width: auto;
+        height: auto;
+        max-height: 768px;
+        background-color: transparent;
+      }
+      @include min-screen(1280px) {
+        max-height: 998px;
+      }
+
+      // [class*="ft-tag--showroom"] 
+      [class*="ft-tag--showroom"] {
+        @include margin(10px null 10px 14px);
+      }
+
+      // [class*="magic-body"]
+      [class*="magic-body"] {
+        @include margin(20px null null 14px);
+        @include padding(10px);
+        @include border-style(solid);
+        @include border-width(1px);
+        @include border-color(#666);
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        color: var(--color-white);
+        background-color: transparent;
+        border-radius: 6px;
+
+        // &[class*="__icon"]
+        &[class*="__icon"] {
+          @include margin(0 null null 0);
+          @include padding(0);
+          @include border-width(0);
+          width: 16px;
+          height: 16px;
+          background-color: transparent;
+        }
+
+        // &:hover
+        &:hover {
+          background-color: #666;
+        }
+      }
+
+      // &__link
+      &__link {
+        @include padding(12px null 12px 14px);
+        display: block;
+        font-weight: bold;
+        text-decoration: none;
+        color: #ccc;
+
+        // &:hover, &:focus-visible
+        &:hover,
+        &:focus-visible {
+          color: var(--color-white);
+          background-color: #333;
+        }
+
+        // &[class*="-active"]
+        &[class*="-active"] {
+          color: var(--color-white);
+          background-color: #333;
+        }
+      }
+
+      // &__item
+      &__item {
+        @include position(sticky, 0 null null null);
+        @include margin(0 null null null);
+        @include padding(null null null 0);
+        z-index: 2;
+        overflow-y: auto;
+        width: clamp(234px, 234px, 234px);
+        height: auto;
+        font-size: 14px;
+        line-height: 16px;
+        background-color: #111111;
+        @include min-screen(1280px) {
+          width: auto;
+        }
+      }
+
+      // &--showroom-unfold
+      //
+      // La lista se ancla justo debajo del __heading. Ambos comparten la
+      // misma altura de referencia (48px = altura del botón close + select)
+      // para evitar gap visible entre cabecera mobile y desplegable.
+      &--showroom-unfold {
+        @include position(fixed, 48px null null 0);
+        z-index: 6;
+        clip: auto;
+        clip-path: none;
+        overflow-x: visible;
+        overflow-y: auto;
+        width: 100%;
+        height: calc(100% - 48px);
+        max-width: 234px;
+        background-color: #111111;
+
+        // [class*="ft-list"]
+        [class*="ft-list"] {
+          clip: auto;
+          clip-path: none;
+          height: auto;
+          overflow: visible;
+          position: static;
+          white-space: inherit;
+          width: 100%;
+        }
+      }
+    }
+
+    // &-mol
+    &-mol {
+      // &-accordion
+      &-accordion {
+        @include margin(0 null 0 null);
+
+        // &__summary
+        &__summary {
+          @include position(sticky, 0 null null null);
+          @include padding(12px 24px 12px 30px);
+          z-index: 3;
+          border: none;
+          font-weight: bold;
+          font-size: 14px;
+          line-height: 16px;
+          color: #ccc;
+
+          // behavior-in-ancestors: .revistas
+          @include behavior-in-ancestors(".ft-brand-revistas") {
+            font-family: var(--font-stack);
+          }
+
+          // &::after
+          &:after {
+            @include margin(auto null auto null);
+            top: 0;
+            bottom: 0;
+            left: 12px;
+            width: 12px;
+            height: 12px;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus"><path d="M5 12h14"/><path d="M12 5v14"/></svg>');
+            filter: invert(99%) sepia(0%) saturate(893%) hue-rotate(205deg)
+              brightness(113%) contrast(90%);
+          }
+
+          // &:hover, &:focus-visible
+          &:hover,
+          &:focus-visible {
+            color: var(--color-white);
+            background-color: #333;
+
+            // &::after
+            &:after {
+              filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(26deg)
+                brightness(104%) contrast(101%);
+
+              // behavior-in-ancestors: .revistas
+              @include behavior-in-ancestors(".ft-brand-revistas") {
+                filter: invert(100%) sepia(0%) saturate(7411%) hue-rotate(3deg)
+                  brightness(119%) contrast(103%);
+              }
+            }
+          }
+        }
+
+        // &__text
+        &__text {
+          @include padding(0);
+          background-color: #333;
+
+          // [class*="ft-list__link"]
+          [class*="ft-list__link"] {
+            @include position(relative, null null null null);
+            @include padding(null null null 30px);
+            transition: color 0.25s ease, font-weight 0.25s ease,
+              background-color 0.25s ease;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 16px;
+
+            // &::before
+            &:before {
+              content: "";
+              @include position(absolute, 0 null 0 16px);
+              transition: color 0.25s ease, background-color 0.25s ease;
+              width: 1px;
+              height: 100%;
+              background-color: #666;
+            }
+
+            // &:hover, &:focus-visible
+            &:hover,
+            &:focus-visible {
+              font-weight: bold;
+              color: var(--color-white);
+              text-shadow: 2px 2px 0 rgba(0, 0, 0, 1);
+
+              // &:before
+              &:before {
+                background-color: var(--color-white);
+              }
+
+              // &::after
+              &:after {
+                content: "";
+                @include position(absolute, 0 null 0 14px);
+                @include margin(auto null auto null);
+                width: 5px;
+                height: 5px;
+                background-color: var(--color-white);
+                border-radius: 5px;
+              }
+            }
+
+            // &[class*="-active"]
+            &[class*="-active"] {
+              font-weight: bold;
+              color: var(--color-white);
+              text-shadow: 2px 2px 0 rgba(0, 0, 0, 1);
+
+              // &:before
+              &:before {
+                background-color: var(--color-white);
+              }
+
+              // &::after
+              &:after {
+                content: "";
+                @include position(absolute, 0 null 0 14px);
+                @include margin(auto null auto null);
+                width: 5px;
+                height: 5px;
+                background-color: var(--color-white);
+                border-radius: 5px;
+              }
+            }
+          }
+
+          // [class*="ft-list"]
+          [class*="ft-list"] {
+            @include position(relative, auto null null auto);
+            overflow-y: auto;
+            height: auto;
+            width: auto;
+            max-height: 200px;
+            background-color: #333;
+            @include min-screen(1280px) {
+              max-height: 400px;
+            }
+          }
+
+          // [class*="ft-list__link"]
+          [class*="ft-list__link"] {
+            transition: background-color 0.25s ease;
+
+            // &:hover, &:focus-visible
+            &:hover,
+            &:focus-visible {
+              background-color: #444;
+            }
+          }
+        }
+
+        // &__details
+        &__details {
+          // &[open]
+          &[open] {
+            background-color: #333;
+
+            // [class*="__summary"]
+            [class*="__summary"] {
+              color: var(--color-white);
+
+              // &::after
+              &:after {
+                background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-minus"><path d="M5 12h14"/></svg>');
+                filter: invert(100%) sepia(0%) saturate(7411%) hue-rotate(3deg)
+                  brightness(119%) contrast(103%);
+
+                // behavior-in-ancestors: .revistas
+                @include behavior-in-ancestors(".ft-brand-revistas") {
+                  filter: invert(100%) sepia(0%) saturate(7411%)
+                    hue-rotate(3deg) brightness(119%) contrast(103%);
+                }
+              }
+            }
+
+            // [class*="__text"]
+            [class*="__text"] {
+              border: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // &__heading
+  &__heading {
+    @include position(fixed, 0 null null null);
+    z-index: 6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    // Altura fija en mobile para que coincida con el top de la lista
+    // (`--showroom-unfold` arranca en 48px) — sin gap entre cabecera y
+    // desplegable.
+    min-height: 48px;
+    background-color: #111111;
+    @include min-screen(1280px) {
+      @include position(sticky, null null null null);
+      z-index: 4;
+      min-height: 0;
+    }
+
+    // [class*="ft-btn-nav--close"]
+    [class*="ft-btn-nav--close"] {
+      @include margin(0 null 0 null);
+      top: inherit;
+      width: 48px;
+      height: 48px;
+      border-radius: 0;
+
+      // [class*="ft-btn-nav__icon"]
+      [class*="ft-btn-nav__icon"] {
+        transition: transform 0.5s ease, opacity 0.5s ease;
+        width: 24px;
+        height: 24px;
+
+        // &::after // abc
+        &::after {
+          transition: background-image 0.5s ease, transform 0.5s ease,
+            opacity 0.5s ease;
+          opacity: 0.9;
+          transform: rotate(0deg); // Vuelve a la posición original
+          width: 24px;
+          height: 24px;
+          background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>');
+          filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(26deg)
+            brightness(104%) contrast(101%);
+          @include min-screen(980px) {
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>');
+
+            // behavior-in-ancestors: [data-showroom-skin*="cover"]
+            @include behavior-in-ancestors('[data-showroom-skin*="cover"]') {
+              background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>');
+            }
+          }
+        }
+      }
+
+      // &[class*="ft-btn-nav--active"]
+      &[class*="ft-btn-nav--active"] {
+        // [class*="ft-btn-nav__icon"]
+        [class*="ft-btn-nav__icon"] {
+          // &:after
+          &::after {
+            transform: rotate(180deg); // Rotación
+            opacity: 1; // Cambia la opacidad para dar efecto de fade
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>');
+            @include min-screen(980px) {
+              background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>');
+
+              // behavior-in-ancestors: [data-showroom-skin*="cover"]
+              @include behavior-in-ancestors('[data-showroom-skin*="cover"]') {
+                background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>');
+              }
+            }
+          }
+        }
+      }
+
+      // SOLAPA (desktop) — disparador lateral unificado para TODOS los skins.
+      //
+      // En ≥1280px el botón close deja de ser el botón 48×48 superior y pasa a
+      // ser una pestaña anclada al borde derecho del nav, que lo acompaña al
+      // plegar/desplegar (ver --fold/--unfold). En <1280px se conserva la
+      // cabecera con hamburguesa. El skin "layout" ya tenía esta solapa; aquí
+      // se generaliza al resto (secciones, cover, finalPage). El estado de
+      // apertura por defecto de cada skin lo fija el JS (setInitialMenuState),
+      // que también sincroniza `--active` con el icono.
+      @include min-screen(1280px) {
+        @include position(fixed, 50% null null 0);
+        @include margin(0);
+        z-index: 9999;
+        width: 32px;
+        height: 56px;
+        border-radius: 0 6px 6px 0;
+        background-color: #111111;
+        box-shadow: 2px 0 6px rgba(0, 0, 0, 0.18);
+        transform: translateY(-50%);
+        transition: left 0.5s ease, background-color 0.25s ease;
+        // pegada al borde derecho del nav desplegado (300px; 350px en ≥1920px)
+        left: 300px;
+
+        // icono: hamburguesa (☰) cerrado; --active → cruz (✕) abierto. Mismo
+        // formato que el skin cover (/fourty/index.html), unificado para todos.
+        [class*="ft-btn-nav__icon"] {
+          &::after {
+            transform: rotate(0deg);
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>');
+          }
+        }
+
+        // activo (nav abierto): cruz (✕); anula el icono base de ≥980px.
+        &[class*="ft-btn-nav--active"] [class*="ft-btn-nav__icon"]::after {
+          background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>');
+        }
+
+        // hover/focus sutil para feedback de affordance
+        &:hover,
+        &:focus-visible {
+          background-color: #333;
+        }
+      }
+      @include min-screen(1920px) {
+        // pegada al borde derecho del nav desplegado a 350px
+        left: 350px;
+      }
+    }
+  }
+
+  // &--unfold
+  //
+  // Al desplegar, `max-width` crece de 0 → 300px (350px en ≥1920px) animando
+  // como un cajón; la solapa acompaña su borde derecho (ver `left:300/350px`
+  // del botón close). Generalizado desde el skin layout a todos los skins.
+  &--unfold {
+    @include min-screen(1280px) {
+      max-width: 300px;
+      background-color: #111111;
+      border-color: #111111;
+      transition: max-width 0.4s ease, background-color 0.4s ease,
+        border-color 0.4s ease;
+
+      // [class*="ft-list"]
+      [class*="ft-list"] {
+        transition: opacity 0.5s ease, transform 0.5s ease,
+          background-color 0.5s ease;
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    @include min-screen(1920px) {
+      max-width: 350px;
+    }
+  }
+
+  // &--fold
+  //
+  // Al plegar, el nav colapsa su ancho a 0 (transparente, sin borde) animando
+  // `max-width` con la misma curva que el `left` de la solapa, que queda a ras
+  // del borde izquierdo del viewport. Antes mostraba una franja blanca de 48px;
+  // ahora el único affordance plegado es la solapa, igual en todos los skins.
+  &--fold {
+    @include min-screen(1280px) {
+      max-width: 0;
+      background-color: transparent;
+      border-width: 0;
+      transition: max-width 0.4s ease, background-color 0.4s ease,
+        border-color 0.4s ease;
+
+      // [class*="ft-list"]
+      [class*="ft-list"] {
+        transform: translateY(-20px);
+        opacity: 0;
+        overflow: hidden;
+      }
+
+      // la solapa queda a ras del borde izquierdo del viewport
+      [class*="ft-btn-nav--close"] {
+        left: 0;
+      }
+    }
+  }
+}
+
+// BRAND SELECTOR
+[data-showroom-brand*="selector"] {
+  @include margin(0 null 0 null);
+  @include min-screen(1280px) {
+    @include position(fixed, 0 0 null null);
+    z-index: 200;
+  }
+  @include min-screen(1280px) {
+    right: 15%;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.25);
+  }
+
+  // &:before
+  &:before {
+    content: "";
+    @include position(absolute, 0 null null -48px);
+    background-color: #fff;
+    width: 48px;
+    height: 48px;
+    @include min-screen(1280px) {
+      border-bottom-left-radius: 6px;
+    }
+  }
+
+  // &::after
+  &::after {
+    content: "";
+    @include position(absolute, 0 null 0 -35px);
+    @include margin(auto null auto null);
+    width: 24px;
+    height: 18px;
+    background: transparent
+      url('data:image/svg+xml,<svg width="34" height="18" viewBox="0 0 34 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24.2857 8.28571H16L16 0L24.2857 7.2436e-07V8.28571Z" fill="%23DD2C39"/><path d="M24.2857 18H16L16 9.71429L24.2857 9.71429V18Z" fill="%230034DD"/><path d="M34 18H25.7143L25.7143 9.71429L34 9.71429V18Z" fill="%23004F6F"/><path d="M0 5.11603L3.09076 0.0789104H6.14154V5.2607H7.54038V6.8126H6.16819V8.16723H4.16986L4.12989 6.8126H0V5.11603ZM4.27643 5.2607V1.26257L2.02498 5.2607H4.27643Z" fill="%23111111"/><path d="M8.19746 2.38047V0.657587C8.50831 0.464695 8.91686 0.306874 9.4231 0.184125C9.92935 0.0613749 10.48 1.52156e-07 11.0751 1.52156e-07C12.0254 1.52156e-07 12.7847 0.184125 13.3532 0.552373C13.9305 0.920622 14.2191 1.54314 14.2191 2.41992C14.2191 3.11258 14.0548 3.66934 13.7262 4.09019C13.4064 4.50228 12.838 4.86176 12.0209 5.16863C11.2305 5.46674 10.6843 5.72101 10.3823 5.93144C10.0892 6.1331 9.94267 6.33476 9.94267 6.53642H14.2857V8.20669H7.97098V6.73369C7.97098 6.28653 8.04647 5.90513 8.19746 5.58949C8.35732 5.27385 8.62821 4.98451 9.01011 4.72148C9.39202 4.45844 9.92046 4.18664 10.5955 3.90607C11.1017 3.69564 11.4969 3.49398 11.7811 3.30109C12.0742 3.09943 12.2163 2.85831 12.2074 2.57774C12.1986 2.24456 12.0698 2.01222 11.8211 1.8807C11.5813 1.74041 11.2394 1.67027 10.7953 1.67027C10.369 1.67027 9.93379 1.7448 9.48971 1.89385C9.04564 2.03414 8.65485 2.19634 8.31736 2.38047H8.19746Z" fill="%23111111"/><path d="M0 17.8855V9.82884H3.39583C4.07418 9.82884 4.6422 9.88823 5.09988 10.007C5.55756 10.1173 5.92534 10.3167 6.20322 10.6052C6.48109 10.8937 6.68133 11.2968 6.80392 11.8144C6.92652 12.3235 6.98781 12.9811 6.98781 13.7871C6.98781 14.6272 6.92652 15.3145 6.80392 15.849C6.68133 16.3836 6.48109 16.7994 6.20322 17.0963C5.92534 17.3933 5.55756 17.6012 5.09988 17.72C4.6422 17.8303 4.07418 17.8855 3.39583 17.8855H0ZM3.11387 11.5471H1.96149V16.1672H3.11387C3.58789 16.1672 3.95976 16.1121 4.22947 16.0018C4.50734 15.8915 4.70349 15.6666 4.81791 15.3272C4.94051 14.9878 5.0018 14.4744 5.0018 13.7871C5.0018 13.1338 4.94051 12.6501 4.81791 12.3362C4.70349 12.0138 4.50734 11.8016 4.22947 11.6998C3.95976 11.598 3.58789 11.5471 3.11387 11.5471Z" fill="%23111111"/><path d="M7.87409 15.8108C8.2337 15.9381 8.62599 16.0399 9.05098 16.1163C9.48415 16.1842 9.91322 16.2181 10.3382 16.2181C10.9185 16.2181 11.3476 16.1927 11.6254 16.1418C11.9115 16.0824 12.0995 15.9933 12.1894 15.8745C12.2793 15.7557 12.3242 15.603 12.3242 15.4163C12.3242 15.2551 12.2915 15.1278 12.2261 15.0345C12.1608 14.9411 12.0341 14.869 11.8461 14.8181C11.6581 14.7587 11.3803 14.712 11.0125 14.6781L10.2034 14.6017C9.59857 14.5423 9.12045 14.4108 8.76902 14.2072C8.42576 14.0035 8.18057 13.732 8.03346 13.3926C7.89452 13.0447 7.82505 12.6289 7.82505 12.1453C7.82505 11.5683 7.93539 11.1016 8.15605 10.7452C8.38489 10.3889 8.75267 10.1301 9.25939 9.96884C9.76611 9.79914 10.4404 9.71429 11.2822 9.71429C12.3773 9.71429 13.2804 9.86277 13.9915 10.1598L13.9547 11.8907L13.9179 11.9416C13.1088 11.6446 12.2629 11.4962 11.3803 11.4962C10.9553 11.4962 10.6283 11.5216 10.3995 11.5725C10.1707 11.615 10.0113 11.6871 9.92139 11.7889C9.83149 11.8907 9.78654 12.035 9.78654 12.2216C9.78654 12.4083 9.81515 12.5483 9.87236 12.6417C9.93774 12.735 10.0644 12.8071 10.2524 12.858C10.4404 12.9004 10.7142 12.9429 11.0738 12.9853L11.8461 13.0744C12.4999 13.1508 13.0026 13.2865 13.354 13.4817C13.7054 13.6768 13.9465 13.9399 14.0773 14.2708C14.2162 14.5932 14.2857 14.9878 14.2857 15.4545C14.2857 16.023 14.1672 16.4981 13.9302 16.88C13.7014 17.2533 13.3254 17.5333 12.8023 17.72C12.2793 17.9067 11.5805 18 10.706 18C10.1339 18 9.619 17.9703 9.16132 17.9109C8.70364 17.843 8.25821 17.7539 7.82505 17.6436V15.849L7.87409 15.8108Z" fill="%23111111"/></svg>')
+      no-repeat 0 0;
+  }
+
+  // option
+  option {
+    font-weight: normal;
+    color: var(--color-white);
+    background-color: var(--color-primary);
+  }
+
+  // [class*="ft-mol-form__select"]
+  [class*="ft-mol-form__select"] {
+    @include padding(null 42px null 6px);
+    height: 48px;
+    border: none;
+    border-radius: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 200px;
+    font-family: var(--font-stack);
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--color-white);
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>')
+      no-repeat right 10px center;
+    background-color: var(--color-primary);
+    @include min-screen(1280px) {
+      overflow: visible;
+      white-space: nowrap;
+      max-width: none;
+    }
+
+    // behavior-in-ancestors: .ft-brand-showroom
+    @include behavior-in-ancestors(".ft-brand-showroom") {
+      background-color: #333;
+    }
+
+    // .fourty
+    .fourty & {
+      @include margin(0 null null null);
+    }
+  }
+
+  // Skins que integran el selector dentro del nav (cover, layout, finalPage):
+  // el comportamiento "integrated" del selector vive en su propio bloque más
+  // abajo en este archivo. Aquí solo conservamos las reglas display:none que
+  // ocultan el selector cuando el nav está fold (en ≥1280px), porque
+  // necesitan vivir dentro del scope `[data-showroom-brand*="selector"]`
+  // para que la herencia del position funcione.
+
+  // cover · menú fold → selector oculto en desktop
+  @include behavior-in-ancestors(
+    '[data-showroom-skin*="cover"] .ft-org-header-showroom--fold'
+  ) {
+    @include min-screen(1280px) {
+      display: none;
+    }
+  }
+
+  // layout · menú fold → selector oculto en desktop
+  @include behavior-in-ancestors(
+    '[data-showroom-skin*="layout"] .ft-org-header-showroom--fold'
+  ) {
+    @include min-screen(1280px) {
+      display: none;
+    }
+  }
+
+  // finalPage · menú fold → selector oculto en desktop
+  @include behavior-in-ancestors(
+    '[data-showroom-skin*="finalPage"] .ft-org-header-showroom--fold'
+  ) {
+    @include min-screen(1280px) {
+      display: none;
+    }
+  }
+}
+
+// BRAND SELECTOR — integrado en el nav
+// ===================================================
+//
+// Skins que colocan el selector dentro del nav (en lugar de flotante
+// top-right): cover, layout, finalPage. En estos casos el selector vive
+// dentro del flow del __heading (flex space-between) junto al botón close,
+// formando un header branded del nav con el color primario de la marca
+// activa. Solo es visible cuando el nav está unfold (el override
+// display:none para fold vive en el bloque [data-showroom-brand*="selector"]
+// más arriba).
+//
+// El resto de skins (secciones, secciones interiores, ...) conservan el
+// comportamiento por defecto: selector flotante top-right en ≥1280px.
+[data-showroom-skin*="cover"],
+[data-showroom-skin*="layout"],
+[data-showroom-skin*="finalPage"] {
+  [class*="ft-org-header-showroom"] [data-showroom-brand="selector"] {
+    // Reset del posicionamiento base (anula `position: fixed; top:0; right:0`
+    // del bloque base `[data-showroom-brand*="selector"]`).
+    @include position(relative, auto auto auto auto);
+    z-index: auto;
+    width: auto;
+    max-width: none;
+    box-shadow: none;
+    // Ocupa todo el espacio restante del __heading, junto al botón close.
+    flex: 1 1 auto;
+
+    @include min-screen(1280px) {
+      @include position(relative, auto auto auto auto);
+      right: auto;
+      box-shadow: none;
+    }
+
+    // Quita las decoraciones del selector flotante:
+    // - pestaña blanca a la izquierda (::before)
+    // - logo 42DS embedded en SVG (::after)
+    &:before,
+    &::after {
+      display: none;
+    }
+
+    // El <select> ocupa el ancho disponible y mantiene el color primario
+    // heredado del base — así el header del nav queda visualmente
+    // "branded" con la marca activa.
+    [class*="ft-mol-form__select"] {
+      max-width: none;
+      width: 100%;
+      box-shadow: none;
+    }
+  }
+}
+
+// [data-showroom-skin="layout"] — SOLO lo específico de layout.
+// ===================================================
+// La solapa de escritorio (≥1280px) y la animación fold/unfold del nav viven
+// ahora en el bloque base (compartidas por todos los skins). Aquí queda:
+//   · cabecera transparente (el nav plegado no tapa el artículo de fondo),
+//   · z-index elevado para apilar el nav sobre el contenido del artículo,
+//   · la variante MÓVIL de la solapa — en layout el disparador es la pestaña
+//     lateral también en <1280px (no la hamburguesa superior de los demás
+//     skins); en ≥1280px la solapa la aporta el bloque base.
+[data-showroom-skin="layout"] {
+  [class*="ft-org-header-showroom"] {
+    // El desplegable móvil debe apilar sobre el contenido del artículo.
+    [class*="ft-list--showroom-unfold"] {
+      z-index: 9999;
+    }
+
+    &[class*="__heading"] {
+      background-color: transparent;
+
+      // Solapa en MÓVIL (<1280px). En ≥1280px la define el bloque base.
+      [class*="ft-btn-nav--close"] {
+        @include max-screen(1279px) {
+          @include position(fixed, 50% null null 0);
+          @include margin(0);
+          z-index: 9999;
+          width: 32px;
+          height: 56px;
+          border-radius: 0 6px 6px 0;
+          background-color: #111111;
+          box-shadow: 2px 0 6px rgba(0, 0, 0, 0.18);
+          transform: translateY(-50%);
+          transition: background-color 0.25s ease;
+
+          // hamburguesa (☰) cerrado; --active → cruz (✕). Igual que el resto.
+          [class*="ft-btn-nav__icon"]::after {
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>');
+          }
+          &[class*="ft-btn-nav--active"] [class*="ft-btn-nav__icon"]::after {
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>');
+          }
+
+          &:hover,
+          &:focus-visible {
+            background-color: #333;
+          }
+        }
+      }
+    }
+
+    // Apila el nav sobre el contenido del artículo. La animación max-width y la
+    // posición de la solapa en cada estado las aporta el bloque base.
+    &[class*="--fold"],
+    &[class*="--unfold"] {
+      z-index: 99999;
+    }
+  }
+}
+
+// DARK MODE
+[data-showroom-switch="darkmode"] {
+  @include margin(15px null null 14px);
+  // El mixin `min-click-area` aplica un ::after de min-height 44px al
+  // label del switch (height 28px), generando ~8px de desbordamiento
+  // vertical invisible que dispara scroll en el nav. Contenemos el
+  // overflow aquí — el área clicable del switch nativo (28×58) sigue
+  // siendo accesible dentro del nav lateral.
+  overflow: hidden;
+}
+
+// JS CLASS ON BODY
+.js-showroom-no-scroll {
+  overflow: hidden;
+
+  // &::after
+  &:after {
+    content: "";
+    @include position(absolute, 0 null null 0);
+    z-index: 5;
+    width: 234px;
+    height: 100vh;
+    background-color: #111111;
+    @include min-screen(1280px) {
+      display: none;
+    }
+  }
+}
+
+// NAV FILTER — buscador en vivo del nav
+// ===================================================
+// Buscador alojado en la zona header (siempre visible). Filtra en vivo los
+// ítems de la lista del body (ver initNavFilter en showroom-init.js).
+.ft-org-header-showroom__filter {
+  @include margin(0);
+  @include padding(0);
+}
+
+// &__search — input del filtro (tema oscuro del nav)
+.ft-org-header-showroom__search {
+  @include padding(8px 12px 8px 36px);
+  @include margin(0);
+  display: block;
+  width: 100%;
+  font-family: var(--font-stack);
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--color-white);
+  background-color: #1b1b1b;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23999999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>');
+  background-repeat: no-repeat;
+  background-position: 12px center;
+  background-size: 16px 16px;
+  border: 1px solid #444;
+  border-radius: 6px;
+  -webkit-appearance: none;
+  appearance: none;
+
+  // &::placeholder
+  &::placeholder {
+    color: #888;
+  }
+
+  // &:focus-visible — foco accesible
+  &:focus-visible {
+    outline: none;
+    border-color: #888;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.18);
+  }
+}
+
+// &__filter-status — aviso "sin resultados"
+.ft-org-header-showroom__filter-status {
+  @include margin(8px null 0 null);
+  @include padding(0 4px);
+  font-size: 13px;
+  line-height: 16px;
+  color: #999;
+}
+
+// =====================================================================
+// NAV — LAYOUT DE 3 ZONAS  (header fijo · body con scroll · footer fijo)
+// =====================================================================
+// El nav es una columna flex de altura completa (ver `display:flex` en el
+// bloque base ≥1280px, y la sección MÓVIL más abajo). La cabecera (selector
+// de marca + buscador) y el pie (dark mode + magic body) no crecen y quedan
+// fijos; el cuerpo (lista de categorías) es la única zona con scroll.
+
+// --- ZONA 1 · HEADER ---
+.ft-org-header-showroom__header {
+  flex: 0 0 auto;
+  @include margin(0);
+  @include padding(14px);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #111111;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+// --- ZONA 2 · BODY (scroll) ---
+.ft-org-header-showroom__body {
+  @include min-screen(1280px) {
+    flex: 1 1 auto;
+    min-height: 0; // imprescindible para que el overflow funcione en flex
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+}
+
+// --- ZONA 3 · FOOTER ---
+.ft-org-header-showroom__footer {
+  flex: 0 0 auto;
+  // Anclado al fondo del nav: margin-top:auto absorbe el espacio libre por
+  // encima (queda abajo aunque el body no llene toda la altura).
+  @include margin(auto 0 0 0);
+  @include padding(14px);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: #111111;
+  border-top: 1px solid #2a2a2a;
+
+  // Fila de ajuste: etiqueta a la izquierda, control a la derecha. El inset
+  // izquierdo (10px) alinea la etiqueta con la columna de icono del botón
+  // Magic Body, dando un ritmo de "lista de ajustes".
+  &-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    @include padding(4px 10px);
+  }
+
+  // Etiqueta de la fila (es un <label for> real: clicarla también conmuta el
+  // switch y le da nombre accesible).
+  &-label {
+    font-family: var(--font-stack);
+    font-size: 14px;
+    line-height: 1;
+    color: #ccc;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  // dark mode: sin el margen pensado para la lista (aquí lo gestiona el footer)
+  [data-showroom-switch="darkmode"] {
+    @include margin(0);
+    flex: 0 0 auto;
+  }
+
+  // magic body: re-aplicado aquí (antes vivía dentro de .ft-list). Misma lógica
+  // que la fila del switch — identificador (texto) a la izquierda, control
+  // (icono) a la derecha vía space-between. Borde sutil rgba blanco para hacer
+  // juego con el selector de marca del header; hover que ilumina en vez de
+  // rellenar. Selector BEM explícito (no `[class*="magic-body"]`): así los
+  // estilos de caja del botón NO se aplican también a __label/__icon.
+  .magic-body {
+    @include margin(0);
+    @include padding(10px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    width: 100%;
+    font-family: var(--font-stack);
+    font-size: 14px;
+    color: var(--color-white);
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+
+    // control/affordance a la derecha (a la altura del toggle del switch)
+    &__icon {
+      flex: 0 0 auto;
+      width: 16px;
+      height: 16px;
+      border: 0;
+      background-color: transparent;
+    }
+
+    &:hover,
+    &:focus-visible {
+      background-color: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+  }
+}
+
+// --- SELECTOR DE MARCA dentro del header (todos los skins) ---
+// En flujo, ancho completo, sin decoraciones flotantes. Especificidad de 3
+// selectores para ganar al bloque flotante base y al integrado por skin.
+.ft-org-header-showroom .ft-org-header-showroom__header [data-showroom-brand="selector"] {
+  @include position(relative, auto auto auto auto);
+  @include margin(0);
+  z-index: auto;
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: none;
+  box-shadow: none;
+
+  @include min-screen(1280px) {
+    @include position(relative, auto auto auto auto);
+    right: auto;
+    box-shadow: none;
+  }
+
+  // Logo 42DS como insignia blanca redondeada a la izquierda del selector
+  // (recupera el logo del selector flotante antiguo, ahora dentro del header).
+  &::before {
+    content: "";
+    // `display: block` explícito: los skins cover/layout/finalPage ocultan
+    // ::before/::after del selector (`display: none`) para quitar las
+    // decoraciones flotantes antiguas; aquí lo re-mostramos para el badge del
+    // logo (misma especificidad, gana por ir después en el archivo).
+    display: block;
+    @include position(absolute, 50% null null 6px);
+    transform: translateY(-50%);
+    z-index: 1;
+    width: 40px;
+    height: 26px;
+    background-color: #fff;
+    background-image: url('data:image/svg+xml,<svg width="34" height="18" viewBox="0 0 34 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24.2857 8.28571H16L16 0L24.2857 7.2436e-07V8.28571Z" fill="%23DD2C39"/><path d="M24.2857 18H16L16 9.71429L24.2857 9.71429V18Z" fill="%230034DD"/><path d="M34 18H25.7143L25.7143 9.71429L34 9.71429V18Z" fill="%23004F6F"/><path d="M0 5.11603L3.09076 0.0789104H6.14154V5.2607H7.54038V6.8126H6.16819V8.16723H4.16986L4.12989 6.8126H0V5.11603ZM4.27643 5.2607V1.26257L2.02498 5.2607H4.27643Z" fill="%23111111"/><path d="M8.19746 2.38047V0.657587C8.50831 0.464695 8.91686 0.306874 9.4231 0.184125C9.92935 0.0613749 10.48 1.52156e-07 11.0751 1.52156e-07C12.0254 1.52156e-07 12.7847 0.184125 13.3532 0.552373C13.9305 0.920622 14.2191 1.54314 14.2191 2.41992C14.2191 3.11258 14.0548 3.66934 13.7262 4.09019C13.4064 4.50228 12.838 4.86176 12.0209 5.16863C11.2305 5.46674 10.6843 5.72101 10.3823 5.93144C10.0892 6.1331 9.94267 6.33476 9.94267 6.53642H14.2857V8.20669H7.97098V6.73369C7.97098 6.28653 8.04647 5.90513 8.19746 5.58949C8.35732 5.27385 8.62821 4.98451 9.01011 4.72148C9.39202 4.45844 9.92046 4.18664 10.5955 3.90607C11.1017 3.69564 11.4969 3.49398 11.7811 3.30109C12.0742 3.09943 12.2163 2.85831 12.2074 2.57774C12.1986 2.24456 12.0698 2.01222 11.8211 1.8807C11.5813 1.74041 11.2394 1.67027 10.7953 1.67027C10.369 1.67027 9.93379 1.7448 9.48971 1.89385C9.04564 2.03414 8.65485 2.19634 8.31736 2.38047H8.19746Z" fill="%23111111"/><path d="M0 17.8855V9.82884H3.39583C4.07418 9.82884 4.6422 9.88823 5.09988 10.007C5.55756 10.1173 5.92534 10.3167 6.20322 10.6052C6.48109 10.8937 6.68133 11.2968 6.80392 11.8144C6.92652 12.3235 6.98781 12.9811 6.98781 13.7871C6.98781 14.6272 6.92652 15.3145 6.80392 15.849C6.68133 16.3836 6.48109 16.7994 6.20322 17.0963C5.92534 17.3933 5.55756 17.6012 5.09988 17.72C4.6422 17.8303 4.07418 17.8855 3.39583 17.8855H0ZM3.11387 11.5471H1.96149V16.1672H3.11387C3.58789 16.1672 3.95976 16.1121 4.22947 16.0018C4.50734 15.8915 4.70349 15.6666 4.81791 15.3272C4.94051 14.9878 5.0018 14.4744 5.0018 13.7871C5.0018 13.1338 4.94051 12.6501 4.81791 12.3362C4.70349 12.0138 4.50734 11.8016 4.22947 11.6998C3.95976 11.598 3.58789 11.5471 3.11387 11.5471Z" fill="%23111111"/><path d="M7.87409 15.8108C8.2337 15.9381 8.62599 16.0399 9.05098 16.1163C9.48415 16.1842 9.91322 16.2181 10.3382 16.2181C10.9185 16.2181 11.3476 16.1927 11.6254 16.1418C11.9115 16.0824 12.0995 15.9933 12.1894 15.8745C12.2793 15.7557 12.3242 15.603 12.3242 15.4163C12.3242 15.2551 12.2915 15.1278 12.2261 15.0345C12.1608 14.9411 12.0341 14.869 11.8461 14.8181C11.6581 14.7587 11.3803 14.712 11.0125 14.6781L10.2034 14.6017C9.59857 14.5423 9.12045 14.4108 8.76902 14.2072C8.42576 14.0035 8.18057 13.732 8.03346 13.3926C7.89452 13.0447 7.82505 12.6289 7.82505 12.1453C7.82505 11.5683 7.93539 11.1016 8.15605 10.7452C8.38489 10.3889 8.75267 10.1301 9.25939 9.96884C9.76611 9.79914 10.4404 9.71429 11.2822 9.71429C12.3773 9.71429 13.2804 9.86277 13.9915 10.1598L13.9547 11.8907L13.9179 11.9416C13.1088 11.6446 12.2629 11.4962 11.3803 11.4962C10.9553 11.4962 10.6283 11.5216 10.3995 11.5725C10.1707 11.615 10.0113 11.6871 9.92139 11.7889C9.83149 11.8907 9.78654 12.035 9.78654 12.2216C9.78654 12.4083 9.81515 12.5483 9.87236 12.6417C9.93774 12.735 10.0644 12.8071 10.2524 12.858C10.4404 12.9004 10.7142 12.9429 11.0738 12.9853L11.8461 13.0744C12.4999 13.1508 13.0026 13.2865 13.354 13.4817C13.7054 13.6768 13.9465 13.9399 14.0773 14.2708C14.2162 14.5932 14.2857 14.9878 14.2857 15.4545C14.2857 16.023 14.1672 16.4981 13.9302 16.88C13.7014 17.2533 13.3254 17.5333 12.8023 17.72C12.2793 17.9067 11.5805 18 10.706 18C10.1339 18 9.619 17.9703 9.16132 17.9109C8.70364 17.843 8.25821 17.7539 7.82505 17.6436V15.849L7.87409 15.8108Z" fill="%23111111"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px 16px;
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  // El antiguo logo flotante (::after del bloque base) ya no se usa.
+  &::after {
+    display: none;
+  }
+
+  [class*="ft-mol-form__select"] {
+    @include margin(0);
+    @include padding(null 42px null 52px); // hueco a la izquierda para el logo
+    width: 100%;
+    max-width: none;
+    // Borde suave para que el selector destaque sobre el header (#111) también
+    // en modo UX/showroom, donde el fondo del select es #333 (en el resto de
+    // marcas ya destaca por su color primario). rgba blanco = se adapta a
+    // cualquier fondo de marca manteniéndose discreto.
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 6px;
+    box-shadow: none;
+
+    // &:disabled — En layouts la marca la fija el <head>, así que el selector
+    // se bloquea (disableBrandSelectorIfExcluded en showroom-init.js). Lo
+    // dejamos visiblemente inerte para que se lea como "bloqueado": atenuado,
+    // cursor not-allowed, borde discontinuo y un candado en lugar del chevron
+    // (solo se sobreescribe background-image; posición/repeat los hereda del
+    // shorthand del bloque base, así el icono cae donde estaba el chevron).
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.55;
+      border-style: dashed;
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>');
+    }
+  }
+}
+
+// --- LISTA dentro del body: fluye normal ---
+// Anula el sticky/clip del modelo anterior (donde la propia lista era el
+// contenedor de scroll). Ahora el scroll lo hace `__body`.
+//
+// Descendiente (no hijo directo `>`): debe alcanzar TODAS las `.ft-list` del
+// body, también las anidadas dentro de los acordeones. Con `>` solo se
+// des-ocultaba la lista de primer nivel; en <1280px las anidadas se quedaban
+// en el estado base (clip 1px) porque el único camino que las des-clipaba en
+// móvil era `--showroom-unfold`, hoy código muerto. En ≥1280px no se notaba
+// porque el `min-screen(1280px)` base ya des-clipa todas las `.ft-list`.
+.ft-org-header-showroom .ft-org-header-showroom__body .ft-list {
+  @include position(static, auto auto auto auto);
+  clip: auto;
+  clip-path: none;
+  overflow: visible;
+  width: auto;
+  height: auto;
+  max-height: none;
+}
+.ft-org-header-showroom .ft-org-header-showroom__body .ft-list__item {
+  position: static;
+  width: auto;
+}
+
+// --- SOLAPA (disparador) ---
+// Re-escopada fuera de `__heading` (eliminado en el rediseño). Pestaña lateral
+// fija a todos los anchos y skins: ☰ cerrado / ✕ abierto.
+.ft-org-header-showroom [class*="ft-btn-nav--close"] {
+  @include position(fixed, 50% null null 0);
+  @include margin(0);
+  z-index: 10000;
+  width: 32px;
+  height: 56px;
+  border-radius: 0 6px 6px 0;
+  background-color: #111111;
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.18);
+  transform: translateY(-50%);
+  transition: left 0.4s ease, background-color 0.25s ease;
+
+  @include min-screen(1280px) {
+    left: 300px; // borde derecho del nav desplegado
+  }
+  @include min-screen(1920px) {
+    left: 350px;
+  }
+
+  [class*="ft-btn-nav__icon"] {
+    width: 24px;
+    height: 24px;
+
+    // ☰ (cerrado)
+    &::after {
+      transition: background-image 0.4s ease, transform 0.4s ease,
+        opacity 0.4s ease;
+      width: 24px;
+      height: 24px;
+      opacity: 0.9;
+      transform: rotate(0deg);
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>');
+      filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(26deg)
+        brightness(104%) contrast(101%);
+    }
+  }
+
+  // ✕ (abierto)
+  &[class*="ft-btn-nav--active"] [class*="ft-btn-nav__icon"]::after {
+    opacity: 1;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>');
+  }
+
+  &:hover,
+  &:focus-visible {
+    background-color: #333;
+  }
+}
+// Plegado (≥1280): la solapa queda a ras del borde izquierdo del viewport.
+.ft-org-header-showroom--fold [class*="ft-btn-nav--close"] {
+  @include min-screen(1280px) {
+    left: 0;
+  }
+}
+
+// --- MÓVIL (<1280px): panel lateral deslizante ---
+// Ya no hay barra superior (__heading); el nav es un panel fijo con las 3
+// zonas, disparado por la solapa (fija). Se desliza con `left` (no `transform`,
+// para no romper el `position:fixed` de la solapa que vive dentro del nav).
+@include max-screen(1279px) {
+  .ft-org-header-showroom {
+    @include position(fixed, 0 null 0 null);
+    left: calc(-1 * min(86vw, 320px)); // oculto fuera de pantalla
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; // no recorta la solapa fixed (el nav no tiene transform)
+    width: min(86vw, 320px);
+    max-width: min(86vw, 320px);
+    height: 100%;
+    background-color: #111111;
+    transition: left 0.4s ease;
+  }
+
+  .ft-org-header-showroom--unfold {
+    left: 0;
+    box-shadow: 4px 0 16px rgba(0, 0, 0, 0.35);
+  }
+
+  .ft-org-header-showroom__body {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+  }
+
+  // al abrir el panel, la solapa viaja a su borde derecho
+  .ft-org-header-showroom--unfold [class*="ft-btn-nav--close"] {
+    left: min(86vw, 320px);
+  }
+
+  // el wrapper ya no reserva los 48px de la antigua barra superior
+  [data-showroom="nav"][data-nav-loaded="true"] {
+    min-height: 0;
+  }
+}
+
+// NAV — sub-grupos dentro de una categoría (p. ej. Organisms › Headers/Masthead)
+// ===================================================
+// Acordeón anidado dentro de `.ft-mol-accordion__text`. Hereda el estilo de
+// acordeón del nav; aquí solo afinamos la jerarquía visual: el summary del
+// sub-grupo queda al nivel de los enlaces hoja (algo más tenue, sin sticky
+// anidado) y sus ítems indentan un nivel más.
+.ft-org-header-showroom [data-showroom-subgroup] {
+  // Summary del sub-grupo: peer de las hojas, más tenue, sin sticky (evita
+  // solapamientos de stacking dentro del scroll de la categoría).
+  .ft-mol-accordion__summary {
+    position: static;
+    @include padding(10px 24px 10px 30px);
+    font-size: 13px;
+    font-weight: 600;
+    color: #aaa;
+
+    // icono +/- alineado con las guías verticales de las hojas
+    &:after {
+      left: 16px;
+    }
+  }
+
+  // Enlaces del sub-grupo: un nivel más de indentado, con su guía recolocada.
+  .ft-mol-accordion__text [class*="ft-list__link"] {
+    @include padding(null null null 44px);
+
+    &:before {
+      left: 30px;
+    }
+  }
+}
+
+// NAV — badges de conteo por categoría (Helpers, Atoms, Molecules…)
+// ===================================================
+// Cifra dinámica (la rellena initNavCounts() en showroom-init.js) junto al
+// título de cada sección. Reutilizan el átomo .ft-tag, pero dentro del nav
+// oscuro se atenúan a propósito: sin borde ni relleno sólido, color tenue y
+// tamaño reducido, para informar sin competir con el nombre de la categoría.
+.ft-org-header-showroom [data-showroom-count] {
+  @include margin(0 null 0 6px);
+  @include padding(1px 7px);
+  border: none;
+  border-radius: 5rem;
+  background-color: rgba(255, 255, 255, 0.07);
+  color: #8f8f8f;
+  font-size: 11px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+// =====================================================================
+// MODO OSCURO PROPIO DEL NAV  (prevalece sobre scss/base/_dark.scss)
+// =====================================================================
+// El nav del showroom es chrome propio y SIEMPRE oscuro: el switch de modo
+// oscuro (`data-theme="dark"` en <html>) está pensado para el área de
+// PREVIEW, no para el nav. El cascade global de `scss/base/_dark.scss` matchea
+// clases genéricas que el nav también usa (.ft-list, .ft-mol-form,
+// .ft-mol-accordion, .ft-btn-nav…) y se le cuela.
+//
+// Por eso el nav define aquí su PROPIO modo oscuro y lo hace prevalecer: todo
+// va scopeado bajo `[data-theme="dark"] .ft-org-header-showroom …`, que añade
+// un nivel de especificidad sobre las reglas de _dark (`[data-theme="dark"]
+// .clase`) y por tanto gana. Resultado: el nav se ve idéntico con el modo
+// oscuro activado o no. Patrón equivalente al de _header-multibrand.scss.
+//
+// Si en el futuro se añaden reglas globales de dark que toquen clases nuevas
+// del nav, basta con re-afirmar aquí su valor propio.
+[data-theme="dark"] .ft-org-header-showroom {
+  // --- Enlaces de categoría / hoja ---
+  .ft-list__link {
+    color: #ccc;
+
+    &:hover,
+    &:focus-visible,
+    &[class*="-active"] {
+      color: var(--color-white);
+    }
+  }
+
+  // Enlace activo (página actual): quitamos la sombra negra dura del realce
+  // (afordance de fondo claro que sobre el nav oscuro ensucia el texto).
+  .ft-mol-accordion__text [class*="ft-list__link"][class*="-active"] {
+    color: var(--color-white);
+    text-shadow: none;
+  }
+
+  // Guías verticales y cualquier pseudo/imagen de la lista: sin el filtro de
+  // inversión global.
+  .ft-list *:before,
+  .ft-list svg path,
+  .ft-list:not(.ft-list-photoinfo) img {
+    filter: none;
+  }
+
+  // --- Selector de marca ---
+  .ft-mol-form__select {
+    color: var(--color-white);
+  }
+
+  // --- Acordeón de categorías (summary + icono +/-) ---
+  .ft-mol-accordion__summary {
+    border: none;
+    color: #ccc;
+
+    // icono "+" (cerrado)
+    &:after {
+      filter: invert(99%) sepia(0%) saturate(893%) hue-rotate(205deg)
+        brightness(113%) contrast(90%);
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: var(--color-white);
+
+      // icono en hover
+      &:after {
+        filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(26deg)
+          brightness(104%) contrast(101%);
+      }
+    }
+  }
+  // icono "−" (acordeón abierto)
+  .ft-mol-accordion__details[open] [class*="__summary"]:after {
+    filter: invert(100%) sepia(0%) saturate(7411%) hue-rotate(3deg)
+      brightness(119%) contrast(103%);
+  }
+
+  // --- Solapa / botón de navegación (hover propio + icono claro) ---
+  [class*="ft-btn-nav"] {
+    &:hover,
+    &:focus-visible {
+      background-color: #333;
+    }
+  }
+  [class*="ft-btn-nav"] [class*="ft-btn-nav__icon"]:after {
+    filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(26deg)
+      brightness(104%) contrast(101%);
+  }
+
+  // --- Badges de conteo por categoría: re-afirma su aspecto sutil propio ---
+  // _dark.scss fuerza .ft-tag a (white / #111) con alta especificidad; aquí
+  // recuperamos el tono discreto del nav. Los :not() igualan/superan esa
+  // especificidad para prevalecer sin recurrir a !important.
+  [data-showroom-count]:not(.ft-tag--status-primary):not(.ft-tag--status-secondary) {
+    background-color: rgba(255, 255, 255, 0.07);
+    color: #8f8f8f;
+  }
+}

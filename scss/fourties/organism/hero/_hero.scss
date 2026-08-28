@@ -1,0 +1,174 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// .ft-org-hero
+// ===============================================
+.ft-org-hero {
+  // &-welcome
+  &-welcome {
+    @include position(relative, null null null null);
+    @include padding(null 0.8rem 0 0.8rem);
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 15rem;
+    @include min-screen(1024px) {
+      @include padding(null 1.1rem null 1.1rem);
+    }
+
+    // > *
+    > * {
+      @include position(relative, null null null null);
+      z-index: 2;
+      flex-basis: 100%;
+    }
+
+    // h1, h2, h3
+    h1,
+    h2,
+    h3 {
+      @include margin(2.2rem null 0 null);
+      @include min-screen(1024px) {
+        @include margin(4rem null 0 null);
+      }
+    }
+
+    // p
+    p {
+      @include margin(1rem null 0 null);
+       @include min-screen(1024px) {
+          @include margin(1.5rem null 0 null);
+      }
+    }
+
+    // .ft-helper-align-center
+    .ft-helper-align-center {
+      height:3rem;
+      @include min-screen(1024px) {
+        @include position(relative, 1rem null null null);
+      }
+    }
+
+    // .ft-text-alert--is-guided
+    .ft-text-alert--is-guided {
+      @include margin(2rem null null null);
+    }
+
+    // &__content
+    &__content {
+      @include position(relative, null null null null);
+      @include margin(null auto null auto);
+      z-index: 2;
+      max-width: 933px;
+
+      // &:has([data-scrollbar])
+      &:has([data-scrollbar]) {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        overflow-x: clip;
+
+        // [data-scrollbar]
+        [data-scrollbar] {
+          width: 100%;
+          max-width: 100%;
+          overflow: hidden;
+          min-height: 4.5rem;
+          contain: layout style;
+          @include min-screen(1280px) {
+            @include position(relative, null null null null);
+            @include margin(null auto null auto);
+            top: 1rem;
+            display: block;
+            width: 100%;
+            max-width: 1280px;
+            min-width: 0;
+            overflow: hidden;
+            min-height: 4.5rem;
+
+            // &[data-scrollbar-remove-inline-styles="true"]
+            &[data-scrollbar-remove-inline-styles="true"] {
+              @include margin(null auto null auto);
+              max-width: 1280px;
+            }
+          }
+
+          // .scroll-content
+          .scroll-content {
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            @include min-screen(1280px) {
+              @include margin(null auto null auto);
+              display: block;
+              width: max-content;
+            }
+          }
+
+          // .ft-scrollbar__container
+          .ft-scrollbar__container {
+            display: inline-flex;
+            white-space: nowrap;
+            min-height: 4.5rem;
+            @include min-screen(1280px) {
+              display: inline-block;
+              width: max-content;
+              white-space: nowrap;
+            }
+
+            // > ul
+            > ul {
+              @include margin(1rem null null null);
+              @include padding(1rem null 1rem null);
+              display: inline-flex;
+              flex-wrap: nowrap;
+              min-height: 2.5rem;
+
+              @include min-screen(1280px) {
+                @include padding(1.5rem null 1.5rem null);
+                display: inline-flex;
+                flex-wrap: nowrap;
+                white-space: nowrap;
+                width: max-content;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // &--near-search — variante del hero-welcome cuando precede a un
+    // bloque de búsqueda (.ft-org-search-autocomplete o el modifier
+    // .ft-org-container--seeker). Ajusta la altura mínima del contenido
+    // para reservar más espacio visual (statement breathing room) y
+    // limita el ancho de los párrafos descriptivos para alinearlos con
+    // el bloque de búsqueda que viene a continuación.
+    &--near-search {
+
+      // .ft-org-container__content
+      .ft-org-container__content {
+        min-height: 15rem;
+
+        @include min-screen(1024px) {
+          min-height: 20rem;
+        }
+      }
+
+      // &:has(p) — cuando el hero tiene bajada, reserva más altura al
+      // wrapper para que el statement + párrafo respiren sin saltar
+      // hacia arriba al cargar.
+      &:has(p) {
+        min-height: 14rem;
+      }
+
+      // p — margen lateral para evitar que el texto toque el viewport
+      // en mobile cuando el hero no tiene padding propio.
+      p {
+        @include margin(null 0.5rem null 0.5rem);
+      }
+    }
+  }
+}

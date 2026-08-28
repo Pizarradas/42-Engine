@@ -1,0 +1,901 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+
+// ================================================
+/* Animaciones */
+@keyframes ft-org-mediaviewer-quarter-rotate {
+  0% {
+    transform: rotate(0deg);
+    opacity: 0;
+  }
+
+  10% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+
+  30% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(-90deg);
+  }
+
+  90% {
+    transform: rotate(-90deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+}
+
+@keyframes ft-org-mediaviewer-show-hide-fade {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  1% {
+    opacity: .5;
+    visibility: visible;
+  }
+
+  50% {
+    opacity: .5;
+    visibility: visible;
+  }
+
+  51% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes ft-org-mediaviewer-slideDown {
+  from {
+    bottom: 3.5rem;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 6rem;
+    opacity: 0;
+  }
+}
+
+/* ==========================================================================
+  Organismo: ft-org-mediaviewer
+========================================================================== */
+
+.ft-org-mediaviewer {
+
+  /* Variables locales */
+
+  --mv-play-bg: rgba(0, 0, 0, 0.25);
+  --mv-play-hover-bg: rgba(0, 0, 0, 0.5);
+  --mv-play-active-bg: rgba(0, 0, 0, 0.75);
+  --mv-play-focus-ring: rgba(255, 255, 255, 0.4);
+  --mv-action-hover-bg: rgba(255, 255, 255, 0.2);
+  --mv-action-active-bg: rgba(255, 255, 255, 0.4);
+  --mv-action-focus-ring: rgba(255, 255, 255, 0.35);
+  --altura: 1.6rem;
+
+  font-family: var(--font-stack);
+  line-height: var(--altura);
+
+  position: fixed;
+  inset: 0;
+  z-index: 2400;
+  background: #000;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+
+  // &.is-open
+  &.is-open {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* ==========================================================================
+    Media
+  ========================================================================== */
+
+  &__media {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: #000;
+    border: 1px solid var(--mv-action-hover-bg);
+    z-index: 1;
+
+    @include min-screen(landscape) {
+      height: 100%;
+    }
+
+    // @include min-screen(1024px)    
+    @include min-screen(1024px) {
+      height: calc(100% - 14.4rem);
+    }
+
+    @include behavior-parent(is-fading) {
+      opacity: 0;
+    }
+
+    @include behavior-parent(is-rotated) {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+  }
+
+  /* ==========================================================================
+    Tools wrapper
+  ========================================================================== */
+
+  &__tools {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: height .3s ease;
+
+    @include behavior-parent(is-controls) {
+      height: calc(100% - 4.4rem);
+  
+      @include behavior-parent-nested(has-tapbar) {
+        height: calc(100% - 8.8rem);
+
+        // @include min-screen(1024px)    
+        @include min-screen(1024px) {
+          height: calc(100% - 7.2rem);
+        }
+    
+        @include behavior-parent-nested(is-rotated) {
+          height: calc(100% - 4.4rem);
+        }
+      }
+    }
+  }
+
+  /* ==========================================================================
+    Acciones
+  ========================================================================== */
+
+  &__actions {
+    position: absolute;
+    right: 1rem;
+    bottom: 3.4rem;
+
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: center;
+
+    z-index: 2;
+  }
+
+  /* ==========================================================================
+    Action buttons (base)
+  ========================================================================== */
+
+  &__action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 4.4rem;
+    height: 4.4rem;
+    border: none;
+    border-radius: 4.4rem;
+    background: transparent;
+    cursor: pointer;
+    transition: background-color 120ms ease;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--mv-action-hover-bg);
+      }
+    }
+
+    &:active {
+      background-color: var(--mv-action-active-bg);
+    }
+
+    &:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 3px var(--mv-action-focus-ring);
+    }
+  
+    /* --- Disabled --- */
+
+    &--disabled {
+      opacity: 0.4;
+      pointer-events: none;
+    }
+  
+    /* --- Close --- */
+  
+    &-close {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      display: none;
+  
+      @include behavior-parent(is-controls) {
+        display: flex;
+      }
+    }
+  
+    /* --- Close --- */
+  
+    &-prev,
+    &-next {
+      border: 1px solid var(--mv-action-hover-bg);      
+    }
+
+    /* --- mute --- */
+
+    &-mute {
+      transition: bottom 0.3s ease;
+
+      @include behavior-parent(has-noaudio) {
+        cursor: default;
+        opacity: .7;
+        pointer-events: none;
+      }
+    
+      // .icon-unmuted
+      .icon-unmuted {
+        display: block;
+
+        @include behavior-parent(is-muted) {
+          display: none;
+        }
+
+        @include behavior-parent(has-noaudio) {
+          display: none;
+        }
+      }
+    
+      //.icon-muted
+      .icon-muted {
+        display: none;
+
+        @include behavior-parent(is-muted) {
+          display: block;
+        }
+
+        @include behavior-parent(has-noaudio) {
+          display: none;
+        }
+      }
+    
+      // .icon-dumb
+      .icon-dumb {
+        display: none;
+
+        @include behavior-parent(has-noaudio) {
+          display: block;
+        }
+      }
+    }
+
+    /* --- share --- */
+
+    &-share {
+      display: none;
+
+      @include behavior-parent(is-controls) {
+        display: flex;
+      }
+    }
+
+    /* --- expand --- */
+
+    &-expand {
+      display: none;
+
+      @include behavior-parent(can-expand) {
+        display: flex;
+      }
+
+      @include behavior-parent(is-rotated) {
+        display: none;
+      }
+    }
+
+    /* --- collapse --- */
+
+    &-collapse {
+      display: none;
+
+      @include behavior-parent(is-rotated) {
+        display: flex;
+      }
+    }
+
+    /* ==========================================================================
+    Bloque “más vídeos”
+  ========================================================================== */
+
+    &-more {
+      position: absolute;
+      left: 1rem;
+      bottom: 1rem;
+  
+      padding: 1rem;
+      gap: .5rem;
+  
+      font-size: 1.2rem;
+      color: #fff;
+  
+      opacity: 0;
+      transition: opacity 0s ease;
+      transition-delay: 0s;
+
+      z-index: 2;
+  
+      @include behavior-parent(has-tapbar) {
+        bottom: 5.4rem;
+
+        // @include min-screen(1024px)    
+        @include min-screen(1024px) {
+          bottom: 3.8rem;
+        }
+      }
+  
+      @include behavior-parent(is-rotated) {
+        bottom: 1rem;
+      }
+  
+      @include behavior-parent(is-controls) {
+        opacity: 1;
+        transition-delay: 0.3s;
+      }
+    }
+
+  }
+
+  /* ==========================================================================
+    Meta
+  ========================================================================== */
+
+  &__meta {
+    position: absolute;
+    bottom: 4.4rem;
+    left: 2rem;
+    right: 6.4rem;
+    color: #fff;
+    transition: bottom .3s ease;
+    z-index: 1;
+
+    summary {
+      position: relative;
+      display: block;
+      pointer-events: all;
+  
+      &:after {
+        content: "...más";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        font-size: 1.2rem;
+      }
+    }
+
+    &.is-short summary {
+      pointer-events: none;
+  
+      &:after {
+        content: "";
+      }
+    }
+
+    &-content {
+      position: relative;
+      overflow: hidden;
+      transition: max-height 300ms ease;
+
+      clip-path: polygon(
+        0% 0%,
+        100% 0%,
+        100% calc(100% - var(--altura)),
+        calc(100% - 4rem) calc(100% - var(--altura)),
+        calc(100% - 4rem) 100%,
+        0% 100%
+      );
+    }
+
+    &.is-short &-content,
+    &[open] &-content {
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+
+    &[open] summary:after {
+      content: "";
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 1.4rem;
+  }
+
+  &__description {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+
+  /* ==========================================================================
+    Progress
+  ========================================================================== */
+
+  &__progress {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    right: 2rem;
+    height: .4rem;
+    background: rgba(255,255,255,.5);
+    cursor: pointer;
+    z-index: 1;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      min-width: 4.4rem;
+      min-height: 4.4rem;
+      background: transparent;
+      border-radius: inherit;
+    }
+
+    &-current {
+      width: 0%;
+      height: 100%;
+      background: red;
+    }
+
+    &-thumb {
+      position: absolute;
+      top: 50%;
+      left: 0%;
+      width: 4.4rem;
+      height: 4.4rem;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background: transparent;
+      transition: background-color .15s ease;
+  
+      @include behavior-parent(is-scrubbing) {
+        background-color: var(--mv-action-active-bg);
+      }
+    }
+  }
+  
+  /* ==========================================================================
+    Controles inferiores
+  ========================================================================== */
+
+  &__controls {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 9.5rem;
+
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 37.5%, rgba(0, 0, 0, 0.9) 100%);
+    pointer-events: none;
+  
+    @media (orientation: landscape) {
+        height: 12.5rem;
+    }
+  
+    @include behavior-parent(is-controls) {
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 62.5%);
+    
+      /* Permite que los botones dentro sigan siendo clicables */
+      button {
+        pointer-events: auto;
+      }
+    }
+
+    /* --- Control de tiempo --- */
+
+    &-time {
+      position: absolute;
+      bottom: 1rem;
+      right: 1.5rem;
+  
+      display: flex;
+      align-items: center;
+  
+      height: 4.4rem;
+  
+      opacity: 0;
+      transition: opacity 0s ease;
+      transition-delay: 0s;
+  
+      @include behavior-parent(has-tapbar) {
+        bottom: 5.4rem;
+
+        // @include min-screen(1024px)    
+        @include min-screen(1024px) {
+          bottom: 3.8rem;
+        }
+      }
+  
+      @include behavior-parent(is-rotated) {
+        bottom: 1rem;
+      }
+  
+      @include behavior-parent(is-controls) {
+        opacity: 1;
+        transition-delay: 0.3s;
+      }
+    }
+  }
+
+  /* --- Display de tiempo --- */
+
+  &__time-display {
+    display: flex;
+    align-items: center;
+    margin: .5rem;
+    gap: .4rem;
+    font-size: 1.2rem;
+    color: #fff;
+
+    // .separator
+    .separator {
+      opacity: 0.7;
+    }
+  }
+
+  /* ==========================================================================
+    Overlay “gira tu pantalla”
+  ========================================================================== */
+
+  &__overlay-rotate {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    height: 4.4rem;
+    gap: .5rem;
+
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+    border: none;
+    background: transparent;
+
+    font-size: 1.2rem;
+    color: #fff;
+    animation: ft-org-mediaviewer-show-hide-fade 20s ease-in-out infinite;
+
+    @include behavior-parent(can-expand) {
+      display: flex;
+    }
+
+    @include behavior-parent(is-controls) {
+      display: none;
+    }
+
+    @include behavior-parent(is-rotated) {
+      display: none;
+    }
+    /* Icono interno animado */
+    .icon-default {
+      width: 3.4rem;
+      height: auto;
+      transform-origin: 50% 50%;
+      transform-box: fill-box;
+      animation: ft-org-mediaviewer-quarter-rotate 2.5s ease-in-out infinite;
+    }
+  }
+
+  /* ==========================================================================
+    Overlay play toggle
+  ========================================================================== */
+
+  &__overlay-playtoggle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 6.6rem;
+    height: 6.6rem;
+    border-radius: 50%;
+    border: none;
+    background: var(--mv-play-bg);
+    backdrop-filter: blur(1px);
+    cursor: pointer;
+    transition: background-color .12s ease;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--mv-play-hover-bg);
+      }
+    }
+
+    &:active {
+      background-color: var(--mv-play-active-bg);
+    }
+
+    &:focus-visible {
+      box-shadow: 0 0 0 3px var(--mv-play-focus-ring);
+    }
+
+    svg {
+      display: none;
+      color: #fff;
+    }
+
+    &.is-paused .icon-play {
+      display: flex;
+    }
+
+    &.is-playing .icon-pause {
+      display: flex;
+    }
+
+    @include behavior-parent(is-controls) {
+      display: flex;
+    }
+  }
+
+  /* ==========================================================================
+    Navigation
+  ========================================================================== */
+  
+  &__navigation {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    gap: 1.4rem;
+    padding: 1.4rem;
+
+    // @include min-screen(1024px)    
+    @include min-screen(1024px) {
+      display: flex;
+  
+      @include behavior-parent(has-tapbar) {  
+        @include behavior-parent-nested(is-controls) {
+          bottom: 0;
+        }
+      }
+    }
+  }
+
+  /* ==========================================================================
+    Overlay “siguiente”
+  ========================================================================== */
+  
+  &__overlay-next {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) rotate(180deg);
+    bottom: 3.5rem;
+    animation: ft-org-mediaviewer-slideDown 1s ease-in-out infinite;
+
+    // @include min-screen(1024px)    
+    @include min-screen(1024px) {
+      display: none !important;
+    }
+  }
+
+  /* ==========================================================================  
+    Share overlay
+  ========================================================================== */
+  
+  &__share {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2600; // encima del viewer (2400)
+  
+    backdrop-filter: blur(2px);
+  
+    @media (prefers-reduced-motion: no-preference) {
+      animation: ft-org-mediaviewer-share-fade-in 160ms ease;
+    }
+    
+    &-panel {
+      background: #fff;
+      padding: 2rem;
+      border-radius: .8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      min-width: 24rem;
+      max-width: 90vw;
+    
+      @media (prefers-reduced-motion: no-preference) {
+        animation: ft-org-mediaviewer-share-scale-in 180ms ease;
+      }
+    
+      a,
+      button {
+        text-decoration: none;
+        padding: .5rem 1rem;
+        background: #000;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        text-align: center;
+        font-size: 1.4rem;
+        height: 3.2rem;
+    
+        transition: opacity 120ms ease, transform 120ms ease;
+    
+        &:hover {
+          opacity: .85;
+        }
+    
+        &:active {
+          transform: scale(.97);
+        }
+      }
+    }
+  }
+  
+  /* Animaciones específicas del organismo */
+  
+  @keyframes ft-org-mediaviewer-share-fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  
+  @keyframes ft-org-mediaviewer-share-scale-in {
+    from { transform: scale(.95); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+  }
+
+  /* ==========================================================================
+    Swipe animation
+  ========================================================================== */
+
+  .jwplayer {
+    transition:
+      transform 240ms cubic-bezier(.4,0,.2,1),
+      opacity 180ms ease;
+    will-change: transform;
+  }
+
+  &.is-swipe-up .jwplayer {
+    transform: translateY(-105vh);
+    opacity: 0.6;
+  }
+
+  &.is-swipe-down .jwplayer {
+    transform: translateY(105vh);
+    opacity: 0.6;
+  }
+
+  /* ==========================================================================
+    JWPlayer aspect fix
+  ========================================================================== */
+
+  .jwplayer.jw-flag-aspect-mode {
+    height: 100% !important;
+  }  
+}
+
+/* ==========================================================================
+  Accesibilidad sin efectos
+========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .ft-org-mediaviewer * {
+    animation: none !important;
+    transition: none !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .ft-org-mediaviewer .jwplayer { transition: none !important; }
+}
+
+.ft-org-mediaviewer button:focus-visible,
+.ft-org-mediaviewer [role="slider"]:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+  TAPBAR
+========================================================================== */
+
+body.has-mediaviewer-open {
+  overflow: hidden;
+
+  // .ft-mol-tapbar
+  .ft-mol-tapbar {
+    bottom: -5.5rem;
+    transition: bottom 0.3s ease;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 1px;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background:  var(--color-black);
+      height: 4.5rem;
+    }
+
+    &.is-controls {
+      bottom: 0;
+    }
+
+    &.is-rotated {
+      display: none;
+    }
+
+    &__container {
+      &:after,
+      &:before {
+        background:  var(--color-black);
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+      }
+    }
+
+    &__canvas {
+      background:  var(--color-black);
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    &__icon {
+      opacity: .4;
+    }
+
+    &__text {
+      opacity: .4;
+    }
+
+    &__item--active {
+      .ft-mol-tapbar {
+        &__icon {
+          stroke: var(--color-black);
+          opacity: 1;
+    
+          &-wrapper:after {
+            border-color:  var(--color-black);
+          }
+        }
+  
+        &__text {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

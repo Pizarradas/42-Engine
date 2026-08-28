@@ -1,0 +1,270 @@
+// ABSTRACTS
+// ================================================
+@import "../../../abstracts/abstracts.scss";
+@import "../../../vendors/bourbon/bourbon";
+// ================================================
+
+// .ft-org-mediareport
+// ===============================================
+.ft-org-mediareport {
+  @include position(relative, null null null null);
+  @include margin(-0.1rem null null null);
+  overflow: hidden;
+
+  // > [class*="ft-layout-grid-flex__colXs-12"]
+  > [class*="ft-layout-grid-flex__colXs-12"] {
+      @include position(relative, null null null null);
+      @include margin(null 1rem null 1rem);
+      z-index: 5;
+  }
+
+  // .ft-layout-grid-flex__colXs-12:has(> .ft-org-mediareport__sticky-wrapper)
+  .ft-layout-grid-flex__colXs-12:has(> .ft-org-mediareport__sticky-wrapper) {
+    @include position(relative, null null null null);
+    z-index: 5;
+  }
+
+  // [class*="ft-layout-grid-flex__nested"]
+  [class*="ft-layout-grid-flex__nested"] {
+    // &[class*="ft-helper-spacer-inner-"]
+    &[class*="ft-helper-spacer-inner-"] {
+      @media (max-width: 768px) {
+        @include padding(0);
+      }
+    }
+
+    [class*="ft-layout-grid-flex__colXs-12"] {
+      text-align: left;
+    }
+  }
+
+  // &__bg
+  &__bg {
+    @include position(absolute, 0 null null 0);
+    @include size(100%);
+    transform: translateZ(0);
+
+    // img
+    img {
+      @include size(100%);
+      object-fit: cover;
+    }
+
+    // picture
+    picture {
+      height: 100%;
+      @include min-screen(768px) {
+        height: 100dvh;
+      }
+    }
+
+    // video
+    video {
+      @include position(fixed, 0 null null 0);
+      @include size(100vw, 100%);
+      z-index: -1;
+      object-fit: cover;
+      @include min-screen(768px) {
+        height: 100dvh;
+      }
+    }
+
+    // [class*="ft-img"]
+    [class*="ft-img"] {
+      @include margin(auto);
+      @include size(100%);
+    }
+  }
+
+  // &__overlay
+  &__overlay {
+    @include position(absolute, 0 null null 0);
+    @include size(100%);
+    z-index: 1;
+
+    // &[class*="ft-helper-bgColor-"]
+    &[class*="ft-helper-bgColor-"] {
+      @include position(initial, null null null null);
+      z-index: 1;
+    }
+  }
+
+  // &__sticky
+  &__sticky {
+    // &-wrapper
+    &-wrapper {
+      @include min-screen(1024px) {
+        @include position(relative, null null null null);
+        @include margin(2rem null 2rem null);
+        @include padding(4rem null 4rem null);
+        min-height: 100vh;
+      }
+    }
+  }
+
+  // &__container
+  &__container {
+    // &-bg
+    &-bg {
+      @include position(absolute, 0 null null 0);
+      @include size(100%);
+      overflow: hidden;
+      z-index: 0;
+      transform-style: preserve-3d;
+      backface-visibility: hidden;
+      contain: paint;
+    }
+  }
+
+  // &--is
+  &--is {
+    // &-parallax
+    &-parallax {
+      min-height: 100dvh;
+      
+      // &[class*="ft-layout-grid-flex__row"]
+      &[class*="ft-layout-grid-flex__row"] {
+        // >
+        > {
+          // [class*="ft-layout-grid-flex__colXs-12"]
+          [class*="ft-layout-grid-flex__colXs-12"] {
+            @include position(relative, null null null null);
+            z-index: 2;
+          }
+        }
+      }
+    }
+  }
+
+  // &--has
+  &--has {
+    //  &-figure
+    &-figure {
+      [class*="ft-layout-grid-flex__nested"] {
+        // Elementos que TIENEN sticky-wrapper
+        .ft-layout-grid-flex__colXs-12:has(figure) {
+          order: 1;
+        }
+
+        // Elementos que NO tienen sticky-wrapper
+        .ft-layout-grid-flex__colXs-12:not(:has(figure)) {
+          order: 2;
+        }
+      }
+
+      // Breakpoint para anular a partir de 1024px
+      @include min-screen(1024px) {
+        [class*="ft-layout-grid-flex__nested"] {
+          .ft-layout-grid-flex__colXs-12:has(figure),
+          .ft-layout-grid-flex__colXs-12:not(:has(figure)) {
+            order: unset;
+          }
+        }
+      }
+    }
+
+    // &-fixed-background
+    &-fixed-background {
+      // [class*="ft-org-mediareport__bg"]
+      [class*="ft-org-mediareport__bg"] {
+        // picture
+        picture {
+          height: 100%;
+        }
+      }
+    }
+
+    //  &-sticky-image
+    &-sticky-image {
+      [class*="ft-layout-grid-flex__nested"] {
+        // Elementos que TIENEN sticky-wrapper
+        .ft-layout-grid-flex__colXs-12:has(.ft-org-mediareport__sticky-wrapper) {
+          order: 1;
+        }
+
+        // Elementos que NO tienen sticky-wrapper
+        .ft-layout-grid-flex__colXs-12:not(
+            :has(.ft-org-mediareport__sticky-wrapper)
+          ) {
+          order: 2;
+        }
+      }
+
+      // Breakpoint para anular a partir de 1024px
+      @include min-screen(1024px) {
+        [class*="ft-layout-grid-flex__nested"] {
+          .ft-layout-grid-flex__colXs-12:has(.ft-org-mediareport__sticky-wrapper),
+          .ft-layout-grid-flex__colXs-12:not(
+              :has(.ft-org-mediareport__sticky-wrapper)
+            ) {
+            order: unset;
+          }
+        }
+      }
+    }
+
+    // &-free-html
+    &-free-html {
+      // div 
+      div {
+        width: 100%;
+      }
+    }
+
+    // &-bg-to-rgt
+    &-bg-to-rgt {
+      // [class*="ft-org-mediareport__container-bg"]
+      [class*="ft-org-mediareport__container-bg"]  {
+        @include min-screen(1024px) {
+          right: 0;
+          left: auto;
+          max-width: 50%;
+        }
+      }
+    }
+
+    // &-bg-to-lft
+    &-bg-to-lft {
+      // [class*="ft-org-mediareport__container-bg"]
+      [class*="ft-org-mediareport__container-bg"]  {
+        @include min-screen(1024px) {
+          max-width: 50%;
+        }
+      }
+    }
+  }
+}
+
+// LOCOMOTIVE
+// ===============================================
+body[data-uses-mediareport="true"],
+body[data-uses-mediareport="true"] html {
+  height: 100%;
+  overflow: hidden;
+}
+
+[data-scroll-container],
+[data-scroll-container] * {
+  will-change: transform;
+}
+
+[data-scroll-anim] {
+  will-change: opacity, transform;
+}
+
+// .is-inview // locomotive: sticky images
+.is-inview {
+  // [class*="ft-org-mediareport--has-sticky-image"]
+  [class*="ft-org-mediareport--has-sticky-image"] {
+    // [class*=" ft-org-mediareport__sticky-wrapper"]
+    [class*=" ft-org-mediareport__sticky-wrapper"] {
+      // .ft
+      .ft {
+        // &-img
+        &-img {
+          @include margin(2rem null null null);
+        }
+      }
+    }
+  }
+}
