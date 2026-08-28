@@ -1,0 +1,134 @@
+// ABSTRACTS
+// ================================================
+@import "../abstracts/amp-abstracts";
+@import "../vendors/bourbon/bourbon";
+// ================================================
+
+
+// ft-date
+// ===============================================
+.ft-date
+{
+  @include margin(null null 0.5rem null);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-quaternary);
+
+  // &__text
+  // ---------------------------------------------
+  &__text
+  {
+    @include margin(0.2rem null 0.2rem null);
+    @include font--body-S--small;
+
+    // behavior parent: ft-date--lurid
+    @include behavior-parent(ft-date--lurid)
+    {
+      @include font--body-M--small;
+      @include fontBold;
+    }
+
+    // behavior parent: ft-date--inline
+    @include behavior-parent(ft-date--inline)
+    { 
+ 
+      // &:last-of-type
+      &:last-of-type
+      {
+        @include margin(null null null 0);
+        @include padding(null null null 0);
+        @include border-style(null null null null);
+        @include border-width(null null null 0);
+      }
+    }
+  }
+
+  // &__extra
+  // ---------------------------------------------
+  &__extra
+  {
+    @include margin(.5rem null null null);
+    color: var(--color-darkGrey);
+  }
+
+  // &--lurid
+  // ---------------------------------------------
+  &--lurid
+  {
+    color: var(--color-black);
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  // &--center
+  // ---------------------------------------------
+  &--center
+  {
+    align-items: center;
+    justify-content: center;
+  }
+
+  // &--right
+  // ---------------------------------------------
+  &--right
+  {
+    align-items: flex-end;
+  }
+
+  // &--inline
+  // ---------------------------------------------
+  &--inline
+  {
+    flex-direction: column;
+  }
+
+  // &__reload
+    // ---------------------------------------------
+    &__reload 
+    {
+      @include font--body-S--small;
+     
+      @include behavior-parent(ft-mol-tracking){
+        display:none;
+      }
+      @include behavior-parent(ft-org-cardHome){
+        display:none;
+      }
+      @include behavior-parent(ft-mol-writer--cardHome){
+        display:none;
+      }
+     
+      @include behavior-parent(ft-org-directNews){
+        display:none;
+      }
+      @include behavior-parent(ft-date--lurid){
+        display:none;
+      }
+      @include behavior-parent(ft-date--inline){
+        position:relative;
+        display: flex;
+        @include margin(0 null null 0.5rem);
+        @include padding(null null null 1rem);
+        // &:last-of-type
+      &:last-child
+      {
+        @include margin(null null null 0);
+        @include padding(null null null 0);
+        @include border-style(null null null null);
+        @include border-width(null null null 0);
+
+        @include min-screen(768px)
+        {
+          @include margin(null null null 0.5rem);
+          @include padding(null null null 0.5rem);
+          @include border-style(null null null solid);
+          @include border-width(null null null 0.1rem);
+          @include border-color(null null null var(--color-quaternary));
+        }
+      }
+      }
+    }
+    /* Fin Cambios 6305 */
+}

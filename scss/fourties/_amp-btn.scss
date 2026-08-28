@@ -1,0 +1,341 @@
+// .ft-btn
+// ===============================================
+.ft-btn
+{
+  $self: &;
+  @include overflow-wrap;
+  @include border-style(solid);
+  @include border-width(0.2rem 0.2rem 0.2rem 0.2rem);
+  @include border-top-radius(30px);
+  @include border-bottom-radius(30px);
+  display: inline-block;
+  background-color: transparent;
+  user-select: none;
+  text-align: center;
+  color: var(--color-black);
+  box-shadow: none;
+  font-weight: bold;
+  text-decoration: none;
+
+
+
+  // &--sm
+  // ---------------------------------------------
+  &--sm
+  {
+    @include padding(0.38rem 1.5rem 0.38rem 1.5rem);
+    @include font--body-M;
+    @include fontBold;
+  }
+
+  // &--MD
+  // ------------------------------ ---------------
+  &--md
+  {
+    @include padding(0.88rem 2rem 0.88rem 2rem);
+    @include font--body-L;
+    @include fontBold;
+  }
+
+
+  // &--primary
+  // ---------------------------------------------
+  &--primary
+  {
+    @include border-color(var(--color-primary));
+    color: var(--color-white);
+    background-color: var(--color-primary);
+
+    // &-has
+    // ---------------------------------------------
+    &-has
+    {
+
+      // &--icon
+      &--icon
+      {
+        @include position(relative, null null null null);
+
+        // &.ft-btn
+        &.ft-btn
+        {
+
+          // &-sm
+          &--sm
+          {
+            @include padding(null null null 4rem);
+          }
+
+          // &-md
+          &--md
+          {
+            @include padding(null null null 5rem);
+          }
+
+          // &-lg
+          &--lg
+          {
+            @include padding(null null null 5rem);
+          }
+        }
+
+      }
+    }
+  }
+
+  // &--secondary
+  // ---------------------------------------------
+  &--secondary
+  {
+    @include border-color(var(--color-primary));
+    color: var(--color-primary);
+    background-color: transparent;
+    // &-has
+    // ---------------------------------------------
+    &-has
+    {
+
+      // &--icon
+      &--icon
+      {
+        @include position(relative, null null null null);
+
+        // .ft-btn__icon
+        .ft-btn__icon
+        {
+
+         // @if $brand ==sport
+          @include behavior-brand(sport)
+          {
+            filter: map-filters(reds, brand--sport);
+          }
+
+         // @if $brand ==epe
+          @include behavior-brand(epe)
+          {
+            filter: map-filters(blues, brand--epe);
+          }
+
+         // @if $brand ==ux
+          @include behavior-brand(ux)
+          {
+            filter: map-filters(greys, brand--500);
+          }
+
+         // @if $brand ==ep
+          @include behavior-brand(ep)
+          {
+            filter: map-filters(reds, brand--ep);
+          }
+
+         // @if $brand ==regionales
+          @include behavior-brand(regionales)
+          {
+            filter: map-filters(blues, brand--regionales);
+          }
+
+         // @if $brand ==revistas
+          @include behavior-brand(revistas)
+          {
+            filter: brightness(0.5);
+          }
+
+          // behavior: bg(Color-black)
+          @include behavior-ft-helper-bg(Color-black)
+          {
+            filter: map-filters(blacks, brand--all);
+
+           // @if $brand ==revistas
+            @include behavior-brand(revistas)
+            {
+              filter: map-filters(whites, brand--all);
+            }
+          }
+           // &--primal
+          &.ft-btn__icon--primal{
+            filter: unset;
+          } 
+        } 
+
+        // &.ft-btn
+        &.ft-btn
+        {
+
+          // &-sm
+          &--sm
+          {
+            @include padding(null null null 4rem);
+          }
+
+          // &-md
+          &--md
+          {
+            @include padding(null null null 5rem);
+          }
+
+          // &-lg
+          &--lg
+          {
+            @include padding(null null null 5rem);
+          }
+        }
+      }
+    }
+  }
+
+  // &--tertiary
+  // ---------------------------------------------
+  &--tertiary
+  {
+    // generals
+    @include border-color(var(--color-black));
+    color: var(--color-white);
+    background-color: var(--color-black);
+
+    // behavior: bg(Color-black)
+    @include behavior-ft-helper-bg(Color-black)
+    {
+      @include border-color(var(--color-white));
+      color: var(--color-black);
+      background-color: var(--color-white);
+
+    }
+  }
+
+  // &__icon
+  // ---------------------------------------------
+  &__icon
+  {
+    @include position(absolute, 0 null 0 null);
+    @include margin(auto null auto null);
+
+    // behavior: parent(ft-btn--sm)
+    @include behavior-parent(ft-btn--sm)
+    {
+      max-height: 2rem;
+      max-width: 2rem;
+      left: 1.5rem;
+    }
+
+    // behavior: parent(ft-btn--md)
+    @include behavior-parent(ft-btn--md)
+    {
+      @include size(2.3rem, 2.3rem);
+      left: 1.5rem;
+    }
+
+  }
+
+  // &-is
+  // ---------------------------------------------
+  &-is
+  {
+    &--disabled
+    {
+      @include border-color(var(--color-darkGrey));
+
+      // &--primary
+      &Primary
+      {
+        color: var(--color-white);
+        background-color: var(--color-darkGrey);
+      }
+
+      // &--secondary
+      &Secondary
+      {
+        color: var(--color-darkGrey);
+        background-color: null;
+      }
+
+    }
+  }
+
+  // &-nav
+  // ---------------------------------------------
+  &-nav
+  {
+    @include position(relative, 0.3rem null null null);
+    @include margin(null 0.7rem 0.7rem null);
+    @include size(3rem, 3rem);
+    @include border-style(solid);
+    @include border-width(0.2rem 0.2rem 0.2rem 0.2rem);
+    @include border-color(transparent);
+    @include border-top-radius(100%);
+    @include border-bottom-radius(100%);
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    transition: border-color 0.2s ease;
+    background-color: transparent;
+
+    // &__icon
+    &__icon
+    {
+      @include position(absolute, null null null null);
+      @include size(1.6rem, 1.6rem);
+      pointer-events: none;
+
+      // &:after
+      &:after
+      {
+        content: "";
+        @include margin(auto);
+        @include size(1.2rem, 1.2rem);
+        transition: filter 0.2s ease;
+
+        // behavior: bg(Color-black)
+        @include behavior-ft-helper-bg(Color-black)
+        {
+          filter: map-filters(whites, brand--all);
+        }
+      }
+    }
+
+    // &__text
+    &__text
+    {
+      @include position(absolute, null null null 0);
+      @include hide-text;
+      pointer-events: none;
+    }
+
+    // &--close
+    &--close
+    {
+
+      // .ft-btn-nav
+      .ft-btn-nav
+      {
+
+        // &__icon
+        &__icon
+        {
+
+          // &:after
+          &:after
+          {
+            @include position(absolute, 0 0 0 0);
+            @include size(1.4rem, 1.4rem);
+            @include background-setup(map-icons(alerts, brand--errorDefault),
+              // img path
+              "0 0 / contain",
+              // position and size
+              no-repeat,
+              // repeat
+              null,
+              // attachment
+              null,
+              // origin
+              null,
+              // clip
+              transparent,
+              // color
+            );
+          }
+        }
+      }
+    }
+  }
+}

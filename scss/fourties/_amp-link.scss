@@ -1,0 +1,127 @@
+// .ft-link
+// ===============================================
+.ft-link
+{
+  @include position(relative, null null null null);
+  @include padding(0);
+  align-items: center;
+  word-wrap: break-word;
+  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  color: var(--color-primary);
+  background-color: transparent;
+  text-decoration: none;
+
+  // behavior: bg(Color-black)
+  @include behavior-ft-helper-bg(Color-black)
+  {
+    color: var(--color-white);
+  }
+
+  // &--block
+  &--block
+  {
+    @include hide-text;
+    @include position(absolute, 0 0 0 0);
+    @include margin(auto);
+    @include size(100%, 100%);
+    @include border-width(0 0 0 0);
+    opacity: 0;
+    z-index: 1; 
+  }
+
+  // &--decoration
+  &--decoration
+  {
+    @include padding(0);
+    @include border-width(0);
+    overflow: hidden;
+    word-wrap: break-word;
+    transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    color: var(--color-primary);
+    background-color: transparent;
+
+    // behavior: bg(Color-black)
+    @include behavior-ft-helper-bg(Color-black)
+    {
+      color: var(--color-white);
+    }
+  }
+
+  // &--secondary
+  &--secondary
+  {
+    color: var(--color-black);
+
+    // behavior: bg(Color-black)
+    @include behavior-ft-helper-bg(Color-black)
+    {
+      color: var(--color-white);
+    }
+
+  }
+
+  // &--tertiary 
+  &--tertiary
+  {
+    color: var(--color-quaternary);
+
+    // behavior: bg(Color-black)
+    @include behavior-ft-helper-bg(Color-black)
+    {
+      color: var(--color-white);
+    }
+  }
+
+  // &--nav
+  &--nav
+  {
+    @include border-width(0);
+    @include font--body-M--small;
+    @include fontBold;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    word-wrap: break-word;
+    transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    color: var(--color-primary);
+    background-color: transparent;
+
+    // &:after
+    &::after
+    {
+
+      // behavior: bg(Color-black)
+      @include behavior-ft-helper-bg(Color-black)
+      {
+        background-color: var(--color-white);
+      }
+    }
+
+    // &Prev
+    &Prev
+    {
+
+      // &:before
+      &::before
+      {
+        content: "";
+        transform: rotate(90deg);
+      }
+    }
+
+    // &Next
+    &Next
+    {
+      justify-content: flex-end;
+
+      // &:after
+      &::after
+      {
+        content: "";
+        transform: rotate(-90deg);
+      }
+    }
+  }
+}

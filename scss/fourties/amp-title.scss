@@ -1,0 +1,84 @@
+
+// ABSTRACTS
+// ================================================
+@import "../abstracts/amp-abstracts";
+@import "../vendors/bourbon/bourbon";
+// ================================================
+
+// ft-TITLE
+// ===============================================
+.ft-title 
+{
+  // generals
+  // ---------------------------------------------
+  @include position(relative, null null null null);
+
+  @include behavior-parent(premium)
+  {
+    &:before
+    {
+      //generals
+      @include margin(null .7rem null null);
+      background-size: contain;
+      min-width: 2.5rem;
+      height: 2.5rem;
+      @include position (relative, .4rem null null 0);
+      content: "";
+      z-index: 10;
+      display: inline-block;
+
+      // behavior-brand: ep
+      @include behavior-parent-nested(ft-brand-ep)
+      {
+        background-image: url(#{$images-path}/logos/logoEPplus2.svg);
+        background-repeat: no-repeat;
+        background-position: 50%;
+      }
+
+      // end // @if $brand: ep
+
+
+      // behavior-brand:epe
+      @include behavior-parent-nested(ft-brand-epe)
+      {
+        background-color: var(--color-premium);
+        background-image: url(#{$images-path}/logos/logoEPEplus2.svg);
+        background-repeat: no-repeat;
+        background-position: 50%;
+
+
+        // end // behavior-brand: epe
+      }
+
+      // behavior-brand:regionales
+      @include behavior-parent-nested(ft-brand-regionales)
+      {
+        background-image: url(#{$images-path}/logos/logo-regionalesPlus2.svg);
+        background-repeat: no-repeat;
+        background-position: 50%;
+
+        // end // behavior-brand:regionales
+      }
+
+      // behavior-brand:sport
+      @include behavior-parent-nested(ft-brand-sport)
+      {
+        background-color: var(--color-primary);
+        background-image: url(#{$images-path}/logos/logo-SportPlus2.svg);
+        background-repeat: no-repeat;
+        background-position: 50%;
+
+        // end // behavior-brand:sport
+      }
+
+      //end // &:before
+    }
+  }
+
+  // end // generals
+  // ---------------------------------------------
+
+  // END // ft-TITLE
+}
+
+// =============================================== 

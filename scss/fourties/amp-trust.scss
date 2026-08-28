@@ -1,0 +1,45 @@
+// ABSTRACTS
+// ================================================
+@import "../abstracts/amp-abstracts";
+@import "../vendors/bourbon/bourbon";
+// ================================================
+
+// ft-trust
+// ===============================================
+.ft-trust
+{
+
+    // generals
+    @include padding(null);
+    @include margin(0rem null 1rem null);
+    @include position(relative, 0 null null 0);
+    @include font--body-S--small;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .ft-helper-img-rd
+    {
+        // generals
+        @include margin(null 0.5rem null null);
+    }
+
+    &--center
+    {
+        // generals
+        align-items: center;
+        justify-content: center;
+        // END // &--center
+    }
+
+    &--right
+    {
+        // generals 
+        justify-content: flex-end;
+        // END // &--right
+    }
+
+    // END // &__trust
+}
+
+// ---------------------------------------------

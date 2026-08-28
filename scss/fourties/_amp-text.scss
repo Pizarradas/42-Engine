@@ -1,0 +1,91 @@
+// .ft-text
+// ===============================================
+.ft-text
+{
+  $self: &;
+  @include margin(2.5rem null 2.5rem null);
+  @include font--body-XXL;
+
+  // behavior parent: ft-mol-boxInfo--richtext
+  @include behavior-parent(ft-mol-boxInfo--richtext)
+  {
+    @include margin(0);
+    @include font--body-L;
+  }
+
+  // behavior parent: ft-mol-boxInfo--erratum
+  @include behavior-parent(ft-mol-boxInfo--erratum)
+  {
+    @include font--body-L;
+  }
+
+
+  // &:first-of-type
+  // ---------------------------------------------
+  &:first-of-type
+  {
+    @include margin(2.5rem null null null);
+  }
+
+  // &--ft-link
+  .ft-link
+  {
+    border-bottom: 1px dashed var(--color-primary);
+ 
+    // &--secondary
+    &--secondary
+    {
+      border-bottom: 1px dashed var(--color-secondary);
+
+    }
+
+    // &--tertiary
+    &--tertiary
+    {
+      border-bottom: 1px dashed var(--color-tertiary);
+
+    }
+
+  }
+
+  // &--linethrough
+  // ---------------------------------------------
+  &--linethrough
+  {
+    text-decoration: line-through;
+  }
+
+
+  // &--justify
+  // ---------------------------------------------
+  &--justify
+  {
+    text-align: justify;
+  }
+
+  // &-alert
+  // ---------------------------------------------
+  &-alert
+  {
+    // generals
+    @include position(relative, null null null null);
+    @include padding(null null null 3rem);
+    display: block;
+    color: var(--color-black);
+
+    // &:before
+    &:before
+    {
+      content: "";
+      @include position(absolute, 0 null null 0);
+      @include size(2rem, 2rem);
+    }
+
+    // &__subtext
+    &__subtext
+    {
+      @include margin(0.2rem null null null null);
+      display: block;
+    }
+  }
+}

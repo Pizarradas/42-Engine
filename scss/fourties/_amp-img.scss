@@ -1,0 +1,40 @@
+// .ft-img
+// ===============================================
+.ft-img
+{
+
+  // picture
+  picture
+  {
+    @include position(relative, null null null null);
+    display: block;
+  }
+
+  // figcaption
+  figcaption
+  {
+
+    @include margin(null null 0 null);
+  }
+
+  // .ft
+  .ft
+  {
+
+    // &-helper
+    &-helper
+    {
+
+      // &-img
+      &-img
+      {
+
+        // &-rd
+        &-rd
+        { 
+          width: 100%;
+        }
+      }
+    }
+  }
+}
